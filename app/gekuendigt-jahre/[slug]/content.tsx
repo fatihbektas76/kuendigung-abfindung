@@ -17,8 +17,19 @@ type Props = {
   bagUrteil: { aktenzeichen: string; kurzbeschreibung: string; relevanz: string };
 };
 
+const fmt = (n: number) =>
+  n.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 });
+
 export default function GekuendigtContent({ entry, prev, next, faqs, uniqueIntro, sofortmassnahmen, fallkonstellation, praxistipp, bagUrteil }: Props) {
+  const [gehalt, setGehalt] = useState('3500');
+  const [jahre, setJahre] = useState(String(entry.year));
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+
+  const g = parseFloat(gehalt.replace(/\./g, '').replace(',', '.')) || 0;
+  const j = parseInt(jahre, 10) || 0;
+  const lower = g * 0.5 * j;
+  const upper = g * 1.5 * j;
+
   const yl = entry.year === 1 ? '1 Jahr' : `${entry.year} Jahren`;
 
   return (
@@ -109,7 +120,81 @@ export default function GekuendigtContent({ entry, prev, next, faqs, uniqueIntro
         </div>
       </section>
 
-      {/* ───── f. Fallkonstellation ───── */}
+      {/* ───── f. Abfindungsrechner ───── */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[600px]">
+            <div className="border-[1.5px] border-gold rounded bg-cream p-8">
+              <h2 className="font-serif text-[1.4rem] font-bold mb-5">Wie hoch könnte Ihre Abfindung sein?</h2>
+              <div className="grid grid-cols-2 gap-4 mb-6 max-md:grid-cols-1">
+                <div>
+                  <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+                    Bruttomonatsgehalt (&euro;)
+                  </label>
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    value={gehalt}
+                    onChange={(e) => setGehalt(e.target.value)}
+                    className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+                    Betriebszugehörigkeit (Jahre)
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="40"
+                    value={jahre}
+                    onChange={(e) => setJahre(e.target.value)}
+                    className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]"
+                  />
+                </div>
+              </div>
+
+              {g > 0 && j > 0 && (
+                <div className="grid grid-cols-2 gap-4 mb-6 max-md:grid-cols-1">
+                  <div className="rounded-sm border border-border p-5 text-center bg-white">
+                    <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-1">
+                      Unterer Erfahrungswert*
+                    </div>
+                    <div className="font-serif text-[1.6rem] font-bold text-ink">{fmt(lower)}</div>
+                    <div className="text-[0.78rem] text-ink-muted mt-1">Faktor 0,5&times;</div>
+                  </div>
+                  <div className="rounded-sm border-2 border-gold p-5 text-center bg-gold-bg">
+                    <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-1">
+                      Oberer Erfahrungswert*
+                    </div>
+                    <div className="font-serif text-[1.6rem] font-bold text-gold-dark">{fmt(upper)}</div>
+                    <div className="text-[0.78rem] text-gold-dark mt-1">Faktor 1,5&times;</div>
+                  </div>
+                </div>
+              )}
+
+              <a
+                href="/#kontakt"
+                className="block w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
+              >
+                Abfindung jetzt kostenlos prüfen lassen &rarr;
+              </a>
+              <p className="text-[0.78rem] text-ink-muted text-center mt-3">
+                ★★★★★ 68 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
+              </p>
+            </div>
+
+            <div className="mt-4 py-3 px-5 border-l-[3px] border-border text-[0.78rem] text-ink-muted leading-relaxed">
+              * Bei den angezeigten Beträgen handelt es sich um Erfahrungswerte aus der Praxis
+              (0,5&times; bis 1,5&times; Bruttomonatsgehalt &times; Beschäftigungsjahre). Ob und in welcher Höhe eine
+              Abfindung erzielt werden kann, ist immer vom Einzelfall abhängig. Es kann sein, dass gar keine
+              oder auch eine höhere Abfindung als angegeben verhandelt wird.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── g. Fallkonstellation ───── */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
