@@ -12,17 +12,17 @@ export default function RelatedArticles({ posts }: RelatedArticlesProps) {
   return (
     <section className="mt-16 pt-12 border-t border-border">
       <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-        Continue Reading
+        Weiterlesen
       </div>
       <h2 className="font-serif text-[clamp(1.3rem,2.5vw,1.6rem)] font-bold leading-tight mb-6 text-ink">
-        Related Articles
+        Weitere Ratgeber
       </h2>
 
       <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">
         {posts.map((post) => (
           <Link
             key={post.slug}
-            href={`/blog/${post.slug}`}
+            href={`/ratgeber/${post.slug}`}
             className="bg-cream border border-border-light rounded overflow-hidden transition-all no-underline text-inherit hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] block"
           >
             {post.image ? (

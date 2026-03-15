@@ -19,7 +19,7 @@ export default function TeamCard({
       <div className="aspect-[4/5] relative bg-gradient-to-br from-cream-dark to-border">
         <Image
           src={src}
-          alt={name}
+          alt={`${name} — ${title}`}
           fill
           className="object-cover"
           onError={(e) => {

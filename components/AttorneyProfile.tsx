@@ -51,7 +51,7 @@ export default function AttorneyProfile() {
                 Rechtsanwalt &amp; Fachanwalt für Arbeitsrecht
               </div>
               <div className="text-[0.88rem] text-ink-muted mb-5">
-                gekuendigt-abfindung.de &middot; Heidelberg &amp; Berlin
+                APOS Legal &middot; Heidelberg &amp; Berlin
               </div>
               <div className="text-gold-dark text-base mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
               <div className="text-[0.82rem] text-ink-muted mb-6">

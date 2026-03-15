@@ -235,7 +235,7 @@ export default function ContactForm() {
                   </button>
                   <p className="text-[0.76rem] text-ink-muted mt-3 text-center leading-relaxed">
                     Mit dem Absenden stimmen Sie unserer{' '}
-                    <a href="/datenschutz" className="text-gold-dark underline">
+                    <a href="/privacy-policy" className="text-gold-dark underline">
                       Datenschutzerklärung
                     </a>{' '}
                     zu. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.

@@ -12,12 +12,12 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
         </div>
         <ul className="list-none flex gap-6">
           <li>
-            <Link href="/datenschutz" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+            <Link href="/privacy-policy" className="text-white/60 no-underline hover:text-gold-light transition-colors">
               Datenschutz
             </Link>
           </li>
           <li>
-            <Link href="/impressum" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+            <Link href="/legal-notice" className="text-white/60 no-underline hover:text-gold-light transition-colors">
               Impressum
             </Link>
           </li>

@@ -6,7 +6,7 @@ export default function AuthorBox() {
       <div className="w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
         <Image
           src="/Fatih.png"
-          alt="Fatih Bektas — Attorney-at-Law"
+          alt="Fatih Bektas — Rechtsanwalt & Fachanwalt für Arbeitsrecht"
           width={100}
           height={100}
           className="w-full h-full object-cover object-top"
@@ -14,15 +14,16 @@ export default function AuthorBox() {
       </div>
       <div>
         <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-1">
-          About the Author
+          Über den Autor
         </div>
         <h3 className="font-serif text-[1.25rem] font-bold mb-0.5">Fatih Bektas</h3>
         <div className="text-[0.88rem] text-gold-dark font-semibold mb-3">
-          Attorney-at-Law
+          Rechtsanwalt &amp; Fachanwalt für Arbeitsrecht
         </div>
         <p className="text-[0.9rem] text-ink-light leading-relaxed mb-4">
-          Fatih Bektas is a German-qualified attorney with over 20 years of experience in commercial
-          litigation. He represents US and UK companies in German courts and arbitration proceedings.
+          Fatih Bektas ist Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Er vertritt
+          Arbeitnehmer bei Kündigung, Abfindung und Aufhebungsvertrag — mit über 5.000 erfolgreichen
+          Verfahren.
         </p>
         <div className="flex items-center gap-4 max-md:justify-center flex-wrap">
           <a
@@ -37,14 +38,14 @@ export default function AuthorBox() {
             LinkedIn
           </a>
           <a
-            href="/#attorney"
+            href="/#anwalt"
             className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-gold hover:text-gold-dark no-underline transition-colors"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
               <circle cx="12" cy="7" r="4" />
             </svg>
-            Full Profile
+            Profil ansehen
           </a>
           <a
             href="https://meet.brevo.com/fatih-bektas/initial-free-consultation-by-phone-lp"
@@ -58,7 +59,7 @@ export default function AuthorBox() {
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-            Book Consultation
+            Termin buchen
           </a>
         </div>
       </div>

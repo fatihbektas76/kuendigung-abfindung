@@ -8,17 +8,17 @@ const steps = [
   },
   {
     num: 2,
-    title: 'Strategie & Kostenübersicht',
-    desc: 'Wir zeigen Ihre Optionen auf: Kündigungsschutzklage, Abfindungsverhandlung oder Aufhebungsvertrag-Optimierung. Mit transparenter Kostenübersicht.',
+    title: 'Strategie & Prüfung',
+    desc: 'Wir prüfen Ihre Kündigung oder Ihren Aufhebungsvertrag und zeigen Ihre Optionen auf: Kündigungsschutzklage, Abfindungsverhandlung oder Aufhebungsvertrag-Optimierung.',
   },
   {
     num: 3,
-    title: 'Klage oder Verhandlung',
-    desc: 'Arbeitsgericht, Gütetermin, Verhandlung oder außergerichtliche Einigung — wir übernehmen alles. Sie werden regelmäßig informiert.',
+    title: 'Wir übernehmen alles',
+    desc: 'Arbeitsgericht, Gütetermin, Verhandlung oder außergerichtliche Einigung — wir kümmern uns um alles. Sie werden regelmäßig informiert.',
   },
   {
     num: 4,
-    title: 'Abfindung & Ergebnis',
+    title: 'Ergebnis & Abfindung',
     desc: 'Abfindung, Weiterbeschäftigung oder optimierter Aufhebungsvertrag — wir setzen das beste Ergebnis für Sie durch.',
   },
 ];

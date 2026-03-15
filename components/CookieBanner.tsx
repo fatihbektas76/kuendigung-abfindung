@@ -93,12 +93,12 @@ export default function CookieBanner() {
         <div className="fixed bottom-0 left-0 right-0 z-[9999] bg-white border-t border-border shadow-[0_-4px_24px_rgba(0,0,0,0.1)] p-6 px-8">
           <div className="max-w-content mx-auto flex items-start gap-6 flex-wrap max-md:flex-col max-md:gap-4">
             <div className="flex-1 min-w-[300px]">
-              <p className="text-[0.95rem] font-bold mb-1.5">We value your privacy</p>
+              <p className="text-[0.95rem] font-bold mb-1.5">Cookie-Hinweis</p>
               <p className="text-[0.84rem] text-ink-muted leading-relaxed m-0">
-                We use cookies to analyze website traffic and optimize your experience. Analytics and
-                marketing cookies are only set with your consent.{' '}
+                Wir verwenden Cookies um die Nutzererfahrung zu verbessern. Analyse- und
+                Marketing-Cookies werden nur mit Ihrer Zustimmung gesetzt.{' '}
                 <a href="/privacy-policy" className="text-gold-dark underline">
-                  Privacy Policy
+                  Datenschutzerklärung
                 </a>
               </p>
             </div>
@@ -107,13 +107,13 @@ export default function CookieBanner() {
                 onClick={acceptAll}
                 className="py-2.5 px-[22px] rounded-sm text-[0.85rem] font-semibold cursor-pointer border-none font-sans transition-all bg-gold-dark text-white hover:bg-[#635428] max-md:flex-1"
               >
-                Accept All
+                Akzeptieren
               </button>
               <button
                 onClick={rejectOptional}
                 className="py-2.5 px-[22px] rounded-sm text-[0.85rem] font-semibold cursor-pointer font-sans transition-all bg-transparent text-ink-light border border-border hover:border-gold hover:text-gold max-md:flex-1"
               >
-                Necessary Only
+                Ablehnen
               </button>
               <button
                 onClick={() => {
@@ -122,7 +122,7 @@ export default function CookieBanner() {
                 }}
                 className="bg-none border-none text-ink-muted text-[0.82rem] cursor-pointer underline p-0 hover:text-gold"
               >
-                Customize
+                Anpassen
               </button>
             </div>
           </div>
@@ -136,16 +136,17 @@ export default function CookieBanner() {
           onClick={(e) => e.target === e.currentTarget && setShowModal(false)}
         >
           <div className="bg-white rounded max-w-[560px] w-full max-h-[80vh] overflow-y-auto p-8 max-md:mx-4 max-md:p-6">
-            <p className="font-serif text-[1.2rem] font-bold mb-4">Cookie Settings</p>
+            <p className="font-serif text-[1.2rem] font-bold mb-4">Cookie-Einstellungen</p>
             <p className="text-[0.88rem] text-ink-muted mb-5">
-              Choose which cookies you want to allow. You can change these settings at any time.
+              Wählen Sie, welche Cookies Sie zulassen möchten. Sie können diese Einstellungen jederzeit
+              ändern.
             </p>
 
             <div className="py-4 border-b border-border">
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-[0.92rem] font-semibold m-0">Strictly Necessary</p>
-                  <span className="text-[0.78rem] text-ink-muted">Always active</span>
+                  <p className="text-[0.92rem] font-semibold m-0">Technisch notwendig</p>
+                  <span className="text-[0.78rem] text-ink-muted">Immer aktiv</span>
                 </div>
                 <label className="cookie-toggle">
                   <input type="checkbox" checked disabled />
@@ -153,14 +154,14 @@ export default function CookieBanner() {
                 </label>
               </div>
               <p className="text-[0.82rem] text-ink-muted mt-1.5 leading-relaxed">
-                Essential for the website to function. These cookies do not store any personally
-                identifiable information.
+                Für die Grundfunktionen der Website erforderlich. Diese Cookies speichern keine
+                personenbezogenen Daten.
               </p>
             </div>
 
             <div className="py-4 border-b border-border">
               <div className="flex justify-between items-center">
-                <p className="text-[0.92rem] font-semibold m-0">Analytics (Google Analytics)</p>
+                <p className="text-[0.92rem] font-semibold m-0">Analyse (Google Analytics)</p>
                 <label className="cookie-toggle">
                   <input
                     type="checkbox"
@@ -171,8 +172,8 @@ export default function CookieBanner() {
                 </label>
               </div>
               <p className="text-[0.82rem] text-ink-muted mt-1.5 leading-relaxed">
-                Help us understand how visitors interact with our website. Data is anonymized. Provider:
-                Google Ireland Limited.
+                Helfen uns zu verstehen, wie Besucher unsere Website nutzen. Daten werden anonymisiert.
+                Anbieter: Google Ireland Limited.
               </p>
             </div>
 
@@ -189,8 +190,8 @@ export default function CookieBanner() {
                 </label>
               </div>
               <p className="text-[0.82rem] text-ink-muted mt-1.5 leading-relaxed">
-                Used to track visitor interactions and measure communication effectiveness. Provider: Brevo
-                SAS (France, EU).
+                Werden verwendet, um Besucherinteraktionen zu verfolgen und die Wirksamkeit unserer
+                Kommunikation zu messen. Anbieter: Brevo SAS (Frankreich, EU).
               </p>
             </div>
 
@@ -199,13 +200,13 @@ export default function CookieBanner() {
                 onClick={saveCustom}
                 className="flex-1 py-2.5 px-[22px] rounded-sm text-[0.85rem] font-semibold cursor-pointer font-sans transition-all bg-transparent text-ink-light border border-border hover:border-gold hover:text-gold"
               >
-                Save Preferences
+                Auswahl speichern
               </button>
               <button
                 onClick={acceptAll}
                 className="flex-1 py-2.5 px-[22px] rounded-sm text-[0.85rem] font-semibold cursor-pointer border-none font-sans transition-all bg-gold-dark text-white hover:bg-[#635428]"
               >
-                Accept All
+                Alle akzeptieren
               </button>
             </div>
           </div>
