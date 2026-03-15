@@ -38,24 +38,39 @@ const faqs = [
 
 const subpages = [
   {
-    href: '/aufhebungsvertrag-abfindung/',
+    href: '/aufhebungsvertrag/aufhebungsvertrag-abfindung/',
     title: 'Abfindung im Aufhebungsvertrag',
     desc: 'Wie hoch sollte die Abfindung sein? Verhandlungstipps und Berechnungsbeispiele.',
   },
   {
-    href: '/aufhebungsvertrag-ablehnen/',
+    href: '/aufhebungsvertrag/aufhebungsvertrag-ablehnen/',
     title: 'Aufhebungsvertrag ablehnen',
     desc: 'Wann Sie ablehnen sollten und welche Konsequenzen das hat.',
   },
   {
-    href: '/aufhebungsvertrag-sperrzeit/',
+    href: '/aufhebungsvertrag/aufhebungsvertrag-sperrzeit/',
     title: 'Sperrzeit vermeiden',
     desc: 'So formulieren Sie den Aufhebungsvertrag, dass keine Sperrzeit droht.',
   },
   {
-    href: '/aufhebungsvertrag-muster/',
+    href: '/aufhebungsvertrag/aufhebungsvertrag-muster/',
     title: 'Aufhebungsvertrag Muster & Checkliste',
-    desc: 'Worauf Sie achten müssen \u2014 Punkt für Punkt.',
+    desc: 'Worauf Sie achten m\u00FCssen \u2014 Punkt f\u00FCr Punkt.',
+  },
+  {
+    href: '/aufhebungsvertrag/aufhebungsvertrag-widerruf/',
+    title: 'Aufhebungsvertrag widerrufen',
+    desc: 'Ist ein Widerruf m\u00F6glich? Anfechtung und Ihre Optionen.',
+  },
+  {
+    href: '/aufhebungsvertrag/aufhebungsvertrag-zeugnis/',
+    title: 'Aufhebungsvertrag und Zeugnis',
+    desc: 'Worauf Sie bei der Zeugnisklausel achten m\u00FCssen.',
+  },
+  {
+    href: '/aufhebungsvertrag/aufhebungsvertrag-vor-nachteile/',
+    title: 'Vor- und Nachteile',
+    desc: 'Alle Vor- und Nachteile eines Aufhebungsvertrags im \u00DCberblick.',
   },
 ];
 

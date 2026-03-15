@@ -127,6 +127,36 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
             </ul>
           </div>
           <div>
+            <div className="text-white/80 font-semibold text-[0.78rem] uppercase tracking-wider mb-2">Aufhebungsvertrag</div>
+            <ul className="list-none flex flex-col gap-1.5">
+              <li>
+                <Link href="/aufhebungsvertrag/aufhebungsvertrag-abfindung/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Abfindung
+                </Link>
+              </li>
+              <li>
+                <Link href="/aufhebungsvertrag/aufhebungsvertrag-sperrzeit/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Sperrzeit
+                </Link>
+              </li>
+              <li>
+                <Link href="/aufhebungsvertrag/aufhebungsvertrag-ablehnen/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Ablehnen
+                </Link>
+              </li>
+              <li>
+                <Link href="/aufhebungsvertrag/aufhebungsvertrag-widerruf/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Widerruf
+                </Link>
+              </li>
+              <li>
+                <Link href="/aufhebungsvertrag" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Alle anzeigen
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
             <div className="text-white/80 font-semibold text-[0.78rem] uppercase tracking-wider mb-2">Tools</div>
             <ul className="list-none flex flex-col gap-1.5">
               <li>

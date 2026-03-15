@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { entries } from '@/lib/betriebszugehoerigkeit';
 import { abmahnungEntries } from '@/lib/abmahnung-content';
 import { lebenssituationData } from '@/lib/lebenssituation-data';
+import { aufhebungsvertragData } from '@/lib/aufhebungsvertrag-data';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
@@ -47,5 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages];
+  const clusterJPages: MetadataRoute.Sitemap = aufhebungsvertragData.map((e) => ({
+    url: `${BASE_URL}/aufhebungsvertrag/${e.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages, ...clusterJPages];
 }
