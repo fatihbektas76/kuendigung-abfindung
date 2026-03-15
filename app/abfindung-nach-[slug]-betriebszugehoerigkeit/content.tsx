@@ -3,12 +3,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
+import DejureText from '@/components/DejureText';
 
 type Props = {
   entry: BetriebsEntry;
   prev: BetriebsEntry | null;
   next: BetriebsEntry | null;
   faqs: { q: string; a: string }[];
+  uniqueIntro: string;
+  fallkonstellation: string;
+  praxistipp: string;
+  bagUrteil: { aktenzeichen: string; kurzbeschreibung: string; relevanz: string };
 };
 
 const salaries = [
@@ -20,7 +25,7 @@ const salaries = [
 const fmt = (n: number) =>
   n.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
-export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props) {
+export default function AbfindungJahreContent({ entry, prev, next, faqs, uniqueIntro, fallkonstellation, praxistipp, bagUrteil }: Props) {
   const [gehalt, setGehalt] = useState('3500');
   const [jahre, setJahre] = useState(String(entry.year));
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
@@ -34,7 +39,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
 
   return (
     <main className="pb-20">
-      {/* ───── 1. Header ───── */}
+      {/* ───── a. Header ───── */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
           <nav className="text-[0.84rem] text-ink-muted mb-6">
@@ -51,16 +56,12 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
             Abfindung nach {entry.word} {entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit
           </h1>
           <p className="text-[1.05rem] text-ink-light max-w-[640px] leading-relaxed mt-4">
-            Die gesetzliche Kündigungsfrist beträgt nach {yl} Betriebszugehörigkeit{' '}
-            <strong>{entry.kuendigungsfrist}</strong>. Als Abfindung könnten zwischen{' '}
-            <strong>{(0.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} bis{' '}
-            {(1.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} Monatsgehälter</strong> bezahlt
-            werden. Die meisten Kündigungen sind unwirksam &mdash; das gibt Ihnen eine starke Verhandlungsposition.
+            <DejureText text={uniqueIntro} />
           </p>
         </div>
       </div>
 
-      {/* ───── 2. Warning Box ───── */}
+      {/* ───── b. Warning Box ───── */}
       <section className="py-8 px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="flex items-start gap-4 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold">
@@ -81,7 +82,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 3. Calculator ───── */}
+      {/* ───── c/d/e. Calculator + Social Proof + Disclaimer ───── */}
       <section className="py-[50px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[600px]">
@@ -140,11 +141,13 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
               >
                 Abfindung jetzt kostenlos prüfen lassen &mdash; Antwort in 24h &rarr;
               </a>
+              {/* d. Social proof */}
               <p className="text-[0.78rem] text-ink-muted text-center mt-3">
                 &starf;&starf;&starf;&starf;&starf; 68 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
               </p>
             </div>
 
+            {/* e. Disclaimer */}
             <div className="mt-4 py-3 px-5 border-l-[3px] border-border text-[0.78rem] text-ink-muted leading-relaxed">
               * Bei den angezeigten Beträgen handelt es sich um Erfahrungswerte aus der Praxis
               (0,5&times; bis 1,5&times; Bruttomonatsgehalt &times; Beschäftigungsjahre). Ob und in welcher Höhe eine
@@ -155,7 +158,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 4. Table ───── */}
+      {/* ───── f. Table ───── */}
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
@@ -200,21 +203,66 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 5. Text Block ───── */}
+      {/* ───── g. Fallkonstellation ───── */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <h3 className="font-serif text-[1.3rem] font-bold mb-3">Die meisten Kündigungen sind unwirksam!</h3>
-            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Sehr viele Kündigungen sind unwirksam. Daher haben Sie sehr gute Chancen gegen die Kündigung
               erfolgreich vorzugehen. Wird die Kündigung als unwirksam beurteilt, haben Sie Ihren Arbeitsplatz
               gerettet &mdash; oder der Arbeitgeber zahlt eine deutlich höhere Abfindung.
+            </p>
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+              Praxisbeispiel
+            </div>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              <DejureText text={fallkonstellation} />
             </p>
           </div>
         </div>
       </section>
 
-      {/* ───── 6. 3 Schritte ───── */}
+      {/* ───── h. Praxistipp ───── */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px] py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+              Praxistipp
+            </div>
+            <p className="text-[0.95rem] text-ink leading-relaxed m-0">
+              <DejureText text={praxistipp} />
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── i. BAG-Urteil ───── */}
+      {bagUrteil.aktenzeichen && (
+        <section className="py-8 px-8 bg-white">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-[740px] rounded overflow-hidden">
+              <div className="bg-[#1C1408] p-6 border-t-[3px] border-gold">
+                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold mb-2">
+                  Relevante Rechtsprechung
+                </div>
+                <div className="font-serif text-[1.15rem] font-bold text-white mb-3">
+                  BAG &mdash; Az. {bagUrteil.aktenzeichen}
+                </div>
+                <p className="text-[0.92rem] text-white/80 leading-relaxed mb-3">
+                  <DejureText text={bagUrteil.kurzbeschreibung} />
+                </p>
+                <p className="text-[0.84rem] text-gold leading-relaxed m-0">
+                  <strong>Relevanz:</strong>{' '}
+                  <DejureText text={bagUrteil.relevanz} />
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ───── j. 3 Schritte ───── */}
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
@@ -261,7 +309,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 7. Urgency CTA ───── */}
+      {/* ───── k. Urgency CTA ───── */}
       <section className="py-[50px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="flex items-center justify-between gap-6 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold max-md:flex-col max-md:items-start">
@@ -281,7 +329,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 8. Warum Section ───── */}
+      {/* ───── l. Warum Section ───── */}
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
@@ -345,7 +393,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 9. Trust Bar ───── */}
+      {/* ───── m. Trust Bar ───── */}
       <section className="py-[40px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-4 gap-0 border border-gold rounded-sm overflow-hidden bg-cream max-md:grid-cols-2">
@@ -367,7 +415,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 10. FAQ Accordion ───── */}
+      {/* ───── n. FAQ Accordion ───── */}
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
@@ -397,7 +445,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
                     faqOpen === i ? 'max-h-[500px] pb-[22px]' : 'max-h-0'
                   }`}
                 >
-                  {faq.a}
+                  <DejureText text={faq.a} />
                 </div>
               </div>
             ))}
@@ -405,7 +453,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 11. Internal Navigation ───── */}
+      {/* ───── o. Internal Navigation ───── */}
       <section className="py-[50px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="flex flex-wrap gap-3">
@@ -438,12 +486,6 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
               Abfindungsrechner
             </Link>
             <Link
-              href={`/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`}
-              className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all"
-            >
-              Gekündigt nach {entry.year} {entry.year === 1 ? 'Jahr' : 'Jahren'}
-            </Link>
-            <Link
               href="/aufhebungsvertrag"
               className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all"
             >
@@ -453,7 +495,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 12. Final CTA Hero ───── */}
+      {/* ───── p. Final CTA Hero ───── */}
       <section className="py-[80px] px-8 bg-[#1C1408] text-white">
         <div className="max-w-content mx-auto text-center">
           <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold mb-4">
@@ -491,7 +533,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs }: Props
         </div>
       </section>
 
-      {/* ───── 13. Sticky CTA Bar ───── */}
+      {/* ───── q. Sticky CTA Bar ───── */}
       <div className="fixed bottom-0 left-0 right-0 z-[9998] bg-[#1C1408] border-t-2 border-gold py-3 px-8">
         <div className="max-w-content mx-auto flex items-center justify-between gap-4">
           <div className="text-white">

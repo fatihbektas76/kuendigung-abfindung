@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { entries, getEntry, yearLabel, generateFaqs } from '@/lib/betriebszugehoerigkeit';
+import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
+import { getContentForYear } from '@/lib/generated-content';
 import AbfindungJahreContent from './content';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
@@ -30,9 +31,20 @@ export default function Page({ params }: Props) {
   const entry = getEntry(params.slug);
   if (!entry) notFound();
 
+  const generated = getContentForYear(entry.year);
   const prev = entries.find((e) => e.year === entry.year - 1);
   const next = entries.find((e) => e.year === entry.year + 1);
-  const faqs = generateFaqs(entry);
+
+  const yl = yearLabel(entry.year);
+  const faqs = generated
+    ? [
+        { q: `Gibt es einen Anspruch auf Abfindung nach ${yl}?`, a: generated.faqAnswers.anspruch },
+        { q: `Was ist meine Kündigungsfrist nach ${yl}?`, a: generated.faqAnswers.kuendigungsfrist },
+        { q: `Wie hoch ist meine Abfindung nach ${yl}?`, a: generated.faqAnswers.hoehe },
+        { q: 'Bekomme ich eine Abfindung als Teilzeitkraft oder Minijobber?', a: generated.faqAnswers.teilzeit },
+        { q: 'Muss ich die Abfindung versteuern?', a: generated.faqAnswers.steuer },
+      ]
+    : [];
 
   return (
     <>
@@ -78,6 +90,10 @@ export default function Page({ params }: Props) {
         prev={prev ?? null}
         next={next ?? null}
         faqs={faqs}
+        uniqueIntro={generated?.uniqueIntro ?? ''}
+        fallkonstellation={generated?.fallkonstellation ?? ''}
+        praxistipp={generated?.praxistipp ?? ''}
+        bagUrteil={generated?.bagUrteil ?? { aktenzeichen: '', kurzbeschreibung: '', relevanz: '' }}
       />
     </>
   );
