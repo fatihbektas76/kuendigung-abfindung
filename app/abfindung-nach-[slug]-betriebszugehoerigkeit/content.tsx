@@ -453,7 +453,29 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs, uniqueI
         </div>
       </section>
 
-      {/* ───── o. Internal Navigation ───── */}
+      {/* ───── o. Cross-link to Gekündigt page ───── */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <Link
+              href={`/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`}
+              className="block py-5 px-6 bg-cream rounded-sm border border-border no-underline hover:border-gold transition-all group"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-1.5">
+                Verwandter Ratgeber
+              </div>
+              <div className="font-serif text-[1.1rem] font-bold text-ink group-hover:text-gold-dark transition-colors">
+                Gekündigt nach {entry.word} {entry.year === 1 ? 'Jahr' : 'Jahren'}? &rarr;
+              </div>
+              <div className="text-[0.84rem] text-ink-muted mt-1">
+                Sofortmaßnahmen, 3-Wochen-Frist und Ihre Rechte nach {yl} Betriebszugehörigkeit.
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── p. Internal Navigation ───── */}
       <section className="py-[50px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="flex flex-wrap gap-3">

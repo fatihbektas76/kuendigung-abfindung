@@ -23,5 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...clusterAPages];
+  const clusterDPages: MetadataRoute.Sitemap = entries.map((e) => ({
+    url: `${BASE_URL}/gekuendigt-nach-${e.slug}-betriebszugehoerigkeit`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...clusterAPages, ...clusterDPages];
 }

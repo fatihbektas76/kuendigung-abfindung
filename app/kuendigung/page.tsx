@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { entries } from '@/lib/betriebszugehoerigkeit';
 import FaqAccordion from '@/components/FaqAccordion';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
@@ -197,31 +198,21 @@ export default function KuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Nach Betriebszugehörigkeit
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
             Gekündigt nach Jahren im Betrieb
           </h2>
-          <div className="grid grid-cols-2 gap-4 max-w-[740px] max-md:grid-cols-1">
-            {[
-              { y: 1, slug: 'einem-jahr' },
-              { y: 2, slug: 'zwei-jahren' },
-              { y: 3, slug: 'drei-jahren' },
-              { y: 4, slug: 'vier-jahren' },
-              { y: 5, slug: 'fuenf-jahren' },
-              { y: 6, slug: 'sechs-jahren' },
-              { y: 7, slug: 'sieben-jahren' },
-              { y: 8, slug: 'acht-jahren' },
-              { y: 9, slug: 'neun-jahren' },
-              { y: 10, slug: 'zehn-jahren' },
-            ].map(({ y, slug }) => (
+          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
+            Wählen Sie Ihre Betriebszugehörigkeit &mdash; wir zeigen Ihnen Ihre Rechte,
+            Kündigungsfristen und Abfindungschancen.
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {entries.map((e) => (
               <Link
-                key={y}
-                href={`/gekuendigt-nach-${slug}-betriebszugehoerigkeit/`}
-                className="block py-4 px-5 bg-white border border-border rounded-sm no-underline text-ink hover:border-gold hover:text-gold-dark transition-all"
+                key={e.year}
+                href={`/gekuendigt-nach-${e.slug}-betriebszugehoerigkeit/`}
+                className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white"
               >
-                <span className="font-semibold">Gekündigt nach {y} {y === 1 ? 'Jahr' : 'Jahren'}</span>
-                <span className="block text-[0.84rem] text-ink-muted mt-1">
-                  Rechte, Fristen und Abfindungschancen
-                </span>
+                {e.year} {e.year === 1 ? 'Jahr' : 'Jahre'}
               </Link>
             ))}
           </div>
