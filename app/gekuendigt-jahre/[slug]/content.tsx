@@ -83,7 +83,7 @@ export default function GekuendigtContent({ entry, prev, next, faqs, uniqueIntro
                 Kündigung jetzt kostenlos prüfen &rarr;
               </a>
               <p className="text-[0.78rem] text-ink-muted text-center mt-3">
-                ★★★★★ 68 Bewertungen &middot; Über 5.000 erfolgreiche Verfahren &middot; Bundesweit
+                ★★★★★ 68 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
               </p>
             </div>
           </div>
@@ -224,13 +224,13 @@ export default function GekuendigtContent({ entry, prev, next, faqs, uniqueIntro
           </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Wir sind auf Kündigungsschutz und Abfindung spezialisiert &mdash; mit über 20 Jahren Erfahrung
-            und mehr als 5.000 erfolgreichen Verfahren.
+            und mehr als 2.000 erfolgreichen Verfahren.
           </p>
           <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">
             {[
               {
                 title: 'Nachweisliche Erfolgsbilanz',
-                desc: 'Über 5.000 erfolgreiche Verfahren, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.',
+                desc: 'Über 2.000 erfolgreiche Verfahren, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.',
                 icon: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>,
               },
               {
@@ -370,7 +370,7 @@ export default function GekuendigtContent({ entry, prev, next, faqs, uniqueIntro
             </span>
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-              Über 5.000 erfolgreiche Verfahren
+              Über 2.000 erfolgreiche Verfahren
             </span>
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
