@@ -32,9 +32,9 @@ export default function AbfindungsrechnerPage() {
     const j = parseInt(jahre, 10);
     if (!g || g <= 0 || !j || j <= 0) return;
     setResult({
-      min: g * 0.25 * j,
+      min: g * 0.5 * j,
       mid: g * 0.5 * j,
-      max: g * 1.0 * j,
+      max: g * 1.5 * j,
     });
   }
 
@@ -170,36 +170,24 @@ export default function AbfindungsrechnerPage() {
             {result && (
               <div className="mt-8">
                 <h2 className="font-serif text-[1.4rem] font-bold mb-5">Ihre geschätzte Abfindung</h2>
-                <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
-                  {/* Minimum */}
+                <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
                   <div className="rounded-sm border border-border p-5 text-center bg-white">
                     <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-2">
-                      Minimum
+                      Unterer Erfahrungswert*
                     </div>
-                    <div className="text-[0.78rem] text-ink-muted mb-1">Faktor 0,25&times;</div>
                     <div className="font-serif text-[1.6rem] font-bold text-ink">
                       {fmt(result.min)}
                     </div>
+                    <div className="text-[0.78rem] text-ink-muted mt-1">Faktor 0,5&times;</div>
                   </div>
-                  {/* Realistisch */}
                   <div className="rounded-sm border-2 border-gold p-5 text-center bg-gold-bg">
                     <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
-                      Realistisch
+                      Oberer Erfahrungswert*
                     </div>
-                    <div className="text-[0.78rem] text-gold-dark mb-1">Faktor 0,5&times;</div>
                     <div className="font-serif text-[1.6rem] font-bold text-gold-dark">
-                      {fmt(result.mid)}
-                    </div>
-                  </div>
-                  {/* Maximum */}
-                  <div className="rounded-sm border border-ink/20 p-5 text-center bg-[#1A1A1A] text-white">
-                    <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-white/60 mb-2">
-                      Maximum
-                    </div>
-                    <div className="text-[0.78rem] text-white/60 mb-1">Faktor 1,0&times;</div>
-                    <div className="font-serif text-[1.6rem] font-bold text-white">
                       {fmt(result.max)}
                     </div>
+                    <div className="text-[0.78rem] text-gold-dark mt-1">Faktor 1,5&times;</div>
                   </div>
                 </div>
                 <p className="text-[0.78rem] text-ink-muted mt-4">

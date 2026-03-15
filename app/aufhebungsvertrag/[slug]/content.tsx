@@ -105,18 +105,14 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
-                <div className="text-center py-4 bg-cream rounded">
-                  <div className="text-[0.72rem] font-bold text-ink-muted uppercase tracking-wider mb-1">Minimum (0,25&times;)</div>
-                  <div className="font-serif text-[1.3rem] font-bold text-ink">{fmt(g * 0.25 * j)}</div>
+              <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+                <div className="text-center py-4 bg-cream rounded border border-border">
+                  <div className="text-[0.72rem] font-bold text-ink-muted uppercase tracking-wider mb-1">Unterer Erfahrungswert (0,5&times;)</div>
+                  <div className="font-serif text-[1.3rem] font-bold text-ink">{fmt(g * 0.5 * j)}</div>
                 </div>
                 <div className="text-center py-4 bg-cream rounded border-2 border-gold">
-                  <div className="text-[0.72rem] font-bold text-gold-dark uppercase tracking-wider mb-1">Regelformel (0,5&times;)</div>
-                  <div className="font-serif text-[1.3rem] font-bold text-gold-dark">{fmt(g * 0.5 * j)}</div>
-                </div>
-                <div className="text-center py-4 bg-cream rounded">
-                  <div className="text-[0.72rem] font-bold text-ink-muted uppercase tracking-wider mb-1">Maximum (1,0&times;)</div>
-                  <div className="font-serif text-[1.3rem] font-bold text-ink">{fmt(g * 1.0 * j)}</div>
+                  <div className="text-[0.72rem] font-bold text-gold-dark uppercase tracking-wider mb-1">Oberer Erfahrungswert (1,5&times;)</div>
+                  <div className="font-serif text-[1.3rem] font-bold text-gold-dark">{fmt(g * 1.5 * j)}</div>
                 </div>
               </div>
               <p className="text-[0.78rem] text-ink-muted mt-4 text-center">
