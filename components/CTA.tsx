@@ -3,22 +3,20 @@ export default function CTA() {
     <section className="py-20 px-8 bg-ink text-center text-white" id="cta">
       <div className="max-w-content mx-auto">
         <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-light mb-2.5">
-          Get Started
+          Jetzt handeln
         </div>
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold text-white mb-3.5">
-          Tell Us About Your Case
+          Kündigung erhalten? Zeit läuft.
         </h2>
         <p className="text-white/65 text-[1.05rem] max-w-[540px] mx-auto mb-8">
-          Send us the details of your dispute — we&rsquo;ll assess the merits, estimate costs, and outline
-          your options. Free of charge, usually within 48 hours.
+          Schildern Sie uns Ihren Fall — wir prüfen kostenlos, ob Ihre Kündigung angreifbar ist und
+          wie hoch Ihre Abfindung sein kann. In der Regel innerhalb von 48 Stunden.
         </p>
         <a
-          href="https://meet.brevo.com/fatih-bektas/initial-free-consultation-by-phone-lp"
+          href="#kontakt"
           className="inline-flex items-center gap-2 px-9 py-4 rounded-sm text-base font-semibold no-underline transition-all bg-gold-dark text-white hover:bg-[#635428] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(166,139,75,0.25)]"
-          target="_blank"
-          rel="noopener noreferrer"
         >
-          Book Free Case Assessment &rarr;
+          Jetzt kostenlos prüfen lassen &rarr;
         </a>
         <div className="flex gap-8 justify-center mt-9 flex-wrap max-md:flex-col max-md:items-center">
           <a
@@ -46,8 +44,8 @@ export default function CTA() {
           </a>
         </div>
         <p className="mt-7 text-[0.85rem] text-white/60 max-w-[500px] mx-auto">
-          Been served with a German lawsuit? Response deadlines are typically 2&ndash;4 weeks. Contact us
-          immediately — we can request extensions while preparing your defense.
+          Sie haben eine Kündigung erhalten? Die Klagefrist beträgt nur 3 Wochen (§4 KSchG).
+          Kontaktieren Sie uns sofort — wir können Fristen wahren, während wir Ihren Fall prüfen.
         </p>
       </div>
     </section>

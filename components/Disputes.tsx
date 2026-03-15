@@ -2,9 +2,9 @@ import FadeUp from './FadeUp';
 
 const disputes = [
   {
-    title: 'Commercial Disputes',
-    badge: 'Core',
-    desc: 'Breach of contract, trade disputes, distributor and agency claims, unfair competition, product liability. We represent you before Landgericht commercial chambers.',
+    title: 'Kündigungsschutzklage',
+    badge: 'Kernleistung',
+    desc: 'Klage gegen unwirksame Kündigung vor dem Arbeitsgericht. 3-Wochen-Frist beachten (§4 KSchG). Betriebsbedingt, personenbedingt, verhaltensbedingt.',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M3 21h18M5 21V7l7-4 7 4v14" />
@@ -14,9 +14,9 @@ const disputes = [
     delay: 0,
   },
   {
-    title: 'Employment Litigation',
-    badge: 'Specialist',
-    desc: 'Wrongful dismissal claims, severance disputes, non-compete enforcement, works council conflicts. Certified specialist attorney (Fachanwalt) since 2011.',
+    title: 'Abfindung verhandeln',
+    badge: 'Kernleistung',
+    desc: 'Durchsetzung angemessener Abfindung. Faustformel: 0,5 Monatsgehälter \u00D7 Betriebszugehörigkeit. Oft deutlich mehr möglich.',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -27,9 +27,9 @@ const disputes = [
     delay: 1,
   },
   {
-    title: 'Contract Enforcement',
-    badge: 'Core',
-    desc: 'Enforcing or defending against claims under German contract law (BGB/HGB). Payment claims, warranty disputes, service agreements, licensing conflicts.',
+    title: 'Aufhebungsvertrag prüfen',
+    badge: 'Kernleistung',
+    desc: 'Prüfung und Verhandlung von Aufhebungsverträgen. Abfindungshöhe, Sperrzeit, Zeugnis, Wettbewerbsverbot, Freistellung.',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -39,9 +39,9 @@ const disputes = [
     delay: 2,
   },
   {
-    title: 'Shareholder Disputes',
-    badge: 'Core',
-    desc: 'Minority shareholder protection, squeeze-outs, breach of fiduciary duties, corporate governance disputes, GmbH and AG shareholder conflicts.',
+    title: 'Fristlose Kündigung',
+    badge: '§626 BGB',
+    desc: 'Prüfung der Rechtmäßigkeit. 2-Wochen-Frist des Arbeitgebers. Die meisten fristlosen Kündigungen scheitern vor Gericht.',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="10" cy="10" r="8" />
@@ -51,9 +51,9 @@ const disputes = [
     delay: 3,
   },
   {
-    title: 'Arbitration',
-    badge: 'ICC \u00B7 DIS \u00B7 LCIA',
-    desc: 'International and domestic arbitration proceedings seated in Germany. ICC, DIS, LCIA rules. Enforcement of foreign arbitral awards under the New York Convention.',
+    title: 'Abmahnung & Vorstufen',
+    badge: 'Prävention',
+    desc: 'Prüfung der Rechtmäßigkeit von Abmahnungen. Formfehler können eine spätere Kündigung zu Fall bringen.',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -62,9 +62,9 @@ const disputes = [
     delay: 0,
   },
   {
-    title: 'Judgment Enforcement',
-    badge: 'Cross-Border',
-    desc: 'Enforcing foreign judgments and arbitral awards in Germany. Exequatur proceedings. Attachment of German assets. Strategies when direct enforcement isn\u2019t available.',
+    title: 'Zeugnis & Abschlussregelungen',
+    badge: 'Abschluss',
+    desc: 'Qualifiziertes Arbeitszeugnis, Resturlaub, Überstunden, Bonusansprüche, Wettbewerbsverbote.',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="2" y="3" width="16" height="14" rx="2" />
@@ -77,17 +77,16 @@ const disputes = [
 
 export default function Disputes() {
   return (
-    <section className="py-[90px] px-8 bg-cream max-md:py-[60px] max-md:px-6" id="disputes">
+    <section className="py-[90px] px-8 bg-cream max-md:py-[60px] max-md:px-6" id="leistungen">
       <div className="max-w-content mx-auto">
         <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-          Disputes We Handle
+          Unsere Leistungen
         </div>
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-[1.25] mb-3.5 max-md:text-2xl">
-          From Demand Letter to Final Judgment — and Everything Between
+          Von der Kündigungsschutzklage bis zur Abfindungsverhandlung
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed">
-          We represent international businesses across the full spectrum of German civil and commercial
-          litigation.
+          Wir vertreten Arbeitnehmer im gesamten Spektrum des Kündigungsschutzrechts.
         </p>
         <div className="grid grid-cols-2 gap-5 mt-10 max-md:grid-cols-1">
           {disputes.map((d) => (
