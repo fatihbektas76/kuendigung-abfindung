@@ -46,7 +46,7 @@ const disputes = [
     title: 'Fristlose Kündigung',
     badge: '§626 BGB',
     desc: 'Prüfung der Rechtmäßigkeit. 2-Wochen-Frist des Arbeitgebers. Die meisten fristlosen Kündigungen scheitern vor Gericht.',
-    href: null,
+    href: '/kuendigung',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="10" cy="10" r="8" />
@@ -59,7 +59,7 @@ const disputes = [
     title: 'Abmahnung & Vorstufen',
     badge: 'Prävention',
     desc: 'Prüfung der Rechtmäßigkeit von Abmahnungen. Formfehler können eine spätere Kündigung zu Fall bringen.',
-    href: null,
+    href: '/kuendigung-nach-einer-abmahnung/',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -71,7 +71,7 @@ const disputes = [
     title: 'Zeugnis & Abschlussregelungen',
     badge: 'Abschluss',
     desc: 'Qualifiziertes Arbeitszeugnis, Resturlaub, Überstunden, Bonusansprüche, Wettbewerbsverbote.',
-    href: null,
+    href: '/aufhebungsvertrag/',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="2" y="3" width="16" height="14" rx="2" />
