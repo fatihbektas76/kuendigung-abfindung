@@ -16,6 +16,10 @@ const nextConfig = {
         source: '/kuendigung-nach-:slug/',
         destination: '/abmahnung-seiten/:slug/',
       },
+      {
+        source: '/fristlose-kuendigung-nach-:slug-betriebszugehoerigkeit/',
+        destination: '/fristlose-kuendigung-jahre/:slug/',
+      },
     ];
   },
 };

@@ -1,0 +1,500 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
+import DejureText from '@/components/DejureText';
+
+type Props = {
+  entry: BetriebsEntry;
+  prev: BetriebsEntry | null;
+  next: BetriebsEntry | null;
+  faqs: { q: string; a: string }[];
+  uniqueIntro: string;
+  rechtlicheVoraussetzungen: string;
+  fallkonstellation: string;
+  praxistipp: string;
+  bagUrteil: { aktenzeichen: string; kurzbeschreibung: string; relevanz: string };
+};
+
+const fmt = (n: number) =>
+  n.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 });
+
+export default function FristlosContent({ entry, prev, next, faqs, uniqueIntro, rechtlicheVoraussetzungen, fallkonstellation, praxistipp, bagUrteil }: Props) {
+  const [gehalt, setGehalt] = useState('3500');
+  const [jahre, setJahre] = useState(String(entry.year));
+  const [faqOpen, setFaqOpen] = useState<number | null>(null);
+
+  const g = parseFloat(gehalt.replace(/\./g, '').replace(',', '.')) || 0;
+  const j = parseInt(jahre, 10) || 0;
+  const lower = g * 0.5 * j;
+  const upper = g * 1.5 * j;
+
+  const yl = entry.year === 1 ? '1 Jahr' : `${entry.year} Jahren`;
+
+  return (
+    <main className="pb-20">
+      {/* ───── a. Header ───── */}
+      <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
+        <div className="max-w-content mx-auto">
+          <nav className="text-[0.84rem] text-ink-muted mb-6">
+            <Link href="/" className="text-gold no-underline hover:underline">Startseite</Link>
+            <span className="mx-2">/</span>
+            <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigung</Link>
+            <span className="mx-2">/</span>
+            <span>Fristlose Kündigung nach {yl}</span>
+          </nav>
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+            Fristlose Kündigung &middot; Betriebszugehörigkeit
+          </div>
+          <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
+            Fristlose Kündigung nach {entry.word} {entry.year === 1 ? 'Jahr' : 'Jahren'} &mdash; wirksam oder nicht?
+          </h1>
+          <p className="text-[1.05rem] text-ink-light max-w-[640px] leading-relaxed mt-4">
+            <DejureText text={uniqueIntro} />
+          </p>
+        </div>
+      </div>
+
+      {/* ───── b. Warning Box ───── */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="flex items-start gap-4 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold">
+            <svg className="min-w-[24px] text-gold mt-0.5" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path d="M12 2L1 21h22L12 2z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+              <path d="M12 9v4M12 17h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+            <div>
+              <p className="text-[0.95rem] font-semibold text-ink m-0">
+                1 Woche Frist bei Formfehlern! Bei fristloser Kündigung sofort handeln.
+              </p>
+              <p className="text-[0.84rem] text-ink-muted mt-1 m-0">
+                Klagefrist: 3 Wochen ab Zugang. Jeder Tag zählt &mdash; kontaktieren Sie sofort einen Fachanwalt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── c. Abfindungsrechner ───── */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[600px]">
+            <div className="border-[1.5px] border-gold rounded bg-cream p-8">
+              <h2 className="font-serif text-[1.4rem] font-bold mb-5">Wie hoch könnte Ihre Abfindung sein?</h2>
+              <div className="grid grid-cols-2 gap-4 mb-6 max-md:grid-cols-1">
+                <div>
+                  <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+                    Bruttomonatsgehalt (&euro;)
+                  </label>
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    value={gehalt}
+                    onChange={(e) => setGehalt(e.target.value)}
+                    className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+                    Betriebszugehörigkeit (Jahre)
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="40"
+                    value={jahre}
+                    onChange={(e) => setJahre(e.target.value)}
+                    className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]"
+                  />
+                </div>
+              </div>
+
+              {g > 0 && j > 0 && (
+                <div className="grid grid-cols-2 gap-4 mb-6 max-md:grid-cols-1">
+                  <div className="rounded-sm border border-border p-5 text-center bg-white">
+                    <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-1">
+                      Unterer Erfahrungswert*
+                    </div>
+                    <div className="font-serif text-[1.6rem] font-bold text-ink">{fmt(lower)}</div>
+                    <div className="text-[0.78rem] text-ink-muted mt-1">Faktor 0,5&times;</div>
+                  </div>
+                  <div className="rounded-sm border-2 border-gold p-5 text-center bg-gold-bg">
+                    <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-1">
+                      Oberer Erfahrungswert*
+                    </div>
+                    <div className="font-serif text-[1.6rem] font-bold text-gold-dark">{fmt(upper)}</div>
+                    <div className="text-[0.78rem] text-gold-dark mt-1">Faktor 1,5&times;</div>
+                  </div>
+                </div>
+              )}
+
+              <a
+                href="/#kontakt"
+                className="block w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
+              >
+                Fristlose Kündigung jetzt prüfen lassen &rarr;
+              </a>
+              <p className="text-[0.78rem] text-ink-muted text-center mt-3">
+                ★★★★★ 68 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
+              </p>
+            </div>
+
+            <div className="mt-4 py-3 px-5 border-l-[3px] border-border text-[0.78rem] text-ink-muted leading-relaxed">
+              * Bei den angezeigten Beträgen handelt es sich um Erfahrungswerte aus der Praxis
+              (0,5&times; bis 1,5&times; Bruttomonatsgehalt &times; Beschäftigungsjahre). Ob und in welcher Höhe eine
+              Abfindung erzielt werden kann, ist immer vom Einzelfall abhängig.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── d. CTA #1 ───── */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[600px]">
+            <div className="border-[1.5px] border-gold rounded bg-cream p-8 text-center">
+              <h2 className="font-serif text-[1.4rem] font-bold mb-4">Fristlose Kündigung prüfen lassen</h2>
+              <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
+                Die meisten fristlosen Kündigungen sind unwirksam. Wir prüfen Ihren Fall kostenlos
+                und geben Ihnen innerhalb von 24 Stunden eine Ersteinschätzung.
+              </p>
+              <a
+                href="/#kontakt"
+                className="block w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
+              >
+                Jetzt kostenlos prüfen lassen &rarr;
+              </a>
+              <p className="text-[0.78rem] text-ink-muted text-center mt-3">
+                ★★★★★ 68 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── e. Rechtliche Voraussetzungen ───── */}
+      <section className="py-[60px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Rechtliche Grundlagen
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+              Voraussetzungen der fristlosen Kündigung nach &sect;626 BGB
+            </h2>
+            <div className="py-5 px-6 bg-white rounded-sm border-l-[3px] border-gold">
+              <p className="text-[0.95rem] text-ink leading-relaxed m-0">
+                <DejureText text={rechtlicheVoraussetzungen} />
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── f. Fallkonstellation ───── */}
+      <section className="py-[60px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+              Praxisbeispiel
+            </div>
+            <h3 className="font-serif text-[1.3rem] font-bold mb-3">So kann Ihr Fall ausgehen</h3>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              <DejureText text={fallkonstellation} />
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── g. Praxistipp ───── */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px] py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+              Praxistipp
+            </div>
+            <p className="text-[0.95rem] text-ink leading-relaxed m-0">
+              <DejureText text={praxistipp} />
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── h. BAG-Urteil ───── */}
+      {bagUrteil.aktenzeichen && (
+        <section className="py-8 px-8 bg-white">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-[740px] rounded overflow-hidden">
+              <div className="bg-[#1C1408] p-6 border-t-[3px] border-gold">
+                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold mb-2">
+                  Relevante Rechtsprechung
+                </div>
+                <div className="font-serif text-[1.15rem] font-bold text-white mb-3">
+                  BAG &mdash; Az. {bagUrteil.aktenzeichen}
+                </div>
+                <p className="text-[0.92rem] text-white/80 leading-relaxed mb-3">
+                  <DejureText text={bagUrteil.kurzbeschreibung} />
+                </p>
+                <p className="text-[0.84rem] text-gold leading-relaxed m-0">
+                  <strong>Relevanz:</strong>{' '}
+                  <DejureText text={bagUrteil.relevanz} />
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ───── i. 3 Schritte ───── */}
+      <section className="py-[70px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+            Wie ist der Ablauf?
+          </div>
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-8">
+            In 3 einfachen Schritten Ihre Rechte sichern!
+          </h2>
+          <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">
+            {[
+              { step: 1, title: 'Sofort-Check', desc: 'Schildern Sie uns Ihren Fall über das Kontaktformular. Wir prüfen Ihre fristlose Kündigung kostenlos und geben Ihnen innerhalb von 24 Stunden eine Ersteinschätzung.' },
+              { step: 2, title: 'Termin vereinbaren', desc: 'In einem persönlichen Gespräch besprechen wir Ihre Optionen: Kündigungsschutzklage, Abfindungsverhandlung oder Weiterbeschäftigung. Sie entscheiden.' },
+              { step: 3, title: 'Kanzlei beauftragen', desc: 'Wir übernehmen die gesamte Korrespondenz, reichen fristgerecht Klage ein und verhandeln Ihre Abfindung. Sie lehnen sich zurück.' },
+            ].map((s) => (
+              <div key={s.step} className="bg-white border border-border rounded p-6">
+                <div className="w-10 h-10 rounded-sm border-2 border-gold flex items-center justify-center font-serif text-[1.1rem] font-bold text-gold-dark mb-4">
+                  {s.step}
+                </div>
+                <h3 className="font-serif text-[1.05rem] font-bold mb-2">{s.title}</h3>
+                <p className="text-[0.88rem] text-ink-muted leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <a
+              href="/#kontakt"
+              className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
+            >
+              Fristlose Kündigung kostenlos prüfen lassen &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── j. CTA #2 ───── */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="flex items-center justify-between gap-6 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold max-md:flex-col max-md:items-start">
+            <div>
+              <p className="text-[1rem] font-semibold text-ink m-0">Fristlose Kündigung? Sofort handeln.</p>
+              <p className="text-[0.84rem] text-ink-muted mt-1 m-0">Klagefrist läuft &mdash; jeder Tag zählt. Kostenlose Ersteinschätzung.</p>
+            </div>
+            <a
+              href="/#kontakt"
+              className="inline-block py-3 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold no-underline whitespace-nowrap transition-all hover:bg-[#635428]"
+            >
+              Jetzt kontaktieren &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── k. Warum Section ───── */}
+      <section className="py-[70px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+            Warum Sie unsere Kanzlei beauftragen sollten!
+          </h2>
+          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
+            Wir sind auf Kündigungsschutz und Abfindung spezialisiert &mdash; mit über 20 Jahren Erfahrung
+            und mehr als 2.000 erfolgreichen Verfahren.
+          </p>
+          <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">
+            {[
+              {
+                title: 'Nachweisliche Erfolgsbilanz',
+                desc: 'Über 2.000 erfolgreiche Verfahren, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.',
+                icon: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>,
+              },
+              {
+                title: 'Einfach & Transparent',
+                desc: 'Klare Kommunikation, keine versteckten Kosten. Sie wissen jederzeit, was passiert und was es kostet. Ersteinschätzung immer kostenlos.',
+                icon: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
+              },
+              {
+                title: 'Einfacher Prozess: Sofort-Check',
+                desc: 'Formular ausfüllen, Kündigung hochladen, Ersteinschätzung in 24 Stunden erhalten. Alles digital, schnell und unkompliziert.',
+                icon: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>,
+              },
+            ].map((card) => (
+              <div key={card.title} className="bg-white border border-border rounded overflow-hidden flex">
+                <div className="w-[56px] min-w-[56px] bg-gold flex items-center justify-center text-white">{card.icon}</div>
+                <div className="p-5">
+                  <h3 className="font-serif text-[1rem] font-bold mb-2">{card.title}</h3>
+                  <p className="text-[0.84rem] text-ink-muted leading-relaxed">{card.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── l. Trust Bar ───── */}
+      <section className="py-[40px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="grid grid-cols-4 gap-0 border border-gold rounded-sm overflow-hidden bg-cream max-md:grid-cols-2">
+            {[
+              { value: '5.000+', label: 'Beratungen' },
+              { value: '2.000+', label: 'Verfahren' },
+              { value: '20+', label: 'Jahre Erfahrung' },
+              { value: '5,0 \u2605', label: 'Bewertung' },
+            ].map((stat, i) => (
+              <div
+                key={stat.label}
+                className={`text-center py-5 px-4${i < 3 ? ' border-r border-gold/30 max-md:border-r-0' : ''}${i < 2 ? ' max-md:border-b max-md:border-gold/30' : ''}`}
+              >
+                <div className="font-serif text-[1.3rem] font-bold text-gold-dark">{stat.value}</div>
+                <div className="text-[0.78rem] text-ink-muted mt-0.5">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── m. FAQ Accordion ───── */}
+      <section className="py-[70px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+            Häufige Fragen
+          </div>
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            Fragen zur fristlosen Kündigung nach {yl}
+          </h2>
+          <div className="max-w-[740px]">
+            {faqs.map((faq, i) => (
+              <div key={i} className="border-b border-border">
+                <button
+                  className="w-full bg-none border-none cursor-pointer py-[22px] font-sans text-base font-semibold text-ink text-left flex justify-between items-center gap-4 hover:text-gold transition-colors"
+                  onClick={() => setFaqOpen(faqOpen === i ? null : i)}
+                >
+                  {faq.q}
+                  <span className={`text-[0.9rem] text-ink-muted min-w-[20px] text-center transition-transform ${faqOpen === i ? 'rotate-180' : ''}`}>
+                    &#9660;
+                  </span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-400 text-[0.92rem] text-ink-light leading-relaxed ${faqOpen === i ? 'max-h-[500px] pb-[22px]' : 'max-h-0'}`}>
+                  <DejureText text={faq.a} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── n. Cross-links ───── */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px] grid grid-cols-2 gap-4 max-md:grid-cols-1">
+            <Link
+              href={`/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`}
+              className="block py-6 px-6 bg-cream border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+                Abfindung berechnen
+              </div>
+              <span className="font-serif text-[1.05rem] font-bold">
+                Abfindung nach {yl}
+              </span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">
+                Tabelle, Rechner und Verhandlungstipps &rarr;
+              </span>
+            </Link>
+            <Link
+              href={`/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`}
+              className="block py-6 px-6 bg-cream border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+                Sofortmaßnahmen
+              </div>
+              <span className="font-serif text-[1.05rem] font-bold">
+                Gekündigt nach {yl}
+              </span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">
+                Was jetzt zu tun ist &rarr;
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── o. Internal Navigation ───── */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="flex flex-wrap gap-3">
+            {prev && (
+              <Link href={`/fristlose-kuendigung-nach-${prev.slug}-betriebszugehoerigkeit/`} className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+                &larr; {prev.year} {prev.year === 1 ? 'Jahr' : 'Jahre'}
+              </Link>
+            )}
+            {next && (
+              <Link href={`/fristlose-kuendigung-nach-${next.slug}-betriebszugehoerigkeit/`} className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+                {next.year} Jahre &rarr;
+              </Link>
+            )}
+            <Link href="/fristlose-kuendigung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+              Fristlose Kündigung Übersicht
+            </Link>
+            <Link href="/kuendigung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+              Kündigung Übersicht
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── p. Final CTA Hero ───── */}
+      <section className="py-[80px] px-8 bg-[#1C1408] text-white">
+        <div className="max-w-content mx-auto text-center">
+          <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold mb-4">
+            Jetzt kostenlose Erstberatung sichern
+          </h2>
+          <p className="text-white/60 text-[0.92rem] mb-6">
+            ★★★★★ &middot; 5,0 &middot; 68 Bewertungen auf anwalt.de
+          </p>
+          <div className="flex justify-center gap-6 mb-8 text-[0.88rem] text-white/80 flex-wrap">
+            <span className="flex items-center gap-2">
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+              Kostenlose Erstberatung
+            </span>
+            <span className="flex items-center gap-2">
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+              Über 2.000 erfolgreiche Verfahren
+            </span>
+            <span className="flex items-center gap-2">
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+              Rückruf innerhalb 24h
+            </span>
+          </div>
+          <a
+            href="/#kontakt"
+            className="inline-block py-4 px-10 bg-gold text-white border-none rounded-sm font-sans text-[1.05rem] font-semibold no-underline transition-all hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.35)]"
+          >
+            Fristlose Kündigung kostenlos prüfen lassen &rarr;
+          </a>
+        </div>
+      </section>
+
+      {/* ───── q. Sticky CTA Bar ───── */}
+      <div className="fixed bottom-0 left-0 right-0 z-[9998] bg-[#1C1408] border-t-2 border-gold py-3 px-8">
+        <div className="max-w-content mx-auto flex items-center justify-between gap-4">
+          <div className="text-white">
+            <span className="font-semibold text-[0.92rem]">Fristlose Kündigung prüfen lassen</span>
+            <span className="text-white/50 text-[0.78rem] ml-2 max-md:hidden">Kostenlos &middot; Antwort in 24h</span>
+          </div>
+          <a href="/#kontakt" className="inline-block py-2.5 px-6 bg-gold text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline whitespace-nowrap transition-all hover:bg-gold-dark">
+            Jetzt prüfen &rarr;
+          </a>
+        </div>
+      </div>
+    </main>
+  );
+}

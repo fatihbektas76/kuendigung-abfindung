@@ -220,8 +220,35 @@ export default function KuendigungPage() {
         </div>
       </section>
 
-      {/* Kündigung nach Ihrer Situation */}
+      {/* Fristlose Kündigung nach Jahren */}
       <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+            Fristlose Kündigung
+          </div>
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+            Fristlose Kündigung nach Jahren im Betrieb
+          </h2>
+          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
+            Fristlos gekündigt? Die meisten fristlosen Kündigungen sind unwirksam. Wählen Sie Ihre
+            Betriebszugehörigkeit für eine Einschätzung Ihrer Chancen.
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {entries.map((e) => (
+              <Link
+                key={`fristlos-${e.year}`}
+                href={`/fristlose-kuendigung-nach-${e.slug}-betriebszugehoerigkeit/`}
+                className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-cream"
+              >
+                {e.year} {e.year === 1 ? 'Jahr' : 'Jahre'}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Kündigung nach Ihrer Situation */}
+      <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Nach Ihrer Situation
