@@ -7,9 +7,10 @@ import Tools from '@/components/Tools';
 import AttorneyProfile from '@/components/AttorneyProfile';
 import TeamTeaser from '@/components/TeamTeaser';
 import FAQ from '@/components/FAQ';
-import BlogPreview from '@/components/BlogPreview';
 import ContactForm from '@/components/ContactForm';
 import CTA from '@/components/CTA';
+
+const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export default function Home() {
   return (
@@ -21,17 +22,17 @@ export default function Home() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': ['LegalService', 'Organization'],
-            '@id': 'https://www.german-litigation-lawyer.com/#organization',
-            name: 'APOS Legal',
+            '@id': `${BASE_URL}/#organization`,
+            name: 'APOS Legal – Kündigung & Abfindung',
             legalName: 'APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG',
-            url: 'https://www.german-litigation-lawyer.com',
+            url: BASE_URL,
             logo: {
               '@type': 'ImageObject',
-              url: 'https://www.german-litigation-lawyer.com/logo.png',
+              url: `${BASE_URL}/logo.png`,
             },
-            image: 'https://www.german-litigation-lawyer.com/Fatih.png',
+            image: `${BASE_URL}/Fatih.png`,
             description:
-              'English-speaking German litigation law firm representing US and UK companies in German courts and arbitration proceedings.',
+              'Fachanwalt für Arbeitsrecht – spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren. Kostenlose Ersteinschätzung.',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Am Paradeplatz 20',
@@ -51,8 +52,8 @@ export default function Home() {
               'https://apos.legal',
               'https://www.anwalt.de/bektas',
             ],
-            areaServed: ['US', 'GB', 'EU'],
-            availableLanguage: ['English', 'German', 'Turkish'],
+            areaServed: 'DE',
+            availableLanguage: ['German', 'English', 'Turkish'],
             priceRange: '$$',
             aggregateRating: {
               '@type': 'AggregateRating',
@@ -64,66 +65,66 @@ export default function Home() {
             },
             hasOfferCatalog: {
               '@type': 'OfferCatalog',
-              name: 'German Litigation Services',
+              name: 'Leistungen Kündigung & Abfindung',
               itemListElement: [
                 {
                   '@type': 'Offer',
                   itemOffered: {
                     '@type': 'LegalService',
-                    name: 'Commercial Dispute Litigation',
+                    name: 'Kündigungsschutzklage',
                     description:
-                      'Representation in German commercial courts (Landgericht) for breach of contract, trade disputes, unfair competition and product liability claims.',
+                      'Klage gegen eine unwirksame Kündigung vor dem Arbeitsgericht. 3-Wochen-Frist beachten. Fachanwalt für Arbeitsrecht seit 2011.',
                   },
                 },
                 {
                   '@type': 'Offer',
                   itemOffered: {
                     '@type': 'LegalService',
-                    name: 'Employment Litigation',
+                    name: 'Abfindung verhandeln',
                     description:
-                      'Wrongful dismissal claims, severance disputes, non-compete enforcement and works council conflicts. Certified specialist (Fachanwalt) since 2011.',
+                      'Durchsetzung einer angemessenen Abfindung nach Kündigung oder im Rahmen eines Aufhebungsvertrags. Formel: 0,5 Monatsgehälter × Betriebszugehörigkeit.',
                   },
                 },
                 {
                   '@type': 'Offer',
                   itemOffered: {
                     '@type': 'LegalService',
-                    name: 'Shareholder Disputes',
+                    name: 'Aufhebungsvertrag prüfen',
                     description:
-                      'Minority shareholder protection, squeeze-outs and breach of fiduciary duties in German GmbH and AG companies.',
+                      'Prüfung und Verhandlung von Aufhebungsverträgen – Abfindung, Sperrzeit, Zeugnis, Wettbewerbsverbot.',
                   },
                 },
                 {
                   '@type': 'Offer',
                   itemOffered: {
                     '@type': 'LegalService',
-                    name: 'International Arbitration',
+                    name: 'Fristlose Kündigung anfechten',
                     description:
-                      'ICC, DIS and LCIA arbitration proceedings seated in Germany. Enforcement of foreign arbitral awards under the New York Convention.',
+                      'Prüfung der Rechtmäßigkeit einer fristlosen Kündigung nach §626 BGB. Die meisten fristlosen Kündigungen scheitern vor Gericht.',
                   },
                 },
                 {
                   '@type': 'Offer',
                   itemOffered: {
                     '@type': 'LegalService',
-                    name: 'Judgment Enforcement',
+                    name: 'Abmahnung prüfen',
                     description:
-                      'Enforcing foreign judgments and arbitral awards in Germany via exequatur proceedings and attachment of German assets.',
+                      'Prüfung der Rechtmäßigkeit von Abmahnungen als Vorstufe zur verhaltensbedingten Kündigung. Formfehler können die gesamte Kündigung zu Fall bringen.',
                   },
                 },
                 {
                   '@type': 'Offer',
                   itemOffered: {
                     '@type': 'LegalService',
-                    name: 'Interim Injunctions',
+                    name: 'Zeugnis & Abschlussregelungen',
                     description:
-                      'Emergency court orders (einstweilige Verfügung) obtainable within days for IP infringement, non-compete violations and urgent commercial disputes.',
+                      'Durchsetzung eines qualifizierten Arbeitszeugnisses sowie Verhandlung aller Abschlussregelungen beim Ausscheiden aus dem Arbeitsverhältnis.',
                   },
                 },
               ],
             },
-            founder: { '@id': 'https://www.german-litigation-lawyer.com/#fatih-bektas' },
-            employee: { '@id': 'https://www.german-litigation-lawyer.com/#fatih-bektas' },
+            founder: { '@id': `${BASE_URL}/#fatih-bektas` },
+            employee: { '@id': `${BASE_URL}/#fatih-bektas` },
           }),
         }}
       />
@@ -135,27 +136,27 @@ export default function Home() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Person',
-            '@id': 'https://www.german-litigation-lawyer.com/#fatih-bektas',
+            '@id': `${BASE_URL}/#fatih-bektas`,
             name: 'Fatih Bektas',
             givenName: 'Fatih',
             familyName: 'Bektas',
             jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
             description:
-              'German-qualified attorney with 20+ years of litigation experience. Certified specialist in employment law (Fachanwalt) since 2011. Former FinTech CEO and board member.',
-            url: 'https://www.german-litigation-lawyer.com/team',
-            image: 'https://www.german-litigation-lawyer.com/Fatih.png',
+              'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
+            url: `${BASE_URL}/anwalt`,
+            image: `${BASE_URL}/Fatih.png`,
             email: 'bektas@apos.legal',
             telephone: '+4915127003173',
             sameAs: [
               'https://www.linkedin.com/in/fatihbektas',
               'https://www.anwalt.de/bektas',
             ],
-            worksFor: { '@id': 'https://www.german-litigation-lawyer.com/#organization' },
+            worksFor: { '@id': `${BASE_URL}/#organization` },
             hasCredential: [
               {
                 '@type': 'EducationalOccupationalCredential',
                 name: 'Fachanwalt für Arbeitsrecht',
-                credentialCategory: 'Certified Specialist in Employment Law',
+                credentialCategory: 'Fachanwaltschaft',
                 recognizedBy: {
                   '@type': 'Organization',
                   name: 'Rechtsanwaltskammer Karlsruhe',
@@ -163,8 +164,8 @@ export default function Home() {
               },
               {
                 '@type': 'EducationalOccupationalCredential',
-                name: 'Certified Mediator',
-                credentialCategory: 'Mediation Certification',
+                name: 'Zertifizierter Mediator',
+                credentialCategory: 'Mediationsausbildung',
               },
             ],
             memberOf: [
@@ -172,12 +173,14 @@ export default function Home() {
               { '@type': 'Organization', name: 'BVAU' },
             ],
             knowsAbout: [
-              'German civil litigation',
-              'Commercial disputes Germany',
-              'Employment law Germany',
-              'Shareholder disputes',
-              'International arbitration',
-              'German court procedure',
+              'Kündigungsschutzklage',
+              'Abfindung',
+              'Aufhebungsvertrag',
+              'Fristlose Kündigung §626 BGB',
+              'Kündigungsschutzgesetz KSchG',
+              'Betriebsbedingte Kündigung',
+              'Sozialauswahl §1 KSchG',
+              'Abmahnung',
             ],
           }),
         }}
@@ -193,66 +196,66 @@ export default function Home() {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: 'How do I sue a company in Germany from the US or UK?',
+                name: 'Habe ich Anspruch auf eine Abfindung nach einer Kündigung?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: "To sue in Germany, you need a German-admitted attorney (Rechtsanwalt) — foreign lawyers cannot represent you in German courts. The process starts with a demand letter (Abmahnung), followed by filing a statement of claim (Klageschrift) at the competent court. For claims above €10,000, attorney representation is mandatory (Anwaltszwang). German litigation has no discovery, no jury trials, and follows the 'loser pays' principle. We handle everything in English — you never need to deal with German courts directly.",
+                  text: 'Einen gesetzlichen Abfindungsanspruch gibt es nur in wenigen Fällen, z.B. nach §1a KSchG wenn der Arbeitgeber die Kündigung mit einer Abfindungsangebot verbindet. In der Praxis wird eine Abfindung jedoch in den meisten Fällen im Rahmen einer Kündigungsschutzklage oder eines Aufhebungsvertrags ausgehandelt. Die übliche Formel lautet: 0,5 Bruttomonatsgehälter pro Beschäftigungsjahr.',
                 },
               },
               {
                 '@type': 'Question',
-                name: "I've been sued in Germany — what do I do?",
+                name: 'Wie lange habe ich Zeit, gegen eine Kündigung vorzugehen?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: "If you've been served with a German lawsuit (Klageschrift), you typically have 2-4 weeks to respond. Missing this deadline can result in a default judgment (Versäumnisurteil) against you. You need a German-admitted attorney immediately. We can file your defense, request deadline extensions, and represent you through the entire proceeding — all communication with you in English.",
+                  text: 'Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (§4 KSchG). Verpassen Sie diese Frist, gilt die Kündigung als wirksam – unabhängig davon, ob sie rechtmäßig war oder nicht. Kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'How long does a lawsuit take in German courts?',
+                name: 'Was ist der Unterschied zwischen Kündigung und Aufhebungsvertrag?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'First-instance proceedings at a German Regional Court (Landgericht) typically take 6-12 months. Complex cases with expert witnesses may take 12-18 months. Appeals (Berufung) add another 6-12 months. Interim injunctions (einstweilige Verfügungen) can be obtained within days. German litigation is generally faster than US or UK proceedings.',
+                  text: 'Bei einer Kündigung beendet der Arbeitgeber das Arbeitsverhältnis einseitig – Sie können dagegen klagen. Beim Aufhebungsvertrag einigen sich beide Seiten einvernehmlich auf eine Beendigung, meist gegen Abfindung. Achtung: Ein Aufhebungsvertrag kann zu einer Sperrzeit beim Arbeitslosengeld führen.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'What does litigation cost in Germany?',
+                name: 'Wann ist eine fristlose Kündigung wirksam?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: "German litigation costs are calculated from statutory fee schedules based on the amount in dispute — not hourly billing. Germany follows the 'loser pays' rule: the losing party pays court fees and both sides' statutory attorney fees. For a €100,000 dispute, total first-instance costs typically range from €8,000-€15,000. This makes German litigation far more predictable and usually cheaper than US litigation.",
+                  text: 'Eine fristlose Kündigung nach §626 BGB setzt einen wichtigen Grund voraus, der es dem Arbeitgeber unzumutbar macht, die Kündigungsfrist abzuwarten. Die Anforderungen sind sehr hoch – die meisten fristlosen Kündigungen scheitern vor dem Arbeitsgericht. Der Arbeitgeber muss zudem innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes handeln.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Can I enforce a US or UK judgment in Germany?',
+                name: 'Gilt der Kündigungsschutz auch für mich?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'US judgments are generally not directly enforceable in Germany — there is no bilateral enforcement treaty. You need a separate enforcement proceeding (Exequaturverfahren) where a German court reviews the judgment. UK judgments post-Brexit require enforcement under the Hague Convention where applicable. Alternatively, you may need to re-litigate the claim in Germany. We advise on the fastest and most cost-effective enforcement strategy.',
+                  text: 'Das Kündigungsschutzgesetz (KSchG) gilt, wenn Sie länger als 6 Monate im Betrieb beschäftigt sind und der Betrieb mehr als 10 Mitarbeiter hat (§23 KSchG, sog. Schwellenwert). Ausgenommen sind u.a. Geschäftsführer und leitende Angestellte mit besonderem Status.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Can I use arbitration instead of German courts?',
+                name: 'Wie hoch ist meine Abfindung bei X Jahren Betriebszugehörigkeit?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes, if your contract contains an arbitration clause. Germany is a signatory to the New York Convention, making arbitral awards enforceable. Common arbitration institutions include the ICC, DIS (German Arbitration Institute), and LCIA. We represent international clients in both institutional and ad-hoc arbitration proceedings seated in Germany, as well as in enforcement of foreign arbitral awards before German courts.',
+                  text: 'Die Abfindungsformel lautet: 0,5 × Bruttomonatsgehalt × Anzahl der Beschäftigungsjahre. Bei 10 Jahren und 3.000 € Gehalt ergibt das 15.000 € als Ausgangspunkt. Je nach Stärke Ihres Falls (Sozialauswahl, Formfehler, Betriebszugehörigkeit) kann erheblich mehr erzielt werden.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'What is the difference between Amtsgericht and Landgericht?',
+                name: 'Was kostet eine Kündigungsschutzklage?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'The Amtsgericht (Local Court) handles civil disputes up to €10,000 — attorney representation is optional but recommended. The Landgericht (Regional Court) handles claims above €10,000 and all commercial matters — attorney representation is mandatory. Commercial disputes can be assigned to specialized Kammern für Handelssachen (Chambers for Commercial Matters) with experienced commercial judges. Appeals go to the Oberlandesgericht (Higher Regional Court) and ultimately to the Bundesgerichtshof (Federal Court of Justice).',
+                  text: 'Im ersten arbeitsgerichtlichen Verfahren trägt jede Seite ihre eigenen Anwaltskosten, unabhängig vom Ausgang (§12a ArbGG). Gerichtskosten fallen in der ersten Instanz nicht an. Die Anwaltskosten richten sich nach dem Streitwert (1 Bruttomonatsgehalt). Viele Arbeitnehmer haben eine Rechtsschutzversicherung, die die Kosten übernimmt.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Do I need to travel to Germany for my court case?',
+                name: 'Kann ich während der Schwangerschaft gekündigt werden?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'In most cases, no. Your German attorney represents you in court, and personal appearance is rarely required. If the court orders your personal attendance for a hearing, video conferencing is increasingly accepted. We handle all filings, court appearances, and procedural matters on your behalf — you stay informed through regular English-language updates.',
+                  text: 'Nein. Schwangere genießen besonderen Kündigungsschutz nach §17 MuSchG. Eine Kündigung während der Schwangerschaft und bis zu 4 Monate nach der Entbindung ist grundsätzlich unzulässig und bedarf der behördlichen Zustimmung. Ausnahmen sind nur in seltenen Fällen möglich.',
                 },
               },
             ],
@@ -270,7 +273,6 @@ export default function Home() {
         <AttorneyProfile />
         <TeamTeaser />
         <FAQ />
-        <BlogPreview />
         <ContactForm />
         <CTA />
       </main>
