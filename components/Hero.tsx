@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="absolute -top-[40%] -right-[15%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(166,139,75,0.07)_0%,transparent_70%)] z-[2]" />
       <div className="max-w-[800px] mx-auto relative z-[3]">
         <div className="font-serif text-[1.1rem] text-gold-dark font-semibold mb-1.5">
-          Fachanwalt für Arbeitsrecht{' '}
+          Kanzlei für Arbeitsrecht{' '}
           <span className="inline-block text-[0.68rem] font-bold text-green bg-green-bg border-[1.5px] border-green/20 rounded px-2.5 py-[3px] tracking-wider uppercase ml-2.5 align-middle">
             Kostenlose Ersteinschätzung
           </span>

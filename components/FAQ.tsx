@@ -4,36 +4,36 @@ import { useState } from 'react';
 
 const faqs = [
   {
-    q: 'How do I sue a company in Germany from the US or UK?',
-    a: 'To sue in Germany, you need a German-admitted attorney (Rechtsanwalt) \u2014 foreign lawyers cannot represent you in German courts. The process starts with a demand letter, followed by filing a statement of claim (Klageschrift) at the competent court. For claims above \u20AC10,000, attorney representation is mandatory. German litigation has no discovery, no jury trials, and follows the \u201Closer pays\u201D principle. We handle everything in English \u2014 you never need to deal with German courts directly.',
+    q: 'Habe ich Anspruch auf eine Abfindung nach einer Kündigung?',
+    a: 'Einen gesetzlichen Abfindungsanspruch gibt es nur in wenigen Fällen, z.\u00A0B. nach §1a KSchG, wenn der Arbeitgeber die Kündigung mit einem Abfindungsangebot verbindet. In der Praxis wird eine Abfindung jedoch in den meisten Fällen im Rahmen einer Kündigungsschutzklage oder eines Aufhebungsvertrags ausgehandelt. Die übliche Faustformel lautet: 0,5 Bruttomonatsgehälter pro Beschäftigungsjahr.',
   },
   {
-    q: "I've been sued in Germany \u2014 what do I do?",
-    a: "If you\u2019ve been served with a German lawsuit, you typically have 2\u20134 weeks to respond. Missing this deadline can result in a default judgment (Vers\u00E4umnisurteil) against you. You need a German-admitted attorney immediately. We can file your defense, request deadline extensions, and represent you through the entire proceeding \u2014 all communication with you in English.",
+    q: 'Wie lange habe ich Zeit, gegen eine Kündigung vorzugehen?',
+    a: 'Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (§4 KSchG). Verpassen Sie diese Frist, gilt die Kündigung als wirksam — unabhängig davon, ob sie rechtmäßig war oder nicht. Kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht.',
   },
   {
-    q: 'How long does a lawsuit take in German courts?',
-    a: 'First-instance proceedings at a Regional Court (Landgericht) typically take 6\u201312 months. Complex cases with expert witnesses may take 12\u201318 months. Appeals add another 6\u201312 months. Interim injunctions can be obtained within days. German litigation is generally faster than US or UK proceedings.',
+    q: 'Was ist der Unterschied zwischen Kündigung und Aufhebungsvertrag?',
+    a: 'Bei einer Kündigung beendet der Arbeitgeber das Arbeitsverhältnis einseitig — Sie können dagegen klagen. Beim Aufhebungsvertrag einigen sich beide Seiten einvernehmlich auf eine Beendigung, meist gegen Abfindung. Achtung: Ein Aufhebungsvertrag kann zu einer Sperrzeit beim Arbeitslosengeld führen.',
   },
   {
-    q: 'What does litigation cost in Germany?',
-    a: 'German litigation costs are calculated from statutory fee schedules based on the amount in dispute \u2014 not hourly billing. Germany follows the \u201Closer pays\u201D rule. For a \u20AC100,000 dispute, total first-instance costs typically range from \u20AC8,000\u2013\u20AC15,000. This makes German litigation far more predictable and usually cheaper than US litigation.',
+    q: 'Wann ist eine fristlose Kündigung wirksam?',
+    a: 'Eine fristlose Kündigung nach §626 BGB setzt einen wichtigen Grund voraus, der es dem Arbeitgeber unzumutbar macht, die Kündigungsfrist abzuwarten. Die Anforderungen sind sehr hoch — die meisten fristlosen Kündigungen scheitern vor dem Arbeitsgericht. Der Arbeitgeber muss zudem innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes handeln.',
   },
   {
-    q: 'Can I enforce a US or UK judgment in Germany?',
-    a: 'US judgments are generally not directly enforceable in Germany \u2014 there is no bilateral enforcement treaty. You need a separate enforcement proceeding (Exequaturverfahren) where a German court reviews the judgment. UK judgments post-Brexit require enforcement under the Hague Convention where applicable. We advise on the fastest and most cost-effective strategy.',
+    q: 'Gilt der Kündigungsschutz auch für mich?',
+    a: 'Das Kündigungsschutzgesetz (KSchG) gilt, wenn Sie länger als 6 Monate im Betrieb beschäftigt sind und der Betrieb mehr als 10 Mitarbeiter hat (§23 KSchG). Ausgenommen sind u.\u00A0a. Geschäftsführer und leitende Angestellte mit besonderem Status.',
   },
   {
-    q: 'Can I use arbitration instead of German courts?',
-    a: 'Yes, if your contract contains an arbitration clause. Germany is a signatory to the New York Convention. We represent international clients in ICC, DIS, and LCIA arbitration proceedings seated in Germany, as well as in enforcement of foreign arbitral awards before German courts.',
+    q: 'Wie hoch ist meine Abfindung bei X Jahren Betriebszugehörigkeit?',
+    a: 'Die Abfindungsformel lautet: 0,5 × Bruttomonatsgehalt × Anzahl der Beschäftigungsjahre. Bei 10 Jahren und 3.000\u00A0€ Gehalt ergibt das 15.000\u00A0€ als Ausgangspunkt. Je nach Stärke Ihres Falls (Sozialauswahl, Formfehler, Betriebszugehörigkeit) kann erheblich mehr erzielt werden.',
   },
   {
-    q: 'What is the difference between Amtsgericht and Landgericht?',
-    a: 'The Amtsgericht (Local Court) handles disputes up to \u20AC10,000. The Landgericht (Regional Court) handles claims above \u20AC10,000 and all commercial matters \u2014 attorney representation is mandatory here. Commercial disputes go to specialized chambers (Kammern f\u00FCr Handelssachen). Appeals go to the Oberlandesgericht and ultimately the Bundesgerichtshof.',
+    q: 'Was kostet eine Kündigungsschutzklage?',
+    a: 'Im ersten arbeitsgerichtlichen Verfahren trägt jede Seite ihre eigenen Anwaltskosten, unabhängig vom Ausgang (§12a ArbGG). Gerichtskosten fallen in der ersten Instanz bei Vergleich nicht an. Die Anwaltskosten richten sich nach dem Streitwert (in der Regel 3 Bruttomonatsgehälter). Viele Arbeitnehmer haben eine Rechtsschutzversicherung, die die Kosten übernimmt.',
   },
   {
-    q: 'Do I need to travel to Germany for my court case?',
-    a: 'In most cases, no. Your German attorney represents you in court, and personal appearance is rarely required. Video conferencing is increasingly accepted. We handle all filings, court appearances, and procedural matters on your behalf \u2014 you stay informed through regular English-language updates.',
+    q: 'Welche Kündigungsfristen gelten für mich?',
+    a: 'Die gesetzlichen Kündigungsfristen richten sich nach der Dauer der Betriebszugehörigkeit (§622 BGB). Nach 2 Jahren beträgt die Frist 1 Monat zum Monatsende, nach 5 Jahren 2 Monate, nach 10 Jahren 4 Monate. Arbeits- oder Tarifverträge können abweichende Fristen enthalten. Eine zu kurze Frist macht die Kündigung angreifbar.',
   },
 ];
 
@@ -44,10 +44,10 @@ export default function FAQ() {
     <section className="py-[90px] px-8 bg-cream max-md:py-[60px] max-md:px-6" id="faq">
       <div className="max-w-content mx-auto">
         <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-          Frequently Asked Questions
+          Häufige Fragen
         </div>
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-[1.25] mb-3.5 max-md:text-2xl">
-          What International Clients Ask Us Most
+          Was unsere Mandanten am häufigsten fragen
         </h2>
         <div className="max-w-[740px] mt-9">
           {faqs.map((faq, i) => (

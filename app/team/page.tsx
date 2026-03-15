@@ -3,24 +3,24 @@ import Link from 'next/link';
 import TeamCard from '@/components/TeamCard';
 
 export const metadata: Metadata = {
-  title: 'Our Team – APOS Legal | German Litigation Lawyers',
+  title: 'Unser Team – gekuendigt-abfindung.de | Fachanwälte für Arbeitsrecht',
   description:
-    'Meet the APOS Legal team: Specialized German litigation attorneys with decades of courtroom experience. Representing US and UK companies in German courts.',
+    'Lernen Sie unser Team kennen: Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten. Über 5.000 erfolgreiche Verfahren.',
   alternates: {
-    canonical: 'https://www.german-litigation-lawyer.com/team',
+    canonical: 'https://www.gekuendigt-abfindung.de/team',
   },
 };
 
 const team = [
-  { src: '/Fatih.png', name: 'Fatih Bektas', title: 'Attorney-at-Law & Certified Specialist' },
-  { src: '/Buechler.png', name: 'Georg Willem Büchler', title: 'Attorney-at-Law & Certified Specialist' },
-  { src: '/Duncker.png', name: 'Dr. Martin Duncker', title: 'Attorney-at-Law & Certified Specialist' },
-  { src: '/Fuerniss.png', name: 'Tobias Fürniss, Ph.D. (UIBE)', title: 'Attorney-at-Law' },
-  { src: '/Hofstaetter.png', name: 'Dr. Heiko Hofstätter', title: 'Attorney-at-Law & Certified Specialist' },
-  { src: '/Samklu.png', name: 'Vincent Samklu', title: 'Attorney-at-Law' },
+  { src: '/Fatih.png', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Buechler.png', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Duncker.png', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Fuerniss.png', name: 'Tobias Fürniss, Ph.D. (UIBE)', title: 'Rechtsanwalt' },
+  { src: '/Hofstaetter.png', name: 'Dr. Heiko Hofstätter', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Samklu.png', name: 'Vincent Samklu', title: 'Rechtsanwalt' },
 ];
 
-const BASE_URL = 'https://www.german-litigation-lawyer.com';
+const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 const personSchemas = [
   {
@@ -31,7 +31,7 @@ const personSchemas = [
     familyName: 'Bektas',
     jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     description:
-      'German-qualified attorney with 20+ years of litigation experience. Certified specialist in employment law (Fachanwalt) since 2011. Former FinTech CEO and board member.',
+      'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 5.000 erfolgreiche Verfahren.',
     image: `${BASE_URL}/Fatih.png`,
     url: `${BASE_URL}/team`,
     email: 'bektas@apos.legal',
@@ -45,7 +45,7 @@ const personSchemas = [
       {
         '@type': 'EducationalOccupationalCredential',
         name: 'Fachanwalt für Arbeitsrecht',
-        credentialCategory: 'Certified Specialist in Employment Law',
+        credentialCategory: 'Fachanwaltschaft',
         recognizedBy: {
           '@type': 'Organization',
           name: 'Rechtsanwaltskammer Karlsruhe',
@@ -53,8 +53,8 @@ const personSchemas = [
       },
       {
         '@type': 'EducationalOccupationalCredential',
-        name: 'Certified Mediator',
-        credentialCategory: 'Mediation Certification',
+        name: 'Zertifizierter Mediator',
+        credentialCategory: 'Mediationsausbildung',
       },
     ],
     memberOf: [
@@ -62,11 +62,11 @@ const personSchemas = [
       { '@type': 'Organization', name: 'BVAU' },
     ],
     knowsAbout: [
-      'German civil litigation',
-      'Commercial disputes Germany',
-      'Employment law Germany',
-      'Shareholder disputes',
-      'International arbitration',
+      'Kündigungsschutzklage',
+      'Abfindung',
+      'Aufhebungsvertrag',
+      'Fristlose Kündigung §626 BGB',
+      'Kündigungsschutzgesetz KSchG',
     ],
   },
   {
@@ -75,11 +75,11 @@ const personSchemas = [
     name: 'Georg Willem Büchler',
     givenName: 'Georg Willem',
     familyName: 'Büchler',
-    jobTitle: 'Rechtsanwalt & Certified Specialist',
+    jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     image: `${BASE_URL}/Buechler.png`,
     url: `${BASE_URL}/team`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
-    knowsAbout: ['German civil litigation', 'Commercial disputes Germany'],
+    knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
   {
     '@type': 'Person',
@@ -87,12 +87,12 @@ const personSchemas = [
     name: 'Dr. Martin Duncker',
     givenName: 'Martin',
     familyName: 'Duncker',
-    jobTitle: 'Rechtsanwalt & Certified Specialist',
+    jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     honorificPrefix: 'Dr.',
     image: `${BASE_URL}/Duncker.png`,
     url: `${BASE_URL}/team`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
-    knowsAbout: ['German civil litigation', 'Commercial disputes Germany'],
+    knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
   {
     '@type': 'Person',
@@ -105,7 +105,7 @@ const personSchemas = [
     image: `${BASE_URL}/Fuerniss.png`,
     url: `${BASE_URL}/team`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
-    knowsAbout: ['German civil litigation', 'Commercial disputes Germany'],
+    knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
   {
     '@type': 'Person',
@@ -113,12 +113,12 @@ const personSchemas = [
     name: 'Dr. Heiko Hofstätter',
     givenName: 'Heiko',
     familyName: 'Hofstätter',
-    jobTitle: 'Rechtsanwalt & Certified Specialist',
+    jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     honorificPrefix: 'Dr.',
     image: `${BASE_URL}/Hofstaetter.png`,
     url: `${BASE_URL}/team`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
-    knowsAbout: ['German civil litigation', 'Commercial disputes Germany'],
+    knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
   {
     '@type': 'Person',
@@ -130,7 +130,7 @@ const personSchemas = [
     image: `${BASE_URL}/Samklu.png`,
     url: `${BASE_URL}/team`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
-    knowsAbout: ['German civil litigation', 'Commercial disputes Germany'],
+    knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
 ];
 
@@ -144,8 +144,8 @@ export default function TeamPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'ItemList',
-            name: 'APOS Legal Team',
-            description: 'Attorneys at APOS Legal specializing in German litigation for international businesses.',
+            name: 'Team gekuendigt-abfindung.de',
+            description: 'Fachanwälte für Arbeitsrecht — spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag.',
             url: `${BASE_URL}/team`,
             numberOfItems: personSchemas.length,
             itemListElement: personSchemas.map((person, index) => ({
@@ -160,16 +160,16 @@ export default function TeamPage() {
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
           <Link href="/" className="text-gold no-underline text-[0.88rem] font-medium hover:underline">
-            &larr; Back to Home
+            &larr; Zurück zur Startseite
           </Link>
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mt-6 mb-2.5">
-            Our Firm
+            Unsere Kanzlei
           </div>
-          <h1 className="font-serif text-[2rem] font-bold">The Team Behind APOS Legal</h1>
+          <h1 className="font-serif text-[2rem] font-bold">Unser Team</h1>
           <p className="text-[1.05rem] text-ink-muted max-w-[620px] leading-relaxed mt-3">
-            We are a specialized litigation firm focused on commercial disputes and enforcement
-            proceedings in Germany. Our team combines deep legal expertise with courtroom
-            experience &mdash; fighting for your interests in German courts.
+            Wir sind eine spezialisierte Kanzlei für Kündigungsschutz und Arbeitsrecht. Unser Team
+            verbindet tiefgreifende juristische Expertise mit langjähriger Erfahrung vor deutschen
+            Arbeitsgerichten &mdash; und kämpft für Ihre Rechte.
           </p>
         </div>
       </div>
