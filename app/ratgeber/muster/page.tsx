@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { musterPages } from '@/lib/muster-data';
 import { musterContent } from '@/lib/generated-muster-content';
 
 const faqs = [
@@ -23,89 +24,7 @@ const faqs = [
   },
 ];
 
-function CopyButton({ text }: { text: string }) {
-  const [copied, setCopied] = useState(false);
-  return (
-    <button
-      onClick={() => {
-        navigator.clipboard.writeText(text);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      }}
-      className="inline-flex items-center gap-1.5 py-2 px-4 bg-white border border-border rounded-sm text-[0.82rem] font-semibold text-ink cursor-pointer hover:border-gold hover:text-gold-dark transition-all"
-    >
-      {copied ? (
-        <>
-          <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-          Kopiert!
-        </>
-      ) : (
-        <>
-          <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></svg>
-          Kopieren
-        </>
-      )}
-    </button>
-  );
-}
-
-function MusterSection({ title, intro, muster }: { title: string; intro: string; muster: string }) {
-  return (
-    <div>
-      <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold leading-[1.25] mb-3">
-        {title}
-      </h2>
-      <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">{intro}</p>
-      <div className="relative">
-        <div className="absolute top-3 right-3 z-10">
-          <CopyButton text={muster.replace(/\\n/g, '\n')} />
-        </div>
-        <pre className="bg-[#f5f3ee] border border-border rounded-sm p-6 pr-32 text-[0.84rem] text-ink leading-relaxed whitespace-pre-wrap font-mono overflow-x-auto max-h-[500px] overflow-y-auto">
-          {muster}
-        </pre>
-      </div>
-      <div className="mt-5">
-        <a
-          href="/#kontakt"
-          className="inline-block py-3 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
-        >
-          Ihren Fall kostenlos prüfen lassen &rarr;
-        </a>
-      </div>
-    </div>
-  );
-}
-
-function ChecklisteSection({ title, intro, punkte }: { title: string; intro: string; punkte: string[] }) {
-  return (
-    <div>
-      <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold leading-[1.25] mb-3">
-        {title}
-      </h2>
-      <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">{intro}</p>
-      <div className="space-y-3">
-        {punkte.map((punkt, i) => (
-          <div key={i} className="flex gap-3 py-3 px-4 bg-[#f5f3ee] border border-border rounded-sm">
-            <div className="w-7 h-7 min-w-[28px] rounded-sm border-2 border-gold flex items-center justify-center font-serif text-[0.85rem] font-bold text-gold-dark mt-0.5">
-              {i + 1}
-            </div>
-            <p className="text-[0.88rem] text-ink leading-relaxed m-0">{punkt}</p>
-          </div>
-        ))}
-      </div>
-      <div className="mt-5">
-        <a
-          href="/#kontakt"
-          className="inline-block py-3 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
-        >
-          Ihren Fall kostenlos prüfen lassen &rarr;
-        </a>
-      </div>
-    </div>
-  );
-}
-
-export default function MusterPage() {
+export default function MusterOverviewPage() {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   return (
@@ -119,7 +38,8 @@ export default function MusterPage() {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Start', item: 'https://www.gekuendigt-abfindung.de' },
-              { '@type': 'ListItem', position: 2, name: 'Muster & Vorlagen', item: 'https://www.gekuendigt-abfindung.de/muster' },
+              { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: 'https://www.gekuendigt-abfindung.de/ratgeber' },
+              { '@type': 'ListItem', position: 3, name: 'Muster & Vorlagen', item: 'https://www.gekuendigt-abfindung.de/ratgeber/muster' },
             ],
           }),
         }}
@@ -146,6 +66,8 @@ export default function MusterPage() {
         <div className="max-w-content mx-auto">
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
+            <span className="mx-2">/</span>
+            <Link href="/ratgeber" className="text-gold no-underline hover:underline">Ratgeber</Link>
             <span className="mx-2">/</span>
             <span>Muster &amp; Vorlagen</span>
           </nav>
@@ -175,82 +97,33 @@ export default function MusterPage() {
         </div>
       </section>
 
-      {/* Muster 1: Widerspruch */}
+      {/* Muster Cards */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto">
-          <div className="max-w-[740px]">
-            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-              Vorlage 1
-            </div>
-            <MusterSection
-              title={musterContent.widerspruchAbmahnung.title}
-              intro={musterContent.widerspruchAbmahnung.intro}
-              muster={musterContent.widerspruchAbmahnung.muster}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Muster 2: Gegendarstellung */}
-      <section className="py-[60px] px-8 bg-cream">
-        <div className="max-w-content mx-auto">
-          <div className="max-w-[740px]">
-            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-              Vorlage 2
-            </div>
-            <MusterSection
-              title={musterContent.gegendarstellungAbmahnung.title}
-              intro={musterContent.gegendarstellungAbmahnung.intro}
-              muster={musterContent.gegendarstellungAbmahnung.muster}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Muster 3: Kündigungsschutzklage */}
-      <section className="py-[60px] px-8 bg-white">
-        <div className="max-w-content mx-auto">
-          <div className="max-w-[740px]">
-            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-              Vorlage 3
-            </div>
-            <MusterSection
-              title={musterContent.kuendigungsschutzklage.title}
-              intro={musterContent.kuendigungsschutzklage.intro}
-              muster={musterContent.kuendigungsschutzklage.muster}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Checkliste 1: Aufhebungsvertrag */}
-      <section className="py-[60px] px-8 bg-cream">
-        <div className="max-w-content mx-auto">
-          <div className="max-w-[740px]">
-            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-              Checkliste 1
-            </div>
-            <ChecklisteSection
-              title={musterContent.aufhebungsvertragCheckliste.title}
-              intro={musterContent.aufhebungsvertragCheckliste.intro}
-              punkte={musterContent.aufhebungsvertragCheckliste.punkte}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Checkliste 2: Abmahnung */}
-      <section className="py-[60px] px-8 bg-white">
-        <div className="max-w-content mx-auto">
-          <div className="max-w-[740px]">
-            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-              Checkliste 2
-            </div>
-            <ChecklisteSection
-              title={musterContent.abmahnungCheckliste.title}
-              intro={musterContent.abmahnungCheckliste.intro}
-              punkte={musterContent.abmahnungCheckliste.punkte}
-            />
+          <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1">
+            {musterPages.map((entry, i) => {
+              const content = (musterContent as unknown as Record<string, { title: string; intro: string }>)[entry.contentKey];
+              return (
+                <Link
+                  key={entry.slug}
+                  href={`/ratgeber/muster/${entry.slug}`}
+                  className="block border border-border rounded-sm p-6 no-underline hover:border-gold hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.12)] transition-all"
+                >
+                  <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+                    {entry.type === 'muster' ? `Vorlage ${i + 1}` : `Checkliste ${i - 2}`}
+                  </div>
+                  <h2 className="font-serif text-[1.15rem] font-bold text-ink mb-2">
+                    {content?.title ?? entry.h1}
+                  </h2>
+                  <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-3">
+                    {content?.intro ? content.intro.slice(0, 150) + '...' : entry.description}
+                  </p>
+                  <span className="text-[0.84rem] font-semibold text-gold-dark">
+                    {entry.type === 'muster' ? 'Muster ansehen' : 'Checkliste ansehen'} &rarr;
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

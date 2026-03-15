@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Kostenlose Muster & Vorlagen: Widerspruch Abmahnung, Gegendarstellung, Kündigungsschutzklage, Checkliste Aufhebungsvertrag. Vom Fachanwalt für Arbeitsrecht.',
   alternates: {
-    canonical: `${BASE_URL}/muster`,
+    canonical: `${BASE_URL}/ratgeber/muster`,
   },
 };
 

@@ -3,6 +3,7 @@ import { entries } from '@/lib/betriebszugehoerigkeit';
 import { abmahnungEntries } from '@/lib/abmahnung-content';
 import { lebenssituationData } from '@/lib/lebenssituation-data';
 import { aufhebungsvertragData } from '@/lib/aufhebungsvertrag-data';
+import { musterPages } from '@/lib/muster-data';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
@@ -13,8 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/kuendigung`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/aufhebungsvertrag`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/abmahnung`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/muster`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/urteile`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/ratgeber`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/ratgeber/urteile`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/ratgeber/muster`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/abfindungsrechner`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/schwellenwert-rechner`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/team`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
@@ -72,5 +74,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages, ...clusterJPages, ...clusterFPages];
+  const musterSubPages: MetadataRoute.Sitemap = musterPages.map((e) => ({
+    url: `${BASE_URL}/ratgeber/muster/${e.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages, ...clusterJPages, ...clusterFPages, ...musterSubPages];
 }

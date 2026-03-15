@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Wichtige BAG-Urteile zu Kündigung, Abfindung, Aufhebungsvertrag und Abmahnung. Laufend aktualisiert. Was die Rechtsprechung für Arbeitnehmer bedeutet.',
   alternates: {
-    canonical: `${BASE_URL}/urteile`,
+    canonical: `${BASE_URL}/ratgeber/urteile`,
   },
 };
 
@@ -115,7 +115,8 @@ export default function UrteilePage() {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Urteile', item: `${BASE_URL}/urteile` },
+              { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${BASE_URL}/ratgeber` },
+              { '@type': 'ListItem', position: 3, name: 'Urteile', item: `${BASE_URL}/ratgeber/urteile` },
             ],
           }),
         }}
@@ -142,6 +143,8 @@ export default function UrteilePage() {
         <div className="max-w-content mx-auto">
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
+            <span className="mx-2">/</span>
+            <Link href="/ratgeber" className="text-gold no-underline hover:underline">Ratgeber</Link>
             <span className="mx-2">/</span>
             <span>Urteile</span>
           </nav>
