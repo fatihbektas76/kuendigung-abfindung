@@ -6,8 +6,8 @@ import FadeUp from './FadeUp';
 
 const teamPreview = [
   { src: '/Fatih.png', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
-  { src: '/Buechler.png', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
-  { src: '/Duncker.png', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Buechler.png', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt' },
+  { src: '/Duncker.png', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt' },
 ];
 
 export default function TeamTeaser() {
@@ -21,7 +21,7 @@ export default function TeamTeaser() {
           Erfahrene Fachanwälte an Ihrer Seite
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed">
-          Unser Team aus spezialisierten Arbeitsrechtlern vertritt Arbeitnehmer bei Kündigung,
+          Unser Team vertritt Arbeitnehmer bei Kündigung,
           Abfindung und Aufhebungsvertrag — mit über 5.000 erfolgreichen Verfahren.
         </p>
         <div className="grid grid-cols-3 gap-6 mt-9 max-md:grid-cols-1">

@@ -21,48 +21,44 @@ const sourceSans = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.german-litigation-lawyer.com'),
+  metadataBase: new URL('https://www.gekuendigt-abfindung.de'),
   title: {
-    default: 'German Litigation for International Businesses — Sue or Defend in German Courts | APOS Legal',
-    template: '%s | APOS Legal',
+    default: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
+    template: '%s | gekuendigt-abfindung.de',
   },
   description:
-    'Need a German lawyer for your court case? APOS Legal represents US and UK companies in German litigation — commercial disputes, employment claims, contract enforcement & arbitration. English-speaking. 20+ years experience.',
+    'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Kostenlose Ersteinschätzung. 20+ Jahre Erfahrung, 2.000+ Verfahren.',
   keywords: [
-    'German litigation lawyer',
-    'sue in Germany',
-    'German court representation',
-    'commercial dispute Germany',
-    'enforce contract Germany',
-    'German employment lawsuit',
-    'international arbitration Germany',
-    'German attorney for foreign companies',
-    'Rechtsanwalt English speaking',
-    'lawyer Germany English',
+    'Kündigung erhalten',
+    'Abfindung nach Kündigung',
+    'Kündigungsschutzklage',
+    'Aufhebungsvertrag prüfen',
+    'Fachanwalt Arbeitsrecht',
+    'Abfindung berechnen',
+    'fristlose Kündigung',
+    'Abfindungsrechner',
+    'Kündigungsschutzgesetz',
+    'Arbeitsrecht Anwalt',
   ],
   authors: [{ name: 'Fatih Bektas — Fachanwalt für Arbeitsrecht, APOS Legal' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large',
   alternates: {
-    canonical: 'https://www.german-litigation-lawyer.com/',
-    languages: {
-      en: 'https://www.german-litigation-lawyer.com/',
-      'x-default': 'https://www.german-litigation-lawyer.com/',
-    },
+    canonical: 'https://www.gekuendigt-abfindung.de/',
   },
   openGraph: {
     type: 'website',
-    title: 'German Litigation for International Businesses — APOS Legal',
+    title: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
     description:
-      'Your dispute is in Germany. Your lawyer should speak your language. We represent foreign companies in German courts and arbitration.',
-    url: 'https://www.german-litigation-lawyer.com/',
-    siteName: 'APOS Legal',
-    locale: 'en_US',
+      'Kündigung erhalten? Fachanwalt für Arbeitsrecht prüft Ihren Fall kostenlos. Abfindung maximieren, Aufhebungsvertrag verhandeln. 20+ Jahre Erfahrung.',
+    url: 'https://www.gekuendigt-abfindung.de/',
+    siteName: 'gekuendigt-abfindung.de',
+    locale: 'de_DE',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'German Litigation for International Businesses — APOS Legal',
+    title: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
     description:
-      'Sue or defend in German courts. English-speaking German attorneys. 20+ years experience.',
+      'Kündigung prüfen, Abfindung maximieren. Fachanwalt für Arbeitsrecht. 20+ Jahre Erfahrung.',
   },
   icons: {
     icon: [
@@ -76,7 +72,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" className={`${playfair.variable} ${sourceSans.variable}`}>
+    <html lang="de" dir="ltr" className={`${playfair.variable} ${sourceSans.variable}`}>
       <head>
         {/* Schema.org - LegalService */}
         <script
@@ -85,10 +81,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LegalService',
-              name: 'APOS Legal - Fatih Bektas',
-              url: 'https://www.german-litigation-lawyer.com',
+              name: 'gekuendigt-abfindung.de – Fachanwalt für Arbeitsrecht',
+              url: 'https://www.gekuendigt-abfindung.de',
               description:
-                'Legal representation for US and UK companies in German courts and arbitration proceedings',
+                'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. 20+ Jahre Erfahrung, 2.000+ Verfahren.',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Am Paradeplatz 20',
@@ -98,25 +94,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               },
               telephone: '+4915127003173',
               email: 'bektas@apos.legal',
-              areaServed: [
-                { '@type': 'Country', name: 'United States' },
-                { '@type': 'Country', name: 'United Kingdom' },
-                { '@type': 'Country', name: 'Germany' },
-              ],
+              areaServed: { '@type': 'Country', name: 'Germany' },
               serviceType: [
-                'Commercial Litigation',
-                'Employment Litigation',
-                'Contract Enforcement',
-                'Shareholder Disputes',
-                'International Arbitration',
-                'Judgment Enforcement',
-                'Interim Injunctions',
+                'Kündigungsschutzklage',
+                'Abfindung verhandeln',
+                'Aufhebungsvertrag prüfen',
+                'Fristlose Kündigung anfechten',
+                'Abmahnung prüfen',
+                'Zeugnis & Abschlussregelungen',
               ],
-              knowsLanguage: ['en', 'de'],
+              knowsLanguage: ['de', 'en'],
               founder: {
                 '@type': 'Person',
                 name: 'Fatih Bektas',
-                jobTitle: 'Fachanwalt für Arbeitsrecht',
+                jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
               },
               aggregateRating: {
                 '@type': 'AggregateRating',
@@ -140,14 +131,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Fatih Bektas',
               jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
               description:
-                'German-qualified specialist attorney with 20+ years litigation experience. Former FinTech CEO. Represents international businesses as plaintiff or defendant in German courts and arbitration proceedings.',
-              url: 'https://www.german-litigation-lawyer.com',
+                'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
+              url: 'https://www.gekuendigt-abfindung.de',
               telephone: '+49-151-2700-3173',
               email: 'bektas@apos.legal',
-              worksFor: { '@type': 'LegalService', name: 'APOS Legal' },
-              knowsLanguage: ['en', 'de'],
+              worksFor: { '@type': 'LegalService', name: 'gekuendigt-abfindung.de' },
+              knowsLanguage: ['de', 'en'],
               memberOf: [
-                { '@type': 'Organization', name: 'Deutscher Anwaltsverein' },
+                { '@type': 'Organization', name: 'Deutscher Anwaltverein' },
                 { '@type': 'Organization', name: 'BVAU' },
               ],
               hasCredential: [
@@ -157,7 +148,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 },
                 {
                   '@type': 'EducationalOccupationalCredential',
-                  credentialCategory: 'Certified Mediator',
+                  credentialCategory: 'Zertifizierter Mediator',
                 },
               ],
             }),
