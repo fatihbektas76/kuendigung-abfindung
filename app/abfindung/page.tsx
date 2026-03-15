@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import { entries } from '@/lib/betriebszugehoerigkeit';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
@@ -182,7 +183,7 @@ export default function AbfindungPage() {
         </div>
       </section>
 
-      {/* Abfindung nach Betriebszugehörigkeit - Links */}
+      {/* Abfindung nach Betriebszugehörigkeit - alle 40 Jahre */}
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
@@ -191,28 +192,14 @@ export default function AbfindungPage() {
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
             Abfindung nach Jahren im Betrieb
           </h2>
-          <div className="grid grid-cols-2 gap-4 max-w-[740px] max-md:grid-cols-1">
-            {[
-              { y: 1, slug: 'einem-jahr' },
-              { y: 2, slug: 'zwei-jahren' },
-              { y: 3, slug: 'drei-jahren' },
-              { y: 4, slug: 'vier-jahren' },
-              { y: 5, slug: 'fuenf-jahren' },
-              { y: 6, slug: 'sechs-jahren' },
-              { y: 7, slug: 'sieben-jahren' },
-              { y: 8, slug: 'acht-jahren' },
-              { y: 9, slug: 'neun-jahren' },
-              { y: 10, slug: 'zehn-jahren' },
-            ].map(({ y, slug }) => (
+          <div className="flex flex-wrap gap-3">
+            {entries.map((e) => (
               <Link
-                key={y}
-                href={`/abfindung-nach-${slug}-betriebszugehoerigkeit/`}
-                className="block py-4 px-5 bg-white border border-border rounded-sm no-underline text-ink hover:border-gold hover:text-gold-dark transition-all"
+                key={e.year}
+                href={`/abfindung-nach-${e.slug}-betriebszugehoerigkeit/`}
+                className="py-2.5 px-5 rounded-full border border-border bg-cream text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all"
               >
-                <span className="font-semibold">Abfindung nach {y} {y === 1 ? 'Jahr' : 'Jahren'}</span>
-                <span className="block text-[0.84rem] text-ink-muted mt-1">
-                  Regelabfindung: {(gehalt * 0.5 * y).toLocaleString('de-DE')}&nbsp;&euro; bei {gehalt.toLocaleString('de-DE')}&nbsp;&euro; Gehalt
-                </span>
+                Nach {e.year} {e.year === 1 ? 'Jahr' : 'Jahren'}
               </Link>
             ))}
           </div>

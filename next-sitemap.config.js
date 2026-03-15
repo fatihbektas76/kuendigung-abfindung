@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.german-litigation-lawyer.com',
+  siteUrl: 'https://www.gekuendigt-abfindung.de',
   generateRobotsTxt: true,
   exclude: ['/api/*'],
   robotsTxtOptions: {

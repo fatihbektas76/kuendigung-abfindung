@@ -32,6 +32,36 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
             </ul>
           </div>
           <div>
+            <div className="text-white/80 font-semibold text-[0.78rem] uppercase tracking-wider mb-2">Nach Jahren</div>
+            <ul className="list-none flex flex-col gap-1.5">
+              <li>
+                <Link href="/abfindung-nach-einem-jahr-betriebszugehoerigkeit/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Nach 1 Jahr
+                </Link>
+              </li>
+              <li>
+                <Link href="/abfindung-nach-fuenf-jahren-betriebszugehoerigkeit/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Nach 5 Jahren
+                </Link>
+              </li>
+              <li>
+                <Link href="/abfindung-nach-zehn-jahren-betriebszugehoerigkeit/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Nach 10 Jahren
+                </Link>
+              </li>
+              <li>
+                <Link href="/abfindung-nach-zwanzig-jahren-betriebszugehoerigkeit/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Nach 20 Jahren
+                </Link>
+              </li>
+              <li>
+                <Link href="/abfindung" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Alle anzeigen
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
             <div className="text-white/80 font-semibold text-[0.78rem] uppercase tracking-wider mb-2">Tools</div>
             <ul className="list-none flex flex-col gap-1.5">
               <li>
