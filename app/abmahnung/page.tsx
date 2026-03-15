@@ -342,27 +342,37 @@ export default function AbmahnungPage() {
         </div>
       </section>
 
-      {/* Pill links grid */}
+      {/* Kündigung nach Abmahnungen — Ihre Situation */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-            Nach Anzahl der Abmahnungen
+            Ihre Situation
           </div>
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Kündigung nach Abmahnungen
+            Kündigung nach Abmahnungen &ndash; Ihre Situation
           </h2>
-          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
-            Wie viele Abmahnungen haben Sie erhalten? Erfahren Sie, ob Ihre Kündigung wirksam ist
-            und welche Rechte Sie haben.
+          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
+            Sie wurden nach Abmahnungen gekündigt? Wählen Sie Ihre Situation und erfahren Sie,
+            ob Ihre Kündigung wirksam ist und welche Abfindung möglich ist.
           </p>
-          <div className="flex flex-wrap gap-2.5">
+          <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1">
             {abmahnungEntries.map((e) => (
               <Link
                 key={e.count}
                 href={`/kuendigung-nach-${e.slug}/`}
-                className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-cream"
+                className="no-underline text-inherit block"
               >
-                {e.count} {e.count === 1 ? 'Abmahnung' : 'Abmahnungen'}
+                <article className="bg-cream border border-border rounded py-[26px] px-7 transition-all border-l-[3px] border-l-transparent hover:border-l-gold hover:translate-x-1 h-full">
+                  <h3 className="font-serif text-[1.05rem] font-bold mb-2">
+                    Kündigung nach {e.count} {e.count === 1 ? 'Abmahnung' : 'Abmahnungen'}
+                  </h3>
+                  <p className="text-[0.88rem] text-ink-muted leading-relaxed mb-3">
+                    Was gilt rechtlich und welche Abfindung ist möglich?
+                  </p>
+                  <span className="text-[0.82rem] text-gold-dark font-semibold">
+                    Mehr erfahren &rarr;
+                  </span>
+                </article>
               </Link>
             ))}
           </div>
