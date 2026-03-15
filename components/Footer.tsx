@@ -34,6 +34,16 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
                   Abmahnung
                 </Link>
               </li>
+              <li>
+                <Link href="/muster" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Muster &amp; Vorlagen
+                </Link>
+              </li>
+              <li>
+                <Link href="/urteile" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Urteile
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

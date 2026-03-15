@@ -64,6 +64,16 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
+            <Link href="/muster" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+              Muster
+            </Link>
+          </li>
+          <li>
+            <Link href="/urteile" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+              Urteile
+            </Link>
+          </li>
+          <li>
             <Link href="/ratgeber" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Ratgeber
             </Link>

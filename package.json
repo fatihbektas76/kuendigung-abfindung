@@ -13,7 +13,8 @@
     "generate:abmahnung": "tsx scripts/generate-abmahnung-content.ts",
     "generate:lebenssituation": "tsx scripts/generate-lebenssituation-content.ts",
     "generate:aufhebungsvertrag": "tsx scripts/generate-aufhebungsvertrag-content.ts",
-    "generate:fristlos": "tsx scripts/generate-fristlos-content.ts"
+    "generate:fristlos": "tsx scripts/generate-fristlos-content.ts",
+    "generate:muster": "tsx scripts/generate-muster-content.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

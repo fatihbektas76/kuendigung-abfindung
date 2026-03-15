@@ -1,0 +1,145 @@
+import Anthropic from "@anthropic-ai/sdk";
+import fs from "fs";
+import path from "path";
+
+const client = new Anthropic();
+
+export interface MusterContent {
+  widerspruchAbmahnung: {
+    title: string;
+    intro: string;
+    muster: string;
+  };
+  gegendarstellungAbmahnung: {
+    title: string;
+    intro: string;
+    muster: string;
+  };
+  kuendigungsschutzklage: {
+    title: string;
+    intro: string;
+    muster: string;
+  };
+  aufhebungsvertragCheckliste: {
+    title: string;
+    intro: string;
+    punkte: string[];
+  };
+  abmahnungCheckliste: {
+    title: string;
+    intro: string;
+    punkte: string[];
+  };
+}
+
+async function generateMusterContent(): Promise<MusterContent> {
+  const prompt = `Du bist Fachanwalt für Arbeitsrecht. Erstelle professionelle Mustertexte als JSON.
+
+Erstelle NUR das folgende JSON-Objekt, ohne Markdown-Backticks oder sonstige Formatierung:
+
+{
+  "widerspruchAbmahnung": {
+    "title": "Muster: Widerspruch gegen Abmahnung",
+    "intro": "2-3 Sätze Erklärung wann und warum ein Widerspruch sinnvoll ist, mit §-Referenzen",
+    "muster": "Vollständiger Mustertext im Briefformat. Verwende [Platzhalter] für individuelle Daten wie [Ihr Name], [Straße, PLZ Ort], [Datum], [Name des Arbeitgebers], [Abteilung/Personalabteilung], [Datum der Abmahnung], [beschriebenes Fehlverhalten]. Professionell formuliert, sachlich aber bestimmt. Mindestens 200 Wörter."
+  },
+  "gegendarstellungAbmahnung": {
+    "title": "Muster: Gegendarstellung zur Abmahnung",
+    "intro": "2-3 Sätze Erklärung des Unterschieds zum Widerspruch, Recht auf Aufnahme in die Personalakte",
+    "muster": "Vollständiger Mustertext im Briefformat mit [Platzhaltern]. Sachliche Darstellung der eigenen Sicht. Aufforderung zur Aufnahme in die Personalakte. Mindestens 200 Wörter."
+  },
+  "kuendigungsschutzklage": {
+    "title": "Muster: Kündigungsschutzklage (vereinfacht)",
+    "intro": "2-3 Sätze + deutlicher Hinweis dass eine Kündigungsschutzklage IMMER von einem Anwalt eingereicht werden sollte. Dieses Muster dient nur zur Orientierung.",
+    "muster": "Vereinfachter Mustertext einer Kündigungsschutzklage. An das Arbeitsgericht [Ort]. Format: Kläger [Name, Adresse] gegen Beklagte [Firma, Adresse]. Antrag auf Feststellung dass das Arbeitsverhältnis nicht aufgelöst ist. Mit [Platzhaltern]. Mindestens 250 Wörter."
+  },
+  "aufhebungsvertragCheckliste": {
+    "title": "Checkliste: Aufhebungsvertrag prüfen",
+    "intro": "2-3 Sätze warum jeder Punkt wichtig ist und warum anwaltliche Prüfung empfohlen wird",
+    "punkte": ["15 konkrete Prüfpunkte als Array von Strings. Jeder Punkt beschreibt was geprüft werden muss und warum es wichtig ist. Z.B. 'Beendigungsdatum: Entspricht es mindestens der gesetzlichen Kündigungsfrist? Ein zu frühes Datum kostet Sie Gehalt und Urlaubstage.' Punkte: Beendigungsdatum, Abfindungshöhe, Fälligkeit der Abfindung, Freistellung (bezahlt/unbezahlt, widerruflich/unwiderruflich), Arbeitszeugnis (Mindestnote), Urlaubsabgeltung, Wettbewerbsverbot, Rückgabe Firmeneigentum, Geheimhaltungsklausel, Sperrzeit-Formulierung, Turbo-Klausel, Outplacement, Betriebliche Altersvorsorge, Dienstwagen-Regelung, Erledigungsklausel"]
+  },
+  "abmahnungCheckliste": {
+    "title": "Checkliste: Abmahnung prüfen",
+    "intro": "2-3 Sätze warum formale Prüfung der Abmahnung wichtig ist",
+    "punkte": ["10 konkrete Prüfpunkte. Jeder Punkt beschreibt ein formales oder inhaltliches Kriterium. Z.B. 'Konkretes Fehlverhalten benannt? Die Abmahnung muss das Fehlverhalten mit Datum, Uhrzeit und Ort genau beschreiben — pauschale Vorwürfe sind unwirksam.' Punkte: Konkretes Fehlverhalten, Datum/Uhrzeit/Ort, Vertragspflicht benannt, Androhung von Konsequenzen, Zustellung nachweisbar, Verhältnismäßigkeit, Keine Wiederholung alter Vorwürfe, Frist für Gegendarstellung, Unterschrift des Berechtigten, Aufnahme in Personalakte"]
+  }
+}
+
+Wichtig:
+- Alle Texte auf Deutsch
+- Professionelle aber verständliche Sprache
+- §-Referenzen wo relevant
+- Die Mustertexte müssen VOLLSTÄNDIG und sofort verwendbar sein
+- [Platzhalter] in eckigen Klammern für individuelle Daten
+- NUR valides JSON zurückgeben
+- Keine Markdown-Formatierung
+- Zeilenumbrüche in Mustertexten als \\n`;
+
+  const response = await client.messages.create({
+    model: "claude-sonnet-4-20250514",
+    max_tokens: 8000,
+    messages: [{ role: "user", content: prompt }],
+  });
+
+  const text =
+    response.content[0].type === "text" ? response.content[0].text : "";
+  const cleaned = text
+    .replace(/```json\n?/g, "")
+    .replace(/```\n?/g, "")
+    .trim();
+  return JSON.parse(cleaned);
+}
+
+async function main() {
+  const outputJsonPath = path.join(process.cwd(), "lib", "generated-muster-content.json");
+  const outputTsPath = path.join(process.cwd(), "lib", "generated-muster-content.ts");
+
+  if (fs.existsSync(outputJsonPath)) {
+    console.log("✓ Muster content already generated — skipping. Delete JSON to regenerate.");
+    return;
+  }
+
+  console.log("Generating Muster & Vorlagen content...");
+
+  try {
+    const content = await generateMusterContent();
+
+    fs.writeFileSync(outputJsonPath, JSON.stringify(content, null, 2), "utf-8");
+    console.log("✓ JSON saved");
+
+    const tsOutput = `// Auto-generated by scripts/generate-muster-content.ts
+// Do not edit manually
+
+export interface MusterEntry {
+  title: string;
+  intro: string;
+  muster: string;
+}
+
+export interface ChecklisteEntry {
+  title: string;
+  intro: string;
+  punkte: string[];
+}
+
+export interface MusterContent {
+  widerspruchAbmahnung: MusterEntry;
+  gegendarstellungAbmahnung: MusterEntry;
+  kuendigungsschutzklage: MusterEntry;
+  aufhebungsvertragCheckliste: ChecklisteEntry;
+  abmahnungCheckliste: ChecklisteEntry;
+}
+
+export const musterContent: MusterContent = ${JSON.stringify(content, null, 2)};
+`;
+
+    fs.writeFileSync(outputTsPath, tsOutput, "utf-8");
+    console.log("✓ TypeScript saved: lib/generated-muster-content.ts");
+    console.log("✅ Muster content generated!");
+  } catch (error) {
+    console.error("✗ Error:", error);
+    process.exit(1);
+  }
+}
+
+main();
