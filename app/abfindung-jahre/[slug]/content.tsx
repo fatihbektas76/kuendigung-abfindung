@@ -139,11 +139,11 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs, uniqueI
                 href="/#kontakt"
                 className="block w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
               >
-                Abfindung jetzt kostenlos prüfen lassen &mdash; Antwort in 24h &rarr;
+                Abfindung jetzt kostenlos prüfen lassen &rarr;
               </a>
               {/* d. Social proof */}
               <p className="text-[0.78rem] text-ink-muted text-center mt-3">
-                &starf;&starf;&starf;&starf;&starf; 68 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
+                ★★★★★ 68 Bewertungen &middot; Über 5.000 erfolgreiche Verfahren &middot; Bundesweit
               </p>
             </div>
 
@@ -337,13 +337,13 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs, uniqueI
           </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Wir sind auf Kündigungsschutz und Abfindung spezialisiert &mdash; mit über 20 Jahren Erfahrung
-            und mehr als 2.000 erfolgreichen Verfahren.
+            und mehr als 5.000 erfolgreichen Verfahren.
           </p>
           <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">
             {[
               {
                 title: 'Nachweisliche Erfolgsbilanz',
-                desc: 'Über 2.000 erfolgreiche Verfahren, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.',
+                desc: 'Über 5.000 erfolgreiche Verfahren, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.',
                 icon: (
                   <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -524,7 +524,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs, uniqueI
             Jetzt kostenlose Erstberatung sichern
           </h2>
           <p className="text-white/60 text-[0.92rem] mb-6">
-            &starf;&starf;&starf;&starf;&starf; &middot; 5,0 &middot; 68 Bewertungen auf anwalt.de
+            ★★★★★ &middot; 5,0 &middot; 68 Bewertungen auf anwalt.de
           </p>
           <div className="flex justify-center gap-6 mb-8 text-[0.88rem] text-white/80 flex-wrap">
             <span className="flex items-center gap-2">
@@ -537,7 +537,7 @@ export default function AbfindungJahreContent({ entry, prev, next, faqs, uniqueI
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              Über 2.000 erfolgreiche Verfahren
+              Über 5.000 erfolgreiche Verfahren
             </span>
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
