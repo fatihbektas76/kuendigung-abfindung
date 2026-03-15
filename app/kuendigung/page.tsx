@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { entries } from '@/lib/betriebszugehoerigkeit';
+import { abmahnungEntries } from '@/lib/abmahnung-content';
 import FaqAccordion from '@/components/FaqAccordion';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
@@ -213,6 +214,33 @@ export default function KuendigungPage() {
                 className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white"
               >
                 {e.year} {e.year === 1 ? 'Jahr' : 'Jahre'}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Kündigung nach Abmahnungen - Links */}
+      <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+            Nach Abmahnungen
+          </div>
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+            Kündigung nach Abmahnungen
+          </h2>
+          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
+            Sie wurden nach einer oder mehreren Abmahnungen gekündigt? Erfahren Sie,
+            ob Ihre Kündigung wirksam ist.
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {abmahnungEntries.map((e) => (
+              <Link
+                key={e.count}
+                href={`/kuendigung-nach-${e.slug}/`}
+                className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white"
+              >
+                {e.count} {e.count === 1 ? 'Abmahnung' : 'Abmahnungen'}
               </Link>
             ))}
           </div>

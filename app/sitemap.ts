@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { entries } from '@/lib/betriebszugehoerigkeit';
+import { abmahnungEntries } from '@/lib/abmahnung-content';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
@@ -30,5 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...clusterAPages, ...clusterDPages];
+  const clusterGPages: MetadataRoute.Sitemap = abmahnungEntries.map((e) => ({
+    url: `${BASE_URL}/kuendigung-nach-${e.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages];
 }

@@ -12,6 +12,10 @@ const nextConfig = {
         source: '/gekuendigt-nach-:slug-betriebszugehoerigkeit/',
         destination: '/gekuendigt-jahre/:slug/',
       },
+      {
+        source: '/kuendigung-nach-:slug/',
+        destination: '/abmahnung-seiten/:slug/',
+      },
     ];
   },
 };
