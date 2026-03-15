@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import FaqAccordion from '@/components/FaqAccordion';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
@@ -236,14 +237,7 @@ export default function KuendigungPage() {
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
             Fragen zur Kündigung
           </h2>
-          <div className="max-w-[740px] space-y-6">
-            {faqs.map((faq, i) => (
-              <div key={i} className="border-b border-border pb-5">
-                <h3 className="font-serif text-[1.1rem] font-bold mb-2">{faq.q}</h3>
-                <p className="text-[0.92rem] text-ink-light leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={faqs} />
         </div>
       </section>
 
