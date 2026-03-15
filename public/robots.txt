@@ -1,4 +1,4 @@
-# robots.txt — german-litigation-lawyer.com
+# robots.txt — gekuendigt-abfindung.de
 
 # Standard crawlers
 User-agent: *
@@ -31,4 +31,4 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap
-Sitemap: https://www.german-litigation-lawyer.com/sitemap.xml
+Sitemap: https://www.gekuendigt-abfindung.de/sitemap.xml

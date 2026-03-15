@@ -3,7 +3,7 @@ import { readFile, readdir } from 'fs/promises';
 import { join } from 'path';
 import matter from 'gray-matter';
 
-const BASE_URL = 'https://www.german-litigation-lawyer.com';
+const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 async function getBlogEntries(): Promise<string[]> {
   const blogDir = join(process.cwd(), 'content', 'blog');
@@ -33,11 +33,11 @@ async function getBlogEntries(): Promise<string[]> {
 export async function GET() {
   const blogLines = await getBlogEntries();
 
-  const content = `# APOS Legal — German Litigation for International Businesses
+  const content = `# gekuendigt-abfindung.de — Kündigung & Abfindung for International Businesses
 
-> APOS Legal (Kanzlei Fatih Bektas) is a German law firm specialising in commercial litigation and arbitration for US and UK companies. All client communication is in English. The firm is based in Heidelberg and Berlin.
+> gekuendigt-abfindung.de (Kanzlei Fatih Bektas) is a German law firm specialising in commercial litigation and arbitration for US and UK companies. All client communication is in English. The firm is based in Heidelberg and Berlin.
 
-APOS Legal represents international businesses as plaintiff or defendant in German courts (Amtsgericht, Landgericht, Oberlandesgericht) and in international arbitration (ICC, DIS, LCIA). Fatih Bektas is a certified specialist in employment law (Fachanwalt für Arbeitsrecht) since 2011 and a qualified mediator with 20+ years of litigation experience.
+gekuendigt-abfindung.de represents international businesses as plaintiff or defendant in German courts (Amtsgericht, Landgericht, Oberlandesgericht) and in international arbitration (ICC, DIS, LCIA). Fatih Bektas is a certified specialist in employment law (Fachanwalt für Arbeitsrecht) since 2011 and a qualified mediator with 20+ years of litigation experience.
 
 ## Core Services
 
@@ -58,7 +58,7 @@ APOS Legal represents international businesses as plaintiff or defendant in Germ
 
 - [Full Team Overview](${BASE_URL}/team): Fatih Bektas (Attorney-at-Law & Certified Specialist), Georg Willem Büchler (Attorney-at-Law & Certified Specialist), Dr. Martin Duncker (Attorney-at-Law & Certified Specialist).
 
-## Blog — Practical Guides on German Litigation
+## Blog — Practical Guides on Kündigung & Abfindung
 
 ${blogLines.join('\n')}
 

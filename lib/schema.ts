@@ -1,12 +1,12 @@
-const BASE_URL = "https://www.german-litigation-lawyer.com";
+const BASE_URL = "https://www.gekuendigt-abfindung.de";
 
 // ─── Shared entities ────────────────────────────────────────────────────────
 
 export const organizationEntity = {
   "@type": ["LegalService", "Organization"],
   "@id": `${BASE_URL}/#organization`,
-  name: "APOS Legal",
-  legalName: "APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG",
+  name: "gekuendigt-abfindung.de",
+  legalName: "gekuendigt-abfindung.de Rechtsanwaltsgesellschaft mbH & Co. KG",
   url: BASE_URL,
   logo: {
     "@type": "ImageObject",
@@ -111,7 +111,7 @@ export function getLegalServiceSchema() {
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "German Litigation Services",
+      name: "Kündigung & Abfindung Services",
       itemListElement: [
         {
           "@type": "Offer",
@@ -195,7 +195,7 @@ export function getFAQSchema() {
         name: "How do I sue a company in Germany from the US or UK?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "To sue in Germany, you need a German-admitted attorney (Rechtsanwalt) — foreign lawyers cannot represent you in German courts. The process starts with a demand letter, followed by filing a statement of claim (Klageschrift) at the competent court. For claims above €10,000, attorney representation is mandatory. German litigation has no discovery, no jury trials, and follows the loser-pays principle. APOS Legal handles everything in English — you never need to deal with German courts directly.",
+          text: "To sue in Germany, you need a German-admitted attorney (Rechtsanwalt) — foreign lawyers cannot represent you in German courts. The process starts with a demand letter, followed by filing a statement of claim (Klageschrift) at the competent court. For claims above €10,000, attorney representation is mandatory. German litigation has no discovery, no jury trials, and follows the loser-pays principle. gekuendigt-abfindung.de handles everything in English — you never need to deal with German courts directly.",
         },
       },
       {
@@ -235,7 +235,7 @@ export function getFAQSchema() {
         name: "Can I use arbitration instead of German courts?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, if your contract contains an arbitration clause. Germany is a signatory to the New York Convention. APOS Legal represents international clients in ICC, DIS, and LCIA arbitration proceedings seated in Germany, as well as in enforcement of foreign arbitral awards before German courts.",
+          text: "Yes, if your contract contains an arbitration clause. Germany is a signatory to the New York Convention. gekuendigt-abfindung.de represents international clients in ICC, DIS, and LCIA arbitration proceedings seated in Germany, as well as in enforcement of foreign arbitral awards before German courts.",
         },
       },
       {
@@ -251,7 +251,7 @@ export function getFAQSchema() {
         name: "Do I need to travel to Germany for my court case?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "In most cases, no. Your German attorney represents you in court, and personal appearance is rarely required. Video conferencing is increasingly accepted. APOS Legal handles all filings, court appearances, and procedural matters on your behalf — you stay informed through regular English-language updates.",
+          text: "In most cases, no. Your German attorney represents you in court, and personal appearance is rarely required. Video conferencing is increasingly accepted. gekuendigt-abfindung.de handles all filings, court appearances, and procedural matters on your behalf — you stay informed through regular English-language updates.",
         },
       },
     ],
@@ -306,7 +306,7 @@ export function getBlogPostingSchema({
     articleSection: category ?? "Legal Guide",
     inLanguage: "en",
     keywords: [
-      "German litigation",
+      "Kündigung & Abfindung",
       "German courts",
       category ?? "legal guide",
       "international business Germany",
