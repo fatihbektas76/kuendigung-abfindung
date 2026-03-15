@@ -55,7 +55,7 @@ export default function Page({ params }: Props) {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Startseite', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Kündigung', item: `${BASE_URL}/kuendigung` },
+              { '@type': 'ListItem', position: 2, name: 'Abmahnung', item: `${BASE_URL}/abmahnung` },
               {
                 '@type': 'ListItem',
                 position: 3,

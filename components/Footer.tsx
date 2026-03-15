@@ -29,6 +29,11 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
                   Aufhebungsvertrag
                 </Link>
               </li>
+              <li>
+                <Link href="/abmahnung" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Abmahnung
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

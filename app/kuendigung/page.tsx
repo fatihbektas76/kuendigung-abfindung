@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { entries } from '@/lib/betriebszugehoerigkeit';
-import { abmahnungEntries } from '@/lib/abmahnung-content';
 import FaqAccordion from '@/components/FaqAccordion';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
@@ -220,29 +219,24 @@ export default function KuendigungPage() {
         </div>
       </section>
 
-      {/* Kündigung nach Abmahnungen - Links */}
-      <section className="py-[70px] px-8 bg-white">
+      {/* Abmahnung - Link zur Pillar Page */}
+      <section className="py-[50px] px-8 bg-white">
         <div className="max-w-content mx-auto">
-          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-            Nach Abmahnungen
-          </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Kündigung nach Abmahnungen
-          </h2>
-          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
-            Sie wurden nach einer oder mehreren Abmahnungen gekündigt? Erfahren Sie,
-            ob Ihre Kündigung wirksam ist.
-          </p>
-          <div className="flex flex-wrap gap-2.5">
-            {abmahnungEntries.map((e) => (
+          <div className="max-w-[740px]">
+            <div className="flex items-center justify-between gap-6 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold max-md:flex-col max-md:items-start">
+              <div>
+                <p className="text-[1rem] font-semibold text-ink m-0">Abmahnung erhalten?</p>
+                <p className="text-[0.84rem] text-ink-muted mt-1 m-0">
+                  Erfahren Sie, ob Ihre Abmahnung wirksam ist und wie Sie jetzt richtig reagieren.
+                </p>
+              </div>
               <Link
-                key={e.count}
-                href={`/kuendigung-nach-${e.slug}/`}
-                className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white"
+                href="/abmahnung/"
+                className="inline-block py-3 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold no-underline whitespace-nowrap transition-all hover:bg-[#635428]"
               >
-                {e.count} {e.count === 1 ? 'Abmahnung' : 'Abmahnungen'}
+                Zum Ratgeber Abmahnung &rarr;
               </Link>
-            ))}
+            </div>
           </div>
         </div>
       </section>

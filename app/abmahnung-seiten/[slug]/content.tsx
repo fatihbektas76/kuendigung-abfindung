@@ -30,7 +30,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigung</Link>
+            <Link href="/abmahnung" className="text-gold no-underline hover:underline">Abmahnung</Link>
             <span className="mx-2">/</span>
             <span>Nach {label}</span>
           </nav>
@@ -62,6 +62,157 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
               <p className="text-[0.84rem] text-ink-muted mt-1 m-0">
                 Frist verpasst = Kündigung wirksam, auch wenn sie rechtswidrig war.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── b2. Was bedeutet diese Abmahnung? ───── */}
+      <section className="py-[60px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Einordnung
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+              Was bedeutet {label === '1 Abmahnung' ? 'diese Abmahnung' : `die ${entry.count}. Abmahnung`} für Ihr Arbeitsverhältnis?
+            </h2>
+            {entry.count === 1 ? (
+              <p className="text-[0.95rem] text-ink-light leading-relaxed">
+                Eine erste Abmahnung ist ein Warnsignal, aber noch kein Grund zur Panik. Der Arbeitgeber
+                dokumentiert damit, dass er ein bestimmtes Verhalten beanstandet. In den meisten Fällen
+                reicht eine einzelne Abmahnung nicht aus, um eine Kündigung zu rechtfertigen &mdash;
+                es sei denn, der Verstoß war besonders schwerwiegend. Trotzdem sollten Sie die Abmahnung
+                ernst nehmen und prüfen lassen, ob sie formell und inhaltlich korrekt ist.
+              </p>
+            ) : entry.count === 2 ? (
+              <p className="text-[0.95rem] text-ink-light leading-relaxed">
+                Bei zwei Abmahnungen wegen gleichartiger Verstöße wird die Lage ernster. Der Arbeitgeber
+                hat Ihnen bereits eine Chance zur Verhaltensänderung gegeben. Eine dritte gleichartige
+                Pflichtverletzung kann unter Umständen eine verhaltensbedingte Kündigung rechtfertigen.
+                Umso wichtiger ist es, jetzt die Wirksamkeit beider Abmahnungen zu prüfen &mdash; denn
+                wenn auch nur eine unwirksam ist, fehlt die Grundlage für eine Kündigung.
+              </p>
+            ) : (
+              <p className="text-[0.95rem] text-ink-light leading-relaxed">
+                Nach {label} ist die Situation ernst: Der Arbeitgeber hat dokumentiert, dass er Ihnen
+                mehrfach die Chance zur Verhaltensänderung gegeben hat. Eine weitere gleichartige
+                Pflichtverletzung kann eine verhaltensbedingte Kündigung rechtfertigen. Allerdings gilt:
+                Je mehr Abmahnungen es gibt, desto eher kann argumentiert werden, dass der Arbeitgeber
+                die Warnfunktion selbst nicht ernst nimmt. Lassen Sie alle Abmahnungen auf Formfehler
+                und inhaltliche Richtigkeit prüfen.
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── b3. Ist diese Abmahnung wirksam? ───── */}
+      <section className="py-[60px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Prüfschema
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+              Ist diese Abmahnung wirksam? &mdash; 5-Punkte-Prüfung
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
+              Prüfen Sie Ihre Abmahnung anhand dieser 5 Kriterien. Wenn auch nur ein Punkt nicht
+              erfüllt ist, ist die Abmahnung angreifbar:
+            </p>
+            <div className="space-y-3">
+              {[
+                { nr: 1, title: 'Konkreter Vorwurf', check: 'Ist das beanstandete Verhalten mit Datum, Uhrzeit und genauer Beschreibung benannt?' },
+                { nr: 2, title: 'Berechtigte Person', check: 'Wurde die Abmahnung von einem weisungsbefugten Vorgesetzten oder der Personalabteilung ausgesprochen?' },
+                { nr: 3, title: 'Inhaltlich zutreffend', check: 'Stimmt der Vorwurf? Haben Sie das beanstandete Verhalten tatsächlich so gezeigt?' },
+                { nr: 4, title: 'Verhältnismäßigkeit', check: 'Steht die Abmahnung in einem angemessenen Verhältnis zum Verstoß? Keine Bagatelle?' },
+                { nr: 5, title: 'Androhung von Konsequenzen', check: 'Enthält die Abmahnung den Hinweis, dass bei Wiederholung die Kündigung droht?' },
+              ].map((item) => (
+                <div key={item.nr} className="flex items-start gap-4 py-4 px-5 bg-cream rounded-sm border border-border">
+                  <div className="w-8 h-8 min-w-[32px] rounded-sm border-2 border-gold flex items-center justify-center font-serif text-[0.9rem] font-bold text-gold-dark">
+                    {item.nr}
+                  </div>
+                  <div>
+                    <h3 className="text-[0.95rem] font-bold text-ink mb-1">{item.title}</h3>
+                    <p className="text-[0.88rem] text-ink-muted leading-relaxed">{item.check}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── b4. Widerspruch gegen die Abmahnung ───── */}
+      <section className="py-[60px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Ihre Optionen
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+              Widerspruch gegen die Abmahnung
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Sie sind nicht verpflichtet, einer Abmahnung zu widersprechen &mdash; Ihr Schweigen
+              macht die Abmahnung nicht automatisch wirksam. Dennoch kann ein Widerspruch sinnvoll sein:
+            </p>
+            <div className="bg-white border border-border rounded p-6 mb-5">
+              <h3 className="font-serif text-[1.05rem] font-bold mb-3">Gegendarstellung nach &sect;83 Abs.&nbsp;2 BetrVG</h3>
+              <p className="text-[0.88rem] text-ink-muted leading-relaxed mb-3">
+                Sie haben das Recht, eine schriftliche Gegendarstellung zu verfassen und deren Aufnahme
+                in die Personalakte zu verlangen. In der Gegendarstellung sollten Sie:
+              </p>
+              <ul className="text-[0.88rem] text-ink-muted leading-relaxed list-disc pl-5 space-y-1">
+                <li>Den Sachverhalt aus Ihrer Sicht darstellen</li>
+                <li>Konkrete Gegenbeweise benennen (Zeugen, E-Mails, Zeiterfassung)</li>
+                <li>Formfehler der Abmahnung aufzeigen</li>
+                <li>Sachlich und faktenbasiert argumentieren</li>
+              </ul>
+            </div>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              <strong>Tipp:</strong> Lassen Sie die Gegendarstellung von einem Fachanwalt prüfen,
+              bevor Sie sie einreichen. Eine ungeschickt formulierte Gegendarstellung kann Ihre
+              Position in einem späteren Kündigungsschutzprozess schwächen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── b5. Wie verhalten Sie sich jetzt richtig? ───── */}
+      <section className="py-[60px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Handlungsempfehlung
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+              Wie verhalten Sie sich jetzt richtig?
+            </h2>
+            <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+              <div className="bg-cream border border-border rounded p-5">
+                <div className="text-gold-dark text-[1.2rem] mb-2">&#10003;</div>
+                <h3 className="font-serif text-[0.95rem] font-bold mb-2">Das sollten Sie tun</h3>
+                <ul className="text-[0.84rem] text-ink-muted leading-relaxed list-disc pl-4 space-y-1.5">
+                  <li>Abmahnung als &bdquo;erhalten&ldquo; bestätigen (nicht als inhaltlich richtig)</li>
+                  <li>Kopie anfertigen und sicher aufbewahren</li>
+                  <li>Beweise für Ihre Sicht sammeln</li>
+                  <li>Fachanwalt konsultieren</li>
+                  <li>Beanstandetes Verhalten abstellen</li>
+                </ul>
+              </div>
+              <div className="bg-cream border border-border rounded p-5">
+                <div className="text-red-600 text-[1.2rem] mb-2">&#10007;</div>
+                <h3 className="font-serif text-[0.95rem] font-bold mb-2">Das sollten Sie vermeiden</h3>
+                <ul className="text-[0.84rem] text-ink-muted leading-relaxed list-disc pl-4 space-y-1.5">
+                  <li>Abmahnung inhaltlich unterschreiben</li>
+                  <li>Emotional oder aggressiv reagieren</li>
+                  <li>Das beanstandete Verhalten wiederholen</li>
+                  <li>Die Abmahnung ignorieren</li>
+                  <li>Ohne anwaltliche Beratung handeln</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -328,6 +479,9 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
                 {e.count} {e.count === 1 ? 'Abmahnung' : 'Abmahnungen'}
               </Link>
             ))}
+            <Link href="/abmahnung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+              Abmahnung Übersicht
+            </Link>
             <Link href="/kuendigung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
               Kündigung Übersicht
             </Link>

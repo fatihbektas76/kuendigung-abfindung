@@ -59,6 +59,11 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
+            <Link href="/abmahnung" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+              Abmahnung
+            </Link>
+          </li>
+          <li>
             <Link href="/ratgeber" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Ratgeber
             </Link>
