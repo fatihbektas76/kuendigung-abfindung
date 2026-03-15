@@ -234,6 +234,42 @@ export default function FristloseKuendigungPage() {
         </div>
       </section>
 
+      {/* Cross-link cards */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px] grid grid-cols-2 gap-4 max-md:grid-cols-1">
+            <Link
+              href="/kuendigung/"
+              className="block py-6 px-6 bg-cream border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+                Verwandtes Thema
+              </div>
+              <span className="font-serif text-[1.05rem] font-bold">
+                Kündigung erhalten (ordentlich)?
+              </span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">
+                Ordentliche Kündigung mit Kündigungsfrist &mdash; Ihre Rechte und Abfindungsmöglichkeiten. &rarr;
+              </span>
+            </Link>
+            <Link
+              href="/abfindungsrechner/"
+              className="block py-6 px-6 bg-cream border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+                Tool
+              </div>
+              <span className="font-serif text-[1.05rem] font-bold">
+                Abfindung berechnen
+              </span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">
+                Wie hoch könnte Ihre Abfindung sein? Kostenlos berechnen. &rarr;
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">

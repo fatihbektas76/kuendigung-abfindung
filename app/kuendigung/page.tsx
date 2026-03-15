@@ -220,29 +220,24 @@ export default function KuendigungPage() {
         </div>
       </section>
 
-      {/* Fristlose Kündigung nach Jahren */}
-      <section className="py-[70px] px-8 bg-white">
+      {/* Fristlose Kündigung - Link Card */}
+      <section className="py-[50px] px-8 bg-white">
         <div className="max-w-content mx-auto">
-          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-            Fristlose Kündigung
-          </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Fristlose Kündigung nach Jahren im Betrieb
-          </h2>
-          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
-            Fristlos gekündigt? Die meisten fristlosen Kündigungen sind unwirksam. Wählen Sie Ihre
-            Betriebszugehörigkeit für eine Einschätzung Ihrer Chancen.
-          </p>
-          <div className="flex flex-wrap gap-2.5">
-            {entries.map((e) => (
+          <div className="max-w-[740px]">
+            <div className="flex items-center justify-between gap-6 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold max-md:flex-col max-md:items-start">
+              <div>
+                <p className="text-[1rem] font-semibold text-ink m-0">Fristlose Kündigung erhalten?</p>
+                <p className="text-[0.84rem] text-ink-muted mt-1 m-0">
+                  Die meisten fristlosen Kündigungen sind unwirksam. &sect;626 BGB stellt sehr hohe Anforderungen.
+                </p>
+              </div>
               <Link
-                key={`fristlos-${e.year}`}
-                href={`/fristlose-kuendigung-nach-${e.slug}-betriebszugehoerigkeit/`}
-                className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-cream"
+                href="/fristlose-kuendigung/"
+                className="inline-block py-3 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold no-underline whitespace-nowrap transition-all hover:bg-[#635428]"
               >
-                {e.year} {e.year === 1 ? 'Jahr' : 'Jahre'}
+                Zum Ratgeber &rarr;
               </Link>
-            ))}
+            </div>
           </div>
         </div>
       </section>
