@@ -97,6 +97,36 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
             </ul>
           </div>
           <div>
+            <div className="text-white/80 font-semibold text-[0.78rem] uppercase tracking-wider mb-2">Situationen</div>
+            <ul className="list-none flex flex-col gap-1.5">
+              <li>
+                <Link href="/kuendigung/kuendigung-schwangerschaft/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Schwangerschaft
+                </Link>
+              </li>
+              <li>
+                <Link href="/kuendigung/kuendigung-probezeit/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Probezeit
+                </Link>
+              </li>
+              <li>
+                <Link href="/kuendigung/kuendigung-wegen-krankheit/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Wegen Krankheit
+                </Link>
+              </li>
+              <li>
+                <Link href="/kuendigung/kuendigung-schwerbehinderung/" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Schwerbehinderung
+                </Link>
+              </li>
+              <li>
+                <Link href="/kuendigung" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Alle anzeigen
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
             <div className="text-white/80 font-semibold text-[0.78rem] uppercase tracking-wider mb-2">Tools</div>
             <ul className="list-none flex flex-col gap-1.5">
               <li>

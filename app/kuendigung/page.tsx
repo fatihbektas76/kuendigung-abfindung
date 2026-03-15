@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { entries } from '@/lib/betriebszugehoerigkeit';
+import { lebenssituationData } from '@/lib/lebenssituation-data';
 import FaqAccordion from '@/components/FaqAccordion';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
@@ -213,6 +214,33 @@ export default function KuendigungPage() {
                 className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white"
               >
                 {e.year} {e.year === 1 ? 'Jahr' : 'Jahre'}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Kündigung nach Ihrer Situation */}
+      <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+            Nach Ihrer Situation
+          </div>
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+            Kündigung nach Ihrer Lebenssituation
+          </h2>
+          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
+            Besonderer Kündigungsschutz gilt in vielen Lebenssituationen. Finden Sie Ihre Situation
+            und erfahren Sie, welche Rechte Sie haben.
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {lebenssituationData.map((e) => (
+              <Link
+                key={e.slug}
+                href={`/kuendigung/${e.slug}/`}
+                className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white"
+              >
+                {e.h1.replace(/ — .*$/, '')}
               </Link>
             ))}
           </div>

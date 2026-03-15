@@ -10,7 +10,8 @@
     "lint": "next lint",
     "generate": "tsx scripts/generate-content.ts",
     "generate:kuendigung": "tsx scripts/generate-kuendigung-content.ts",
-    "generate:abmahnung": "tsx scripts/generate-abmahnung-content.ts"
+    "generate:abmahnung": "tsx scripts/generate-abmahnung-content.ts",
+    "generate:lebenssituation": "tsx scripts/generate-lebenssituation-content.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
