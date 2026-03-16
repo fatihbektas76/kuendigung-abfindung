@@ -53,12 +53,21 @@ export const metadata: Metadata = {
     url: 'https://www.gekuendigt-abfindung.de/',
     siteName: 'gekuendigt-abfindung.de',
     locale: 'de_DE',
+    images: [
+      {
+        url: 'https://www.gekuendigt-abfindung.de/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'gekuendigt-abfindung.de – Fachanwalt für Arbeitsrecht',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
     description:
       'Kündigung prüfen, Abfindung maximieren. Fachanwalt für Arbeitsrecht. 20+ Jahre Erfahrung.',
+    images: ['https://www.gekuendigt-abfindung.de/og-image.png'],
   },
   icons: {
     icon: [
@@ -68,12 +77,44 @@ export const metadata: Metadata = {
       { url: '/icon.png', sizes: '192x192', type: 'image/png' },
     ],
   },
+  manifest: '/manifest.json',
+  other: {
+    'theme-color': '#A68B4B',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de" dir="ltr" className={`${playfair.variable} ${sourceSans.variable}`}>
       <head>
+        {/* Schema.org - WebSite */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'gekuendigt-abfindung.de',
+              alternateName: 'Gekündigt? Abfindung & Kündigungsschutz',
+              url: 'https://www.gekuendigt-abfindung.de',
+              inLanguage: 'de-DE',
+              publisher: {
+                '@type': 'Organization',
+                name: 'APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG',
+                url: 'https://www.gekuendigt-abfindung.de',
+              },
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://www.gekuendigt-abfindung.de/ratgeber?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
+
         {/* Schema.org - LegalService */}
         <script
           type="application/ld+json"

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Practical guides on German court procedure, costs, enforcement, and litigation strategy for US and UK companies.',
   alternates: {
-    canonical: 'https://www.german-litigation-lawyer.com/blog',
+    canonical: 'https://www.gekuendigt-abfindung.de/blog',
   },
 };
 

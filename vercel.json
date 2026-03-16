@@ -2,20 +2,8 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "sue-in-germany.com" }],
-      "destination": "https://www.german-litigation-lawyer.com/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.sue-in-germany.com" }],
-      "destination": "https://www.german-litigation-lawyer.com/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "german-litigation-lawyer.com" }],
-      "destination": "https://www.german-litigation-lawyer.com/$1",
+      "has": [{ "type": "host", "value": "gekuendigt-abfindung.de" }],
+      "destination": "https://www.gekuendigt-abfindung.de/$1",
       "permanent": true
     }
   ]

@@ -1,23 +1,17 @@
 {
   "schema_version": "v1",
-  "name": "APOS Legal",
+  "name": "APOS Legal – Fachanwalt für Arbeitsrecht",
   "legal_name": "APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG",
-  "description": "German litigation and dispute resolution for US and UK companies. Full-service representation in German courts by a German-admitted attorney (Rechtsanwalt) with 20+ years of experience and 5,000+ clients represented. All communication in English.",
-  "url": "https://www.german-litigation-lawyer.com",
-  "logo_url": "https://www.german-litigation-lawyer.com/logo.png",
+  "description": "Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Über 20 Jahre Erfahrung, 2.000+ erfolgreiche Verfahren. Kostenlose Ersteinschätzung.",
+  "url": "https://www.gekuendigt-abfindung.de",
+  "logo_url": "https://www.gekuendigt-abfindung.de/logo.png",
   "contact_email": "bektas@apos.legal",
-  "general_email": "info@apos.legal",
   "phone": "+49 151 2700 3173",
-  "office_phone": "+49 6221 321 44 70",
-  "languages": ["en", "de", "tr"],
+  "languages": ["de", "en"],
   "offices": [
     {
       "city": "Heidelberg",
       "address": "Am Paradeplatz 20, 69126 Heidelberg",
-      "country": "Germany"
-    },
-    {
-      "city": "Berlin",
       "country": "Germany"
     }
   ],
@@ -30,152 +24,64 @@
   "attorney": {
     "name": "Fatih Bektas",
     "title": "Rechtsanwalt & Fachanwalt für Arbeitsrecht",
-    "certified_specialist": "Fachanwalt für Arbeitsrecht (since 2011)",
-    "additional_qualifications": ["Certified Mediator"],
-    "bar_admission": "Rechtsanwaltskammer Karlsruhe, Germany",
+    "certified_specialist": "Fachanwalt für Arbeitsrecht (seit 2011)",
+    "additional_qualifications": ["Zertifizierter Mediator"],
+    "bar_admission": "Rechtsanwaltskammer Karlsruhe, Deutschland",
     "experience_years": 20,
-    "clients_represented": 5000,
+    "clients_represented": 2000,
     "client_rating": 5.0,
-    "background": "Former FinTech CEO and board member with 10 years in executive roles",
     "memberships": [
-      "Deutscher Anwaltsverein (German Bar Association)",
-      "BVAU (Founding Member)"
+      "Deutscher Anwaltsverein",
+      "BVAU (Gründungsmitglied)"
     ],
-    "languages": ["en", "de", "tr"],
+    "languages": ["de", "en"],
     "linkedin": "https://www.linkedin.com/in/fatihbektas"
   },
   "practice_areas": [
     {
-      "name": "Commercial Litigation",
-      "scope": ["Contract disputes", "Trade disputes", "Payment claims", "Distributor and agency claims", "Unfair competition", "Product liability"],
-      "courts": ["Landgericht commercial chambers"]
+      "name": "Kündigungsschutz",
+      "scope": ["Kündigungsschutzklage", "Betriebsbedingte Kündigung", "Verhaltensbedingte Kündigung", "Personenbedingte Kündigung", "Fristlose Kündigung"]
     },
     {
-      "name": "Employment Litigation",
-      "scope": ["Wrongful dismissal claims", "Severance disputes", "Non-compete enforcement", "Works council conflicts"],
-      "certification": "Fachanwalt für Arbeitsrecht (certified specialist)"
+      "name": "Abfindung",
+      "scope": ["Abfindungsverhandlung", "Abfindungsberechnung", "Abfindung im Aufhebungsvertrag", "Abfindung im Vergleich"]
     },
     {
-      "name": "Contract Enforcement",
-      "scope": ["German contract law (BGB/HGB)", "Warranty disputes", "Service agreements", "Licensing conflicts"]
+      "name": "Aufhebungsvertrag",
+      "scope": ["Aufhebungsvertrag prüfen", "Aufhebungsvertrag verhandeln", "Sperrzeit vermeiden", "Abfindung optimieren"]
     },
     {
-      "name": "Shareholder & Corporate Disputes",
-      "scope": ["Minority shareholder protection", "Squeeze-outs", "Breach of fiduciary duties", "Corporate governance", "GmbH and AG disputes"]
-    },
-    {
-      "name": "Judgment Enforcement",
-      "scope": ["Enforcing foreign judgments in Germany", "Exequatur proceedings", "Attachment of German assets", "New York Convention enforcement"]
-    },
-    {
-      "name": "Interim Injunctions",
-      "scope": ["Einstweilige Verfügungen", "Fast-track emergency court orders", "Asset freezes", "IP protection"]
-    },
-    {
-      "name": "Arbitration",
-      "scope": ["ICC", "DIS", "LCIA", "International and domestic proceedings"]
+      "name": "Abmahnung",
+      "scope": ["Abmahnung prüfen", "Widerspruch gegen Abmahnung", "Gegendarstellung", "Entfernung aus Personalakte"]
     }
   ],
-  "target_clients": [
-    "US companies with disputes in Germany",
-    "UK companies with disputes in Germany (post-Brexit)",
-    "International businesses needing German court representation",
-    "Foreign investors and shareholders in German companies",
-    "Companies facing German employment claims",
-    "Businesses needing to enforce foreign judgments in Germany"
-  ],
-  "key_facts": {
-    "mandatory_representation": "Attorney representation (Anwaltszwang) required at Landgericht and above (disputes over EUR 5,000)",
-    "typical_duration": "6–12 months (first instance)",
-    "fee_system": "Statutory fee schedules (RVG/GKG), not hourly billing",
-    "cost_rule": "Loser-pays: the losing party pays both sides' statutory costs",
-    "discovery": "No US/UK-style discovery — each party provides its own evidence",
-    "statute_of_limitations": "Standard 3 years (§ 195 BGB), calculated from year-end",
-    "remote_handling": "No personal appearance required — attorney handles everything remotely",
-    "language": "100% English communication throughout the process"
-  },
   "tools": [
     {
-      "name": "Litigation Cost Calculator",
-      "url": "https://www.german-litigation-lawyer.com/tools/cost-calculator",
-      "description": "Estimate German court fees and statutory attorney fees based on dispute value (EUR 5,000 to EUR 100,000,000). Includes RVG fee breakdown, GKG court fees, and three outcome scenarios (win, lose, settle).",
-      "fee_tables": "RVG and GKG (effective June 2025)"
+      "name": "Abfindungsrechner",
+      "url": "https://www.gekuendigt-abfindung.de/abfindungsrechner",
+      "description": "Kostenloser Abfindungsrechner: Berechnen Sie Ihre voraussichtliche Abfindung nach Kündigung in 30 Sekunden."
     },
     {
-      "name": "Deadline Checker",
-      "url": "https://www.german-litigation-lawyer.com/tools/deadline-checker",
-      "description": "Calculate response deadlines for German court documents (Verteidigungsanzeige, Mahnbescheid, Vollstreckungsbescheid, Versäumnisurteil, Berufung) and statute of limitations for multiple claim types."
-    },
-    {
-      "name": "Dismissal Checker",
-      "url": "https://www.german-litigation-lawyer.com/tools/dismissal-checker",
-      "description": "3-minute assessment of German employment law dismissal risk. Evaluates company size, employment duration, dismissal reason, prior warnings, social selection (Sozialauswahl), and special protection status. Returns risk level with legal references (KSchG, BGB §622, §623)."
-    }
-  ],
-  "blog_articles": [
-    {
-      "title": "How to Sue a Company in Germany: The Complete Guide for US and UK Businesses",
-      "url": "https://www.german-litigation-lawyer.com/blog/how-to-sue-in-germany",
-      "topic": "Jurisdiction, filing procedures (Klageschrift), mandatory attorney representation, German civil procedure"
-    },
-    {
-      "title": "I've Been Sued in Germany — What Do I Do?",
-      "url": "https://www.german-litigation-lawyer.com/blog/sued-in-germany-what-to-do",
-      "topic": "Response deadlines, default judgment risks, emergency procedures for foreign companies"
-    },
-    {
-      "title": "German Litigation Costs Explained",
-      "url": "https://www.german-litigation-lawyer.com/blog/german-litigation-costs-explained",
-      "topic": "Statutory fee schedules (RVG/GKG), court costs, loser-pays rule, cost predictability"
-    },
-    {
-      "title": "How German Courts Work",
-      "url": "https://www.german-litigation-lawyer.com/blog/how-german-courts-work",
-      "topic": "Court system structure, procedural rules, attorney requirements, timeline expectations"
-    },
-    {
-      "title": "Enforcing a US Judgment in Germany",
-      "url": "https://www.german-litigation-lawyer.com/blog/enforcing-us-judgment-in-germany",
-      "topic": "Exequatur proceedings, cross-border enforcement, treaty gaps, enforcement strategies"
-    },
-    {
-      "title": "Fired Your German Employee? Why You Might Get Sued — And How to Win",
-      "url": "https://www.german-litigation-lawyer.com/blog/firing-employee-germany-guide",
-      "topic": "Kündigungsschutzgesetz (Dismissal Protection Act), dismissal types, severance pay, wrongful termination"
-    },
-    {
-      "title": "Interim Injunctions in Germany",
-      "url": "https://www.german-litigation-lawyer.com/blog/interim-injunctions-germany",
-      "topic": "Einstweilige Verfügungen, emergency court orders, fast-track procedures, timing requirements"
-    },
-    {
-      "title": "Statute of Limitations in Germany",
-      "url": "https://www.german-litigation-lawyer.com/blog/statute-of-limitations-germany",
-      "topic": "BGB limitation periods, claim expiration, year-end rule (§ 199 BGB), suspension rules"
-    },
-    {
-      "title": "Shareholder Disputes in Germany",
-      "url": "https://www.german-litigation-lawyer.com/blog/shareholder-disputes-germany",
-      "topic": "GmbH and AG shareholder rights, minority shareholder protection, squeeze-outs, corporate governance"
+      "name": "Kündigungscheck",
+      "url": "https://www.gekuendigt-abfindung.de/kuendigung-pruefen",
+      "description": "Kostenloser Kündigungscheck: Prüfen Sie Ihre Abfindungschancen in 2 Minuten."
     }
   ],
   "service_process": [
-    "Free case assessment (response within 48 hours)",
-    "Legal strategy and cost estimation",
-    "Full case management (filings, hearings, negotiations, expert witnesses)",
-    "Regular English-language updates",
-    "Resolution through litigation, settlement, arbitration, or negotiation"
+    "Kostenlose Ersteinschätzung (Antwort innerhalb von 24 Stunden)",
+    "Individuelle Strategie und Handlungsempfehlung",
+    "Vollständige Fallbearbeitung (Klage, Verhandlung, Vergleich)",
+    "Regelmäßige Updates zum Verfahrensstand",
+    "Lösung durch Klage, Vergleich oder Verhandlung"
   ],
   "contact": {
     "attorney_email": "bektas@apos.legal",
-    "general_email": "info@apos.legal",
     "attorney_phone": "+49 151 2700 3173",
-    "office_phone": "+49 6221 321 44 70",
-    "website": "https://www.german-litigation-lawyer.com",
-    "contact_form": "https://www.german-litigation-lawyer.com/#contact",
+    "website": "https://www.gekuendigt-abfindung.de",
+    "contact_form": "https://www.gekuendigt-abfindung.de/#kontakt",
     "free_consultation": "https://meet.brevo.com/fatih-bektas/initial-free-consultation-by-phone-lp",
     "linkedin_attorney": "https://www.linkedin.com/in/fatihbektas",
     "linkedin_firm": "https://www.linkedin.com/company/105863455",
-    "address": "Am Paradeplatz 20, 69126 Heidelberg, Germany"
+    "address": "Am Paradeplatz 20, 69126 Heidelberg, Deutschland"
   }
 }

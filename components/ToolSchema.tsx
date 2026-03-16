@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.german-litigation-lawyer.com';
+const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 const tools: Record<string, { name: string; description: string; url: string }> = {
   'cost-calculator': {
