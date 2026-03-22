@@ -1,0 +1,118 @@
+import { Stadt } from "./staedte";
+
+// Berliner Bezirke – gleiche Datenstruktur wie staedte.ts / gemeinden.ts
+// Alle Bezirke → Arbeitsgericht Berlin, Magdeburger Platz 1, 10785 Berlin
+export const berlinBezirke: Stadt[] = [
+  {
+    slug: "berlin-mitte",
+    name: "Berlin-Mitte",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-friedrichshain-kreuzberg",
+    name: "Berlin Friedrichshain-Kreuzberg",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-pankow",
+    name: "Berlin-Pankow",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-charlottenburg-wilmersdorf",
+    name: "Berlin Charlottenburg-Wilmersdorf",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-spandau",
+    name: "Berlin-Spandau",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-steglitz-zehlendorf",
+    name: "Berlin Steglitz-Zehlendorf",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-tempelhof-schoeneberg",
+    name: "Berlin Tempelhof-Schöneberg",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-neukoelln",
+    name: "Berlin-Neukölln",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-treptow-koepenick",
+    name: "Berlin Treptow-Köpenick",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-marzahn-hellersdorf",
+    name: "Berlin Marzahn-Hellersdorf",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-lichtenberg",
+    name: "Berlin-Lichtenberg",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+  {
+    slug: "berlin-reinickendorf",
+    name: "Berlin-Reinickendorf",
+    bundesland: "Berlin",
+    arbeitsgericht: "Arbeitsgericht Berlin",
+    arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
+    lagName: "Landesarbeitsgericht Berlin-Brandenburg",
+    region: "Ost",
+  },
+];
+
+export function getBezirkBySlug(slug: string): Stadt | undefined {
+  return berlinBezirke.find((b) => b.slug === slug);
+}

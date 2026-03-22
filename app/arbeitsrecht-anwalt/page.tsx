@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { staedte } from "@/data/staedte";
 import { gemeinden } from "@/data/gemeinden";
+import { berlinBezirke } from "@/data/bezirke";
 
 export const metadata: Metadata = {
   title: "Anwalt für Arbeitsrecht – Alle Städte | APOS Legal",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 const regionen = ["West", "Süd", "Nord", "Mitte", "Ost"] as const;
 type Region = typeof regionen[number];
 
-const alleOrte = [...staedte, ...gemeinden];
+const alleOrte = [...staedte, ...gemeinden, ...berlinBezirke];
 
 export default function ArbeitsrechtAnwaltPage() {
   const byRegion = regionen.reduce((acc, r) => {

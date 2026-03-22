@@ -2,14 +2,17 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getStadtBySlug, staedte, Stadt } from "@/data/staedte";
 import { gemeinden, getGemeindeBySlug } from "@/data/gemeinden";
+import { berlinBezirke, getBezirkBySlug } from "@/data/bezirke";
 import { StadtContent, GemeindeContent } from "@/types/content";
 import { arbeitsgerichteUrls } from "@/data/arbeitsgerichte-urls";
 import Image from "next/image";
 import stadtContentsRaw from "@/data/generated/stadt-contents.json";
 import gemeindenContentsRaw from "@/data/generated/gemeinden-contents.json";
+import bezirkeContentsRaw from "@/data/generated/bezirke-contents.json";
 
 const stadtContents = stadtContentsRaw as Record<string, StadtContent>;
 const gemeindenContents = gemeindenContentsRaw as Record<string, GemeindeContent>;
+const bezirkeContents = bezirkeContentsRaw as Record<string, GemeindeContent>;
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 function lookupOrt(slug: string): { ort: Stadt; content: StadtContent | GemeindeContent; isGemeinde: boolean } | null {
@@ -17,6 +20,8 @@ function lookupOrt(slug: string): { ort: Stadt; content: StadtContent | Gemeinde
   if (stadt && stadtContents[slug]) return { ort: stadt, content: stadtContents[slug], isGemeinde: false };
   const gemeinde = getGemeindeBySlug(slug);
   if (gemeinde && gemeindenContents[slug]) return { ort: gemeinde, content: gemeindenContents[slug], isGemeinde: true };
+  const bezirk = getBezirkBySlug(slug);
+  if (bezirk && bezirkeContents[slug]) return { ort: bezirk, content: bezirkeContents[slug], isGemeinde: true };
   return null;
 }
 
@@ -29,6 +34,7 @@ export async function generateStaticParams() {
   return [
     ...staedte.map((s) => ({ stadt: s.slug })),
     ...gemeinden.map((g) => ({ stadt: g.slug })),
+    ...berlinBezirke.map((b) => ({ stadt: b.slug })),
   ];
 }
 
