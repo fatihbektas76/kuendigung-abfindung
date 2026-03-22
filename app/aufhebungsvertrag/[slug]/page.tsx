@@ -4,6 +4,8 @@ import { aufhebungsvertragData, getAufhebungsvertragEntry } from '@/lib/aufhebun
 import { getAufhebungsvertragContent } from '@/lib/generated-aufhebungsvertrag-content';
 import AufhebungsvertragSubContent from './content';
 
+export const revalidate = 86400;
+
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
@@ -16,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getAufhebungsvertragEntry(params.slug);
   if (!entry) return {};
   return {
-    title: `${entry.h1} (2026)`,
+    title: `${entry.h1} (${new Date().getFullYear()})`,
     description: `${entry.h1} — ${entry.description} Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`,
     alternates: {
       canonical: `${BASE_URL}/aufhebungsvertrag/${entry.slug}/`,
@@ -83,9 +85,7 @@ export default function Page({ params }: Props) {
         faqs={faqs}
         uniqueIntro={generated.uniqueIntro}
         hauptteil={generated.hauptteil}
-        fallkonstellation={generated.fallkonstellation}
         praxistipp={generated.praxistipp}
-        bagUrteil={generated.bagUrteil}
       />
     </>
   );

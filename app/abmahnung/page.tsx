@@ -2,11 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { abmahnungEntries } from '@/lib/abmahnung-content';
 import FaqAccordion from '@/components/FaqAccordion';
+import StandAnzeige from '@/components/StandAnzeige';
+import AuthorBox from '@/components/AuthorBox';
+
+export const revalidate = 86400;
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (2026)',
+  title: `Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (${new Date().getFullYear()})`,
   description:
     'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer. Kostenlose Ersteinschätzung vom Fachanwalt.',
   alternates: {
@@ -71,6 +75,20 @@ export default function AbmahnungPage() {
         }}
       />
 
+      {/* Schema.org - WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: `${BASE_URL}/abmahnung`,
+            dateModified: new Date().toISOString(),
+            datePublished: '2025-01-15',
+          }),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -79,7 +97,8 @@ export default function AbmahnungPage() {
             <span className="mx-2">/</span>
             <span>Abmahnung</span>
           </nav>
-          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+          <StandAnzeige />
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Abmahnung
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
@@ -389,6 +408,15 @@ export default function AbmahnungPage() {
             Fragen zur Abmahnung
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* Autorenbox */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
+          </div>
         </div>
       </section>
 

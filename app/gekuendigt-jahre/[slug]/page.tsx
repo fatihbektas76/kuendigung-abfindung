@@ -4,6 +4,8 @@ import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
 import { getKuendigungContentForYear } from '@/lib/generated-kuendigung-content';
 import GekuendigtContent from './content';
 
+export const revalidate = 86400;
+
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
@@ -17,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!entry) return {};
   const yl = yearLabel(entry.year);
   return {
-    title: `Gekündigt nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} – Was jetzt? (2026)`,
+    title: `Gekündigt nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} – Was jetzt? (${new Date().getFullYear()})`,
     description: `Kündigung nach ${yl} Betriebszugehörigkeit erhalten? Sofortmaßnahmen, 3-Wochen-Frist, Abfindungschancen. Kündigungsfrist: ${entry.kuendigungsfrist}. Kostenlose Ersteinschätzung.`,
     alternates: {
       canonical: `${BASE_URL}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`,
@@ -83,6 +85,20 @@ export default function Page({ params }: Props) {
         }}
       />
 
+      {/* Schema.org - WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: `${BASE_URL}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`,
+            dateModified: new Date().toISOString(),
+            datePublished: '2025-01-15',
+          }),
+        }}
+      />
+
       <GekuendigtContent
         entry={entry}
         prev={prev ?? null}
@@ -90,9 +106,7 @@ export default function Page({ params }: Props) {
         faqs={faqs}
         uniqueIntro={generated.uniqueIntro}
         sofortmassnahmen={generated.sofortmassnahmen}
-        fallkonstellation={generated.fallkonstellation}
         praxistipp={generated.praxistipp}
-        bagUrteil={generated.bagUrteil}
       />
     </>
   );

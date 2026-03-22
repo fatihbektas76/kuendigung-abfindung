@@ -9,6 +9,8 @@ import SidebarToc from '@/components/SidebarToc';
 import RelatedArticles from '@/components/RelatedArticles';
 import AuthorBox from '@/components/AuthorBox';
 
+export const revalidate = 86400;
+
 interface PageProps {
   params: { slug: string };
 }

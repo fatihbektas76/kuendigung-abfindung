@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { AbmahnungEntry } from '@/lib/abmahnung-content';
 import { abmahnungEntries } from '@/lib/abmahnung-content';
 import DejureText from '@/components/DejureText';
+import StandAnzeige from '@/components/StandAnzeige';
+import AuthorBox from '@/components/AuthorBox';
 
 type Props = {
   entry: AbmahnungEntry;
@@ -13,12 +15,10 @@ type Props = {
   faqs: { q: string; a: string }[];
   uniqueIntro: string;
   rechtlicheGrundlagen: string;
-  fallkonstellation: string;
   praxistipp: string;
-  bagUrteil: { aktenzeichen: string; kurzbeschreibung: string; relevanz: string };
 };
 
-export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro, rechtlicheGrundlagen, fallkonstellation, praxistipp, bagUrteil }: Props) {
+export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro, rechtlicheGrundlagen, praxistipp }: Props) {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const label = entry.count === 1 ? '1 Abmahnung' : `${entry.count} Abmahnungen`;
 
@@ -34,6 +34,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
             <span className="mx-2">/</span>
             <span>Nach {label}</span>
           </nav>
+          <StandAnzeige />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Kündigung &middot; Abmahnung
           </div>
@@ -261,21 +262,6 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
         </div>
       </section>
 
-      {/* ───── e. Fallkonstellation ───── */}
-      <section className="py-[60px] px-8 bg-white">
-        <div className="max-w-content mx-auto">
-          <div className="max-w-[740px]">
-            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
-              Praxisbeispiel
-            </div>
-            <h3 className="font-serif text-[1.3rem] font-bold mb-3">So kann Ihr Fall ausgehen</h3>
-            <p className="text-[0.95rem] text-ink-light leading-relaxed">
-              <DejureText text={fallkonstellation} />
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ───── f. Praxistipp ───── */}
       <section className="py-8 px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -289,31 +275,6 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
           </div>
         </div>
       </section>
-
-      {/* ───── g. BAG-Urteil ───── */}
-      {bagUrteil.aktenzeichen && (
-        <section className="py-8 px-8 bg-white">
-          <div className="max-w-content mx-auto">
-            <div className="max-w-[740px] rounded overflow-hidden">
-              <div className="bg-[#1C1408] p-6 border-t-[3px] border-gold">
-                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold mb-2">
-                  Relevante Rechtsprechung
-                </div>
-                <div className="font-serif text-[1.15rem] font-bold text-white mb-3">
-                  BAG &mdash; Az. {bagUrteil.aktenzeichen}
-                </div>
-                <p className="text-[0.92rem] text-white/80 leading-relaxed mb-3">
-                  <DejureText text={bagUrteil.kurzbeschreibung} />
-                </p>
-                <p className="text-[0.84rem] text-gold leading-relaxed m-0">
-                  <strong>Relevanz:</strong>{' '}
-                  <DejureText text={bagUrteil.relevanz} />
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ───── h. 3 Schritte ───── */}
       <section className="py-[70px] px-8 bg-cream">
@@ -485,6 +446,15 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
             <Link href="/kuendigung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
               Kündigung Übersicht
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── Autorenbox ───── */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
           </div>
         </div>
       </section>

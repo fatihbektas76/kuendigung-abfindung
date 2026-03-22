@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
 import BlogListClient from './BlogListClient';
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: 'Insights & Guides — German Litigation Explained',
   description:

@@ -1,0 +1,35 @@
+name: Fetch Blog Images
+
+on:
+  push:
+    paths:
+      - 'content/blog/**.mdx'
+      - 'content/blog/**.md'
+
+jobs:
+  fetch-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch missing blog images
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: npm run fetch:images
+
+      - name: Commit new images
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add public/blog/*.webp public/blog/_used-photo-ids.json public/blog/_image-credits.json
+          git diff --staged --quiet || git commit -m "chore: auto-fetch blog images"
+          git push

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
 import DejureText from '@/components/DejureText';
+import StandAnzeige from '@/components/StandAnzeige';
+import AuthorBox from '@/components/AuthorBox';
 
 type Props = {
   entry: BetriebsEntry;
@@ -12,15 +14,13 @@ type Props = {
   faqs: { q: string; a: string }[];
   uniqueIntro: string;
   rechtlicheVoraussetzungen: string;
-  fallkonstellation: string;
   praxistipp: string;
-  bagUrteil: { aktenzeichen: string; kurzbeschreibung: string; relevanz: string };
 };
 
 const fmt = (n: number) =>
   n.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
-export default function FristlosContent({ entry, prev, next, faqs, uniqueIntro, rechtlicheVoraussetzungen, fallkonstellation, praxistipp, bagUrteil }: Props) {
+export default function FristlosContent({ entry, prev, next, faqs, uniqueIntro, rechtlicheVoraussetzungen, praxistipp }: Props) {
   const [gehalt, setGehalt] = useState('3500');
   const [jahre, setJahre] = useState(String(entry.year));
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
@@ -44,6 +44,7 @@ export default function FristlosContent({ entry, prev, next, faqs, uniqueIntro, 
             <span className="mx-2">/</span>
             <span>Fristlose Kündigung nach {yl}</span>
           </nav>
+          <StandAnzeige />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Fristlose Kündigung &middot; Betriebszugehörigkeit
           </div>
@@ -192,16 +193,37 @@ export default function FristlosContent({ entry, prev, next, faqs, uniqueIntro, 
         </div>
       </section>
 
-      {/* ───── f. Fallkonstellation ───── */}
+      {/* ───── f. Beispielrechnung ───── */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
-              Praxisbeispiel
+              Beispielrechnung
             </div>
-            <h3 className="font-serif text-[1.3rem] font-bold mb-3">So kann Ihr Fall ausgehen</h3>
-            <p className="text-[0.95rem] text-ink-light leading-relaxed">
-              <DejureText text={fallkonstellation} />
+            <h3 className="font-serif text-[1.3rem] font-bold mb-4">
+              Abfindung nach {yl} bei 3.500&nbsp;&euro; Bruttogehalt
+            </h3>
+            <div className="grid grid-cols-3 gap-4 mb-4 max-md:grid-cols-1">
+              <div className="bg-cream rounded-sm p-4 text-center border border-border">
+                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-1">Regelabfindung</div>
+                <div className="font-serif text-[1.3rem] font-bold text-ink">{fmt(3500 * 0.5 * entry.year)}</div>
+                <div className="text-[0.78rem] text-ink-muted mt-1">Faktor 0,5&times;</div>
+              </div>
+              <div className="bg-cream rounded-sm p-4 text-center border border-border">
+                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-1">Gute Verhandlung</div>
+                <div className="font-serif text-[1.3rem] font-bold text-ink">{fmt(3500 * 1.0 * entry.year)}</div>
+                <div className="text-[0.78rem] text-ink-muted mt-1">Faktor 1,0&times;</div>
+              </div>
+              <div className="bg-gold-bg rounded-sm p-4 text-center border-2 border-gold">
+                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-1">Starke Position</div>
+                <div className="font-serif text-[1.3rem] font-bold text-gold-dark">{fmt(3500 * 1.5 * entry.year)}</div>
+                <div className="text-[0.78rem] text-gold-dark mt-1">Faktor 1,5&times;</div>
+              </div>
+            </div>
+            <p className="text-[0.84rem] text-ink-muted leading-relaxed">
+              Berechnung: Bruttomonatsgehalt &times; Faktor &times; {entry.year} {entry.year === 1 ? 'Jahr' : 'Jahre'} Betriebszugehörigkeit.
+              Ihre gesetzliche Kündigungsfrist beträgt {entry.kuendigungsfrist} (&sect;622 BGB).
+              Die tatsächliche Abfindungshöhe hängt von der Wirksamkeit der Kündigung und Ihrer Verhandlungsposition ab.
             </p>
           </div>
         </div>
@@ -220,31 +242,6 @@ export default function FristlosContent({ entry, prev, next, faqs, uniqueIntro, 
           </div>
         </div>
       </section>
-
-      {/* ───── h. BAG-Urteil ───── */}
-      {bagUrteil.aktenzeichen && (
-        <section className="py-8 px-8 bg-white">
-          <div className="max-w-content mx-auto">
-            <div className="max-w-[740px] rounded overflow-hidden">
-              <div className="bg-[#1C1408] p-6 border-t-[3px] border-gold">
-                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold mb-2">
-                  Relevante Rechtsprechung
-                </div>
-                <div className="font-serif text-[1.15rem] font-bold text-white mb-3">
-                  BAG &mdash; Az. {bagUrteil.aktenzeichen}
-                </div>
-                <p className="text-[0.92rem] text-white/80 leading-relaxed mb-3">
-                  <DejureText text={bagUrteil.kurzbeschreibung} />
-                </p>
-                <p className="text-[0.84rem] text-gold leading-relaxed m-0">
-                  <strong>Relevanz:</strong>{' '}
-                  <DejureText text={bagUrteil.relevanz} />
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ───── i. 3 Schritte ───── */}
       <section className="py-[70px] px-8 bg-cream">
@@ -447,6 +444,15 @@ export default function FristlosContent({ entry, prev, next, faqs, uniqueIntro, 
             <Link href="/kuendigung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
               Kündigung Übersicht
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── Autorenbox ───── */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
           </div>
         </div>
       </section>

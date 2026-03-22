@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Muster & Vorlagen Arbeitsrecht — kostenlos (2026)',
+  title: `Muster & Vorlagen Arbeitsrecht — kostenlos (${new Date().getFullYear()})`,
   description:
     'Kostenlose Muster & Vorlagen: Widerspruch Abmahnung, Gegendarstellung, Kündigungsschutzklage, Checkliste Aufhebungsvertrag. Vom Fachanwalt für Arbeitsrecht.',
   alternates: {

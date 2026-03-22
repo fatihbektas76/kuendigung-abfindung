@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { MusterPageEntry } from '@/lib/muster-data';
 import { musterPages } from '@/lib/muster-data';
 import type { GeneratedMusterPageContent } from '@/lib/generated-muster-page-content';
+import StandAnzeige from '@/components/StandAnzeige';
+import AuthorBox from '@/components/AuthorBox';
 
 type Props = {
   entry: MusterPageEntry;
@@ -59,6 +61,7 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
             <span className="mx-2">/</span>
             <span>{entry.h1}</span>
           </nav>
+          <StandAnzeige />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             {isMuster ? 'Kostenlose Vorlage' : 'Kostenlose Checkliste'}
           </div>
@@ -244,6 +247,15 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px] py-4 px-5 border-l-[3px] border-border text-[0.82rem] text-ink-muted leading-relaxed">
             <strong>Haftungsausschluss:</strong> {isMuster ? 'Dieses Muster dient' : 'Diese Checkliste dient'} ausschließlich der allgemeinen Information und stellt keine Rechtsberatung im Sinne des Rechtsdienstleistungsgesetzes (RDG) dar. Für eine verbindliche Rechtsberatung wenden Sie sich bitte an einen Fachanwalt für Arbeitsrecht.
+          </div>
+        </div>
+      </section>
+
+      {/* ───── Autorenbox ───── */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
           </div>
         </div>
       </section>

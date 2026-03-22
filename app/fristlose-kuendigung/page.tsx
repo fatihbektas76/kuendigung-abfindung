@@ -2,11 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { entries } from '@/lib/betriebszugehoerigkeit';
 import FaqAccordion from '@/components/FaqAccordion';
+import StandAnzeige from '@/components/StandAnzeige';
+import AuthorBox from '@/components/AuthorBox';
+
+export const revalidate = 86400;
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Fristlose Kündigung — Ihre Rechte nach §626 BGB (2026)',
+  title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
   description:
     'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht — kostenlose Ersteinschätzung.',
   alternates: {
@@ -72,6 +76,20 @@ export default function FristloseKuendigungPage() {
         }}
       />
 
+      {/* Schema.org - WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: `${BASE_URL}/fristlose-kuendigung`,
+            dateModified: new Date().toISOString(),
+            datePublished: '2025-01-15',
+          }),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -82,7 +100,8 @@ export default function FristloseKuendigungPage() {
             <span className="mx-2">/</span>
             <span>Fristlose Kündigung</span>
           </nav>
-          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+          <StandAnzeige />
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Fristlose Kündigung
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
@@ -280,6 +299,15 @@ export default function FristloseKuendigungPage() {
             Fragen zur fristlosen Kündigung
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* Autorenbox */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
+          </div>
         </div>
       </section>
 

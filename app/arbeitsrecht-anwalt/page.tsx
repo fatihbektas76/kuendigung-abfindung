@@ -1,0 +1,371 @@
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getStadtBySlug, staedte } from "@/data/staedte";
+import { StadtContent } from "@/types/content";
+import stadtContentsRaw from "@/data/generated/stadt-contents.json";
+
+const stadtContents = stadtContentsRaw as Record<string, StadtContent>;
+
+// ─── Static Params ────────────────────────────────────────────────────────────
+export async function generateStaticParams() {
+  return staedte.map((s) => ({ stadt: s.slug }));
+}
+
+// ─── Metadata ─────────────────────────────────────────────────────────────────
+export async function generateMetadata({
+  params,
+}: {
+  params: { stadt: string };
+}): Promise<Metadata> {
+  const stadt = getStadtBySlug(params.stadt);
+  if (!stadt) return {};
+  const content = stadtContents[params.stadt];
+  const url = `https://gekuendigt-abfindung.de/arbeitsrecht-anwalt/${stadt.slug}`;
+
+  return {
+    title: `Anwalt für Arbeitsrecht in ${stadt.name} | Kündigung & Abfindung – APOS Legal`,
+    description: content?.metaDescription ??
+      `Kündigung erhalten in ${stadt.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${stadt.arbeitsgericht}. Kostenlose Ersteinschätzung.`,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `Arbeitsrecht Anwalt ${stadt.name} – Kündigung & Abfindung | APOS Legal`,
+      description: content?.metaDescription ?? "",
+      url,
+      type: "website",
+    },
+  };
+}
+
+// ─── Schema Markup ────────────────────────────────────────────────────────────
+function buildSchema(stadtSlug: string) {
+  const stadt = getStadtBySlug(stadtSlug);
+  const content = stadtContents[stadtSlug];
+  if (!stadt || !content) return null;
+
+  const url = `https://gekuendigt-abfindung.de/arbeitsrecht-anwalt/${stadt.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LegalService",
+        "@id": `${url}#legalservice`,
+        name: "APOS Legal – Kanzlei Fatih Bektas",
+        description: `Fachanwalt für Arbeitsrecht mit Beratung für Arbeitnehmer in ${stadt.name}`,
+        url,
+        telephone: "+49-XXX-XXXXXXX",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Mannheim",
+          addressCountry: "DE",
+        },
+        areaServed: {
+          "@type": "City",
+          name: stadt.name,
+          containedIn: { "@type": "State", name: stadt.bundesland },
+        },
+        knowsAbout: [
+          "Kündigungsschutzklage",
+          "Abfindungsverhandlung",
+          "Aufhebungsvertrag",
+          "Betriebsbedingte Kündigung",
+          "Arbeitsrecht",
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Arbeitsrechtliche Leistungen",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Prüfung der Kündigung" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Abfindungsverhandlung" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Aufhebungsvertrag prüfen" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kündigungsschutzklage" } },
+          ],
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": "https://gekuendigt-abfindung.de/#fatih-bektas",
+        name: "Fatih Bektas",
+        jobTitle: "Fachanwalt für Arbeitsrecht",
+        description: "Zugelassen seit 2005, Fachanwalt für Arbeitsrecht seit 2011, Rechtsanwaltskammer Karlsruhe",
+        worksFor: { "@type": "LegalService", name: "APOS Legal" },
+        sameAs: [
+          "https://www.anwalt.de/fatih-bektas",
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: content.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.frage,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.antwort.replace(/<[^>]+>/g, ""),
+          },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Startseite", item: "https://gekuendigt-abfindung.de" },
+          { "@type": "ListItem", position: 2, name: "Arbeitsrecht Anwalt", item: "https://gekuendigt-abfindung.de/arbeitsrecht-anwalt" },
+          { "@type": "ListItem", position: 3, name: `Anwalt ${stadt.name}`, item: url },
+        ],
+      },
+    ],
+  };
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+export default function StadtPage({ params }: { params: { stadt: string } }) {
+  const stadt = getStadtBySlug(params.stadt);
+  if (!stadt) notFound();
+  const content = stadtContents[params.stadt];
+  if (!content) notFound();
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchema(params.stadt)) }}
+      />
+
+      <main className="max-w-4xl mx-auto px-4 py-12">
+
+        {/* Breadcrumb */}
+        <nav className="text-sm text-gray-500 mb-8">
+          <a href="/">Startseite</a> {" / "}
+          <a href="/arbeitsrecht-anwalt">Arbeitsrecht Anwalt</a> {" / "}
+          <span className="text-[#8B7A3A]">{stadt.name}</span>
+        </nav>
+
+        {/* H1 */}
+        <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight">
+          Anwalt für Arbeitsrecht in {stadt.name} – Kündigung & Abfindung
+        </h1>
+        <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+          Kündigung erhalten in {stadt.name}? Als Fachanwalt für Arbeitsrecht vertreten wir Arbeitnehmer
+          aus {stadt.name} bei Kündigung, Abfindungsverhandlung und Aufhebungsvertrag – bundesweit und vollständig digital.
+        </p>
+
+        {/* Badges */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {["Fachanwalt für Arbeitsrecht", "Zugelassen seit 2005", "Bundesweite Vertretung", "Kein Vor-Ort-Termin nötig"].map((b) => (
+            <span key={b} className="text-xs text-[#6B6626] bg-[#f5f2e8] border border-[#d4c98a] rounded px-2 py-1">{b}</span>
+          ))}
+        </div>
+
+        {/* CTA Box */}
+        <div className="border-l-4 border-[#8B7A3A] bg-white border border-gray-200 rounded-r-lg p-5 mb-8 flex justify-between items-center gap-4">
+          <div>
+            <p className="font-semibold text-[#6B6626] mb-1">Kostenlose Ersteinschätzung</p>
+            <p className="text-sm text-gray-600">Für Kündigungsschutzklage gilt eine 3-Wochen-Frist. Jetzt Kündigung prüfen lassen.</p>
+          </div>
+          <a href="/kontakt" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
+            Jetzt anfragen →
+          </a>
+        </div>
+
+        {/* Prozess */}
+        <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-semibold text-[#6B6626] mb-5">So läuft die Beratung ab</h2>
+          <div className="grid grid-cols-5 gap-2 text-center">
+            {[
+              { n: 1, title: "Kündigung erhalten", sub: "Datum notieren" },
+              { n: 2, title: "Frist prüfen", sub: "3 Wochen ab Zugang" },
+              { n: 3, title: "Ersteinschätzung", sub: "Kostenlos, per E-Mail" },
+              { n: 4, title: "Mandat erteilen", sub: "Digital" },
+              { n: 5, title: "Wir übernehmen", sub: "Klage oder Verhandlung" },
+            ].map((step) => (
+              <div key={step.n} className="flex flex-col items-center">
+                <div className="w-9 h-9 rounded-full bg-[#f5f2e8] border-2 border-[#8B7A3A] flex items-center justify-center text-sm font-semibold text-[#6B6626] mb-2">
+                  {step.n}
+                </div>
+                <p className="text-xs font-medium text-gray-800 leading-tight mb-1">{step.title}</p>
+                <p className="text-xs text-gray-400 leading-tight">{step.sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Fakten-Kacheln */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {[
+            { label: "Klagefrist", value: "3 Wochen", sub: "ab Zugang der Kündigung" },
+            { label: "Abfindungsformel", value: "0,5 × Gehalt × Jahre", sub: "Faustformel, kein Rechtsanspruch" },
+            { label: "Kündigungsschutz", value: "Ab 6 Monate", sub: "Betriebszugehörigkeit + >10 MA" },
+            { label: "Berufungsfrist", value: "1 Monat", sub: `ab Urteilszustellung, ${stadt.lagName}` },
+          ].map((f) => (
+            <div key={f.label} className="bg-white border border-gray-200 rounded-xl p-4 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#8B7A3A]" />
+              <p className="text-xs font-medium text-[#8B7A3A] uppercase tracking-wide mb-2">{f.label}</p>
+              <p className="text-base font-semibold text-gray-900 leading-tight mb-1">{f.value}</p>
+              <p className="text-xs text-gray-500 leading-tight">{f.sub}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Abfindungsformel */}
+        <div className="bg-[#f9f6ec] border border-[#d4c98a] rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-semibold text-[#6B6626] mb-4">Die Abfindungsformel</h2>
+          <div className="flex items-center gap-3 flex-wrap mb-4">
+            {["0,5", "×", "Bruttomonatsgehalt", "×", "Beschäftigungsjahre"].map((p, i) => (
+              ["×"].includes(p)
+                ? <span key={i} className="text-[#8B7A3A] font-semibold text-lg">{p}</span>
+                : <span key={i} className="bg-white border border-[#d4c98a] rounded px-3 py-2 text-sm font-semibold text-[#6B6626]">{p}</span>
+            ))}
+          </div>
+          <div className="bg-white border border-[#d4c98a] rounded-lg p-3 text-sm text-[#6B6626] mb-2">
+            Beispiel: 8 Jahre, 5.000 € brutto → 0,5 × 5.000 € × 8 = <strong>20.000 € Abfindung</strong>
+          </div>
+          <p className="text-xs text-gray-500">Kein gesetzlicher Anspruch. Mit anwaltlicher Unterstützung ist häufig ein höherer Faktor erzielbar.</p>
+        </div>
+
+        {/* Definitionen */}
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Wichtige Begriffe kurz erklärt</h2>
+          <div className="divide-y divide-gray-200">
+            {[
+              { term: "Betriebsbedingte Kündigung", def: "Eine betriebsbedingte Kündigung liegt vor, wenn der Arbeitsplatz aus unternehmerischen Gründen wegfällt und keine zumutbare Weiterbeschäftigung möglich ist. Der Arbeitgeber muss eine soziale Auswahl durchführen." },
+              { term: "Kündigungsschutzklage", def: "Die Kündigungsschutzklage ist der rechtliche Weg, die Unwirksamkeit einer Kündigung festzustellen. Sie muss binnen 3 Wochen nach Zugang beim zuständigen Arbeitsgericht eingereicht werden." },
+              { term: "Aufhebungsvertrag", def: "Ein Aufhebungsvertrag ist eine einvernehmliche Auflösung des Arbeitsverhältnisses. Er sollte nie ohne anwaltliche Prüfung unterschrieben werden, da er oft eine Sperrzeit beim Arbeitslosengeld auslöst." },
+            ].map(({ term, def }) => (
+              <div key={term} className="py-3">
+                <p className="text-sm font-semibold text-gray-900 mb-1">{term}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{def}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mit / ohne Anwalt */}
+        <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Mit Anwalt vs. ohne Anwalt bei Kündigung</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <p className="text-sm font-semibold text-red-800 mb-3">Ohne Anwalt</p>
+              {["Abfindung oft unter Faustformel", "Fristen werden häufig versäumt", "Formfehler bleiben unerkannt", "Betriebsratsanhörung ungeprüft", "Kein Verhandlungsdruck"].map((i) => (
+                <p key={i} className="text-xs text-red-700 mb-1.5">✗ {i}</p>
+              ))}
+            </div>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <p className="text-sm font-semibold text-green-800 mb-3">Mit Fachanwalt (APOS Legal)</p>
+              {["Abfindung häufig 30–100 % höher", "Fristgerechte Klageeinreichung", "Jede Unwirksamkeit wird geprüft", "Betriebsratsanhörung analysiert", "Außergerichtliche Einigung möglich"].map((i) => (
+                <p key={i} className="text-xs text-green-700 mb-1.5">✓ {i}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Stadtspezifisch */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="bg-white border border-gray-200 rounded-xl p-5">
+            <h2 className="text-base font-semibold text-gray-900 mb-3">Ihre Rechte als Arbeitnehmer in {stadt.name}</h2>
+            <div className="text-sm text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: content.rechteSection }} />
+          </div>
+          <div className="bg-white border border-gray-200 rounded-xl p-5">
+            <h2 className="text-base font-semibold text-gray-900 mb-3">Wie wir Mandanten aus {stadt.name} vertreten</h2>
+            <div className="text-sm text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: content.vertretungSection }} />
+          </div>
+        </div>
+
+        {/* Arbeitsgericht */}
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-semibold text-gray-900 mb-2">{stadt.arbeitsgericht} – was Sie wissen müssen</h2>
+          <p className="text-xs text-gray-400 mb-4">
+            <strong>Adresse:</strong> {stadt.arbeitsgerichtAdresse} &nbsp;|&nbsp;
+            <strong>Berufung:</strong> {stadt.lagName}
+          </p>
+          <div className="text-sm text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: content.arbeitsgerichtSection }} />
+          {/* Instanzenzug */}
+          <div className="flex items-center gap-3 mt-4 pt-4 border-t border-gray-200">
+            {[
+              { label: "1. Instanz", name: stadt.arbeitsgericht.replace("Arbeitsgericht ", "AG ") },
+              { label: "Berufung (2. Instanz)", name: stadt.lagName.replace("Landesarbeitsgericht", "LAG").replace("Hessisches", "Hess.").replace("Sächsisches", "Sächs.").replace("Thüringer", "Thür.") },
+              { label: "Revision (3. Instanz)", name: "Bundesarbeitsgericht" },
+            ].map((box, i, arr) => (
+              <>
+                <div key={box.label} className={`flex-1 rounded-lg p-2.5 text-center border text-xs ${i === 0 ? "border-[#8B7A3A] bg-[#f9f6ec]" : "border-gray-200 bg-white"}`}>
+                  <p className={`text-xs mb-1 ${i === 0 ? "text-[#8B7A3A]" : "text-gray-400"}`}>{box.label}</p>
+                  <p className={`font-semibold leading-tight ${i === 0 ? "text-[#6B6626]" : "text-gray-700"}`}>{box.name}</p>
+                </div>
+                {i < arr.length - 1 && <span key={`arr-${i}`} className="text-gray-400 shrink-0">→</span>}
+              </>
+            ))}
+          </div>
+        </div>
+
+        {/* Leistungen */}
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Unsere Leistungen für Mandanten aus {stadt.name}</h2>
+        <div className="grid grid-cols-2 gap-4 mb-8">
+          {[
+            { title: "Kündigung prüfen", text: "Formfehler, Betriebsratsanhörung, soziale Auswahl – wir prüfen jede Unwirksamkeit." },
+            { title: "Abfindung verhandeln", text: "Außergerichtlich oder per Vergleich im Gütetermin – wir holen die maximale Abfindung." },
+            { title: "Aufhebungsvertrag", text: "Nie ohne Prüfung unterschreiben. Wir sichern Ihre Rechte bei Sperrzeit und Abfindung." },
+            { title: "Kündigungsschutzklage", text: `Fristgerechte Einreichung beim ${stadt.arbeitsgericht}. 3-Wochen-Frist beachten.` },
+          ].map((l) => (
+            <div key={l.title} className="bg-white border border-gray-200 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-gray-900 mb-1.5">{l.title}</h3>
+              <p className="text-xs text-gray-600 leading-relaxed">{l.text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Anwaltsprofil */}
+        <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8 flex gap-5">
+          <div className="w-16 h-16 rounded-full bg-[#f5f2e8] border-2 border-[#d4c98a] flex items-center justify-center text-xl font-semibold text-[#6B6626] shrink-0">
+            FB
+          </div>
+          <div className="flex-1">
+            <h2 className="text-base font-semibold text-gray-900 mb-0.5">Fatih Bektas</h2>
+            <p className="text-sm font-medium text-[#8B7A3A] mb-2">Fachanwalt für Arbeitsrecht</p>
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              Zugelassen seit 2005, Fachanwalt für Arbeitsrecht seit 2011 (Rechtsanwaltskammer Karlsruhe).
+              Ich verteidige Arbeitnehmer bundesweit bei Kündigung, Abfindung und Aufhebungsvertrag – vollständig digital.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-3">
+              {["Zugelassen seit 2005", "Fachanwalt für Arbeitsrecht seit 2011", "RAK Karlsruhe", "APOS Legal", "Bundesweite Vertretung"].map((t) => (
+                <span key={t} className="text-xs text-gray-500 bg-gray-100 border border-gray-200 rounded px-2 py-0.5">{t}</span>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 pt-3 border-t border-gray-100">
+              <span className="text-[#BA7517] tracking-wide">★★★★★</span>
+              <span className="text-xs text-gray-600"><strong>5,0 / 5,0</strong> – 68 Bewertungen auf anwalt.de</span>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ */}
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Häufige Fragen – Arbeitsrecht in {stadt.name}</h2>
+        <div className="space-y-2 mb-10">
+          {content.faqs.map((faq, i) => (
+            <details key={i} className="bg-white border border-gray-200 rounded-lg p-4 group">
+              <summary className="font-medium text-sm text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                {faq.frage}
+                <span className="text-gray-400 text-xs ml-3 shrink-0">▼</span>
+              </summary>
+              <div
+                className="mt-3 text-sm text-gray-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: faq.antwort }}
+              />
+            </details>
+          ))}
+        </div>
+
+        {/* Final CTA */}
+        <div className="bg-[#6B6626] rounded-xl p-8 text-center">
+          <h2 className="text-xl font-semibold text-white mb-2">Jetzt kostenlose Ersteinschätzung anfordern</h2>
+          <p className="text-sm text-white/75 mb-6">
+            Für Arbeitnehmer aus {stadt.name} und ganz {stadt.bundesland}.<br />
+            Vollständig digital – keine Anreise erforderlich.
+          </p>
+          <a href="/kontakt" className="inline-block bg-white text-[#6B6626] px-7 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity">
+            Ersteinschätzung anfordern →
+          </a>
+        </div>
+
+      </main>
+    </>
+  );
+}

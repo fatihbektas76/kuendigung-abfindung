@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import StandAnzeige from '@/components/StandAnzeige';
+import AuthorBox from '@/components/AuthorBox';
+
+export const revalidate = 86400;
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (2026)',
+  title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
   description:
     'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag – kostenlose Ersteinschätzung.',
   alternates: {
@@ -108,6 +112,20 @@ export default function AufhebungsvertragPage() {
         }}
       />
 
+      {/* Schema.org - WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: `${BASE_URL}/aufhebungsvertrag`,
+            dateModified: new Date().toISOString(),
+            datePublished: '2025-01-15',
+          }),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -116,7 +134,8 @@ export default function AufhebungsvertragPage() {
             <span className="mx-2">/</span>
             <span>Aufhebungsvertrag</span>
           </nav>
-          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+          <StandAnzeige />
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Aufhebungsvertrag
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
@@ -211,6 +230,15 @@ export default function AufhebungsvertragPage() {
             Fragen zum Aufhebungsvertrag
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* Autorenbox */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
+          </div>
         </div>
       </section>
 

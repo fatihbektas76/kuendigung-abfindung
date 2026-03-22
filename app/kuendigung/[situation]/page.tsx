@@ -4,6 +4,8 @@ import { lebenssituationData, getLebenssituation } from '@/lib/lebenssituation-d
 import { getLebenssituationContent } from '@/lib/generated-lebenssituation-content';
 import LebenssituationContent from './content';
 
+export const revalidate = 86400;
+
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { situation: string } };
@@ -16,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getLebenssituation(params.situation);
   if (!entry) return {};
   return {
-    title: `${entry.h1} (2026)`,
+    title: `${entry.h1} (${new Date().getFullYear()})`,
     description: `${entry.h1} — Ihre Rechte nach ${entry.gesetz}, 3-Wochen-Klagefrist, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`,
     alternates: {
       canonical: `${BASE_URL}/kuendigung/${entry.slug}/`,
@@ -89,9 +91,7 @@ export default function Page({ params }: Props) {
         faqs={faqs}
         uniqueIntro={generated.uniqueIntro}
         besondererSchutz={generated.besondererSchutz}
-        fallkonstellation={generated.fallkonstellation}
         praxistipp={generated.praxistipp}
-        bagUrteil={generated.bagUrteil}
       />
     </>
   );

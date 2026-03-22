@@ -1,12 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import StandAnzeige from '@/components/StandAnzeige';
+import AktuelleRechtslage from '@/components/AktuelleRechtslage';
+import AuthorBox from '@/components/AuthorBox';
 import { entries } from '@/lib/betriebszugehoerigkeit';
+
+export const revalidate = 86400;
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (2026)',
+  title: `Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (${new Date().getFullYear()})`,
   description:
     'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht. Kostenlose Ersteinschätzung.',
   alternates: {
@@ -74,6 +79,20 @@ export default function AbfindungPage() {
         }}
       />
 
+      {/* Schema.org - WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: `${BASE_URL}/abfindung`,
+            dateModified: new Date().toISOString(),
+            datePublished: '2025-01-15',
+          }),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -82,7 +101,8 @@ export default function AbfindungPage() {
             <span className="mx-2">/</span>
             <span>Abfindung</span>
           </nav>
-          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+          <StandAnzeige />
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Abfindung
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
@@ -206,6 +226,9 @@ export default function AbfindungPage() {
         </div>
       </section>
 
+      {/* Aktuelle Rechtslage */}
+      <AktuelleRechtslage />
+
       {/* FAQ */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -216,6 +239,15 @@ export default function AbfindungPage() {
             Fragen zur Abfindung
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* Autorenbox */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
+          </div>
         </div>
       </section>
 

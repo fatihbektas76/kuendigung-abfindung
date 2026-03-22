@@ -6,5 +6,11 @@
       "destination": "https://www.gekuendigt-abfindung.de/$1",
       "permanent": true
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/revalidate?secret=${REVALIDATE_SECRET}",
+      "schedule": "0 6 * * 1"
+    }
   ]
 }

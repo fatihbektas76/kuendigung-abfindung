@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
 
+export const revalidate = 86400;
+
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Aktuelle Urteile: Kündigung & Abfindung (2026)',
+  title: `Aktuelle Urteile: Kündigung & Abfindung (${new Date().getFullYear()})`,
   description:
     'Wichtige BAG-Urteile zu Kündigung, Abfindung, Aufhebungsvertrag und Abmahnung. Laufend aktualisiert. Was die Rechtsprechung für Arbeitnehmer bedeutet.',
   alternates: {

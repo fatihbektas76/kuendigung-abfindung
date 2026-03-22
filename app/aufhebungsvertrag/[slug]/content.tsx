@@ -5,18 +5,18 @@ import Link from 'next/link';
 import type { AufhebungsvertragEntry } from '@/lib/aufhebungsvertrag-data';
 import { aufhebungsvertragData } from '@/lib/aufhebungsvertrag-data';
 import DejureText from '@/components/DejureText';
+import StandAnzeige from '@/components/StandAnzeige';
+import AuthorBox from '@/components/AuthorBox';
 
 type Props = {
   entry: AufhebungsvertragEntry;
   faqs: { q: string; a: string }[];
   uniqueIntro: string;
   hauptteil: string;
-  fallkonstellation: string;
   praxistipp: string;
-  bagUrteil: { aktenzeichen: string; kurzbeschreibung: string; relevanz: string };
 };
 
-export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, hauptteil, fallkonstellation, praxistipp, bagUrteil }: Props) {
+export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, hauptteil, praxistipp }: Props) {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [gehalt, setGehalt] = useState('3500');
   const [jahre, setJahre] = useState('5');
@@ -37,6 +37,7 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
             <span className="mx-2">/</span>
             <span>{entry.h1.replace(/ — .*$/, '')}</span>
           </nav>
+          <StandAnzeige />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Aufhebungsvertrag
           </div>
@@ -166,21 +167,6 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
         </div>
       </section>
 
-      {/* ───── f. Fallkonstellation ───── */}
-      <section className="py-[60px] px-8 bg-white">
-        <div className="max-w-content mx-auto">
-          <div className="max-w-[740px]">
-            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
-              Praxisbeispiel
-            </div>
-            <h3 className="font-serif text-[1.3rem] font-bold mb-3">So kann Ihr Fall ausgehen</h3>
-            <p className="text-[0.95rem] text-ink-light leading-relaxed">
-              <DejureText text={fallkonstellation} />
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ───── g. Praxistipp ───── */}
       <section className="py-8 px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -194,31 +180,6 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
           </div>
         </div>
       </section>
-
-      {/* ───── h. BAG-Urteil ───── */}
-      {bagUrteil.aktenzeichen && (
-        <section className="py-8 px-8 bg-white">
-          <div className="max-w-content mx-auto">
-            <div className="max-w-[740px] rounded overflow-hidden">
-              <div className="bg-[#1C1408] p-6 border-t-[3px] border-gold">
-                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold mb-2">
-                  Relevante Rechtsprechung
-                </div>
-                <div className="font-serif text-[1.15rem] font-bold text-white mb-3">
-                  BAG &mdash; Az. {bagUrteil.aktenzeichen}
-                </div>
-                <p className="text-[0.92rem] text-white/80 leading-relaxed mb-3">
-                  <DejureText text={bagUrteil.kurzbeschreibung} />
-                </p>
-                <p className="text-[0.84rem] text-gold leading-relaxed m-0">
-                  <strong>Relevanz:</strong>{' '}
-                  <DejureText text={bagUrteil.relevanz} />
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ───── i. 3 Schritte ───── */}
       <section className="py-[70px] px-8 bg-cream">
@@ -414,6 +375,15 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
                 {e.h1.replace(/ — .*$/, '')}
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── Autorenbox ───── */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
           </div>
         </div>
       </section>

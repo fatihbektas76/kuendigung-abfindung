@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+export const revalidate = 86400;
+
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Ratgeber Arbeitsrecht — Muster, Urteile & mehr (2026)',
+  title: `Ratgeber Arbeitsrecht — Muster, Urteile & mehr (${new Date().getFullYear()})`,
   description:
     'Ratgeber Arbeitsrecht: Kostenlose Muster & Vorlagen, aktuelle BAG-Urteile und Praxis-Tipps für Arbeitnehmer. Vom Fachanwalt für Arbeitsrecht.',
   alternates: {

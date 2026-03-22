@@ -4,6 +4,8 @@ import { abmahnungEntries, getAbmahnungEntry, abmahnungLabel } from '@/lib/abmah
 import { getAbmahnungContentForCount } from '@/lib/generated-abmahnung-content';
 import AbmahnungContent from './content';
 
+export const revalidate = 86400;
+
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
@@ -17,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!entry) return {};
   const label = abmahnungLabel(entry.count);
   return {
-    title: `Kündigung nach ${entry.word} ${entry.count === 1 ? 'Abmahnung' : 'Abmahnungen'} — wirksam oder nicht? (2026)`,
+    title: `Kündigung nach ${entry.word} ${entry.count === 1 ? 'Abmahnung' : 'Abmahnungen'} — wirksam oder nicht? (${new Date().getFullYear()})`,
     description: `Kündigung nach ${label} erhalten? Ist die Kündigung wirksam? Formfehler prüfen, Kündigungsschutzklage, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt.`,
     alternates: {
       canonical: `${BASE_URL}/kuendigung-nach-${entry.slug}/`,
@@ -90,9 +92,7 @@ export default function Page({ params }: Props) {
         faqs={faqs}
         uniqueIntro={generated.uniqueIntro}
         rechtlicheGrundlagen={generated.rechtlicheGrundlagen}
-        fallkonstellation={generated.fallkonstellation}
         praxistipp={generated.praxistipp}
-        bagUrteil={generated.bagUrteil}
       />
     </>
   );

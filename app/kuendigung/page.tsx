@@ -3,11 +3,16 @@ import Link from 'next/link';
 import { entries } from '@/lib/betriebszugehoerigkeit';
 import { lebenssituationData } from '@/lib/lebenssituation-data';
 import FaqAccordion from '@/components/FaqAccordion';
+import StandAnzeige from '@/components/StandAnzeige';
+import AktuelleRechtslage from '@/components/AktuelleRechtslage';
+import AuthorBox from '@/components/AuthorBox';
+
+export const revalidate = 86400;
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (2026)',
+  title: `Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (${new Date().getFullYear()})`,
   description:
     'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer. Fachanwalt für Arbeitsrecht – kostenlose Ersteinschätzung.',
   alternates: {
@@ -84,6 +89,20 @@ export default function KuendigungPage() {
         }}
       />
 
+      {/* Schema.org - WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: `${BASE_URL}/kuendigung`,
+            dateModified: new Date().toISOString(),
+            datePublished: '2025-01-15',
+          }),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -92,7 +111,8 @@ export default function KuendigungPage() {
             <span className="mx-2">/</span>
             <span>Kündigung</span>
           </nav>
-          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+          <StandAnzeige />
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Kündigung
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
@@ -291,6 +311,9 @@ export default function KuendigungPage() {
         </div>
       </section>
 
+      {/* Aktuelle Rechtslage */}
+      <AktuelleRechtslage />
+
       {/* FAQ */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -301,6 +324,15 @@ export default function KuendigungPage() {
             Fragen zur Kündigung
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* Autorenbox */}
+      <section className="py-8 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <AuthorBox />
+          </div>
         </div>
       </section>
 

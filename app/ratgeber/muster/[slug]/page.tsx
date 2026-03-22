@@ -5,6 +5,8 @@ import { musterContent } from '@/lib/generated-muster-content';
 import { getMusterPageContent } from '@/lib/generated-muster-page-content';
 import MusterPageContent from './content';
 
+export const revalidate = 86400;
+
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
@@ -17,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getMusterPage(params.slug);
   if (!entry) return {};
   return {
-    title: `${entry.h1} — kostenlos (2026)`,
+    title: `${entry.h1} — kostenlos (${new Date().getFullYear()})`,
     description: entry.description,
     alternates: {
       canonical: `${BASE_URL}/ratgeber/muster/${entry.slug}`,

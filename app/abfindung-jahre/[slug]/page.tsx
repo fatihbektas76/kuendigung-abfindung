@@ -4,6 +4,8 @@ import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
 import { getContentForYear } from '@/lib/generated-content';
 import AbfindungJahreContent from './content';
 
+export const revalidate = 86400;
+
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
@@ -19,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lower = (0.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const upper = (1.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   return {
-    title: `Abfindung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit (2026)`,
+    title: `Abfindung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit (${new Date().getFullYear()})`,
     description: `Abfindung nach ${yl}: Zwischen ${lower} und ${upper} Monatsgehältern. Tabelle, Rechner und kostenlose Prüfung. Kündigungsfrist: ${entry.kuendigungsfrist}.`,
     alternates: {
       canonical: `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`,
@@ -85,15 +87,27 @@ export default function Page({ params }: Props) {
         }}
       />
 
+      {/* Schema.org - WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`,
+            dateModified: new Date().toISOString(),
+            datePublished: '2025-01-15',
+          }),
+        }}
+      />
+
       <AbfindungJahreContent
         entry={entry}
         prev={prev ?? null}
         next={next ?? null}
         faqs={faqs}
         uniqueIntro={generated?.uniqueIntro ?? ''}
-        fallkonstellation={generated?.fallkonstellation ?? ''}
         praxistipp={generated?.praxistipp ?? ''}
-        bagUrteil={generated?.bagUrteil ?? { aktenzeichen: '', kurzbeschreibung: '', relevanz: '' }}
       />
     </>
   );

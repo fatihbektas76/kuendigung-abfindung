@@ -9,6 +9,9 @@ import TeamTeaser from '@/components/TeamTeaser';
 import FAQ from '@/components/FAQ';
 import ContactForm from '@/components/ContactForm';
 import CTA from '@/components/CTA';
+import AktuelleRechtslage from '@/components/AktuelleRechtslage';
+
+export const revalidate = 86400;
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
@@ -265,6 +268,7 @@ export default function Home() {
 
       <main>
         <Hero />
+        <AktuelleRechtslage />
         <Situations />
         <Disputes />
         <Process />
