@@ -14,3 +14,12 @@ export interface StadtContent {
   faqs: FAQ[];
   generatedAt: string;
 }
+
+export interface GemeindeContent {
+  slug: string;
+  metaDescription: string;
+  rechteSection: string;        // HTML
+  vertretungSection: string;    // HTML
+  faqs: FAQ[];
+  generatedAt: string;
+}
