@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
-import { getKuendigungContentForYear } from '@/lib/generated-kuendigung-content';
 import GekuendigtContent from './content';
+import gekuendigtData from '@/data/generated/gekuendigt-data.json';
 
 export const revalidate = 86400;
 
@@ -31,20 +31,31 @@ export default function Page({ params }: Props) {
   const entry = getEntry(params.slug);
   if (!entry) notFound();
 
-  const generated = getKuendigungContentForYear(entry.year);
-  if (!generated) notFound();
+  const yearData = (gekuendigtData as Record<string, unknown>)[String(entry.year)] as {
+    kuendigungsfristKurz: string;
+    kuendigungsfristLang: string;
+    kuendigungsfristHinweis: string;
+    kschgGilt: boolean;
+    haeufigeFehler: string[];
+    beispielsfall: {
+      initialen: string;
+      name: string;
+      branche: string;
+      gehalt: number;
+      kuendigungsart: string;
+      zitat: string;
+      geprueft: string[];
+      vorgehen: string[];
+      ergebnis: number;
+    };
+    faqs: { frage: string; antwort: string }[];
+  };
+  if (!yearData) notFound();
 
   const prev = entries.find((e) => e.year === entry.year - 1);
   const next = entries.find((e) => e.year === entry.year + 1);
 
   const yl = yearLabel(entry.year);
-  const faqs = [
-    { q: `Was soll ich jetzt tun nach der Kündigung nach ${yl}?`, a: generated.faqAnswers.wasJetzt },
-    { q: 'Wie lange habe ich Zeit gegen die Kündigung vorzugehen?', a: generated.faqAnswers.frist },
-    { q: `Habe ich Anspruch auf Abfindung nach ${yl}?`, a: generated.faqAnswers.abfindung },
-    { q: `Wie lange ist meine Kündigungsfrist nach ${yl}?`, a: generated.faqAnswers.kuendigungsfristDetails },
-    { q: 'Wann muss ich mich arbeitslos melden?', a: generated.faqAnswers.arbeitslosengeld },
-  ];
 
   return (
     <>
@@ -69,17 +80,17 @@ export default function Page({ params }: Props) {
         }}
       />
 
-      {/* Schema.org - FAQPage */}
+      {/* Schema.org - FAQPage (7 Fragen) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: faqs.map((faq) => ({
+            mainEntity: yearData.faqs.map((faq) => ({
               '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: { '@type': 'Answer', text: faq.a },
+              name: faq.frage,
+              acceptedAnswer: { '@type': 'Answer', text: faq.antwort },
             })),
           }),
         }}
@@ -103,10 +114,7 @@ export default function Page({ params }: Props) {
         entry={entry}
         prev={prev ?? null}
         next={next ?? null}
-        faqs={faqs}
-        uniqueIntro={generated.uniqueIntro}
-        sofortmassnahmen={generated.sofortmassnahmen}
-        praxistipp={generated.praxistipp}
+        yearData={yearData}
       />
     </>
   );
