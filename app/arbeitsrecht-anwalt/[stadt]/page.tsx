@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getStadtBySlug, staedte, Stadt } from "@/data/staedte";
 import { gemeinden, getGemeindeBySlug } from "@/data/gemeinden";
 import { StadtContent, GemeindeContent } from "@/types/content";
+import { arbeitsgerichteUrls } from "@/data/arbeitsgerichte-urls";
+import Image from "next/image";
 import stadtContentsRaw from "@/data/generated/stadt-contents.json";
 import gemeindenContentsRaw from "@/data/generated/gemeinden-contents.json";
 
@@ -290,11 +292,22 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
 
         {/* Arbeitsgericht */}
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
-          <h2 className="text-lg font-semibold text-gray-900 mb-2">{ort.arbeitsgericht} – was Sie wissen müssen</h2>
-          <p className="text-xs text-gray-400 mb-4">
-            <strong>Adresse:</strong> {ort.arbeitsgerichtAdresse} &nbsp;|&nbsp;
-            <strong>Berufung:</strong> {ort.lagName}
-          </p>
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">
+            {arbeitsgerichteUrls[ort.arbeitsgericht] ? (
+              <a href={arbeitsgerichteUrls[ort.arbeitsgericht]} target="_blank" rel="noopener noreferrer" className="hover:text-[#6B6626] transition-colors">
+                {ort.arbeitsgericht} <span className="text-xs font-normal text-gray-400">↗</span>
+              </a>
+            ) : ort.arbeitsgericht} – was Sie wissen müssen
+          </h2>
+          <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-gray-700 mb-4">
+            <span><strong>Adresse:</strong> {ort.arbeitsgerichtAdresse}</span>
+            <span><strong>Berufung:</strong> {ort.lagName}</span>
+            {arbeitsgerichteUrls[ort.arbeitsgericht] && (
+              <a href={arbeitsgerichteUrls[ort.arbeitsgericht]} target="_blank" rel="noopener noreferrer" className="text-[#6B6626] hover:underline">
+                Webseite des Gerichts ↗
+              </a>
+            )}
+          </div>
           {isStadtContent(content) ? (
             <div className="text-sm text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: content.arbeitsgerichtSection }} />
           ) : (
@@ -338,9 +351,13 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
 
         {/* Anwaltsprofil */}
         <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8 flex gap-5">
-          <div className="w-16 h-16 rounded-full bg-[#f5f2e8] border-2 border-[#d4c98a] flex items-center justify-center text-xl font-semibold text-[#6B6626] shrink-0">
-            FB
-          </div>
+          <Image
+            src="/Fatih.png"
+            alt="Fatih Bektas – Fachanwalt für Arbeitsrecht"
+            width={64}
+            height={64}
+            className="w-16 h-16 rounded-full object-cover border-2 border-[#d4c98a] shrink-0"
+          />
           <div className="flex-1">
             <h2 className="text-base font-semibold text-gray-900 mb-0.5">Fatih Bektas</h2>
             <p className="text-sm font-medium text-[#8B7A3A] mb-2">Fachanwalt für Arbeitsrecht</p>
