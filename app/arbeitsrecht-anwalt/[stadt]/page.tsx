@@ -295,8 +295,12 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             <strong>Adresse:</strong> {ort.arbeitsgerichtAdresse} &nbsp;|&nbsp;
             <strong>Berufung:</strong> {ort.lagName}
           </p>
-          {isStadtContent(content) && (
+          {isStadtContent(content) ? (
             <div className="text-sm text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: content.arbeitsgerichtSection }} />
+          ) : (
+            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+              Für {ort.name} ist das {ort.arbeitsgericht} zuständig. Kündigungsschutzklagen müssen binnen 3 Wochen nach Zugang der Kündigung eingereicht werden.
+            </p>
           )}
           {/* Instanzenzug */}
           <div className="flex items-center gap-3 mt-4 pt-4 border-t border-gray-200">

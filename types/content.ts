@@ -20,6 +20,7 @@ export interface GemeindeContent {
   metaDescription: string;
   rechteSection: string;        // HTML
   vertretungSection: string;    // HTML
+  arbeitsgerichtSection?: string; // HTML – optional, Fallback wird in der Page generiert
   faqs: FAQ[];
   generatedAt: string;
 }
