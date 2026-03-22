@@ -4,6 +4,9 @@ import { abmahnungEntries } from '@/lib/abmahnung-content';
 import { lebenssituationData } from '@/lib/lebenssituation-data';
 import { aufhebungsvertragData } from '@/lib/aufhebungsvertrag-data';
 import { musterPages } from '@/lib/muster-data';
+import { staedte } from '@/data/staedte';
+import { gemeinden } from '@/data/gemeinden';
+import { berlinBezirke } from '@/data/bezirke';
 
 export const revalidate = 3600;
 
@@ -84,5 +87,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages, ...clusterJPages, ...clusterFPages, ...musterSubPages];
+  const arbeitsrechtAnwaltPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/arbeitsrecht-anwalt`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    ...[...staedte, ...gemeinden, ...berlinBezirke].map((ort) => ({
+      url: `${BASE_URL}/arbeitsrecht-anwalt/${ort.slug}`,
+      lastModified: new Date() as Date,
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    })),
+  ];
+
+  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages, ...clusterJPages, ...clusterFPages, ...musterSubPages, ...arbeitsrechtAnwaltPages];
 }

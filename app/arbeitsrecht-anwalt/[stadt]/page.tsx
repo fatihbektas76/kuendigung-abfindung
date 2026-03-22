@@ -54,6 +54,10 @@ export async function generateMetadata({
     description: content?.metaDescription ??
       `Kündigung erhalten in ${ort.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${ort.arbeitsgericht}. Kostenlose Ersteinschätzung.`,
     alternates: { canonical: url },
+    other: {
+      "geo.region": `DE-${ort.bundesland === "Berlin" ? "BE" : ort.bundesland === "Hamburg" ? "HH" : ort.bundesland === "Bremen" ? "HB" : ort.bundesland === "Bayern" ? "BY" : ort.bundesland === "Baden-Württemberg" ? "BW" : ort.bundesland === "Hessen" ? "HE" : ort.bundesland === "Nordrhein-Westfalen" ? "NW" : ort.bundesland === "Niedersachsen" ? "NI" : ort.bundesland === "Sachsen" ? "SN" : ort.bundesland === "Sachsen-Anhalt" ? "ST" : ort.bundesland === "Schleswig-Holstein" ? "SH" : ort.bundesland === "Rheinland-Pfalz" ? "RP" : ort.bundesland === "Thüringen" ? "TH" : ort.bundesland === "Mecklenburg-Vorpommern" ? "MV" : "DE"}`,
+      "geo.placename": ort.name,
+    },
     openGraph: {
       title: `Arbeitsrecht Anwalt ${ort.name} – Kündigung & Abfindung | APOS Legal`,
       description: content?.metaDescription ?? "",
@@ -75,21 +79,31 @@ function buildSchema(slug: string) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LegalService",
+        "@type": ["LegalService", "LocalBusiness"],
         "@id": `${url}#legalservice`,
         name: "APOS Legal – Kanzlei Fatih Bektas",
         description: `Fachanwalt für Arbeitsrecht mit Beratung für Arbeitnehmer in ${ort.name}`,
         url,
-        telephone: "+49-XXX-XXXXXXX",
+        telephone: "+496214907673",
         address: {
           "@type": "PostalAddress",
+          streetAddress: "P3, 1-3",
           addressLocality: "Mannheim",
+          postalCode: "68161",
+          addressRegion: ort.bundesland,
           addressCountry: "DE",
         },
         areaServed: {
           "@type": "City",
           name: ort.name,
           containedIn: { "@type": "State", name: ort.bundesland },
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5.0",
+          bestRating: "5",
+          worstRating: "1",
+          ratingCount: "68",
         },
         knowsAbout: [
           "Kündigungsschutzklage",
@@ -108,6 +122,7 @@ function buildSchema(slug: string) {
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kündigungsschutzklage" } },
           ],
         },
+        priceRange: "$$",
       },
       {
         "@type": "Person",
