@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
-import { getFristlosContentForYear } from '@/lib/generated-fristlos-content';
 import FristlosContent from './content';
+import fristloseData from '@/data/generated/fristlose-data.json';
 
 export const revalidate = 86400;
 
@@ -31,20 +31,27 @@ export default function Page({ params }: Props) {
   const entry = getEntry(params.slug);
   if (!entry) notFound();
 
-  const generated = getFristlosContentForYear(entry.year);
-  if (!generated) notFound();
+  const yearData = (fristloseData as Record<string, unknown>)[String(entry.year)] as {
+    beispielsfall: {
+      initialen: string;
+      name: string;
+      branche: string;
+      gehalt: number;
+      kuendigungsgrund: string;
+      zitat: string;
+      geprueft: string[];
+      vorgehen: string[];
+      ergebnis: number;
+    };
+    faqs: { frage: string; antwort: string }[];
+  };
+  if (!yearData) notFound();
 
   const prev = entries.find((e) => e.year === entry.year - 1);
   const next = entries.find((e) => e.year === entry.year + 1);
 
   const yl = yearLabel(entry.year);
-  const faqs = [
-    { q: `Ist eine fristlose Kündigung nach ${yl} wirksam?`, a: generated.faqAnswers.wirksamkeit },
-    { q: 'Was sind die Voraussetzungen für eine wirksame fristlose Kündigung?', a: generated.faqAnswers.voraussetzungen },
-    { q: `Welche Abfindung ist nach ${yl} möglich?`, a: generated.faqAnswers.abfindung },
-    { q: 'Wie lange habe ich Zeit gegen die fristlose Kündigung vorzugehen?', a: generated.faqAnswers.frist },
-    { q: 'Bekomme ich noch Lohn nach fristloser Kündigung?', a: generated.faqAnswers.lohn },
-  ];
+  const pageUrl = `${BASE_URL}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`;
 
   return (
     <>
@@ -62,25 +69,43 @@ export default function Page({ params }: Props) {
                 '@type': 'ListItem',
                 position: 3,
                 name: `Fristlose Kündigung nach ${yl}`,
-                item: `${BASE_URL}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`,
+                item: pageUrl,
               },
             ],
           }),
         }}
       />
 
-      {/* Schema.org - FAQPage */}
+      {/* Schema.org - FAQPage (7 Fragen) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: faqs.map((faq) => ({
+            mainEntity: yearData.faqs.map((faq) => ({
               '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: { '@type': 'Answer', text: faq.a },
+              name: faq.frage,
+              acceptedAnswer: { '@type': 'Answer', text: faq.antwort },
             })),
+          }),
+        }}
+      />
+
+      {/* Schema.org - WebPage with dateModified + speakable */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: pageUrl,
+            dateModified: '2026-03-01',
+            datePublished: '2025-01-15',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['.fakt-box', '.faq-list'],
+            },
           }),
         }}
       />
@@ -89,10 +114,7 @@ export default function Page({ params }: Props) {
         entry={entry}
         prev={prev ?? null}
         next={next ?? null}
-        faqs={faqs}
-        uniqueIntro={generated.uniqueIntro}
-        rechtlicheVoraussetzungen={generated.rechtlicheVoraussetzungen}
-        praxistipp={generated.praxistipp}
+        yearData={yearData}
       />
     </>
   );
