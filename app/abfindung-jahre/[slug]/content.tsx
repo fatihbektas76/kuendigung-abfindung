@@ -55,22 +55,22 @@ function germanIncomeTax(zvE: number): number {
   return Math.round(0.45 * zvE - 18936.88);
 }
 
-function skKorrektur(einkommen: number, steuerklasse: number): number {
-  if (steuerklasse === 3) return einkommen * 0.88;
-  if (steuerklasse === 4) return einkommen * 0.95;
-  return einkommen;
+function applySteuerklass(zvE: number, sk: number): number {
+  if (sk === 3) return zvE * 0.88;
+  if (sk === 4) return zvE * 0.95;
+  return zvE;
 }
 
-function steuerOhneFuenftel(abfindung: number, jahreseinkommen: number, sk: number): number {
-  const e = skKorrektur(jahreseinkommen, sk);
-  return germanIncomeTax(e + abfindung) - germanIncomeTax(e);
+function steuerOhne(abfindung: number, einkommen: number, sk: number): number {
+  const basis = germanIncomeTax(applySteuerklass(einkommen, sk));
+  const gesamt = germanIncomeTax(applySteuerklass(einkommen + abfindung, sk));
+  return Math.max(0, gesamt - basis);
 }
 
-function steuerMitFuenftel(abfindung: number, jahreseinkommen: number, sk: number): number {
-  const e = skKorrektur(jahreseinkommen, sk);
-  const basis = germanIncomeTax(e);
-  const erhoeht = germanIncomeTax(e + abfindung / 5);
-  return Math.round(5 * (erhoeht - basis));
+function steuerMit(abfindung: number, einkommen: number, sk: number): number {
+  const basis = germanIncomeTax(applySteuerklass(einkommen, sk));
+  const erhoeht = germanIncomeTax(applySteuerklass(einkommen + abfindung / 5, sk));
+  return Math.max(0, 5 * (erhoeht - basis));
 }
 
 /* ── Component ── */
@@ -86,9 +86,9 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
   const ylKurz = y === 1 ? '1 Jahr' : `${y} Jahre`;
 
   /* Tax calculations */
-  const steuerOhne = steuerOhneFuenftel(abfindungSlider, einkommenSlider, steuerklasse);
-  const steuerMit = steuerMitFuenftel(abfindungSlider, einkommenSlider, steuerklasse);
-  const ersparnis = Math.max(0, steuerOhne - steuerMit);
+  const stOhne = steuerOhne(abfindungSlider, einkommenSlider, steuerklasse);
+  const stMit = steuerMit(abfindungSlider, einkommenSlider, steuerklasse);
+  const ersparnis = Math.max(0, stOhne - stMit);
 
   return (
     <main className="pb-20">
@@ -414,16 +414,16 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               </div>
               <input
                 type="range"
-                min={15000}
-                max={120000}
+                min={0}
+                max={250000}
                 step={1000}
                 value={einkommenSlider}
                 onChange={(e) => setEinkommenSlider(Number(e.target.value))}
                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#8B7A3A]"
               />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
-                <span>15.000 &euro;</span>
-                <span>120.000 &euro;</span>
+                <span>0 &euro;</span>
+                <span>250.000 &euro;</span>
               </div>
             </div>
 
@@ -445,12 +445,12 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
                 <p className="text-xs font-semibold text-red-800 uppercase tracking-wide mb-1">Ohne Fünftelregelung</p>
-                <p className="text-2xl font-bold text-red-800">ca. {steuerOhne.toLocaleString('de-DE')} &euro;</p>
+                <p className="text-2xl font-bold text-red-800">ca. {stOhne.toLocaleString('de-DE')} &euro;</p>
                 <p className="text-xs text-red-600 mt-1">Geschätzte Steuer auf die Abfindung</p>
               </div>
               <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
                 <p className="text-xs font-semibold text-green-800 uppercase tracking-wide mb-1">Mit Fünftelregelung</p>
-                <p className="text-2xl font-bold text-green-800">ca. {steuerMit.toLocaleString('de-DE')} &euro;</p>
+                <p className="text-2xl font-bold text-green-800">ca. {stMit.toLocaleString('de-DE')} &euro;</p>
                 <p className="text-xs text-green-600 mt-1">Geschätzte Steuer auf die Abfindung</p>
               </div>
             </div>
@@ -464,11 +464,10 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             )}
 
             <p className="text-xs text-gray-400">
-              Schätzwerte auf Basis vereinfachter Steuerberechnung. Keine Rechtsberatung. Tatsächliche
-              Steuerbelastung hängt von individuellen Faktoren ab &mdash; Steuerberater hinzuziehen.
+              Schätzwerte auf Basis vereinfachter Steuerberechnung nach &sect; 32a EStG. Keine Steuer- oder
+              Rechtsberatung. Tatsächliche Steuerbelastung hängt von individuellen Faktoren ab &mdash;
+              Steuerberater hinzuziehen. Steuerklasse wird über vereinfachten Korrekturfaktor berücksichtigt.
               Ab 2025: Fünftelregelung selbst über Einkommensteuererklärung beantragen.
-              Steuerklasse wird über vereinfachten Korrekturfaktor berücksichtigt (SK1: ohne Korrektur,
-              SK3: &times;0,88, SK4: &times;0,95).
             </p>
           </div>
         </div>
