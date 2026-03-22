@@ -2,11 +2,11 @@
   "1": {
     "year": 1,
     "kuendigungsfristKurz": "4 Wochen",
-    "kuendigungsfristLang": "4 Wochen zum 15. oder zum Monatsende",
-    "kuendigungsfristHinweis": "Zum 15. oder zum Monatsende — häufig falsch berechnet",
+    "kuendigungsfristLang": "4 Wochen zum Fünfzehnten oder zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum 15. oder zum Monatsende — Grundkündigungsfrist (§ 622 Abs. 1 BGB)",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist falsch berechnet — nach 1 Jahr gilt: 4 Wochen zum 15. oder zum Monatsende (§ 622 BGB)",
+      "Kündigungsfrist falsch berechnet — nach 1 Jahr gilt: 4 Wochen zum Fünfzehnten oder zum Ende des Kalendermonats (§ 622 BGB)",
       "Kündigung nicht schriftlich erteilt (§ 623 BGB) — mündliche Kündigung ist unwirksam",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG) — macht Kündigung unwirksam",
       "Keine vorherige Abmahnung bei verhaltensbedingter Kündigung"
@@ -37,7 +37,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 1 Jahr Betriebszugehörigkeit?",
-        "antwort": "Nach 1 Jahr Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Wochen zum 15. oder zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 1 Jahr Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Wochen zum Fünfzehnten oder zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 1 Jahr Betriebszugehörigkeit vorzugehen?",
@@ -63,12 +63,12 @@
   },
   "2": {
     "year": 2,
-    "kuendigungsfristKurz": "4 Wochen",
-    "kuendigungsfristLang": "4 Wochen zum 15. oder zum Monatsende",
-    "kuendigungsfristHinweis": "Zum 15. oder zum Monatsende — häufig falsch berechnet",
+    "kuendigungsfristKurz": "1 Monat",
+    "kuendigungsfristLang": "1 Monat zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 2 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist falsch berechnet — nach 2 Jahren gilt: 4 Wochen zum 15. oder zum Monatsende (§ 622 BGB)",
+      "Kündigungsfrist falsch berechnet — nach 2 Jahren gilt: 1 Monat zum Ende des Kalendermonats (§ 622 BGB)",
       "Kündigung nicht schriftlich erteilt (§ 623 BGB) — mündliche Kündigung ist unwirksam",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG) — macht Kündigung unwirksam",
       "Keine vorherige Abmahnung bei verhaltensbedingter Kündigung"
@@ -99,7 +99,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 2 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 2 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Wochen zum 15. oder zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 2 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 1 Monat zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 2 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -125,12 +125,12 @@
   },
   "3": {
     "year": 3,
-    "kuendigungsfristKurz": "4 Wochen",
-    "kuendigungsfristLang": "4 Wochen zum 15. oder zum Monatsende",
-    "kuendigungsfristHinweis": "Zum 15. oder zum Monatsende — häufig falsch berechnet",
+    "kuendigungsfristKurz": "1 Monat",
+    "kuendigungsfristLang": "1 Monat zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 2 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist falsch berechnet — nach 3 Jahren gilt: 4 Wochen zum 15. oder zum Monatsende (§ 622 BGB)",
+      "Kündigungsfrist falsch berechnet — nach 3 Jahren gilt: 1 Monat zum Ende des Kalendermonats (§ 622 BGB)",
       "Kündigung nicht schriftlich erteilt (§ 623 BGB) — mündliche Kündigung ist unwirksam",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG) — macht Kündigung unwirksam",
       "Keine vorherige Abmahnung bei verhaltensbedingter Kündigung"
@@ -161,7 +161,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 3 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 3 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Wochen zum 15. oder zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 3 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 1 Monat zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 3 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -187,12 +187,12 @@
   },
   "4": {
     "year": 4,
-    "kuendigungsfristKurz": "4 Wochen",
-    "kuendigungsfristLang": "4 Wochen zum 15. oder zum Monatsende",
-    "kuendigungsfristHinweis": "Zum 15. oder zum Monatsende — häufig falsch berechnet",
+    "kuendigungsfristKurz": "1 Monat",
+    "kuendigungsfristLang": "1 Monat zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 2 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist falsch berechnet — nach 4 Jahren gilt: 4 Wochen zum 15. oder zum Monatsende (§ 622 BGB)",
+      "Kündigungsfrist falsch berechnet — nach 4 Jahren gilt: 1 Monat zum Ende des Kalendermonats (§ 622 BGB)",
       "Kündigung nicht schriftlich erteilt (§ 623 BGB) — mündliche Kündigung ist unwirksam",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG) — macht Kündigung unwirksam",
       "Keine vorherige Abmahnung bei verhaltensbedingter Kündigung"
@@ -223,7 +223,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 4 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 4 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Wochen zum 15. oder zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 4 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 1 Monat zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 4 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -250,8 +250,8 @@
   "5": {
     "year": 5,
     "kuendigungsfristKurz": "2 Monate",
-    "kuendigungsfristLang": "2 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 5 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristLang": "2 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 5 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
       "Verlängerte Kündigungsfrist von 2 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
@@ -285,7 +285,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 5 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 5 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 2 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 5 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 2 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 5 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -312,8 +312,8 @@
   "6": {
     "year": 6,
     "kuendigungsfristKurz": "2 Monate",
-    "kuendigungsfristLang": "2 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 5 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristLang": "2 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 5 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
       "Verlängerte Kündigungsfrist von 2 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
@@ -347,7 +347,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 6 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 6 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 2 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 6 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 2 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 6 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -374,8 +374,8 @@
   "7": {
     "year": 7,
     "kuendigungsfristKurz": "2 Monate",
-    "kuendigungsfristLang": "2 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 5 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristLang": "2 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 5 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
       "Verlängerte Kündigungsfrist von 2 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
@@ -409,7 +409,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 7 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 7 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 2 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 7 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 2 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 7 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -436,8 +436,8 @@
   "8": {
     "year": 8,
     "kuendigungsfristKurz": "3 Monate",
-    "kuendigungsfristLang": "3 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 8 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristLang": "3 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 8 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
       "Verlängerte Kündigungsfrist von 3 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
@@ -471,7 +471,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 8 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 8 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 3 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 8 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 3 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 8 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -498,8 +498,8 @@
   "9": {
     "year": 9,
     "kuendigungsfristKurz": "3 Monate",
-    "kuendigungsfristLang": "3 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 8 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristLang": "3 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 8 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
       "Verlängerte Kündigungsfrist von 3 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
@@ -533,7 +533,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 9 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 9 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 3 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 9 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 3 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 9 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -559,12 +559,12 @@
   },
   "10": {
     "year": 10,
-    "kuendigungsfristKurz": "3 Monate",
-    "kuendigungsfristLang": "3 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 8 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "4 Monate",
+    "kuendigungsfristLang": "4 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 10 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Verlängerte Kündigungsfrist von 3 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Verlängerte Kündigungsfrist von 4 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Sozialauswahl fehlerhaft — Alter, Unterhaltspflichten und Betriebszugehörigkeit nicht berücksichtigt (§ 1 Abs. 3 KSchG)",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Prüfung einer Weiterbeschäftigungsmöglichkeit auf einem anderen Arbeitsplatz"
@@ -595,7 +595,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 10 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 10 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 3 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 10 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 10 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -621,12 +621,12 @@
   },
   "11": {
     "year": 11,
-    "kuendigungsfristKurz": "3 Monate",
-    "kuendigungsfristLang": "3 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 8 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "4 Monate",
+    "kuendigungsfristLang": "4 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 10 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Verlängerte Kündigungsfrist von 3 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Verlängerte Kündigungsfrist von 4 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Sozialauswahl fehlerhaft — Alter, Unterhaltspflichten und Betriebszugehörigkeit nicht berücksichtigt (§ 1 Abs. 3 KSchG)",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Prüfung einer Weiterbeschäftigungsmöglichkeit auf einem anderen Arbeitsplatz"
@@ -657,7 +657,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 11 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 11 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 3 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 11 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 11 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -683,12 +683,12 @@
   },
   "12": {
     "year": 12,
-    "kuendigungsfristKurz": "3 Monate",
-    "kuendigungsfristLang": "3 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 8 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "5 Monate",
+    "kuendigungsfristLang": "5 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 12 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Verlängerte Kündigungsfrist von 3 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Verlängerte Kündigungsfrist von 5 Monate nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Sozialauswahl fehlerhaft — Alter, Unterhaltspflichten und Betriebszugehörigkeit nicht berücksichtigt (§ 1 Abs. 3 KSchG)",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Prüfung einer Weiterbeschäftigungsmöglichkeit auf einem anderen Arbeitsplatz"
@@ -719,7 +719,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 12 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 12 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 3 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 12 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 5 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 12 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -745,12 +745,12 @@
   },
   "13": {
     "year": 13,
-    "kuendigungsfristKurz": "4 Monate",
-    "kuendigungsfristLang": "4 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 13 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "5 Monate",
+    "kuendigungsfristLang": "5 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 12 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 4 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 5 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
       "Langjährige Mitarbeiter bei der Sozialauswahl benachteiligt — Betriebszugehörigkeit ist ein zentrales Kriterium",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit 13 Jahren Betriebszugehörigkeit"
@@ -781,7 +781,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 13 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 13 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 13 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 5 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 13 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -807,12 +807,12 @@
   },
   "14": {
     "year": 14,
-    "kuendigungsfristKurz": "4 Monate",
-    "kuendigungsfristLang": "4 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 13 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "5 Monate",
+    "kuendigungsfristLang": "5 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 12 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 4 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 5 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
       "Langjährige Mitarbeiter bei der Sozialauswahl benachteiligt — Betriebszugehörigkeit ist ein zentrales Kriterium",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit 14 Jahren Betriebszugehörigkeit"
@@ -843,7 +843,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 14 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 14 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 14 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 5 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 14 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -869,12 +869,12 @@
   },
   "15": {
     "year": 15,
-    "kuendigungsfristKurz": "4 Monate",
-    "kuendigungsfristLang": "4 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 13 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "6 Monate",
+    "kuendigungsfristLang": "6 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 15 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 4 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 6 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
       "Langjährige Mitarbeiter bei der Sozialauswahl benachteiligt — Betriebszugehörigkeit ist ein zentrales Kriterium",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit 15 Jahren Betriebszugehörigkeit"
@@ -905,7 +905,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 15 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 15 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 4 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 15 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 15 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -931,12 +931,12 @@
   },
   "16": {
     "year": 16,
-    "kuendigungsfristKurz": "5 Monate",
-    "kuendigungsfristLang": "5 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 16 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "6 Monate",
+    "kuendigungsfristLang": "6 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 15 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 5 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 6 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
       "Langjährige Mitarbeiter bei der Sozialauswahl benachteiligt — Betriebszugehörigkeit ist ein zentrales Kriterium",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit 16 Jahren Betriebszugehörigkeit"
@@ -967,7 +967,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 16 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 16 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 5 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 16 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 16 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -993,12 +993,12 @@
   },
   "17": {
     "year": 17,
-    "kuendigungsfristKurz": "5 Monate",
-    "kuendigungsfristLang": "5 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 16 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "6 Monate",
+    "kuendigungsfristLang": "6 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 15 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 5 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 6 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
       "Langjährige Mitarbeiter bei der Sozialauswahl benachteiligt — Betriebszugehörigkeit ist ein zentrales Kriterium",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit 17 Jahren Betriebszugehörigkeit"
@@ -1029,7 +1029,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 17 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 17 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 5 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 17 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 17 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1055,12 +1055,12 @@
   },
   "18": {
     "year": 18,
-    "kuendigungsfristKurz": "5 Monate",
-    "kuendigungsfristLang": "5 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 16 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "6 Monate",
+    "kuendigungsfristLang": "6 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 15 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 5 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 6 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
       "Langjährige Mitarbeiter bei der Sozialauswahl benachteiligt — Betriebszugehörigkeit ist ein zentrales Kriterium",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit 18 Jahren Betriebszugehörigkeit"
@@ -1091,7 +1091,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 18 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 18 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 5 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 18 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 18 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1117,12 +1117,12 @@
   },
   "19": {
     "year": 19,
-    "kuendigungsfristKurz": "5 Monate",
-    "kuendigungsfristLang": "5 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Zum Monatsende — ab 16 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "6 Monate",
+    "kuendigungsfristLang": "6 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Zum Ende des Kalendermonats — ab 15 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 5 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 6 Monate zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)",
       "Langjährige Mitarbeiter bei der Sozialauswahl benachteiligt — Betriebszugehörigkeit ist ein zentrales Kriterium",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit 19 Jahren Betriebszugehörigkeit"
@@ -1153,7 +1153,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 19 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 19 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 5 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 19 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 19 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1179,12 +1179,12 @@
   },
   "20": {
     "year": 20,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 20 Jahren"
@@ -1215,7 +1215,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 20 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 20 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 20 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 20 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1241,12 +1241,12 @@
   },
   "21": {
     "year": 21,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 21 Jahren"
@@ -1277,7 +1277,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 21 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 21 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 21 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 21 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1303,12 +1303,12 @@
   },
   "22": {
     "year": 22,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 22 Jahren"
@@ -1339,7 +1339,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 22 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 22 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 22 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 22 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1365,12 +1365,12 @@
   },
   "23": {
     "year": 23,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 23 Jahren"
@@ -1401,7 +1401,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 23 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 23 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 23 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 23 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1427,12 +1427,12 @@
   },
   "24": {
     "year": 24,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 24 Jahren"
@@ -1463,7 +1463,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 24 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 24 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 24 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 24 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1489,12 +1489,12 @@
   },
   "25": {
     "year": 25,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 25 Jahren"
@@ -1525,7 +1525,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 25 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 25 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 25 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 25 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1551,12 +1551,12 @@
   },
   "26": {
     "year": 26,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 26 Jahren"
@@ -1587,7 +1587,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 26 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 26 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 26 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 26 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1613,12 +1613,12 @@
   },
   "27": {
     "year": 27,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 27 Jahren"
@@ -1649,7 +1649,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 27 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 27 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 27 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 27 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1675,12 +1675,12 @@
   },
   "28": {
     "year": 28,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 28 Jahren"
@@ -1711,7 +1711,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 28 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 28 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 28 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 28 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1737,12 +1737,12 @@
   },
   "29": {
     "year": 29,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 29 Jahren"
@@ -1773,7 +1773,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 29 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 29 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 29 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 29 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1799,12 +1799,12 @@
   },
   "30": {
     "year": 30,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 30 Jahren"
@@ -1835,7 +1835,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 30 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 30 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 30 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 30 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1861,12 +1861,12 @@
   },
   "31": {
     "year": 31,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 31 Jahren"
@@ -1897,7 +1897,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 31 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 31 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 31 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 31 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1923,12 +1923,12 @@
   },
   "32": {
     "year": 32,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 32 Jahren"
@@ -1959,7 +1959,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 32 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 32 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 32 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 32 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -1985,12 +1985,12 @@
   },
   "33": {
     "year": 33,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 33 Jahren"
@@ -2021,7 +2021,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 33 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 33 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 33 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 33 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -2047,12 +2047,12 @@
   },
   "34": {
     "year": 34,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 34 Jahren"
@@ -2083,7 +2083,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 34 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 34 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 34 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 34 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -2109,12 +2109,12 @@
   },
   "35": {
     "year": 35,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 35 Jahren"
@@ -2145,7 +2145,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 35 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 35 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 35 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 35 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -2171,12 +2171,12 @@
   },
   "36": {
     "year": 36,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 36 Jahren"
@@ -2207,7 +2207,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 36 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 36 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 36 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 36 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -2233,12 +2233,12 @@
   },
   "37": {
     "year": 37,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 37 Jahren"
@@ -2269,7 +2269,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 37 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 37 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 37 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 37 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -2295,12 +2295,12 @@
   },
   "38": {
     "year": 38,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 38 Jahren"
@@ -2331,7 +2331,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 38 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 38 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 38 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 38 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -2357,12 +2357,12 @@
   },
   "39": {
     "year": 39,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 39 Jahren"
@@ -2393,7 +2393,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 39 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 39 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 39 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 39 Jahren Betriebszugehörigkeit vorzugehen?",
@@ -2419,12 +2419,12 @@
   },
   "40": {
     "year": 40,
-    "kuendigungsfristKurz": "6 Monate",
-    "kuendigungsfristLang": "6 Monate zum Monatsende",
-    "kuendigungsfristHinweis": "Maximale Frist — ab 20 Jahren Betriebszugehörigkeit",
+    "kuendigungsfristKurz": "7 Monate",
+    "kuendigungsfristLang": "7 Monate zum Ende des Kalendermonats",
+    "kuendigungsfristHinweis": "Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit",
     "kschgGilt": true,
     "haeufigeFehler": [
-      "Kündigungsfrist von 6 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
+      "Kündigungsfrist von 7 Monate zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)",
       "Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer",
       "Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)",
       "Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach 40 Jahren"
@@ -2455,7 +2455,7 @@
       },
       {
         "frage": "Wie lange ist die Kündigungsfrist nach 40 Jahren Betriebszugehörigkeit?",
-        "antwort": "Nach 40 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 6 Monate zum Monatsende (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
+        "antwort": "Nach 40 Jahren Betriebszugehörigkeit beträgt die gesetzliche Kündigungsfrist 7 Monate zum Ende des Kalendermonats (§ 622 Abs. 2 BGB). Diese Frist kann durch Arbeitsvertrag oder Tarifvertrag verlängert, aber nicht verkürzt werden. Eine zu kurze Kündigungsfrist macht die Kündigung zwar nicht unwirksam, aber angreifbar — sie wird dann zum nächstmöglichen Termin wirksam."
       },
       {
         "frage": "Wie lange habe ich Zeit gegen die Kündigung nach 40 Jahren Betriebszugehörigkeit vorzugehen?",

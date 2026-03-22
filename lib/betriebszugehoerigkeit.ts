@@ -6,12 +6,14 @@ export interface BetriebsEntry {
 }
 
 function getFrist(year: number): string {
-  if (year < 5) return '4 Wochen zum 15. oder zum Monatsende';
-  if (year < 8) return '2 Monate zum Monatsende';
-  if (year < 13) return '3 Monate zum Monatsende';
-  if (year < 16) return '4 Monate zum Monatsende';
-  if (year < 20) return '5 Monate zum Monatsende';
-  return '6 Monate zum Monatsende';
+  if (year < 2) return '4 Wochen zum Fünfzehnten oder zum Ende des Kalendermonats';
+  if (year < 5) return '1 Monat zum Ende des Kalendermonats';
+  if (year < 8) return '2 Monate zum Ende des Kalendermonats';
+  if (year < 10) return '3 Monate zum Ende des Kalendermonats';
+  if (year < 12) return '4 Monate zum Ende des Kalendermonats';
+  if (year < 15) return '5 Monate zum Ende des Kalendermonats';
+  if (year < 20) return '6 Monate zum Ende des Kalendermonats';
+  return '7 Monate zum Ende des Kalendermonats';
 }
 
 const raw: { year: number; word: string; slug: string }[] = [

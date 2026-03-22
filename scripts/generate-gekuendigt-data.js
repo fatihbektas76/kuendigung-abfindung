@@ -3,12 +3,14 @@ const path = require('path');
 
 // --- Kündigungsfristen nach § 622 Abs. 2 BGB ---
 function getFrist(year) {
-  if (year < 5) return { kurz: '4 Wochen', lang: '4 Wochen zum 15. oder zum Monatsende', hinweis: 'Zum 15. oder zum Monatsende — häufig falsch berechnet' };
-  if (year < 8) return { kurz: '2 Monate', lang: '2 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 5 Jahren Betriebszugehörigkeit' };
-  if (year < 13) return { kurz: '3 Monate', lang: '3 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 8 Jahren Betriebszugehörigkeit' };
-  if (year < 16) return { kurz: '4 Monate', lang: '4 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 13 Jahren Betriebszugehörigkeit' };
-  if (year < 20) return { kurz: '5 Monate', lang: '5 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 16 Jahren Betriebszugehörigkeit' };
-  return { kurz: '6 Monate', lang: '6 Monate zum Monatsende', hinweis: 'Maximale Frist — ab 20 Jahren Betriebszugehörigkeit' };
+  if (year < 2) return { kurz: '4 Wochen', lang: '4 Wochen zum Fünfzehnten oder zum Ende des Kalendermonats', hinweis: 'Zum 15. oder zum Monatsende — Grundkündigungsfrist (§ 622 Abs. 1 BGB)' };
+  if (year < 5) return { kurz: '1 Monat', lang: '1 Monat zum Ende des Kalendermonats', hinweis: 'Zum Ende des Kalendermonats — ab 2 Jahren Betriebszugehörigkeit' };
+  if (year < 8) return { kurz: '2 Monate', lang: '2 Monate zum Ende des Kalendermonats', hinweis: 'Zum Ende des Kalendermonats — ab 5 Jahren Betriebszugehörigkeit' };
+  if (year < 10) return { kurz: '3 Monate', lang: '3 Monate zum Ende des Kalendermonats', hinweis: 'Zum Ende des Kalendermonats — ab 8 Jahren Betriebszugehörigkeit' };
+  if (year < 12) return { kurz: '4 Monate', lang: '4 Monate zum Ende des Kalendermonats', hinweis: 'Zum Ende des Kalendermonats — ab 10 Jahren Betriebszugehörigkeit' };
+  if (year < 15) return { kurz: '5 Monate', lang: '5 Monate zum Ende des Kalendermonats', hinweis: 'Zum Ende des Kalendermonats — ab 12 Jahren Betriebszugehörigkeit' };
+  if (year < 20) return { kurz: '6 Monate', lang: '6 Monate zum Ende des Kalendermonats', hinweis: 'Zum Ende des Kalendermonats — ab 15 Jahren Betriebszugehörigkeit' };
+  return { kurz: '7 Monate', lang: '7 Monate zum Ende des Kalendermonats', hinweis: 'Maximale gesetzliche Frist — ab 20 Jahren Betriebszugehörigkeit' };
 }
 
 // --- Häufige Fehler des Arbeitgebers (max. 4, keine Dopplungen) ---
