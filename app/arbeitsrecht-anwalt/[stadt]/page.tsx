@@ -180,7 +180,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             <p className="font-semibold text-[#6B6626] mb-1">Kostenlose Ersteinschätzung</p>
             <p className="text-sm text-gray-600">Für Kündigungsschutzklage gilt eine 3-Wochen-Frist. Jetzt Kündigung prüfen lassen.</p>
           </div>
-          <a href="/kontakt" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
+          <a href="/#kontakt" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
             Jetzt anfragen →
           </a>
         </div>
@@ -380,7 +380,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             Für Arbeitnehmer aus {ort.name} und ganz {ort.bundesland}.<br />
             Vollständig digital – keine Anreise erforderlich.
           </p>
-          <a href="/kontakt" className="inline-block bg-white text-[#6B6626] px-7 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity">
+          <a href="/kuendigung-pruefen" className="inline-block bg-white text-[#6B6626] px-7 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity">
             Ersteinschätzung anfordern →
           </a>
         </div>

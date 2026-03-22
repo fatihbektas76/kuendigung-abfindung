@@ -43,7 +43,7 @@ export default function ArbeitsrechtAnwaltPage() {
           <p className="font-semibold text-[#6B6626] mb-1">Kostenlose Ersteinschätzung</p>
           <p className="text-sm text-gray-600">3-Wochen-Frist für Kündigungsschutzklage beachten. Jetzt prüfen lassen.</p>
         </div>
-        <a href="/kontakt" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium">
+        <a href="/#kontakt" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium">
           Jetzt anfragen →
         </a>
       </div>
