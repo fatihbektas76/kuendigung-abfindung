@@ -240,6 +240,9 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             Beispiel: 8 Jahre, 5.000 € brutto → 0,5 × 5.000 € × 8 = <strong>20.000 € Abfindung</strong>
           </div>
           <p className="text-xs text-gray-500">Kein gesetzlicher Anspruch. Mit anwaltlicher Unterstützung ist häufig ein höherer Faktor erzielbar.</p>
+          <a href="/kuendigung-pruefen" className="inline-block mt-4 text-sm font-medium text-[#6B6626] hover:underline">
+            Jetzt Abfindung berechnen lassen →
+          </a>
         </div>
 
         {/* Definitionen */}
@@ -276,6 +279,17 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* CTA nach Vergleich */}
+        <div className="bg-[#f9f6ec] border border-[#d4c98a] rounded-xl p-5 mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div>
+            <p className="font-semibold text-[#6B6626] text-sm">Kündigung erhalten?</p>
+            <p className="text-sm text-gray-600">Lassen Sie Ihre Kündigung jetzt kostenlos prüfen – die 3-Wochen-Frist läuft.</p>
+          </div>
+          <a href="/kuendigung-pruefen" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
+            Kündigung prüfen →
+          </a>
         </div>
 
         {/* Stadtspezifisch */}
@@ -349,6 +363,17 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
           ))}
         </div>
 
+        {/* CTA nach Leistungen */}
+        <div className="border-l-4 border-[#8B7A3A] bg-white border border-gray-200 rounded-r-lg p-5 mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div>
+            <p className="font-semibold text-[#6B6626] mb-1">Aufhebungsvertrag erhalten?</p>
+            <p className="text-sm text-gray-600">Nie ohne anwaltliche Prüfung unterschreiben. Wir prüfen kostenlos.</p>
+          </div>
+          <a href="/#kontakt" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
+            Jetzt anfragen →
+          </a>
+        </div>
+
         {/* Anwaltsprofil */}
         <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8 flex gap-5">
           <Image
@@ -392,6 +417,14 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
               />
             </details>
           ))}
+        </div>
+
+        {/* CTA nach FAQ */}
+        <div className="text-center mb-8">
+          <p className="text-sm text-gray-500 mb-3">Ihre Frage war nicht dabei?</p>
+          <a href="/#kontakt" className="inline-block border-2 border-[#6B6626] text-[#6B6626] px-6 py-2.5 rounded text-sm font-medium hover:bg-[#6B6626] hover:text-white transition-colors">
+            Individuelle Frage stellen →
+          </a>
         </div>
 
         {/* Final CTA */}
