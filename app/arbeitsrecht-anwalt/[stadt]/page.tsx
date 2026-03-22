@@ -305,7 +305,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
           {/* Instanzenzug */}
           <div className="flex items-center gap-3 mt-4 pt-4 border-t border-gray-200">
             {[
-              { label: "1. Instanz", name: ort.arbeitsgericht.replace("Arbeitsgericht ", "AG ") },
+              { label: "1. Instanz", name: ort.arbeitsgericht.replace("Arbeitsgericht ", "ArbG ") },
               { label: "Berufung (2. Instanz)", name: ort.lagName.replace("Landesarbeitsgericht", "LAG").replace("Hessisches", "Hess.").replace("Sächsisches", "Sächs.").replace("Thüringer", "Thür.") },
               { label: "Revision (3. Instanz)", name: "Bundesarbeitsgericht" },
             ].map((box, i, arr) => (
