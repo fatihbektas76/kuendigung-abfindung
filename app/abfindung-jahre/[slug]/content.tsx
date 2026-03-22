@@ -37,26 +37,40 @@ const fmt = (n: number) =>
 const fmtPlain = (n: number) =>
   n.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
-/* ── Simplified ESt calculation (§ 32a EStG 2025) ── */
-function berechneEStFormula(zvE: number): number {
-  if (zvE <= 11784) return 0;
-  if (zvE <= 17005) {
-    const y = (zvE - 11784) / 10000;
-    return Math.floor((922.98 * y + 1400) * y);
+/* ── ESt-Berechnung nach § 32a EStG 2025 ── */
+function germanIncomeTax(zvE: number): number {
+  zvE = Math.max(0, Math.round(zvE));
+  if (zvE <= 12096) return 0;
+  if (zvE <= 17443) {
+    const y = (zvE - 12096) / 10000;
+    return Math.round((979.18 * y + 1400) * y);
   }
-  if (zvE <= 66760) {
-    const z = (zvE - 17005) / 10000;
-    return Math.floor((181.19 * z + 2397) * z + 1025.38);
+  if (zvE <= 68480) {
+    const y = (zvE - 17443) / 10000;
+    return Math.round((192.59 * y + 2397) * y + 966.53);
   }
   if (zvE <= 277825) {
-    return Math.floor(0.42 * zvE - 10602.13);
+    return Math.round(0.42 * zvE - 10602.13);
   }
-  return Math.floor(0.45 * zvE - 18936.88);
+  return Math.round(0.45 * zvE - 18936.88);
 }
 
-function berechneESt(einkommen: number, steuerklasse: number): number {
-  if (steuerklasse === 3) return berechneEStFormula(einkommen / 2) * 2;
-  return berechneEStFormula(einkommen);
+function skKorrektur(einkommen: number, steuerklasse: number): number {
+  if (steuerklasse === 3) return einkommen * 0.88;
+  if (steuerklasse === 4) return einkommen * 0.95;
+  return einkommen;
+}
+
+function steuerOhneFuenftel(abfindung: number, jahreseinkommen: number, sk: number): number {
+  const e = skKorrektur(jahreseinkommen, sk);
+  return germanIncomeTax(e + abfindung) - germanIncomeTax(e);
+}
+
+function steuerMitFuenftel(abfindung: number, jahreseinkommen: number, sk: number): number {
+  const e = skKorrektur(jahreseinkommen, sk);
+  const basis = germanIncomeTax(e);
+  const erhoeht = germanIncomeTax(e + abfindung / 5);
+  return Math.round(5 * (erhoeht - basis));
 }
 
 /* ── Component ── */
@@ -72,8 +86,8 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
   const ylKurz = y === 1 ? '1 Jahr' : `${y} Jahre`;
 
   /* Tax calculations */
-  const steuerOhne = Math.max(0, berechneESt(einkommenSlider + abfindungSlider, steuerklasse) - berechneESt(einkommenSlider, steuerklasse));
-  const steuerMit = Math.max(0, 5 * (berechneESt(einkommenSlider + abfindungSlider / 5, steuerklasse) - berechneESt(einkommenSlider, steuerklasse)));
+  const steuerOhne = steuerOhneFuenftel(abfindungSlider, einkommenSlider, steuerklasse);
+  const steuerMit = steuerMitFuenftel(abfindungSlider, einkommenSlider, steuerklasse);
   const ersparnis = Math.max(0, steuerOhne - steuerMit);
 
   return (
@@ -380,7 +394,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               <input
                 type="range"
                 min={500}
-                max={50000}
+                max={500000}
                 step={500}
                 value={abfindungSlider}
                 onChange={(e) => setAbfindungSlider(Number(e.target.value))}
@@ -388,7 +402,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>500 &euro;</span>
-                <span>50.000 &euro;</span>
+                <span>500.000 &euro;</span>
               </div>
             </div>
 
@@ -431,26 +445,30 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
                 <p className="text-xs font-semibold text-red-800 uppercase tracking-wide mb-1">Ohne Fünftelregelung</p>
-                <p className="text-2xl font-bold text-red-800">{fmt(steuerOhne)}</p>
-                <p className="text-xs text-red-600 mt-1">Steuer auf die Abfindung</p>
+                <p className="text-2xl font-bold text-red-800">ca. {steuerOhne.toLocaleString('de-DE')} &euro;</p>
+                <p className="text-xs text-red-600 mt-1">Geschätzte Steuer auf die Abfindung</p>
               </div>
               <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
                 <p className="text-xs font-semibold text-green-800 uppercase tracking-wide mb-1">Mit Fünftelregelung</p>
-                <p className="text-2xl font-bold text-green-800">{fmt(steuerMit)}</p>
-                <p className="text-xs text-green-600 mt-1">Steuer auf die Abfindung</p>
+                <p className="text-2xl font-bold text-green-800">ca. {steuerMit.toLocaleString('de-DE')} &euro;</p>
+                <p className="text-xs text-green-600 mt-1">Geschätzte Steuer auf die Abfindung</p>
               </div>
             </div>
 
             {ersparnis > 0 && (
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center mb-3">
                 <p className="text-sm text-gray-700">
-                  Ihre Ersparnis durch die Fünftelregelung: <strong className="text-[#6B6626]">{fmt(ersparnis)}</strong>
+                  Ihre Ersparnis durch die Fünftelregelung: <strong className="text-[#6B6626]">ca. {ersparnis.toLocaleString('de-DE')} &euro;</strong>
                 </p>
               </div>
             )}
 
             <p className="text-xs text-gray-400">
-              Schätzwerte &mdash; kein Steuerberater. Ab 2025: Fünftelregelung selbst beantragen über die Einkommensteuererklärung.
+              Schätzwerte auf Basis vereinfachter Steuerberechnung. Keine Rechtsberatung. Tatsächliche
+              Steuerbelastung hängt von individuellen Faktoren ab &mdash; Steuerberater hinzuziehen.
+              Ab 2025: Fünftelregelung selbst über Einkommensteuererklärung beantragen.
+              Steuerklasse wird über vereinfachten Korrekturfaktor berücksichtigt (SK1: ohne Korrektur,
+              SK3: &times;0,88, SK4: &times;0,95).
             </p>
           </div>
         </div>
