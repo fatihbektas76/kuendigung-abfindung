@@ -1,64 +1,50 @@
 const fs = require('fs');
 const path = require('path');
 
-// --- Kündigungsfristen nach §622 BGB ---
+// --- Kündigungsfristen nach § 622 Abs. 2 BGB ---
 function getFrist(year) {
-  if (year < 2) return { kurz: '4 Wochen', lang: '4 Wochen zum 15. oder zum Monatsende', hinweis: 'Zum 15. oder zum Monatsende — häufig falsch berechnet' };
-  if (year < 5) return { kurz: '1 Monat', lang: '1 Monat zum Monatsende', hinweis: 'Zum Monatsende — ab 2 Jahren Betriebszugehörigkeit' };
+  if (year < 5) return { kurz: '4 Wochen', lang: '4 Wochen zum 15. oder zum Monatsende', hinweis: 'Zum 15. oder zum Monatsende — häufig falsch berechnet' };
   if (year < 8) return { kurz: '2 Monate', lang: '2 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 5 Jahren Betriebszugehörigkeit' };
-  if (year < 10) return { kurz: '3 Monate', lang: '3 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 8 Jahren Betriebszugehörigkeit' };
-  if (year < 12) return { kurz: '4 Monate', lang: '4 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 10 Jahren Betriebszugehörigkeit' };
-  if (year < 15) return { kurz: '5 Monate', lang: '5 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 12 Jahren Betriebszugehörigkeit' };
-  if (year < 20) return { kurz: '6 Monate', lang: '6 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 15 Jahren Betriebszugehörigkeit' };
-  return { kurz: '7 Monate', lang: '7 Monate zum Monatsende', hinweis: 'Maximale Frist — ab 20 Jahren Betriebszugehörigkeit' };
+  if (year < 13) return { kurz: '3 Monate', lang: '3 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 8 Jahren Betriebszugehörigkeit' };
+  if (year < 16) return { kurz: '4 Monate', lang: '4 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 13 Jahren Betriebszugehörigkeit' };
+  if (year < 20) return { kurz: '5 Monate', lang: '5 Monate zum Monatsende', hinweis: 'Zum Monatsende — ab 16 Jahren Betriebszugehörigkeit' };
+  return { kurz: '6 Monate', lang: '6 Monate zum Monatsende', hinweis: 'Maximale Frist — ab 20 Jahren Betriebszugehörigkeit' };
 }
 
-// --- Häufige Fehler des Arbeitgebers ---
+// --- Häufige Fehler des Arbeitgebers (max. 4, keine Dopplungen) ---
 function getHaeufigeFehler(year) {
   const yl = year === 1 ? '1 Jahr' : `${year} Jahren`;
+  const frist = getFrist(year);
 
-  const base = [
-    `Kündigungsfrist falsch berechnet — nach ${yl} gilt: ${getFrist(year).lang} (§ 622 BGB)`,
-    'Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG) — macht Kündigung unwirksam',
-  ];
-
-  if (year < 2) {
-    return [
-      ...base,
-      'Wartezeit von 6 Monaten fälschlicherweise als fehlenden Kündigungsschutz gewertet — Sonderkündigungsschutz kann dennoch gelten',
-      'Kündigung nicht schriftlich erteilt (§ 623 BGB) — mündliche Kündigung ist unwirksam',
-      'Arbeitgeber bietet keinen Aufhebungsvertrag an und übersieht Abfindungschancen des Arbeitnehmers',
-    ];
-  }
   if (year < 5) {
     return [
-      ...base,
-      `Sozialauswahl fehlerhaft — Kollegen mit kürzerer Betriebszugehörigkeit nicht vorrangig gekündigt (§ 1 Abs. 3 KSchG)`,
-      'Betriebsbedingte Kündigung ohne nachweisbaren Wegfall des Arbeitsplatzes',
-      'Keine vorherige Abmahnung bei verhaltensbedingter Kündigung — in den meisten Fällen zwingend erforderlich',
+      `Kündigungsfrist falsch berechnet — nach ${yl} gilt: ${frist.lang} (§ 622 BGB)`,
+      'Kündigung nicht schriftlich erteilt (§ 623 BGB) — mündliche Kündigung ist unwirksam',
+      'Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG) — macht Kündigung unwirksam',
+      'Keine vorherige Abmahnung bei verhaltensbedingter Kündigung',
     ];
   }
-  if (year < 10) {
+  if (year < 13) {
     return [
-      ...base,
-      `Verlängerte Kündigungsfrist von ${getFrist(year).kurz} nicht eingehalten — ab ${year >= 5 ? '5' : '2'} Jahren gilt die verlängerte Frist`,
-      'Sozialauswahl grob fehlerhaft — Alter, Unterhaltspflichten und Schwerbehinderung nicht berücksichtigt',
+      `Verlängerte Kündigungsfrist von ${frist.kurz} nicht eingehalten (§ 622 Abs. 2 BGB)`,
+      'Sozialauswahl fehlerhaft — Alter, Unterhaltspflichten und Betriebszugehörigkeit nicht berücksichtigt (§ 1 Abs. 3 KSchG)',
+      'Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)',
       'Keine Prüfung einer Weiterbeschäftigungsmöglichkeit auf einem anderen Arbeitsplatz',
     ];
   }
   if (year < 20) {
     return [
-      ...base,
-      `Kündigungsfrist von ${getFrist(year).kurz} nicht beachtet — bei ${yl} Betriebszugehörigkeit eine häufige Fehlerquelle`,
+      `Kündigungsfrist von ${frist.kurz} zum Monatsende nicht beachtet (§ 622 Abs. 2 BGB)`,
       'Langjährige Mitarbeiter bei der Sozialauswahl benachteiligt — Betriebszugehörigkeit ist ein zentrales Kriterium',
-      `Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit ${yl} Berufserfahrung im selben Betrieb`,
+      'Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)',
+      `Keine Berücksichtigung der schwierigen Arbeitsmarktlage für Arbeitnehmer mit ${yl} Betriebszugehörigkeit`,
     ];
   }
   return [
-    ...base,
-    `Maximale Kündigungsfrist von 7 Monaten zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)`,
-    'Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Lebensalter und lange Betriebszugehörigkeit wiegen schwer',
-    `Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach ${yl} — Abfindungsanspruch liegt oft weit über der Faustformel`,
+    `Kündigungsfrist von ${frist.kurz} zum Monatsende nicht eingehalten (§ 622 Abs. 2 BGB)`,
+    'Besonderer Schutz langjähriger Mitarbeiter bei Sozialauswahl missachtet — Alter und Betriebszugehörigkeit wiegen schwer',
+    'Betriebsrat nicht ordnungsgemäß angehört (§ 102 BetrVG)',
+    `Keine angemessene Berücksichtigung der faktischen Unkündbarkeit nach ${yl}`,
   ];
 }
 
