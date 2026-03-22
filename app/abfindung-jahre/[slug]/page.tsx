@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
-import { getContentForYear } from '@/lib/generated-content';
 import AbfindungJahreContent from './content';
+import abfindungData from '@/data/generated/abfindung-data.json';
 
 export const revalidate = 86400;
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const upper = (1.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   return {
     title: `Abfindung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit (${new Date().getFullYear()})`,
-    description: `Abfindung nach ${yl}: Zwischen ${lower} und ${upper} Monatsgehältern. Tabelle, Rechner und kostenlose Prüfung. Kündigungsfrist: ${entry.kuendigungsfrist}.`,
+    description: `Abfindung nach ${yl}: Zwischen ${lower} und ${upper} Monatsgehältern. Tabelle, Rechner, Steuerrechner und kostenlose Prüfung. Kündigungsfrist: ${entry.kuendigungsfrist}.`,
     alternates: {
       canonical: `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`,
     },
@@ -33,20 +33,27 @@ export default function Page({ params }: Props) {
   const entry = getEntry(params.slug);
   if (!entry) notFound();
 
-  const generated = getContentForYear(entry.year);
+  const yearData = (abfindungData as Record<string, unknown>)[String(entry.year)] as {
+    beispielsfall: {
+      initialen: string;
+      name: string;
+      branche: string;
+      gehalt: number;
+      kuendigungsart: string;
+      zitat: string;
+      geprueft: string[];
+      vorgehen: string[];
+      ergebnis: number;
+    };
+    faqs: { frage: string; antwort: string }[];
+  };
+  if (!yearData) notFound();
+
   const prev = entries.find((e) => e.year === entry.year - 1);
   const next = entries.find((e) => e.year === entry.year + 1);
 
   const yl = yearLabel(entry.year);
-  const faqs = generated
-    ? [
-        { q: `Gibt es einen Anspruch auf Abfindung nach ${yl}?`, a: generated.faqAnswers.anspruch },
-        { q: `Was ist meine Kündigungsfrist nach ${yl}?`, a: generated.faqAnswers.kuendigungsfrist },
-        { q: `Wie hoch ist meine Abfindung nach ${yl}?`, a: generated.faqAnswers.hoehe },
-        { q: 'Bekomme ich eine Abfindung als Teilzeitkraft oder Minijobber?', a: generated.faqAnswers.teilzeit },
-        { q: 'Muss ich die Abfindung versteuern?', a: generated.faqAnswers.steuer },
-      ]
-    : [];
+  const pageUrl = `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
 
   return (
     <>
@@ -63,40 +70,44 @@ export default function Page({ params }: Props) {
               {
                 '@type': 'ListItem',
                 position: 3,
-                name: `Abfindung nach ${yearLabel(entry.year)}`,
-                item: `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`,
+                name: `Abfindung nach ${yl}`,
+                item: pageUrl,
               },
             ],
           }),
         }}
       />
 
-      {/* Schema.org - FAQPage */}
+      {/* Schema.org - FAQPage (8 Fragen) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: faqs.map((faq) => ({
+            mainEntity: yearData.faqs.map((faq) => ({
               '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: { '@type': 'Answer', text: faq.a },
+              name: faq.frage,
+              acceptedAnswer: { '@type': 'Answer', text: faq.antwort },
             })),
           }),
         }}
       />
 
-      {/* Schema.org - WebPage */}
+      {/* Schema.org - WebPage with dateModified + speakable */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebPage',
-            url: `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`,
-            dateModified: new Date().toISOString(),
+            url: pageUrl,
+            dateModified: '2026-03-01',
             datePublished: '2025-01-15',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['.fakt-box', '.faq-list', '.abfindung-formel'],
+            },
           }),
         }}
       />
@@ -105,9 +116,7 @@ export default function Page({ params }: Props) {
         entry={entry}
         prev={prev ?? null}
         next={next ?? null}
-        faqs={faqs}
-        uniqueIntro={generated?.uniqueIntro ?? ''}
-        praxistipp={generated?.praxistipp ?? ''}
+        yearData={yearData}
       />
     </>
   );

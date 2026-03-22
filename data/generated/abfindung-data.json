@@ -1,0 +1,2242 @@
+{
+  "1": {
+    "year": 1,
+    "beispielsfall": {
+      "initialen": "CA",
+      "name": "Claudia C.",
+      "branche": "Buchhaltung",
+      "gehalt": 3000,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Mein Arbeitgeber bot mir nach 1 Jahr nur eine minimale Abfindung an. Dank anwaltlicher Hilfe konnte ich das Dreifache herausholen.",
+      "geprueft": [
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft"
+      ],
+      "vorgehen": [
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Abfindungsverhandlung geführt",
+        "Freistellung bis Vertragsende verhandelt"
+      ],
+      "ergebnis": 2400
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 1 Jahr Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 1 Jahr Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 2.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 6.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 1 Jahr Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 1 Jahr Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 1 Jahr liegt bei 0,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 1 Jahr Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 1 Jahr Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 1 Jahr Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 1 Jahr) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "2": {
+    "year": 2,
+    "beispielsfall": {
+      "initialen": "SN",
+      "name": "Stefan S.",
+      "branche": "IT-Abteilung",
+      "gehalt": 3350,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ohne Klage hätte ich gar keine Abfindung bekommen. Der Vergleich im Gütetermin war die richtige Entscheidung.",
+      "geprueft": [
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen"
+      ],
+      "vorgehen": [
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Vergleich im Gütetermin geschlossen",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt"
+      ],
+      "ergebnis": 6700
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 2 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 2 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 4.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 12.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 2 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 2 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 2 Jahren liegt bei 1,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 2 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 2 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 2 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 2 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "3": {
+    "year": 3,
+    "beispielsfall": {
+      "initialen": "SE",
+      "name": "Sabine S.",
+      "branche": "Produktion",
+      "gehalt": 3700,
+      "kuendigungsart": "Personenbedingte Kündigung",
+      "zitat": "Ich wusste nicht, dass die Sozialauswahl fehlerhaft war. Das war der entscheidende Hebel für meine Abfindung.",
+      "geprueft": [
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung"
+      ],
+      "vorgehen": [
+        "Abfindungsverhandlung geführt",
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Turboklausel mit Abfindungserhöhung vereinbart"
+      ],
+      "ergebnis": 13300
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 3 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 3 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 6.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 18.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 3 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 3 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 3 Jahren liegt bei 1,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 3 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 3 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 3 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 3 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "4": {
+    "year": 4,
+    "beispielsfall": {
+      "initialen": "MS",
+      "name": "Markus M.",
+      "branche": "Logistik",
+      "gehalt": 4050,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Die Kanzlei hat mir gezeigt, dass ich nach 4 Jahren eine starke Verhandlungsposition hatte. Am Ende stand ein faires Ergebnis.",
+      "geprueft": [
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist"
+      ],
+      "vorgehen": [
+        "Vergleich im Gütetermin geschlossen",
+        "Freistellung bis Vertragsende verhandelt",
+        "Kündigungsschutzklage fristgerecht eingereicht"
+      ],
+      "ergebnis": 24300
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 4 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 4 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 8.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 24.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 4 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 4 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 4 Jahren liegt bei 2,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 4 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 4 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 4 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 4 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "5": {
+    "year": 5,
+    "beispielsfall": {
+      "initialen": "MA",
+      "name": "Martina M.",
+      "branche": "Einkauf",
+      "gehalt": 4400,
+      "kuendigungsart": "Verhaltensbedingte Kündigung",
+      "zitat": "Mein Arbeitgeber hat die Kündigungsfrist falsch berechnet — das hat meine Abfindung deutlich erhöht.",
+      "geprueft": [
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen",
+        "Ordnungsgemäße Betriebsratsanhörung"
+      ],
+      "vorgehen": [
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen"
+      ],
+      "ergebnis": 16500
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 5 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 5 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 10.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 30.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 5 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 5 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 5 Jahren liegt bei 2,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 5 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 5 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 5 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 5 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "6": {
+    "year": 6,
+    "beispielsfall": {
+      "initialen": "JN",
+      "name": "Jürgen J.",
+      "branche": "Personalwesen",
+      "gehalt": 4750,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ich wurde gedrängt, einen Aufhebungsvertrag zu unterschreiben. Gut, dass ich vorher zum Anwalt gegangen bin.",
+      "geprueft": [
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung",
+        "Korrekte Sozialauswahl"
+      ],
+      "vorgehen": [
+        "Freistellung bis Vertragsende verhandelt",
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Abfindungsverhandlung geführt"
+      ],
+      "ergebnis": 31400
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 6 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 6 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 12.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 36.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 6 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 6 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 6 Jahren liegt bei 3,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 6 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 6 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 6 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 6 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "7": {
+    "year": 7,
+    "beispielsfall": {
+      "initialen": "BT",
+      "name": "Birgit B.",
+      "branche": "Marketing",
+      "gehalt": 5100,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Die Ersteinschätzung war kostenlos und hat mir sofort gezeigt, welche Fehler in meiner Kündigung steckten.",
+      "geprueft": [
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung"
+      ],
+      "vorgehen": [
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Vergleich im Gütetermin geschlossen"
+      ],
+      "ergebnis": 46400
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 7 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 7 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 14.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 42.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 7 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 7 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 7 Jahren liegt bei 3,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 7 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 7 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 7 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 7 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "8": {
+    "year": 8,
+    "beispielsfall": {
+      "initialen": "FK",
+      "name": "Frank F.",
+      "branche": "Kundenservice",
+      "gehalt": 5450,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Nach 8 Jahren fühlte ich mich machtlos. Die Kündigungsschutzklage hat alles verändert — der Arbeitgeber lenkte schnell ein.",
+      "geprueft": [
+        "Sonderkündigungsschutz ausgeschlossen",
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung"
+      ],
+      "vorgehen": [
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Fehlerhafte Kündigungsgründe widerlegt"
+      ],
+      "ergebnis": 39200
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 8 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 8 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 16.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 48.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 8 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 8 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 8 Jahren liegt bei 4,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 8 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 8 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 8 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 8 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "9": {
+    "year": 9,
+    "beispielsfall": {
+      "initialen": "KN",
+      "name": "Karin K.",
+      "branche": "Verwaltung",
+      "gehalt": 5800,
+      "kuendigungsart": "Personenbedingte Kündigung",
+      "zitat": "Ich hätte nie gedacht, dass eine Abfindung von 52.200 € möglich ist. Die anwaltliche Vertretung hat sich mehr als gelohnt.",
+      "geprueft": [
+        "Inhaltliche Begründung der Kündigung",
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar"
+      ],
+      "vorgehen": [
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Abfindungsverhandlung geführt",
+        "Freistellung bis Vertragsende verhandelt"
+      ],
+      "ergebnis": 52200
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 9 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 9 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 18.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 54.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 9 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 9 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 9 Jahren liegt bei 4,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 9 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 9 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 9 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 9 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "10": {
+    "year": 10,
+    "beispielsfall": {
+      "initialen": "WG",
+      "name": "Wolfgang W.",
+      "branche": "Technik",
+      "gehalt": 6150,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Der Betriebsrat wurde nicht richtig angehört. Dieser Formfehler war Gold wert bei der Abfindungsverhandlung.",
+      "geprueft": [
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft"
+      ],
+      "vorgehen": [
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Vergleich im Gütetermin geschlossen",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt"
+      ],
+      "ergebnis": 86100
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 10 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 10 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 20.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 60.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 10 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 10 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 10 Jahren liegt bei 5,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 10 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 10 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 10 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 10 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "11": {
+    "year": 11,
+    "beispielsfall": {
+      "initialen": "SE",
+      "name": "Susanne S.",
+      "branche": "Qualitätssicherung",
+      "gehalt": 3000,
+      "kuendigungsart": "Verhaltensbedingte Kündigung",
+      "zitat": "Mein Arbeitgeber bot mir nach 11 Jahren nur eine minimale Abfindung an. Dank anwaltlicher Hilfe konnte ich das Dreifache herausholen.",
+      "geprueft": [
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen"
+      ],
+      "vorgehen": [
+        "Abfindungsverhandlung geführt",
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Turboklausel mit Abfindungserhöhung vereinbart"
+      ],
+      "ergebnis": 26400
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 11 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 11 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 22.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 66.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 11 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 11 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 11 Jahren liegt bei 5,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 11 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 11 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 11 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 11 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "12": {
+    "year": 12,
+    "beispielsfall": {
+      "initialen": "RF",
+      "name": "Ralf R.",
+      "branche": "Forschung & Entwicklung",
+      "gehalt": 3350,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ohne Klage hätte ich gar keine Abfindung bekommen. Der Vergleich im Gütetermin war die richtige Entscheidung.",
+      "geprueft": [
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung"
+      ],
+      "vorgehen": [
+        "Vergleich im Gütetermin geschlossen",
+        "Freistellung bis Vertragsende verhandelt",
+        "Kündigungsschutzklage fristgerecht eingereicht"
+      ],
+      "ergebnis": 40200
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 12 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 12 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 24.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 72.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 12 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 12 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 12 Jahren liegt bei 6,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 12 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 12 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 12 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 12 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "13": {
+    "year": 13,
+    "beispielsfall": {
+      "initialen": "MA",
+      "name": "Monika M.",
+      "branche": "Außendienst",
+      "gehalt": 3700,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ich wusste nicht, dass die Sozialauswahl fehlerhaft war. Das war der entscheidende Hebel für meine Abfindung.",
+      "geprueft": [
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist"
+      ],
+      "vorgehen": [
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen"
+      ],
+      "ergebnis": 57700
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 13 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 13 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 26.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 78.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 13 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 13 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 13 Jahren liegt bei 6,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 13 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 13 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 13 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 13 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "14": {
+    "year": 14,
+    "beispielsfall": {
+      "initialen": "BD",
+      "name": "Bernd B.",
+      "branche": "Controlling",
+      "gehalt": 4050,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Die Kanzlei hat mir gezeigt, dass ich nach 14 Jahren eine starke Verhandlungsposition hatte. Am Ende stand ein faires Ergebnis.",
+      "geprueft": [
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen",
+        "Ordnungsgemäße Betriebsratsanhörung"
+      ],
+      "vorgehen": [
+        "Freistellung bis Vertragsende verhandelt",
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Abfindungsverhandlung geführt"
+      ],
+      "ergebnis": 85100
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 14 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 14 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 28.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 84.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 14 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 14 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 14 Jahren liegt bei 7,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 14 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 14 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 14 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 14 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "15": {
+    "year": 15,
+    "beispielsfall": {
+      "initialen": "HE",
+      "name": "Heike H.",
+      "branche": "Sachbearbeitung",
+      "gehalt": 4400,
+      "kuendigungsart": "Personenbedingte Kündigung",
+      "zitat": "Mein Arbeitgeber hat die Kündigungsfrist falsch berechnet — das hat meine Abfindung deutlich erhöht.",
+      "geprueft": [
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung",
+        "Korrekte Sozialauswahl"
+      ],
+      "vorgehen": [
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Vergleich im Gütetermin geschlossen"
+      ],
+      "ergebnis": 49500
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 15 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 15 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 30.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 90.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 15 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 15 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 15 Jahren liegt bei 7,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 15 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 15 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 15 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 15 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "16": {
+    "year": 16,
+    "beispielsfall": {
+      "initialen": "UE",
+      "name": "Uwe U.",
+      "branche": "Projektmanagement",
+      "gehalt": 4750,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ich wurde gedrängt, einen Aufhebungsvertrag zu unterschreiben. Gut, dass ich vorher zum Anwalt gegangen bin.",
+      "geprueft": [
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung"
+      ],
+      "vorgehen": [
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Fehlerhafte Kündigungsgründe widerlegt"
+      ],
+      "ergebnis": 83600
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 16 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 16 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 32.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 96.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 16 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 16 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 16 Jahren liegt bei 8,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 16 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 16 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 16 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 16 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "17": {
+    "year": 17,
+    "beispielsfall": {
+      "initialen": "GE",
+      "name": "Gabriele G.",
+      "branche": "Montage",
+      "gehalt": 5100,
+      "kuendigungsart": "Verhaltensbedingte Kündigung",
+      "zitat": "Die Ersteinschätzung war kostenlos und hat mir sofort gezeigt, welche Fehler in meiner Kündigung steckten.",
+      "geprueft": [
+        "Sonderkündigungsschutz ausgeschlossen",
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung"
+      ],
+      "vorgehen": [
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Abfindungsverhandlung geführt",
+        "Freistellung bis Vertragsende verhandelt"
+      ],
+      "ergebnis": 112700
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 17 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 17 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 34.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 102.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 17 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 17 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 17 Jahren liegt bei 8,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 17 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 17 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 17 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 17 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "18": {
+    "year": 18,
+    "beispielsfall": {
+      "initialen": "PR",
+      "name": "Peter P.",
+      "branche": "Lager",
+      "gehalt": 5450,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Nach 18 Jahren fühlte ich mich machtlos. Die Kündigungsschutzklage hat alles verändert — der Arbeitgeber lenkte schnell ein.",
+      "geprueft": [
+        "Inhaltliche Begründung der Kündigung",
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar"
+      ],
+      "vorgehen": [
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Vergleich im Gütetermin geschlossen",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt"
+      ],
+      "ergebnis": 88300
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 18 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 18 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 36.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 108.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 18 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 18 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 18 Jahren liegt bei 9,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 18 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 18 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 18 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 18 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "19": {
+    "year": 19,
+    "beispielsfall": {
+      "initialen": "AA",
+      "name": "Angelika A.",
+      "branche": "Geschäftsführungsassistenz",
+      "gehalt": 5800,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ich hätte nie gedacht, dass eine Abfindung von 110.200 € möglich ist. Die anwaltliche Vertretung hat sich mehr als gelohnt.",
+      "geprueft": [
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft"
+      ],
+      "vorgehen": [
+        "Abfindungsverhandlung geführt",
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Turboklausel mit Abfindungserhöhung vereinbart"
+      ],
+      "ergebnis": 110200
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 19 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 19 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 38.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 114.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 19 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 19 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 19 Jahren liegt bei 9,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 19 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 19 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 19 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 19 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "20": {
+    "year": 20,
+    "beispielsfall": {
+      "initialen": "HR",
+      "name": "Holger H.",
+      "branche": "Finanzbuchhaltung",
+      "gehalt": 6150,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Der Betriebsrat wurde nicht richtig angehört. Dieser Formfehler war Gold wert bei der Abfindungsverhandlung.",
+      "geprueft": [
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen"
+      ],
+      "vorgehen": [
+        "Vergleich im Gütetermin geschlossen",
+        "Freistellung bis Vertragsende verhandelt",
+        "Kündigungsschutzklage fristgerecht eingereicht"
+      ],
+      "ergebnis": 172200
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 20 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 20 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 40.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 120.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 20 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 20 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 20 Jahren liegt bei 10,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 20 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 20 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 20 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 20 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "21": {
+    "year": 21,
+    "beispielsfall": {
+      "initialen": "UA",
+      "name": "Ursula U.",
+      "branche": "Konstruktion",
+      "gehalt": 3000,
+      "kuendigungsart": "Personenbedingte Kündigung",
+      "zitat": "Mein Arbeitgeber bot mir nach 21 Jahren nur eine minimale Abfindung an. Dank anwaltlicher Hilfe konnte ich das Dreifache herausholen.",
+      "geprueft": [
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung"
+      ],
+      "vorgehen": [
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen"
+      ],
+      "ergebnis": 50400
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 21 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 21 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 42.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 126.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 21 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 21 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 21 Jahren liegt bei 10,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 21 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 21 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 21 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 21 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "22": {
+    "year": 22,
+    "beispielsfall": {
+      "initialen": "TN",
+      "name": "Thorsten T.",
+      "branche": "Versand",
+      "gehalt": 3350,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ohne Klage hätte ich gar keine Abfindung bekommen. Der Vergleich im Gütetermin war die richtige Entscheidung.",
+      "geprueft": [
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist"
+      ],
+      "vorgehen": [
+        "Freistellung bis Vertragsende verhandelt",
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Abfindungsverhandlung geführt"
+      ],
+      "ergebnis": 73700
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 22 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 22 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 44.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 132.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 22 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 22 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 22 Jahren liegt bei 11,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 22 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 22 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 22 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 22 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "23": {
+    "year": 23,
+    "beispielsfall": {
+      "initialen": "AA",
+      "name": "Andrea A.",
+      "branche": "Empfang",
+      "gehalt": 3700,
+      "kuendigungsart": "Verhaltensbedingte Kündigung",
+      "zitat": "Ich wusste nicht, dass die Sozialauswahl fehlerhaft war. Das war der entscheidende Hebel für meine Abfindung.",
+      "geprueft": [
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen",
+        "Ordnungsgemäße Betriebsratsanhörung"
+      ],
+      "vorgehen": [
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Vergleich im Gütetermin geschlossen"
+      ],
+      "ergebnis": 102100
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 23 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 23 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 46.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 138.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 23 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 23 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 23 Jahren liegt bei 11,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 23 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 23 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 23 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 23 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "24": {
+    "year": 24,
+    "beispielsfall": {
+      "initialen": "NT",
+      "name": "Norbert N.",
+      "branche": "Disposition",
+      "gehalt": 4050,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Die Kanzlei hat mir gezeigt, dass ich nach 24 Jahren eine starke Verhandlungsposition hatte. Am Ende stand ein faires Ergebnis.",
+      "geprueft": [
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung",
+        "Korrekte Sozialauswahl"
+      ],
+      "vorgehen": [
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Fehlerhafte Kündigungsgründe widerlegt"
+      ],
+      "ergebnis": 145800
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 24 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 24 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 48.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 144.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 24 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 24 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 24 Jahren liegt bei 12,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 24 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 24 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 24 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 24 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "25": {
+    "year": 25,
+    "beispielsfall": {
+      "initialen": "SE",
+      "name": "Silke S.",
+      "branche": "Arbeitsvorbereitung",
+      "gehalt": 4400,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Mein Arbeitgeber hat die Kündigungsfrist falsch berechnet — das hat meine Abfindung deutlich erhöht.",
+      "geprueft": [
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung"
+      ],
+      "vorgehen": [
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Abfindungsverhandlung geführt",
+        "Freistellung bis Vertragsende verhandelt"
+      ],
+      "ergebnis": 82500
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 25 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 25 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 50.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 150.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 25 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 25 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 25 Jahren liegt bei 12,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 25 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 25 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 25 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 25 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "26": {
+    "year": 26,
+    "beispielsfall": {
+      "initialen": "DK",
+      "name": "Dirk D.",
+      "branche": "Instandhaltung",
+      "gehalt": 4750,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ich wurde gedrängt, einen Aufhebungsvertrag zu unterschreiben. Gut, dass ich vorher zum Anwalt gegangen bin.",
+      "geprueft": [
+        "Sonderkündigungsschutz ausgeschlossen",
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung"
+      ],
+      "vorgehen": [
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Vergleich im Gütetermin geschlossen",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt"
+      ],
+      "ergebnis": 135900
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 26 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 26 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 52.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 156.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 26 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 26 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 26 Jahren liegt bei 13,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 26 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 26 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 26 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 26 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "27": {
+    "year": 27,
+    "beispielsfall": {
+      "initialen": "CE",
+      "name": "Christine C.",
+      "branche": "Vertriebsinnendienst",
+      "gehalt": 5100,
+      "kuendigungsart": "Personenbedingte Kündigung",
+      "zitat": "Die Ersteinschätzung war kostenlos und hat mir sofort gezeigt, welche Fehler in meiner Kündigung steckten.",
+      "geprueft": [
+        "Inhaltliche Begründung der Kündigung",
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar"
+      ],
+      "vorgehen": [
+        "Abfindungsverhandlung geführt",
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Turboklausel mit Abfindungserhöhung vereinbart"
+      ],
+      "ergebnis": 179000
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 27 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 27 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 54.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 162.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 27 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 27 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 27 Jahren liegt bei 13,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 27 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 27 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 27 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 27 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "28": {
+    "year": 28,
+    "beispielsfall": {
+      "initialen": "KS",
+      "name": "Klaus K.",
+      "branche": "Debitorenbuchhaltung",
+      "gehalt": 5450,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Nach 28 Jahren fühlte ich mich machtlos. Die Kündigungsschutzklage hat alles verändert — der Arbeitgeber lenkte schnell ein.",
+      "geprueft": [
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft"
+      ],
+      "vorgehen": [
+        "Vergleich im Gütetermin geschlossen",
+        "Freistellung bis Vertragsende verhandelt",
+        "Kündigungsschutzklage fristgerecht eingereicht"
+      ],
+      "ergebnis": 137300
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 28 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 28 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 56.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 168.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 28 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 28 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 28 Jahren liegt bei 14,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 28 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 28 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 28 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 28 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "29": {
+    "year": 29,
+    "beispielsfall": {
+      "initialen": "EE",
+      "name": "Elke E.",
+      "branche": "Facility Management",
+      "gehalt": 5800,
+      "kuendigungsart": "Verhaltensbedingte Kündigung",
+      "zitat": "Ich hätte nie gedacht, dass eine Abfindung von 168.200 € möglich ist. Die anwaltliche Vertretung hat sich mehr als gelohnt.",
+      "geprueft": [
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen"
+      ],
+      "vorgehen": [
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen"
+      ],
+      "ergebnis": 168200
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 29 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 29 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 58.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 174.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 29 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 29 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 29 Jahren liegt bei 14,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 29 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 29 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 29 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 29 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "30": {
+    "year": 30,
+    "beispielsfall": {
+      "initialen": "MD",
+      "name": "Manfred M.",
+      "branche": "Werkstatt",
+      "gehalt": 6150,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Der Betriebsrat wurde nicht richtig angehört. Dieser Formfehler war Gold wert bei der Abfindungsverhandlung.",
+      "geprueft": [
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung"
+      ],
+      "vorgehen": [
+        "Freistellung bis Vertragsende verhandelt",
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Abfindungsverhandlung geführt"
+      ],
+      "ergebnis": 258300
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 30 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 30 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 60.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 180.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 30 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 30 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 30 Jahren liegt bei 15,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 30 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 30 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 30 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 30 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "31": {
+    "year": 31,
+    "beispielsfall": {
+      "initialen": "DS",
+      "name": "Doris D.",
+      "branche": "Einzelhandel",
+      "gehalt": 3000,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Mein Arbeitgeber bot mir nach 31 Jahren nur eine minimale Abfindung an. Dank anwaltlicher Hilfe konnte ich das Dreifache herausholen.",
+      "geprueft": [
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist"
+      ],
+      "vorgehen": [
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Vergleich im Gütetermin geschlossen"
+      ],
+      "ergebnis": 74400
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 31 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 31 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 62.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 186.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 31 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 31 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 31 Jahren liegt bei 15,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 31 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 31 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 31 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 31 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "32": {
+    "year": 32,
+    "beispielsfall": {
+      "initialen": "HD",
+      "name": "Harald H.",
+      "branche": "Gastronomie",
+      "gehalt": 3350,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ohne Klage hätte ich gar keine Abfindung bekommen. Der Vergleich im Gütetermin war die richtige Entscheidung.",
+      "geprueft": [
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen",
+        "Ordnungsgemäße Betriebsratsanhörung"
+      ],
+      "vorgehen": [
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Fehlerhafte Kündigungsgründe widerlegt"
+      ],
+      "ergebnis": 107200
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 32 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 32 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 64.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 192.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 32 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 32 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 32 Jahren liegt bei 16,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 32 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 32 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 32 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 32 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "33": {
+    "year": 33,
+    "beispielsfall": {
+      "initialen": "AA",
+      "name": "Anja A.",
+      "branche": "Pflege",
+      "gehalt": 3700,
+      "kuendigungsart": "Personenbedingte Kündigung",
+      "zitat": "Ich wusste nicht, dass die Sozialauswahl fehlerhaft war. Das war der entscheidende Hebel für meine Abfindung.",
+      "geprueft": [
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung",
+        "Korrekte Sozialauswahl"
+      ],
+      "vorgehen": [
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Abfindungsverhandlung geführt",
+        "Freistellung bis Vertragsende verhandelt"
+      ],
+      "ergebnis": 146500
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 33 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 33 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 66.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 198.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 33 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 33 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 33 Jahren liegt bei 16,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 33 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 33 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 33 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 33 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "34": {
+    "year": 34,
+    "beispielsfall": {
+      "initialen": "GD",
+      "name": "Gerd G.",
+      "branche": "Sozialarbeit",
+      "gehalt": 4050,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Die Kanzlei hat mir gezeigt, dass ich nach 34 Jahren eine starke Verhandlungsposition hatte. Am Ende stand ein faires Ergebnis.",
+      "geprueft": [
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung"
+      ],
+      "vorgehen": [
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Vergleich im Gütetermin geschlossen",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt"
+      ],
+      "ergebnis": 206600
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 34 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 34 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 68.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 204.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 34 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 34 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 34 Jahren liegt bei 17,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 34 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 34 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 34 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 34 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "35": {
+    "year": 35,
+    "beispielsfall": {
+      "initialen": "BA",
+      "name": "Bettina B.",
+      "branche": "Redaktion",
+      "gehalt": 4400,
+      "kuendigungsart": "Verhaltensbedingte Kündigung",
+      "zitat": "Mein Arbeitgeber hat die Kündigungsfrist falsch berechnet — das hat meine Abfindung deutlich erhöht.",
+      "geprueft": [
+        "Sonderkündigungsschutz ausgeschlossen",
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung"
+      ],
+      "vorgehen": [
+        "Abfindungsverhandlung geführt",
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Turboklausel mit Abfindungserhöhung vereinbart"
+      ],
+      "ergebnis": 115500
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 35 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 35 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 70.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 210.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 35 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 35 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 35 Jahren liegt bei 17,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 35 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 35 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 35 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 35 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "36": {
+    "year": 36,
+    "beispielsfall": {
+      "initialen": "TS",
+      "name": "Thomas T.",
+      "branche": "Grafik",
+      "gehalt": 4750,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Ich wurde gedrängt, einen Aufhebungsvertrag zu unterschreiben. Gut, dass ich vorher zum Anwalt gegangen bin.",
+      "geprueft": [
+        "Inhaltliche Begründung der Kündigung",
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar"
+      ],
+      "vorgehen": [
+        "Vergleich im Gütetermin geschlossen",
+        "Freistellung bis Vertragsende verhandelt",
+        "Kündigungsschutzklage fristgerecht eingereicht"
+      ],
+      "ergebnis": 188100
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 36 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 36 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 72.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 216.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 36 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 36 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 36 Jahren liegt bei 18,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 36 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 36 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 36 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 36 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "37": {
+    "year": 37,
+    "beispielsfall": {
+      "initialen": "SA",
+      "name": "Sandra S.",
+      "branche": "Eventmanagement",
+      "gehalt": 5100,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Die Ersteinschätzung war kostenlos und hat mir sofort gezeigt, welche Fehler in meiner Kündigung steckten.",
+      "geprueft": [
+        "Einhaltung der gesetzlichen Kündigungsfrist",
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft"
+      ],
+      "vorgehen": [
+        "Fehlerhafte Kündigungsgründe widerlegt",
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen"
+      ],
+      "ergebnis": 245300
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 37 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 37 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 74.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 222.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 37 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 37 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 37 Jahren liegt bei 18,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 37 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 37 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 37 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 37 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "38": {
+    "year": 38,
+    "beispielsfall": {
+      "initialen": "ML",
+      "name": "Michael M.",
+      "branche": "Öffentlicher Dienst",
+      "gehalt": 5450,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Nach 38 Jahren fühlte ich mich machtlos. Die Kündigungsschutzklage hat alles verändert — der Arbeitgeber lenkte schnell ein.",
+      "geprueft": [
+        "Ordnungsgemäße Betriebsratsanhörung",
+        "Vorliegen einer vorherigen Abmahnung",
+        "Sonderkündigungsschutz ausgeschlossen"
+      ],
+      "vorgehen": [
+        "Freistellung bis Vertragsende verhandelt",
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Abfindungsverhandlung geführt"
+      ],
+      "ergebnis": 186400
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 38 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 38 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 76.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 228.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 38 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 38 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 38 Jahren liegt bei 19,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 38 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 38 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 38 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 38 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "39": {
+    "year": 39,
+    "beispielsfall": {
+      "initialen": "PA",
+      "name": "Petra P.",
+      "branche": "Bildung",
+      "gehalt": 5800,
+      "kuendigungsart": "Personenbedingte Kündigung",
+      "zitat": "Ich hätte nie gedacht, dass eine Abfindung von 226.200 € möglich ist. Die anwaltliche Vertretung hat sich mehr als gelohnt.",
+      "geprueft": [
+        "Korrekte Sozialauswahl",
+        "Betriebsbedingte Gründe nachprüfbar",
+        "Inhaltliche Begründung der Kündigung"
+      ],
+      "vorgehen": [
+        "Qualifiziertes Arbeitszeugnis durchgesetzt",
+        "Kündigungsschutzklage fristgerecht eingereicht",
+        "Vergleich im Gütetermin geschlossen"
+      ],
+      "ergebnis": 226200
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 39 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 39 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 78.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 234.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 39 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 39 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 39 Jahren liegt bei 19,5 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 39 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 39 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 39 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 39 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  },
+  "40": {
+    "year": 40,
+    "beispielsfall": {
+      "initialen": "AS",
+      "name": "Andreas A.",
+      "branche": "Vertrieb",
+      "gehalt": 6150,
+      "kuendigungsart": "Betriebsbedingte Kündigung",
+      "zitat": "Der Betriebsrat wurde nicht richtig angehört. Dieser Formfehler war Gold wert bei der Abfindungsverhandlung.",
+      "geprueft": [
+        "Formelle Wirksamkeit der Kündigung",
+        "Weiterbeschäftigungsmöglichkeit geprüft",
+        "Einhaltung der gesetzlichen Kündigungsfrist"
+      ],
+      "vorgehen": [
+        "Turboklausel mit Abfindungserhöhung vereinbart",
+        "Gütetermin vor dem Arbeitsgericht wahrgenommen",
+        "Fehlerhafte Kündigungsgründe widerlegt"
+      ],
+      "ergebnis": 344400
+    },
+    "faqs": [
+      {
+        "frage": "Wie hoch ist die Abfindung nach 40 Jahren Betriebszugehörigkeit?",
+        "antwort": "Die Faustformel lautet: 0,5 × Bruttomonatsgehalt × 40 Jahre Betriebszugehörigkeit. Bei einem Gehalt von 4.000 € ergibt sich eine Regelabfindung von 80.000 €. In der Praxis liegt der Faktor zwischen 0,5 und 1,5 — je nach Fehlern in der Kündigung, Verhandlungsposition und Arbeitsmarktlage. Damit sind 240.000 € durchaus realistisch."
+      },
+      {
+        "frage": "Habe ich einen gesetzlichen Anspruch auf Abfindung nach 40 Jahren Betriebszugehörigkeit?",
+        "antwort": "Nein, einen automatischen gesetzlichen Abfindungsanspruch gibt es nicht. Ein Anspruch kann sich aus § 1a KSchG ergeben (Abfindungsangebot bei betriebsbedingter Kündigung), aus einem Sozialplan, einem Tarifvertrag oder einer individuellen Vereinbarung. In der Praxis wird die große Mehrheit aller Abfindungen im Rahmen eines Kündigungsschutzverfahrens im Vergleich ausgehandelt — die Klage ist das wichtigste Druckmittel."
+      },
+      {
+        "frage": "Lohnt sich eine Klage um eine Abfindung nach 40 Jahren Betriebszugehörigkeit zu erzielen?",
+        "antwort": "Ja, in der Regel lohnt sich eine Kündigungsschutzklage. Über 80 % aller Verfahren enden mit einem Vergleich im Gütetermin — und damit einer Abfindung. Die Regelabfindung nach 40 Jahren liegt bei 20,0 Monatsgehältern, mit guter Verhandlung sind Faktoren von 1,0 bis 1,5 realistisch. Kosten: Bei Rechtsschutzversicherung übernimmt diese alles; ohne RSV trägt in erster Instanz jede Partei ihre eigenen Kosten."
+      },
+      {
+        "frage": "Muss ich die Abfindung nach 40 Jahren Betriebszugehörigkeit versteuern?",
+        "antwort": "Ja, Abfindungen sind einkommensteuerpflichtig. Sie können aber die Fünftelregelung (§ 34 EStG) nutzen, die die Steuerlast deutlich senken kann. Wichtig seit 2025: Die Fünftelregelung wird vom Arbeitgeber nicht mehr automatisch angewendet — Sie müssen sie selbst über Ihre Einkommensteuererklärung beim Finanzamt beantragen. Sozialversicherungsbeiträge fallen auf Abfindungen nicht an."
+      },
+      {
+        "frage": "Wie hoch sind die Abgaben auf eine Abfindung nach 40 Jahren Betriebszugehörigkeit?",
+        "antwort": "Abfindungen sind sozialversicherungsfrei — es fallen keine Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung an. Es wird ausschließlich Einkommensteuer (zzgl. Solidaritätszuschlag und ggf. Kirchensteuer) fällig. Mit der Fünftelregelung (§ 34 EStG) können Sie die Steuerlast erheblich reduzieren, da die Abfindung rechnerisch auf 5 Jahre verteilt wird."
+      },
+      {
+        "frage": "Wird die Abfindung auf das Arbeitslosengeld angerechnet?",
+        "antwort": "Grundsätzlich nein: Eine Abfindung aus einem Kündigungsschutzverfahren wird nicht auf das Arbeitslosengeld I angerechnet. Vorsicht ist bei Aufhebungsverträgen geboten — hier droht eine Sperrzeit von bis zu 12 Wochen. Auch ein Ruhenszeitraum nach § 158 SGB III ist möglich, wenn die ordentliche Kündigungsfrist durch den Aufhebungsvertrag nicht eingehalten wird."
+      },
+      {
+        "frage": "Was hat sich 2025 bei der Fünftelregelung geändert?",
+        "antwort": "Seit dem 01.01.2025 wendet der Arbeitgeber die Fünftelregelung beim Lohnsteuerabzug nicht mehr automatisch an. Die Vergünstigung muss vom Arbeitnehmer selbst über die Einkommensteuererklärung beim Finanzamt beantragt werden. Das bedeutet: Die Steuerersparnis kommt nicht mehr sofort bei der Auszahlung, sondern erst mit dem Steuerbescheid. Lassen Sie sich beraten, um die Fünftelregelung korrekt geltend zu machen."
+      },
+      {
+        "frage": "Gibt es eine Abfindung bei Aufhebungsvertrag nach 40 Jahren Betriebszugehörigkeit?",
+        "antwort": "Ja, bei einem Aufhebungsvertrag wird fast immer eine Abfindung vereinbart. Die Höhe richtet sich nach der Faustformel (0,5 × Gehalt × 40 Jahre) und Ihrer Verhandlungsposition. Wichtig: Unterschreiben Sie einen Aufhebungsvertrag niemals ohne anwaltliche Prüfung — es drohen Sperrzeit beim Arbeitslosengeld, Verlust von Kündigungsschutzrechten und ungünstige Klauseln (z.B. Verzicht auf Zeugnis oder Resturlaub)."
+      }
+    ]
+  }
+}
