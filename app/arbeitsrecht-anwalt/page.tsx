@@ -6,7 +6,7 @@ import { berlinBezirke } from "@/data/bezirke";
 export const metadata: Metadata = {
   title: "Anwalt für Arbeitsrecht – Alle Städte | APOS Legal",
   description: "Fachanwalt für Arbeitsrecht in Ihrer Stadt. Kündigung, Abfindung, Aufhebungsvertrag – bundesweit und digital. Jetzt kostenlose Ersteinschätzung.",
-  alternates: { canonical: "https://gekuendigt-abfindung.de/arbeitsrecht-anwalt" },
+  alternates: { canonical: "https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt" },
 };
 
 // Städte nach Region gruppieren

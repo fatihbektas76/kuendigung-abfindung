@@ -18,6 +18,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BASE_URL}/kuendigung`,
   },
+  openGraph: {
+    title: `Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (${new Date().getFullYear()})`,
+    description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
+    url: `${BASE_URL}/kuendigung`,
+  },
+  twitter: {
+    card: 'summary',
+    title: `Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (${new Date().getFullYear()})`,
+    description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
+  },
 };
 
 const faqs = [

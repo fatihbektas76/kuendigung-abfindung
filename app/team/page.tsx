@@ -5,7 +5,7 @@ import TeamCard from '@/components/TeamCard';
 export const metadata: Metadata = {
   title: 'Unser Team – gekuendigt-abfindung.de | Fachanwälte für Arbeitsrecht',
   description:
-    'Lernen Sie unser Team kennen: Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten. Über 5.000 erfolgreiche Verfahren.',
+    'Lernen Sie unser Team kennen: Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten. Über 2.000 erfolgreiche Verfahren.',
   alternates: {
     canonical: 'https://www.gekuendigt-abfindung.de/team',
   },
@@ -31,7 +31,7 @@ const personSchemas = [
     familyName: 'Bektas',
     jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     description:
-      'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 5.000 erfolgreiche Verfahren.',
+      'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
     image: `${BASE_URL}/Fatih.png`,
     url: `${BASE_URL}/team`,
     email: 'bektas@apos.legal',

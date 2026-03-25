@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { abmahnungEntries } from '@/lib/abmahnung-content';
 import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
+import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 
 export const revalidate = 86400;
@@ -15,6 +16,16 @@ export const metadata: Metadata = {
     'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer. Kostenlose Ersteinschätzung vom Fachanwalt.',
   alternates: {
     canonical: `${BASE_URL}/abmahnung`,
+  },
+  openGraph: {
+    title: `Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (${new Date().getFullYear()})`,
+    description: 'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer.',
+    url: `${BASE_URL}/abmahnung`,
+  },
+  twitter: {
+    card: 'summary',
+    title: `Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (${new Date().getFullYear()})`,
+    description: 'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer.',
   },
 };
 
@@ -419,6 +430,8 @@ export default function AbmahnungPage() {
           </div>
         </div>
       </section>
+
+      <AktuelleRechtslage />
 
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-white">

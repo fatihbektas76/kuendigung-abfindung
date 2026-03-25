@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
+import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 
 export const revalidate = 86400;
@@ -14,6 +15,16 @@ export const metadata: Metadata = {
     'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag – kostenlose Ersteinschätzung.',
   alternates: {
     canonical: `${BASE_URL}/aufhebungsvertrag`,
+  },
+  openGraph: {
+    title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
+    description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag.',
+    url: `${BASE_URL}/aufhebungsvertrag`,
+  },
+  twitter: {
+    card: 'summary',
+    title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
+    description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag.',
   },
 };
 
@@ -241,6 +252,8 @@ export default function AufhebungsvertragPage() {
           </div>
         </div>
       </section>
+
+      <AktuelleRechtslage />
 
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-white">

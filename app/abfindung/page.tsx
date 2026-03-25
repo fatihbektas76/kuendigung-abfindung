@@ -17,6 +17,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BASE_URL}/abfindung`,
   },
+  openGraph: {
+    title: `Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (${new Date().getFullYear()})`,
+    description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
+    url: `${BASE_URL}/abfindung`,
+  },
+  twitter: {
+    card: 'summary',
+    title: `Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (${new Date().getFullYear()})`,
+    description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
+  },
 };
 
 const faqs = [

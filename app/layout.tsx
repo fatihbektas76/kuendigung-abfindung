@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     images: [
       {
-        url: 'https://www.gekuendigt-abfindung.de/og-image.png',
+        url: 'https://www.gekuendigt-abfindung.de/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'gekuendigt-abfindung.de – Fachanwalt für Arbeitsrecht',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
     description:
       'Kündigung prüfen, Abfindung maximieren. Fachanwalt für Arbeitsrecht. 20+ Jahre Erfahrung.',
-    images: ['https://www.gekuendigt-abfindung.de/og-image.png'],
+    images: ['https://www.gekuendigt-abfindung.de/opengraph-image'],
   },
   icons: {
     icon: [

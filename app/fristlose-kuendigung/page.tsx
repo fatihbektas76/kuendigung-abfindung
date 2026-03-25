@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { entries } from '@/lib/betriebszugehoerigkeit';
 import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
+import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 
 export const revalidate = 86400;
@@ -15,6 +16,16 @@ export const metadata: Metadata = {
     'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht — kostenlose Ersteinschätzung.',
   alternates: {
     canonical: `${BASE_URL}/fristlose-kuendigung`,
+  },
+  openGraph: {
+    title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
+    description: 'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
+    url: `${BASE_URL}/fristlose-kuendigung`,
+  },
+  twitter: {
+    card: 'summary',
+    title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
+    description: 'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
   },
 };
 
@@ -310,6 +321,8 @@ export default function FristloseKuendigungPage() {
           </div>
         </div>
       </section>
+
+      <AktuelleRechtslage />
 
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-cream">
