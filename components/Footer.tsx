@@ -211,6 +211,36 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               </li>
             </ul>
           </div>
+          <div>
+            <div className="text-white/80 font-semibold text-[0.78rem] uppercase tracking-wider mb-2">Standorte</div>
+            <ul className="list-none flex flex-col gap-1.5">
+              <li>
+                <Link href="/arbeitsrecht-anwalt/berlin" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Berlin
+                </Link>
+              </li>
+              <li>
+                <Link href="/arbeitsrecht-anwalt/hamburg" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Hamburg
+                </Link>
+              </li>
+              <li>
+                <Link href="/arbeitsrecht-anwalt/muenchen" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  München
+                </Link>
+              </li>
+              <li>
+                <Link href="/arbeitsrecht-anwalt/heidelberg" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Heidelberg
+                </Link>
+              </li>
+              <li>
+                <Link href="/arbeitsrecht-anwalt" className="text-white/60 no-underline hover:text-gold-light transition-colors">
+                  Alle Standorte
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="flex justify-between items-center flex-wrap gap-4">
           <ul className="list-none flex gap-6">

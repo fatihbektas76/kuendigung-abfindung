@@ -240,8 +240,35 @@ export default function KuendigungPage() {
         </div>
       </section>
 
+      {/* Fristlose Kündigung nach Betriebszugehörigkeit - Links */}
+      <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+            Nach Betriebszugehörigkeit
+          </div>
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+            Fristlose Kündigung nach Jahren im Betrieb
+          </h2>
+          <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
+            Fristlose Kündigung erhalten? Wir prüfen Wirksamkeit, Abmahnung und die
+            2-Wochen-Ausschlussfrist &mdash; für jede Betriebszugehörigkeit.
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {entries.map((e) => (
+              <Link
+                key={e.year}
+                href={`/fristlose-kuendigung-nach-${e.slug}-betriebszugehoerigkeit/`}
+                className="py-2 px-4 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white"
+              >
+                {e.year} {e.year === 1 ? 'Jahr' : 'Jahre'}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Fristlose Kündigung - Link Card */}
-      <section className="py-[50px] px-8 bg-white">
+      <section className="py-[50px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <div className="flex items-center justify-between gap-6 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold max-md:flex-col max-md:items-start">
@@ -333,6 +360,18 @@ export default function KuendigungPage() {
           <div className="max-w-[740px]">
             <AuthorBox />
           </div>
+        </div>
+      </section>
+
+      {/* Standort-Hinweis */}
+      <section className="py-[40px] px-8 bg-white border-t border-border">
+        <div className="max-w-content mx-auto text-center">
+          <p className="text-[0.92rem] text-ink-muted">
+            Wir vertreten Arbeitnehmer bundesweit &mdash; vollständig digital.{' '}
+            <a href="/arbeitsrecht-anwalt" className="text-gold-dark font-semibold no-underline hover:underline">
+              Fachanwalt für Arbeitsrecht in Ihrer Stadt finden &rarr;
+            </a>
+          </p>
         </div>
       </section>
 

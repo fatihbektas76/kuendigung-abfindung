@@ -63,6 +63,9 @@ export default function SchwellenwertRechnerPage() {
               name: 'gekuendigt-abfindung.de',
               url: BASE_URL,
             },
+            datePublished: '2025-01-15',
+            dateModified: new Date().toISOString().slice(0, 10),
+            inLanguage: 'de',
           }),
         }}
       />
@@ -79,6 +82,61 @@ export default function SchwellenwertRechnerPage() {
               name: faq.q,
               acceptedAnswer: { '@type': 'Answer', text: faq.a },
             })),
+          }),
+        }}
+      />
+
+      {/* Schema.org - BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
+              { '@type': 'ListItem', position: 2, name: 'Schwellenwert-Rechner §23 KSchG', item: `${BASE_URL}/schwellenwert-rechner` },
+            ],
+          }),
+        }}
+      />
+
+      {/* Schema.org - HowTo */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'KSchG-Schwellenwert prüfen — gilt das Kündigungsschutzgesetz?',
+            description:
+              'Prüfen Sie in 4 Schritten, ob das Kündigungsschutzgesetz (KSchG) für Ihren Betrieb gilt. Der Schwellenwert von 10 Vollzeitäquivalenten entscheidet.',
+            step: [
+              {
+                '@type': 'HowToStep',
+                position: 1,
+                name: 'Vollzeitkräfte eingeben',
+                text: 'Geben Sie die Anzahl der Mitarbeiter mit mehr als 30 Wochenstunden ein. Diese zählen mit Faktor 1,0.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 2,
+                name: 'Teilzeitkräfte erfassen',
+                text: 'Erfassen Sie Teilzeitkräfte getrennt: Mitarbeiter mit 20–30 Wochenstunden (Faktor 0,75) und Mitarbeiter bis 20 Wochenstunden (Faktor 0,5).',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 3,
+                name: 'Minijobber angeben',
+                text: 'Geben Sie die Anzahl der Minijobber ein. Diese werden mit Faktor 0,5 gezählt. Auszubildende zählen nicht mit.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 4,
+                name: 'Ergebnis prüfen',
+                text: 'Der Rechner addiert alle Vollzeitäquivalente (FTE). Liegt die Summe über 10, gilt das KSchG — Ihr Arbeitgeber braucht einen Kündigungsgrund.',
+              },
+            ],
           }),
         }}
       />

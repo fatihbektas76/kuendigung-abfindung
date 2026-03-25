@@ -9,6 +9,7 @@ import TeamTeaser from '@/components/TeamTeaser';
 import FAQ from '@/components/FAQ';
 import ContactForm from '@/components/ContactForm';
 import CTA from '@/components/CTA';
+import StandortTeaser from '@/components/StandortTeaser';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 
 export const revalidate = 86400;
@@ -277,6 +278,7 @@ export default function Home() {
         <AttorneyProfile />
         <TeamTeaser />
         <FAQ />
+        <StandortTeaser />
         <ContactForm />
         <CTA />
       </main>

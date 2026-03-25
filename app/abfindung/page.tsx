@@ -251,6 +251,18 @@ export default function AbfindungPage() {
         </div>
       </section>
 
+      {/* Standort-Hinweis */}
+      <section className="py-[40px] px-8 bg-white border-t border-border">
+        <div className="max-w-content mx-auto text-center">
+          <p className="text-[0.92rem] text-ink-muted">
+            Wir vertreten Arbeitnehmer bundesweit &mdash; vollständig digital.{' '}
+            <a href="/arbeitsrecht-anwalt" className="text-gold-dark font-semibold no-underline hover:underline">
+              Fachanwalt für Arbeitsrecht in Ihrer Stadt finden &rarr;
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto text-center">

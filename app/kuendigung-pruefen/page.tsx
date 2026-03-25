@@ -90,6 +90,23 @@ function RadioOption({ label, selected, onClick }: { label: string; selected: bo
   );
 }
 
+const BASE_URL = 'https://www.gekuendigt-abfindung.de';
+
+const pruefenFaqs = [
+  {
+    q: 'Wie lange dauert die kostenlose Prüfung?',
+    a: 'Die Online-Einschätzung dauert nur 2 Minuten. Innerhalb von 24 Stunden erhalten Sie eine persönliche Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
+  },
+  {
+    q: 'Ist die Prüfung wirklich kostenlos?',
+    a: 'Ja, die Ersteinschätzung ist 100% kostenlos und unverbindlich. Es entstehen keine versteckten Kosten. Erst wenn Sie sich für eine anwaltliche Vertretung entscheiden, fallen Gebühren an — die bei Rechtsschutzversicherung oft vollständig übernommen werden.',
+  },
+  {
+    q: 'Welche 3-Wochen-Frist muss ich beachten?',
+    a: 'Nach §4 KSchG müssen Sie innerhalb von 3 Wochen nach Zugang der Kündigung Kündigungsschutzklage beim Arbeitsgericht erheben. Versäumen Sie diese Frist, gilt die Kündigung als wirksam — unabhängig davon, ob sie rechtmäßig war.',
+  },
+];
+
 /* ───── Main Component ───── */
 export default function KuendigungPruefenPage() {
   const [step, setStep] = useState(1);
@@ -642,6 +659,100 @@ export default function KuendigungPruefenPage() {
   /* ───── Render ───── */
   return (
     <div className="flex min-h-screen bg-cream">
+      {/* Schema.org - BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
+              { '@type': 'ListItem', position: 2, name: 'Kündigung prüfen', item: `${BASE_URL}/kuendigung-pruefen` },
+            ],
+          }),
+        }}
+      />
+
+      {/* Schema.org - WebApplication */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: 'Kündigungscheck — Kündigung kostenlos prüfen',
+            applicationCategory: 'Legal Tool',
+            operatingSystem: 'Any',
+            url: `${BASE_URL}/kuendigung-pruefen`,
+            description:
+              'Kostenloser Kündigungscheck: Prüfen Sie in 2 Minuten Ihre Abfindungschancen. Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich.',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'EUR',
+            },
+            provider: {
+              '@id': `${BASE_URL}/#organization`,
+            },
+            datePublished: '2025-01-15',
+            dateModified: new Date().toISOString().slice(0, 10),
+            inLanguage: 'de',
+          }),
+        }}
+      />
+
+      {/* Schema.org - FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: pruefenFaqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.q,
+              acceptedAnswer: { '@type': 'Answer', text: faq.a },
+            })),
+          }),
+        }}
+      />
+
+      {/* Schema.org - HowTo */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'Kündigung kostenlos prüfen lassen — in 2 Minuten',
+            description:
+              'Prüfen Sie in 9 Schritten kostenlos Ihre Abfindungschancen nach einer Kündigung. Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
+            totalTime: 'PT2M',
+            step: [
+              {
+                '@type': 'HowToStep',
+                position: 1,
+                name: 'Situation beschreiben',
+                text: 'Wählen Sie Ihre Situation: Kündigung, Aufhebungsvertrag, Abmahnung oder anderes.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 2,
+                name: 'Angaben zu Beschäftigung machen',
+                text: 'Geben Sie Kündigungsdatum, Arbeitsbeginn, Unternehmensgröße und Bruttogehalt ein.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 3,
+                name: 'Ergebnis erhalten',
+                text: 'Sie erhalten sofort eine Abfindungsschätzung und innerhalb von 24 Stunden eine persönliche Ersteinschätzung vom Fachanwalt.',
+              },
+            ],
+          }),
+        }}
+      />
+
       {sidebar}
 
       <div className="flex-1 flex flex-col">
@@ -658,6 +769,7 @@ export default function KuendigungPruefenPage() {
         {/* Progress bar */}
         <div className="bg-white border-b border-border">
           <div className="max-w-[640px] mx-auto px-6 py-4">
+            <h1 className="sr-only">Kündigung kostenlos prüfen lassen — Ersteinschätzung in 2 Minuten</h1>
             <div className="flex items-center justify-between mb-2">
               <span className="text-[0.78rem] font-semibold text-gold-dark">
                 Jetzt mögliche Abfindung prüfen

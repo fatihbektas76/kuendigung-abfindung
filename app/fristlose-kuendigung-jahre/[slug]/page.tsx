@@ -18,12 +18,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getEntry(params.slug);
   if (!entry) return {};
   const yl = yearLabel(entry.year);
+  const title = `Fristlose Kündigung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit — wirksam? (${new Date().getFullYear()})`;
+  const description = `Fristlose Kündigung nach ${yl} Betriebszugehörigkeit erhalten? Die meisten sind unwirksam. §626 BGB, Ihre Rechte, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt.`;
+  const url = `${BASE_URL}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
-    title: `Fristlose Kündigung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit — wirksam? (${new Date().getFullYear()})`,
-    description: `Fristlose Kündigung nach ${yl} Betriebszugehörigkeit erhalten? Die meisten sind unwirksam. §626 BGB, Ihre Rechte, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt.`,
-    alternates: {
-      canonical: `${BASE_URL}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`,
-    },
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary', title, description },
   };
 }
 

@@ -66,6 +66,9 @@ export default function AbfindungsrechnerPage() {
               name: 'gekuendigt-abfindung.de',
               url: BASE_URL,
             },
+            datePublished: '2025-01-15',
+            dateModified: new Date().toISOString().slice(0, 10),
+            inLanguage: 'de',
           }),
         }}
       />
@@ -82,6 +85,55 @@ export default function AbfindungsrechnerPage() {
               name: faq.q,
               acceptedAnswer: { '@type': 'Answer', text: faq.a },
             })),
+          }),
+        }}
+      />
+
+      {/* Schema.org - BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
+              { '@type': 'ListItem', position: 2, name: 'Abfindungsrechner', item: `${BASE_URL}/abfindungsrechner` },
+            ],
+          }),
+        }}
+      />
+
+      {/* Schema.org - HowTo */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'Abfindung berechnen — so nutzen Sie den Abfindungsrechner',
+            description:
+              'Berechnen Sie Ihre voraussichtliche Abfindung nach Kündigung in 3 einfachen Schritten mit dem kostenlosen Abfindungsrechner.',
+            step: [
+              {
+                '@type': 'HowToStep',
+                position: 1,
+                name: 'Bruttomonatsgehalt eingeben',
+                text: 'Geben Sie Ihr aktuelles Bruttomonatsgehalt in Euro ein. Bei variablem Gehalt verwenden Sie den Durchschnitt der letzten 12 Monate.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 2,
+                name: 'Betriebszugehörigkeit angeben',
+                text: 'Geben Sie die Anzahl der vollen Beschäftigungsjahre ein. Ab 6 Monaten wird aufgerundet.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 3,
+                name: 'Ergebnis ablesen',
+                text: 'Der Rechner zeigt drei Szenarien: Minimum (Faktor 0,5), Regelsatz (Faktor 0,5) und Maximum (Faktor 1,5). Die tatsächliche Abfindung hängt von individuellen Faktoren wie Formfehlern oder besonderem Kündigungsschutz ab.',
+              },
+            ],
           }),
         }}
       />

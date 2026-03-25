@@ -20,12 +20,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const yl = yearLabel(entry.year);
   const lower = (0.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const upper = (1.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const title = `Abfindung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit (${new Date().getFullYear()})`;
+  const description = `Abfindung nach ${yl}: Zwischen ${lower} und ${upper} Monatsgehältern. Tabelle, Rechner, Steuerrechner und kostenlose Prüfung. Kündigungsfrist: ${entry.kuendigungsfrist}.`;
+  const url = `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
-    title: `Abfindung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit (${new Date().getFullYear()})`,
-    description: `Abfindung nach ${yl}: Zwischen ${lower} und ${upper} Monatsgehältern. Tabelle, Rechner, Steuerrechner und kostenlose Prüfung. Kündigungsfrist: ${entry.kuendigungsfrist}.`,
-    alternates: {
-      canonical: `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`,
-    },
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary', title, description },
   };
 }
 

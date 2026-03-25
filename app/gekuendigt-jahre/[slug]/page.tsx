@@ -18,12 +18,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getEntry(params.slug);
   if (!entry) return {};
   const yl = yearLabel(entry.year);
+  const title = `Gekündigt nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} – Was jetzt? (${new Date().getFullYear()})`;
+  const description = `Kündigung nach ${yl} Betriebszugehörigkeit erhalten? Sofortmaßnahmen, 3-Wochen-Frist, Abfindungschancen. Kündigungsfrist: ${entry.kuendigungsfrist}. Kostenlose Ersteinschätzung.`;
+  const url = `${BASE_URL}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
-    title: `Gekündigt nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} – Was jetzt? (${new Date().getFullYear()})`,
-    description: `Kündigung nach ${yl} Betriebszugehörigkeit erhalten? Sofortmaßnahmen, 3-Wochen-Frist, Abfindungschancen. Kündigungsfrist: ${entry.kuendigungsfrist}. Kostenlose Ersteinschätzung.`,
-    alternates: {
-      canonical: `${BASE_URL}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`,
-    },
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary', title, description },
   };
 }
 
