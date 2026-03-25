@@ -33,7 +33,7 @@ export async function createContact(data: {
         DISPUTE_VALUE: data.disputeValue || '',
         MESSAGE: data.message,
       },
-      listIds: [23],
+      listIds: [24],
       updateEnabled: true,
     }),
   });
