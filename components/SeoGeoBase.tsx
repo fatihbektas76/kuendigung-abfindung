@@ -1,9 +1,9 @@
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 interface SeoGeoBaseProps {
-  pageUrl: string;
-  pageTitle: string;
-  pageDescription: string;
+  pageUrl?: string;
+  pageTitle?: string;
+  pageDescription?: string;
   pageType?: 'WebPage' | 'WebApplication' | 'CollectionPage' | 'Article';
   appName?: string;
   appCategory?: string;
@@ -19,9 +19,9 @@ interface SeoGeoBaseProps {
 const { baseUrl, author, organization, rating } = SEO_CONFIG;
 
 export default function SeoGeoBase({
-  pageUrl,
-  pageTitle,
-  pageDescription,
+  pageUrl = '',
+  pageTitle = '',
+  pageDescription = '',
   pageType = 'WebPage',
   appName,
   appCategory = 'Legal Tool',
@@ -79,8 +79,8 @@ export default function SeoGeoBase({
     schemas.push(orgSchema);
   }
 
-  // Block 3: WebPage / WebApplication
-  if (pageType === 'WebApplication') {
+  // Block 3: WebPage / WebApplication (nur wenn pageUrl gesetzt)
+  if (pageType === 'WebApplication' && pageUrl) {
     const appSchema: Record<string, unknown> = {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
@@ -130,7 +130,7 @@ export default function SeoGeoBase({
           : {}),
       });
     }
-  } else {
+  } else if (pageUrl) {
     // WebPage, CollectionPage, Article
     const pageSchema: Record<string, unknown> = {
       '@context': 'https://schema.org',
