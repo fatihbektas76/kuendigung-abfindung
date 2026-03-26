@@ -5,9 +5,9 @@ const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `Überstundenrechner ${new Date().getFullYear()} — Stundenlohn & Vergütung berechnen`,
+  title: `Überstundenvergütung berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
   description:
-    'Berechnen Sie kostenlos Ihren Stundenlohn und ausstehende Überstundenvergütung. Sofortergebnis + kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
+    'Überstunden berechnen — kostenloser Rechner für Stundenlohn und Überstundenvergütung. Sofortergebnis + kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
   alternates: {
     canonical: `${BASE_URL}/ueberstundenrechner`,
   },

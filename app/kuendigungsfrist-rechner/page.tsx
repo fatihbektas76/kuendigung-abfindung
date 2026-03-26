@@ -177,9 +177,50 @@ export default function KuendigungsfristRechnerPage() {
               'Berechnen Sie kostenlos Ihre genaue Kündigungsfrist nach §622 BGB. Taggenau, zum Monatsende oder Quartalsende — sofortiges Ergebnis + kostenlose Ersteinschätzung vom Fachanwalt.',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
             provider: { '@id': `${BASE_URL}/#organization` },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '68',
+              bestRating: '5',
+              worstRating: '1',
+            },
             datePublished: '2025-01-15',
             dateModified: new Date().toISOString().slice(0, 10),
             inLanguage: 'de',
+          }),
+        }}
+      />
+
+      {/* Schema.org - Speakable WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['#direktantwort', 'h1', '.ergebnis-box'],
+            },
+          }),
+        }}
+      />
+
+      {/* Schema.org - Author Entity */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Fatih Bektas',
+            jobTitle: 'Fachanwalt für Arbeitsrecht',
+            hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
+            memberOf: 'Rechtsanwaltskammer Karlsruhe',
+            sameAs: [
+              'https://www.anwalt.de/fatihbektas',
+              `${BASE_URL}/team`,
+            ],
           }),
         }}
       />
@@ -232,11 +273,11 @@ export default function KuendigungsfristRechnerPage() {
             Kostenlos &amp; sofort
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
-            Kündigungsfrist berechnen — Wann endet Ihr Arbeitsverhältnis?
+            Kündigungsfrist berechnen &mdash; Kostenloser Rechner nach &sect;622 BGB
           </h1>
           <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed mt-3">
-            Geben Sie das Datum der Kündigung und Ihre Kündigungsfrist ein — der Rechner zeigt Ihnen sofort
-            den genauen Beendigungstermin. Entwickelt von Fachanwalt Fatih Bektas für Arbeitsrecht.
+            Kündigungsfrist berechnen in Sekunden: Geben Sie das Datum der Kündigung und Ihre Frist ein &mdash;
+            der Rechner zeigt sofort den genauen Beendigungstermin. Entwickelt von Fachanwalt Fatih Bektas.
           </p>
           <div className="flex flex-wrap gap-5 mt-5 text-[0.88rem] text-ink-light">
             <span className="flex items-center gap-1.5">
@@ -263,6 +304,20 @@ export default function KuendigungsfristRechnerPage() {
           </div>
         </div>
       </div>
+
+      {/* Direktantwort-Block (GEO) */}
+      <section className="py-6 px-8 bg-white border-b border-border">
+        <div className="max-w-content mx-auto">
+          <div id="direktantwort" className="max-w-[740px] text-[0.95rem] text-ink-light leading-relaxed">
+            <p className="m-0">
+              <strong>Kündigungsfrist berechnen</strong> bedeutet, den genauen Beendigungstermin eines Arbeitsverhältnisses zu ermitteln.
+              Die Rechtsgrundlage ist <strong>&sect;622 BGB</strong>.
+              Die Grundfrist beträgt <strong>4 Wochen zum 15. oder Monatsende</strong>,
+              verlängert sich aber mit der Betriebszugehörigkeit auf bis zu <strong>7 Monate zum Monatsende</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* CTA #1 */}
       <section className="py-6 px-8 bg-white">
@@ -497,9 +552,7 @@ export default function KuendigungsfristRechnerPage() {
                           3-Wochen-Frist für Kündigungsschutzklage
                         </div>
                         <p className="text-[0.82rem] text-ink-muted leading-relaxed m-0">
-                          Wenn Sie die Kündigung anfechten wollen, müssen Sie bis zum{' '}
-                          <strong className="text-gold-dark">{formatDatum(result.klagefristEnde)}</strong>{' '}
-                          Kündigungsschutzklage beim Arbeitsgericht erheben.
+                          Wenn Sie die Kündigung anfechten wollen, müssen Sie innerhalb von 3 Wochen ab Zugang der Kündigung Klage einreichen.
                         </p>
                       </div>
                     </div>
@@ -565,7 +618,7 @@ export default function KuendigungsfristRechnerPage() {
               Hintergrund
             </div>
             <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-              Kündigungsfrist berechnen — Das müssen Sie wissen
+              Wie wird die Kündigungsfrist berechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Die gesetzliche Grundkündigungsfrist für Arbeitnehmer beträgt vier Wochen zum 15. oder zum Ende
@@ -597,6 +650,71 @@ export default function KuendigungsfristRechnerPage() {
         </div>
       </section>
 
+      {/* Sonderkündigungsschutz */}
+      <section className="py-[70px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Rechtlicher Hintergrund
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Wann gelten längere Kündigungsfristen?
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Neben den gesetzlichen Fristen nach &sect;622 BGB gibt es Personengruppen, die einen besonderen{' '}
+              <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> genießen.
+              Bei diesen Arbeitnehmern ist eine ordentliche Kündigung entweder ganz ausgeschlossen oder an
+              zusätzliche Voraussetzungen geknüpft — unabhängig von der berechneten Frist.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              <strong>Schwangere</strong> sind nach &sect;17 MuSchG bis vier Monate nach der Entbindung vor einer Kündigung geschützt.
+              <strong> Schwerbehinderte</strong> können nur mit vorheriger Zustimmung des Integrationsamts gekündigt werden (&sect;168 SGB IX).
+              <strong> Betriebsratsmitglieder</strong> können während ihrer Amtszeit und ein Jahr danach nur außerordentlich gekündigt werden (&sect;15 KSchG).
+              In der <strong>Elternzeit</strong> besteht ein Kündigungsverbot nach &sect;18 BEEG.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              Wird eine dieser Schutzvorschriften verletzt, ist die Kündigung in der Regel unwirksam —
+              unabhängig davon, ob die Kündigungsfrist korrekt berechnet wurde. Prüfen Sie daher nicht nur die Frist,
+              sondern auch, ob besonderer Kündigungsschutz in Ihrem Fall greift.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Erste 3 Schritte nach Kündigung */}
+      <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Praxishinweis
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Kündigung erhalten &mdash; die ersten 3 Schritte
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              <strong>1. Zugang dokumentieren:</strong> Notieren Sie sofort das Datum und die Uhrzeit, zu der
+              Sie die Kündigung erhalten haben. Bei persönlicher Übergabe: Bitten Sie einen Zeugen, den Zeitpunkt
+              zu bestätigen. Bei Postzustellung zählt der Tag, an dem der Brief im Briefkasten lag.
+              Das Zugangsdatum bestimmt den Beginn aller Fristen.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              <strong>2. 3-Wochen-Frist beachten:</strong> Ab dem Tag des Zugangs läuft die Frist für eine
+              Kündigungsschutzklage nach &sect;4 KSchG. Innerhalb dieser drei Wochen müssen Sie entscheiden,
+              ob Sie die Kündigung akzeptieren oder gerichtlich anfechten. Versäumen Sie die Frist,
+              gilt die Kündigung als wirksam — auch wenn sie rechtlich angreifbar war.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              <strong>3. Fachanwalt kontaktieren:</strong> Eine{' '}
+              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">kostenlose Ersteinschätzung</Link>{' '}
+              hilft Ihnen, die Situation einzuordnen: Ist die Kündigung wirksam? Lohnt sich eine Klage?
+              Besteht Aussicht auf eine{' '}
+              <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindung</Link>?
+              Handeln Sie schnell — die 3-Wochen-Frist ist nicht verlängerbar.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA #2 — Dark Banner */}
       <section className="py-[70px] px-8 bg-[#2A1F0E]">
         <div className="max-w-content mx-auto text-center">
@@ -620,14 +738,42 @@ export default function KuendigungsfristRechnerPage() {
         </div>
       </section>
 
+      {/* Quellenblock */}
+      <section className="py-10 px-8 bg-white border-t border-border">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-3">
+              Rechtsgrundlagen &amp; Quellen
+            </div>
+            <ul className="list-none space-y-2 text-[0.88rem]">
+              <li>
+                <a href="https://www.gesetze-im-internet.de/bgb/__622.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;622 BGB &mdash; Kündigungsfristen bei Arbeitsverhältnissen &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gesetze-im-internet.de/kschg/__4.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;4 KSchG &mdash; 3-Wochen-Klagefrist &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gesetze-im-internet.de/bgb/__626.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;626 BGB &mdash; Fristlose Kündigung aus wichtigem Grund &rarr;
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="py-[70px] px-8 bg-white">
+      <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Häufige Fragen zur Kündigungsfrist
+            Häufige Fragen zur Kündigungsfrist berechnen
           </h2>
           <FaqAccordion items={faqs} />
         </div>

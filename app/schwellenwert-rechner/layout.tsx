@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: 'Schwellenwert-Rechner §23 KSchG – KSchG gilt für Sie?',
+  title: 'Schwellenwert §23 KSchG berechnen | Kostenlos | APOS Legal',
   description:
-    'Prüfen Sie kostenlos, ob das Kündigungsschutzgesetz für Ihren Betrieb gilt. Schwellenwert-Rechner nach §23 KSchG mit Vollzeitäquivalenten.',
+    'Schwellenwert berechnen — prüfen Sie kostenlos, ob das Kündigungsschutzgesetz (KSchG) für Ihren Betrieb gilt. Berechnung nach §23 KSchG mit Vollzeitäquivalenten.',
   alternates: {
     canonical: `${BASE_URL}/schwellenwert-rechner`,
   },

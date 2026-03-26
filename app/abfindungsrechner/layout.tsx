@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
-  title: `Abfindungsrechner – kostenlos & sofort (${new Date().getFullYear()})`,
+  title: `Abfindung berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
   description:
-    'Kostenloser Abfindungsrechner: Berechnen Sie Ihre Abfindung nach Kündigung in 30 Sekunden. Erfahrungswerte aus der Praxis. Vom Fachanwalt für Arbeitsrecht.',
+    'Abfindung berechnen — kostenloser Abfindungsrechner mit Erfahrungswerten aus der Praxis. Drei Szenarien in 30 Sekunden. Vom Fachanwalt für Arbeitsrecht.',
   alternates: {
     canonical: `${BASE_URL}/abfindungsrechner`,
   },

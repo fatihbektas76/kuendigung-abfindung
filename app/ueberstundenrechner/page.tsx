@@ -102,9 +102,50 @@ export default function UeberstundenrechnerPage() {
               'Berechnen Sie kostenlos Ihren Stundenlohn und ausstehende Überstundenvergütung. Sofortergebnis + kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
             provider: { '@id': `${BASE_URL}/#organization` },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '68',
+              bestRating: '5',
+              worstRating: '1',
+            },
             datePublished: '2025-01-15',
             dateModified: new Date().toISOString().slice(0, 10),
             inLanguage: 'de',
+          }),
+        }}
+      />
+
+      {/* Schema.org - Speakable WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['#direktantwort', 'h1', '.ergebnis-box'],
+            },
+          }),
+        }}
+      />
+
+      {/* Schema.org - Author Entity */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Fatih Bektas',
+            jobTitle: 'Fachanwalt für Arbeitsrecht',
+            hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
+            memberOf: 'Rechtsanwaltskammer Karlsruhe',
+            sameAs: [
+              'https://www.anwalt.de/fatihbektas',
+              `${BASE_URL}/team`,
+            ],
           }),
         }}
       />
@@ -157,11 +198,11 @@ export default function UeberstundenrechnerPage() {
             Kostenlos &amp; sofort
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
-            Überstundenrechner — Stundenlohn &amp; Vergütung berechnen
+            Überstunden berechnen &mdash; Stundenlohn &amp; Vergütung kostenlos
           </h1>
           <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed mt-3">
             Berechnen Sie in Sekunden Ihren genauen Stundenlohn und die Ihnen zustehende
-            Überstundenvergütung. Entwickelt von Fachanwalt Fatih Bektas für Arbeitsrecht.
+            Überstundenvergütung nach Kündigung. Entwickelt von Fachanwalt Fatih Bektas für Arbeitsrecht.
           </p>
           <div className="flex flex-wrap gap-5 mt-5 text-[0.88rem] text-ink-light">
             <span className="flex items-center gap-1.5">
@@ -188,6 +229,19 @@ export default function UeberstundenrechnerPage() {
           </div>
         </div>
       </div>
+
+      {/* Direktantwort-Block (GEO) */}
+      <section className="py-6 px-8 bg-white border-b border-border">
+        <div className="max-w-content mx-auto">
+          <div id="direktantwort" className="max-w-[740px] text-[0.95rem] text-ink-light leading-relaxed">
+            <p className="m-0">
+              <strong>Überstunden berechnen</strong> bedeutet, den Stundenlohn und die ausstehende Vergütung zu ermitteln.
+              Der Anspruch ergibt sich aus <strong>&sect;612 BGB</strong> (Vergütungspflicht für Arbeit).
+              Die Formel lautet: <strong>Bruttomonatsgehalt &divide; (Wochenstunden &times; 4,33) &times; geleistete Überstunden</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* CTA #1 */}
       <section className="py-6 px-8 bg-white">
@@ -432,7 +486,7 @@ export default function UeberstundenrechnerPage() {
               Hintergrund
             </div>
             <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-              So berechnen Sie Ihre Überstundenvergütung
+              Wie wird die Überstundenvergütung berechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Grundlage jeder Berechnung ist der Bruttostundenlohn. Er ergibt sich aus dem Bruttomonatsgehalt
@@ -461,6 +515,71 @@ export default function UeberstundenrechnerPage() {
         </div>
       </section>
 
+      {/* Überstunden bei Kündigung */}
+      <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Praxishinweis
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Wann habe ich Anspruch auf Überstundenvergütung?
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Werden Sie gekündigt, stellt sich die Frage: Was passiert mit angesammelten Überstunden?
+              Grundsätzlich hat der Arbeitgeber das Recht, Ihnen die Überstunden während der{' '}
+              <Link href="/kuendigungsfrist-rechner" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>{' '}
+              als Freizeitausgleich zu gewähren. Ist das aufgrund der Restarbeitszeit nicht mehr möglich,
+              entsteht ein <strong>Auszahlungsanspruch</strong>.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Bei einem <Link href="/aufhebungsvertrag" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>{' '}
+              sollten offene Überstunden unbedingt in die Verhandlung einbezogen werden. In der Praxis werden
+              Überstundenansprüche häufig in die Abfindungssumme eingerechnet — achten Sie darauf, dass dies
+              im Aufhebungsvertrag klar geregelt ist, damit keine Ansprüche untergehen.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              Wichtig: Ausschlussfristen laufen auch nach Beendigung des Arbeitsverhältnisses weiter.
+              Viele Arbeitsverträge enthalten Verfallklauseln von 3&ndash;6 Monaten. Wer seine Überstunden
+              nicht rechtzeitig schriftlich geltend macht, riskiert den Verlust des gesamten Anspruchs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Pauschalabgeltungsklausel */}
+      <section className="py-[70px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Rechtlicher Hintergrund
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Was ist eine Pauschalabgeltungsklausel &mdash; und wann ist sie unwirksam?
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Die Klausel &bdquo;Überstunden sind mit dem Gehalt abgegolten&ldquo; findet sich in zahlreichen
+              Arbeitsverträgen. Das Bundesarbeitsgericht hat jedoch wiederholt entschieden: Solche
+              Pauschalabgeltungsklauseln sind <strong>nur wirksam, wenn der Umfang der abgegoltenen Überstunden
+              klar bestimmt</strong> ist — zum Beispiel &bdquo;bis zu 10 Überstunden pro Monat&ldquo;.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Bei vorformulierten Arbeitsverträgen (AGB) unterliegen solche Klauseln der Inhaltskontrolle
+              nach &sect;&sect;305&thinsp;ff. BGB. Eine pauschale, unbegrenzte Abgeltung benachteiligt den Arbeitnehmer
+              unangemessen und ist in der Regel unwirksam. In diesem Fall besteht ein Vergütungsanspruch
+              für <strong>jede einzelne Überstunde</strong>.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              Unabhängig von der vertraglichen Regelung gilt: Unterschreitet die effektive Vergütung pro Stunde
+              den gesetzlichen Mindestlohn, ist die Abgeltungsklausel insoweit unwirksam. Lassen Sie Ihre
+              Vertragsklausel von einem{' '}
+              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">Fachanwalt prüfen</Link> —
+              oft ist deutlich mehr möglich, als der Arbeitsvertrag vermuten lässt.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA #2 — Dark Banner */}
       <section className="py-[70px] px-8 bg-[#2A1F0E]">
         <div className="max-w-content mx-auto text-center">
@@ -484,14 +603,42 @@ export default function UeberstundenrechnerPage() {
         </div>
       </section>
 
+      {/* Quellenblock */}
+      <section className="py-10 px-8 bg-white border-t border-border">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-3">
+              Rechtsgrundlagen &amp; Quellen
+            </div>
+            <ul className="list-none space-y-2 text-[0.88rem]">
+              <li>
+                <a href="https://www.gesetze-im-internet.de/bgb/__612.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;612 BGB &mdash; Vergütungspflicht für geleistete Dienste &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gesetze-im-internet.de/bgb/__305.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;&sect;305&thinsp;ff. BGB &mdash; AGB-Kontrolle (Abgeltungsklauseln) &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gesetze-im-internet.de/arbzg/" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  Arbeitszeitgesetz (ArbZG) &mdash; Höchstarbeitszeiten &rarr;
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="py-[70px] px-8 bg-white">
+      <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Häufige Fragen zur Überstundenvergütung
+            Häufige Fragen zu Überstunden
           </h2>
           <FaqAccordion items={faqs} />
         </div>

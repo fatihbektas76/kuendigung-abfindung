@@ -77,6 +77,18 @@ const tools = [
     linkText: 'Frist berechnen',
     href: '/kuendigungsfrist-rechner',
   },
+  {
+    label: 'Urlaubsabgeltung',
+    title: 'Urlaubsabgeltungsrechner',
+    text: 'Resturlaub nicht genommen? Berechnen Sie kostenlos Ihren Abgeltungsanspruch nach §11 BUrlG — sofort und ohne Anmeldung.',
+    checks: [
+      'Berechnung nach §11 BUrlG',
+      'Anteiligen Urlaubsanspruch berechnen',
+      'Ausschlussfristen im Blick',
+    ],
+    linkText: 'Jetzt berechnen',
+    href: '/urlaubsabgeltung-rechner',
+  },
 ];
 
 const faqs = [
@@ -165,6 +177,7 @@ export default function ToolsPage() {
               { '@type': 'ListItem', position: 4, name: 'Schwellenwert-Rechner §23 KSchG', url: `${BASE_URL}/schwellenwert-rechner` },
               { '@type': 'ListItem', position: 5, name: 'Überstundenrechner', url: `${BASE_URL}/ueberstundenrechner` },
               { '@type': 'ListItem', position: 6, name: 'Kündigungsfrist-Rechner', url: `${BASE_URL}/kuendigungsfrist-rechner` },
+              { '@type': 'ListItem', position: 7, name: 'Urlaubsabgeltungsrechner', url: `${BASE_URL}/urlaubsabgeltung-rechner` },
             ],
           }),
         }}

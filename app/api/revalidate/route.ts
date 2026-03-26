@@ -24,6 +24,7 @@ export async function GET(request: NextRequest) {
     '/urteile',
     '/ueberstundenrechner',
     '/kuendigungsfrist-rechner',
+    '/urlaubsabgeltung-rechner',
     '/blog',
   ];
 

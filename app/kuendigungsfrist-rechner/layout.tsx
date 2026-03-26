@@ -5,9 +5,9 @@ const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `Kündigungsfrist berechnen ${new Date().getFullYear()} — Wann endet mein Arbeitsverhältnis?`,
+  title: `Kündigungsfrist berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
   description:
-    'Berechnen Sie kostenlos Ihre genaue Kündigungsfrist nach §622 BGB. Taggenau, zum Monatsende oder Quartalsende — sofortiges Ergebnis + kostenlose Ersteinschätzung vom Fachanwalt.',
+    'Kündigungsfrist berechnen — kostenloser Rechner nach §622 BGB. Taggenau, zum Monatsende oder Quartalsende. Sofortergebnis + kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
   alternates: {
     canonical: `${BASE_URL}/kuendigungsfrist-rechner`,
   },

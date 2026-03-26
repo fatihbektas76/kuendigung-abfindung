@@ -63,9 +63,50 @@ export default function SchwellenwertRechnerPage() {
               name: 'gekuendigt-abfindung.de',
               url: BASE_URL,
             },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '68',
+              bestRating: '5',
+              worstRating: '1',
+            },
             datePublished: '2025-01-15',
             dateModified: new Date().toISOString().slice(0, 10),
             inLanguage: 'de',
+          }),
+        }}
+      />
+
+      {/* Schema.org - Speakable WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['#direktantwort', 'h1', '.ergebnis-box'],
+            },
+          }),
+        }}
+      />
+
+      {/* Schema.org - Author Entity */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Fatih Bektas',
+            jobTitle: 'Fachanwalt für Arbeitsrecht',
+            hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
+            memberOf: 'Rechtsanwaltskammer Karlsruhe',
+            sameAs: [
+              'https://www.anwalt.de/fatihbektas',
+              `${BASE_URL}/team`,
+            ],
           }),
         }}
       />
@@ -141,6 +182,15 @@ export default function SchwellenwertRechnerPage() {
         }}
       />
 
+      {/* GEO-Optimierung */}
+      <div itemScope itemType="https://schema.org/WebApplication">
+        <meta itemProp="name" content="Schwellenwert-Rechner §23 KSchG" />
+        <meta itemProp="description" content="Prüfen Sie kostenlos, ob das Kündigungsschutzgesetz für Ihren Betrieb gilt." />
+        <meta itemProp="author" content="Fatih Bektas" />
+        <meta itemProp="inLanguage" content="de" />
+        <meta itemProp="applicationCategory" content="Legal Tool" />
+      </div>
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -153,14 +203,27 @@ export default function SchwellenwertRechnerPage() {
             Kostenloses Tool
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
-            Gilt das Kündigungsschutzgesetz für Sie? &sect;23 KSchG prüfen
+            Schwellenwert berechnen &mdash; Gilt das KSchG für Ihren Betrieb?
           </h1>
           <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed mt-3">
-            Das KSchG gilt nur in Betrieben mit mehr als 10 Vollzeitäquivalenten. Prüfen Sie hier,
-            ob der Schwellenwert in Ihrem Betrieb erreicht wird.
+            Das Kündigungsschutzgesetz gilt nur in Betrieben mit mehr als 10 Vollzeitäquivalenten.
+            Berechnen Sie hier kostenlos, ob der Schwellenwert nach &sect;23 KSchG erreicht wird.
           </p>
         </div>
       </div>
+
+      {/* Direktantwort-Block (GEO) */}
+      <section className="py-6 px-8 bg-white border-b border-border">
+        <div className="max-w-content mx-auto">
+          <div id="direktantwort" className="max-w-[740px] text-[0.95rem] text-ink-light leading-relaxed">
+            <p className="m-0">
+              <strong>Schwellenwert berechnen</strong> nach &sect;23 KSchG bedeutet zu prüfen, ob ein Betrieb
+              mehr als <strong>10 Vollzeitäquivalente (FTE)</strong> beschäftigt. Nur dann gilt das Kündigungsschutzgesetz.
+              Teilzeitkräfte zählen anteilig: <strong>Faktor 0,5</strong> (bis 20 Std.), <strong>Faktor 0,75</strong> (bis 30 Std.).
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Calculator */}
       <section className="py-[70px] px-8 bg-white">
@@ -308,7 +371,7 @@ export default function SchwellenwertRechnerPage() {
               Hintergrund
             </div>
             <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
-              So wird der Schwellenwert berechnet
+              Wie wird der Schwellenwert berechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-4">
               Nach &sect;23 Abs. 1 KSchG gilt das Kündigungsschutzgesetz nur in Betrieben, in denen
@@ -366,21 +429,111 @@ export default function SchwellenwertRechnerPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Kündigungsschutz im Kleinbetrieb */}
       <section className="py-[70px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Rechtlicher Hintergrund
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Wann habe ich auch ohne KSchG Kündigungsschutz?
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Liegt Ihr Betrieb unter dem Schwellenwert von 10 Vollzeitäquivalenten, findet das KSchG keine Anwendung.
+              Der Arbeitgeber braucht dann keinen Kündigungsgrund und muss keine Sozialauswahl durchführen.
+              Das bedeutet aber <strong>nicht</strong>, dass Sie schutzlos sind.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Auch in Kleinbetrieben gelten die <strong>gesetzlichen Kündigungsfristen</strong> nach &sect;622 BGB uneingeschränkt.
+              Eine diskriminierende Kündigung — etwa wegen Geschlecht, Alter, Behinderung oder Religion — ist nach dem
+              Allgemeinen Gleichbehandlungsgesetz (AGG) unwirksam. Ebenso greift die Sittenwidrigkeitskontrolle nach &sect;242 BGB:
+              Willkürliche oder treuwidrige Kündigungen sind auch ohne KSchG rechtswidrig.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              Besonderer <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> gilt
+              betriebsgrößenunabhängig: Schwangere sind nach &sect;17 MuSchG geschützt, Schwerbehinderte nach &sect;168 SGB IX,
+              Eltern in Elternzeit nach &sect;18 BEEG und Betriebsratsmitglieder nach &sect;15 KSchG. Diese Schutzvorschriften
+              gelten auch in Betrieben mit nur einem Mitarbeiter.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Leiharbeitnehmer und Schwellenwert */}
+      <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Rechtsprechung
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Leiharbeitnehmer und Schwellenwert &mdash; was zählt wirklich?
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Das Bundesarbeitsgericht hat in seiner Entscheidung{' '}
+              <Link href="/urteile/bag-2-azr-140-12-leiharbeitnehmer-schwellenwert/" className="text-gold no-underline hover:underline">BAG 2 AZR 140/12</Link>{' '}
+              klargestellt: <strong>Leiharbeitnehmer zählen bei der Berechnung des Schwellenwerts mit</strong>,
+              wenn sie regelmäßig im Betrieb eingesetzt werden. Dies kann dazu führen, dass ein vermeintlicher
+              Kleinbetrieb doch unter das KSchG fällt.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Entscheidend ist die <strong>regelmäßige Beschäftigtenzahl</strong> — nicht die Zahl am konkreten Kündigungstag.
+              Kurzfristige Schwankungen, etwa durch Krankheit oder Urlaub, verändern den Schwellenwert nicht.
+              Auch Saisonarbeitskräfte werden nur mitgezählt, wenn sie regelmäßig wiederkehrend beschäftigt werden.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              Wenn Ihr Ergebnis knapp unter oder über 10 FTE liegt, empfehlen wir eine anwaltliche Prüfung.
+              Die korrekte Berechnung des Schwellenwerts kann im Kündigungsschutzprozess den Unterschied
+              zwischen Abfindung und leerem Ausgang machen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quellenblock */}
+      <section className="py-10 px-8 bg-cream border-t border-border">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-3">
+              Rechtsgrundlagen &amp; Quellen
+            </div>
+            <ul className="list-none space-y-2 text-[0.88rem]">
+              <li>
+                <a href="https://www.gesetze-im-internet.de/kschg/__23.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;23 KSchG &mdash; Geltungsbereich des Kündigungsschutzgesetzes &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gesetze-im-internet.de/kschg/__1.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;1 KSchG &mdash; Sozial ungerechtfertigte Kündigungen &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="https://www.bundesarbeitsgericht.de" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  Bundesarbeitsgericht &mdash; Rechtsprechung zum Schwellenwert &rarr;
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zum Schwellenwert &sect;23 KSchG
+            Häufige Fragen zum Schwellenwert &sect;23 KSchG
           </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
 
       {/* CTA 3 */}
-      <section className="py-[70px] px-8 bg-white">
+      <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto text-center">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln

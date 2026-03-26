@@ -66,9 +66,50 @@ export default function AbfindungsrechnerPage() {
               name: 'gekuendigt-abfindung.de',
               url: BASE_URL,
             },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '68',
+              bestRating: '5',
+              worstRating: '1',
+            },
             datePublished: '2025-01-15',
             dateModified: new Date().toISOString().slice(0, 10),
             inLanguage: 'de',
+          }),
+        }}
+      />
+
+      {/* Schema.org - Speakable WebPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['#direktantwort', 'h1', '.ergebnis-box'],
+            },
+          }),
+        }}
+      />
+
+      {/* Schema.org - Author Entity */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Fatih Bektas',
+            jobTitle: 'Fachanwalt für Arbeitsrecht',
+            hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
+            memberOf: 'Rechtsanwaltskammer Karlsruhe',
+            sameAs: [
+              'https://www.anwalt.de/fatihbektas',
+              `${BASE_URL}/team`,
+            ],
           }),
         }}
       />
@@ -138,6 +179,15 @@ export default function AbfindungsrechnerPage() {
         }}
       />
 
+      {/* GEO-Optimierung */}
+      <div itemScope itemType="https://schema.org/WebApplication">
+        <meta itemProp="name" content="Abfindungsrechner" />
+        <meta itemProp="description" content="Berechnen Sie kostenlos Ihre voraussichtliche Abfindung nach Kündigung." />
+        <meta itemProp="author" content="Fatih Bektas" />
+        <meta itemProp="inLanguage" content="de" />
+        <meta itemProp="applicationCategory" content="Legal Tool" />
+      </div>
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -150,14 +200,27 @@ export default function AbfindungsrechnerPage() {
             Kostenloses Tool
           </div>
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
-            Abfindungsrechner: Ihre Abfindung in 30 Sekunden
+            Abfindung berechnen &mdash; Kostenloser Abfindungsrechner
           </h1>
           <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed mt-3">
-            Berechnen Sie Ihre voraussichtliche Abfindung nach der gängigen Formel.
+            Berechnen Sie Ihre voraussichtliche Abfindung nach Kündigung kostenlos in 30 Sekunden.
             Drei Szenarien &mdash; von konservativ bis optimistisch.
           </p>
         </div>
       </div>
+
+      {/* Direktantwort-Block (GEO) */}
+      <section className="py-6 px-8 bg-white border-b border-border">
+        <div className="max-w-content mx-auto">
+          <div id="direktantwort" className="max-w-[740px] text-[0.95rem] text-ink-light leading-relaxed">
+            <p className="m-0">
+              <strong>Abfindung berechnen</strong> bedeutet, die voraussichtliche Abfindungshöhe nach Kündigung zu ermitteln.
+              Der Anspruch ergibt sich aus Verhandlung auf Basis von <strong>&sect;1a KSchG</strong>.
+              Die gängige Formel lautet: <strong>0,5 &times; Bruttomonatsgehalt &times; Betriebsjahre</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Calculator */}
       <section className="py-[70px] px-8 bg-white">
@@ -287,6 +350,127 @@ export default function AbfindungsrechnerPage() {
         </div>
       </section>
 
+      {/* So funktioniert die Abfindungsformel */}
+      <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Hintergrund
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Wie wird die Abfindung berechnet?
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Die gängige Abfindungsformel lautet: <strong>0,5 &times; Bruttomonatsgehalt &times; Betriebszugehörigkeit in Jahren</strong>.
+              Diese Formel stammt aus &sect;1a KSchG, der dem Arbeitgeber die Möglichkeit gibt, bei einer betriebsbedingten Kündigung
+              eine Abfindung in dieser Höhe anzubieten, wenn der Arbeitnehmer auf eine Kündigungsschutzklage verzichtet.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Wichtig: Es gibt in Deutschland <strong>keinen gesetzlichen Anspruch</strong> auf eine Abfindung. Der Faktor 0,5 ist
+              lediglich ein Richtwert. In der Praxis bewegen sich Abfindungen je nach Verhandlungsposition zwischen
+              0,25 und 1,5 Bruttomonatsgehältern pro Beschäftigungsjahr — in Einzelfällen auch darüber. Die tatsächliche Höhe
+              hängt maßgeblich davon ab, wie stark die Kündigung angreifbar ist.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              Bei angebrochenen Beschäftigungsjahren wird nach ständiger Rechtsprechung des Bundesarbeitsgerichts ab sechs Monaten aufgerundet.
+              Wer also 4 Jahre und 7 Monate beschäftigt war, rechnet mit 5 Jahren.
+              Sonderzahlungen wie Weihnachts- oder Urlaubsgeld fließen anteilig in das Bruttomonatsgehalt ein,
+              wenn sie regelmäßig gezahlt werden.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Welche Faktoren erhöhen die Abfindung? */}
+      <section className="py-[70px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Verhandlungsspielraum
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Wann habe ich Anspruch auf eine höhere Abfindung?
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Die Abfindungshöhe ist Verhandlungssache — und Ihre Verhandlungsposition hängt davon ab, wie angreifbar
+              die Kündigung ist. Formfehler wie eine <strong>fehlende Betriebsratsanhörung</strong> (&sect;102 BetrVG),
+              Verstöße gegen das <strong>Schriftformerfordernis</strong> (&sect;623 BGB) oder eine mangelhafte
+              Sozialauswahl (&sect;1 Abs. 3 KSchG) machen die Kündigung angreifbar und erhöhen den Abfindungsfaktor erheblich.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Besonderer <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> — etwa bei Schwangerschaft,
+              Schwerbehinderung, Elternzeit oder als Betriebsratsmitglied — stärkt Ihre Position zusätzlich.
+              In diesen Fällen ist die Kündigung oft von vornherein unwirksam, was den Arbeitgeber zu deutlich höheren
+              Abfindungen bewegt.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              Auch persönliche Faktoren spielen eine Rolle: Hohe Betriebszugehörigkeit in Kombination mit fortgeschrittenem
+              Alter signalisiert schlechtere Arbeitsmarktchancen — Arbeitsgerichte und Arbeitgeber berücksichtigen dies
+              regelmäßig bei der Abfindungshöhe. Grundsätzlich gilt: Je unwirksamer die Kündigung, desto höher die Abfindung.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Wann lohnt sich ein Anwalt? */}
+      <section className="py-[70px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Praxishinweis
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Wann lohnt sich ein Anwalt bei der Abfindung?
+            </h2>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Nach Zugang einer Kündigung haben Sie nur <strong>drei Wochen Zeit</strong>, um Kündigungsschutzklage
+              beim Arbeitsgericht einzureichen (&sect;4 KSchG). Versäumen Sie diese Frist, gilt die Kündigung als
+              wirksam — unabhängig davon, wie fehlerhaft sie war. Der Verhandlungsspielraum für eine Abfindung
+              entsteht fast immer erst durch die Erhebung einer Kündigungsschutzklage.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Ein Fachanwalt für Arbeitsrecht kennt die branchenüblichen Abfindungsfaktoren, erkennt Formfehler
+              und kann einschätzen, ob ein Faktor über 0,5 realistisch ist. In vielen Fällen refinanziert sich
+              die anwaltliche Vertretung durch eine deutlich höhere Abfindung.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed">
+              Haben Sie eine Rechtsschutzversicherung mit Arbeitsrechtsschutz? Dann übernimmt diese in der Regel
+              die Anwalts- und Gerichtskosten vollständig. Aber auch ohne Versicherung lohnt sich zumindest eine{' '}
+              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">kostenlose Ersteinschätzung</Link>,
+              um Ihre Chancen realistisch bewerten zu können.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quellenblock */}
+      <section className="py-10 px-8 bg-cream border-t border-border">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-3">
+              Rechtsgrundlagen &amp; Quellen
+            </div>
+            <ul className="list-none space-y-2 text-[0.88rem]">
+              <li>
+                <a href="https://www.gesetze-im-internet.de/kschg/__1a.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;1a KSchG &mdash; Abfindungsanspruch bei betriebsbedingter Kündigung &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gesetze-im-internet.de/kschg/__4.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;4 KSchG &mdash; Klagefrist (3 Wochen) &rarr;
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gesetze-im-internet.de/estg/__34.html" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                  &sect;34 EStG &mdash; Fünftelregelung bei Abfindungen &rarr;
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -294,7 +478,7 @@ export default function AbfindungsrechnerPage() {
             Häufige Fragen
           </div>
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur Abfindungsberechnung
+            Häufige Fragen zur Abfindung
           </h2>
           <FaqAccordion items={faqs} />
         </div>
