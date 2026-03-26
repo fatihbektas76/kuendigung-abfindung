@@ -126,6 +126,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/ueberstundenrechner" className={linkClass}>Überstundenrechner</Link></li>
               <li><Link href="/kuendigungsfrist-rechner" className={linkClass}>Kündigungsfrist-Rechner</Link></li>
               <li><Link href="/urlaubsabgeltung-rechner" className={linkClass}>Urlaubsabgeltungsrechner</Link></li>
+              <li><Link href="/urlaub-teilzeit-rechner" className={linkClass}>Urlaubsrechner Teilzeit</Link></li>
               <li><Link href="/tools" className={linkClass}>Alle Tools &rarr;</Link></li>
             </ul>
           </div>

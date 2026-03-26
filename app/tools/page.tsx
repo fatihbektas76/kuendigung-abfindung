@@ -89,6 +89,18 @@ const tools = [
     linkText: 'Jetzt berechnen',
     href: '/urlaubsabgeltung-rechner',
   },
+  {
+    label: 'Teilzeit',
+    title: 'Urlaubsrechner Teilzeit',
+    text: 'Wie viel Urlaub steht Ihnen in Teilzeit zu? Berechnen Sie Ihren anteiligen Urlaubsanspruch nach §3 BUrlG — sofort und kostenlos.',
+    checks: [
+      'Pro-rata-temporis-Formel',
+      '5- und 6-Tage-Betrieb',
+      'Alle Teilzeit-Konstellationen',
+    ],
+    linkText: 'Jetzt berechnen',
+    href: '/urlaub-teilzeit-rechner',
+  },
 ];
 
 const faqs = [
@@ -178,6 +190,7 @@ export default function ToolsPage() {
               { '@type': 'ListItem', position: 5, name: 'Überstundenrechner', url: `${BASE_URL}/ueberstundenrechner` },
               { '@type': 'ListItem', position: 6, name: 'Kündigungsfrist-Rechner', url: `${BASE_URL}/kuendigungsfrist-rechner` },
               { '@type': 'ListItem', position: 7, name: 'Urlaubsabgeltungsrechner', url: `${BASE_URL}/urlaubsabgeltung-rechner` },
+              { '@type': 'ListItem', position: 8, name: 'Urlaubsrechner Teilzeit', url: `${BASE_URL}/urlaub-teilzeit-rechner` },
             ],
           }),
         }}

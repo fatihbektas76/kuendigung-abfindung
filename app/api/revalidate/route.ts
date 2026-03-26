@@ -25,6 +25,7 @@ export async function GET(request: NextRequest) {
     '/ueberstundenrechner',
     '/kuendigungsfrist-rechner',
     '/urlaubsabgeltung-rechner',
+    '/urlaub-teilzeit-rechner',
     '/blog',
   ];
 
