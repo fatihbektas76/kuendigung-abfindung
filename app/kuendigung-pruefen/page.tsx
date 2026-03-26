@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import StandAnzeige from '@/components/StandAnzeige';
 
 /* ───── Types ───── */
 interface Answers {
@@ -342,7 +343,8 @@ export default function KuendigungPruefenPage() {
       </div>
 
       <div className="mt-auto">
-        <div className="flex items-center gap-1 text-gold text-[1rem]">
+        <StandAnzeige />
+        <div className="flex items-center gap-1 text-gold text-[1rem] mt-3">
           {'★★★★★'}
         </div>
         <div className="text-[0.82rem] text-ink-muted mt-1">

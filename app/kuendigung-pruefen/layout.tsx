@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 
 const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: `Kündigung kostenlos prüfen lassen — in 2 Minuten (${new Date().getFullYear()})`,
   description:
