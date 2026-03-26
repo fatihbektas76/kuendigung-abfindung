@@ -27,12 +27,14 @@ interface AufhebungsAnswer {
   sonderschutzEinbezogen: string;
   bedenkzeit: string;
   druckAusgeubt: string;
+  turboklausel: string;
 }
 
 const initialAnswers: AufhebungsAnswer = {
   abfindungVorhanden: '',
   abfindungHoehe: '',
   abfindungZeitpunkt: '',
+  turboklausel: '',
   bonusGeregelt: '',
   urlaubGeregelt: '',
   widerrufsfrist: '',
@@ -104,7 +106,7 @@ function InfoBox({ children }: { children: React.ReactNode }) {
 type StepId =
   | 'S1' | 'S2' | 'S3' | 'S4' | 'S5' | 'S6' | 'S7' | 'S8' | 'S9'
   | 'S10' | 'S11' | 'S12' | 'S13' | 'S14' | 'S15' | 'S16' | 'S17' | 'S18'
-  | 'ERGEBNIS';
+  | 'S19' | 'ERGEBNIS';
 
 const CATEGORIES = [
   'Abfindung',
@@ -119,7 +121,7 @@ const CATEGORIES = [
 
 function getCategoryForStep(s: StepId): { idx: number; catName: string } {
   switch (s) {
-    case 'S1': case 'S2': case 'S3':
+    case 'S1': case 'S2': case 'S3': case 'S19':
       return { idx: 1, catName: 'Abfindung' };
     case 'S4': case 'S5':
       return { idx: 2, catName: 'Vergütung & Urlaub' };
@@ -517,12 +519,12 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein, keine Abfindung vorgesehen"
                 selected={answers.abfindungVorhanden === 'nein'}
-                onClick={() => selectWithInfo('abfindungVorhanden', 'nein', 'S4', 'S1', 1, 'red')}
+                onClick={() => selectWithInfo('abfindungVorhanden', 'nein', 'S19', 'S1', 1, 'red')}
               />
               <RadioOption
                 label="Ich bin unsicher"
                 selected={answers.abfindungVorhanden === 'unsicher'}
-                onClick={() => autoAdvance('abfindungVorhanden', 'unsicher', 'S4', 'S1', 1, 'yellow')}
+                onClick={() => autoAdvance('abfindungVorhanden', 'unsicher', 'S19', 'S1', 1, 'yellow')}
               />
             </div>
             {answers.abfindungVorhanden === 'nein' && (
@@ -574,22 +576,22 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Mit letztem Gehalt / zum Beendigungsdatum"
                 selected={answers.abfindungZeitpunkt === 'sofort'}
-                onClick={() => autoAdvance('abfindungZeitpunkt', 'sofort', 'S4', 'S3', 1, 'green')}
+                onClick={() => autoAdvance('abfindungZeitpunkt', 'sofort', 'S19', 'S3', 1, 'green')}
               />
               <RadioOption
                 label="Innerhalb von 4 Wochen nach Beendigung"
                 selected={answers.abfindungZeitpunkt === '4wochen'}
-                onClick={() => autoAdvance('abfindungZeitpunkt', '4wochen', 'S4', 'S3', 1, 'green')}
+                onClick={() => autoAdvance('abfindungZeitpunkt', '4wochen', 'S19', 'S3', 1, 'green')}
               />
               <RadioOption
                 label="Erst nach mehreren Monaten"
                 selected={answers.abfindungZeitpunkt === 'spaet'}
-                onClick={() => autoAdvance('abfindungZeitpunkt', 'spaet', 'S4', 'S3', 1, 'yellow')}
+                onClick={() => autoAdvance('abfindungZeitpunkt', 'spaet', 'S19', 'S3', 1, 'yellow')}
               />
               <RadioOption
                 label="Keine Regelung zum Auszahlungszeitpunkt"
                 selected={answers.abfindungZeitpunkt === 'keine'}
-                onClick={() => autoAdvance('abfindungZeitpunkt', 'keine', 'S4', 'S3', 1, 'red')}
+                onClick={() => autoAdvance('abfindungZeitpunkt', 'keine', 'S19', 'S3', 1, 'red')}
               />
             </div>
           </div>
@@ -1077,6 +1079,41 @@ export default function AufhebungsvertragPruefenPage() {
             {answers.druckAusgeubt === 'andere' && (
               <InfoBox>
                 Widerrechtliche Drohung berechtigt zur Anfechtung des Aufhebungsvertrags (&sect;123 BGB). Handeln Sie schnell — die Anfechtungsfrist beträgt 1 Jahr.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      /* ── S19: Turboklausel (Kategorie 1: Abfindung) ── */
+      case 'S19':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Enthält der Vertrag eine Turboklausel (Sprinterklausel)?
+            </h2>
+            <p className="text-[0.88rem] text-ink-muted leading-relaxed mb-5">
+              Eine Turboklausel gibt Ihnen das Recht, das Arbeitsverhältnis vor dem vereinbarten Beendigungsdatum zu beenden — die ersparte Vergütung wird dann als zusätzliche Abfindung ausgezahlt.
+            </p>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja, eine Turboklausel ist vereinbart"
+                selected={answers.turboklausel === 'ja'}
+                onClick={() => autoAdvance('turboklausel', 'ja', 'S4', 'S19', 1, 'green')}
+              />
+              <RadioOption
+                label="Nein, keine Turboklausel enthalten"
+                selected={answers.turboklausel === 'nein'}
+                onClick={() => selectWithInfo('turboklausel', 'nein', 'S4', 'S19', 1, 'yellow')}
+              />
+              <RadioOption
+                label="Ich weiß es nicht"
+                selected={answers.turboklausel === 'unsicher'}
+                onClick={() => autoAdvance('turboklausel', 'unsicher', 'S4', 'S19', 1, 'yellow')}
+              />
+            </div>
+            {answers.turboklausel === 'nein' && (
+              <InfoBox>
+                Eine Turboklausel kann für Sie vorteilhaft sein: Finden Sie vor dem Beendigungsdatum eine neue Stelle, können Sie früher wechseln und erhalten die restliche Vergütung als zusätzliche Zahlung. Es lohnt sich, diese Klausel nachzuverhandeln.
               </InfoBox>
             )}
           </div>
