@@ -184,6 +184,156 @@ export const urteile: Urteil[] = [
       'bag-6-azr-333-21-aufhebungsvertrag-faires-verhandeln',
     ],
   },
+  {
+    slug: 'bag-2-azr-17-23-whatsapp-kuendigung-chatgruppe',
+    az: '2 AZR 17/23',
+    gericht: 'Bundesarbeitsgericht',
+    gerichtUrl: 'https://www.bundesarbeitsgericht.de/presse/kuendigung-wegen-aeusserungen-in-einer-chatgruppe/',
+    datum: '24. August 2023',
+    jahr: 2023,
+    senat: '2. Senat',
+    kategorie: 'Verhaltensbedingte Kündigung',
+    titel: 'Fristlose Kündigung wegen Beleidigungen in WhatsApp-Chatgruppe',
+    kurzfassung:
+      'Wer sich in einer privaten WhatsApp-Gruppe in stark beleidigender, rassistischer oder sexistischer Weise über Vorgesetzte und Kollegen äußert, kann sich nur im Ausnahmefall auf eine berechtigte Vertraulichkeitserwartung berufen. Eine fristlose Kündigung kann gerechtfertigt sein.',
+    sachverhalt:
+      'Der Kläger war seit über 20 Jahren bei der Beklagten (TUIfly GmbH) beschäftigt und gehörte seit 2014 einer WhatsApp-Gruppe mit fünf weiteren aktiven und ehemaligen Mitarbeitern an. Im November 2020 wurde ein weiteres ehemaliges Gruppenmitglied aufgenommen. Alle Mitglieder waren langjährig befreundet, zwei sogar miteinander verwandt. Neben privaten Themen äußerte sich der Kläger in stark beleidigender, rassistischer, sexistischer und zu Gewalt aufstachelnder Weise über Vorgesetzte und Arbeitskollegen. Nachdem ein Gruppenmitglied den Chatverlauf einem Unbeteiligten zeigte, gelangte dieser zum Personalleiter. Der Arbeitgeber kündigte das — aufgrund tariflicher Bestimmungen ordentlich unkündbare — Arbeitsverhältnis außerordentlich fristlos.',
+    entscheidung:
+      'Das BAG hob das Berufungsurteil des LAG Niedersachsen auf und verwies die Sache zurück. Das BAG stellte klar, dass die Äußerungen in der Chatgruppe grundsätzlich geeignet sind, eine außerordentliche Kündigung zu rechtfertigen. Grobe Beleidigungen über Betriebsangehörige stellen eine erhebliche Pflichtverletzung dar. Eine berechtigte Vertraulichkeitserwartung besteht bei beleidigenden und menschenverachtenden Nachrichten nicht automatisch — der Arbeitnehmer muss besonders darlegen, warum er davon ausgehen durfte, dass die Inhalte vertraulich bleiben.',
+    begruendung:
+      'Das BAG legt für private Kommunikation in Chatgruppen einen strengeren Maßstab an als bisher. Entscheidend für eine berechtigte Vertraulichkeitserwartung ist die Zusammensetzung und Größe des Adressatenkreises sowie der Inhalt der Nachrichten. Sind beleidigende und menschenverachtende Äußerungen über Betriebsangehörige der Inhalt, reicht allein die langjährige Freundschaft oder Verwandtschaft der Mitglieder für eine berechtigte Vertraulichkeitserwartung nicht aus. Der Arbeitnehmer muss besonders darlegen, warum er angesichts der Größe der Chatgruppe, ihrer geänderten Zusammensetzung und der schnellen Weiterleitbarkeit von Nachrichten eine berechtigte Vertraulichkeitserwartung haben durfte.',
+    bedeutung:
+      'Äußerungen in Chatgruppen mit Arbeitskollegen sind kein rechtsfreier Raum. Auch „private" Gruppen schützen nicht vor arbeitsrechtlichen Konsequenzen, wenn beleidigende Inhalte über Betriebsangehörige ausgetauscht werden.',
+    leitsatz:
+      'Stark beleidigende Äußerungen über Vorgesetzte und Kollegen in einer privaten WhatsApp-Chatgruppe können eine außerordentliche Kündigung rechtfertigen. Bei beleidigenden und menschenverachtenden Nachrichten über Betriebsangehörige bedarf es einer besonderen Darlegung, warum der Arbeitnehmer berechtigt erwarten konnte, deren Inhalt werde vertraulich behandelt.',
+    bewertung: {
+      sterne: 5,
+      text: 'Wegweisendes Urteil zur digitalen Kommunikation am Arbeitsplatz. Das BAG verschärft den Maßstab für Vertraulichkeitserwartungen in Chatgruppen erheblich.',
+      fuerArbeitnehmer:
+        'Äußerungen in Chatgruppen mit Arbeitskollegen sind kein rechtsfreier Raum — auch wenn die Gruppe „privat" ist. Bei beleidigenden Inhalten droht eine fristlose Kündigung.',
+      fuerArbeitgeber:
+        'Erleichterte Kündigung bei Hate Speech in Chatgruppen. Sobald der Inhalt bekannt wird, stehen die Chancen auf Wirksamkeit einer Kündigung gut.',
+      praxishinweis:
+        'Entscheidend ist der Inhalt der Nachrichten und die Größe der Gruppe. Je größer die Gruppe und je gravierender die Äußerungen, desto geringer die Vertraulichkeitserwartung.',
+    },
+    tags: ['Kündigung', 'WhatsApp', 'Chatgruppe', 'Beleidigung', 'Vertraulichkeit', 'außerordentliche Kündigung'],
+    verwandteUrteile: [
+      'bag-2-azr-541-09-emmely-abmahnung-kuendigung',
+      'bag-2-azr-773-13-social-media-kuendigung',
+    ],
+  },
+  {
+    slug: 'bag-9-azr-541-15-urlaubsverfall-hinweispflicht',
+    az: '9 AZR 541/15',
+    gericht: 'Bundesarbeitsgericht',
+    gerichtUrl: 'https://www.bundesarbeitsgericht.de/entscheidung/9-azr-541-15/',
+    datum: '19. Februar 2019',
+    jahr: 2019,
+    senat: '9. Senat',
+    kategorie: 'Urlaubsrecht',
+    titel: 'Urlaub verfällt nur nach ausdrücklichem Hinweis des Arbeitgebers',
+    kurzfassung:
+      'Urlaubsansprüche verfallen am Jahresende nur dann, wenn der Arbeitgeber den Arbeitnehmer zuvor konkret und transparent darauf hingewiesen hat, dass Urlaub verfällt, und ihn aufgefordert hat, den Urlaub tatsächlich zu nehmen.',
+    sachverhalt:
+      'Der Kläger war als wissenschaftlicher Mitarbeiter bei der Beklagten beschäftigt. Er begehrte nach Beendigung des Arbeitsverhältnisses die Abgeltung von Urlaub, den er in den Vorjahren nicht genommen hatte. Die Beklagte berief sich darauf, der Urlaub sei jeweils am 31. Dezember des Urlaubsjahres verfallen, da der Kläger keinen Urlaubsantrag gestellt hatte. Das LAG München wies die Klage ab.',
+    entscheidung:
+      'Das BAG hob das Berufungsurteil auf und verwies die Sache zurück. In richtlinienkonformer Auslegung des §7 Abs. 1 und 3 BUrlG stellte das BAG klar: Der gesetzliche Urlaubsanspruch erlischt am Jahresende nur, wenn der Arbeitgeber den Arbeitnehmer zuvor konkret und in völliger Transparenz in die Lage versetzt hat, seinen Urlaub tatsächlich zu nehmen. Dazu muss der Arbeitgeber den Arbeitnehmer über den Umfang des Resturlaubs informieren, ihn zur Urlaubsnahme auffordern und klar darauf hinweisen, dass der Urlaub andernfalls verfällt.',
+    begruendung:
+      'Das BAG setzt damit das Urteil des EuGH vom 6. November 2018 (C-684/16 — „Shimizu") ins deutsche Recht um. Art. 7 der Arbeitszeitrichtlinie (2003/88/EG) verbietet eine nationale Regelung, nach der ein Arbeitnehmer automatisch Urlaubsansprüche verliert, wenn der Arbeitgeber nicht nachweisen kann, dass er ihn in die Lage versetzt hat, den Urlaub tatsächlich zu nehmen. Fehlt der Hinweis, können sich Urlaubsansprüche über Jahre ansammeln — und müssen bei Beendigung des Arbeitsverhältnisses vollständig abgegolten werden.',
+    bedeutung:
+      'Urlaub verfällt nicht mehr automatisch am Jahresende. Ohne expliziten Hinweis des Arbeitgebers können sich Urlaubsansprüche jahrelang ansammeln und bei Kündigung abgegolten werden.',
+    leitsatz:
+      'Der Anspruch auf den gesetzlichen Mindesturlaub erlischt am Jahresende nur, wenn der Arbeitgeber den Arbeitnehmer konkret und in völliger Transparenz dazu aufgefordert hat, den Urlaub zu nehmen, und ihn klar darauf hingewiesen hat, dass der Urlaub verfällt, wenn er ihn nicht nimmt.',
+    bewertung: {
+      sterne: 5,
+      text: 'Grundsatzentscheidung mit enormer praktischer Reichweite. Arbeitgeber müssen aktiv auf drohenden Urlaubsverfall hinweisen — passives Abwarten reicht nicht mehr.',
+      fuerArbeitnehmer:
+        'Urlaub verfällt nicht mehr automatisch. Ohne expliziten Hinweis des Arbeitgebers können sich Urlaubsansprüche jahrelang ansammeln und bei Kündigung abgegolten werden.',
+      fuerArbeitgeber:
+        'Dringend handeln: Jahresweise schriftliche Hinweise an alle Mitarbeiter auf verbleibenden Urlaub und Verfalltermin einführen. Ohne Nachweis trägt der Arbeitgeber das Risiko.',
+      praxishinweis:
+        'Empfohlen: Jährlich im September/Oktober schriftliche E-Mail mit Resturlaubsstand, Aufforderung zur Buchung und klarem Hinweis auf den 31.12. als Verfalldatum. Diese E-Mail als Nachweis aufbewahren.',
+    },
+    tags: ['Urlaub', 'Urlaubsverfall', 'Hinweispflicht', 'BUrlG', 'EuGH', 'Urlaubsabgeltung'],
+    verwandteUrteile: [
+      'bag-2-azr-140-12-leiharbeitnehmer-schwellenwert',
+    ],
+  },
+  {
+    slug: 'bag-5-azr-716-15-mindestlohn-bereitschaftsdienst',
+    az: '5 AZR 716/15',
+    gericht: 'Bundesarbeitsgericht',
+    gerichtUrl: 'https://www.bundesarbeitsgericht.de/',
+    datum: '29. Juni 2016',
+    jahr: 2016,
+    senat: '5. Senat',
+    kategorie: 'Vergütung & Mindestlohn',
+    titel: 'Mindestlohn gilt auch für Bereitschaftsdienst',
+    kurzfassung:
+      'Bereitschaftszeiten sind vergütungspflichtige Arbeitszeit im Sinne des Mindestlohngesetzes. Der gesetzliche Mindestlohn muss auch für jede Stunde Bereitschaftsdienst gezahlt werden — das MiLoG differenziert nicht nach dem Grad der tatsächlichen Inanspruchnahme.',
+    sachverhalt:
+      'Ein Rettungsassistent war in einer Vier-Tage-Woche in Zwölfstundenschichten beschäftigt. Auf sein Arbeitsverhältnis fand der TVöD Anwendung. Im Rettungsdienst fallen regelmäßig Bereitschaftszeiten an. Der Kläger machte geltend, der Mindestlohn sei auch für Bereitschaftszeiten zu zahlen, bei denen keine volle Arbeitsleistung erbracht wird. Arbeitsgericht und LAG Köln wiesen die Klage ab.',
+    entscheidung:
+      'Das BAG bestätigte die Entscheidung der Vorinstanzen im Ergebnis — die Klage war abzuweisen, weil das Grundgehalt des Klägers rechnerisch den Mindestlohn auch unter Einbeziehung der Bereitschaftszeiten überschritt. Grundsätzlich stellte das BAG jedoch ausdrücklich klar: Bereitschaftszeiten sind mit dem gesetzlichen Mindestlohn zu vergüten. Das MiLoG differenziert nicht zwischen Vollarbeit und Bereitschaftsdienst.',
+    begruendung:
+      'Zur vergütungspflichtigen Arbeit zählt nach ständiger Rechtsprechung des BAG auch die vom Arbeitgeber veranlasste Untätigkeit, während derer der Arbeitnehmer am Arbeitsplatz oder einer vom Arbeitgeber bestimmten Stelle anwesend sein muss und nicht frei über den Zeitraum verfügen kann. Da das Mindestlohngesetz keine Staffelung oder Faktorisierung von Bereitschaftszeiten vorsieht, kann ein geringeres Entgelt als der gesetzliche Mindestlohn für Bereitschaftsdienst auch nicht durch Tarifvertrag oder Betriebsvereinbarung vereinbart werden.',
+    bedeutung:
+      'Für jede Stunde Bereitschaftsdienst muss mindestens der gesetzliche Mindestlohn gezahlt werden. Liegt Ihr Stundenlohn unter Einbeziehung der Bereitschaftsstunden unter dem Mindestlohn, haben Sie einen Nachzahlungsanspruch.',
+    leitsatz:
+      'Bereitschaftszeit ist mit dem gesetzlichen Mindestlohn zu vergüten. Das Mindestlohngesetz differenziert nicht nach dem Grad der tatsächlichen Inanspruchnahme des Arbeitnehmers.',
+    bewertung: {
+      sterne: 4,
+      text: 'Wichtige Klarstellung für alle Branchen mit Bereitschaftsdienst. Der gesetzliche Mindestlohn ist die absolute Untergrenze — auch für Bereitschaft.',
+      fuerArbeitnehmer:
+        'Für jede Stunde Bereitschaftsdienst muss mindestens der gesetzliche Mindestlohn gezahlt werden. Entscheidend ist die Gesamtbetrachtung: Gesamtgehalt geteilt durch Gesamtstunden inklusive Bereitschaft. Liegt der Stundenwert darunter, besteht Nachzahlungsanspruch.',
+      fuerArbeitgeber:
+        'Bereitschaftszeiten müssen in die Mindestlohnberechnung einbezogen werden. Tarifliche Faktorisierung (z. B. 60%) senkt nur das Entgelt, nicht den Mindestlohn als Untergrenze.',
+      praxishinweis:
+        'Berechnung: Monatliches Bruttogehalt ÷ (Vollarbeitsstunden + Bereitschaftsstunden) ≥ gesetzlicher Mindestlohn. Bei Unterschreitung besteht Anspruch auf Differenzzahlung.',
+    },
+    tags: ['Mindestlohn', 'Bereitschaftsdienst', 'MiLoG', 'Vergütung', 'Rettungsdienst', 'Pflege'],
+    verwandteUrteile: [
+      'bag-2-azr-140-12-leiharbeitnehmer-schwellenwert',
+    ],
+  },
+  {
+    slug: 'bag-1-abr-22-21-arbeitszeiterfassung-pflicht',
+    az: '1 ABR 22/21',
+    gericht: 'Bundesarbeitsgericht',
+    gerichtUrl: 'https://www.bundesarbeitsgericht.de/entscheidung/1-abr-22-21/',
+    datum: '13. September 2022',
+    jahr: 2022,
+    senat: '1. Senat',
+    kategorie: 'Arbeitszeit & Betriebsrat',
+    titel: 'Arbeitgeber sind gesetzlich zur Arbeitszeiterfassung verpflichtet',
+    kurzfassung:
+      'Arbeitgeber sind nach § 3 Abs. 2 Nr. 1 ArbSchG in unionsrechtskonformer Auslegung gesetzlich verpflichtet, ein System einzuführen, mit dem Beginn, Ende und Dauer der täglichen Arbeitszeit der Arbeitnehmer erfasst werden kann — einschließlich der Überstunden.',
+    sachverhalt:
+      'Der Betriebsrat einer Wohneinrichtung im Bereich der Eingliederungshilfe begehrte die gerichtliche Feststellung, dass ihm ein Initiativrecht zur Einführung eines elektronischen Zeiterfassungssystems zusteht. Nachdem die Verhandlungen über eine entsprechende Betriebsvereinbarung gescheitert waren, wollte der Betriebsrat die Einführung über die Einigungsstelle erzwingen. Das LAG Hamm hatte dem Betriebsrat ein solches Initiativrecht zuerkannt.',
+    entscheidung:
+      'Das BAG hob die Entscheidung des LAG Hamm auf. Dem Betriebsrat steht kein Initiativrecht zur Einführung einer elektronischen Zeiterfassung zu, weil eine gesetzliche Pflicht des Arbeitgebers zur Zeiterfassung bereits besteht. Überraschend und weitreichend: Das BAG stellte dabei erstmals ausdrücklich fest, dass Arbeitgeber nach § 3 Abs. 2 Nr. 1 ArbSchG in unionsrechtskonformer Auslegung verpflichtet sind, die gesamte Arbeitszeit ihrer Arbeitnehmer systematisch zu erfassen.',
+    begruendung:
+      'Das BAG stützt die Erfassungspflicht auf eine unionsrechtskonforme Auslegung des § 3 Abs. 2 Nr. 1 ArbSchG in Verbindung mit der Rechtsprechung des EuGH (Urteil vom 14. Mai 2019, C-55/18 — „Deutsche Bank"). Da eine gesetzliche Pflicht besteht, gibt es für ein darauf gerichtetes Initiativrecht des Betriebsrats nach § 87 Abs. 1 Eingangssatz BetrVG keinen Raum. Bei der konkreten Ausgestaltung des Zeiterfassungssystems — also dem „Wie" — hat der Betriebsrat jedoch weiterhin ein Mitbestimmungsrecht.',
+    bedeutung:
+      'Ihre gesamte Arbeitszeit — inklusive Überstunden — muss erfasst werden. Überstunden können damit lückenlos nachgewiesen werden. Das stärkt Vergütungsansprüche erheblich.',
+    leitsatz:
+      'Der Arbeitgeber ist nach § 3 Abs. 2 Nr. 1 ArbSchG in unionsrechtskonformer Auslegung verpflichtet, ein System einzuführen, mit dem die von den Arbeitnehmern geleistete tägliche Arbeitszeit erfasst werden kann. Wegen dieser gesetzlichen Pflicht steht dem Betriebsrat kein Initiativrecht zur Einführung eines Zeiterfassungssystems zu.',
+    bewertung: {
+      sterne: 5,
+      text: 'Paukenschlag für die betriebliche Praxis. Das BAG verpflichtet alle Arbeitgeber zur systematischen Arbeitszeiterfassung — mit erheblichen Konsequenzen für Vertrauensarbeitszeit und Homeoffice.',
+      fuerArbeitnehmer:
+        'Ihre gesamte Arbeitszeit — inklusive Überstunden — muss erfasst werden. Überstunden können damit lückenlos nachgewiesen werden. Das stärkt Vergütungsansprüche erheblich.',
+      fuerArbeitgeber:
+        'Handlungspflicht: Wer noch kein System zur Erfassung der gesamten Arbeitszeit hat, muss eines einführen. Bei der Ausgestaltung ist der Betriebsrat zu beteiligen. Vertrauensarbeitszeit ohne jede Erfassung ist nicht mehr zulässig.',
+      praxishinweis:
+        'Das Urteil gilt ab sofort. Die Form der Erfassung (analog oder digital) ist frei wählbar. Wichtig: Das System muss Beginn, Ende und Dauer der Arbeitszeit „objektiv und verlässlich" erfassen. Reine Vertrauensarbeitszeit ohne Aufzeichnung genügt den Anforderungen nicht mehr.',
+    },
+    tags: ['Arbeitszeiterfassung', 'ArbSchG', 'Betriebsrat', 'Mitbestimmung', 'Überstunden', 'EuGH'],
+    verwandteUrteile: [
+      'bag-5-azr-716-15-mindestlohn-bereitschaftsdienst',
+      'bag-2-azr-140-12-leiharbeitnehmer-schwellenwert',
+    ],
+  },
 ];
 
 export function getUrteil(slug: string): Urteil | undefined {
