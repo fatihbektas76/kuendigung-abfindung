@@ -1064,7 +1064,7 @@ export default function KuendigungPruefenPage() {
                 <button
                   onClick={() => canAdvance() && goTo(getNextManualStep())}
                   disabled={!canAdvance()}
-                  className="py-3 px-8 bg-[#2A1F0E] text-gold border-none rounded-sm font-sans text-[0.92rem] font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="py-3 px-8 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   Weiter &rarr;
                 </button>
