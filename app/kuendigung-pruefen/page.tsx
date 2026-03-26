@@ -158,7 +158,7 @@ function getStepProgress(s: StepId): { idx: number; total: number; cat: string }
 /* ───── Main Component ───── */
 export default function KuendigungPruefenPage() {
   const [step, setStep] = useState<StepId>('S1');
-  const [history, setHistory] = useState<StepId[]>([]);
+  const [, setHistory] = useState<StepId[]>([]);
   const [answers, setAnswers] = useState<Answers>(initialAnswers);
   const [submitted, setSubmitted] = useState(false);
   const [warn21, setWarn21] = useState(false);
