@@ -41,6 +41,18 @@ const tools = [
     linkText: 'Jetzt prüfen',
     href: '/kuendigung-pruefen',
   },
+  {
+    label: 'Schwellenwert',
+    title: 'Schwellenwert-Rechner §23 KSchG',
+    text: 'Gilt das Kündigungsschutzgesetz für Ihren Betrieb? Geben Sie die Mitarbeiterzahlen ein und prüfen Sie sofort, ob der Schwellenwert von 10 Vollzeitäquivalenten (FTE) überschritten wird.',
+    checks: [
+      'Vollzeit, Teilzeit & Minijobber erfassen',
+      'Automatische FTE-Berechnung',
+      'Sofort wissen, ob KSchG gilt',
+    ],
+    linkText: 'Jetzt prüfen',
+    href: '/schwellenwert-rechner',
+  },
 ];
 
 const faqs = [
@@ -59,6 +71,10 @@ const faqs = [
   {
     q: 'Gilt der Kündigungsschutz für mich?',
     a: 'Das Kündigungsschutzgesetz gilt grundsätzlich für Arbeitnehmer, die länger als 6 Monate in einem Betrieb mit mehr als 10 Vollzeit-Mitarbeitern beschäftigt sind. Daneben gibt es besondere Schutztatbestände — etwa bei Schwangerschaft, Elternzeit, Schwerbehinderung oder als Betriebsratsmitglied. Unser Kündigungscheck prüft alle relevanten Faktoren automatisch.',
+  },
+  {
+    q: 'Wofür brauche ich den Schwellenwert-Rechner?',
+    a: 'Das Kündigungsschutzgesetz gilt nur in Betrieben mit mehr als 10 Vollzeitäquivalenten (FTE). Der Schwellenwert-Rechner prüft, ob Ihr Betrieb diesen Wert überschreitet — denn davon hängt ab, ob Ihr Arbeitgeber überhaupt einen Kündigungsgrund braucht. Teilzeitkräfte und Minijobber werden anteilig gezählt.',
   },
   {
     q: 'Was ist der Unterschied zwischen Abfindung und Kündigungsschutzklage?',
@@ -122,6 +138,7 @@ export default function ToolsPage() {
               { '@type': 'ListItem', position: 1, name: 'Abfindungsrechner', url: `${BASE_URL}/abfindungsrechner` },
               { '@type': 'ListItem', position: 2, name: 'Kündigungscheck', url: `${BASE_URL}/kuendigung-pruefen` },
               { '@type': 'ListItem', position: 3, name: 'Aufhebungsvertrag prüfen', url: `${BASE_URL}/kuendigung-pruefen` },
+              { '@type': 'ListItem', position: 4, name: 'Schwellenwert-Rechner §23 KSchG', url: `${BASE_URL}/schwellenwert-rechner` },
             ],
           }),
         }}
@@ -168,7 +185,7 @@ export default function ToolsPage() {
       {/* Tool-Karten */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
-          <div className="grid grid-cols-3 gap-6 max-lg:grid-cols-1">
+          <div className="grid grid-cols-2 gap-6 max-md:grid-cols-1">
             {tools.map((tool) => (
               <Link
                 key={tool.title}
@@ -285,6 +302,13 @@ export default function ToolsPage() {
               Beschäftigungsjahr als Ausgangspunkt. Je nach Verhandlungsgeschick, Kündigungsschutzlage und
               wirtschaftlicher Situation des Arbeitgebers sind Abweichungen nach oben oder unten möglich &mdash; das
               Ergebnis zeigt Ihnen daher Min-, Mittel- und Max-Szenario.
+            </p>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              Der{' '}
+              <Link href="/schwellenwert-rechner" className="text-gold no-underline hover:underline">Schwellenwert-Rechner</Link>{' '}
+              beantwortet eine der häufigsten Fragen im Arbeitsrecht: Gilt das Kündigungsschutzgesetz überhaupt für
+              meinen Betrieb? Er berechnet die Vollzeitäquivalente (FTE) nach &sect;23 KSchG und zeigt Ihnen sofort,
+              ob der Schwellenwert von 10 überschritten wird.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Wichtig: Kein Online-Tool ersetzt eine individuelle anwaltliche Beratung. Die Tools geben Ihnen eine
