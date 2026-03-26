@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
 import TeilzeitRechnerClient from '@/components/TeilzeitRechnerClient';
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const faqs = [
   {
@@ -55,57 +55,24 @@ const tabelle6Tage = [
 export default function UrlaubTeilzeitRechnerPage() {
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Tools & Rechner', item: `${BASE_URL}/tools` },
-              { '@type': 'ListItem', position: 3, name: 'Urlaub Teilzeit berechnen', item: `${BASE_URL}/urlaub-teilzeit-rechner` },
-            ],
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebApplication + AggregateRating */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Urlaubsrechner Teilzeit — Pro-rata-temporis-Berechnung',
-            applicationCategory: 'Legal Tool',
-            operatingSystem: 'Any',
-            url: `${BASE_URL}/urlaub-teilzeit-rechner`,
-            description:
-              'Kostenloser Urlaubsrechner für Teilzeitbeschäftigte. Berechnet den anteiligen Urlaubsanspruch nach dem Pro-rata-temporis-Grundsatz (§3 BUrlG).',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5.0',
-              reviewCount: '68',
-              bestRating: '5',
-              worstRating: '1',
-            },
-            provider: { '@id': `${BASE_URL}/#organization` },
-            author: {
-              '@type': 'Person',
-              name: 'Fatih Bektas',
-              jobTitle: 'Fachanwalt für Arbeitsrecht',
-              hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
-              memberOf: 'Rechtsanwaltskammer Karlsruhe',
-              sameAs: ['https://www.anwalt.de/fatihbektas', `${BASE_URL}/team`],
-            },
-            datePublished: '2025-01-15',
-            dateModified: new Date().toISOString().slice(0, 10),
-            inLanguage: 'de',
-          }),
-        }}
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner`}
+        pageTitle="Urlaubsrechner Teilzeit — Pro-rata-temporis-Berechnung"
+        pageDescription="Kostenloser Urlaubsrechner für Teilzeitbeschäftigte. Berechnet den anteiligen Urlaubsanspruch nach dem Pro-rata-temporis-Grundsatz (§3 BUrlG)."
+        pageType="WebApplication"
+        appName="Urlaubsrechner Teilzeit — Pro-rata-temporis-Berechnung"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
+          { name: 'Urlaub Teilzeit berechnen', url: `${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner` },
+        ]}
+        speakableSelectors={['#ergebnis-box']}
+        isBasedOn={[
+          { name: '§3 Bundesurlaubsgesetz (BUrlG)', url: 'https://www.gesetze-im-internet.de/burlg/__3.html' },
+          { name: '§4 Teilzeit- und Befristungsgesetz (TzBfG)', url: 'https://www.gesetze-im-internet.de/tzbfg/__4.html' },
+        ]}
+        includeOrganization={false}
+        includeRating={false}
       />
 
       {/* Schema.org - FAQPage */}
@@ -158,69 +125,6 @@ export default function UrlaubTeilzeitRechnerPage() {
           }),
         }}
       />
-
-      {/* Schema.org - WebPage + Speakable */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            name: `Urlaub Teilzeit berechnen ${new Date().getFullYear()}`,
-            url: `${BASE_URL}/urlaub-teilzeit-rechner`,
-            speakable: {
-              '@type': 'SpeakableSpecification',
-              cssSelector: ['#direktantwort', 'h1', '#ergebnis-box'],
-            },
-            isBasedOn: [
-              {
-                '@type': 'Legislation',
-                name: '§3 Bundesurlaubsgesetz (BUrlG)',
-                url: 'https://www.gesetze-im-internet.de/burlg/__3.html',
-              },
-              {
-                '@type': 'Legislation',
-                name: '§4 Teilzeit- und Befristungsgesetz (TzBfG)',
-                url: 'https://www.gesetze-im-internet.de/tzbfg/__4.html',
-              },
-            ],
-          }),
-        }}
-      />
-
-      {/* Schema.org - LegalService Organization */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LegalService',
-            '@id': `${BASE_URL}/#organization`,
-            name: 'APOS Legal — Kanzlei Fatih Bektas',
-            url: BASE_URL,
-            telephone: '+4915127003173',
-            email: 'bektas@apos.legal',
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5.0',
-              reviewCount: '68',
-            },
-          }),
-        }}
-      />
-
-      {/* GEO-Optimierung */}
-      <div itemScope itemType="https://schema.org/WebApplication" style={{ display: 'none' }}>
-        <meta itemProp="name" content="Urlaubsrechner Teilzeit" />
-        <meta
-          itemProp="description"
-          content="Kostenloser Urlaubsrechner für Teilzeitbeschäftigte nach §3 BUrlG und Pro-rata-temporis-Prinzip."
-        />
-        <meta itemProp="author" content="Fatih Bektas, Fachanwalt für Arbeitsrecht" />
-        <meta itemProp="inLanguage" content="de" />
-        <meta itemProp="applicationCategory" content="Legal Tool" />
-        <meta itemProp="isBasedOn" content="§3 BUrlG, §4 TzBfG, Pro-rata-temporis" />
-      </div>
 
       {/* Hero */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">

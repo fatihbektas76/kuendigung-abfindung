@@ -5,22 +5,22 @@ import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
   title: `Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (${new Date().getFullYear()})`,
   description:
     'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer. Kostenlose Ersteinschätzung vom Fachanwalt.',
   alternates: {
-    canonical: `${BASE_URL}/abmahnung`,
+    canonical: `${SEO_CONFIG.baseUrl}/abmahnung`,
   },
   openGraph: {
     title: `Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (${new Date().getFullYear()})`,
     description: 'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer.',
-    url: `${BASE_URL}/abmahnung`,
+    url: `${SEO_CONFIG.baseUrl}/abmahnung`,
   },
   twitter: {
     card: 'summary',
@@ -55,19 +55,13 @@ const faqs = [
 export default function AbmahnungPage() {
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Abmahnung', item: `${BASE_URL}/abmahnung` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung` },
+        ]}
+        datePublished="2025-01-15"
       />
 
       {/* Schema.org - FAQPage */}
@@ -82,20 +76,6 @@ export default function AbmahnungPage() {
               name: faq.q,
               acceptedAnswer: { '@type': 'Answer', text: faq.a },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: `${BASE_URL}/abmahnung`,
-            dateModified: new Date().toISOString(),
-            datePublished: '2025-01-15',
           }),
         }}
       />

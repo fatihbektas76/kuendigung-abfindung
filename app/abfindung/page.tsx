@@ -5,22 +5,22 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 import { entries } from '@/lib/betriebszugehoerigkeit';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
   title: `Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (${new Date().getFullYear()})`,
   description:
     'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht. Kostenlose Ersteinschätzung.',
   alternates: {
-    canonical: `${BASE_URL}/abfindung`,
+    canonical: `${SEO_CONFIG.baseUrl}/abfindung`,
   },
   openGraph: {
     title: `Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (${new Date().getFullYear()})`,
     description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
-    url: `${BASE_URL}/abfindung`,
+    url: `${SEO_CONFIG.baseUrl}/abfindung`,
   },
   twitter: {
     card: 'summary',
@@ -58,19 +58,17 @@ const gehalt = 3000;
 export default function AbfindungPage() {
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Abfindung', item: `${BASE_URL}/abfindung` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/abfindung`}
+        pageTitle="Abfindung nach Kündigung"
+        pageDescription="Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt."
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Abfindung', url: `${SEO_CONFIG.baseUrl}/abfindung` },
+        ]}
+        includeOrganization={false}
+        includeRating={false}
       />
 
       {/* Schema.org - FAQPage */}
@@ -85,20 +83,6 @@ export default function AbfindungPage() {
               name: faq.q,
               acceptedAnswer: { '@type': 'Answer', text: faq.a },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: `${BASE_URL}/abfindung`,
-            dateModified: new Date().toISOString(),
-            datePublished: '2025-01-15',
           }),
         }}
       />

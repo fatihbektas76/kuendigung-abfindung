@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
 import AbfindungJahreContent from './content';
 import abfindungData from '@/data/generated/abfindung-data.json';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const upper = (1.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const title = `Abfindung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit (${new Date().getFullYear()})`;
   const description = `Abfindung nach ${yl}: Zwischen ${lower} und ${upper} Monatsgehältern. Tabelle, Rechner, Steuerrechner und kostenlose Prüfung. Kündigungsfrist: ${entry.kuendigungsfrist}.`;
-  const url = `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
+  const url = `${SEO_CONFIG.baseUrl}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,
     description,
@@ -56,29 +56,20 @@ export default function Page({ params }: Props) {
   const next = entries.find((e) => e.year === entry.year + 1);
 
   const yl = yearLabel(entry.year);
-  const pageUrl = `${BASE_URL}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
+  const pageUrl = `${SEO_CONFIG.baseUrl}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
 
   return (
     <>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Startseite', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Abfindung', item: `${BASE_URL}/abfindung` },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: `Abfindung nach ${yl}`,
-                item: pageUrl,
-              },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        pageUrl={pageUrl}
+        pageTitle={`Abfindung nach ${yl}`}
+        pageDescription={`Abfindung nach ${yl} Betriebszugehörigkeit`}
+        breadcrumbs={[
+          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
+          { name: 'Abfindung', url: `${SEO_CONFIG.baseUrl}/abfindung` },
+          { name: `Abfindung nach ${yl}`, url: pageUrl },
+        ]}
       />
 
       {/* Schema.org - FAQPage (8 Fragen) */}

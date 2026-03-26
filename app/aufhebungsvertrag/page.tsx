@@ -4,22 +4,22 @@ import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
   title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
   description:
     'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag – kostenlose Ersteinschätzung.',
   alternates: {
-    canonical: `${BASE_URL}/aufhebungsvertrag`,
+    canonical: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag`,
   },
   openGraph: {
     title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
     description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag.',
-    url: `${BASE_URL}/aufhebungsvertrag`,
+    url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag`,
   },
   twitter: {
     card: 'summary',
@@ -92,19 +92,13 @@ const subpages = [
 export default function AufhebungsvertragPage() {
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Aufhebungsvertrag', item: `${BASE_URL}/aufhebungsvertrag` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag` },
+        ]}
+        datePublished="2025-01-15"
       />
 
       {/* Schema.org - FAQPage */}
@@ -119,20 +113,6 @@ export default function AufhebungsvertragPage() {
               name: faq.q,
               acceptedAnswer: { '@type': 'Answer', text: faq.a },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: `${BASE_URL}/aufhebungsvertrag`,
-            dateModified: new Date().toISOString(),
-            datePublished: '2025-01-15',
           }),
         }}
       />

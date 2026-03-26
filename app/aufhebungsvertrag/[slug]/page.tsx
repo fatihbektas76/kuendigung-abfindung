@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import { aufhebungsvertragData, getAufhebungsvertragEntry } from '@/lib/aufhebungsvertrag-data';
 import { getAufhebungsvertragContent } from '@/lib/generated-aufhebungsvertrag-content';
 import AufhebungsvertragSubContent from './content';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${entry.h1} (${new Date().getFullYear()})`,
     description: `${entry.h1} — ${entry.description} Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`,
     alternates: {
-      canonical: `${BASE_URL}/aufhebungsvertrag/${entry.slug}/`,
+      canonical: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/${entry.slug}/`,
     },
   };
 }
@@ -43,25 +43,13 @@ export default function Page({ params }: Props) {
 
   return (
     <>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Startseite', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Aufhebungsvertrag', item: `${BASE_URL}/aufhebungsvertrag` },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: entry.h1,
-                item: `${BASE_URL}/aufhebungsvertrag/${entry.slug}/`,
-              },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
+          { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag` },
+          { name: entry.h1, url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/${entry.slug}/` },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

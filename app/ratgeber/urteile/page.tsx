@@ -1,20 +1,17 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
 import { urteile } from '@/lib/urteile';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 
 export const revalidate = 86400;
 
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
-
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: `Aktuelle Urteile: Kündigung & Abfindung (${new Date().getFullYear()})`,
   description:
     'Wichtige BAG-Urteile zu Kündigung, Abfindung, Aufhebungsvertrag und Abmahnung. Laufend aktualisiert. Was die Rechtsprechung für Arbeitnehmer bedeutet.',
-  alternates: {
-    canonical: `${BASE_URL}/ratgeber/urteile`,
-  },
-};
+  path: '/ratgeber/urteile',
+});
 
 const faqs = [
   {
@@ -34,20 +31,13 @@ const faqs = [
 export default function UrteilePage() {
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${BASE_URL}/ratgeber` },
-              { '@type': 'ListItem', position: 3, name: 'Urteile', item: `${BASE_URL}/ratgeber/urteile` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },
+          { name: 'Urteile', url: `${SEO_CONFIG.baseUrl}/ratgeber/urteile` },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const faqs = [
   {
@@ -43,75 +43,19 @@ export default function AbfindungsrechnerPage() {
 
   return (
     <main>
-      {/* Schema.org - SoftwareApplication */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            name: 'Abfindungsrechner',
-            applicationCategory: 'UtilityApplication',
-            operatingSystem: 'Web',
-            url: `${BASE_URL}/abfindungsrechner`,
-            description:
-              'Kostenloser Abfindungsrechner: Berechnen Sie Ihre voraussichtliche Abfindung nach Kündigung in 30 Sekunden. Drei Szenarien basierend auf der Abfindungsformel.',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            author: {
-              '@type': 'Organization',
-              name: 'gekuendigt-abfindung.de',
-              url: BASE_URL,
-            },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5.0',
-              reviewCount: '68',
-              bestRating: '5',
-              worstRating: '1',
-            },
-            datePublished: '2025-01-15',
-            dateModified: new Date().toISOString().slice(0, 10),
-            inLanguage: 'de',
-          }),
-        }}
-      />
-
-      {/* Schema.org - Speakable WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            speakable: {
-              '@type': 'SpeakableSpecification',
-              cssSelector: ['#direktantwort', 'h1', '.ergebnis-box'],
-            },
-          }),
-        }}
-      />
-
-      {/* Schema.org - Author Entity */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: 'Fatih Bektas',
-            jobTitle: 'Fachanwalt für Arbeitsrecht',
-            hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
-            memberOf: 'Rechtsanwaltskammer Karlsruhe',
-            sameAs: [
-              'https://www.anwalt.de/fatihbektas',
-              `${BASE_URL}/team`,
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/abfindungsrechner`}
+        pageTitle="Abfindungsrechner"
+        pageDescription="Kostenloser Abfindungsrechner: Berechnen Sie Ihre voraussichtliche Abfindung nach Kündigung in 30 Sekunden."
+        pageType="WebApplication"
+        appName="Abfindungsrechner"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Abfindungsrechner', url: `${SEO_CONFIG.baseUrl}/abfindungsrechner` },
+        ]}
+        speakableSelectors={['.ergebnis-box']}
+        includeOrganization={false}
+        includeRating={false}
       />
 
       {/* Schema.org - FAQPage */}
@@ -126,21 +70,6 @@ export default function AbfindungsrechnerPage() {
               name: faq.q,
               acceptedAnswer: { '@type': 'Answer', text: faq.a },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Abfindungsrechner', item: `${BASE_URL}/abfindungsrechner` },
-            ],
           }),
         }}
       />
@@ -178,15 +107,6 @@ export default function AbfindungsrechnerPage() {
           }),
         }}
       />
-
-      {/* GEO-Optimierung */}
-      <div itemScope itemType="https://schema.org/WebApplication">
-        <meta itemProp="name" content="Abfindungsrechner" />
-        <meta itemProp="description" content="Berechnen Sie kostenlos Ihre voraussichtliche Abfindung nach Kündigung." />
-        <meta itemProp="author" content="Fatih Bektas" />
-        <meta itemProp="inLanguage" content="de" />
-        <meta itemProp="applicationCategory" content="Legal Tool" />
-      </div>
 
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">

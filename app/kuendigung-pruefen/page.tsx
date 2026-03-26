@@ -4,6 +4,8 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import StandAnzeige from '@/components/StandAnzeige';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 /* ───── Types ───── */
 interface Answers {
@@ -99,8 +101,6 @@ function RadioOption({ label, selected, onClick }: { label: string; selected: bo
     </button>
   );
 }
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 const pruefenFaqs = [
   {
@@ -927,47 +927,18 @@ export default function KuendigungPruefenPage() {
   /* ───── Render ───── */
   return (
     <div className="flex min-h-screen bg-cream">
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Kündigung prüfen', item: `${BASE_URL}/kuendigung-pruefen` },
-            ],
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebApplication */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Kündigungscheck — Kündigung kostenlos prüfen',
-            applicationCategory: 'Legal Tool',
-            operatingSystem: 'Any',
-            url: `${BASE_URL}/kuendigung-pruefen`,
-            description:
-              'Kostenloser Kündigungscheck: Prüfen Sie in 2 Minuten Ihre Abfindungschancen. Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich.',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            provider: {
-              '@id': `${BASE_URL}/#organization`,
-            },
-            datePublished: '2025-01-15',
-            dateModified: new Date().toISOString().slice(0, 10),
-            inLanguage: 'de',
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebApplication"
+        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung-pruefen`}
+        pageTitle="Kündigungscheck — Kündigung kostenlos prüfen"
+        pageDescription="Kostenloser Kündigungscheck: Prüfen Sie in 2 Minuten Ihre Abfindungschancen. Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich."
+        appName="Kündigungscheck — Kündigung kostenlos prüfen"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Kündigung prüfen', url: `${SEO_CONFIG.baseUrl}/kuendigung-pruefen` },
+        ]}
+        includeOrganization={false}
+        includeRating={false}
       />
 
       {/* Schema.org - FAQPage */}

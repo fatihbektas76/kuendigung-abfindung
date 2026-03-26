@@ -1,18 +1,15 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 
 export const revalidate = 86400;
 
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
-
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: `Ratgeber Arbeitsrecht — Muster, Urteile & mehr (${new Date().getFullYear()})`,
   description:
     'Ratgeber Arbeitsrecht: Kostenlose Muster & Vorlagen, aktuelle BAG-Urteile und Praxis-Tipps für Arbeitnehmer. Vom Fachanwalt für Arbeitsrecht.',
-  alternates: {
-    canonical: `${BASE_URL}/ratgeber`,
-  },
-};
+  path: '/ratgeber',
+});
 
 const categories = [
   {
@@ -60,19 +57,12 @@ const categories = [
 export default function RatgeberPage() {
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${BASE_URL}/ratgeber` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },
+        ]}
       />
 
       {/* Header */}

@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const gesetzlicheFristen = [
   { jahre: 0, frist: '4 Wochen zum 15. oder Monatsende' },
@@ -138,91 +138,20 @@ export default function KuendigungsfristRechnerPage() {
 
   return (
     <main>
-      {/* GEO-Optimierung */}
-      <div itemScope itemType="https://schema.org/WebApplication">
-        <meta itemProp="name" content="Kündigungsfrist-Rechner" />
-        <meta itemProp="description" content="Berechnen Sie kostenlos Ihre genaue Kündigungsfrist nach §622 BGB." />
-        <meta itemProp="author" content="Fatih Bektas" />
-        <meta itemProp="inLanguage" content="de" />
-        <meta itemProp="applicationCategory" content="Legal Tool" />
-      </div>
-
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Tools & Rechner', item: `${BASE_URL}/tools` },
-              { '@type': 'ListItem', position: 3, name: 'Kündigungsfrist berechnen', item: `${BASE_URL}/kuendigungsfrist-rechner` },
-            ],
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebApplication */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Kündigungsfrist-Rechner — Wann endet mein Arbeitsverhältnis?',
-            applicationCategory: 'Legal Tool',
-            url: `${BASE_URL}/kuendigungsfrist-rechner`,
-            description:
-              'Berechnen Sie kostenlos Ihre genaue Kündigungsfrist nach §622 BGB. Taggenau, zum Monatsende oder Quartalsende — sofortiges Ergebnis + kostenlose Ersteinschätzung vom Fachanwalt.',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            provider: { '@id': `${BASE_URL}/#organization` },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5.0',
-              reviewCount: '68',
-              bestRating: '5',
-              worstRating: '1',
-            },
-            datePublished: '2025-01-15',
-            dateModified: new Date().toISOString().slice(0, 10),
-            inLanguage: 'de',
-          }),
-        }}
-      />
-
-      {/* Schema.org - Speakable WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            speakable: {
-              '@type': 'SpeakableSpecification',
-              cssSelector: ['#direktantwort', 'h1', '.ergebnis-box'],
-            },
-          }),
-        }}
-      />
-
-      {/* Schema.org - Author Entity */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: 'Fatih Bektas',
-            jobTitle: 'Fachanwalt für Arbeitsrecht',
-            hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
-            memberOf: 'Rechtsanwaltskammer Karlsruhe',
-            sameAs: [
-              'https://www.anwalt.de/fatihbektas',
-              `${BASE_URL}/team`,
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner`}
+        pageTitle="Kündigungsfrist-Rechner — Wann endet mein Arbeitsverhältnis?"
+        pageDescription="Berechnen Sie kostenlos Ihre genaue Kündigungsfrist nach §622 BGB."
+        pageType="WebApplication"
+        appName="Kündigungsfrist-Rechner — Wann endet mein Arbeitsverhältnis?"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
+          { name: 'Kündigungsfrist berechnen', url: `${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner` },
+        ]}
+        speakableSelectors={['.ergebnis-box']}
+        includeOrganization={false}
+        includeRating={false}
       />
 
       {/* Schema.org - FAQPage */}

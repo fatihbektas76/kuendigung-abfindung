@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { urteile, getUrteil } from '@/lib/urteile';
 import StandAnzeige from '@/components/StandAnzeige';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!urteil) return {};
   const title = `${urteil.titel} — ${urteil.gericht} ${urteil.az} (${new Date().getFullYear()})`;
   const description = urteil.kurzfassung.slice(0, 155) + '...';
-  const url = `${BASE_URL}/urteile/${urteil.slug}/`;
+  const url = `${SEO_CONFIG.baseUrl}/urteile/${urteil.slug}/`;
   return {
     title,
     description,
@@ -59,20 +59,16 @@ export default function UrteilDetailPage({ params }: Props) {
 
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Rechtsprechung', item: `${BASE_URL}/ratgeber/urteile` },
-              { '@type': 'ListItem', position: 3, name: urteil.titel, item: `${BASE_URL}/urteile/${urteil.slug}` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        pageUrl={`${SEO_CONFIG.baseUrl}/urteile/${urteil.slug}/`}
+        pageTitle={urteil.titel}
+        pageDescription={urteil.kurzfassung}
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Rechtsprechung', url: `${SEO_CONFIG.baseUrl}/ratgeber/urteile` },
+          { name: urteil.titel, url: `${SEO_CONFIG.baseUrl}/urteile/${urteil.slug}` },
+        ]}
       />
 
       {/* Schema.org - Article + LegalCase */}
@@ -97,9 +93,9 @@ export default function UrteilDetailPage({ params }: Props) {
               description: urteil.leitsatz,
             },
             publisher: {
-              '@id': `${BASE_URL}/#organization`,
+              '@id': `${SEO_CONFIG.baseUrl}/#organization`,
             },
-            mainEntityOfPage: `${BASE_URL}/urteile/${urteil.slug}/`,
+            mainEntityOfPage: `${SEO_CONFIG.baseUrl}/urteile/${urteil.slug}/`,
             inLanguage: 'de',
           }),
         }}

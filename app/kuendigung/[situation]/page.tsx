@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import { lebenssituationData, getLebenssituation } from '@/lib/lebenssituation-data';
 import { getLebenssituationContent } from '@/lib/generated-lebenssituation-content';
 import LebenssituationContent from './content';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { situation: string } };
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${entry.h1} (${new Date().getFullYear()})`,
     description: `${entry.h1} — Ihre Rechte nach ${entry.gesetz}, 3-Wochen-Klagefrist, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`,
     alternates: {
-      canonical: `${BASE_URL}/kuendigung/${entry.slug}/`,
+      canonical: `${SEO_CONFIG.baseUrl}/kuendigung/${entry.slug}/`,
     },
   };
 }
@@ -48,25 +48,13 @@ export default function Page({ params }: Props) {
 
   return (
     <>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Startseite', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Kündigung', item: `${BASE_URL}/kuendigung` },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: entry.h1,
-                item: `${BASE_URL}/kuendigung/${entry.slug}/`,
-              },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+          { name: entry.h1, url: `${SEO_CONFIG.baseUrl}/kuendigung/${entry.slug}/` },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

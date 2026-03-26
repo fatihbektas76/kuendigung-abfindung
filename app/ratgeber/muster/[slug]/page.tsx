@@ -4,10 +4,10 @@ import { musterPages, getMusterPage } from '@/lib/muster-data';
 import { musterContent } from '@/lib/generated-muster-content';
 import { getMusterPageContent } from '@/lib/generated-muster-page-content';
 import MusterPageContent from './content';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${entry.h1} — kostenlos (${new Date().getFullYear()})`,
     description: entry.description,
     alternates: {
-      canonical: `${BASE_URL}/ratgeber/muster/${entry.slug}`,
+      canonical: `${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}`,
     },
   };
 }
@@ -47,21 +47,14 @@ export default function Page({ params }: Props) {
 
   return (
     <>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${BASE_URL}/ratgeber` },
-              { '@type': 'ListItem', position: 3, name: 'Muster & Vorlagen', item: `${BASE_URL}/ratgeber/muster` },
-              { '@type': 'ListItem', position: 4, name: entry.h1, item: `${BASE_URL}/ratgeber/muster/${entry.slug}` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },
+          { name: 'Muster & Vorlagen', url: `${SEO_CONFIG.baseUrl}/ratgeber/muster` },
+          { name: entry.h1, url: `${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}` },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const faqs = [
   {
@@ -107,57 +107,24 @@ export default function UrlaubsabgeltungRechnerPage() {
 
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Tools & Rechner', item: `${BASE_URL}/tools` },
-              { '@type': 'ListItem', position: 3, name: 'Urlaubsabgeltung berechnen', item: `${BASE_URL}/urlaubsabgeltung-rechner` },
-            ],
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebApplication + AggregateRating */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Urlaubsabgeltungsrechner — §7 Abs. 4 BUrlG',
-            applicationCategory: 'Legal Tool',
-            operatingSystem: 'Any',
-            url: `${BASE_URL}/urlaubsabgeltung-rechner`,
-            description:
-              'Kostenloser Urlaubsabgeltungsrechner nach §11 BUrlG. Berechnen Sie Ihren Resturlaub-Abgeltungsanspruch nach Kündigung oder Aufhebungsvertrag.',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5.0',
-              reviewCount: '68',
-              bestRating: '5',
-              worstRating: '1',
-            },
-            provider: { '@id': `${BASE_URL}/#organization` },
-            author: {
-              '@type': 'Person',
-              name: 'Fatih Bektas',
-              jobTitle: 'Fachanwalt für Arbeitsrecht',
-              hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
-              memberOf: 'Rechtsanwaltskammer Karlsruhe',
-              sameAs: ['https://www.anwalt.de/fatihbektas', `${BASE_URL}/team`],
-            },
-            datePublished: '2025-01-15',
-            dateModified: new Date().toISOString().slice(0, 10),
-            inLanguage: 'de',
-          }),
-        }}
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/urlaubsabgeltung-rechner`}
+        pageTitle="Urlaubsabgeltungsrechner — §7 Abs. 4 BUrlG"
+        pageDescription="Kostenloser Urlaubsabgeltungsrechner nach §11 BUrlG. Berechnen Sie Ihren Resturlaub-Abgeltungsanspruch nach Kündigung oder Aufhebungsvertrag."
+        pageType="WebApplication"
+        appName="Urlaubsabgeltungsrechner — §7 Abs. 4 BUrlG"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
+          { name: 'Urlaubsabgeltung berechnen', url: `${SEO_CONFIG.baseUrl}/urlaubsabgeltung-rechner` },
+        ]}
+        speakableSelectors={['#ergebnis-box']}
+        isBasedOn={[
+          { name: '§7 Abs. 4 Bundesurlaubsgesetz (BUrlG)', url: 'https://www.gesetze-im-internet.de/burlg/__7.html' },
+          { name: '§11 Bundesurlaubsgesetz (BUrlG)', url: 'https://www.gesetze-im-internet.de/burlg/__11.html' },
+        ]}
+        includeOrganization={false}
+        includeRating={false}
       />
 
       {/* Schema.org - FAQPage */}
@@ -194,58 +161,6 @@ export default function UrlaubsabgeltungRechnerPage() {
           }),
         }}
       />
-
-      {/* Schema.org - WebPage + Speakable */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            name: `Urlaubsabgeltung berechnen ${new Date().getFullYear()}`,
-            url: `${BASE_URL}/urlaubsabgeltung-rechner`,
-            speakable: {
-              '@type': 'SpeakableSpecification',
-              cssSelector: ['#direktantwort', 'h1', '#ergebnis-box'],
-            },
-            isBasedOn: [
-              { '@type': 'Legislation', name: '§7 Abs. 4 Bundesurlaubsgesetz (BUrlG)', url: 'https://www.gesetze-im-internet.de/burlg/__7.html' },
-              { '@type': 'Legislation', name: '§11 Bundesurlaubsgesetz (BUrlG)', url: 'https://www.gesetze-im-internet.de/burlg/__11.html' },
-            ],
-          }),
-        }}
-      />
-
-      {/* Schema.org - LegalService Organization */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LegalService',
-            '@id': `${BASE_URL}/#organization`,
-            name: 'APOS Legal — Kanzlei Fatih Bektas',
-            url: BASE_URL,
-            telephone: '+4915127003173',
-            email: 'bektas@apos.legal',
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5.0',
-              reviewCount: '68',
-            },
-          }),
-        }}
-      />
-
-      {/* GEO-Optimierung */}
-      <div itemScope itemType="https://schema.org/WebApplication">
-        <meta itemProp="name" content="Urlaubsabgeltungsrechner" />
-        <meta itemProp="description" content="Kostenloser Urlaubsabgeltungsrechner nach §11 BUrlG für Arbeitnehmer in Deutschland." />
-        <meta itemProp="author" content="Fatih Bektas, Fachanwalt für Arbeitsrecht" />
-        <meta itemProp="inLanguage" content="de" />
-        <meta itemProp="applicationCategory" content="Legal Tool" />
-        <meta itemProp="isBasedOn" content="§7 Abs. 4, §11 Bundesurlaubsgesetz" />
-      </div>
 
       {/* Hero */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">

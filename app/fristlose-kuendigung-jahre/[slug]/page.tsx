@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
 import FristlosContent from './content';
 import fristloseData from '@/data/generated/fristlose-data.json';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const yl = yearLabel(entry.year);
   const title = `Fristlose Kündigung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit — wirksam? (${new Date().getFullYear()})`;
   const description = `Fristlose Kündigung nach ${yl} Betriebszugehörigkeit erhalten? Die meisten sind unwirksam. §626 BGB, Ihre Rechte, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt.`;
-  const url = `${BASE_URL}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`;
+  const url = `${SEO_CONFIG.baseUrl}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,
     description,
@@ -54,29 +54,20 @@ export default function Page({ params }: Props) {
   const next = entries.find((e) => e.year === entry.year + 1);
 
   const yl = yearLabel(entry.year);
-  const pageUrl = `${BASE_URL}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`;
+  const pageUrl = `${SEO_CONFIG.baseUrl}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`;
 
   return (
     <>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Startseite', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Kündigung', item: `${BASE_URL}/kuendigung` },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: `Fristlose Kündigung nach ${yl}`,
-                item: pageUrl,
-              },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        pageUrl={pageUrl}
+        pageTitle={`Fristlose Kündigung nach ${yl}`}
+        pageDescription={`Fristlose Kündigung nach ${yl} Betriebszugehörigkeit`}
+        breadcrumbs={[
+          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+          { name: `Fristlose Kündigung nach ${yl}`, url: pageUrl },
+        ]}
       />
 
       {/* Schema.org - FAQPage (7 Fragen) */}

@@ -6,22 +6,22 @@ import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
   title: `Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (${new Date().getFullYear()})`,
   description:
     'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer. Fachanwalt für Arbeitsrecht – kostenlose Ersteinschätzung.',
   alternates: {
-    canonical: `${BASE_URL}/kuendigung`,
+    canonical: `${SEO_CONFIG.baseUrl}/kuendigung`,
   },
   openGraph: {
     title: `Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (${new Date().getFullYear()})`,
     description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
-    url: `${BASE_URL}/kuendigung`,
+    url: `${SEO_CONFIG.baseUrl}/kuendigung`,
   },
   twitter: {
     card: 'summary',
@@ -68,19 +68,17 @@ const fristen = [
 export default function KuendigungPage() {
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Kündigung', item: `${BASE_URL}/kuendigung` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung`}
+        pageTitle="Kündigung erhalten – Was jetzt?"
+        pageDescription="Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer."
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+        ]}
+        includeOrganization={false}
+        includeRating={false}
       />
 
       {/* Schema.org - FAQPage */}
@@ -95,20 +93,6 @@ export default function KuendigungPage() {
               name: faq.q,
               acceptedAnswer: { '@type': 'Answer', text: faq.a },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: `${BASE_URL}/kuendigung`,
-            dateModified: new Date().toISOString(),
-            datePublished: '2025-01-15',
           }),
         }}
       />

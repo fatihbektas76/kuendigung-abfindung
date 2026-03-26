@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import { abmahnungEntries, getAbmahnungEntry, abmahnungLabel } from '@/lib/abmahnung-content';
 import { getAbmahnungContentForCount } from '@/lib/generated-abmahnung-content';
 import AbmahnungContent from './content';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Kündigung nach ${entry.word} ${entry.count === 1 ? 'Abmahnung' : 'Abmahnungen'} — wirksam oder nicht? (${new Date().getFullYear()})`,
     description: `Kündigung nach ${label} erhalten? Ist die Kündigung wirksam? Formfehler prüfen, Kündigungsschutzklage, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt.`,
     alternates: {
-      canonical: `${BASE_URL}/kuendigung-nach-${entry.slug}/`,
+      canonical: `${SEO_CONFIG.baseUrl}/kuendigung-nach-${entry.slug}/`,
     },
   };
 }
@@ -48,25 +48,13 @@ export default function Page({ params }: Props) {
 
   return (
     <>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Startseite', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Abmahnung', item: `${BASE_URL}/abmahnung` },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: `Kündigung nach ${label}`,
-                item: `${BASE_URL}/kuendigung-nach-${entry.slug}/`,
-              },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
+          { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung` },
+          { name: `Kündigung nach ${label}`, url: `${SEO_CONFIG.baseUrl}/kuendigung-nach-${entry.slug}/` },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

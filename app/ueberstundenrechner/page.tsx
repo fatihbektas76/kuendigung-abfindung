@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const faqs = [
   {
@@ -63,91 +63,20 @@ export default function UeberstundenrechnerPage() {
 
   return (
     <main>
-      {/* GEO-Optimierung */}
-      <div itemScope itemType="https://schema.org/WebApplication">
-        <meta itemProp="name" content="Überstundenrechner" />
-        <meta itemProp="description" content="Berechnen Sie kostenlos Ihren Stundenlohn und ausstehende Überstundenvergütung." />
-        <meta itemProp="author" content="Fatih Bektas" />
-        <meta itemProp="inLanguage" content="de" />
-        <meta itemProp="applicationCategory" content="Legal Tool" />
-      </div>
-
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Tools & Rechner', item: `${BASE_URL}/tools` },
-              { '@type': 'ListItem', position: 3, name: 'Überstundenrechner', item: `${BASE_URL}/ueberstundenrechner` },
-            ],
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebApplication */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Überstundenrechner — Stundenlohn & Vergütung',
-            applicationCategory: 'Legal Tool',
-            url: `${BASE_URL}/ueberstundenrechner`,
-            description:
-              'Berechnen Sie kostenlos Ihren Stundenlohn und ausstehende Überstundenvergütung. Sofortergebnis + kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            provider: { '@id': `${BASE_URL}/#organization` },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5.0',
-              reviewCount: '68',
-              bestRating: '5',
-              worstRating: '1',
-            },
-            datePublished: '2025-01-15',
-            dateModified: new Date().toISOString().slice(0, 10),
-            inLanguage: 'de',
-          }),
-        }}
-      />
-
-      {/* Schema.org - Speakable WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            speakable: {
-              '@type': 'SpeakableSpecification',
-              cssSelector: ['#direktantwort', 'h1', '.ergebnis-box'],
-            },
-          }),
-        }}
-      />
-
-      {/* Schema.org - Author Entity */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: 'Fatih Bektas',
-            jobTitle: 'Fachanwalt für Arbeitsrecht',
-            hasCredential: 'Fachanwalt für Arbeitsrecht seit 2011',
-            memberOf: 'Rechtsanwaltskammer Karlsruhe',
-            sameAs: [
-              'https://www.anwalt.de/fatihbektas',
-              `${BASE_URL}/team`,
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/ueberstundenrechner`}
+        pageTitle="Überstundenrechner — Stundenlohn & Vergütung"
+        pageDescription="Berechnen Sie kostenlos Ihren Stundenlohn und ausstehende Überstundenvergütung."
+        pageType="WebApplication"
+        appName="Überstundenrechner — Stundenlohn & Vergütung"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
+          { name: 'Überstundenrechner', url: `${SEO_CONFIG.baseUrl}/ueberstundenrechner` },
+        ]}
+        speakableSelectors={['.ergebnis-box']}
+        includeOrganization={false}
+        includeRating={false}
       />
 
       {/* Schema.org - FAQPage */}

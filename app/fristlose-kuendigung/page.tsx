@@ -5,22 +5,22 @@ import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 export const metadata: Metadata = {
   title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
   description:
     'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht — kostenlose Ersteinschätzung.',
   alternates: {
-    canonical: `${BASE_URL}/fristlose-kuendigung`,
+    canonical: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung`,
   },
   openGraph: {
     title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
     description: 'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
-    url: `${BASE_URL}/fristlose-kuendigung`,
+    url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung`,
   },
   twitter: {
     card: 'summary',
@@ -55,20 +55,14 @@ const faqs = [
 export default function FristloseKuendigungPage() {
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Kündigung', item: `${BASE_URL}/kuendigung` },
-              { '@type': 'ListItem', position: 3, name: 'Fristlose Kündigung', item: `${BASE_URL}/fristlose-kuendigung` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+          { name: 'Fristlose Kündigung', url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung` },
+        ]}
+        datePublished="2025-01-15"
       />
 
       {/* Schema.org - FAQPage */}
@@ -83,20 +77,6 @@ export default function FristloseKuendigungPage() {
               name: faq.q,
               acceptedAnswer: { '@type': 'Answer', text: faq.a },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: `${BASE_URL}/fristlose-kuendigung`,
-            dateModified: new Date().toISOString(),
-            datePublished: '2025-01-15',
           }),
         }}
       />

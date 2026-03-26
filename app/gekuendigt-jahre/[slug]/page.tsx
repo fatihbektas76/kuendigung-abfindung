@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
 import GekuendigtContent from './content';
 import gekuendigtData from '@/data/generated/gekuendigt-data.json';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 
 type Props = { params: { slug: string } };
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const yl = yearLabel(entry.year);
   const title = `Gekündigt nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} – Was jetzt? (${new Date().getFullYear()})`;
   const description = `Kündigung nach ${yl} Betriebszugehörigkeit erhalten? Sofortmaßnahmen, 3-Wochen-Frist, Abfindungschancen. Kündigungsfrist: ${entry.kuendigungsfrist}. Kostenlose Ersteinschätzung.`;
-  const url = `${BASE_URL}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`;
+  const url = `${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,
     description,
@@ -62,25 +62,16 @@ export default function Page({ params }: Props) {
 
   return (
     <>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Startseite', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Kündigung', item: `${BASE_URL}/kuendigung` },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: `Gekündigt nach ${yl}`,
-                item: `${BASE_URL}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`,
-              },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        pageUrl={`${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`}
+        pageTitle={`Gekündigt nach ${yl}`}
+        pageDescription={`Kündigung nach ${yl} Betriebszugehörigkeit`}
+        breadcrumbs={[
+          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+          { name: `Gekündigt nach ${yl}`, url: `${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/` },
+        ]}
       />
 
       {/* Schema.org - FAQPage (7 Fragen) */}
@@ -106,7 +97,7 @@ export default function Page({ params }: Props) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebPage',
-            url: `${BASE_URL}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`,
+            url: `${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`,
             dateModified: new Date().toISOString(),
             datePublished: '2025-01-15',
           }),

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { musterPages } from '@/lib/muster-data';
 import { musterContent } from '@/lib/generated-muster-content';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const faqs = [
   {
@@ -29,20 +31,13 @@ export default function MusterOverviewPage() {
 
   return (
     <main>
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: 'https://www.gekuendigt-abfindung.de' },
-              { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: 'https://www.gekuendigt-abfindung.de/ratgeber' },
-              { '@type': 'ListItem', position: 3, name: 'Muster & Vorlagen', item: 'https://www.gekuendigt-abfindung.de/ratgeber/muster' },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },
+          { name: 'Muster & Vorlagen', url: `${SEO_CONFIG.baseUrl}/ratgeber/muster` },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import LayoutClient from '@/components/LayoutClient';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const playfair = localFont({
   src: [
@@ -115,90 +117,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
 
-        {/* Schema.org - LegalService */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'LegalService',
-              name: 'gekuendigt-abfindung.de – Fachanwalt für Arbeitsrecht',
-              url: 'https://www.gekuendigt-abfindung.de',
-              description:
-                'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. 20+ Jahre Erfahrung, 2.000+ Verfahren.',
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: 'Am Paradeplatz 20',
-                addressLocality: 'Heidelberg',
-                postalCode: '69126',
-                addressCountry: 'DE',
-              },
-              telephone: '+4915127003173',
-              email: 'bektas@apos.legal',
-              areaServed: { '@type': 'Country', name: 'Germany' },
-              serviceType: [
-                'Kündigungsschutzklage',
-                'Abfindung verhandeln',
-                'Aufhebungsvertrag prüfen',
-                'Fristlose Kündigung anfechten',
-                'Abmahnung prüfen',
-                'Zeugnis & Abschlussregelungen',
-              ],
-              knowsLanguage: ['de', 'en'],
-              founder: {
-                '@type': 'Person',
-                name: 'Fatih Bektas',
-                jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
-              },
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '5.0',
-                bestRating: '5',
-                worstRating: '1',
-                ratingCount: '68',
-                url: 'https://www.anwalt.de/bektas',
-              },
-            }),
-          }}
-        />
-
-        {/* Schema.org - Attorney */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Attorney',
-              name: 'Fatih Bektas',
-              jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
-              description:
-                'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
-              url: 'https://www.gekuendigt-abfindung.de',
-              telephone: '+49-151-2700-3173',
-              email: 'bektas@apos.legal',
-              worksFor: { '@type': 'LegalService', name: 'gekuendigt-abfindung.de' },
-              knowsLanguage: ['de', 'en'],
-              memberOf: [
-                { '@type': 'Organization', name: 'Deutscher Anwaltverein' },
-                { '@type': 'Organization', name: 'BVAU' },
-              ],
-              hasCredential: [
-                {
-                  '@type': 'EducationalOccupationalCredential',
-                  credentialCategory: 'Fachanwalt für Arbeitsrecht',
-                },
-                {
-                  '@type': 'EducationalOccupationalCredential',
-                  credentialCategory: 'Zertifizierter Mediator',
-                },
-              ],
-            }),
-          }}
-        />
-
-
       </head>
       <body className="font-sans text-ink bg-white leading-relaxed">
+        <SeoGeoBase
+          pageUrl={SEO_CONFIG.baseUrl}
+          pageTitle={SEO_CONFIG.siteName}
+          pageDescription="Arbeitsrecht-Tools und kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht"
+          pageType="WebPage"
+          includeOrganization={true}
+          includeRating={true}
+        />
         <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
