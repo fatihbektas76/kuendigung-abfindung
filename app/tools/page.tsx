@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import StandAnzeige from '@/components/StandAnzeige';
 import FaqAccordion from '@/components/FaqAccordion';
-
-const BASE_URL = 'https://www.gekuendigt-abfindung.de';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const tools = [
   {
@@ -30,16 +30,16 @@ const tools = [
     href: '/kuendigung-pruefen',
   },
   {
-    label: 'Orientierung',
-    title: 'Aufhebungsvertrag prüfen',
-    text: 'Haben Sie einen Aufhebungsvertrag erhalten? Unser Tool hilft Ihnen, die wichtigsten Klauseln zu verstehen, Ihre Verhandlungsposition einzuschätzen und typische Fallen zu vermeiden — bevor Sie unterschreiben.',
+    label: 'Aufhebungsvertrag',
+    title: 'Aufhebungsvertrag-Checker',
+    text: 'Aufhebungsvertrag erhalten? Prüfen Sie in 3 Minuten ob Ihr Vertrag faire Konditionen enthält — mit Ampelbewertung in 8 Kategorien.',
     checks: [
-      'Abfindungshöhe realistisch einschätzen',
-      'Sperrzeit beim Arbeitslosengeld prüfen',
-      'Fristen und Widerrufsrecht beachten',
+      'Abfindung & Sperrzeit-Risiko',
+      'Wettbewerbsverbot & Zeugnis',
+      'Ampelbewertung sofort',
     ],
     linkText: 'Jetzt prüfen',
-    href: '/kuendigung-pruefen',
+    href: '/aufhebungsvertrag-pruefen',
   },
   {
     label: 'Schwellenwert',
@@ -133,27 +133,13 @@ const faqs = [
 export default function ToolsPage() {
   return (
     <main>
-      {/* GEO-Optimierung */}
-      <div itemScope itemType="https://schema.org/WebPage">
-        <meta itemProp="name" content="Arbeitsrecht Tools & Rechner — kostenlos" />
-        <meta itemProp="description" content="Kostenlose Arbeitsrechts-Tools: Abfindungsrechner und Kündigungscheck vom Fachanwalt für Arbeitsrecht Fatih Bektas." />
-        <meta itemProp="author" content="Fatih Bektas" />
-        <meta itemProp="inLanguage" content="de" />
-      </div>
-
-      {/* Schema.org - BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Start', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Tools & Rechner', item: `${BASE_URL}/tools` },
-            ],
-          }),
-        }}
+      <SeoGeoBase
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: SEO_CONFIG.baseUrl },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
+        ]}
+        datePublished="2025-01-15"
       />
 
       {/* Schema.org - CollectionPage */}
@@ -166,8 +152,8 @@ export default function ToolsPage() {
             name: 'Arbeitsrecht Tools & Rechner',
             description:
               'Kostenlose Arbeitsrechts-Tools: Abfindungsrechner, Kündigungscheck & mehr. Sofortige Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich.',
-            url: `${BASE_URL}/tools`,
-            provider: { '@id': `${BASE_URL}/#organization` },
+            url: `${SEO_CONFIG.baseUrl}/tools`,
+            provider: { '@id': `${SEO_CONFIG.baseUrl}/#organization` },
             inLanguage: 'de',
             datePublished: '2025-01-15',
             dateModified: new Date().toISOString().slice(0, 10),
@@ -183,14 +169,14 @@ export default function ToolsPage() {
             '@context': 'https://schema.org',
             '@type': 'ItemList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Abfindungsrechner', url: `${BASE_URL}/abfindungsrechner` },
-              { '@type': 'ListItem', position: 2, name: 'Kündigungscheck', url: `${BASE_URL}/kuendigung-pruefen` },
-              { '@type': 'ListItem', position: 3, name: 'Aufhebungsvertrag prüfen', url: `${BASE_URL}/kuendigung-pruefen` },
-              { '@type': 'ListItem', position: 4, name: 'Schwellenwert-Rechner §23 KSchG', url: `${BASE_URL}/schwellenwert-rechner` },
-              { '@type': 'ListItem', position: 5, name: 'Überstundenrechner', url: `${BASE_URL}/ueberstundenrechner` },
-              { '@type': 'ListItem', position: 6, name: 'Kündigungsfrist-Rechner', url: `${BASE_URL}/kuendigungsfrist-rechner` },
-              { '@type': 'ListItem', position: 7, name: 'Urlaubsabgeltungsrechner', url: `${BASE_URL}/urlaubsabgeltung-rechner` },
-              { '@type': 'ListItem', position: 8, name: 'Urlaubsrechner Teilzeit', url: `${BASE_URL}/urlaub-teilzeit-rechner` },
+              { '@type': 'ListItem', position: 1, name: 'Abfindungsrechner', url: `${SEO_CONFIG.baseUrl}/abfindungsrechner` },
+              { '@type': 'ListItem', position: 2, name: 'Kündigungscheck', url: `${SEO_CONFIG.baseUrl}/kuendigung-pruefen` },
+              { '@type': 'ListItem', position: 3, name: 'Aufhebungsvertrag-Checker', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag-pruefen` },
+              { '@type': 'ListItem', position: 4, name: 'Schwellenwert-Rechner §23 KSchG', url: `${SEO_CONFIG.baseUrl}/schwellenwert-rechner` },
+              { '@type': 'ListItem', position: 5, name: 'Überstundenrechner', url: `${SEO_CONFIG.baseUrl}/ueberstundenrechner` },
+              { '@type': 'ListItem', position: 6, name: 'Kündigungsfrist-Rechner', url: `${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner` },
+              { '@type': 'ListItem', position: 7, name: 'Urlaubsabgeltungsrechner', url: `${SEO_CONFIG.baseUrl}/urlaubsabgeltung-rechner` },
+              { '@type': 'ListItem', position: 8, name: 'Urlaubsrechner Teilzeit', url: `${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner` },
             ],
           }),
         }}
