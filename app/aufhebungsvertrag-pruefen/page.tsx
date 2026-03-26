@@ -370,9 +370,9 @@ export default function AufhebungsvertragPruefenPage() {
       red: 'Bitte nicht ohne Beratung unterschreiben.',
     };
     const ctaTexts = {
-      green: 'Auch bei einem fairen Vertrag lohnt sich eine kurze anwaltliche Durchsicht. Fatih Bektas prüft Ihren Aufhebungsvertrag kostenlos.',
-      yellow: 'Mehrere Punkte bieten Verbesserungspotenzial. Fachanwalt Fatih Bektas zeigt Ihnen, was Sie nachverhandeln können — kostenlos und in 24 Stunden.',
-      red: 'Ihr Vertrag enthält kritische Punkte. Bevor Sie unterschreiben, prüft Fachanwalt Fatih Bektas Ihren Fall — kostenlos und innerhalb von 24 Stunden.',
+      green: 'Auch bei einem fairen Vertrag lohnt sich eine kurze anwaltliche Durchsicht. Nutzen Sie die kostenlose Erstberatung durch Fachanwalt Fatih Bektas.',
+      yellow: 'Mehrere Punkte bieten Verbesserungspotenzial. Fachanwalt Fatih Bektas zeigt Ihnen in einer kostenlosen Erstberatung, was Sie nachverhandeln können — Antwort in 24 Stunden.',
+      red: 'Ihr Vertrag enthält kritische Punkte. Bevor Sie unterschreiben, nutzen Sie die kostenlose Erstberatung durch Fachanwalt Fatih Bektas — Antwort innerhalb von 24 Stunden.',
     };
 
     return (
@@ -439,12 +439,12 @@ export default function AufhebungsvertragPruefenPage() {
                   href="/kuendigung-pruefen"
                   className="block w-full py-4 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#1a1409] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.25)]"
                 >
-                  Jetzt kostenlos prüfen lassen &rarr;
+                  Kostenlose Erstberatung anfragen &rarr;
                 </Link>
                 <div className="flex flex-wrap items-center justify-center gap-4 mt-4 text-[0.78rem] text-ink-muted">
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
-                    Kostenlos
+                    Kostenlose Erstberatung
                   </span>
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
@@ -1068,7 +1068,7 @@ export default function AufhebungsvertragPruefenPage() {
       <SeoGeoBase
         pageUrl={`${SEO_CONFIG.baseUrl}/aufhebungsvertrag-pruefen`}
         pageTitle="Aufhebungsvertrag prüfen — Ist Ihr Vertrag fair?"
-        pageDescription="Aufhebungsvertrag erhalten? Prüfen Sie kostenlos ob Ihr Vertrag faire Konditionen enthält — Ampelbewertung in 8 Kategorien + kostenlose Ersteinschätzung vom Fachanwalt."
+        pageDescription="Aufhebungsvertrag erhalten? Prüfen Sie ob Ihr Vertrag faire Konditionen enthält — Ampelbewertung in 8 Kategorien + kostenlose Ersteinschätzung vom Fachanwalt."
         pageType="WebApplication"
         appName="Aufhebungsvertrag-Checker"
         appCategory="Legal Tool"
@@ -1129,7 +1129,7 @@ export default function AufhebungsvertragPruefenPage() {
       {/* GEO-Optimierung */}
       <div itemScope itemType="https://schema.org/WebApplication" style={{ display: 'none' }}>
         <meta itemProp="name" content="Aufhebungsvertrag-Checker" />
-        <meta itemProp="description" content="Prüfen Sie kostenlos ob Ihr Aufhebungsvertrag faire Konditionen enthält — Ampelbewertung in 8 Kategorien." />
+        <meta itemProp="description" content="Prüfen Sie ob Ihr Aufhebungsvertrag faire Konditionen enthält — Ampelbewertung in 8 Kategorien." />
         <meta itemProp="author" content="Fatih Bektas, Fachanwalt für Arbeitsrecht" />
         <meta itemProp="inLanguage" content="de" />
         <meta itemProp="applicationCategory" content="Legal Tool" />
@@ -1185,7 +1185,7 @@ export default function AufhebungsvertragPruefenPage() {
                 </nav>
 
                 <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-                  Kostenlos &amp; unverbindlich
+                  Unverbindlich &amp; in 3 Minuten
                 </div>
 
                 <h1 className="font-serif text-[clamp(1.6rem,4vw,2.2rem)] font-bold leading-[1.2] text-ink mb-4">
@@ -1199,7 +1199,7 @@ export default function AufhebungsvertragPruefenPage() {
                 <div className="flex flex-wrap items-center gap-4 text-[0.84rem] text-ink-muted mb-6">
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
-                    Kostenlos
+                    Kostenlose Erstberatung
                   </span>
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
@@ -1218,13 +1218,13 @@ export default function AufhebungsvertragPruefenPage() {
                 {/* CTA #1 */}
                 <div className="mb-8 py-5 px-6 bg-gold-bg rounded-sm border-2 border-gold">
                   <p className="text-[0.95rem] font-semibold text-ink mb-3 m-0">
-                    Aufhebungsvertrag erhalten und unsicher? Wir prüfen Ihren Vertrag kostenlos.
+                    Aufhebungsvertrag erhalten und unsicher? Wir prüfen Ihren Vertrag — kostenlose Erstberatung.
                   </p>
                   <Link
                     href="/kuendigung-pruefen"
                     className="inline-block py-2.5 px-6 bg-gold-dark text-white rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px"
                   >
-                    Jetzt kostenlos prüfen &rarr;
+                    Kostenlose Erstberatung anfragen &rarr;
                   </Link>
                 </div>
               </>
@@ -1320,7 +1320,7 @@ export default function AufhebungsvertragPruefenPage() {
                     Aufhebungsvertrag erhalten — jetzt handeln.
                   </h3>
                   <p className="text-[0.92rem] text-ink-muted leading-relaxed mb-5">
-                    Fachanwalt Fatih Bektas prüft Ihren Vertrag kostenlos und zeigt Ihnen Ihre Verhandlungsmöglichkeiten — innerhalb von 24 Stunden.
+                    Fachanwalt Fatih Bektas zeigt Ihnen in einer kostenlosen Erstberatung Ihre Verhandlungsmöglichkeiten — Antwort innerhalb von 24 Stunden.
                   </p>
                   <Link
                     href="/kuendigung-pruefen"

@@ -5,7 +5,7 @@ export const revalidate = 86400;
 export const metadata = buildMetadata({
   title: `Aufhebungsvertrag prüfen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
   description:
-    'Aufhebungsvertrag erhalten? Prüfen Sie kostenlos ob Ihr Vertrag fair ist — Ampelbewertung in 3 Minuten + kostenlose Ersteinschätzung vom Fachanwalt.',
+    'Aufhebungsvertrag erhalten? Prüfen Sie ob Ihr Vertrag fair ist — Ampelbewertung in 3 Minuten + kostenlose Ersteinschätzung vom Fachanwalt.',
   path: '/aufhebungsvertrag-pruefen',
 });
 
