@@ -21,6 +21,9 @@ export async function GET(request: NextRequest) {
     '/abfindungsrechner',
     '/kuendigung-pruefen',
     '/tools',
+    '/urteile',
+    '/ueberstundenrechner',
+    '/kuendigungsfrist-rechner',
     '/blog',
   ];
 

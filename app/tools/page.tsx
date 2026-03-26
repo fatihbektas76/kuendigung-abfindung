@@ -53,6 +53,30 @@ const tools = [
     linkText: 'Jetzt prüfen',
     href: '/schwellenwert-rechner',
   },
+  {
+    label: 'Vergütung',
+    title: 'Überstundenrechner',
+    text: 'Berechnen Sie Ihren Bruttostundenlohn und die Ihnen zustehende Überstundenvergütung. Mit optionalem Zuschlag, Tageswert und Jahreshochrechnung — sofort und kostenlos.',
+    checks: [
+      'Stundenlohn aus Monatsgehalt berechnen',
+      'Überstundenvergütung mit Zuschlag',
+      'Jahreshochrechnung auf Knopfdruck',
+    ],
+    linkText: 'Jetzt berechnen',
+    href: '/ueberstundenrechner',
+  },
+  {
+    label: 'Fristen',
+    title: 'Kündigungsfrist-Rechner',
+    text: 'Wann endet Ihr Arbeitsverhältnis? Geben Sie Kündigungsdatum und Frist ein — der Rechner zeigt Ihnen taggenau den Beendigungstermin, inkl. 3-Wochen-Klagefrist und §622 BGB Referenztabelle.',
+    checks: [
+      'Taggenau, Monatsende oder Quartalsende',
+      'Automatische Klagefrist-Berechnung',
+      'Gesetzliche Fristen nach §622 BGB',
+    ],
+    linkText: 'Frist berechnen',
+    href: '/kuendigungsfrist-rechner',
+  },
 ];
 
 const faqs = [
@@ -139,6 +163,8 @@ export default function ToolsPage() {
               { '@type': 'ListItem', position: 2, name: 'Kündigungscheck', url: `${BASE_URL}/kuendigung-pruefen` },
               { '@type': 'ListItem', position: 3, name: 'Aufhebungsvertrag prüfen', url: `${BASE_URL}/kuendigung-pruefen` },
               { '@type': 'ListItem', position: 4, name: 'Schwellenwert-Rechner §23 KSchG', url: `${BASE_URL}/schwellenwert-rechner` },
+              { '@type': 'ListItem', position: 5, name: 'Überstundenrechner', url: `${BASE_URL}/ueberstundenrechner` },
+              { '@type': 'ListItem', position: 6, name: 'Kündigungsfrist-Rechner', url: `${BASE_URL}/kuendigungsfrist-rechner` },
             ],
           }),
         }}

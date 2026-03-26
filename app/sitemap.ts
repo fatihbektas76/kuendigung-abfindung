@@ -7,6 +7,7 @@ import { musterPages } from '@/lib/muster-data';
 import { staedte } from '@/data/staedte';
 import { gemeinden } from '@/data/gemeinden';
 import { berlinBezirke } from '@/data/bezirke';
+import { urteile } from '@/lib/urteile';
 
 export const revalidate = 3600;
 
@@ -26,6 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/kuendigung-pruefen`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
     { url: `${BASE_URL}/schwellenwert-rechner`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
     { url: `${BASE_URL}/tools`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
+    { url: `${BASE_URL}/ueberstundenrechner`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
+    { url: `${BASE_URL}/kuendigungsfrist-rechner`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
     { url: `${BASE_URL}/team`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/legal-notice`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/privacy-policy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
@@ -103,5 +106,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages, ...clusterJPages, ...clusterFPages, ...musterSubPages, ...arbeitsrechtAnwaltPages];
+  const urteilPages: MetadataRoute.Sitemap = urteile.map((u) => ({
+    url: `${BASE_URL}/urteile/${u.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily',
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages, ...clusterJPages, ...clusterFPages, ...musterSubPages, ...arbeitsrechtAnwaltPages, ...urteilPages];
 }
