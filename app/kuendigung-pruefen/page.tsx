@@ -161,6 +161,7 @@ export default function KuendigungPruefenPage() {
   const [, setHistory] = useState<StepId[]>([]);
   const [answers, setAnswers] = useState<Answers>(initialAnswers);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [warn21, setWarn21] = useState(false);
 
   const { idx, total, cat } = getStepProgress(step);
@@ -209,10 +210,11 @@ export default function KuendigungPruefenPage() {
   }, [answers.kuendigungsDatum]);
 
   /* Submit handler */
-  const handleSubmit = () => {
-    if (!answers.email || !answers.datenschutz) return;
+  const handleSubmit = async () => {
+    if (!answers.email || !answers.datenschutz || loading) return;
+    setLoading(true);
 
-    const body = [
+    const message = [
       `Fall: ${answers.fall}`,
       answers.kuendigungErwartet ? `Kündigung erwartet: ${answers.kuendigungErwartet}` : '',
       answers.kuendigungsDatum ? `Kündigungsdatum: ${answers.kuendigungsDatum}` : '',
@@ -227,18 +229,27 @@ export default function KuendigungPruefenPage() {
       answers.gehalt ? `Bruttogehalt: ${answers.gehalt} €` : '',
       abfindungMin > 0 ? `Mögliche Abfindung: ${fmt(abfindungMin)} – ${fmt(abfindungMax)}` : '',
       answers.rechtsschutz ? `Rechtsschutzversicherung: ${answers.rechtsschutz}` : '',
-      ``,
-      `Name: ${answers.vorname} ${answers.nachname}`,
-      `E-Mail: ${answers.email}`,
-      `Telefon: ${answers.telefon || '—'}`,
       fristTage < 21 ? `Klagefrist verbleibend: ${fristTage} Tage` : '',
     ].filter(Boolean).join('\n');
 
-    const subject = encodeURIComponent(`Kündigungscheck: ${answers.vorname} ${answers.nachname}`);
-    const mailBody = encodeURIComponent(body);
-    window.location.href = `mailto:bektas@apos.legal?subject=${subject}&body=${mailBody}`;
-
-    setSubmitted(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${answers.vorname} ${answers.nachname}`,
+          email: answers.email,
+          phone: answers.telefon || undefined,
+          disputeType: answers.fall === 'Kündigung erhalten' ? 'kuendigung' : answers.fall === 'Kündigung erwartet' ? 'kuendigung' : 'abfindung',
+          message: `[Kündigungscheck]\n\n${message}`,
+        }),
+      });
+      if (!res.ok) throw new Error('Failed to submit');
+      setSubmitted(true);
+    } catch {
+      setLoading(false);
+      alert('Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an bektas@apos.legal');
+    }
   };
 
   /* canAdvance for manual steps */
@@ -503,7 +514,7 @@ export default function KuendigungPruefenPage() {
               >
                 {fristTage > 0 ? (
                   <p className={`text-[0.92rem] font-semibold m-0 ${fristTage <= 7 ? 'text-red-700' : 'text-gold-dark'}`}>
-                    Nur noch {fristTage} {fristTage === 1 ? 'Tag' : 'Tage'} Zeit für einen möglichen Widerspruch!
+                    Nur noch {fristTage} {fristTage === 1 ? 'Tag' : 'Tage'} Zeit Einreichung einer Kündigungsschutzklage!
                   </p>
                 ) : (
                   <p className="text-[0.92rem] font-semibold text-red-700 m-0">
@@ -855,10 +866,10 @@ export default function KuendigungPruefenPage() {
 
             <button
               onClick={handleSubmit}
-              disabled={!answers.email || !answers.datenschutz || !answers.vorname || !answers.nachname}
-              className="w-full mt-6 py-4 bg-[#2A1F0E] text-gold border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.3)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
+              disabled={!answers.email || !answers.datenschutz || !answers.vorname || !answers.nachname || loading}
+              className="w-full mt-6 py-4 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.3)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
             >
-              Jetzt Ergebnis anfordern &rarr;
+              {loading ? 'Wird gesendet...' : 'Jetzt Ergebnis anfordern \u2192'}
             </button>
 
             <div className="flex items-center justify-center gap-6 mt-4">
@@ -889,11 +900,11 @@ export default function KuendigungPruefenPage() {
             </h2>
             <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-6">
               Bei Betrieben mit bis zu 10 Mitarbeitern oder einer Beschäftigung unter 6 Monaten greift das Kündigungsschutzgesetz nicht.
-              Dennoch können andere Ansprüche bestehen &mdash; z.&nbsp;B. ausstehende Vergütung, Zeugnis oder Sonderkündigungsschutz.
+              Dennoch können andere Ansprüche bestehen &mdash; z.&nbsp;B. ausstehende Vergütung, Zeugnis oder Sonderkündigungsschutz. Wir empfehlen daher dringend eine anwaltliche Beratung.
             </p>
             <button
               onClick={() => goTo('S10')}
-              className="w-full py-4 bg-[#2A1F0E] text-gold border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.3)]"
+              className="w-full py-4 bg-[#8B7A3A] text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#6B6626] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(139,122,58,0.3)]"
             >
               Trotzdem kostenlos prüfen lassen &rarr;
             </button>
