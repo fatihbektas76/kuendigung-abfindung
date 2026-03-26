@@ -14,7 +14,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
         <div className="flex justify-between items-start flex-wrap gap-6 mb-10 pb-10 border-b border-white/[0.08]">
           <div>
             <div className="font-serif text-gold text-[1.1rem] font-semibold tracking-tight">
-              gekuendigt-abfindung.de
+              APOS Legal
             </div>
             <div className="text-white/40 mt-1.5 text-[0.8rem]">
               Am Paradeplatz 20 &middot; 69126 Heidelberg
