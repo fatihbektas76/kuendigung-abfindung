@@ -436,7 +436,7 @@ export default function AufhebungsvertragPruefenPage() {
                   {ctaTexts[ampelColor]}
                 </p>
                 <Link
-                  href="/kuendigung-pruefen"
+                  href="/#kontakt"
                   className="block w-full py-4 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#1a1409] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.25)]"
                 >
                   Kostenlose Erstberatung anfragen &rarr;
@@ -1221,7 +1221,7 @@ export default function AufhebungsvertragPruefenPage() {
                     Aufhebungsvertrag erhalten und unsicher? Wir prüfen Ihren Vertrag — kostenlose Erstberatung.
                   </p>
                   <Link
-                    href="/kuendigung-pruefen"
+                    href="/#kontakt"
                     className="inline-block py-2.5 px-6 bg-gold-dark text-white rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px"
                   >
                     Kostenlose Erstberatung anfragen &rarr;
@@ -1323,7 +1323,7 @@ export default function AufhebungsvertragPruefenPage() {
                     Fachanwalt Fatih Bektas zeigt Ihnen in einer kostenlosen Erstberatung Ihre Verhandlungsmöglichkeiten — Antwort innerhalb von 24 Stunden.
                   </p>
                   <Link
-                    href="/kuendigung-pruefen"
+                    href="/#kontakt"
                     className="block w-full py-4 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#1a1409] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.25)]"
                   >
                     Kostenlose Ersteinschätzung &rarr;
