@@ -176,6 +176,7 @@ export default function AufhebungsvertragPruefenPage() {
   const [history, setHistory] = useState<StepId[]>([]);
   const [answers, setAnswers] = useState<AufhebungsAnswer>(initialAnswers);
   const [scores, setScores] = useState<StepScore[]>([]);
+  const [pendingNext, setPendingNext] = useState<StepId | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const { idx: catIdx, catName } = getCategoryForStep(step);
@@ -192,12 +193,14 @@ export default function AufhebungsvertragPruefenPage() {
   };
 
   const goTo = (next: StepId) => {
+    setPendingNext(null);
     setHistory((prev) => [...prev, step]);
     setStep(next);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const goBack = () => {
+    setPendingNext(null);
     setHistory((prev) => {
       const copy = [...prev];
       const last = copy.pop();
@@ -216,7 +219,28 @@ export default function AufhebungsvertragPruefenPage() {
   ) => {
     set(key, value);
     addScore(stepName, category, color);
+    setPendingNext(null);
     setTimeout(() => goTo(next), 300);
+  };
+
+  /* Wie autoAdvance, aber OHNE auto-navigation — zeigt InfoBox + Weiter-Button */
+  const selectWithInfo = <K extends keyof AufhebungsAnswer>(
+    key: K,
+    value: AufhebungsAnswer[K],
+    next: StepId,
+    stepName: string,
+    category: number,
+    color: ScoreColor,
+  ) => {
+    set(key, value);
+    addScore(stepName, category, color);
+    setPendingNext(next);
+  };
+
+  const continueFromInfo = () => {
+    if (pendingNext) {
+      goTo(pendingNext);
+    }
   };
 
   const resetAll = () => {
@@ -224,6 +248,7 @@ export default function AufhebungsvertragPruefenPage() {
     setHistory([]);
     setAnswers(initialAnswers);
     setScores([]);
+    setPendingNext(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -492,7 +517,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein, keine Abfindung vorgesehen"
                 selected={answers.abfindungVorhanden === 'nein'}
-                onClick={() => autoAdvance('abfindungVorhanden', 'nein', 'S4', 'S1', 1, 'red')}
+                onClick={() => selectWithInfo('abfindungVorhanden', 'nein', 'S4', 'S1', 1, 'red')}
               />
               <RadioOption
                 label="Ich bin unsicher"
@@ -591,7 +616,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein, keine Regelung"
                 selected={answers.bonusGeregelt === 'nein'}
-                onClick={() => autoAdvance('bonusGeregelt', 'nein', 'S5', 'S4', 2, 'red')}
+                onClick={() => selectWithInfo('bonusGeregelt', 'nein', 'S5', 'S4', 2, 'red')}
               />
               <RadioOption
                 label="Ich habe keine solchen Ansprüche"
@@ -627,7 +652,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein, Resturlaub nicht geregelt"
                 selected={answers.urlaubGeregelt === 'nein'}
-                onClick={() => autoAdvance('urlaubGeregelt', 'nein', 'S6', 'S5', 2, 'red')}
+                onClick={() => selectWithInfo('urlaubGeregelt', 'nein', 'S6', 'S5', 2, 'red')}
               />
             </div>
             {answers.urlaubGeregelt === 'nein' && (
@@ -659,7 +684,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein, keine Widerrufsfrist enthalten"
                 selected={answers.widerrufsfrist === 'nein'}
-                onClick={() => autoAdvance('widerrufsfrist', 'nein', 'S7', 'S6', 3, 'red')}
+                onClick={() => selectWithInfo('widerrufsfrist', 'nein', 'S7', 'S6', 3, 'red')}
               />
             </div>
             {answers.widerrufsfrist === 'nein' && (
@@ -685,7 +710,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein, kein Hinweis im Vertrag enthalten"
                 selected={answers.sperrzeitHinweis === 'nein'}
-                onClick={() => autoAdvance('sperrzeitHinweis', 'nein', 'S8', 'S7', 3, 'red')}
+                onClick={() => selectWithInfo('sperrzeitHinweis', 'nein', 'S8', 'S7', 3, 'red')}
               />
               <RadioOption
                 label="Ich weiß es nicht"
@@ -716,7 +741,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Ja, aber Frist unter 3 Monate"
                 selected={answers.ausschlussfrist === 'ja_kurz'}
-                onClick={() => autoAdvance('ausschlussfrist', 'ja_kurz', 'S9', 'S8', 3, 'red')}
+                onClick={() => selectWithInfo('ausschlussfrist', 'ja_kurz', 'S9', 'S8', 3, 'red')}
               />
               <RadioOption
                 label="Keine Ausschlussfrist enthalten"
@@ -758,7 +783,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Unbezahlte Freistellung vereinbart"
                 selected={answers.freistellungArt === 'unbezahlt'}
-                onClick={() => autoAdvance('freistellungArt', 'unbezahlt', 'S11', 'S9', 4, 'red')}
+                onClick={() => selectWithInfo('freistellungArt', 'unbezahlt', 'S11', 'S9', 4, 'red')}
               />
               <RadioOption
                 label="Keine Regelung zur Freistellung"
@@ -789,7 +814,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Ja, ich bin privat versichert"
                 selected={answers.privatVersichert === 'ja'}
-                onClick={() => autoAdvance('privatVersichert', 'ja', 'S11', 'S10', 4, 'yellow')}
+                onClick={() => selectWithInfo('privatVersichert', 'ja', 'S11', 'S10', 4, 'yellow')}
               />
             </div>
             {answers.privatVersichert === 'ja' && (
@@ -821,7 +846,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein, kein Zeugnis geregelt"
                 selected={answers.zeugnisVereinbart === 'nein'}
-                onClick={() => autoAdvance('zeugnisVereinbart', 'nein', 'S12', 'S11', 5, 'red')}
+                onClick={() => selectWithInfo('zeugnisVereinbart', 'nein', 'S12', 'S11', 5, 'red')}
               />
             </div>
             {answers.zeugnisVereinbart === 'nein' && (
@@ -847,7 +872,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein, kein Datum vereinbart"
                 selected={answers.zeugnisdatum === 'nein'}
-                onClick={() => autoAdvance('zeugnisdatum', 'nein', 'S13', 'S12', 5, 'yellow')}
+                onClick={() => selectWithInfo('zeugnisdatum', 'nein', 'S13', 'S12', 5, 'yellow')}
               />
               <RadioOption
                 label="Kein Zeugnis im Vertrag vereinbart"
@@ -905,12 +930,12 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Ja, aber unter 50% des letzten Bruttogehalts"
                 selected={answers.karenzentschaedigung === 'ja_unter50'}
-                onClick={() => autoAdvance('karenzentschaedigung', 'ja_unter50', 'S15', 'S14', 6, 'red')}
+                onClick={() => selectWithInfo('karenzentschaedigung', 'ja_unter50', 'S15', 'S14', 6, 'red')}
               />
               <RadioOption
                 label="Nein, keine Karenzentschädigung vereinbart"
                 selected={answers.karenzentschaedigung === 'nein'}
-                onClick={() => autoAdvance('karenzentschaedigung', 'nein', 'S15', 'S14', 6, 'red')}
+                onClick={() => selectWithInfo('karenzentschaedigung', 'nein', 'S15', 'S14', 6, 'red')}
               />
             </div>
             {answers.karenzentschaedigung === 'ja_unter50' && (
@@ -978,7 +1003,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Nein / Ich bin nicht sicher"
                 selected={answers.sonderschutzEinbezogen === 'nein'}
-                onClick={() => autoAdvance('sonderschutzEinbezogen', 'nein', 'S17', 'S16', 7, 'red')}
+                onClick={() => selectWithInfo('sonderschutzEinbezogen', 'nein', 'S17', 'S16', 7, 'red')}
               />
             </div>
             {answers.sonderschutzEinbezogen === 'nein' && (
@@ -1010,7 +1035,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Ich sollte sofort unterschreiben"
                 selected={answers.bedenkzeit === 'sofort'}
-                onClick={() => autoAdvance('bedenkzeit', 'sofort', 'S18', 'S17', 8, 'red')}
+                onClick={() => selectWithInfo('bedenkzeit', 'sofort', 'S18', 'S17', 8, 'red')}
               />
             </div>
             {answers.bedenkzeit === 'sofort' && (
@@ -1036,12 +1061,12 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Ja, mit Kündigung gedroht"
                 selected={answers.druckAusgeubt === 'kuendigung'}
-                onClick={() => autoAdvance('druckAusgeubt', 'kuendigung', 'ERGEBNIS', 'S18', 8, 'yellow')}
+                onClick={() => selectWithInfo('druckAusgeubt', 'kuendigung', 'ERGEBNIS', 'S18', 8, 'yellow')}
               />
               <RadioOption
                 label="Ja, mit anderen Nachteilen gedroht"
                 selected={answers.druckAusgeubt === 'andere'}
-                onClick={() => autoAdvance('druckAusgeubt', 'andere', 'ERGEBNIS', 'S18', 8, 'red')}
+                onClick={() => selectWithInfo('druckAusgeubt', 'andere', 'ERGEBNIS', 'S18', 8, 'red')}
               />
             </div>
             {answers.druckAusgeubt === 'kuendigung' && (
@@ -1233,8 +1258,28 @@ export default function AufhebungsvertragPruefenPage() {
             {/* Step content */}
             {stepContent()}
 
-            {/* Back button */}
-            {step !== 'S1' && (
+            {/* Weiter-Button wenn InfoBox angezeigt wird */}
+            {pendingNext && (
+              <div className="flex items-center justify-between mt-6 gap-4">
+                {step !== 'S1' ? (
+                  <button
+                    onClick={goBack}
+                    className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
+                  >
+                    &larr; Zurück
+                  </button>
+                ) : <span />}
+                <button
+                  onClick={continueFromInfo}
+                  className="py-3 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px"
+                >
+                  Weiter &rarr;
+                </button>
+              </div>
+            )}
+
+            {/* Back button (nur wenn kein pendingNext, da sonst oben schon gezeigt) */}
+            {step !== 'S1' && !pendingNext && (
               <div className="mt-8">
                 <button
                   onClick={goBack}
