@@ -44,15 +44,15 @@ const categories = [
     ],
   },
   {
-    eyebrow: 'Berechnung',
-    title: 'Abfindungsrechner',
+    eyebrow: 'Tools',
+    title: 'Tools & Rechner',
     description:
-      'Berechnen Sie Ihre voraussichtliche Abfindung in 30 Sekunden. Drei Szenarien basierend auf der gängigen Abfindungsformel.',
-    href: '/abfindungsrechner',
+      'Kostenlose Tools für Kündigung, Abfindung und Aufhebungsvertrag — schnell, verständlich, sofort nutzbar.',
+    href: '/tools',
     items: [
-      'Bruttomonatsgehalt eingeben',
-      'Betriebszugehörigkeit angeben',
-      'Sofort Ergebnis erhalten',
+      'Abfindungsrechner',
+      'Kündigungscheck',
+      'Aufhebungsvertrag prüfen',
     ],
   },
 ];
