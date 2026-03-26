@@ -163,6 +163,7 @@ export default function KuendigungPruefenPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [warn21, setWarn21] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
 
   const { idx, total, cat } = getStepProgress(step);
   const progress = (idx / total) * 100;
@@ -242,6 +243,7 @@ export default function KuendigungPruefenPage() {
           phone: answers.telefon || undefined,
           disputeType: answers.fall === 'Kündigung erhalten' ? 'kuendigung' : answers.fall === 'Kündigung erwartet' ? 'kuendigung' : 'abfindung',
           message: `[Kündigungscheck]\n\n${message}`,
+          website: honeypot,
         }),
       });
       if (!res.ok) throw new Error('Failed to submit');
@@ -796,6 +798,10 @@ export default function KuendigungPruefenPage() {
             <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
               Wohin soll die kostenlose Ersteinschätzung gehen?
             </h2>
+            {/* Honeypot */}
+            <div className="absolute -left-[9999px]" aria-hidden="true">
+              <input type="text" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+            </div>
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
                 <div>

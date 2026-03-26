@@ -26,6 +26,7 @@ export default function ContactForm() {
           disputeType: formData.get('disputeType'),
           disputeValue: formData.get('disputeValue'),
           message: formData.get('message'),
+          website: formData.get('website'),
         }),
       });
 
@@ -121,6 +122,10 @@ export default function ContactForm() {
             <div className="bg-cream border border-border-light rounded p-9 px-8">
               {!submitted ? (
                 <form onSubmit={handleSubmit}>
+                  {/* Honeypot */}
+                  <div className="absolute -left-[9999px]" aria-hidden="true">
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                  </div>
                   <div className="grid grid-cols-2 gap-4 mb-4 max-md:grid-cols-1">
                     <div>
                       <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
