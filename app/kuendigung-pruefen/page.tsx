@@ -867,7 +867,7 @@ export default function KuendigungPruefenPage() {
             <button
               onClick={handleSubmit}
               disabled={!answers.email || !answers.datenschutz || !answers.vorname || !answers.nachname || loading}
-              className="w-full mt-6 py-4 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.3)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
+              className="w-full mt-6 py-4 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
             >
               {loading ? 'Wird gesendet...' : 'Jetzt Ergebnis anfordern \u2192'}
             </button>
@@ -904,7 +904,7 @@ export default function KuendigungPruefenPage() {
             </p>
             <button
               onClick={() => goTo('S10')}
-              className="w-full py-4 bg-[#8B7A3A] text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#6B6626] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(139,122,58,0.3)]"
+              className="w-full py-4 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
               Trotzdem kostenlos prüfen lassen &rarr;
             </button>
@@ -1064,7 +1064,7 @@ export default function KuendigungPruefenPage() {
                 <button
                   onClick={() => canAdvance() && goTo(getNextManualStep())}
                   disabled={!canAdvance()}
-                  className="py-3 px-8 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="py-3 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   Weiter &rarr;
                 </button>
