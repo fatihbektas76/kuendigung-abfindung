@@ -228,6 +228,12 @@ export default function KuendigungPruefenPage() {
         </div>
       </div>
 
+      <div className="mb-8 py-4 px-4 bg-cream rounded-sm border border-border">
+        <p className="text-[0.75rem] text-ink-muted leading-relaxed m-0">
+          <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung.
+        </p>
+      </div>
+
       <div className="mt-auto">
         <div className="flex items-center gap-1 text-gold text-[1rem]">
           {'★★★★★'}

@@ -234,6 +234,9 @@ export default function SchwellenwertRechnerPage() {
                   Schwellenwert prüfen
                 </button>
               </div>
+              <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
+                <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine verbindliche Einschätzung Ihres Falls wenden Sie sich bitte an einen <a href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</a>.
+              </p>
             </div>
 
             {/* Result */}
