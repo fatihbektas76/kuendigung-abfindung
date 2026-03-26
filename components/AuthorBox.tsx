@@ -48,7 +48,7 @@ export default function AuthorBox() {
             Profil ansehen
           </a>
           <a
-            href="https://meet.brevo.com/fatih-bektas/initial-free-consultation-by-phone-lp"
+            href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-gold hover:text-gold-dark no-underline transition-colors"

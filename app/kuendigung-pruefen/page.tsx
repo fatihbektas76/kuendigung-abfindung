@@ -386,7 +386,7 @@ export default function KuendigungPruefenPage() {
               </div>
             )}
             <a
-              href="https://meet.brevo.com/fatih-bektas/initial-free-consultation-by-phone-lp"
+              href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px"

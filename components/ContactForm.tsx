@@ -100,7 +100,7 @@ export default function ContactForm() {
                   <strong>Termin buchen</strong>
                   <br />
                   <a
-                    href="https://meet.brevo.com/fatih-bektas/initial-free-consultation-by-phone-lp"
+                    href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-ink-light no-underline hover:text-gold transition-colors"
