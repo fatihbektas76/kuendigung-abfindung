@@ -6,12 +6,18 @@ import Image from 'next/image';
 
 /* ───── Types ───── */
 interface Answers {
-  situation: string;
-  wichtigste: string;
   fall: string;
+  kuendigungErwartet: string;
+  tage21: string;
   kuendigungsDatum: string;
-  arbeitsBeginn: string;
+  sechsMonate: string;
   mitarbeiter: string;
+  besondereUmstaende: string;
+  umstandBekannt: string;
+  besondereRolle: string;
+  rolleBekannt: string;
+  arbeitsBeginnMonat: string;
+  arbeitsBeginnJahr: string;
   gehalt: string;
   rechtsschutz: string;
   vorname: string;
@@ -22,13 +28,19 @@ interface Answers {
 }
 
 const initialAnswers: Answers = {
-  situation: '',
-  wichtigste: '',
   fall: '',
+  kuendigungErwartet: '',
+  tage21: '',
   kuendigungsDatum: new Date().toISOString().slice(0, 10),
-  arbeitsBeginn: '',
+  sechsMonate: '',
   mitarbeiter: '',
-  gehalt: '3000',
+  besondereUmstaende: '',
+  umstandBekannt: '',
+  besondereRolle: '',
+  rolleBekannt: '',
+  arbeitsBeginnMonat: '',
+  arbeitsBeginnJahr: '',
+  gehalt: '',
   rechtsschutz: '',
   vorname: '',
   nachname: '',
@@ -44,18 +56,15 @@ function daysBetween(from: string, to: string): number {
   return Math.floor((b.getTime() - a.getTime()) / (1000 * 60 * 60 * 24));
 }
 
-function yearsAndMonths(from: string): { years: number; months: number } {
-  if (!from) return { years: 0, months: 0 };
-  const start = new Date(from);
+function yearsAndMonths(monat: string, jahr: string): { years: number; months: number } {
+  if (!monat || !jahr) return { years: 0, months: 0 };
+  const start = new Date(parseInt(jahr), parseInt(monat) - 1, 1);
   const now = new Date();
   let years = now.getFullYear() - start.getFullYear();
   let months = now.getMonth() - start.getMonth();
   if (months < 0) {
     years--;
     months += 12;
-  }
-  if (now.getDate() < start.getDate() && months > 0) {
-    months--;
   }
   return { years: Math.max(0, years), months: Math.max(0, months) };
 }
@@ -107,27 +116,86 @@ const pruefenFaqs = [
   },
 ];
 
+/* ───── Step Progress Config ───── */
+type StepId = 'S1' | 'S1b' | 'S2' | 'S3' | 'S4' | 'S5' | 'S6' | 'S6a' | 'S6b' | 'S6c' | 'S7' | 'S8' | 'S9' | 'S10' | 'KEIN';
+
+const MONATE = [
+  { value: '1', label: 'Januar' },
+  { value: '2', label: 'Februar' },
+  { value: '3', label: 'März' },
+  { value: '4', label: 'April' },
+  { value: '5', label: 'Mai' },
+  { value: '6', label: 'Juni' },
+  { value: '7', label: 'Juli' },
+  { value: '8', label: 'August' },
+  { value: '9', label: 'September' },
+  { value: '10', label: 'Oktober' },
+  { value: '11', label: 'November' },
+  { value: '12', label: 'Dezember' },
+];
+
+function getStepProgress(s: StepId): { idx: number; total: number; cat: string } {
+  switch (s) {
+    case 'S1':   return { idx: 1, total: 10, cat: 'Ihre Situation' };
+    case 'S1b':  return { idx: 2, total: 5,  cat: 'Ihre Situation' };
+    case 'S2':   return { idx: 1, total: 10, cat: 'Ihre Situation' };
+    case 'S3':   return { idx: 3, total: 10, cat: 'Ihr Arbeitsverhältnis' };
+    case 'S4':   return { idx: 4, total: 10, cat: 'Ihr Arbeitsverhältnis' };
+    case 'S5':   return { idx: 5, total: 10, cat: 'Ihr Arbeitsverhältnis' };
+    case 'S6':   return { idx: 6, total: 10, cat: 'Sonderschutz' };
+    case 'S6a':  return { idx: 7, total: 10, cat: 'Sonderschutz' };
+    case 'S6b':  return { idx: 7, total: 10, cat: 'Sonderschutz' };
+    case 'S6c':  return { idx: 8, total: 10, cat: 'Sonderschutz' };
+    case 'S7':   return { idx: 8, total: 10, cat: 'Ihre Abfindung' };
+    case 'S8':   return { idx: 9, total: 10, cat: 'Ihre Abfindung' };
+    case 'S9':   return { idx: 9, total: 10, cat: 'Fast fertig' };
+    case 'S10':  return { idx: 10, total: 10, cat: 'Ihre Kontaktdaten' };
+    case 'KEIN': return { idx: 6, total: 10, cat: 'Ergebnis' };
+    default:     return { idx: 1, total: 10, cat: '' };
+  }
+}
+
 /* ───── Main Component ───── */
 export default function KuendigungPruefenPage() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState<StepId>('S1');
+  const [history, setHistory] = useState<StepId[]>([]);
   const [answers, setAnswers] = useState<Answers>(initialAnswers);
   const [submitted, setSubmitted] = useState(false);
+  const [warn21, setWarn21] = useState(false);
 
-  const progress = (step / 9) * 100;
+  const { idx, total, cat } = getStepProgress(step);
+  const progress = (idx / total) * 100;
+
+  const currentYear = new Date().getFullYear();
+  const jahre = Array.from({ length: 41 }, (_, i) => currentYear - i);
 
   const set = <K extends keyof Answers>(key: K, value: Answers[K]) =>
     setAnswers((prev) => ({ ...prev, [key]: value }));
 
-  const autoAdvance = <K extends keyof Answers>(key: K, value: Answers[K]) => {
+  const goTo = (next: StepId) => {
+    setHistory((prev) => [...prev, step]);
+    setStep(next);
+  };
+
+  const goBack = () => {
+    setHistory((prev) => {
+      const copy = [...prev];
+      const last = copy.pop();
+      if (last) setStep(last);
+      return copy;
+    });
+  };
+
+  const autoAdvance = <K extends keyof Answers>(key: K, value: Answers[K], next: StepId) => {
     set(key, value);
-    setTimeout(() => setStep((s) => s + 1), 300);
+    setTimeout(() => goTo(next), 300);
   };
 
   /* Abfindung calculation */
   const betriebsjahre = useMemo(() => {
-    const { years, months } = yearsAndMonths(answers.arbeitsBeginn);
+    const { years, months } = yearsAndMonths(answers.arbeitsBeginnMonat, answers.arbeitsBeginnJahr);
     return Math.max(1, years + (months >= 6 ? 1 : 0));
-  }, [answers.arbeitsBeginn]);
+  }, [answers.arbeitsBeginnMonat, answers.arbeitsBeginnJahr]);
 
   const gehaltNum = parseFloat(answers.gehalt.replace(/\./g, '').replace(',', '.')) || 0;
   const abfindungMin = gehaltNum * 0.5 * betriebsjahre;
@@ -145,28 +213,54 @@ export default function KuendigungPruefenPage() {
     if (!answers.email || !answers.datenschutz) return;
 
     const body = [
-      `Situation: ${answers.situation}`,
-      `Wichtigstes Anliegen: ${answers.wichtigste}`,
       `Fall: ${answers.fall}`,
-      `Kündigungsdatum: ${answers.kuendigungsDatum}`,
-      `Arbeitsbeginn: ${answers.arbeitsBeginn}`,
+      answers.kuendigungErwartet ? `Kündigung erwartet: ${answers.kuendigungErwartet}` : '',
+      answers.kuendigungsDatum ? `Kündigungsdatum: ${answers.kuendigungsDatum}` : '',
+      answers.sechsMonate ? `Länger als 6 Monate beschäftigt: ${answers.sechsMonate}` : '',
+      answers.mitarbeiter ? `Mehr als 10 Mitarbeiter: ${answers.mitarbeiter}` : '',
+      answers.besondereUmstaende ? `Besondere Umstände: ${answers.besondereUmstaende}` : '',
+      answers.umstandBekannt ? `Umstand AG bekannt: ${answers.umstandBekannt}` : '',
+      answers.besondereRolle ? `Besondere Rolle: ${answers.besondereRolle}` : '',
+      answers.rolleBekannt ? `Rolle AG bekannt: ${answers.rolleBekannt}` : '',
+      answers.arbeitsBeginnMonat && answers.arbeitsBeginnJahr ? `Arbeitsbeginn: ${answers.arbeitsBeginnMonat}/${answers.arbeitsBeginnJahr}` : '',
       `Betriebszugehörigkeit: ${betriebsjahre} Jahre`,
-      `Mitarbeiter: ${answers.mitarbeiter}`,
-      `Bruttogehalt: ${answers.gehalt} €`,
-      `Mögliche Abfindung: ${fmt(abfindungMin)} – ${fmt(abfindungMax)}`,
-      `Rechtsschutzversicherung: ${answers.rechtsschutz}`,
+      answers.gehalt ? `Bruttogehalt: ${answers.gehalt} €` : '',
+      abfindungMin > 0 ? `Mögliche Abfindung: ${fmt(abfindungMin)} – ${fmt(abfindungMax)}` : '',
+      answers.rechtsschutz ? `Rechtsschutzversicherung: ${answers.rechtsschutz}` : '',
       ``,
       `Name: ${answers.vorname} ${answers.nachname}`,
       `E-Mail: ${answers.email}`,
       `Telefon: ${answers.telefon || '—'}`,
-      `Klagefrist verbleibend: ${fristTage} Tage`,
-    ].join('\n');
+      fristTage < 21 ? `Klagefrist verbleibend: ${fristTage} Tage` : '',
+    ].filter(Boolean).join('\n');
 
     const subject = encodeURIComponent(`Kündigungscheck: ${answers.vorname} ${answers.nachname}`);
     const mailBody = encodeURIComponent(body);
     window.location.href = `mailto:bektas@apos.legal?subject=${subject}&body=${mailBody}`;
 
     setSubmitted(true);
+  };
+
+  /* canAdvance for manual steps */
+  const canAdvance = () => {
+    switch (step) {
+      case 'S3': return !!answers.kuendigungsDatum;
+      case 'S7': return !!answers.arbeitsBeginnMonat && !!answers.arbeitsBeginnJahr;
+      case 'S8': return !!answers.gehalt && gehaltNum > 0;
+      default: return true;
+    }
+  };
+
+  const manualSteps: StepId[] = ['S3', 'S7', 'S8'];
+  const autoAdvanceSteps: StepId[] = ['S1', 'S1b', 'S2', 'S4', 'S5', 'S6', 'S6a', 'S6b', 'S6c', 'S9'];
+
+  const getNextManualStep = (): StepId => {
+    switch (step) {
+      case 'S3': return 'S4';
+      case 'S7': return 'S8';
+      case 'S8': return 'S9';
+      default: return 'S1';
+    }
   };
 
   /* ───── Sidebar ───── */
@@ -298,86 +392,98 @@ export default function KuendigungPruefenPage() {
   /* ───── Step Content ───── */
   const stepContent = () => {
     switch (step) {
-      /* ── Step 1 ── */
-      case 1:
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              In welcher Situation können wir Ihnen helfen?
-            </h2>
-            <div className="space-y-3">
-              {[
-                'Kündigung erhalten',
-                'Aufhebungsvertrag erhalten',
-                'Abmahnung erhalten',
-                'Arbeitszeugnis',
-                'Ausstehende Zahlung',
-                'Sonstiges',
-              ].map((opt) => (
-                <RadioOption
-                  key={opt}
-                  label={opt}
-                  selected={answers.situation === opt}
-                  onClick={() => autoAdvance('situation', opt)}
-                />
-              ))}
-            </div>
-          </div>
-        );
-
-      /* ── Step 2 ── */
-      case 2:
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Was ist Ihnen im Moment am wichtigsten?
-            </h2>
-            <div className="space-y-3">
-              {[
-                'Eine mögliche Abfindung prüfen',
-                'Gegen die Kündigung vorgehen',
-                'Anwaltliche Beratung einholen',
-              ].map((opt) => (
-                <RadioOption
-                  key={opt}
-                  label={opt}
-                  selected={answers.wichtigste === opt}
-                  onClick={() => autoAdvance('wichtigste', opt)}
-                />
-              ))}
-            </div>
-          </div>
-        );
-
-      /* ── Step 3 ── */
-      case 3:
+      /* ── S1 ── */
+      case 'S1':
         return (
           <div>
             <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
               Welcher Fall trifft auf Sie zu?
             </h2>
             <div className="space-y-3">
-              {[
-                'Schriftliche Kündigung erhalten',
-                'Kündigung erwartet',
-              ].map((opt) => (
-                <RadioOption
-                  key={opt}
-                  label={opt}
-                  selected={answers.fall === opt}
-                  onClick={() => autoAdvance('fall', opt)}
-                />
-              ))}
+              <RadioOption
+                label="Kündigung erhalten"
+                selected={answers.fall === 'Kündigung erhalten'}
+                onClick={() => autoAdvance('fall', 'Kündigung erhalten', 'S2')}
+              />
+              <RadioOption
+                label="Kündigung erwartet"
+                selected={answers.fall === 'Kündigung erwartet'}
+                onClick={() => autoAdvance('fall', 'Kündigung erwartet', 'S1b')}
+              />
+              <RadioOption
+                label="Abfindung berechnen"
+                selected={answers.fall === 'Abfindung berechnen'}
+                onClick={() => autoAdvance('fall', 'Abfindung berechnen', 'S7')}
+              />
             </div>
           </div>
         );
 
-      /* ── Step 4 ── */
-      case 4:
+      /* ── S1b ── */
+      case 'S1b':
         return (
           <div>
             <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Wann haben Sie die Kündigung erhalten?
+              Wann erwarten Sie Ihre Kündigung?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="In den nächsten 30 Tagen"
+                selected={answers.kuendigungErwartet === 'In den nächsten 30 Tagen'}
+                onClick={() => autoAdvance('kuendigungErwartet', 'In den nächsten 30 Tagen', 'S7')}
+              />
+              <RadioOption
+                label="Ich weiß es noch nicht"
+                selected={answers.kuendigungErwartet === 'Ich weiß es noch nicht'}
+                onClick={() => autoAdvance('kuendigungErwartet', 'Ich weiß es noch nicht', 'S7')}
+              />
+            </div>
+          </div>
+        );
+
+      /* ── S2 ── */
+      case 'S2':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Sind bereits mehr als 21 Tage seit Erhalt der Kündigung vergangen?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja"
+                selected={answers.tage21 === 'Ja'}
+                onClick={() => {
+                  set('tage21', 'Ja');
+                  setWarn21(true);
+                  setTimeout(() => goTo('S3'), 300);
+                }}
+              />
+              <RadioOption
+                label="Nein"
+                selected={answers.tage21 === 'Nein'}
+                onClick={() => {
+                  set('tage21', 'Nein');
+                  setWarn21(false);
+                  setTimeout(() => goTo('S3'), 300);
+                }}
+              />
+            </div>
+          </div>
+        );
+
+      /* ── S3 ── */
+      case 'S3':
+        return (
+          <div>
+            {warn21 && (
+              <div className="mb-6 py-4 px-5 bg-red-50 rounded-sm border-l-[3px] border-red-500">
+                <p className="text-[0.92rem] font-semibold text-red-700 m-0">
+                  ⚠ Achtung: Die 3-Wochen-Frist könnte abgelaufen sein &mdash; handeln Sie jetzt sofort.
+                </p>
+              </div>
+            )}
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Wann wurde Ihnen die Kündigung zugestellt?
             </h2>
             <input
               type="date"
@@ -412,80 +518,202 @@ export default function KuendigungPruefenPage() {
           </div>
         );
 
-      /* ── Step 5 ── */
-      case 5: {
-        const bz = yearsAndMonths(answers.arbeitsBeginn);
+      /* ── S4 ── */
+      case 'S4':
         return (
           <div>
             <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Seit wann arbeiten Sie in Ihrem Unternehmen?
-            </h2>
-            <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-              Erster Arbeitstag
-            </label>
-            <input
-              type="date"
-              value={answers.arbeitsBeginn}
-              onChange={(e) => set('arbeitsBeginn', e.target.value)}
-              className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.95rem] text-ink bg-white outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] transition-all"
-            />
-            {answers.arbeitsBeginn && (
-              <div className="mt-4 space-y-2">
-                <div className="py-3 px-4 bg-gold-bg rounded-sm border border-gold/20">
-                  <span className="text-[0.88rem] font-semibold text-gold-dark">
-                    Betriebszugehörigkeit: {bz.years} {bz.years === 1 ? 'Jahr' : 'Jahre'} und {bz.months} {bz.months === 1 ? 'Monat' : 'Monate'}
-                  </span>
-                </div>
-                {fristTage > 0 && (
-                  <div className="py-3 px-4 bg-cream rounded-sm border border-border">
-                    <span className={`text-[0.84rem] font-medium ${fristTage <= 7 ? 'text-red-700' : 'text-ink-muted'}`}>
-                      Noch {fristTage} {fristTage === 1 ? 'Tag' : 'Tage'} bis zur Klagefrist
-                    </span>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        );
-      }
-
-      /* ── Step 6 ── */
-      case 6:
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?
+              Arbeiten Sie bereits länger als 6 Monate bei Ihrem Arbeitgeber?
             </h2>
             <div className="space-y-3">
-              {[
-                { label: 'Mehr als 10 Mitarbeiter', value: '>10' },
-                { label: '1–10 Mitarbeiter', value: '1-10' },
-              ].map((opt) => (
-                <div key={opt.value}>
-                  <RadioOption
-                    label={opt.label}
-                    selected={answers.mitarbeiter === opt.value}
-                    onClick={() => autoAdvance('mitarbeiter', opt.value)}
-                  />
-                </div>
-              ))}
+              <RadioOption
+                label="Ja"
+                selected={answers.sechsMonate === 'Ja'}
+                onClick={() => autoAdvance('sechsMonate', 'Ja', 'S5')}
+              />
+              <RadioOption
+                label="Nein"
+                selected={answers.sechsMonate === 'Nein'}
+                onClick={() => autoAdvance('sechsMonate', 'Nein', 'KEIN')}
+              />
             </div>
-            {answers.mitarbeiter && (
-              <div className={`mt-4 py-4 px-5 rounded-sm border-l-[3px] ${
-                answers.mitarbeiter === '>10' ? 'bg-gold-bg border-gold' : 'bg-cream border-gold'
-              }`}>
+          </div>
+        );
+
+      /* ── S5 ── */
+      case 'S5':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Wie viele Vollzeit-Mitarbeiter beschäftigt Ihr Unternehmen?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja, mehr als 10 Mitarbeiter"
+                selected={answers.mitarbeiter === 'Ja, mehr als 10 Mitarbeiter'}
+                onClick={() => autoAdvance('mitarbeiter', 'Ja, mehr als 10 Mitarbeiter', 'S6')}
+              />
+              <RadioOption
+                label="Nein, 10 oder weniger Mitarbeiter"
+                selected={answers.mitarbeiter === 'Nein, 10 oder weniger Mitarbeiter'}
+                onClick={() => autoAdvance('mitarbeiter', 'Nein, 10 oder weniger Mitarbeiter', 'KEIN')}
+              />
+            </div>
+          </div>
+        );
+
+      /* ── S6 ── */
+      case 'S6':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Liegen bei Ihnen besondere Umstände vor?
+            </h2>
+            <div className="space-y-3">
+              {['Schwerbehinderung', 'Elternzeit', 'Pflegezeit', 'Schwangerschaft'].map((opt) => (
+                <RadioOption
+                  key={opt}
+                  label={opt}
+                  selected={answers.besondereUmstaende === opt}
+                  onClick={() => autoAdvance('besondereUmstaende', opt, 'S6a')}
+                />
+              ))}
+              <RadioOption
+                label="Nein / Keiner davon"
+                selected={answers.besondereUmstaende === 'Nein / Keiner davon'}
+                onClick={() => autoAdvance('besondereUmstaende', 'Nein / Keiner davon', 'S6b')}
+              />
+            </div>
+          </div>
+        );
+
+      /* ── S6a ── */
+      case 'S6a':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Ist dieser Umstand dem Arbeitgeber bekannt?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja, ist bekannt"
+                selected={answers.umstandBekannt === 'Ja, ist bekannt'}
+                onClick={() => autoAdvance('umstandBekannt', 'Ja, ist bekannt', 'S6b')}
+              />
+              <RadioOption
+                label="Nein, ist nicht bekannt"
+                selected={answers.umstandBekannt === 'Nein, ist nicht bekannt'}
+                onClick={() => autoAdvance('umstandBekannt', 'Nein, ist nicht bekannt', 'S6b')}
+              />
+            </div>
+            {answers.umstandBekannt === 'Nein, ist nicht bekannt' && (
+              <div className="mt-4 py-4 px-5 bg-gold-bg rounded-sm border-l-[3px] border-gold">
                 <p className="text-[0.88rem] text-ink m-0">
-                  {answers.mitarbeiter === '>10'
-                    ? 'Gut — das Kündigungsschutzgesetz gilt für Sie.'
-                    : 'Wichtig: Bei kleinen Betrieben gelten besondere Regeln.'}
+                  Wichtig: Teilen Sie diesen Umstand Ihrem Arbeitgeber unverzüglich mit, um den Sonderschutz zu sichern.
                 </p>
               </div>
             )}
           </div>
         );
 
-      /* ── Step 7 ── */
-      case 7:
+      /* ── S6b ── */
+      case 'S6b':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Haben Sie eine besondere Rolle im Unternehmen?
+            </h2>
+            <div className="space-y-3">
+              {[
+                'Betriebsratsmitglied',
+                'Datenschutzbeauftragter',
+                'Immissionsschutzbeauftragter',
+                'Auszubildende(r) außerhalb der Probezeit',
+                'Jugend- und Auszubildendenvertreter',
+                'Andere geschützte Rollen',
+              ].map((opt) => (
+                <RadioOption
+                  key={opt}
+                  label={opt}
+                  selected={answers.besondereRolle === opt}
+                  onClick={() => autoAdvance('besondereRolle', opt, 'S6c')}
+                />
+              ))}
+              <RadioOption
+                label="Nein"
+                selected={answers.besondereRolle === 'Nein'}
+                onClick={() => autoAdvance('besondereRolle', 'Nein', 'S7')}
+              />
+            </div>
+          </div>
+        );
+
+      /* ── S6c ── */
+      case 'S6c':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Ist dieser Umstand dem Arbeitgeber bekannt?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja, ist bekannt"
+                selected={answers.rolleBekannt === 'Ja, ist bekannt'}
+                onClick={() => autoAdvance('rolleBekannt', 'Ja, ist bekannt', 'S7')}
+              />
+              <RadioOption
+                label="Nein, ist nicht bekannt"
+                selected={answers.rolleBekannt === 'Nein, ist nicht bekannt'}
+                onClick={() => autoAdvance('rolleBekannt', 'Nein, ist nicht bekannt', 'S7')}
+              />
+            </div>
+          </div>
+        );
+
+      /* ── S7 ── */
+      case 'S7':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Seit wann sind Sie im Unternehmen beschäftigt?
+            </h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+                  Monat
+                </label>
+                <select
+                  value={answers.arbeitsBeginnMonat}
+                  onChange={(e) => set('arbeitsBeginnMonat', e.target.value)}
+                  className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.95rem] text-ink bg-white outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] transition-all"
+                >
+                  <option value="">&mdash;</option>
+                  {MONATE.map((m) => (
+                    <option key={m.value} value={m.value}>{m.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+                  Jahr
+                </label>
+                <select
+                  value={answers.arbeitsBeginnJahr}
+                  onChange={(e) => set('arbeitsBeginnJahr', e.target.value)}
+                  className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.95rem] text-ink bg-white outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] transition-all"
+                >
+                  <option value="">&mdash;</option>
+                  {jahre.map((j) => (
+                    <option key={j} value={String(j)}>{j}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        );
+
+      /* ── S8 ── */
+      case 'S8':
         return (
           <div>
             <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
@@ -502,8 +730,12 @@ export default function KuendigungPruefenPage() {
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted text-[0.92rem]">&euro;</span>
             </div>
-            {gehaltNum > 0 && answers.arbeitsBeginn && (
-              <div className="mt-4 py-5 px-5 bg-gold-bg rounded-sm border-2 border-gold">
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-out ${
+                gehaltNum > 0 ? 'max-h-[200px] opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+              }`}
+            >
+              <div className="py-5 px-5 bg-gold-bg rounded-sm border-2 border-gold">
                 <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
                   Mögliche Abfindung
                 </div>
@@ -514,12 +746,12 @@ export default function KuendigungPruefenPage() {
                   Basierend auf {betriebsjahre} {betriebsjahre === 1 ? 'Jahr' : 'Jahren'} &times; {answers.gehalt} &euro; Brutto
                 </div>
               </div>
-            )}
+            </div>
           </div>
         );
 
-      /* ── Step 8 ── */
-      case 8:
+      /* ── S9 ── */
+      case 'S9':
         return (
           <div>
             <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
@@ -531,20 +763,20 @@ export default function KuendigungPruefenPage() {
                   key={opt}
                   label={opt}
                   selected={answers.rechtsschutz === opt}
-                  onClick={() => autoAdvance('rechtsschutz', opt)}
+                  onClick={() => autoAdvance('rechtsschutz', opt, 'S10')}
                 />
               ))}
             </div>
             <div className="mt-4 py-4 px-5 bg-gold-bg rounded-sm border-l-[3px] border-gold">
               <p className="text-[0.88rem] text-ink m-0">
-                Ob mit oder ohne Rechtsschutzversicherung &mdash; wir unterstützen Sie ohne Kostenrisiko!
+                Kein Problem, auch wenn Sie keine Rechtsschutzversicherung haben &mdash; wir unterstützen Sie trotzdem und finden gemeinsam eine passende Lösung für Sie.
               </p>
             </div>
           </div>
         );
 
-      /* ── Step 9 ── */
-      case 9:
+      /* ── S10 ── */
+      case 'S10':
         return (
           <div>
             <div className="inline-block py-1 px-3 bg-gold-bg border border-gold/20 rounded-full text-[0.78rem] font-semibold text-gold-dark mb-4">
@@ -648,17 +880,28 @@ export default function KuendigungPruefenPage() {
           </div>
         );
 
+      /* ── KEIN ── */
+      case 'KEIN':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Die Kündigung könnte wirksam sein.
+            </h2>
+            <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-6">
+              Bei Betrieben mit bis zu 10 Mitarbeitern oder einer Beschäftigung unter 6 Monaten greift das Kündigungsschutzgesetz nicht.
+              Dennoch können andere Ansprüche bestehen &mdash; z.&nbsp;B. ausstehende Vergütung, Zeugnis oder Sonderkündigungsschutz.
+            </p>
+            <button
+              onClick={() => goTo('S10')}
+              className="w-full py-4 bg-[#2A1F0E] text-gold border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.3)]"
+            >
+              Trotzdem kostenlos prüfen lassen &rarr;
+            </button>
+          </div>
+        );
+
       default:
         return null;
-    }
-  };
-
-  const canAdvance = () => {
-    switch (step) {
-      case 4: return !!answers.kuendigungsDatum;
-      case 5: return !!answers.arbeitsBeginn;
-      case 7: return !!answers.gehalt && gehaltNum > 0;
-      default: return true;
     }
   };
 
@@ -778,10 +1021,10 @@ export default function KuendigungPruefenPage() {
             <h1 className="sr-only">Kündigung kostenlos prüfen lassen — Ersteinschätzung in 2 Minuten</h1>
             <div className="flex items-center justify-between mb-2">
               <span className="text-[0.78rem] font-semibold text-gold-dark">
-                Jetzt mögliche Abfindung prüfen
+                {cat}
               </span>
               <span className="text-[0.78rem] text-ink-muted">
-                Schritt {step} von 9
+                Schritt {idx} von {total}
               </span>
             </div>
             <div className="h-2 bg-border rounded-full overflow-hidden">
@@ -798,17 +1041,17 @@ export default function KuendigungPruefenPage() {
           <div className="w-full max-w-[540px]">
             {stepContent()}
 
-            {/* Navigation buttons for non-auto-advance steps */}
-            {[4, 5, 7].includes(step) && (
+            {/* Manual steps: Zurück + Weiter */}
+            {manualSteps.includes(step) && (
               <div className="flex items-center justify-between mt-8 gap-4">
                 <button
-                  onClick={() => setStep((s) => Math.max(1, s - 1))}
+                  onClick={goBack}
                   className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
                 >
                   &larr; Zurück
                 </button>
                 <button
-                  onClick={() => canAdvance() && setStep((s) => s + 1)}
+                  onClick={() => canAdvance() && goTo(getNextManualStep())}
                   disabled={!canAdvance()}
                   className="py-3 px-8 bg-[#2A1F0E] text-gold border-none rounded-sm font-sans text-[0.92rem] font-semibold cursor-pointer transition-all hover:bg-[#1C1408] hover:-translate-y-px disabled:opacity-40 disabled:cursor-not-allowed"
                 >
@@ -817,11 +1060,11 @@ export default function KuendigungPruefenPage() {
               </div>
             )}
 
-            {/* Back button for auto-advance steps (except step 1) */}
-            {![1, 4, 5, 7, 9].includes(step) && (
+            {/* Auto-advance back button (except S1) */}
+            {autoAdvanceSteps.includes(step) && step !== 'S1' && (
               <div className="mt-8">
                 <button
-                  onClick={() => setStep((s) => Math.max(1, s - 1))}
+                  onClick={goBack}
                   className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
                 >
                   &larr; Zurück
@@ -829,11 +1072,23 @@ export default function KuendigungPruefenPage() {
               </div>
             )}
 
-            {/* Step 9 back button */}
-            {step === 9 && (
+            {/* S10 back button */}
+            {step === 'S10' && (
               <div className="mt-4 text-center">
                 <button
-                  onClick={() => setStep(8)}
+                  onClick={goBack}
+                  className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
+                >
+                  &larr; Zurück
+                </button>
+              </div>
+            )}
+
+            {/* KEIN back button */}
+            {step === 'KEIN' && (
+              <div className="mt-4 text-center">
+                <button
+                  onClick={goBack}
                   className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
                 >
                   &larr; Zurück
