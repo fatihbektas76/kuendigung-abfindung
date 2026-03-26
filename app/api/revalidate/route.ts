@@ -20,6 +20,7 @@ export async function GET(request: NextRequest) {
     '/ratgeber/muster',
     '/abfindungsrechner',
     '/kuendigung-pruefen',
+    '/tools',
     '/blog',
   ];
 

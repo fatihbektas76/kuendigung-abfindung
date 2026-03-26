@@ -123,6 +123,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/abfindungsrechner" className={linkClass}>Abfindungsrechner</Link></li>
               <li><Link href="/schwellenwert-rechner" className={linkClass}>Schwellenwert-Rechner</Link></li>
               <li><Link href="/kuendigung-pruefen" className={linkClass}>Kündigung prüfen</Link></li>
+              <li><Link href="/tools" className={linkClass}>Alle Tools &rarr;</Link></li>
             </ul>
           </div>
 

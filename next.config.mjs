@@ -4,7 +4,6 @@ const nextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
-      { source: '/tools/:path*', destination: '/', permanent: true },
       { source: '/blog/:path*', destination: '/', permanent: true },
       { source: '/blog', destination: '/', permanent: true },
     ];
