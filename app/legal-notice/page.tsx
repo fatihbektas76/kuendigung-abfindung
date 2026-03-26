@@ -40,16 +40,6 @@ export default function LegalNoticePage() {
           <br />
           E-Mail: <a href="mailto:info@apos.legal">info@apos.legal</a>
         </p>
-        <p>
-          EU-Plattform zur Online-Streitbeilegung (OS):{' '}
-          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
-            https://ec.europa.eu/consumers/odr/
-          </a>
-        </p>
-        <p>
-          Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-        </p>
-
         <h2>Angaben gemäß &sect;2 DL-InfoV</h2>
         <p>
           Die gesetzlichen Berufsbezeichnungen &bdquo;Rechtsanwalt&ldquo; und &bdquo;Rechtsanwältin&ldquo; sowie die Fachanwaltsbezeichnungen wurden in der Bundesrepublik Deutschland verliehen.
