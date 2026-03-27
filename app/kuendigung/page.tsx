@@ -79,6 +79,7 @@ export default function KuendigungPage() {
         ]}
         includeOrganization={false}
         includeRating={false}
+        speakableSelectors={['.faq-section']}
         isBasedOn={[
           { name: 'Kündigungsschutzgesetz (KSchG)', url: 'https://www.gesetze-im-internet.de/kschg/' },
           { name: 'Bürgerliches Gesetzbuch (BGB) §622', url: 'https://www.gesetze-im-internet.de/bgb/__622.html' },

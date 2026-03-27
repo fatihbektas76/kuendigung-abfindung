@@ -93,7 +93,11 @@ export default function AufhebungsvertragPage() {
   return (
     <main>
       <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/aufhebungsvertrag`}
+        pageTitle="Aufhebungsvertrag erhalten – was Sie wissen müssen"
+        pageDescription="Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag."
         pageType="WebPage"
+        speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Start', url: SEO_CONFIG.baseUrl },
           { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag` },

@@ -56,7 +56,11 @@ export default function AbmahnungPage() {
   return (
     <main>
       <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/abmahnung`}
+        pageTitle="Abmahnung erhalten – was jetzt?"
+        pageDescription="Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer."
         pageType="WebPage"
+        speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Start', url: SEO_CONFIG.baseUrl },
           { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung` },

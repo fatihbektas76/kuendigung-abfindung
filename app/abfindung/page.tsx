@@ -69,6 +69,7 @@ export default function AbfindungPage() {
         ]}
         includeOrganization={false}
         includeRating={false}
+        speakableSelectors={['.faq-section']}
         isBasedOn={[
           { name: 'Kündigungsschutzgesetz (KSchG) §1a', url: 'https://www.gesetze-im-internet.de/kschg/__1a.html' },
           { name: 'Bürgerliches Gesetzbuch (BGB) §622', url: 'https://www.gesetze-im-internet.de/bgb/__622.html' },

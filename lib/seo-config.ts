@@ -38,7 +38,7 @@ export const SEO_CONFIG = {
     url: 'https://www.gekuendigt-abfindung.de',
     description:
       'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. 20+ Jahre Erfahrung, 2.000+ Verfahren.',
-    telephone: '+4915127003173',
+    telephone: '+4962213214470',
     email: 'bektas@apos.legal',
     address: {
       streetAddress: 'Am Paradeplatz 20',

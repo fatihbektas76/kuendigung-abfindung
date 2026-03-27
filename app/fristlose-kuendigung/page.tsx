@@ -56,7 +56,11 @@ export default function FristloseKuendigungPage() {
   return (
     <main>
       <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/fristlose-kuendigung`}
+        pageTitle="Fristlose Kündigung – Ihre Rechte"
+        pageDescription="Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht."
         pageType="WebPage"
+        speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Start', url: SEO_CONFIG.baseUrl },
           { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },

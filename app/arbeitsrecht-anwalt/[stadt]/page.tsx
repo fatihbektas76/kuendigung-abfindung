@@ -52,10 +52,10 @@ export async function generateMetadata({
   const result = lookupOrt(params.stadt);
   if (!result) return {};
   const { ort, content } = result;
-  const url = `https://gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}`;
+  const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}`;
 
   return {
-    title: `Fachanwalt für Arbeitsrecht für Arbeitnehmer in ${ort.name} | Kündigung & Abfindung – APOS Legal`,
+    title: `Fachanwalt Arbeitsrecht ${ort.name} | APOS Legal`,
     description: content?.metaDescription ??
       `Kündigung erhalten in ${ort.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${ort.arbeitsgericht}. Kostenlose Ersteinschätzung.`,
     alternates: { canonical: url },
@@ -64,7 +64,7 @@ export async function generateMetadata({
       "geo.placename": ort.name,
     },
     openGraph: {
-      title: `Fachanwalt für Arbeitsrecht für Arbeitnehmer in ${ort.name} – Kündigung & Abfindung | APOS Legal`,
+      title: `Fachanwalt Arbeitsrecht ${ort.name} – Kündigung & Abfindung`,
       description: content?.metaDescription ?? "",
       url,
       type: "website",
@@ -78,7 +78,7 @@ function buildSchema(slug: string) {
   if (!result) return null;
   const { ort, content } = result;
 
-  const url = `https://gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}`;
+  const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}`;
 
   return {
     "@context": "https://schema.org",
@@ -133,13 +133,14 @@ function buildSchema(slug: string) {
       },
       {
         "@type": "Person",
-        "@id": "https://gekuendigt-abfindung.de/#fatih-bektas",
+        "@id": "https://www.gekuendigt-abfindung.de/#fatih-bektas",
         name: "Fatih Bektas",
         jobTitle: "Fachanwalt für Arbeitsrecht",
         description: "Zugelassen seit 2005, Fachanwalt für Arbeitsrecht seit 2011, Rechtsanwaltskammer Karlsruhe",
         worksFor: { "@type": "LegalService", name: "APOS Legal" },
         sameAs: [
-          "https://www.anwalt.de/fatih-bektas",
+          "https://www.anwalt.de/fatihbektas",
+          "https://www.gekuendigt-abfindung.de/team/",
         ],
       },
       {
@@ -157,8 +158,8 @@ function buildSchema(slug: string) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Startseite", item: "https://gekuendigt-abfindung.de" },
-          { "@type": "ListItem", position: 2, name: "Arbeitsrecht Anwalt", item: "https://gekuendigt-abfindung.de/arbeitsrecht-anwalt" },
+          { "@type": "ListItem", position: 1, name: "Startseite", item: "https://www.gekuendigt-abfindung.de" },
+          { "@type": "ListItem", position: 2, name: "Arbeitsrecht Anwalt", item: "https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt" },
           { "@type": "ListItem", position: 3, name: `Anwalt ${ort.name}`, item: url },
         ],
       },

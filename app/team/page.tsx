@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Lernen Sie unser Team kennen: Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten. Über 2.000 erfolgreiche Verfahren.',
   alternates: {
-    canonical: 'https://www.gekuendigt-abfindung.de/team',
+    canonical: 'https://www.gekuendigt-abfindung.de/team/',
   },
 };
 
@@ -37,8 +37,8 @@ const personSchemas = [
     email: 'bektas@apos.legal',
     telephone: '+4915127003173',
     sameAs: [
-      'https://www.linkedin.com/in/fatihbektas',
-      'https://www.anwalt.de/bektas',
+      'https://www.anwalt.de/fatihbektas',
+      'https://www.gekuendigt-abfindung.de/team/',
     ],
     worksFor: { '@id': `${BASE_URL}/#organization` },
     hasCredential: [
