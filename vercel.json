@@ -1,12 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.gekuendigt-abfindung.de" }],
-      "destination": "https://gekuendigt-abfindung.de/$1",
-      "permanent": true
-    }
-  ],
   "crons": [
     {
       "path": "/api/revalidate?secret=${REVALIDATE_SECRET}",
