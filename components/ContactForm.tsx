@@ -89,25 +89,19 @@ export default function ContactForm() {
                   </a>
                 </div>
               </div>
-              <div className="flex items-center gap-3 mb-3.5 text-[0.92rem] text-ink-light">
-                <div className="w-11 h-11 min-w-[44px] rounded-[10px] bg-gold-bg border border-gold/[0.12] flex items-center justify-center text-gold">
+              <div className="flex justify-center mt-5 mb-3.5">
+                <a
+                  href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 py-3.5 px-8 border-2 border-gold bg-gold-bg text-gold-dark font-semibold text-[0.95rem] rounded-sm no-underline transition-all hover:bg-gold hover:text-white hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
+                >
                   <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
                   </svg>
-                </div>
-                <div>
-                  <strong>Termin buchen</strong>
-                  <br />
-                  <a
-                    href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-ink-light no-underline hover:text-gold transition-colors"
-                  >
-                    Jetzt Online Termin buchen
-                  </a>
-                </div>
+                  Jetzt Online Termin buchen
+                </a>
               </div>
               <div className="mt-6 py-4 px-5 bg-cream rounded-sm border-l-[3px] border-gold">
                 <p className="text-[0.85rem] text-ink-muted m-0 leading-relaxed">

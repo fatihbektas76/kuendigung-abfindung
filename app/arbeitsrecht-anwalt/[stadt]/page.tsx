@@ -15,6 +15,11 @@ const gemeindenContents = gemeindenContentsRaw as Record<string, GemeindeContent
 const bezirkeContents = bezirkeContentsRaw as Record<string, GemeindeContent>;
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
+/** Heidelberg & Berlin (inkl. Bezirke) = Kanzleistandorte */
+function isKanzleistandort(slug: string): boolean {
+  return slug === "heidelberg" || slug === "berlin" || slug.startsWith("berlin-");
+}
+
 function lookupOrt(slug: string): { ort: Stadt; content: StadtContent | GemeindeContent; isGemeinde: boolean } | null {
   const stadt = getStadtBySlug(slug);
   if (stadt && stadtContents[slug]) return { ort: stadt, content: stadtContents[slug], isGemeinde: false };
@@ -79,7 +84,9 @@ function buildSchema(slug: string) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["LegalService", "LocalBusiness"],
+        "@type": isKanzleistandort(ort.slug)
+          ? ["LegalService", "LocalBusiness"]
+          : "LegalService",
         "@id": `${url}#legalservice`,
         name: "APOS Legal – Kanzlei Fatih Bektas",
         description: `Fachanwalt für Arbeitsrecht mit Beratung für Arbeitnehmer in ${ort.name}`,
@@ -196,6 +203,17 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             <span key={b} className="text-xs text-[#6B6626] bg-[#f5f2e8] border border-[#d4c98a] rounded px-2 py-1">{b}</span>
           ))}
         </div>
+
+        {/* Kanzleisitz-Hinweis für Nicht-Standorte */}
+        {!isKanzleistandort(params.stadt) && (
+          <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
+            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="shrink-0 text-[#8B7A3A]">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Kanzleisitz Heidelberg – bundesweite Vertretung möglich
+          </div>
+        )}
 
         {/* CTA Box */}
         <div className="border-l-4 border-[#8B7A3A] bg-white border border-gray-200 rounded-r-lg p-5 mb-8 flex justify-between items-center gap-4">
