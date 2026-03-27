@@ -27,7 +27,8 @@ export const SEO_CONFIG = {
     ],
     sameAs: [
       'https://www.anwalt.de/fatihbektas',
-      'https://www.gekuendigt-abfindung.de/team',
+      'https://www.linkedin.com/in/fatihbektas',
+      'https://www.gekuendigt-abfindung.de/team/',
     ],
   },
 
@@ -101,7 +102,7 @@ export function buildMetadata({
   path: string;
   noindex?: boolean;
 }): Metadata {
-  const canonical = `${SEO_CONFIG.baseUrl}${path}`;
+  const canonical = `${SEO_CONFIG.baseUrl}${path}${path.endsWith('/') ? '' : '/'}`;
   return {
     title,
     description,

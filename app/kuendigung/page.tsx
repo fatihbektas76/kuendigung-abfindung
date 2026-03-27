@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer. Fachanwalt für Arbeitsrecht – kostenlose Ersteinschätzung.',
   alternates: {
-    canonical: `${SEO_CONFIG.baseUrl}/kuendigung`,
+    canonical: `${SEO_CONFIG.baseUrl}/kuendigung/`,
   },
   openGraph: {
     title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,

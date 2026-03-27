@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${entry.h1} — kostenlos (${new Date().getFullYear()})`,
     description: entry.description,
     alternates: {
-      canonical: `${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}`,
+      canonical: `${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}/`,
     },
   };
 }
@@ -48,7 +48,12 @@ export default function Page({ params }: Props) {
   return (
     <>
       <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}`}
+        pageTitle={entry.h1}
+        pageDescription={entry.description}
         pageType="WebPage"
+        includeOrganization={false}
+        includeRating={false}
         breadcrumbs={[
           { name: 'Start', url: SEO_CONFIG.baseUrl },
           { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },

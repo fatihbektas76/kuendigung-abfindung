@@ -134,7 +134,12 @@ export default function ToolsPage() {
   return (
     <main>
       <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/tools`}
+        pageTitle="Arbeitsrecht Tools & Rechner"
+        pageDescription="Kostenlose Arbeitsrechts-Tools: Abfindungsrechner, Kündigungscheck & mehr. Sofortige Ersteinschätzung vom Fachanwalt."
         pageType="WebPage"
+        includeOrganization={false}
+        includeRating={false}
         breadcrumbs={[
           { name: 'Start', url: SEO_CONFIG.baseUrl },
           { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },

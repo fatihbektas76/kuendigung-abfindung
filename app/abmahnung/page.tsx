@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer. Kostenlose Ersteinschätzung vom Fachanwalt.',
   alternates: {
-    canonical: `${SEO_CONFIG.baseUrl}/abmahnung`,
+    canonical: `${SEO_CONFIG.baseUrl}/abmahnung/`,
   },
   openGraph: {
     title: `Abmahnung – Ihre Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
@@ -60,6 +60,8 @@ export default function AbmahnungPage() {
         pageTitle="Abmahnung erhalten – was jetzt?"
         pageDescription="Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer."
         pageType="WebPage"
+        includeOrganization={false}
+        includeRating={false}
         speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Start', url: SEO_CONFIG.baseUrl },

@@ -34,58 +34,58 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const monthly = monthlyDate();
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE_URL, lastModified: weekly, changeFrequency: 'daily', priority: 1.0 },
-    { url: `${BASE_URL}/abfindung`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
-    { url: `${BASE_URL}/kuendigung`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
-    { url: `${BASE_URL}/aufhebungsvertrag`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
-    { url: `${BASE_URL}/abmahnung`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
-    { url: `${BASE_URL}/ratgeber`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
-    { url: `${BASE_URL}/ratgeber/urteile`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
-    { url: `${BASE_URL}/ratgeber/muster`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
-    { url: `${BASE_URL}/abfindungsrechner`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/kuendigung-pruefen`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
-    { url: `${BASE_URL}/schwellenwert-rechner`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/tools`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/ueberstundenrechner`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/kuendigungsfrist-rechner`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/urlaubsabgeltung-rechner`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/urlaub-teilzeit-rechner`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/aufhebungsvertrag-pruefen`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/team`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE_URL}/legal-notice`, lastModified: monthly, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE_URL}/privacy-policy`, lastModified: monthly, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE_URL}/`, lastModified: weekly, changeFrequency: 'daily', priority: 1.0 },
+    { url: `${BASE_URL}/abfindung/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/kuendigung/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/aufhebungsvertrag/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/abmahnung/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/ratgeber/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${BASE_URL}/ratgeber/urteile/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${BASE_URL}/ratgeber/muster/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${BASE_URL}/abfindungsrechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/kuendigung-pruefen/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/schwellenwert-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/tools/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/ueberstundenrechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/kuendigungsfrist-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/urlaubsabgeltung-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/urlaub-teilzeit-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/aufhebungsvertrag-pruefen/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/team/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/legal-notice/`, lastModified: monthly, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE_URL}/privacy-policy/`, lastModified: monthly, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const clusterAPages: MetadataRoute.Sitemap = entries.map((e) => ({
-    url: `${BASE_URL}/abfindung-nach-${e.slug}-betriebszugehoerigkeit`,
+    url: `${BASE_URL}/abfindung-nach-${e.slug}-betriebszugehoerigkeit/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
   const clusterDPages: MetadataRoute.Sitemap = entries.map((e) => ({
-    url: `${BASE_URL}/gekuendigt-nach-${e.slug}-betriebszugehoerigkeit`,
+    url: `${BASE_URL}/gekuendigt-nach-${e.slug}-betriebszugehoerigkeit/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
   const clusterGPages: MetadataRoute.Sitemap = abmahnungEntries.map((e) => ({
-    url: `${BASE_URL}/kuendigung-nach-${e.slug}`,
+    url: `${BASE_URL}/kuendigung-nach-${e.slug}/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));
 
   const clusterHPages: MetadataRoute.Sitemap = lebenssituationData.map((e) => ({
-    url: `${BASE_URL}/kuendigung/${e.slug}`,
+    url: `${BASE_URL}/kuendigung/${e.slug}/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
   const clusterJPages: MetadataRoute.Sitemap = aufhebungsvertragData.map((e) => ({
-    url: `${BASE_URL}/aufhebungsvertrag/${e.slug}`,
+    url: `${BASE_URL}/aufhebungsvertrag/${e.slug}/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.8,
@@ -93,13 +93,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const clusterFPages: MetadataRoute.Sitemap = [
     {
-      url: `${BASE_URL}/fristlose-kuendigung`,
+      url: `${BASE_URL}/fristlose-kuendigung/`,
       lastModified: weekly,
       changeFrequency: 'daily',
       priority: 0.9,
     },
     ...entries.map((e) => ({
-      url: `${BASE_URL}/fristlose-kuendigung-nach-${e.slug}-betriebszugehoerigkeit`,
+      url: `${BASE_URL}/fristlose-kuendigung-nach-${e.slug}-betriebszugehoerigkeit/`,
       lastModified: monthly as Date,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -107,7 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const musterSubPages: MetadataRoute.Sitemap = musterPages.map((e) => ({
-    url: `${BASE_URL}/ratgeber/muster/${e.slug}`,
+    url: `${BASE_URL}/ratgeber/muster/${e.slug}/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.7,
@@ -115,13 +115,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const arbeitsrechtAnwaltPages: MetadataRoute.Sitemap = [
     {
-      url: `${BASE_URL}/arbeitsrecht-anwalt`,
+      url: `${BASE_URL}/arbeitsrecht-anwalt/`,
       lastModified: weekly,
       changeFrequency: 'daily',
       priority: 0.9,
     },
     ...[...staedte, ...gemeinden, ...berlinBezirke].map((ort) => ({
-      url: `${BASE_URL}/arbeitsrecht-anwalt/${ort.slug}`,
+      url: `${BASE_URL}/arbeitsrecht-anwalt/${ort.slug}/`,
       lastModified: monthly as Date,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -129,7 +129,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const urteilPages: MetadataRoute.Sitemap = urteile.map((u) => ({
-    url: `${BASE_URL}/urteile/${u.slug}`,
+    url: `${BASE_URL}/urteile/${u.slug}/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.8,

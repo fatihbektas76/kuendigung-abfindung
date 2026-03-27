@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht — kostenlose Ersteinschätzung.',
   alternates: {
-    canonical: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung`,
+    canonical: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`,
   },
   openGraph: {
     title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
@@ -60,6 +60,8 @@ export default function FristloseKuendigungPage() {
         pageTitle="Fristlose Kündigung – Ihre Rechte"
         pageDescription="Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht."
         pageType="WebPage"
+        includeOrganization={false}
+        includeRating={false}
         speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Start', url: SEO_CONFIG.baseUrl },

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag – kostenlose Ersteinschätzung.',
   alternates: {
-    canonical: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag`,
+    canonical: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/`,
   },
   openGraph: {
     title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
@@ -97,6 +97,8 @@ export default function AufhebungsvertragPage() {
         pageTitle="Aufhebungsvertrag erhalten – was Sie wissen müssen"
         pageDescription="Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag."
         pageType="WebPage"
+        includeOrganization={false}
+        includeRating={false}
         speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Start', url: SEO_CONFIG.baseUrl },
