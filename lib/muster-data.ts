@@ -25,14 +25,6 @@ export const musterPages: MusterPageEntry[] = [
     contentKey: 'gegendarstellungAbmahnung',
   },
   {
-    slug: 'kuendigungsschutzklage',
-    h1: 'Kündigungsschutzklage — Muster',
-    description: 'Kostenloses Muster: Kündigungsschutzklage (vereinfacht) mit Ausfüllhilfe. Zur Orientierung — eine Klage sollte immer vom Fachanwalt eingereicht werden.',
-    keywords: 'Kündigungsschutzklage Muster, Klage gegen Kündigung, Vorlage Kündigungsschutzklage',
-    type: 'muster',
-    contentKey: 'kuendigungsschutzklage',
-  },
-  {
     slug: 'checkliste-aufhebungsvertrag',
     h1: 'Checkliste: Aufhebungsvertrag prüfen',
     description: 'Kostenlose Checkliste: 15 Punkte die Sie im Aufhebungsvertrag prüfen müssen. Vom Fachanwalt für Arbeitsrecht zusammengestellt.',

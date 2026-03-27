@@ -48,18 +48,21 @@ export default function PrivacyPolicyPage() {
 
         <h2>3. Hosting</h2>
         <p>
-          Diese Website wird von Vercel Inc., 440 N Baxter St, Suite 4060, Coppell, TX 75019, USA,
-          gehostet. Beim Besuch unserer Website erfasst und speichert Vercel automatisch
-          Informationen in Server-Logdateien, die Ihr Browser übermittelt, darunter Ihre IP-Adresse,
-          Datum und Uhrzeit der Anfrage sowie die aufgerufene Seite.
+          Diese Website wird über die Infrastruktur von Vercel Inc., 440 N Barranca Ave #4133,
+          Covina, CA 91723, USA gehostet. Vercel verarbeitet beim Aufruf der Website technisch
+          notwendige Daten (u.&nbsp;a. IP-Adressen) als Auftragsverarbeiter. Grundlage der
+          Datenübermittlung in die USA sind die Standardvertragsklauseln der EU-Kommission.
         </p>
         <p>
           <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
           einem sicheren und effizienten Betrieb der Website).
         </p>
         <p>
-          Wir haben mit Vercel einen Auftragsverarbeitungsvertrag (AVV) geschlossen. Vercel nimmt
-          am EU-US Data Privacy Framework teil.
+          Weitere Informationen finden Sie in der{' '}
+          <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+            Datenschutzerklärung von Vercel
+          </a>
+          .
         </p>
 
         <h2>4. Ihre Rechte</h2>

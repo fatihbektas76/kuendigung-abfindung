@@ -15,11 +15,6 @@ export interface MusterContent {
     intro: string;
     muster: string;
   };
-  kuendigungsschutzklage: {
-    title: string;
-    intro: string;
-    muster: string;
-  };
   aufhebungsvertragCheckliste: {
     title: string;
     intro: string;
@@ -47,11 +42,6 @@ Erstelle NUR das folgende JSON-Objekt, ohne Markdown-Backticks oder sonstige For
     "title": "Muster: Gegendarstellung zur Abmahnung",
     "intro": "2-3 Sätze Erklärung des Unterschieds zum Widerspruch, Recht auf Aufnahme in die Personalakte",
     "muster": "Vollständiger Mustertext im Briefformat mit [Platzhaltern]. Sachliche Darstellung der eigenen Sicht. Aufforderung zur Aufnahme in die Personalakte. Mindestens 200 Wörter."
-  },
-  "kuendigungsschutzklage": {
-    "title": "Muster: Kündigungsschutzklage (vereinfacht)",
-    "intro": "2-3 Sätze + deutlicher Hinweis dass eine Kündigungsschutzklage IMMER von einem Anwalt eingereicht werden sollte. Dieses Muster dient nur zur Orientierung.",
-    "muster": "Vereinfachter Mustertext einer Kündigungsschutzklage. An das Arbeitsgericht [Ort]. Format: Kläger [Name, Adresse] gegen Beklagte [Firma, Adresse]. Antrag auf Feststellung dass das Arbeitsverhältnis nicht aufgelöst ist. Mit [Platzhaltern]. Mindestens 250 Wörter."
   },
   "aufhebungsvertragCheckliste": {
     "title": "Checkliste: Aufhebungsvertrag prüfen",
@@ -125,7 +115,6 @@ export interface ChecklisteEntry {
 export interface MusterContent {
   widerspruchAbmahnung: MusterEntry;
   gegendarstellungAbmahnung: MusterEntry;
-  kuendigungsschutzklage: MusterEntry;
   aufhebungsvertragCheckliste: ChecklisteEntry;
   abmahnungCheckliste: ChecklisteEntry;
 }

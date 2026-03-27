@@ -74,6 +74,18 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
         </div>
       </div>
 
+      {/* ───── Disclaimer oben ───── */}
+      <section className="pt-8 pb-0 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px] flex gap-4 py-5 px-6 bg-[#FFF8E7] border border-[#E8D9A0] rounded-sm">
+            <div className="text-[1.3rem] mt-0.5" aria-hidden="true">&#9888;</div>
+            <p className="text-[0.88rem] text-ink leading-relaxed m-0">
+              <strong>Wichtiger Hinweis:</strong> {isMuster ? 'Dieses Muster' : 'Diese Checkliste'} ersetzt keine anwaltliche Beratung. Wir raten dringend, vor dem Versenden solcher Schreiben einen Fachanwalt für Arbeitsrecht zu konsultieren, da sie weitgehende rechtliche Konsequenzen haben können.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ───── Wann benötigt ───── */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto">

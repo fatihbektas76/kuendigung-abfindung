@@ -105,7 +105,7 @@ export default function ContactForm() {
                     rel="noopener noreferrer"
                     className="text-ink-light no-underline hover:text-gold transition-colors"
                   >
-                    Über Brevo buchen
+                    Jetzt Online Termin buchen
                   </a>
                 </div>
               </div>

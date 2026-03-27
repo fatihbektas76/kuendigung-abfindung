@@ -1,14 +1,38 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    function handleClickOutside(e: MouseEvent | TouchEvent) {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        closeMenu();
+      }
+    }
+
+    window.addEventListener('scroll', closeMenu, { passive: true });
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('scroll', closeMenu);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [menuOpen, closeMenu]);
 
   return (
     <nav
+      ref={navRef}
       className="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-border shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
       role="navigation"
       aria-label="Hauptnavigation"
@@ -39,33 +63,34 @@ export default function Navigation() {
           }`}
         >
           <li>
-            <a href="/#leistungen" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <a href="/#leistungen" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Leistungen
             </a>
           </li>
           <li>
-            <a href="/#ablauf" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <a href="/#ablauf" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Ablauf
             </a>
           </li>
           <li>
-            <a href="/#faq" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <a href="/#faq" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               FAQ
             </a>
           </li>
           <li>
-            <Link href="/team" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <Link href="/team" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Unser Team
             </Link>
           </li>
           <li>
-            <Link href="/ratgeber" className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <Link href="/ratgeber" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Ratgeber
             </Link>
           </li>
           <li>
             <Link
               href="/kuendigung-pruefen"
+              onClick={closeMenu}
               className="bg-gold-dark text-white px-6 py-2.5 rounded-sm font-semibold text-[0.85rem] no-underline hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(166,139,75,0.2)] transition-all whitespace-nowrap"
             >
               Kostenlos prüfen &rarr;
