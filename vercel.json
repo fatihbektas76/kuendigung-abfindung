@@ -2,8 +2,8 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "gekuendigt-abfindung.de" }],
-      "destination": "https://www.gekuendigt-abfindung.de/$1",
+      "has": [{ "type": "host", "value": "www.gekuendigt-abfindung.de" }],
+      "destination": "https://gekuendigt-abfindung.de/$1",
       "permanent": true
     }
   ],
