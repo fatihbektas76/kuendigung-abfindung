@@ -54,7 +54,7 @@ export default function TeamTeaser() {
         <div className="mt-10 text-center">
           <Link
             href="/team"
-            className="inline-flex items-center gap-2 text-[0.95rem] font-semibold text-gold no-underline hover:text-gold-dark transition-colors"
+            className="inline-flex items-center gap-2 text-[0.95rem] font-semibold text-[#8B7332] no-underline hover:text-gold-dark transition-colors"
           >
             Das gesamte Team kennenlernen &rarr;
           </Link>

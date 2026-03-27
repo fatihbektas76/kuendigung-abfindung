@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-const linkClass = 'text-white/50 no-underline hover:text-gold-light transition-colors';
+const linkClass = 'text-white/70 no-underline hover:text-gold-light transition-colors';
 const headingClass = 'text-white/90 font-semibold text-[0.75rem] uppercase tracking-[0.12em] mb-3';
 
 export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings: () => void }) {
@@ -16,10 +16,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
             <div className="font-serif text-gold text-[1.1rem] font-semibold tracking-tight">
               APOS Legal
             </div>
-            <div className="text-white/40 mt-1.5 text-[0.8rem]">
+            <div className="text-white/70 mt-1.5 text-[0.8rem]">
               Am Paradeplatz 20 &middot; 69126 Heidelberg
             </div>
-            <div className="text-white/40 mt-0.5 text-[0.8rem]">
+            <div className="text-white/70 mt-0.5 text-[0.8rem]">
               Ein Angebot der APOS Legal Rechtsanwaltsgesellschaft mbH&nbsp;&amp;&nbsp;Co.&nbsp;KG
             </div>
           </div>
@@ -28,12 +28,12 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               href="https://www.linkedin.com/company/105863455"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 no-underline hover:text-gold-light transition-colors text-[0.8rem]"
+              className="text-white/70 no-underline hover:text-gold-light transition-colors text-[0.8rem]"
             >
               LinkedIn
             </a>
-            <span className="text-white/20">|</span>
-            <Link href="/ratgeber" className="text-white/40 no-underline hover:text-gold-light transition-colors text-[0.8rem]">
+            <span className="text-white/50">|</span>
+            <Link href="/ratgeber" className="text-white/70 no-underline hover:text-gold-light transition-colors text-[0.8rem]">
               Ratgeber
             </Link>
           </div>
@@ -145,22 +145,22 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="flex justify-between items-center flex-wrap gap-4 text-[0.78rem] text-white/35">
+        <div className="flex justify-between items-center flex-wrap gap-4 text-[0.78rem] text-white/65">
           <ul className="list-none flex flex-wrap gap-x-5 gap-y-2">
             <li>
-              <Link href="/privacy-policy" className="text-white/35 no-underline hover:text-white/60 transition-colors">
+              <Link href="/privacy-policy" className="text-white/65 no-underline hover:text-white/90 transition-colors">
                 Datenschutz
               </Link>
             </li>
             <li>
-              <Link href="/legal-notice" className="text-white/35 no-underline hover:text-white/60 transition-colors">
+              <Link href="/legal-notice" className="text-white/65 no-underline hover:text-white/90 transition-colors">
                 Impressum
               </Link>
             </li>
             <li>
               <button
                 onClick={onOpenCookieSettings}
-                className="bg-transparent border-none text-white/35 text-[0.78rem] cursor-pointer p-0 hover:text-white/60 transition-colors"
+                className="bg-transparent border-none text-white/65 text-[0.78rem] cursor-pointer p-0 hover:text-white/90 transition-colors"
               >
                 Cookie-Einstellungen
               </button>
