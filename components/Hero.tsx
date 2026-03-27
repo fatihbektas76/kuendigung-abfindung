@@ -19,7 +19,7 @@ export default function Hero() {
         <p className="text-[1.12rem] text-ink-muted max-w-[620px] mx-auto mb-9 leading-relaxed">
           Nur 3 Wochen Frist nach der Kündigung. Wir prüfen kostenlos, ob Ihre Kündigung wirksam ist
           — und wie hoch Ihre Abfindung sein kann. Fachanwalt für Arbeitsrecht mit über 20 Jahren
-          Erfahrung und 5.000+ erfolgreichen Verfahren.
+          Erfahrung und 2.000+ erfolgreichen Verfahren.
         </p>
         <div className="flex gap-3.5 justify-center flex-wrap max-md:flex-col max-md:items-center">
           <a
@@ -41,7 +41,7 @@ export default function Hero() {
             <div className="text-[0.82rem] text-ink-muted mt-0.5">Jahre Erfahrung</div>
           </div>
           <div>
-            <div className="font-serif text-[1.6rem] font-bold text-gold-dark">5.000+</div>
+            <div className="font-serif text-[1.6rem] font-bold text-gold-dark">2.000+</div>
             <div className="text-[0.82rem] text-ink-muted mt-0.5">Erfolgreiche Verfahren</div>
           </div>
           <div>

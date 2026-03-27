@@ -55,7 +55,7 @@ export default function AttorneyProfile() {
               </div>
               <div className="text-gold-dark text-base mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
               <div className="text-[0.82rem] text-ink-muted mb-6">
-                5.0 Bewertung &middot; 5.000+ vertretene Mandanten
+                5.0 Bewertung &middot; 2.000+ vertretene Mandanten
               </div>
               <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
                 Fatih Bektas hat über 20 Jahre Erfahrung vor deutschen Arbeitsgerichten — und 10 Jahre

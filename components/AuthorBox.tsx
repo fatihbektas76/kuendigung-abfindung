@@ -22,7 +22,7 @@ export default function AuthorBox() {
         </div>
         <p className="text-[0.9rem] text-ink-light leading-relaxed mb-4">
           Fatih Bektas ist Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Er vertritt
-          Arbeitnehmer bei Kündigung, Abfindung und Aufhebungsvertrag — mit über 5.000 erfolgreichen
+          Arbeitnehmer bei Kündigung, Abfindung und Aufhebungsvertrag — mit über 2.000 erfolgreichen
           Verfahren.
         </p>
         <div className="flex items-center gap-4 max-md:justify-center flex-wrap">

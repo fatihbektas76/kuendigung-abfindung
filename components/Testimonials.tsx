@@ -34,7 +34,7 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: '5.000+', label: 'Erfolgreiche Verfahren' },
+  { value: '2.000+', label: 'Erfolgreiche Verfahren' },
   { value: '5.0 \u2605', label: 'Mandantenbewertung' },
   { value: '20+', label: 'Jahre Erfahrung' },
   { value: '48h', label: 'Ersteinschätzung' },
@@ -51,7 +51,7 @@ export default function Testimonials() {
           Was unsere Mandanten sagen
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed mb-10">
-          Über 5.000 Arbeitnehmer haben uns bereits vertraut — bei Kündigung, Abfindung und
+          Über 2.000 Arbeitnehmer haben uns bereits vertraut — bei Kündigung, Abfindung und
           Aufhebungsvertrag.
         </p>
         <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">

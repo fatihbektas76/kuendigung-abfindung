@@ -374,7 +374,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-4 gap-0 border border-gold rounded-sm overflow-hidden bg-cream max-md:grid-cols-2">
             {[
-              { value: '5.000+', label: 'Beratungen' },
+              { value: '2.000+', label: 'Beratungen' },
               { value: '2.000+', label: 'Verfahren' },
               { value: '20+', label: 'Jahre Erfahrung' },
               { value: '5,0 \u2605', label: 'Bewertung' },

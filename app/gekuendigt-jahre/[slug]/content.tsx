@@ -483,7 +483,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { value: '5.000+', label: 'Beratungen' },
+                { value: '2.000+', label: 'Beratungen' },
                 { value: '2.000+', label: 'Verfahren' },
                 { value: '20+', label: 'Jahre Erfahrung' },
                 { value: '5,0 \u2605', label: 'Bewertung' },

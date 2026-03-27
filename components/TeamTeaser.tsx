@@ -22,7 +22,7 @@ export default function TeamTeaser() {
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed">
           Unser Team vertritt Arbeitnehmer bei Kündigung,
-          Abfindung und Aufhebungsvertrag — mit über 5.000 erfolgreichen Verfahren.
+          Abfindung und Aufhebungsvertrag — mit über 2.000 erfolgreichen Verfahren.
         </p>
         <div className="grid grid-cols-3 gap-6 mt-9 max-md:grid-cols-1">
           {teamPreview.map((member, i) => (
