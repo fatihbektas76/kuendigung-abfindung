@@ -72,9 +72,9 @@ export default function AktuelleRechtslage() {
             </div>
           </div>
           <div className="p-6">
-            <h3 className="font-serif text-[1.1rem] font-bold text-ink mb-2">
+            <h2 className="font-serif text-[1.1rem] font-bold text-ink mb-2">
               {tipp.titel}
-            </h3>
+            </h2>
             <p className="text-[0.92rem] text-ink-light leading-relaxed m-0">
               {tipp.text}
             </p>
