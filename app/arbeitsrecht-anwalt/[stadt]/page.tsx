@@ -55,7 +55,7 @@ export async function generateMetadata({
   const url = `https://gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}`;
 
   return {
-    title: `Anwalt für Arbeitsrecht in ${ort.name} | Kündigung & Abfindung – APOS Legal`,
+    title: `Fachanwalt für Arbeitsrecht für Arbeitnehmer in ${ort.name} | Kündigung & Abfindung – APOS Legal`,
     description: content?.metaDescription ??
       `Kündigung erhalten in ${ort.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${ort.arbeitsgericht}. Kostenlose Ersteinschätzung.`,
     alternates: { canonical: url },
@@ -64,7 +64,7 @@ export async function generateMetadata({
       "geo.placename": ort.name,
     },
     openGraph: {
-      title: `Arbeitsrecht Anwalt ${ort.name} – Kündigung & Abfindung | APOS Legal`,
+      title: `Fachanwalt für Arbeitsrecht für Arbeitnehmer in ${ort.name} – Kündigung & Abfindung | APOS Legal`,
       description: content?.metaDescription ?? "",
       url,
       type: "website",
@@ -190,7 +190,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
 
         {/* H1 */}
         <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight">
-          Anwalt für Arbeitsrecht in {ort.name} – Kündigung & Abfindung
+          Fachanwalt für Arbeitsrecht für Arbeitnehmer in {ort.name} – Kündigung & Abfindung
         </h1>
         <p className="text-lg text-gray-600 mb-4 leading-relaxed">
           Kündigung erhalten in {ort.name}? Als Fachanwalt für Arbeitsrecht vertreten wir Arbeitnehmer
@@ -211,7 +211,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            Kanzleisitz Heidelberg – bundesweite Vertretung möglich
+            Kanzleisitz Heidelberg – wir vertreten Arbeitnehmer bundesweit
           </div>
         )}
 
