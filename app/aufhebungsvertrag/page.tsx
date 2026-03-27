@@ -99,6 +99,12 @@ export default function AufhebungsvertragPage() {
           { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag` },
         ]}
         datePublished="2025-01-15"
+        isBasedOn={[
+          { name: 'Bürgerliches Gesetzbuch (BGB) §305c', url: 'https://www.gesetze-im-internet.de/bgb/__305c.html' },
+          { name: 'Sozialgesetzbuch III (SGB III) §159', url: 'https://www.gesetze-im-internet.de/sgb_3/__159.html' },
+          { name: 'Bürgerliches Gesetzbuch (BGB) §123', url: 'https://www.gesetze-im-internet.de/bgb/__123.html' },
+          { name: 'Einkommensteuergesetz (EStG) §34', url: 'https://www.gesetze-im-internet.de/estg/__34.html' },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

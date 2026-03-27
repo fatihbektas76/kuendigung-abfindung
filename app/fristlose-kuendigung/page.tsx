@@ -63,6 +63,12 @@ export default function FristloseKuendigungPage() {
           { name: 'Fristlose Kündigung', url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung` },
         ]}
         datePublished="2025-01-15"
+        isBasedOn={[
+          { name: 'Bürgerliches Gesetzbuch (BGB) §626', url: 'https://www.gesetze-im-internet.de/bgb/__626.html' },
+          { name: 'Kündigungsschutzgesetz (KSchG) §4', url: 'https://www.gesetze-im-internet.de/kschg/__4.html' },
+          { name: 'Kündigungsschutzgesetz (KSchG) §13', url: 'https://www.gesetze-im-internet.de/kschg/__13.html' },
+          { name: 'Betriebsverfassungsgesetz (BetrVG) §102', url: 'https://www.gesetze-im-internet.de/betrvg/__102.html' },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

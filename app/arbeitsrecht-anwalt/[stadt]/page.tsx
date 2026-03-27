@@ -91,13 +91,13 @@ function buildSchema(slug: string) {
         name: "APOS Legal – Kanzlei Fatih Bektas",
         description: `Fachanwalt für Arbeitsrecht mit Beratung für Arbeitnehmer in ${ort.name}`,
         url,
-        telephone: "+496214907673",
+        telephone: "+4962213214470",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "P3, 1-3",
-          addressLocality: "Mannheim",
-          postalCode: "68161",
-          addressRegion: ort.bundesland,
+          streetAddress: "Am Paradeplatz 20",
+          addressLocality: "Heidelberg",
+          postalCode: "69126",
+          addressRegion: "Baden-Württemberg",
           addressCountry: "DE",
         },
         areaServed: {
@@ -416,7 +416,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         {/* Anwaltsprofil */}
         <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8 flex gap-5">
           <Image
-            src="/Fatih.png"
+            src="/Fatih.jpg"
             alt="Fatih Bektas – Fachanwalt für Arbeitsrecht"
             width={64}
             height={64}

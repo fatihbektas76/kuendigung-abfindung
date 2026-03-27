@@ -12,20 +12,20 @@ import { SEO_CONFIG } from '@/lib/seo-config';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (${new Date().getFullYear()})`,
+  title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
   description:
     'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer. Fachanwalt für Arbeitsrecht – kostenlose Ersteinschätzung.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/kuendigung`,
   },
   openGraph: {
-    title: `Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (${new Date().getFullYear()})`,
+    title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
     description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
     url: `${SEO_CONFIG.baseUrl}/kuendigung`,
   },
   twitter: {
     card: 'summary',
-    title: `Kündigung erhalten – Was jetzt? Sofortmaßnahmen & Rechte (${new Date().getFullYear()})`,
+    title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
     description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
   },
 };
@@ -79,6 +79,13 @@ export default function KuendigungPage() {
         ]}
         includeOrganization={false}
         includeRating={false}
+        isBasedOn={[
+          { name: 'Kündigungsschutzgesetz (KSchG)', url: 'https://www.gesetze-im-internet.de/kschg/' },
+          { name: 'Bürgerliches Gesetzbuch (BGB) §622', url: 'https://www.gesetze-im-internet.de/bgb/__622.html' },
+          { name: 'Kündigungsschutzgesetz (KSchG) §4', url: 'https://www.gesetze-im-internet.de/kschg/__4.html' },
+          { name: 'Kündigungsschutzgesetz (KSchG) §23', url: 'https://www.gesetze-im-internet.de/kschg/__23.html' },
+          { name: 'Betriebsverfassungsgesetz (BetrVG) §102', url: 'https://www.gesetze-im-internet.de/betrvg/__102.html' },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

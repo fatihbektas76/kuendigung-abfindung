@@ -3,7 +3,7 @@ import Link from 'next/link';
 import TeamCard from '@/components/TeamCard';
 
 export const metadata: Metadata = {
-  title: 'Unser Team – gekuendigt-abfindung.de | Fachanwälte für Arbeitsrecht',
+  title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
   description:
     'Lernen Sie unser Team kennen: Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten. Über 2.000 erfolgreiche Verfahren.',
   alternates: {
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 };
 
 const team = [
-  { src: '/Fatih.png', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Fatih.jpg', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
   { src: '/Buechler.png', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
   { src: '/Duncker.png', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
-  { src: '/Fuerniss.png', name: 'Tobias Fürniss, Ph.D. (UIBE)', title: 'Rechtsanwalt' },
+  { src: '/Fuerniss.jpg', name: 'Tobias Fürniss, Ph.D. (UIBE)', title: 'Rechtsanwalt' },
   { src: '/Hofstaetter.png', name: 'Dr. Heiko Hofstätter', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
   { src: '/Samklu.png', name: 'Vincent Samklu', title: 'Rechtsanwalt' },
 ];
@@ -32,7 +32,7 @@ const personSchemas = [
     jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     description:
       'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
-    image: `${BASE_URL}/Fatih.png`,
+    image: `${BASE_URL}/Fatih.jpg`,
     url: `${BASE_URL}/team`,
     email: 'bektas@apos.legal',
     telephone: '+4915127003173',
@@ -102,7 +102,7 @@ const personSchemas = [
     familyName: 'Fürniss',
     jobTitle: 'Rechtsanwalt',
     honorificSuffix: 'Ph.D. (UIBE)',
-    image: `${BASE_URL}/Fuerniss.png`,
+    image: `${BASE_URL}/Fuerniss.jpg`,
     url: `${BASE_URL}/team`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
     knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],

@@ -563,6 +563,14 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
       {/* ═══ 15. Interne Verlinkung ═══ */}
       <section className="py-3 px-4 sm:px-8 mb-3">
         <div className="max-w-content mx-auto">
+          <div className="mb-3">
+            <Link
+              href="/kuendigung"
+              className="inline-flex items-center gap-1.5 text-sm text-[#6B6626] font-medium no-underline hover:underline"
+            >
+              &larr; Zurück zur Übersicht: Kündigung erhalten
+            </Link>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <Link
               href={`/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`}
@@ -609,7 +617,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
           <div className="bg-white border border-gray-200 rounded-lg p-4 flex gap-6 items-start max-md:flex-col max-md:items-center max-md:text-center">
             <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
               <Image
-                src="/Fatih.png"
+                src="/Fatih.jpg"
                 alt="Fatih Bektas — Fachanwalt für Arbeitsrecht"
                 width={80}
                 height={80}

@@ -11,20 +11,20 @@ import { SEO_CONFIG } from '@/lib/seo-config';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (${new Date().getFullYear()})`,
+  title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
   description:
     'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht. Kostenlose Ersteinschätzung.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/abfindung`,
   },
   openGraph: {
-    title: `Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (${new Date().getFullYear()})`,
+    title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
     description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
     url: `${SEO_CONFIG.baseUrl}/abfindung`,
   },
   twitter: {
     card: 'summary',
-    title: `Abfindung nach Kündigung – Anspruch, Höhe & Berechnung (${new Date().getFullYear()})`,
+    title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
     description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
   },
 };
@@ -69,6 +69,13 @@ export default function AbfindungPage() {
         ]}
         includeOrganization={false}
         includeRating={false}
+        isBasedOn={[
+          { name: 'Kündigungsschutzgesetz (KSchG) §1a', url: 'https://www.gesetze-im-internet.de/kschg/__1a.html' },
+          { name: 'Bürgerliches Gesetzbuch (BGB) §622', url: 'https://www.gesetze-im-internet.de/bgb/__622.html' },
+          { name: 'Einkommensteuergesetz (EStG) §34', url: 'https://www.gesetze-im-internet.de/estg/__34.html' },
+          { name: 'Kündigungsschutzgesetz (KSchG) §4', url: 'https://www.gesetze-im-internet.de/kschg/__4.html' },
+          { name: 'Kündigungsschutzgesetz (KSchG) §9', url: 'https://www.gesetze-im-internet.de/kschg/__9.html' },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

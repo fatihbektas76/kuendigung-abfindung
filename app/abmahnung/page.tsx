@@ -11,20 +11,20 @@ import { SEO_CONFIG } from '@/lib/seo-config';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (${new Date().getFullYear()})`,
+  title: `Abmahnung – Ihre Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
   description:
     'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer. Kostenlose Ersteinschätzung vom Fachanwalt.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/abmahnung`,
   },
   openGraph: {
-    title: `Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (${new Date().getFullYear()})`,
+    title: `Abmahnung – Ihre Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
     description: 'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer.',
     url: `${SEO_CONFIG.baseUrl}/abmahnung`,
   },
   twitter: {
     card: 'summary',
-    title: `Abmahnung — Ihre Rechte und was Sie jetzt tun müssen (${new Date().getFullYear()})`,
+    title: `Abmahnung – Ihre Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
     description: 'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer.',
   },
 };
@@ -62,6 +62,11 @@ export default function AbmahnungPage() {
           { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung` },
         ]}
         datePublished="2025-01-15"
+        isBasedOn={[
+          { name: 'Bürgerliches Gesetzbuch (BGB) §314', url: 'https://www.gesetze-im-internet.de/bgb/__314.html' },
+          { name: 'Bürgerliches Gesetzbuch (BGB) §626', url: 'https://www.gesetze-im-internet.de/bgb/__626.html' },
+          { name: 'Kündigungsschutzgesetz (KSchG) §1', url: 'https://www.gesetze-im-internet.de/kschg/__1.html' },
+        ]}
       />
 
       {/* Schema.org - FAQPage */}

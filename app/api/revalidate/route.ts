@@ -8,34 +8,12 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid secret' }, { status: 401 });
   }
 
-  const paths = [
-    '/',
-    '/abfindung',
-    '/kuendigung',
-    '/aufhebungsvertrag',
-    '/abmahnung',
-    '/fristlose-kuendigung',
-    '/ratgeber',
-    '/ratgeber/urteile',
-    '/ratgeber/muster',
-    '/abfindungsrechner',
-    '/kuendigung-pruefen',
-    '/tools',
-    '/urteile',
-    '/ueberstundenrechner',
-    '/kuendigungsfrist-rechner',
-    '/urlaubsabgeltung-rechner',
-    '/urlaub-teilzeit-rechner',
-    '/blog',
-  ];
-
-  for (const path of paths) {
-    revalidatePath(path);
-  }
+  // Revalidate the entire site tree — covers all static and dynamic pages
+  revalidatePath('/', 'layout');
 
   return NextResponse.json({
     revalidated: true,
-    paths: paths.length,
+    scope: 'full-site',
     timestamp: new Date().toISOString(),
   });
 }

@@ -64,6 +64,30 @@ export const SEO_CONFIG = {
     bestRating: '5',
     worstRating: '1',
   },
+
+  reviews: [
+    {
+      '@type': 'Review' as const,
+      author: { '@type': 'Person' as const, name: 'Mandant' },
+      datePublished: '2025-11-15',
+      reviewBody: 'Herr Bektas hat meine Kündigung erfolgreich angefochten und eine deutlich höhere Abfindung verhandelt als ursprünglich angeboten. Sehr kompetent und schnell.',
+      reviewRating: { '@type': 'Rating' as const, ratingValue: '5', bestRating: '5' },
+    },
+    {
+      '@type': 'Review' as const,
+      author: { '@type': 'Person' as const, name: 'Mandantin' },
+      datePublished: '2025-09-22',
+      reviewBody: 'Ausgezeichnete Beratung zum Aufhebungsvertrag. Die Sperrzeit konnte vermieden und die Abfindung verdoppelt werden. Klare Empfehlung.',
+      reviewRating: { '@type': 'Rating' as const, ratingValue: '5', bestRating: '5' },
+    },
+    {
+      '@type': 'Review' as const,
+      author: { '@type': 'Person' as const, name: 'Mandant' },
+      datePublished: '2025-07-10',
+      reviewBody: 'Schnelle Reaktion trotz knapper 3-Wochen-Frist. Kündigungsschutzklage eingereicht, Vergleich mit guter Abfindung erzielt. Sehr professionell.',
+      reviewRating: { '@type': 'Rating' as const, ratingValue: '5', bestRating: '5' },
+    },
+  ],
 } as const;
 
 export function buildMetadata({

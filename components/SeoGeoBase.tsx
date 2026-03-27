@@ -16,7 +16,7 @@ interface SeoGeoBaseProps {
   includeOrganization?: boolean;
 }
 
-const { baseUrl, author, organization, rating } = SEO_CONFIG;
+const { baseUrl, author, organization, rating, reviews } = SEO_CONFIG;
 
 export default function SeoGeoBase({
   pageUrl = '',
@@ -75,6 +75,7 @@ export default function SeoGeoBase({
         '@type': 'AggregateRating',
         ...rating,
       };
+      orgSchema.review = reviews;
     }
     schemas.push(orgSchema);
   }
