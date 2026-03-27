@@ -13,9 +13,9 @@ const tools = [
     ),
   },
   {
-    title: 'Schwellenwert-Rechner §23 KSchG',
-    desc: 'Prüfen Sie, ob in Ihrem Betrieb das Kündigungsschutzgesetz gilt. Der Schwellenwert von 10 Mitarbeitern entscheidet über Ihren Kündigungsschutz.',
-    href: '/schwellenwert-rechner',
+    title: 'Kündigung prüfen',
+    desc: 'Prüfen Sie in 2 Minuten Ihre Abfindungschancen nach einer Kündigung. Ersteinschätzung vom Fachanwalt für Arbeitsrecht — kostenlos und unverbindlich.',
+    href: '/kuendigung-pruefen',
     delay: 1,
     icon: (
       <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
