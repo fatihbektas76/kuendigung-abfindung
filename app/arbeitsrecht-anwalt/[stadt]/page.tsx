@@ -131,14 +131,24 @@ function buildSchema(slug: string) {
       {
         "@type": "FAQPage",
         "@id": `${url}#faq`,
-        mainEntity: content.faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.frage,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.antwort.replace(/<[^>]+>/g, ""),
-          },
-        })),
+        mainEntity: [
+          ...content.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.frage,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.antwort.replace(/<[^>]+>/g, ""),
+            },
+          })),
+          ...(slug !== "heidelberg" ? [{
+            "@type": "Question",
+            name: `Ist es ein Nachteil, dass Ihr Kanzleisitz nicht in ${ort.name} ist?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `Nein — das ist keinerlei Nachteil für Sie. Arbeitsrechtliche Verfahren werden heute vollständig digital geführt. Schriftsätze, Klageeinreichung und Kommunikation mit dem ${ort.arbeitsgericht} erfolgen elektronisch über das beA (besonderes elektronisches Anwaltspostfach). Besprechungen mit Ihnen führen wir per Telefon oder Videocall — schnell, flexibel und ohne Anfahrtsweg für Sie. Vor dem ${ort.arbeitsgericht} vertreten wir Sie genauso effektiv wie ein ortsansässiger Anwalt. Entscheidend ist die Fachkompetenz — nicht der Kanzleisitz.`,
+            },
+          }] : []),
+        ],
       },
       {
         "@type": "BreadcrumbList",
@@ -442,6 +452,17 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
               />
             </details>
           ))}
+          {params.stadt !== "heidelberg" && (
+            <details className="bg-white border border-gray-200 rounded-lg p-4 group">
+              <summary className="font-medium text-sm text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Ist es ein Nachteil, dass Ihr Kanzleisitz nicht in {ort.name} ist?
+                <span className="text-gray-400 text-xs ml-3 shrink-0">▼</span>
+              </summary>
+              <div className="mt-3 text-sm text-gray-600 leading-relaxed">
+                <p>Nein — das ist keinerlei Nachteil für Sie. Arbeitsrechtliche Verfahren werden heute vollständig digital geführt. Schriftsätze, Klageeinreichung und Kommunikation mit dem {ort.arbeitsgericht} erfolgen elektronisch über das beA (besonderes elektronisches Anwaltspostfach). Besprechungen mit Ihnen führen wir per Telefon oder Videocall — schnell, flexibel und ohne Anfahrtsweg für Sie. Vor dem {ort.arbeitsgericht} vertreten wir Sie genauso effektiv wie ein ortsansässiger Anwalt. Entscheidend ist die Fachkompetenz — nicht der Kanzleisitz.</p>
+              </div>
+            </details>
+          )}
         </div>
 
         {/* CTA nach FAQ */}
