@@ -97,9 +97,6 @@ export default function SeoGeoBase({
       datePublished,
       dateModified,
     };
-    if (includeRating) {
-      appSchema.aggregateRating = { '@type': 'AggregateRating', ...rating };
-    }
     if (isBasedOn && isBasedOn.length > 0) {
       appSchema.isBasedOn = isBasedOn.map((ref) => ({
         '@type': 'Legislation',
