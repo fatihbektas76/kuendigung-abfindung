@@ -5,7 +5,7 @@ import Link from 'next/link';
 import FadeUp from './FadeUp';
 
 const teamPreview = [
-  { src: '/Fatih.png', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Fatih.jpg', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
   { src: '/Buechler.png', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt' },
   { src: '/Duncker.png', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt' },
 ];

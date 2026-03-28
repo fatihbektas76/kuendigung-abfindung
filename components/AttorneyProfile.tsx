@@ -36,7 +36,7 @@ export default function AttorneyProfile() {
           <FadeUp>
             <div className="w-full aspect-[4/5] rounded overflow-hidden max-md:max-w-[260px]">
               <Image
-                src="/Fatih.png"
+                src="/Fatih.jpg"
                 alt="Fatih Bektas — Rechtsanwalt & Fachanwalt für Arbeitsrecht"
                 width={280}
                 height={350}
