@@ -5,6 +5,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import CookieBanner from './CookieBanner';
 import ScrollToTop from './ScrollToTop';
+import MobileCTA from './MobileCTA';
 
 export default function LayoutClient({ children }: { children: React.ReactNode }) {
   const handleOpenCookieSettings = useCallback(() => {
@@ -20,6 +21,7 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
       <Footer onOpenCookieSettings={handleOpenCookieSettings} />
       <CookieBanner />
       <ScrollToTop />
+      <MobileCTA />
     </>
   );
 }

@@ -27,6 +27,12 @@ body {
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 
+/* Slide-up animation for mobile CTA */
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
 /* Cookie toggle */
 .cookie-toggle {
   position: relative;
