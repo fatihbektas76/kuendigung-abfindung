@@ -7,7 +7,7 @@ export const revalidate = 86400;
 export const metadata = buildMetadata({
   title: `Glossar Arbeitsrecht — Wichtige Begriffe einfach erklärt (${new Date().getFullYear()})`,
   description:
-    'Arbeitsrecht-Glossar: Abfindung, Kündigungsschutzklage, Aufhebungsvertrag, Sozialauswahl und 20+ weitere Begriffe — verständlich erklärt vom Fachanwalt.',
+    'Arbeitsrecht-Glossar: Abfindung, Kündigungsschutzklage, Aufhebungsvertrag, Sozialauswahl und 30+ weitere Begriffe — verständlich erklärt vom Fachanwalt.',
   path: '/glossar',
 });
 
@@ -58,6 +58,24 @@ const glossar = [
     linkText: 'Alles zum Aufhebungsvertrag',
   },
   {
+    id: 'bem-verfahren',
+    begriff: 'BEM-Verfahren (Betriebliches Eingliederungsmanagement)',
+    definition:
+      'Ein gesetzlich vorgeschriebenes Verfahren, das der Arbeitgeber durchführen muss, wenn ein Arbeitnehmer innerhalb von zwölf Monaten länger als sechs Wochen ununterbrochen oder wiederholt arbeitsunfähig war. Ziel ist es, die Arbeitsunfähigkeit zu überwinden und den Arbeitsplatz zu erhalten. Ein fehlendes BEM kann eine krankheitsbedingte Kündigung unwirksam machen.',
+    gesetz: '§\u00a0167 Abs.\u00a02 SGB IX',
+    link: '/kuendigung/kuendigung-wegen-krankheit/',
+    linkText: 'Kündigung wegen Krankheit',
+  },
+  {
+    id: 'berufung',
+    begriff: 'Berufung',
+    definition:
+      'Das Rechtsmittel gegen ein Urteil des Arbeitsgerichts erster Instanz. Die Berufung wird beim zuständigen Landesarbeitsgericht (LAG) eingelegt. Die Berufungsfrist beträgt einen Monat nach Zustellung des vollständigen Urteils. Die Berufungsbegründungsfrist beträgt zwei Monate. In der Berufungsinstanz trägt die unterlegene Partei die Kosten.',
+    gesetz: '§§\u00a064\u201370 ArbGG',
+    link: '/arbeitsrecht-anwalt/',
+    linkText: 'Arbeitsgericht & Instanzenzug',
+  },
+  {
     id: 'betriebsbedingte-kuendigung',
     begriff: 'Betriebsbedingte Kündigung',
     definition:
@@ -94,11 +112,38 @@ const glossar = [
     linkText: 'Alles zur fristlosen Kündigung',
   },
   {
+    id: 'fristlose-kuendigung-auslaufrist',
+    begriff: 'Fristlose Kündigung mit Auslaufrist',
+    definition:
+      'Eine außerordentliche Kündigung, bei der der Arbeitgeber dem Arbeitnehmer dennoch eine Auslauffrist gewährt. Sie kommt vor allem bei ordentlich unkündbaren Arbeitnehmern zum Einsatz (z.\u00a0B. aufgrund von Tarifvertrag oder langjähriger Betriebszugehörigkeit). Die Auslaufrist entspricht oft der fiktiven ordentlichen Kündigungsfrist. Auch hier muss ein wichtiger Grund nach §\u00a0626 BGB vorliegen.',
+    gesetz: '§\u00a0626 BGB, BAG-Rechtsprechung',
+    link: '/fristlose-kuendigung/',
+    linkText: 'Alles zur fristlosen Kündigung',
+  },
+  {
     id: 'guetetermin',
     begriff: 'Gütetermin',
     definition:
       'Der erste Verhandlungstermin vor dem Arbeitsgericht nach Einreichung einer Kündigungsschutzklage. Er findet in der Regel 2\u20134 Wochen nach Klageeinreichung statt. Ziel ist eine gütliche Einigung (Vergleich). Kommt keine Einigung zustande, folgt der Kammertermin.',
     gesetz: '§\u00a054 ArbGG',
+    link: '/kuendigung/',
+    linkText: 'Ablauf der Kündigungsschutzklage',
+  },
+  {
+    id: 'integrationsamt',
+    begriff: 'Integrationsamt',
+    definition:
+      'Die Behörde, die vor der Kündigung eines schwerbehinderten Arbeitnehmers zustimmen muss (Zustimmungsverfahren). Ohne vorherige Zustimmung des Integrationsamts ist die Kündigung eines schwerbehinderten oder gleichgestellten Arbeitnehmers unwirksam. Das Integrationsamt prüft, ob die Kündigung mit der Behinderung zusammenhängt, und kann Präventionsmaßnahmen vorschlagen.',
+    gesetz: '§§\u00a0168\u2013175 SGB IX',
+    link: '/kuendigung/kuendigung-schwerbehinderung/',
+    linkText: 'Kündigung bei Schwerbehinderung',
+  },
+  {
+    id: 'kammertermin',
+    begriff: 'Kammertermin',
+    definition:
+      'Der zweite Verhandlungstermin vor dem Arbeitsgericht, wenn im Gütetermin keine Einigung erzielt wurde. Im Kammertermin verhandelt die vollbesetzte Kammer (ein Berufsrichter und zwei ehrenamtliche Richter — je einer von der Arbeitgeber- und Arbeitnehmerseite). Hier werden Beweise erhoben und ein Urteil gefällt, sofern nicht doch noch ein Vergleich geschlossen wird.',
+    gesetz: '§§\u00a055\u201367 ArbGG',
     link: '/kuendigung/',
     linkText: 'Ablauf der Kündigungsschutzklage',
   },
@@ -193,6 +238,33 @@ const glossar = [
     linkText: 'Sperrzeit vermeiden',
   },
   {
+    id: 'turboklausel',
+    begriff: 'Turboklausel',
+    definition:
+      'Eine Klausel im Aufhebungsvertrag oder gerichtlichen Vergleich, die dem Arbeitnehmer erlaubt, das Arbeitsverhältnis vor dem vereinbarten Beendigungstermin vorzeitig zu beenden — z.\u00a0B. bei einem neuen Jobangebot. Im Gegenzug erhält der Arbeitnehmer das eingesparte Gehalt (ganz oder teilweise) als zusätzliche Abfindung. Die Turboklausel kann steuerlich vorteilhaft sein.',
+    gesetz: 'Vertragsfreiheit, §\u00a0311 BGB',
+    link: '/aufhebungsvertrag/aufhebungsvertrag-abfindung/',
+    linkText: 'Abfindung beim Aufhebungsvertrag',
+  },
+  {
+    id: 'unwiderrufliche-freistellung',
+    begriff: 'Unwiderrufliche Freistellung',
+    definition:
+      'Die endgültige Befreiung des Arbeitnehmers von der Arbeitspflicht bis zum Ende des Arbeitsverhältnisses, die der Arbeitgeber nicht mehr rückgängig machen kann. Der Arbeitnehmer darf anderweitig arbeiten, ohne sich das Gehalt anrechnen lassen zu müssen. Resturlaub wird auf die Freistellungszeit angerechnet. Eine unwiderrufliche Freistellung findet sich häufig in Aufhebungsverträgen und gerichtlichen Vergleichen.',
+    gesetz: '§\u00a0615 BGB, BAG-Rechtsprechung',
+    link: '/aufhebungsvertrag/',
+    linkText: 'Alles zum Aufhebungsvertrag',
+  },
+  {
+    id: 'verdachtskuendigung',
+    begriff: 'Verdachtskündigung',
+    definition:
+      'Eine Kündigung, die nicht auf einer bewiesenen Pflichtverletzung beruht, sondern auf dem dringenden Verdacht einer schwerwiegenden Straftat oder Verfehlung (z.\u00a0B. Diebstahl, Betrug, Unterschlagung). Voraussetzung: Der Verdacht muss auf konkreten Tatsachen beruhen, der Arbeitnehmer muss vor der Kündigung angehört worden sein, und der Arbeitgeber muss alles Zumutbare zur Aufklärung getan haben.',
+    gesetz: '§\u00a0626 BGB, BAG-Rechtsprechung',
+    link: '/fristlose-kuendigung/',
+    linkText: 'Fristlose Kündigung prüfen',
+  },
+  {
     id: 'verhaltensbedingte-kuendigung',
     begriff: 'Verhaltensbedingte Kündigung',
     definition:
@@ -211,11 +283,29 @@ const glossar = [
     linkText: 'Ihre Rechte nach Kündigung',
   },
   {
+    id: 'widerrufliche-freistellung',
+    begriff: 'Widerrufliche Freistellung',
+    definition:
+      'Die vorläufige Befreiung des Arbeitnehmers von der Arbeitspflicht, die der Arbeitgeber jederzeit widerrufen kann. Der Arbeitnehmer muss auf Abruf zurückkehren. Anderweitiger Verdienst wird in der Regel auf das Gehalt angerechnet (§\u00a0615 S.\u00a02 BGB). Resturlaub kann nicht automatisch angerechnet werden, da der Arbeitnehmer nicht frei über seine Zeit verfügen kann.',
+    gesetz: '§\u00a0615 BGB',
+    link: '/kuendigung/',
+    linkText: 'Ihre Rechte nach Kündigung',
+  },
+  {
     id: 'zeugnis',
     begriff: 'Arbeitszeugnis',
     definition:
       'Jeder Arbeitnehmer hat bei Beendigung des Arbeitsverhältnisses Anspruch auf ein schriftliches Arbeitszeugnis. Es muss wohlwollend formuliert sein und der Wahrheit entsprechen. Man unterscheidet einfache Zeugnisse (nur Art und Dauer der Tätigkeit) und qualifizierte Zeugnisse (mit Leistungs- und Verhaltensbeurteilung).',
     gesetz: '§\u00a0109 GewO, §\u00a0630 BGB',
+    link: '/aufhebungsvertrag/aufhebungsvertrag-zeugnis/',
+    linkText: 'Zeugnis beim Aufhebungsvertrag',
+  },
+  {
+    id: 'zwischenzeugnis',
+    begriff: 'Zwischenzeugnis',
+    definition:
+      'Ein Arbeitszeugnis, das während des laufenden Arbeitsverhältnisses ausgestellt wird. Ein Anspruch besteht bei triftigem Grund — z.\u00a0B. bei Vorgesetztenwechsel, Versetzung, Elternzeit oder bevorstehender Kündigung. Das Zwischenzeugnis hat Bindungswirkung: Das spätere Endzeugnis darf ohne sachlichen Grund nicht wesentlich davon abweichen.',
+    gesetz: '§\u00a0109 GewO (analog), BAG-Rechtsprechung',
     link: '/aufhebungsvertrag/aufhebungsvertrag-zeugnis/',
     linkText: 'Zeugnis beim Aufhebungsvertrag',
   },
@@ -230,7 +320,7 @@ export default function GlossarPage() {
       <SeoGeoBase
         pageUrl={`${SEO_CONFIG.baseUrl}/glossar/`}
         pageTitle="Glossar Arbeitsrecht — Wichtige Begriffe einfach erklärt"
-        pageDescription="Arbeitsrecht-Glossar: Abfindung, Kündigungsschutzklage, Aufhebungsvertrag, Sozialauswahl und 20+ weitere Begriffe — verständlich erklärt vom Fachanwalt."
+        pageDescription="Arbeitsrecht-Glossar: Abfindung, Kündigungsschutzklage, Aufhebungsvertrag, Sozialauswahl und 30+ weitere Begriffe — verständlich erklärt vom Fachanwalt."
         pageType="WebPage"
         includeOrganization={false}
         includeRating={false}
