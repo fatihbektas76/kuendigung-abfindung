@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import Situations from '@/components/Situations';
 import Disputes from '@/components/Disputes';
@@ -13,6 +14,28 @@ import StandortTeaser from '@/components/StandortTeaser';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 
 export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: `Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt (${new Date().getFullYear()})`,
+  description:
+    'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Kostenlose Ersteinschätzung. 20+ Jahre Erfahrung, 2.000+ Verfahren.',
+  alternates: {
+    canonical: 'https://www.gekuendigt-abfindung.de/',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
+    description:
+      'Kündigung erhalten? Fachanwalt für Arbeitsrecht prüft Ihren Fall kostenlos. Abfindung maximieren, Aufhebungsvertrag verhandeln. 20+ Jahre Erfahrung.',
+    url: 'https://www.gekuendigt-abfindung.de/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
+    description:
+      'Kündigung prüfen, Abfindung maximieren. Fachanwalt für Arbeitsrecht. 20+ Jahre Erfahrung.',
+  },
+};
 
 export default function Home() {
   return (
