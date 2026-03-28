@@ -47,7 +47,7 @@ export default function StandortTeaser() {
           href="/arbeitsrecht-anwalt"
           className="inline-flex items-center gap-2 text-[0.92rem] font-semibold text-gold-dark no-underline hover:underline"
         >
-          Alle {106} Standorte anzeigen &rarr;
+          Alle {106} Orte anzeigen &rarr;
         </Link>
       </div>
     </section>

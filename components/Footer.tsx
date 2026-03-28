@@ -133,13 +133,13 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
 
           {/* Standorte */}
           <div>
-            <div className={headingClass}>Standorte</div>
+            <div className={headingClass}>Orte</div>
             <ul className="list-none flex flex-col gap-2">
               <li><Link href="/arbeitsrecht-anwalt/berlin" className={linkClass}>Berlin</Link></li>
               <li><Link href="/arbeitsrecht-anwalt/hamburg" className={linkClass}>Hamburg</Link></li>
               <li><Link href="/arbeitsrecht-anwalt/muenchen" className={linkClass}>München</Link></li>
               <li><Link href="/arbeitsrecht-anwalt/heidelberg" className={linkClass}>Heidelberg</Link></li>
-              <li><Link href="/arbeitsrecht-anwalt" className={linkClass}>Alle 106 Standorte &rarr;</Link></li>
+              <li><Link href="/arbeitsrecht-anwalt" className={linkClass}>Alle 106 Orte &rarr;</Link></li>
             </ul>
           </div>
         </div>
