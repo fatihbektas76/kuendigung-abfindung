@@ -23,12 +23,12 @@ export default function StandortTeaser() {
           Bundesweit für Sie da
         </div>
         <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-          Fachanwalt für Arbeitsrecht in Ihrer Nähe
+          Fachanwalt für Arbeitsrecht &mdash; egal wo Sie sind
         </h2>
         <p className="text-[1rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
-          Wir vertreten Arbeitnehmer in ganz Deutschland &mdash; vollständig digital,
-          persönlich erreichbar. Finden Sie Ihr zuständiges Arbeitsgericht und
-          regionale Informationen zu Kündigung &amp; Abfindung.
+          Vollständig digital, persönlich erreichbar.
+          Wir vertreten Arbeitnehmer in ganz Deutschland &mdash;
+          ohne Anfahrt, ohne Wartezeit.
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-8">
