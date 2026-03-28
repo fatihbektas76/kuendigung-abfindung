@@ -32,16 +32,16 @@ export default function MusterOverviewPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber/muster`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber/muster/`}
         pageTitle="Kostenlose Muster & Vorlagen für Arbeitnehmer"
         pageDescription="Professionelle Mustertexte und Checklisten für Abmahnung, Kündigung und Aufhebungsvertrag."
         pageType="WebPage"
         includeOrganization={false}
         includeRating={false}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },
-          { name: 'Muster & Vorlagen', url: `${SEO_CONFIG.baseUrl}/ratgeber/muster` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber/` },
+          { name: 'Muster & Vorlagen', url: `${SEO_CONFIG.baseUrl}/ratgeber/muster/` },
         ]}
       />
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Abmahnung – Ihre Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
     description: 'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer.',
-    url: `${SEO_CONFIG.baseUrl}/abmahnung`,
+    url: `${SEO_CONFIG.baseUrl}/abmahnung/`,
   },
   twitter: {
     card: 'summary',
@@ -56,7 +56,7 @@ export default function AbmahnungPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/abmahnung`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/abmahnung/`}
         pageTitle="Abmahnung erhalten – was jetzt?"
         pageDescription="Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer."
         pageType="WebPage"
@@ -64,8 +64,8 @@ export default function AbmahnungPage() {
         includeRating={false}
         speakableSelectors={['.faq-section']}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung/` },
         ]}
         datePublished="2025-01-15"
         isBasedOn={[

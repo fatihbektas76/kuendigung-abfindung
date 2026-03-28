@@ -49,10 +49,13 @@ export default function Page({ params }: Props) {
   return (
     <>
       <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung/${entry.slug}/`}
+        pageTitle={entry.h1}
+        pageDescription={`${entry.h1} — Ihre Rechte, 3-Wochen-Klagefrist, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt.`}
         pageType="WebPage"
         breadcrumbs={[
-          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
-          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+          { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung/` },
           { name: entry.h1, url: `${SEO_CONFIG.baseUrl}/kuendigung/${entry.slug}/` },
         ]}
       />

@@ -48,17 +48,17 @@ export default function Page({ params }: Props) {
   return (
     <>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}/`}
         pageTitle={entry.h1}
         pageDescription={entry.description}
         pageType="WebPage"
         includeOrganization={false}
         includeRating={false}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },
-          { name: 'Muster & Vorlagen', url: `${SEO_CONFIG.baseUrl}/ratgeber/muster` },
-          { name: entry.h1, url: `${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber/` },
+          { name: 'Muster & Vorlagen', url: `${SEO_CONFIG.baseUrl}/ratgeber/muster/` },
+          { name: entry.h1, url: `${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}/` },
         ]}
       />
 

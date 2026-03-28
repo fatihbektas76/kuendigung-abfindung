@@ -44,10 +44,13 @@ export default function Page({ params }: Props) {
   return (
     <>
       <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/aufhebungsvertrag/${entry.slug}/`}
+        pageTitle={entry.h1}
+        pageDescription={entry.description}
         pageType="WebPage"
         breadcrumbs={[
-          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
-          { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag` },
+          { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/` },
           { name: entry.h1, url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/${entry.slug}/` },
         ]}
       />

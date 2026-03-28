@@ -1128,19 +1128,19 @@ export default function AufhebungsvertragPruefenPage() {
   return (
     <div className="flex min-h-screen bg-cream">
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/aufhebungsvertrag-pruefen`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/aufhebungsvertrag-pruefen/`}
         pageTitle="Aufhebungsvertrag prüfen — Ist Ihr Vertrag fair?"
         pageDescription="Aufhebungsvertrag erhalten? Prüfen Sie ob Ihr Vertrag faire Konditionen enthält — Ampelbewertung in 8 Kategorien + kostenlose Ersteinschätzung vom Fachanwalt."
         pageType="WebApplication"
         appName="Aufhebungsvertrag-Checker"
         appCategory="Legal Tool"
-        includeRating={true}
-        includeOrganization={true}
+        includeRating={false}
+        includeOrganization={false}
         speakableSelectors={['#direktantwort', 'h1']}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
-          { name: 'Aufhebungsvertrag prüfen', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag-pruefen` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools/` },
+          { name: 'Aufhebungsvertrag prüfen', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag-pruefen/` },
         ]}
         isBasedOn={[
           { name: '§74 HGB — Wettbewerbsverbot', url: 'https://www.gesetze-im-internet.de/hgb/__74.html' },

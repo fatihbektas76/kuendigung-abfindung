@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
     description: 'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
-    url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung`,
+    url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`,
   },
   twitter: {
     card: 'summary',
@@ -56,7 +56,7 @@ export default function FristloseKuendigungPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/fristlose-kuendigung`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`}
         pageTitle="Fristlose Kündigung – Ihre Rechte"
         pageDescription="Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht."
         pageType="WebPage"
@@ -64,9 +64,9 @@ export default function FristloseKuendigungPage() {
         includeRating={false}
         speakableSelectors={['.faq-section']}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
-          { name: 'Fristlose Kündigung', url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung/` },
+          { name: 'Fristlose Kündigung', url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung/` },
         ]}
         datePublished="2025-01-15"
         isBasedOn={[

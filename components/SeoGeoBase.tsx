@@ -30,8 +30,8 @@ export default function SeoGeoBase({
   breadcrumbs,
   datePublished = '2025-01-15',
   dateModified = new Date().toISOString().slice(0, 10),
-  includeRating = true,
-  includeOrganization = true,
+  includeRating = false,
+  includeOrganization = false,
 }: SeoGeoBaseProps) {
   const schemas: Record<string, unknown>[] = [];
 

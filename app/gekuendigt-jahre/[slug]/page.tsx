@@ -68,8 +68,8 @@ export default function Page({ params }: Props) {
         pageTitle={`Gekündigt nach ${yl}`}
         pageDescription={`Kündigung nach ${yl} Betriebszugehörigkeit`}
         breadcrumbs={[
-          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
-          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+          { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung/` },
           { name: `Gekündigt nach ${yl}`, url: `${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/` },
         ]}
       />
@@ -86,20 +86,6 @@ export default function Page({ params }: Props) {
               name: faq.frage,
               acceptedAnswer: { '@type': 'Answer', text: faq.antwort },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: `${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`,
-            dateModified: new Date().toISOString(),
-            datePublished: '2025-01-15',
           }),
         }}
       />

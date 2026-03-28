@@ -32,16 +32,16 @@ export default function UrteilePage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber/urteile`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber/urteile/`}
         pageTitle="Aktuelle Urteile zu Kündigung und Abfindung"
         pageDescription="Die wichtigsten BAG-Urteile für Arbeitnehmer — verständlich erklärt und auf Ihre Situation angewendet."
         pageType="WebPage"
         includeOrganization={false}
         includeRating={false}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },
-          { name: 'Urteile', url: `${SEO_CONFIG.baseUrl}/ratgeber/urteile` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber/` },
+          { name: 'Urteile', url: `${SEO_CONFIG.baseUrl}/ratgeber/urteile/` },
         ]}
       />
 

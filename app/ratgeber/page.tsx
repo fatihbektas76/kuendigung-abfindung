@@ -58,15 +58,15 @@ export default function RatgeberPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/ratgeber/`}
         pageTitle="Ratgeber Arbeitsrecht für Arbeitnehmer"
         pageDescription="Ratgeber Arbeitsrecht: Kostenlose Muster & Vorlagen, aktuelle BAG-Urteile und Praxis-Tipps für Arbeitnehmer."
         pageType="WebPage"
         includeOrganization={false}
         includeRating={false}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber/` },
         ]}
       />
 

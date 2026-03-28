@@ -139,15 +139,15 @@ export default function KuendigungsfristRechnerPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner/`}
         pageTitle="Kündigungsfrist-Rechner — Wann endet mein Arbeitsverhältnis?"
         pageDescription="Berechnen Sie kostenlos Ihre genaue Kündigungsfrist nach §622 BGB."
         pageType="WebApplication"
         appName="Kündigungsfrist-Rechner — Wann endet mein Arbeitsverhältnis?"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
-          { name: 'Kündigungsfrist berechnen', url: `${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools/` },
+          { name: 'Kündigungsfrist berechnen', url: `${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner/` },
         ]}
         speakableSelectors={['.ergebnis-box']}
         includeOrganization={false}

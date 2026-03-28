@@ -44,14 +44,14 @@ export default function AbfindungsrechnerPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/abfindungsrechner`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/abfindungsrechner/`}
         pageTitle="Abfindungsrechner"
         pageDescription="Kostenloser Abfindungsrechner: Berechnen Sie Ihre voraussichtliche Abfindung nach Kündigung in 30 Sekunden."
         pageType="WebApplication"
         appName="Abfindungsrechner"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Abfindungsrechner', url: `${SEO_CONFIG.baseUrl}/abfindungsrechner` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Abfindungsrechner', url: `${SEO_CONFIG.baseUrl}/abfindungsrechner/` },
         ]}
         speakableSelectors={['.ergebnis-box']}
         includeOrganization={false}

@@ -65,9 +65,9 @@ export default function UrteilDetailPage({ params }: Props) {
         pageTitle={urteil.titel}
         pageDescription={urteil.kurzfassung}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Rechtsprechung', url: `${SEO_CONFIG.baseUrl}/ratgeber/urteile` },
-          { name: urteil.titel, url: `${SEO_CONFIG.baseUrl}/urteile/${urteil.slug}` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Rechtsprechung', url: `${SEO_CONFIG.baseUrl}/ratgeber/urteile/` },
+          { name: urteil.titel, url: `${SEO_CONFIG.baseUrl}/urteile/${urteil.slug}/` },
         ]}
       />
 

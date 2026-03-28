@@ -52,7 +52,7 @@ export async function generateMetadata({
   const result = lookupOrt(params.stadt);
   if (!result) return {};
   const { ort, content } = result;
-  const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}`;
+  const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}/`;
 
   return {
     title: `Fachanwalt Arbeitsrecht ${ort.name} | APOS Legal`,
@@ -78,7 +78,7 @@ function buildSchema(slug: string) {
   if (!result) return null;
   const { ort, content } = result;
 
-  const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}`;
+  const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}/`;
 
   return {
     "@context": "https://schema.org",
@@ -140,6 +140,7 @@ function buildSchema(slug: string) {
         worksFor: { "@type": "LegalService", name: "APOS Legal" },
         sameAs: [
           "https://www.anwalt.de/fatihbektas",
+          "https://www.linkedin.com/in/fatihbektas",
           "https://www.gekuendigt-abfindung.de/team/",
         ],
       },
@@ -158,8 +159,8 @@ function buildSchema(slug: string) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Startseite", item: "https://www.gekuendigt-abfindung.de" },
-          { "@type": "ListItem", position: 2, name: "Arbeitsrecht Anwalt", item: "https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt" },
+          { "@type": "ListItem", position: 1, name: "Startseite", item: "https://www.gekuendigt-abfindung.de/" },
+          { "@type": "ListItem", position: 2, name: "Arbeitsrecht Anwalt", item: "https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/" },
           { "@type": "ListItem", position: 3, name: `Anwalt ${ort.name}`, item: url },
         ],
       },

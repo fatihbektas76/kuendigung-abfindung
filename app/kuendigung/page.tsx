@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
     description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
-    url: `${SEO_CONFIG.baseUrl}/kuendigung`,
+    url: `${SEO_CONFIG.baseUrl}/kuendigung/`,
   },
   twitter: {
     card: 'summary',
@@ -69,13 +69,13 @@ export default function KuendigungPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung/`}
         pageTitle="Kündigung erhalten – Was jetzt?"
         pageDescription="Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer."
         pageType="WebPage"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung/` },
         ]}
         includeOrganization={false}
         includeRating={false}

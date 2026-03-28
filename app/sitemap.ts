@@ -52,8 +52,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/urlaub-teilzeit-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/aufhebungsvertrag-pruefen/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/team/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE_URL}/legal-notice/`, lastModified: monthly, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE_URL}/privacy-policy/`, lastModified: monthly, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const clusterAPages: MetadataRoute.Sitemap = entries.map((e) => ({

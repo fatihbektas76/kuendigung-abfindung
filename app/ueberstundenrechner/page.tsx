@@ -64,15 +64,15 @@ export default function UeberstundenrechnerPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/ueberstundenrechner`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/ueberstundenrechner/`}
         pageTitle="Überstundenrechner — Stundenlohn & Vergütung"
         pageDescription="Berechnen Sie kostenlos Ihren Stundenlohn und ausstehende Überstundenvergütung."
         pageType="WebApplication"
         appName="Überstundenrechner — Stundenlohn & Vergütung"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
-          { name: 'Überstundenrechner', url: `${SEO_CONFIG.baseUrl}/ueberstundenrechner` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools/` },
+          { name: 'Überstundenrechner', url: `${SEO_CONFIG.baseUrl}/ueberstundenrechner/` },
         ]}
         speakableSelectors={['.ergebnis-box']}
         includeOrganization={false}

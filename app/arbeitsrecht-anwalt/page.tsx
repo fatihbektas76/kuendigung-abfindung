@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { staedte } from "@/data/staedte";
 import { gemeinden } from "@/data/gemeinden";
 import { berlinBezirke } from "@/data/bezirke";
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const metadata: Metadata = {
   title: "Anwalt für Arbeitsrecht – Alle Städte | APOS Legal",
@@ -23,6 +25,16 @@ export default function ArbeitsrechtAnwaltPage() {
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/arbeitsrecht-anwalt/`}
+        pageTitle="Anwalt für Arbeitsrecht – Bundesweit in Ihrer Stadt"
+        pageDescription="Fachanwalt für Arbeitsrecht in Ihrer Stadt. Kündigung, Abfindung, Aufhebungsvertrag – bundesweit und digital."
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Arbeitsrecht Anwalt', url: `${SEO_CONFIG.baseUrl}/arbeitsrecht-anwalt/` },
+        ]}
+      />
 
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 mb-8">

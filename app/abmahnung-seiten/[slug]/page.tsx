@@ -49,10 +49,13 @@ export default function Page({ params }: Props) {
   return (
     <>
       <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung-nach-${entry.slug}/`}
+        pageTitle={`Kündigung nach ${label}`}
+        pageDescription={`Kündigung nach ${label} erhalten? Ist die Kündigung wirksam? Formfehler, Kündigungsschutzklage, Abfindungschancen.`}
         pageType="WebPage"
         breadcrumbs={[
-          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
-          { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung` },
+          { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung/` },
           { name: `Kündigung nach ${label}`, url: `${SEO_CONFIG.baseUrl}/kuendigung-nach-${entry.slug}/` },
         ]}
       />

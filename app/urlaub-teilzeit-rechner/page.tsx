@@ -56,15 +56,15 @@ export default function UrlaubTeilzeitRechnerPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner/`}
         pageTitle="Urlaubsrechner Teilzeit — Pro-rata-temporis-Berechnung"
         pageDescription="Kostenloser Urlaubsrechner für Teilzeitbeschäftigte. Berechnet den anteiligen Urlaubsanspruch nach dem Pro-rata-temporis-Grundsatz (§3 BUrlG)."
         pageType="WebApplication"
         appName="Urlaubsrechner Teilzeit — Pro-rata-temporis-Berechnung"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
-          { name: 'Urlaub Teilzeit berechnen', url: `${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools/` },
+          { name: 'Urlaub Teilzeit berechnen', url: `${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner/` },
         ]}
         speakableSelectors={['#ergebnis-box']}
         isBasedOn={[

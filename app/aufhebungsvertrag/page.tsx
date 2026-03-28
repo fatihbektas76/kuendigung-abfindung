@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
     description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag.',
-    url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag`,
+    url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/`,
   },
   twitter: {
     card: 'summary',
@@ -93,7 +93,7 @@ export default function AufhebungsvertragPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/aufhebungsvertrag`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/aufhebungsvertrag/`}
         pageTitle="Aufhebungsvertrag erhalten – was Sie wissen müssen"
         pageDescription="Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag."
         pageType="WebPage"
@@ -101,8 +101,8 @@ export default function AufhebungsvertragPage() {
         includeRating={false}
         speakableSelectors={['.faq-section']}
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/` },
         ]}
         datePublished="2025-01-15"
         isBasedOn={[

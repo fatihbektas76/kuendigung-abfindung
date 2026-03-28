@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import TeamCard from '@/components/TeamCard';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const metadata: Metadata = {
   title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
@@ -33,11 +35,12 @@ const personSchemas = [
     description:
       'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
     image: `${BASE_URL}/Fatih.jpg`,
-    url: `${BASE_URL}/team`,
+    url: `${BASE_URL}/team/`,
     email: 'bektas@apos.legal',
     telephone: '+4915127003173',
     sameAs: [
       'https://www.anwalt.de/fatihbektas',
+      'https://www.linkedin.com/in/fatihbektas',
       'https://www.gekuendigt-abfindung.de/team/',
     ],
     worksFor: { '@id': `${BASE_URL}/#organization` },
@@ -77,7 +80,7 @@ const personSchemas = [
     familyName: 'Büchler',
     jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     image: `${BASE_URL}/Buechler.png`,
-    url: `${BASE_URL}/team`,
+    url: `${BASE_URL}/team/`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
     knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
@@ -90,7 +93,7 @@ const personSchemas = [
     jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     honorificPrefix: 'Dr.',
     image: `${BASE_URL}/Duncker.png`,
-    url: `${BASE_URL}/team`,
+    url: `${BASE_URL}/team/`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
     knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
@@ -103,7 +106,7 @@ const personSchemas = [
     jobTitle: 'Rechtsanwalt',
     honorificSuffix: 'Ph.D. (UIBE)',
     image: `${BASE_URL}/Fuerniss.jpg`,
-    url: `${BASE_URL}/team`,
+    url: `${BASE_URL}/team/`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
     knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
@@ -116,7 +119,7 @@ const personSchemas = [
     jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     honorificPrefix: 'Dr.',
     image: `${BASE_URL}/Hofstaetter.png`,
-    url: `${BASE_URL}/team`,
+    url: `${BASE_URL}/team/`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
     knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
@@ -128,7 +131,7 @@ const personSchemas = [
     familyName: 'Samklu',
     jobTitle: 'Rechtsanwalt',
     image: `${BASE_URL}/Samklu.png`,
-    url: `${BASE_URL}/team`,
+    url: `${BASE_URL}/team/`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
     knowsAbout: ['Kündigungsschutzrecht', 'Arbeitsrecht'],
   },
@@ -137,6 +140,17 @@ const personSchemas = [
 export default function TeamPage() {
   return (
     <main>
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/team/`}
+        pageTitle="Unser Team — APOS Legal"
+        pageDescription="Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten."
+        pageType="WebPage"
+        breadcrumbs={[
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Team', url: `${SEO_CONFIG.baseUrl}/team/` },
+        ]}
+      />
+
       {/* Schema.org - ItemList of Person entities */}
       <script
         type="application/ld+json"
@@ -146,7 +160,7 @@ export default function TeamPage() {
             '@type': 'ItemList',
             name: 'Team gekuendigt-abfindung.de',
             description: 'Fachanwälte für Arbeitsrecht — spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag.',
-            url: `${BASE_URL}/team`,
+            url: `${BASE_URL}/team/`,
             numberOfItems: personSchemas.length,
             itemListElement: personSchemas.map((person, index) => ({
               '@type': 'ListItem',

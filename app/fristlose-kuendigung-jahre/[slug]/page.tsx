@@ -63,9 +63,10 @@ export default function Page({ params }: Props) {
         pageUrl={pageUrl}
         pageTitle={`Fristlose Kündigung nach ${yl}`}
         pageDescription={`Fristlose Kündigung nach ${yl} Betriebszugehörigkeit`}
+        speakableSelectors={['.fakt-box', '.faq-list']}
         breadcrumbs={[
-          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
-          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung` },
+          { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung/` },
           { name: `Fristlose Kündigung nach ${yl}`, url: pageUrl },
         ]}
       />
@@ -82,24 +83,6 @@ export default function Page({ params }: Props) {
               name: faq.frage,
               acceptedAnswer: { '@type': 'Answer', text: faq.antwort },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebPage with dateModified + speakable */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: pageUrl,
-            dateModified: '2026-03-01',
-            datePublished: '2025-01-15',
-            speakable: {
-              '@type': 'SpeakableSpecification',
-              cssSelector: ['.fakt-box', '.faq-list'],
-            },
           }),
         }}
       />

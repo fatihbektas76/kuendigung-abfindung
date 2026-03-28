@@ -929,13 +929,13 @@ export default function KuendigungPruefenPage() {
     <div className="flex min-h-screen bg-cream">
       <SeoGeoBase
         pageType="WebApplication"
-        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung-pruefen`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung-pruefen/`}
         pageTitle="Kündigungscheck — Kündigung kostenlos prüfen"
         pageDescription="Kostenloser Kündigungscheck: Prüfen Sie in 2 Minuten Ihre Abfindungschancen. Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich."
         appName="Kündigungscheck — Kündigung kostenlos prüfen"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Kündigung prüfen', url: `${SEO_CONFIG.baseUrl}/kuendigung-pruefen` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Kündigung prüfen', url: `${SEO_CONFIG.baseUrl}/kuendigung-pruefen/` },
         ]}
         includeOrganization={false}
         includeRating={false}

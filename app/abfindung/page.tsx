@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
     description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
-    url: `${SEO_CONFIG.baseUrl}/abfindung`,
+    url: `${SEO_CONFIG.baseUrl}/abfindung/`,
   },
   twitter: {
     card: 'summary',
@@ -59,13 +59,13 @@ export default function AbfindungPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/abfindung`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/abfindung/`}
         pageTitle="Abfindung nach Kündigung"
         pageDescription="Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt."
         pageType="WebPage"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Abfindung', url: `${SEO_CONFIG.baseUrl}/abfindung` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Abfindung', url: `${SEO_CONFIG.baseUrl}/abfindung/` },
         ]}
         includeOrganization={false}
         includeRating={false}

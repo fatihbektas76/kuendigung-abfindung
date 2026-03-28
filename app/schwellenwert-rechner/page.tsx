@@ -41,14 +41,14 @@ export default function SchwellenwertRechnerPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/schwellenwert-rechner`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/schwellenwert-rechner/`}
         pageTitle="Schwellenwert-Rechner §23 KSchG"
         pageDescription="Prüfen Sie kostenlos, ob das Kündigungsschutzgesetz für Ihren Betrieb gilt. Berechnung nach §23 KSchG mit Vollzeitäquivalenten (FTE)."
         pageType="WebApplication"
         appName="Schwellenwert-Rechner §23 KSchG"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Schwellenwert-Rechner', url: `${SEO_CONFIG.baseUrl}/schwellenwert-rechner` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Schwellenwert-Rechner', url: `${SEO_CONFIG.baseUrl}/schwellenwert-rechner/` },
         ]}
         speakableSelectors={['.ergebnis-box']}
         includeOrganization={false}

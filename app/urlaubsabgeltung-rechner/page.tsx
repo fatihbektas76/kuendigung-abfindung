@@ -108,15 +108,15 @@ export default function UrlaubsabgeltungRechnerPage() {
   return (
     <main>
       <SeoGeoBase
-        pageUrl={`${SEO_CONFIG.baseUrl}/urlaubsabgeltung-rechner`}
+        pageUrl={`${SEO_CONFIG.baseUrl}/urlaubsabgeltung-rechner/`}
         pageTitle="Urlaubsabgeltungsrechner — §7 Abs. 4 BUrlG"
         pageDescription="Kostenloser Urlaubsabgeltungsrechner nach §11 BUrlG. Berechnen Sie Ihren Resturlaub-Abgeltungsanspruch nach Kündigung oder Aufhebungsvertrag."
         pageType="WebApplication"
         appName="Urlaubsabgeltungsrechner — §7 Abs. 4 BUrlG"
         breadcrumbs={[
-          { name: 'Start', url: SEO_CONFIG.baseUrl },
-          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools` },
-          { name: 'Urlaubsabgeltung berechnen', url: `${SEO_CONFIG.baseUrl}/urlaubsabgeltung-rechner` },
+          { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools/` },
+          { name: 'Urlaubsabgeltung berechnen', url: `${SEO_CONFIG.baseUrl}/urlaubsabgeltung-rechner/` },
         ]}
         speakableSelectors={['#ergebnis-box']}
         isBasedOn={[

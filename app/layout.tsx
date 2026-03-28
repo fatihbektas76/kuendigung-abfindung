@@ -98,12 +98,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'WebSite',
               name: 'gekuendigt-abfindung.de',
               alternateName: 'Gekündigt? Abfindung & Kündigungsschutz',
-              url: 'https://www.gekuendigt-abfindung.de',
+              url: 'https://www.gekuendigt-abfindung.de/',
               inLanguage: 'de-DE',
               publisher: {
                 '@type': 'Organization',
                 name: 'APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG',
-                url: 'https://www.gekuendigt-abfindung.de',
+                url: 'https://www.gekuendigt-abfindung.de/',
               },
               potentialAction: {
                 '@type': 'SearchAction',
@@ -120,7 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans text-ink bg-white leading-relaxed">
         <SeoGeoBase
-          pageUrl={SEO_CONFIG.baseUrl}
+          pageUrl={SEO_CONFIG.baseUrl + '/'}
           pageTitle={SEO_CONFIG.siteName}
           pageDescription="Arbeitsrecht-Tools und kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht"
           pageType="WebPage"

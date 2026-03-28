@@ -65,9 +65,10 @@ export default function Page({ params }: Props) {
         pageUrl={pageUrl}
         pageTitle={`Abfindung nach ${yl}`}
         pageDescription={`Abfindung nach ${yl} Betriebszugehörigkeit`}
+        speakableSelectors={['.fakt-box', '.faq-list', '.abfindung-formel']}
         breadcrumbs={[
-          { name: 'Startseite', url: SEO_CONFIG.baseUrl },
-          { name: 'Abfindung', url: `${SEO_CONFIG.baseUrl}/abfindung` },
+          { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
+          { name: 'Abfindung', url: `${SEO_CONFIG.baseUrl}/abfindung/` },
           { name: `Abfindung nach ${yl}`, url: pageUrl },
         ]}
       />
@@ -84,24 +85,6 @@ export default function Page({ params }: Props) {
               name: faq.frage,
               acceptedAnswer: { '@type': 'Answer', text: faq.antwort },
             })),
-          }),
-        }}
-      />
-
-      {/* Schema.org - WebPage with dateModified + speakable */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: pageUrl,
-            dateModified: '2026-03-01',
-            datePublished: '2025-01-15',
-            speakable: {
-              '@type': 'SpeakableSpecification',
-              cssSelector: ['.fakt-box', '.faq-list', '.abfindung-formel'],
-            },
           }),
         }}
       />
