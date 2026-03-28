@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SEO_CONFIG } from '@/lib/seo-config';
 import Hero from '@/components/Hero';
 import Situations from '@/components/Situations';
 import Disputes from '@/components/Disputes';
@@ -40,6 +41,23 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      {/* Schema.org - AggregateRating für LegalService (nur auf Startseite, wo Testimonials sichtbar) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'LegalService',
+            '@id': SEO_CONFIG.organization.id,
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ...SEO_CONFIG.rating,
+            },
+            review: SEO_CONFIG.reviews,
+          }),
+        }}
+      />
+
       {/* Schema.org - FAQPage */}
       <script
         type="application/ld+json"

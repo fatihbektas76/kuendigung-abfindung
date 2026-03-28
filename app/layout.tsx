@@ -125,7 +125,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           pageDescription="Arbeitsrecht-Tools und kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht"
           pageType="WebPage"
           includeOrganization={true}
-          includeRating={true}
+          includeRating={false}
         />
         <LayoutClient>{children}</LayoutClient>
       </body>
