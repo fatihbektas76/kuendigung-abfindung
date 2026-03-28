@@ -222,7 +222,7 @@ const glossar = [
 ];
 
 // Unique Anfangsbuchstaben für Jump-Navigation
-const buchstaben = [...new Set(glossar.map((g) => g.begriff[0].toUpperCase()))];
+const buchstaben = Array.from(new Set(glossar.map((g) => g.begriff[0].toUpperCase())));
 
 export default function GlossarPage() {
   return (
