@@ -41,6 +41,20 @@ const categories = [
     ],
   },
   {
+    eyebrow: 'Nachschlagewerk',
+    title: 'Glossar Arbeitsrecht',
+    description:
+      'Die wichtigsten Begriffe im Arbeitsrecht — von Abfindung bis Zeugnis. Verständlich erklärt mit Rechtsgrundlage und weiterführenden Links.',
+    href: '/glossar',
+    items: [
+      'Abfindung & Abfindungsformel',
+      'Kündigungsschutzklage & Klagefrist',
+      'Aufhebungsvertrag & Sperrzeit',
+      'Sozialauswahl & Schwellenwert',
+      'Sonderkündigungsschutz',
+    ],
+  },
+  {
     eyebrow: 'Tools',
     title: 'Tools & Rechner',
     description:

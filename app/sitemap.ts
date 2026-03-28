@@ -51,6 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/urlaubsabgeltung-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/urlaub-teilzeit-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/aufhebungsvertrag-pruefen/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/glossar/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/team/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.5 },
   ];
 

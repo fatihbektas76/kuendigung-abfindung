@@ -53,6 +53,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/fristlose-kuendigung" className={linkClass}>Fristlose Kündigung</Link></li>
               <li><Link href="/ratgeber/muster" className={linkClass}>Muster &amp; Vorlagen</Link></li>
               <li><Link href="/ratgeber/urteile" className={linkClass}>Urteile</Link></li>
+              <li><Link href="/glossar" className={linkClass}>Glossar</Link></li>
             </ul>
           </div>
 

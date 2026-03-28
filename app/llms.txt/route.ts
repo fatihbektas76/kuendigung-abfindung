@@ -26,6 +26,7 @@ export async function GET() {
 - [Ratgeber](${BASE_URL}/ratgeber): Übersicht aller Ratgeber-Themen rund um Arbeitsrecht.
 - [Muster & Vorlagen](${BASE_URL}/ratgeber/muster): Kostenlose Muster für Widerspruch, Gegendarstellung, Kündigungsschutzklage.
 - [Aktuelle Urteile](${BASE_URL}/ratgeber/urteile): Relevante Urteile im Arbeitsrecht.
+- [Glossar Arbeitsrecht](${BASE_URL}/glossar): Die wichtigsten Begriffe im Arbeitsrecht — von Abfindung bis Zeugnis.
 
 ## Das Team
 
