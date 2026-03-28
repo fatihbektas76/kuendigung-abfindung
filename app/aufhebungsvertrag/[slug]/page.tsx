@@ -17,12 +17,15 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getAufhebungsvertragEntry(params.slug);
   if (!entry) return {};
+  const title = `${entry.h1} (${new Date().getFullYear()})`;
+  const description = `${entry.h1} — ${entry.description} Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`;
+  const url = `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/${entry.slug}/`;
   return {
-    title: `${entry.h1} (${new Date().getFullYear()})`,
-    description: `${entry.h1} — ${entry.description} Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`,
-    alternates: {
-      canonical: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/${entry.slug}/`,
-    },
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary', title, description },
   };
 }
 
@@ -48,6 +51,7 @@ export default function Page({ params }: Props) {
         pageTitle={entry.h1}
         pageDescription={entry.description}
         pageType="WebPage"
+        speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/` },

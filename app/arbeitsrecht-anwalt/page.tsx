@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   title: "Anwalt für Arbeitsrecht – Alle Städte | APOS Legal",
   description: "Fachanwalt für Arbeitsrecht in Ihrer Stadt. Kündigung, Abfindung, Aufhebungsvertrag – bundesweit und digital. Jetzt kostenlose Ersteinschätzung.",
   alternates: { canonical: "https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/" },
+  openGraph: {
+    title: "Anwalt für Arbeitsrecht – Alle Städte | APOS Legal",
+    description: "Fachanwalt für Arbeitsrecht in Ihrer Stadt. Kündigung, Abfindung, Aufhebungsvertrag – bundesweit und digital.",
+    url: "https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/",
+  },
+  twitter: {
+    card: "summary",
+    title: "Anwalt für Arbeitsrecht – Alle Städte | APOS Legal",
+    description: "Fachanwalt für Arbeitsrecht in Ihrer Stadt. Kündigung, Abfindung, Aufhebungsvertrag – bundesweit und digital.",
+  },
 };
 
 // Städte nach Region gruppieren

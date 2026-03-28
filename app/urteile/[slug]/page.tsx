@@ -64,6 +64,7 @@ export default function UrteilDetailPage({ params }: Props) {
         pageUrl={`${SEO_CONFIG.baseUrl}/urteile/${urteil.slug}/`}
         pageTitle={urteil.titel}
         pageDescription={urteil.kurzfassung}
+        speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Rechtsprechung', url: `${SEO_CONFIG.baseUrl}/ratgeber/urteile/` },

@@ -67,6 +67,7 @@ export default function Page({ params }: Props) {
         pageUrl={`${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`}
         pageTitle={`Gekündigt nach ${yl}`}
         pageDescription={`Kündigung nach ${yl} Betriebszugehörigkeit`}
+        speakableSelectors={['.fakt-box', '.faq-list']}
         breadcrumbs={[
           { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung/` },

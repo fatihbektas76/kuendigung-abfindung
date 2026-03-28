@@ -1136,7 +1136,7 @@ export default function AufhebungsvertragPruefenPage() {
         appCategory="Legal Tool"
         includeRating={false}
         includeOrganization={false}
-        speakableSelectors={['#direktantwort', 'h1']}
+        speakableSelectors={['.ergebnis-box']}
         breadcrumbs={[
           { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Tools & Rechner', url: `${SEO_CONFIG.baseUrl}/tools/` },

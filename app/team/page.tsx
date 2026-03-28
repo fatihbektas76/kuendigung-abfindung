@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.gekuendigt-abfindung.de/team/',
   },
+  openGraph: {
+    title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
+    description: 'Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten.',
+    url: 'https://www.gekuendigt-abfindung.de/team/',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
+    description: 'Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten.',
+  },
 };
 
 const team = [
@@ -27,7 +37,7 @@ const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 const personSchemas = [
   {
     '@type': 'Person',
-    '@id': `${BASE_URL}/#fatih-bektas`,
+    '@id': `${BASE_URL}/#author`,
     name: 'Fatih Bektas',
     givenName: 'Fatih',
     familyName: 'Bektas',

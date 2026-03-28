@@ -105,13 +105,6 @@ function buildSchema(slug: string) {
           name: ort.name,
           containedIn: { "@type": "State", name: ort.bundesland },
         },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "5.0",
-          bestRating: "5",
-          worstRating: "1",
-          ratingCount: "68",
-        },
         knowsAbout: [
           "Kündigungsschutzklage",
           "Abfindungsverhandlung",
@@ -133,16 +126,7 @@ function buildSchema(slug: string) {
       },
       {
         "@type": "Person",
-        "@id": "https://www.gekuendigt-abfindung.de/#fatih-bektas",
-        name: "Fatih Bektas",
-        jobTitle: "Fachanwalt für Arbeitsrecht",
-        description: "Zugelassen seit 2005, Fachanwalt für Arbeitsrecht seit 2011, Rechtsanwaltskammer Karlsruhe",
-        worksFor: { "@type": "LegalService", name: "APOS Legal" },
-        sameAs: [
-          "https://www.anwalt.de/fatihbektas",
-          "https://www.linkedin.com/in/fatihbektas",
-          "https://www.gekuendigt-abfindung.de/team/",
-        ],
+        "@id": "https://www.gekuendigt-abfindung.de/#author",
       },
       {
         "@type": "FAQPage",

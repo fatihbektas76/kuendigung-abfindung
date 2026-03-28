@@ -64,6 +64,7 @@ export default function RatgeberPage() {
         pageType="WebPage"
         includeOrganization={false}
         includeRating={false}
+        speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber/` },

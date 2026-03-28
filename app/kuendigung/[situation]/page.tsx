@@ -17,12 +17,15 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getLebenssituation(params.situation);
   if (!entry) return {};
+  const title = `${entry.h1} (${new Date().getFullYear()})`;
+  const description = `${entry.h1} — Ihre Rechte nach ${entry.gesetz}, 3-Wochen-Klagefrist, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`;
+  const url = `${SEO_CONFIG.baseUrl}/kuendigung/${entry.slug}/`;
   return {
-    title: `${entry.h1} (${new Date().getFullYear()})`,
-    description: `${entry.h1} — Ihre Rechte nach ${entry.gesetz}, 3-Wochen-Klagefrist, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`,
-    alternates: {
-      canonical: `${SEO_CONFIG.baseUrl}/kuendigung/${entry.slug}/`,
-    },
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary', title, description },
   };
 }
 
@@ -53,6 +56,7 @@ export default function Page({ params }: Props) {
         pageTitle={entry.h1}
         pageDescription={`${entry.h1} — Ihre Rechte, 3-Wochen-Klagefrist, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt.`}
         pageType="WebPage"
+        speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung/` },

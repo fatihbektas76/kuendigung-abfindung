@@ -53,6 +53,7 @@ export default function Page({ params }: Props) {
         pageTitle={`Kündigung nach ${label}`}
         pageDescription={`Kündigung nach ${label} erhalten? Ist die Kündigung wirksam? Formfehler, Kündigungsschutzklage, Abfindungschancen.`}
         pageType="WebPage"
+        speakableSelectors={['.faq-section']}
         breadcrumbs={[
           { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Abmahnung', url: `${SEO_CONFIG.baseUrl}/abmahnung/` },
