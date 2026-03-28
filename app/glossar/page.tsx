@@ -355,6 +355,51 @@ export default function GlossarPage() {
         }}
       />
 
+      {/* Schema.org - FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Was ist eine Abfindung und wann habe ich Anspruch?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Eine Abfindung ist eine einmalige Geldzahlung des Arbeitgebers bei Beendigung des Arbeitsverhältnisses. Ein gesetzlicher Anspruch besteht nur ausnahmsweise (z.\u00a0B. nach §\u00a01a KSchG). In der Praxis wird sie meist per Vergleich oder Aufhebungsvertrag verhandelt. Faustformel: 0,5 Bruttomonatsgehälter pro Beschäftigungsjahr.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Was ist der Unterschied zwischen Gütetermin und Kammertermin?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Der Gütetermin ist der erste Verhandlungstermin vor dem Arbeitsgericht (2–4 Wochen nach Klageeinreichung) mit dem Ziel einer gütlichen Einigung. Der Kammertermin folgt, wenn keine Einigung erzielt wurde — hier verhandelt die vollbesetzte Kammer mit drei Richtern, erhebt Beweise und fällt ein Urteil.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Was bedeutet Sonderkündigungsschutz?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Sonderkündigungsschutz ist ein besonderer gesetzlicher Kündigungsschutz für bestimmte Personengruppen: Schwangere, Elternzeitler, Schwerbehinderte, Betriebsratsmitglieder, Auszubildende und Datenschutzbeauftragte. Eine Kündigung ist nur mit behördlicher Zustimmung oder unter sehr engen Voraussetzungen möglich.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Was ist eine Verdachtskündigung?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Eine Verdachtskündigung beruht nicht auf einer bewiesenen Pflichtverletzung, sondern auf dem dringenden Verdacht einer schwerwiegenden Straftat. Voraussetzung: Der Verdacht muss auf konkreten Tatsachen beruhen, der Arbeitnehmer muss vorher angehört worden sein, und der Arbeitgeber muss alles Zumutbare zur Aufklärung getan haben.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">

@@ -16,11 +16,25 @@ export default function Hero() {
           <br />
           Holen Sie das Maximum aus Ihrer Abfindung.
         </h1>
-        <p className="text-[1.12rem] text-ink-muted max-w-[620px] mx-auto mb-9 leading-relaxed">
+        <p className="text-[1.12rem] text-ink-muted max-w-[620px] mx-auto mb-6 leading-relaxed">
           Nur 3 Wochen Frist nach der Kündigung. Wir prüfen kostenlos, ob Ihre Kündigung wirksam ist
           — und wie hoch Ihre Abfindung sein kann. Fachanwalt für Arbeitsrecht mit über 20 Jahren
           Erfahrung und 2.000+ erfolgreichen Verfahren.
         </p>
+        <div className="flex items-center justify-center gap-x-5 gap-y-1.5 flex-wrap mb-8 text-[0.82rem] text-ink-light">
+          <span className="flex items-center gap-1.5">
+            <svg className="w-4 h-4 text-green shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+            Fachanwalt seit 2011
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-4 h-4 text-green shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+            Ersteinschätzung kostenlos
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-4 h-4 text-green shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+            Klagefrist gewahrt
+          </span>
+        </div>
         <div className="flex gap-3.5 justify-center flex-wrap max-md:flex-col max-md:items-center">
           <a
             href="#kontakt"

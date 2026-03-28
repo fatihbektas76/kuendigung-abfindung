@@ -194,6 +194,7 @@ export default function SeoGeoBase({
           <meta itemProp="applicationCategory" content={appCategory} />
         )}
       </div>
+
     </>
   );
 }

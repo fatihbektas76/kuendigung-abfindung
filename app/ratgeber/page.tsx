@@ -85,6 +85,43 @@ export default function RatgeberPage() {
         ]}
       />
 
+      {/* Schema.org - FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Welche kostenlosen Muster gibt es für Arbeitnehmer?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Wir bieten kostenlose Muster und Vorlagen für Widerspruch gegen Abmahnung, Gegendarstellung, Checkliste Aufhebungsvertrag und Checkliste Abmahnung. Alle Vorlagen sind sofort verwendbar und an Ihren Fall anpassbar.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Wo finde ich aktuelle Urteile zum Kündigungsschutz?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'In unserem Ratgeber-Bereich „Aktuelle Urteile" finden Sie die wichtigsten BAG-Urteile zu Kündigung, Abfindung und Aufhebungsvertrag — verständlich erklärt und auf Ihre Situation angewendet.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Gibt es kostenlose Tools für die Abfindungsberechnung?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ja, wir bieten mehrere kostenlose Tools: den Abfindungsrechner zur Berechnung Ihrer voraussichtlichen Abfindung, den Kündigungscheck zur Ersteinschätzung Ihres Falls und den Schwellenwert-Rechner zur Prüfung, ob das Kündigungsschutzgesetz für Ihren Betrieb gilt.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
