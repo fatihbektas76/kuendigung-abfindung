@@ -36,7 +36,7 @@ export default function LegalNoticePage() {
         <p>
           Am Paradeplatz 20, 69126 Heidelberg
           <br />
-          Telefon: <a href="tel:+4962213214470">+49 6221 321 44 70</a>
+          Telefon: <a href="tel:+49622295992400">+49 6222 9599 2400</a>
           <br />
           E-Mail: <a href="mailto:info@apos.legal">info@apos.legal</a>
         </p>
@@ -103,7 +103,7 @@ export default function LegalNoticePage() {
         <p>
           Am Paradeplatz 20, 69126 Heidelberg
           <br />
-          Telefon: <a href="tel:+4962213214470">+49 6221 321 44 70</a>
+          Telefon: <a href="tel:+49622295992400">+49 6222 9599 2400</a>
           <br />
           E-Mail: <a href="mailto:info@apos.legal">info@apos.legal</a>
         </p>

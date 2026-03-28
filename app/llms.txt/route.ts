@@ -36,7 +36,7 @@ export async function GET() {
 - [Kostenlose Ersteinschätzung](${BASE_URL}/#kontakt): Schildern Sie Ihren Fall — Ersteinschätzung innerhalb von 24 Stunden.
 - [Telefontermin buchen](https://meet.brevo.com/fatih-bektas/initial-free-consultation-by-phone-lp): Kostenloses Erstgespräch per Telefon.
 - E-Mail: bektas@apos.legal
-- Telefon: +49 151 2700 3173
+- Telefon: +49 6222 9599 2400
 - Adresse: Am Paradeplatz 20, 69126 Heidelberg
 
 ## Rechtliches

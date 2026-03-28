@@ -91,7 +91,7 @@ function buildSchema(slug: string) {
         name: "APOS Legal – Kanzlei Fatih Bektas",
         description: `Fachanwalt für Arbeitsrecht mit Beratung für Arbeitnehmer in ${ort.name}`,
         url,
-        telephone: "+4962213214470",
+        telephone: "+49622295992400",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Am Paradeplatz 20",

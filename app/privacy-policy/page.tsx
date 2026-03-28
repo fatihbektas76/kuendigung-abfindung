@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
           <br />
           E-Mail: <a href="mailto:info@apos.legal">info@apos.legal</a>
           <br />
-          Telefon: <a href="tel:+4962213214470">+49 6221 32144-70</a>
+          Telefon: <a href="tel:+49622295992400">+49 6222 9599 2400</a>
         </p>
 
         <h2>2. Übersicht der Datenverarbeitung</h2>

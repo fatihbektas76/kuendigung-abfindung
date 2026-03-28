@@ -47,7 +47,7 @@ const personSchemas = [
     image: `${BASE_URL}/Fatih.jpg`,
     url: `${BASE_URL}/team/`,
     email: 'bektas@apos.legal',
-    telephone: '+4915127003173',
+    telephone: '+49622295992400',
     sameAs: [
       'https://www.anwalt.de/fatihbektas',
       'https://www.linkedin.com/in/fatihbektas',

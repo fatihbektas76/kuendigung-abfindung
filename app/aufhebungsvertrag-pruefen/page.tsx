@@ -320,8 +320,8 @@ export default function AufhebungsvertragPruefenPage() {
           Hilfe und Kontakt
         </div>
         <div className="space-y-2">
-          <a href="tel:+4915127003173" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
-            +49 151 2700 3173
+          <a href="tel:+49622295992400" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
+            +49 6222 9599 2400
           </a>
           <a href="mailto:bektas@apos.legal" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
             bektas@apos.legal
@@ -411,8 +411,8 @@ export default function AufhebungsvertragPruefenPage() {
             <Link href="/" className="flex items-center no-underline">
               <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={120} height={40} className="h-8 w-auto" priority />
             </Link>
-            <a href="tel:+4915127003173" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
-              +49 151 2700 3173
+            <a href="tel:+49622295992400" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
+              +49 6222 9599 2400
             </a>
           </div>
 
@@ -1206,8 +1206,8 @@ export default function AufhebungsvertragPruefenPage() {
           <Link href="/" className="flex items-center no-underline">
             <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={120} height={40} className="h-8 w-auto" priority />
           </Link>
-          <a href="tel:+4915127003173" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
-            +49 151 2700 3173
+          <a href="tel:+49622295992400" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
+            +49 6222 9599 2400
           </a>
         </div>
 

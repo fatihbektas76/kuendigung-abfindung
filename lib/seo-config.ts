@@ -9,7 +9,7 @@ export const SEO_CONFIG = {
     jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     credential: 'Fachanwalt für Arbeitsrecht seit 2011',
     organization: 'Rechtsanwaltskammer Karlsruhe',
-    telephone: '+4915127003173',
+    telephone: '+49622295992400',
     email: 'bektas@apos.legal',
     memberOf: [
       { '@type': 'Organization' as const, name: 'Deutscher Anwaltverein' },
@@ -39,7 +39,7 @@ export const SEO_CONFIG = {
     url: 'https://www.gekuendigt-abfindung.de/',
     description:
       'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. 20+ Jahre Erfahrung, 2.000+ Verfahren.',
-    telephone: '+4962213214470',
+    telephone: '+49622295992400',
     email: 'bektas@apos.legal',
     address: {
       streetAddress: 'Am Paradeplatz 20',
