@@ -5,9 +5,9 @@ import Link from 'next/link';
 import FadeUp from './FadeUp';
 
 const teamPreview = [
-  { src: '/Fatih.jpg', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
-  { src: '/Buechler.png', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt' },
-  { src: '/Duncker.png', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt' },
+  { src: '/Fatih.webp', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Buechler.webp', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt' },
+  { src: '/Duncker.webp', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt' },
 ];
 
 export default function TeamTeaser() {

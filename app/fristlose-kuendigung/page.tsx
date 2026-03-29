@@ -6,6 +6,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
+import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`,
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
     description: 'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
   },
@@ -317,6 +318,8 @@ export default function FristloseKuendigungPage() {
       </section>
 
       <AktuelleRechtslage />
+
+      <RelatedTopics current="fristlose-kuendigung" />
 
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-cream">

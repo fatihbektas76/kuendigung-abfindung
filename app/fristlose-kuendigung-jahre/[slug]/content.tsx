@@ -555,7 +555,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
           <div className="bg-white border border-gray-200 rounded-lg p-4 flex gap-6 items-start max-md:flex-col max-md:items-center max-md:text-center">
             <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
               <Image
-                src="/Fatih.jpg"
+                src="/Fatih.webp"
                 alt="Fatih Bektas — Fachanwalt für Arbeitsrecht"
                 width={80}
                 height={80}

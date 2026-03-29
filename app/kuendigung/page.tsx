@@ -7,6 +7,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
+import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     url: `${SEO_CONFIG.baseUrl}/kuendigung/`,
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
     description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
   },
@@ -366,6 +367,8 @@ export default function KuendigungPage() {
           </div>
         </div>
       </section>
+
+      <RelatedTopics current="kuendigung" />
 
       {/* Standort-Hinweis */}
       <section className="py-[40px] px-8 bg-white border-t border-border">

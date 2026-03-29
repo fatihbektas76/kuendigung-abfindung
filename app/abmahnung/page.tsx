@@ -6,6 +6,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
+import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     url: `${SEO_CONFIG.baseUrl}/abmahnung/`,
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: `Abmahnung – Ihre Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
     description: 'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer.',
   },
@@ -425,6 +426,8 @@ export default function AbmahnungPage() {
       </section>
 
       <AktuelleRechtslage />
+
+      <RelatedTopics current="abmahnung" />
 
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-white">

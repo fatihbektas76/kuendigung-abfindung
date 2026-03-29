@@ -412,7 +412,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         {/* Anwaltsprofil */}
         <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8 flex gap-5">
           <Image
-            src="/Fatih.jpg"
+            src="/Fatih.webp"
             alt="Fatih Bektas – Fachanwalt für Arbeitsrecht"
             width={64}
             height={64}

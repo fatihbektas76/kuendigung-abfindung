@@ -5,6 +5,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
+import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/`,
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
     description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag.',
   },
@@ -248,6 +249,8 @@ export default function AufhebungsvertragPage() {
       </section>
 
       <AktuelleRechtslage />
+
+      <RelatedTopics current="aufhebungsvertrag" />
 
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-white">

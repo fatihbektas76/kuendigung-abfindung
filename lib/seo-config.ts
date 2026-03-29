@@ -117,7 +117,7 @@ export function buildMetadata({
       locale: 'de_DE',
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title,
       description,
     },

@@ -5,7 +5,7 @@ export default function AuthorBox() {
     <aside className="mt-16 p-8 bg-cream border border-border-light rounded flex gap-7 items-start max-md:flex-col max-md:items-center max-md:text-center">
       <div className="w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
         <Image
-          src="/Fatih.jpg"
+          src="/Fatih.webp"
           alt="Fatih Bektas — Rechtsanwalt & Fachanwalt für Arbeitsrecht"
           width={100}
           height={100}

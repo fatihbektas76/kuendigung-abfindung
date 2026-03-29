@@ -6,6 +6,7 @@ import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 import { entries } from '@/lib/betriebszugehoerigkeit';
 import ShareButtons from '@/components/ShareButtons';
+import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     url: `${SEO_CONFIG.baseUrl}/abfindung/`,
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
     description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
   },
@@ -254,6 +255,8 @@ export default function AbfindungPage() {
           </div>
         </div>
       </section>
+
+      <RelatedTopics current="abfindung" />
 
       {/* Standort-Hinweis */}
       <section className="py-[40px] px-8 bg-white border-t border-border">
