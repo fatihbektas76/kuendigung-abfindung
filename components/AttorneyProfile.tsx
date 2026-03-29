@@ -14,7 +14,7 @@ EMAIL:bektas@apos.legal
 TEL:+49 6222 9599 2400
 ADR:;;Am Paradeplatz 20;Heidelberg;;69126;Germany
 URL:https://www.gekuendigt-abfindung.de
-X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/fatihbektas
+X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/fatih-bektas
 END:VCARD`;
   const blob = new Blob([vcard], { type: 'text/vcard' });
   const url = URL.createObjectURL(blob);

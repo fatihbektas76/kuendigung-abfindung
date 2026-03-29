@@ -50,7 +50,7 @@ const personSchemas = [
     telephone: '+49622295992400',
     sameAs: [
       'https://www.anwalt.de/fatihbektas',
-      'https://www.linkedin.com/in/fatihbektas',
+      'https://www.linkedin.com/in/fatih-bektas',
       'https://www.gekuendigt-abfindung.de/team/',
     ],
     worksFor: { '@id': `${BASE_URL}/#organization` },

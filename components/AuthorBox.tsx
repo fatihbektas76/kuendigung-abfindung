@@ -27,7 +27,7 @@ export default function AuthorBox() {
         </p>
         <div className="flex items-center gap-4 max-md:justify-center flex-wrap">
           <a
-            href="https://www.linkedin.com/in/fatihbektas"
+            href="https://www.linkedin.com/in/fatih-bektas"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-gold hover:text-gold-dark no-underline transition-colors"

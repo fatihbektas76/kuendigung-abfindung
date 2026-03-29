@@ -27,7 +27,7 @@ export const SEO_CONFIG = {
     ],
     sameAs: [
       'https://www.anwalt.de/fatihbektas',
-      'https://www.linkedin.com/in/fatihbektas',
+      'https://www.linkedin.com/in/fatih-bektas',
       'https://www.gekuendigt-abfindung.de/team/',
     ],
   },
