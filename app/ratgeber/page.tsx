@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ShareButtons from '@/components/ShareButtons';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 
@@ -173,6 +174,15 @@ export default function RatgeberPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Share */}
+      <section className="px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <ShareButtons url="/ratgeber/" title="Ratgeber Arbeitsrecht für Arbeitnehmer" />
           </div>
         </div>
       </section>

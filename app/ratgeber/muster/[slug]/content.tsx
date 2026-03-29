@@ -7,6 +7,7 @@ import { musterPages } from '@/lib/muster-data';
 import type { GeneratedMusterPageContent } from '@/lib/generated-muster-page-content';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
+import ShareButtons from '@/components/ShareButtons';
 
 type Props = {
   entry: MusterPageEntry;
@@ -268,6 +269,7 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <AuthorBox />
+            <ShareButtons url={`/ratgeber/muster/${entry.slug}/`} title={entry.h1} />
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
 import { entries } from '@/lib/betriebszugehoerigkeit';
+import ShareButtons from '@/components/ShareButtons';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
@@ -249,6 +250,7 @@ export default function AbfindungPage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <AuthorBox />
+            <ShareButtons url="/abfindung/" title="Abfindung bei Kündigung – Anspruch & Höhe" />
           </div>
         </div>
       </section>

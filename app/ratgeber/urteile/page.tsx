@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
 import { urteile } from '@/lib/urteile';
+import ShareButtons from '@/components/ShareButtons';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 
@@ -159,6 +160,15 @@ export default function UrteilePage() {
             Fragen zu BAG-Urteilen
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* Share */}
+      <section className="px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <ShareButtons url="/ratgeber/urteile/" title="Aktuelle Urteile: Kündigung & Abfindung" />
+          </div>
         </div>
       </section>
 

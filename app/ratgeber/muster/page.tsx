@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { musterPages } from '@/lib/muster-data';
 import { musterContent } from '@/lib/generated-muster-content';
+import ShareButtons from '@/components/ShareButtons';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
@@ -168,6 +169,15 @@ export default function MusterOverviewPage() {
             im Sinne des Rechtsdienstleistungsgesetzes (RDG) dar. Eine Haftung für die Richtigkeit,
             Vollständigkeit und Aktualität der bereitgestellten Informationen wird nicht übernommen. Für
             eine verbindliche Rechtsberatung wenden Sie sich bitte an einen Fachanwalt für Arbeitsrecht.
+          </div>
+        </div>
+      </section>
+
+      {/* Share */}
+      <section className="px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <ShareButtons url="/ratgeber/muster/" title="Muster & Vorlagen Arbeitsrecht — Kostenlos" />
           </div>
         </div>
       </section>

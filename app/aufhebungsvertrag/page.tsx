@@ -4,6 +4,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
+import ShareButtons from '@/components/ShareButtons';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
@@ -241,6 +242,7 @@ export default function AufhebungsvertragPage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <AuthorBox />
+            <ShareButtons url="/aufhebungsvertrag/" title="Aufhebungsvertrag – Abfindung, Sperrzeit & Prüfung" />
           </div>
         </div>
       </section>
