@@ -177,7 +177,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
 
       {/* ═══ 4. Fakten-Box (2x2 Grid) — bg-gray-50, Kacheln weiß mit goldenem border-top ═══ */}
       <section className="py-3 px-4 sm:px-8 mb-3">
-        <div className="max-w-content mx-auto bg-gray-50 rounded-lg p-4">
+        <div className="max-w-content mx-auto bg-gray-50 rounded-lg p-4 fakt-box">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               { label: 'Klagefrist', value: '3 Wochen', desc: 'Ab Zugang der Kündigung (§ 4 KSchG) — Verpassen der Frist führt zur Wirksamkeit der Kündigung' },
@@ -504,7 +504,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Häufige Fragen zur Kündigung nach {yl} Betriebszugehörigkeit
           </h2>
-          <div className="max-w-[800px]">
+          <div className="max-w-[800px] faq-list">
             {yearData.faqs.map((faq, i) => {
               const isOpen = faqOpen === i;
               return (

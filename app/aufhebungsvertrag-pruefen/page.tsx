@@ -419,7 +419,7 @@ export default function AufhebungsvertragPruefenPage() {
           <div className="flex-1 flex items-start justify-center px-6 py-10">
             <div className="w-full max-w-[600px]">
               {/* Ampel-Ergebnis-Box */}
-              <div className="py-8 px-7 bg-cream rounded-sm border-2 border-gold text-center animate-[fadeIn_0.5s_ease-out]">
+              <div className="ergebnis-box py-8 px-7 bg-cream rounded-sm border-2 border-gold text-center animate-[fadeIn_0.5s_ease-out]">
                 <div className="flex justify-center mb-4">
                   <AmpelIcon color={ampelColor} size={64} />
                 </div>

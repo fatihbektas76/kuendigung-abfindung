@@ -224,7 +224,7 @@ export default function SchwellenwertRechnerPage() {
 
             {/* Result */}
             {result && (
-              <div className="mt-8">
+              <div className="mt-8 ergebnis-box">
                 <h2 className="font-serif text-[1.4rem] font-bold mb-5">Ergebnis</h2>
                 <div
                   className={`rounded-sm border-2 p-6 text-center ${

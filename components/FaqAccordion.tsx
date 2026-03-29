@@ -11,7 +11,7 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="max-w-[740px]">
+    <div className="faq-section max-w-[740px]">
       {items.map((faq, i) => (
         <div key={i} className="border-b border-border">
           <button

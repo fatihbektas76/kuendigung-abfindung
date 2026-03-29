@@ -6,6 +6,8 @@ export interface Stadt {
   arbeitsgerichtAdresse: string;
   lagName: string; // Berufungsinstanz
   region: string;
+  lat?: number;
+  lng?: number;
 }
 
 export const staedte: Stadt[] = [
@@ -17,6 +19,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Magdeburger Platz 1, 10785 Berlin",
     lagName: "Landesarbeitsgericht Berlin-Brandenburg",
     region: "Ost",
+    lat: 52.5200,
+    lng: 13.4050,
   },
   {
     slug: "hamburg",
@@ -26,6 +30,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Osterbekstraße 96, 22083 Hamburg",
     lagName: "Landesarbeitsgericht Hamburg",
     region: "Nord",
+    lat: 53.5511,
+    lng: 9.9937,
   },
   {
     slug: "muenchen",
@@ -35,6 +41,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Winzererstraße 106, 80797 München",
     lagName: "Landesarbeitsgericht München",
     region: "Süd",
+    lat: 48.1351,
+    lng: 11.5820,
   },
   {
     slug: "koeln",
@@ -44,6 +52,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Blumenthalstraße 33, 50670 Köln",
     lagName: "Landesarbeitsgericht Köln",
     region: "West",
+    lat: 50.9375,
+    lng: 6.9603,
   },
   {
     slug: "frankfurt",
@@ -53,6 +63,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Gutleutstraße 130, 60327 Frankfurt am Main",
     lagName: "Hessisches Landesarbeitsgericht",
     region: "Mitte",
+    lat: 50.1109,
+    lng: 8.6821,
   },
   {
     slug: "stuttgart",
@@ -62,6 +74,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Johannesstraße 86, 70176 Stuttgart",
     lagName: "Landesarbeitsgericht Baden-Württemberg",
     region: "Süd",
+    lat: 48.7758,
+    lng: 9.1829,
   },
   {
     slug: "duesseldorf",
@@ -71,6 +85,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Ludwig-Erhard-Allee 21, 40227 Düsseldorf",
     lagName: "Landesarbeitsgericht Düsseldorf",
     region: "West",
+    lat: 51.2277,
+    lng: 6.7735,
   },
   {
     slug: "leipzig",
@@ -80,6 +96,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Erich-Weinert-Straße 18, 04105 Leipzig",
     lagName: "Sächsisches Landesarbeitsgericht",
     region: "Ost",
+    lat: 51.3397,
+    lng: 12.3731,
   },
   {
     slug: "dortmund",
@@ -89,6 +107,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Ruhrallee 3, 44139 Dortmund",
     lagName: "Landesarbeitsgericht Hamm",
     region: "West",
+    lat: 51.5136,
+    lng: 7.4653,
   },
   {
     slug: "essen",
@@ -98,6 +118,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Zweigertstraße 52, 45130 Essen",
     lagName: "Landesarbeitsgericht Düsseldorf",
     region: "West",
+    lat: 51.4556,
+    lng: 7.0116,
   },
   {
     slug: "bremen",
@@ -107,6 +129,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Am Wall 198, 28195 Bremen",
     lagName: "Landesarbeitsgericht Bremen",
     region: "Nord",
+    lat: 53.0793,
+    lng: 8.8017,
   },
   {
     slug: "dresden",
@@ -116,6 +140,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Hans-Oster-Straße 4, 01099 Dresden",
     lagName: "Sächsisches Landesarbeitsgericht",
     region: "Ost",
+    lat: 51.0504,
+    lng: 13.7373,
   },
   {
     slug: "hannover",
@@ -125,6 +151,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Leonhardtstraße 15, 30175 Hannover",
     lagName: "Landesarbeitsgericht Niedersachsen",
     region: "Nord",
+    lat: 52.3759,
+    lng: 9.7320,
   },
   {
     slug: "nuernberg",
@@ -134,6 +162,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Roonstraße 20, 90429 Nürnberg",
     lagName: "Landesarbeitsgericht Nürnberg",
     region: "Süd",
+    lat: 49.4521,
+    lng: 11.0767,
   },
   {
     slug: "duisburg",
@@ -143,6 +173,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Mülheimer Straße 54, 47057 Duisburg",
     lagName: "Landesarbeitsgericht Düsseldorf",
     region: "West",
+    lat: 51.4344,
+    lng: 6.7623,
   },
   {
     slug: "bochum",
@@ -152,6 +184,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Josef-Neuberger-Straße 1, 44787 Bochum",
     lagName: "Landesarbeitsgericht Hamm",
     region: "West",
+    lat: 51.4818,
+    lng: 7.2162,
   },
   {
     slug: "wuppertal",
@@ -161,6 +195,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Eiland 2, 42103 Wuppertal",
     lagName: "Landesarbeitsgericht Düsseldorf",
     region: "West",
+    lat: 51.2562,
+    lng: 7.1508,
   },
   {
     slug: "bielefeld",
@@ -170,6 +206,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Gerichtstraße 6, 33602 Bielefeld",
     lagName: "Landesarbeitsgericht Hamm",
     region: "West",
+    lat: 52.0302,
+    lng: 8.5325,
   },
   {
     slug: "bonn",
@@ -179,6 +217,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Kreuzbergweg 5, 53115 Bonn",
     lagName: "Landesarbeitsgericht Köln",
     region: "West",
+    lat: 50.7374,
+    lng: 7.0982,
   },
   {
     slug: "muenster",
@@ -188,6 +228,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Alter Steinweg 45, 48143 Münster",
     lagName: "Landesarbeitsgericht Hamm",
     region: "West",
+    lat: 51.9607,
+    lng: 7.6261,
   },
   {
     slug: "karlsruhe",
@@ -197,6 +239,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Ritterstraße 12, 76133 Karlsruhe",
     lagName: "Landesarbeitsgericht Baden-Württemberg",
     region: "Süd",
+    lat: 49.0069,
+    lng: 8.4037,
   },
   {
     slug: "mannheim",
@@ -206,6 +250,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "E7, 21, 68159 Mannheim",
     lagName: "Landesarbeitsgericht Baden-Württemberg",
     region: "Süd",
+    lat: 49.4875,
+    lng: 8.4660,
   },
   {
     slug: "augsburg",
@@ -215,6 +261,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Frohsinnstraße 2, 86150 Augsburg",
     lagName: "Landesarbeitsgericht München",
     region: "Süd",
+    lat: 48.3705,
+    lng: 10.8978,
   },
   {
     slug: "wiesbaden",
@@ -224,6 +272,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Mainzer Straße 124, 65189 Wiesbaden",
     lagName: "Hessisches Landesarbeitsgericht",
     region: "Mitte",
+    lat: 50.0782,
+    lng: 8.2398,
   },
   {
     slug: "gelsenkirchen",
@@ -233,6 +283,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Bochumer Straße 79, 45886 Gelsenkirchen",
     lagName: "Landesarbeitsgericht Hamm",
     region: "West",
+    lat: 51.5177,
+    lng: 7.0857,
   },
   {
     slug: "moenchengladbach",
@@ -242,6 +294,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Hohenzollernstraße 155, 41061 Mönchengladbach",
     lagName: "Landesarbeitsgericht Düsseldorf",
     region: "West",
+    lat: 51.1805,
+    lng: 6.4428,
   },
   {
     slug: "aachen",
@@ -251,6 +305,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Adalbertsteinweg 92, 52070 Aachen",
     lagName: "Landesarbeitsgericht Köln",
     region: "West",
+    lat: 50.7753,
+    lng: 6.0839,
   },
   {
     slug: "braunschweig",
@@ -260,6 +316,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Grünewaldstraße 11A, 38104 Braunschweig",
     lagName: "Landesarbeitsgericht Niedersachsen",
     region: "Nord",
+    lat: 52.2689,
+    lng: 10.5268,
   },
   {
     slug: "kiel",
@@ -269,6 +327,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Deliusstraße 22, 24114 Kiel",
     lagName: "Landesarbeitsgericht Schleswig-Holstein",
     region: "Nord",
+    lat: 54.3233,
+    lng: 10.1228,
   },
   {
     slug: "halle",
@@ -278,6 +338,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Thüringer Straße 16, 06112 Halle (Saale)",
     lagName: "Landesarbeitsgericht Sachsen-Anhalt",
     region: "Ost",
+    lat: 51.4828,
+    lng: 11.9700,
   },
   {
     slug: "magdeburg",
@@ -287,6 +349,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Breiter Weg 203-206, 39104 Magdeburg",
     lagName: "Landesarbeitsgericht Sachsen-Anhalt",
     region: "Ost",
+    lat: 52.1205,
+    lng: 11.6276,
   },
   {
     slug: "freiburg",
@@ -296,6 +360,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Habsburgerstraße 103, 79104 Freiburg im Breisgau",
     lagName: "Landesarbeitsgericht Baden-Württemberg",
     region: "Süd",
+    lat: 47.9990,
+    lng: 7.8421,
   },
   {
     slug: "krefeld",
@@ -305,6 +371,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Preußenring 49, 47798 Krefeld",
     lagName: "Landesarbeitsgericht Düsseldorf",
     region: "West",
+    lat: 51.3388,
+    lng: 6.5853,
   },
   {
     slug: "mainz",
@@ -314,6 +382,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Ernst-Ludwig-Straße 6-8, 55116 Mainz",
     lagName: "Landesarbeitsgericht Rheinland-Pfalz",
     region: "Mitte",
+    lat: 49.9929,
+    lng: 8.2473,
   },
   {
     slug: "luebeck",
@@ -323,6 +393,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Neustraße 2a, 23568 Lübeck",
     lagName: "Landesarbeitsgericht Schleswig-Holstein",
     region: "Nord",
+    lat: 53.8655,
+    lng: 10.6866,
   },
   {
     slug: "erfurt",
@@ -332,6 +404,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Rudolfstraße 46, 99092 Erfurt",
     lagName: "Thüringer Landesarbeitsgericht",
     region: "Mitte",
+    lat: 50.9848,
+    lng: 11.0299,
   },
   {
     slug: "oberhausen",
@@ -341,6 +415,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Friedrich-List-Straße 18, 46045 Oberhausen",
     lagName: "Landesarbeitsgericht Düsseldorf",
     region: "West",
+    lat: 51.4696,
+    lng: 6.8516,
   },
   {
     slug: "rostock",
@@ -350,6 +426,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "August-Bebel-Straße 15-20, 18055 Rostock",
     lagName: "Landesarbeitsgericht Mecklenburg-Vorpommern",
     region: "Nord",
+    lat: 54.0924,
+    lng: 12.0991,
   },
   {
     slug: "heidelberg",
@@ -359,6 +437,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Vangerowstraße 20, 69115 Heidelberg",
     lagName: "Landesarbeitsgericht Baden-Württemberg",
     region: "Süd",
+    lat: 49.3988,
+    lng: 8.6724,
   },
   {
     slug: "darmstadt",
@@ -368,6 +448,8 @@ export const staedte: Stadt[] = [
     arbeitsgerichtAdresse: "Steubenplatz 14, 64293 Darmstadt",
     lagName: "Hessisches Landesarbeitsgericht",
     region: "Mitte",
+    lat: 49.8728,
+    lng: 8.6512,
   },
 ];
 

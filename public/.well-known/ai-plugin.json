@@ -65,6 +65,36 @@
       "name": "Kündigungscheck",
       "url": "https://www.gekuendigt-abfindung.de/kuendigung-pruefen",
       "description": "Kostenloser Kündigungscheck: Prüfen Sie Ihre Abfindungschancen in 2 Minuten."
+    },
+    {
+      "name": "Aufhebungsvertrag prüfen",
+      "url": "https://www.gekuendigt-abfindung.de/aufhebungsvertrag-pruefen",
+      "description": "Aufhebungsvertrag prüfen: Risiken erkennen, Sperrzeit vermeiden, Abfindung maximieren."
+    },
+    {
+      "name": "Schwellenwert-Rechner",
+      "url": "https://www.gekuendigt-abfindung.de/schwellenwert-rechner",
+      "description": "Prüfen Sie, ob das Kündigungsschutzgesetz (KSchG) für Ihren Betrieb gilt — Schwellenwert von 10 Arbeitnehmern."
+    },
+    {
+      "name": "Kündigungsfrist-Rechner",
+      "url": "https://www.gekuendigt-abfindung.de/kuendigungsfrist-rechner",
+      "description": "Berechnen Sie Ihre gesetzliche Kündigungsfrist nach §622 BGB anhand Ihrer Betriebszugehörigkeit."
+    },
+    {
+      "name": "Überstundenrechner",
+      "url": "https://www.gekuendigt-abfindung.de/ueberstundenrechner",
+      "description": "Berechnen Sie Ihren Überstundenanspruch: Vergütung, Zuschläge und Verjährungsfristen."
+    },
+    {
+      "name": "Urlaubsabgeltungsrechner",
+      "url": "https://www.gekuendigt-abfindung.de/urlaubsabgeltung-rechner",
+      "description": "Berechnen Sie Ihre Urlaubsabgeltung bei Kündigung — Resturlaub in Euro umgerechnet."
+    },
+    {
+      "name": "Urlaubsrechner Teilzeit",
+      "url": "https://www.gekuendigt-abfindung.de/urlaub-teilzeit-rechner",
+      "description": "Berechnen Sie Ihren anteiligen Urlaubsanspruch bei Teilzeit oder unterjährigem Ein-/Austritt."
     }
   ],
   "service_process": [

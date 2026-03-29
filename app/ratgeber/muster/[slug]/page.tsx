@@ -63,6 +63,32 @@ export default function Page({ params }: Props) {
         ]}
       />
 
+      {/* Schema.org - Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: entry.h1,
+            datePublished: '2025-01-15',
+            dateModified: new Date().toISOString().slice(0, 10),
+            description: entry.description,
+            author: {
+              '@type': 'Person',
+              name: 'Fatih Bektas',
+              jobTitle: 'Fachanwalt für Arbeitsrecht',
+              url: `${SEO_CONFIG.baseUrl}/team/`,
+            },
+            publisher: {
+              '@id': `${SEO_CONFIG.baseUrl}/#organization`,
+            },
+            mainEntityOfPage: `${SEO_CONFIG.baseUrl}/ratgeber/muster/${entry.slug}/`,
+            inLanguage: 'de',
+          }),
+        }}
+      />
+
       {/* Schema.org - FAQPage */}
       <script
         type="application/ld+json"

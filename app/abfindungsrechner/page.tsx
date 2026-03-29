@@ -206,7 +206,7 @@ export default function AbfindungsrechnerPage() {
 
             {/* Results */}
             {result && (
-              <div className="mt-8">
+              <div className="mt-8 ergebnis-box">
                 <h2 className="font-serif text-[1.4rem] font-bold mb-5">Ihre geschätzte Abfindung</h2>
                 <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
                   <div className="rounded-sm border border-border p-5 text-center bg-white">

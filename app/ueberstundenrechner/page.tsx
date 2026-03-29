@@ -321,7 +321,7 @@ export default function UeberstundenrechnerPage() {
             </div>
 
             {/* Rechte Karte — Ergebnis */}
-            <div className="bg-cream border border-border-light rounded p-8">
+            <div className="ergebnis-box bg-cream border border-border-light rounded p-8">
               {!result ? (
                 <div className="text-center py-10">
                   <div className="w-14 h-14 rounded-full bg-gold-bg border border-gold/[0.12] flex items-center justify-center text-gold mx-auto mb-4">

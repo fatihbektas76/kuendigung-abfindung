@@ -100,9 +100,11 @@ function buildSchema(slug: string) {
           addressRegion: "Baden-Württemberg",
           addressCountry: "DE",
         },
+        ...(ort.lat && ort.lng ? { geo: { "@type": "GeoCoordinates", latitude: ort.lat, longitude: ort.lng } } : {}),
         areaServed: {
           "@type": "City",
           name: ort.name,
+          ...(ort.lat && ort.lng ? { geo: { "@type": "GeoCoordinates", latitude: ort.lat, longitude: ort.lng } } : {}),
           containedIn: { "@type": "State", name: ort.bundesland },
         },
         knowsAbout: [
