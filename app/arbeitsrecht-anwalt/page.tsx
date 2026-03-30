@@ -37,7 +37,7 @@ export default function ArbeitsrechtAnwaltPage() {
     <main className="max-w-4xl mx-auto px-4 py-12">
       <SeoGeoBase
         pageUrl={`${SEO_CONFIG.baseUrl}/arbeitsrecht-anwalt/`}
-        pageTitle="Anwalt für Arbeitsrecht – Bundesweit in Ihrer Stadt"
+        pageTitle="Anwalt für Arbeitsrecht – Wir sind bundesweit tätig"
         pageDescription="Fachanwalt für Arbeitsrecht in Ihrer Stadt. Kündigung, Abfindung, Aufhebungsvertrag – bundesweit und digital."
         pageType="WebPage"
         breadcrumbs={[
@@ -53,7 +53,7 @@ export default function ArbeitsrechtAnwaltPage() {
       </nav>
 
       <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight">
-        Anwalt für Arbeitsrecht – Bundesweit in Ihrer Stadt
+        Anwalt für Arbeitsrecht – Wir sind bundesweit tätig
       </h1>
       <p className="text-lg text-gray-600 mb-8 leading-relaxed">
         Als Fachanwalt für Arbeitsrecht vertreten wir Arbeitnehmer in ganz Deutschland – vollständig digital.
