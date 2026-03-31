@@ -411,7 +411,7 @@ export default function App(){
                 </tbody>
               </table>
             </div>
-            <div style={{padding:"7px 20px",fontSize:11,color:D.muted,background:D.cream}}>Einigungsgebühr fällt nur einmal an · Teilunterliegen → Tab „Teilunterliegen"</div>
+            <div style={{padding:"7px 20px",fontSize:11,color:D.muted,background:D.cream}}>Einigungsgebühr fällt nur einmal an · Teilunterliegen → Tab &bdquo;Teilunterliegen&ldquo;</div>
           </div>}
 
           {/* Gesamtübersicht */}
@@ -442,7 +442,7 @@ export default function App(){
         <div style={card()}>
           <div style={cH}><span style={sT}><GoldIco name="percent"/> Teilunterliegen nach § 92 ZPO</span></div>
           <div style={{padding:"24px 20px"}}>
-            {!R?<div style={{textAlign:"center",color:D.muted,padding:"32px 0"}}>Bitte zuerst im Tab „Gebührenrechner" einen Streitwert eingeben.</div>:<>
+            {!R?<div style={{textAlign:"center",color:D.muted,padding:"32px 0"}}>Bitte zuerst im Tab &bdquo;Gebührenrechner&ldquo; einen Streitwert eingeben.</div>:<>
               <div style={{marginBottom:24}}>
                 <label style={lbl}>Mein Unterliegen: <strong style={{color:D.gold,fontSize:16,textTransform:"none",letterSpacing:0}}>{unterliegen} %</strong></label>
                 <input type="range" min={0} max={100} step={5} value={unterliegen} onChange={e=>setUnterliegen(+e.target.value)} style={{width:"100%",marginBottom:6}}/>
@@ -480,7 +480,7 @@ export default function App(){
         <div style={card()}>
           <div style={cH}><span style={sT}><GoldIco name="clock"/> Stundenhonorar vs. RVG-Regelsatz</span></div>
           <div style={{padding:"24px 20px"}}>
-            {!R?<div style={{textAlign:"center",color:D.muted,padding:"32px 0"}}>Bitte zuerst im Tab „Gebührenrechner" einen Streitwert eingeben.</div>:<>
+            {!R?<div style={{textAlign:"center",color:D.muted,padding:"32px 0"}}>Bitte zuerst im Tab &bdquo;Gebührenrechner&ldquo; einen Streitwert eingeben.</div>:<>
               <div className="g2" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:20}}>
                 <div>
                   <label style={lbl}>Geschätzte Stunden</label>
