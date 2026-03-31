@@ -233,8 +233,7 @@ export default function App(){
 
   // Icon with gold color for section headers
   const GoldIco=({name,size=14})=><span style={{color:D.gold,display:"inline-flex",alignItems:"center"}}><Ico name={name} size={size}/></span>;
-  // Icon with muted color for tab bar (inactive) or white (active)
-  const TabIco=({name,active})=><span style={{color:active?D.white:"#C4B08A",display:"inline-flex",alignItems:"center"}}><Ico name={name} size={13}/></span>;
+
 
   return(
     <div style={{fontFamily:"'Inter',system-ui,sans-serif",background:D.cream,minHeight:"100vh",paddingBottom:56}}>
