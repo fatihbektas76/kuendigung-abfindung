@@ -18,6 +18,7 @@ export interface MusterContent {
   gegendarstellungAbmahnung: MusterEntry;
   aufhebungsvertragCheckliste: ChecklisteEntry;
   abmahnungCheckliste: ChecklisteEntry;
+  kuendigungsschutzklage: MusterEntry;
 }
 
 export const musterContent: MusterContent = {
@@ -51,6 +52,11 @@ export const musterContent: MusterContent = {
       "Dienstwagen-Regelung: Bis wann dürfen Sie ihn nutzen? Sind Übernahme oder Abgeltung geregelt? Private Fahrten berücksichtigen.",
       "Erledigungsklausel: Sind alle Ansprüche wirklich abgegolten oder bleiben wichtige Rechte bestehen? Zu weitgehende Verzichte vermeiden."
     ]
+  },
+  "kuendigungsschutzklage": {
+    "title": "Muster: Kündigungsschutzklage beim Arbeitsgericht",
+    "intro": "Die Kündigungsschutzklage nach § 4 KSchG ist das wichtigste Mittel, um sich gegen eine unwirksame Kündigung zu wehren. Sie muss innerhalb von drei Wochen nach Zugang der Kündigung beim zuständigen Arbeitsgericht eingereicht werden. Wird diese Frist versäumt, gilt die Kündigung als wirksam — unabhängig davon, ob sie rechtmäßig war.",
+    "muster": "[Ihr Name]\n[Straße, PLZ Ort]\n[Telefonnummer]\n[E-Mail-Adresse]\n\nAn das\nArbeitsgericht [Ort]\n[Straße des Arbeitsgerichts]\n[PLZ Ort]\n\n[Datum]\n\nKlage\n\ndes/der [Ihr vollständiger Name],\n[Straße, PLZ Ort],\n\n— Kläger/in —\n\ngegen\n\n[Firma/Name des Arbeitgebers],\nvertreten durch [Geschäftsführer/Vorstand],\n[Straße des Arbeitgebers, PLZ Ort],\n\n— Beklagte/r —\n\nwegen: Kündigungsschutz\n\nStreitwert: [3 Bruttomonatsgehälter] EUR\n\nNamens und in Vollmacht des Klägers/der Klägerin wird beantragt:\n\n1. Es wird festgestellt, dass das zwischen den Parteien bestehende Arbeitsverhältnis durch die Kündigung des/der Beklagten vom [Datum der Kündigung], zugegangen am [Datum des Zugangs], nicht aufgelöst worden ist.\n\n2. Die Beklagte wird verurteilt, den Kläger/die Klägerin über den Ablauf der Kündigungsfrist hinaus zu unveränderten Arbeitsbedingungen als [Berufsbezeichnung/Position] weiterzubeschäftigen.\n\n3. Die Beklagte trägt die Kosten des Rechtsstreits.\n\nBegründung:\n\nI. Sachverhalt\n\nDer Kläger/Die Klägerin ist seit dem [Datum des Arbeitsbeginns] bei der Beklagten als [Berufsbezeichnung] zu einem Bruttomonatsgehalt von [Betrag] EUR beschäftigt. Das Arbeitsverhältnis richtet sich nach dem Arbeitsvertrag vom [Datum]. Im Betrieb der Beklagten sind regelmäßig mehr als zehn Arbeitnehmer im Sinne des § 23 Abs. 1 KSchG beschäftigt.\n\nMit Schreiben vom [Datum der Kündigung], dem Kläger/der Klägerin zugegangen am [Datum des Zugangs], kündigte die Beklagte das Arbeitsverhältnis [ordentlich zum [Datum] / fristlos / fristlos, hilfsweise ordentlich zum nächstmöglichen Termin].\n\nII. Rechtliche Würdigung\n\nDie Kündigung ist unwirksam.\n\n[Hier die konkreten Unwirksamkeitsgründe einfügen, z.B.:\n- Die Kündigung ist sozial ungerechtfertigt im Sinne des § 1 Abs. 2 KSchG, da weder personenbedingte, verhaltensbedingte noch betriebsbedingte Gründe vorliegen.\n- Der Betriebsrat wurde nicht ordnungsgemäß nach § 102 BetrVG angehört.\n- Die Sozialauswahl nach § 1 Abs. 3 KSchG wurde nicht oder fehlerhaft durchgeführt.\n- Die Kündigungsfrist nach § 622 BGB wurde nicht eingehalten.\n- Besonderer Kündigungsschutz besteht nach [MuSchG / BEEG / SGB IX / BetrVG].]\n\nDer Kläger/Die Klägerin hat daher Anspruch auf Feststellung der Unwirksamkeit der Kündigung und auf Weiterbeschäftigung zu den bisherigen Bedingungen.\n\n[Ihr Name]"
   },
   "abmahnungCheckliste": {
     "title": "Checkliste: Abmahnung prüfen",
