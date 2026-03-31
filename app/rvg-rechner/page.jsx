@@ -251,8 +251,15 @@ export default function App(){
         @media(max-width:600px){.g2{grid-template-columns:1fr!important;}.gtabs{overflow-x:auto!important;}}
       `}</style>
 
+      {/* ── ÜBERSCHRIFT + SEO-TEXT ── */}
+      <div style={{maxWidth:960,margin:"0 auto",padding:"32px 20px 0"}}>
+        <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:28,fontWeight:900,color:D.dark,letterSpacing:"-.01em",margin:0}}>RVG Gebührenrechner 2025</h1>
+        <p style={{fontSize:14,color:D.muted,margin:"6px 0 0",lineHeight:1.5}}>Anwaltskosten &amp; Gerichtskosten kostenlos berechnen – nach KostBRÄG 2025</p>
+        <p style={{fontSize:12,color:D.muted,margin:"8px 0 0",lineHeight:1.6,maxWidth:720}}>Der RVG Rechner berechnet Ihre Anwaltskosten nach dem Rechtsanwaltsvergütungsgesetz in der Fassung des KostBRÄG 2025 (ab 01.06.2025). Geeignet für Arbeitsrecht, Zivilrecht und alle Instanzen.</p>
+      </div>
+
       {/* ── TAB BAR + PDF ── */}
-      <div style={{maxWidth:960,margin:"0 auto",padding:"24px 20px 0"}}>
+      <div style={{maxWidth:960,margin:"0 auto",padding:"20px 20px 0"}}>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:12}}>
           <div className="gtabs" style={{display:"flex",gap:0,overflowX:"auto",borderBottom:`2px solid ${D.border}`,flex:1}}>
             {TABS.map(t=>(
@@ -660,6 +667,17 @@ export default function App(){
         <div style={{fontSize:11,color:D.muted}}>RVG 2025 (KostBRÄG 2025) · § 3a RVG</div>
       </div>
       </div>
+
+      {/* FAQ Schema JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"Was kostet ein Anwalt beim Arbeitsgericht?","acceptedAnswer":{"@type":"Answer","text":"Die Anwaltskosten beim Arbeitsgericht berechnen sich nach dem RVG (Rechtsanwaltsvergütungsgesetz). Sie setzen sich aus Verfahrensgebühr (1,3-fach), Terminsgebühr (1,2-fach) und ggf. Einigungsgebühr (1,0-fach) zusammen. Die Höhe hängt vom Streitwert ab. Wichtig: Nach § 12a ArbGG trägt in der 1. Instanz jede Partei ihre eigenen Anwaltskosten – unabhängig vom Ausgang."}},
+          {"@type":"Question","name":"Wie hoch sind die Gerichtskosten beim Arbeitsgericht?","acceptedAnswer":{"@type":"Answer","text":"Beim Arbeitsgericht beträgt die Gerichtsgebühr 2,0 nach GKG bei einem Urteilsverfahren. Bei einem Vergleich entfallen die Gerichtskosten gemäß § 54 Abs. 2 ArbGG vollständig. Die Gebührenhöhe richtet sich nach dem Streitwert und der GKG-Tabelle in der Fassung des KostBRÄG 2025 (ab 01.06.2025)."}},
+          {"@type":"Question","name":"Was ist der Unterschied zwischen RVG 2021 und RVG 2025?","acceptedAnswer":{"@type":"Answer","text":"Das KostBRÄG 2025 (Kostenrechtsbereinigungsgesetz) erhöhte alle Wertgebühren um ca. 6% gegenüber dem KostRÄG 2021. Die Erhöhung gilt für alle ab dem 01.06.2025 beauftragten Angelegenheiten. Auch die GKG-Gebühren wurden entsprechend angepasst."}}
+        ]
+      })}}/>
     </div>
   );
 }
