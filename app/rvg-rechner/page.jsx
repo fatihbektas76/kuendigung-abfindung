@@ -253,8 +253,8 @@ export default function App(){
 
       {/* ── ÜBERSCHRIFT + SEO-TEXT ── */}
       <div style={{maxWidth:960,margin:"0 auto",padding:"32px 20px 0"}}>
-        <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:28,fontWeight:900,color:D.dark,letterSpacing:"-.01em",margin:0}}>RVG Gebührenrechner 2025</h1>
-        <p style={{fontSize:14,color:D.muted,margin:"6px 0 0",lineHeight:1.5}}>Anwaltskosten &amp; Gerichtskosten kostenlos berechnen – nach KostBRÄG 2025</p>
+        <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:28,fontWeight:900,color:D.dark,letterSpacing:"-.01em",margin:0}}>RVG Rechner 2025</h1>
+        <p style={{fontSize:14,color:D.muted,margin:"6px 0 0",lineHeight:1.5}}>Anwaltskosten &amp; Gerichtskosten kostenlos berechnen</p>
         <p style={{fontSize:12,color:D.muted,margin:"8px 0 0",lineHeight:1.6,maxWidth:720}}>Der RVG Rechner berechnet Ihre Anwaltskosten nach dem Rechtsanwaltsvergütungsgesetz in der Fassung des KostBRÄG 2025 (ab 01.06.2025). Geeignet für Arbeitsrecht, Zivilrecht und alle Instanzen.</p>
       </div>
 
@@ -658,6 +658,92 @@ export default function App(){
         </div>
       </div>}
 
+      {/* ── SEO-TEXTBLOCK ── */}
+      <div style={{background:D.white,borderRadius:8,border:`1px solid ${D.border}`,padding:"32px 28px",marginTop:32,lineHeight:1.75,fontSize:14,color:D.text}}>
+
+        <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:22,fontWeight:700,color:D.dark,margin:"0 0 12px"}}>Was berechnet der RVG Rechner?</h2>
+        <p style={{margin:"0 0 10px"}}>Das Rechtsanwaltsvergütungsgesetz (RVG) regelt die gesetzliche Vergütung von Rechtsanwälten in Deutschland. Es gilt für alle anwaltlichen Tätigkeiten, sofern keine abweichende Vergütungsvereinbarung nach § 3a RVG getroffen wurde. Die Gebührenhöhe richtet sich nach dem Streitwert (auch Gegenstandswert genannt) und der jeweiligen Gebührentabelle in Anlage 2 zu § 13 RVG.</p>
+        <p style={{margin:"0 0 10px"}}>Mit dem Inkrafttreten des Kostenrechtsbereinigungsgesetzes 2025 (KostBRÄG 2025, BGBl. 2025 I Nr. 109) zum 1. Juni 2025 wurden alle Wertgebühren um rund 6 Prozent angehoben. Diese Erhöhung betrifft sowohl die anwaltlichen Gebühren nach RVG als auch die Gerichtsgebühren nach GKG. Maßgeblich für die Anwendung der neuen Gebührentabelle ist das Datum der Auftragserteilung: Wurde der Anwalt vor dem 1. Juni 2025 beauftragt, gelten die bisherigen Sätze des KostRÄG 2021. Ab dem 1. Juni 2025 erteilte Aufträge werden nach den neuen Sätzen abgerechnet.</p>
+        <p style={{margin:"0 0 10px"}}>Unser RVG Rechner berechnet die folgenden Gebührenarten: Verfahrensgebühr, Terminsgebühr, Einigungsgebühr, die Auslagenpauschale nach Nr. 7002 VV RVG sowie die Umsatzsteuer (19 %). Er deckt alle gängigen Instanzen ab: Arbeitsgericht (ArbG), Amtsgericht (AG), Landgericht (LG), Landesarbeitsgericht (LAG), Oberlandesgericht (OLG) sowie die außergerichtliche Tätigkeit. Darüber hinaus berechnet er bei gerichtlichen Verfahren die Gerichtskosten nach GKG und – wo relevant – die gegnerischen Anwaltskosten bei vollem Unterliegen.</p>
+
+        <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:22,fontWeight:700,color:D.dark,margin:"28px 0 12px"}}>Anwaltskosten beim Arbeitsgericht berechnen</h2>
+        <h3 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,fontWeight:700,color:D.dark,margin:"0 0 8px"}}>Die Gebührenstruktur im arbeitsgerichtlichen Verfahren</h3>
+        <p style={{margin:"0 0 10px"}}>Die Grundlage jeder Gebührenberechnung ist die sogenannte 1,0-Gebühr. Sie ergibt sich aus dem Streitwert und der Gebührentabelle in Anlage 2 zu § 13 RVG. Alle weiteren Gebühren sind Vielfache dieser Grundgebühr. Bei einem Streitwert von 15.000 € beträgt die 1,0-Gebühr nach KostBRÄG 2025 beispielsweise 762 €.</p>
+        <p style={{margin:"0 0 10px"}}>Im arbeitsgerichtlichen Verfahren fallen typischerweise folgende Gebühren an:</p>
+        <ul style={{margin:"0 0 10px",paddingLeft:20}}>
+          <li style={{marginBottom:4}}><strong>Verfahrensgebühr</strong> (Nr. 3100 VV RVG): 1,3-fach der Grundgebühr. Sie entsteht mit Einreichung der Klage bzw. Aufnahme der Tätigkeit. Bei 15.000 € Streitwert: 990,60 €.</li>
+          <li style={{marginBottom:4}}><strong>Terminsgebühr</strong> (Nr. 3104 VV RVG): 1,2-fach. Sie entsteht durch die Wahrnehmung eines Gerichtstermins. Bei 15.000 €: 914,40 €.</li>
+          <li style={{marginBottom:4}}><strong>Einigungsgebühr</strong> (Nr. 1003 VV RVG): 1,0-fach. Sie entsteht, wenn die Parteien einen gerichtlichen Vergleich schließen. Bei 15.000 €: 762 €.</li>
+          <li style={{marginBottom:4}}><strong>Auslagenpauschale</strong> (Nr. 7002 VV RVG): 20 % der Gebühren, maximal 20 €.</li>
+          <li style={{marginBottom:4}}><strong>Umsatzsteuer</strong> (Nr. 7008 VV RVG): 19 % auf den Nettobetrag.</li>
+        </ul>
+        <p style={{margin:"0 0 10px"}}>Rechenbeispiel bei einem Streitwert von 15.000 € (KostBRÄG 2025, mit Termin und Vergleich): Verfahrensgebühr 990,60 € + Terminsgebühr 914,40 € + Einigungsgebühr 762 € + Auslagenpauschale 20 € = 2.687 € netto. Zuzüglich 19 % Umsatzsteuer (510,53 €) ergibt sich ein Bruttobetrag von 3.197,53 €.</p>
+
+        <h3 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,fontWeight:700,color:D.dark,margin:"20px 0 8px"}}>§ 12a ArbGG – Besonderheit in der 1. Instanz</h3>
+        <p style={{margin:"0 0 10px"}}>Eine zentrale Besonderheit des Arbeitsgerichtsverfahrens ist § 12a Abs. 1 Satz 1 ArbGG: In der ersten Instanz findet keine Erstattung der Anwaltskosten statt – unabhängig vom Ausgang des Verfahrens. Das bedeutet: Auch wenn Sie den Prozess vollständig gewinnen, tragen Sie Ihre eigenen Anwaltskosten selbst. Für Arbeitnehmer hat dies den Vorteil, dass sie bei einem Unterliegen nicht auch noch die Anwaltskosten des Arbeitgebers bezahlen müssen. Für Arbeitgeber bedeutet es umgekehrt, dass sie auch bei einem Sieg ihre Anwaltskosten nicht vom Arbeitnehmer erstattet bekommen.</p>
+        <p style={{margin:"0 0 10px"}}>Eine Ausnahme betrifft die Gerichtskosten: Diese werden auch in der 1. Instanz nach § 92 ZPO entsprechend dem Ausgang des Verfahrens aufgeteilt. Ab der 2. Instanz – also vor dem Landesarbeitsgericht (LAG) – gilt die normale Kostenerstattung nach § 91 ZPO. Hier trägt die unterlegene Partei die gesamten Kosten einschließlich der gegnerischen Anwaltsgebühren.</p>
+
+        <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:22,fontWeight:700,color:D.dark,margin:"28px 0 12px"}}>Gerichtskosten nach GKG 2025</h2>
+        <p style={{margin:"0 0 10px"}}>Neben den Anwaltsgebühren fallen bei gerichtlichen Verfahren Gerichtskosten nach dem Gerichtskostengesetz (GKG) an. Die Gebührenberechnung erfolgt auf Grundlage der Gebührentabelle in Anlage 1 GKG in Verbindung mit § 34 GKG. Auch diese Tabelle wurde durch das KostBRÄG 2025 um rund 6 % angehoben.</p>
+        <p style={{margin:"0 0 10px"}}>Die Gebührensätze unterscheiden sich je nach Instanz und Verfahrensausgang:</p>
+        <ul style={{margin:"0 0 10px",paddingLeft:20}}>
+          <li style={{marginBottom:4}}><strong>Arbeitsgericht (ArbG):</strong> 2,0-fach bei Urteil. Bei einem Vergleich in der Güteverhandlung entfallen die Gerichtskosten vollständig (§ 54 Abs. 2 ArbGG).</li>
+          <li style={{marginBottom:4}}><strong>Amtsgericht (AG) und Landgericht (LG):</strong> 3,0-fach bei Urteil, ermäßigt auf 1,0-fach bei Vergleich.</li>
+          <li style={{marginBottom:4}}><strong>Landesarbeitsgericht (LAG) und Oberlandesgericht (OLG):</strong> 4,0-fach bei Urteil, ermäßigt auf 2,0-fach bei Vergleich.</li>
+        </ul>
+        <p style={{margin:"0 0 10px"}}>Die Vergleichsermäßigung macht einen erheblichen Unterschied beim Kostenrisiko. Bei einem Streitwert von 15.000 € betragen die Gerichtskosten beim ArbG bei Urteil ca. 762 € (2,0 × 381 €). Bei einem Vergleich entfallen sie am Arbeitsgericht vollständig – ein starkes Argument für eine gütliche Einigung.</p>
+
+        <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:22,fontWeight:700,color:D.dark,margin:"28px 0 12px"}}>Das Prozesskostenrisiko richtig einschätzen</h2>
+        <h3 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,fontWeight:700,color:D.dark,margin:"0 0 8px"}}>Was gehört zum Prozesskostenrisiko?</h3>
+        <p style={{margin:"0 0 10px"}}>Das Prozesskostenrisiko umfasst sämtliche Kosten, die bei einem vollständigen Unterliegen anfallen können. Dazu gehören die eigenen Anwaltskosten (die in jedem Fall zu tragen sind), die Gerichtskosten (die nach dem Verfahrensausgang aufgeteilt werden) und – ab der 2. Instanz bzw. vor Zivil- und Verwaltungsgerichten – die gegnerischen Anwaltskosten nach § 91 ZPO. Eine realistische Einschätzung des Prozesskostenrisikos vor Klageerhebung ist entscheidend, um eine informierte Entscheidung über das weitere Vorgehen treffen zu können.</p>
+
+        <h3 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,fontWeight:700,color:D.dark,margin:"20px 0 8px"}}>Teilunterliegen nach § 92 ZPO</h3>
+        <p style={{margin:"0 0 10px"}}>In der Praxis kommt es häufig vor, dass keine Partei vollständig obsiegt. Bei einem Teilunterliegen werden die Kosten nach § 92 ZPO entsprechend dem Verhältnis von Obsiegen und Unterliegen aufgeteilt. Beispiel: Wenn Sie zu 60 % obsiegen und zu 40 % unterliegen, tragen Sie 40 % der Gesamtkosten und die Gegenseite 60 %. Diese Kostenquote betrifft sowohl die Gerichtskosten als auch – außerhalb des Arbeitsgerichts 1. Instanz – die Anwaltskosten beider Seiten. Der Tab &bdquo;Teilunterliegen&ldquo; in unserem Rechner berechnet diese Aufteilung für Sie.</p>
+
+        <h3 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,fontWeight:700,color:D.dark,margin:"20px 0 8px"}}>Wann lohnt sich ein Vergleich?</h3>
+        <p style={{margin:"0 0 10px"}}>Ein gerichtlicher Vergleich bietet erhebliche Kostenvorteile: Die Gerichtsgebühren werden auf den ermäßigten Satz reduziert (beim ArbG entfallen sie sogar vollständig). Zwar entsteht durch den Vergleich eine zusätzliche Einigungsgebühr nach Nr. 1003 VV RVG (1,0-fach), die Gesamtersparnis überwiegt in den meisten Fällen jedoch deutlich. Bei einem Streitwert von 15.000 € am Arbeitsgericht spart ein Vergleich allein an Gerichtskosten rund 762 €. Hinzu kommt die Vermeidung des Prozessrisikos eines ungünstigen Urteils. Ob ein Vergleich in Ihrem Fall sinnvoll ist, sollten Sie mit einem Fachanwalt besprechen – wir bieten Ihnen eine kostenlose Ersteinschätzung.</p>
+
+        <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:22,fontWeight:700,color:D.dark,margin:"28px 0 12px"}}>Vorherige außergerichtliche Tätigkeit und Anrechnung</h2>
+        <p style={{margin:"0 0 10px"}}>Wird ein Rechtsanwalt zunächst außergerichtlich tätig – etwa durch ein Kündigungsschutz-Schreiben an den Arbeitgeber oder Vergleichsverhandlungen – entsteht eine Geschäftsgebühr nach Nr. 2300 VV RVG in Höhe von 1,3-fach der Grundgebühr. Diese außergerichtliche Tätigkeit stellt eine eigene Angelegenheit dar, mit einer eigenen Auslagenpauschale (Nr. 7002 VV RVG).</p>
+        <p style={{margin:"0 0 10px"}}>Kommt es anschließend zu einem gerichtlichen Verfahren, wird die Geschäftsgebühr teilweise auf die Verfahrensgebühr angerechnet. Nach Vorbemerkung 3 Abs. 4 VV RVG beträgt die Anrechnung 0,65 der Grundgebühr – die Verfahrensgebühr von 1,3-fach reduziert sich also effektiv auf 0,65-fach. In der Gesamtbetrachtung zahlen Sie als Mandant damit nicht doppelt, sondern die außergerichtliche Tätigkeit wird auf das gerichtliche Verfahren angerechnet.</p>
+        <p style={{margin:"0 0 10px"}}>Trotz der Anrechnung ist eine vorherige außergerichtliche Tätigkeit in vielen Fällen sinnvoll. Häufig lässt sich bereits außergerichtlich eine Einigung erzielen – etwa eine Abfindung bei einer Kündigung –, wodurch ein kosten- und zeitintensives Gerichtsverfahren vermieden wird.</p>
+
+        <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:22,fontWeight:700,color:D.dark,margin:"28px 0 12px"}}>RVG 2021 vs. RVG 2025 – Was hat sich geändert?</h2>
+        <p style={{margin:"0 0 10px"}}>Das Kostenrechtsänderungsgesetz 2021 (KostRÄG 2021) trat am 1. Januar 2021 in Kraft und galt bis zum 31. Mai 2025. Mit dem Kostenrechtsbereinigungsgesetz 2025 (KostBRÄG 2025, BGBl. 2025 I Nr. 109) wurden zum 1. Juni 2025 sämtliche Wertgebühren des RVG sowie die Gerichtsgebühren des GKG um rund 6 % erhöht.</p>
+        <p style={{margin:"0 0 10px"}}>Das Übergangsrecht ist klar geregelt: Maßgeblich ist das Datum der Auftragserteilung an den Rechtsanwalt. Wurde der Auftrag vor dem 1. Juni 2025 erteilt, gelten die bisherigen Gebührensätze des KostRÄG 2021. Ab dem 1. Juni 2025 erteilte Aufträge werden nach den neuen Sätzen abgerechnet. Bei Verfahren mit mehreren Instanzen wird jede Instanz als eigene Angelegenheit betrachtet – es kommt also auf den Zeitpunkt der Beauftragung für die jeweilige Instanz an.</p>
+        <p style={{margin:"0 0 10px"}}>Ein konkreter Vergleich verdeutlicht die Erhöhung: Die 1,0-Gebühr bei einem Streitwert von 10.000 € betrug nach KostRÄG 2021 genau 615 €. Nach KostBRÄG 2025 beträgt sie 652 € – eine Erhöhung um 37 € bzw. 6 %. Bei einer Verfahrensgebühr (1,3-fach) macht das einen Unterschied von 48,10 € aus. Unser Rechner bietet einen Umschalter zwischen beiden Gebührentabellen, sodass Sie beide Varianten direkt vergleichen können.</p>
+
+        <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:22,fontWeight:700,color:D.dark,margin:"28px 0 12px"}}>Häufige Fragen zum RVG Rechner</h2>
+
+        <div style={{borderTop:`1px solid ${D.borderL}`,paddingTop:16,marginTop:8}}>
+          <p style={{fontWeight:700,color:D.dark,margin:"0 0 6px"}}>Sind die berechneten Kosten verbindlich?</p>
+          <p style={{margin:"0 0 16px"}}>Die Berechnung basiert auf den gesetzlichen Gebührentabellen des RVG und GKG und ist bei Standardfällen sehr genau. Dennoch handelt es sich um eine unverbindliche Schätzung gemäß § 3a RVG. In der Praxis können Abweichungen entstehen, etwa durch eine abweichende Streitwertfestsetzung durch das Gericht, durch besondere Verfahrenslagen oder durch eine individuelle Vergütungsvereinbarung zwischen Anwalt und Mandant. Für eine verbindliche Kostenaufstellung wenden Sie sich an Ihren Rechtsanwalt.</p>
+
+          <p style={{fontWeight:700,color:D.dark,margin:"0 0 6px"}}>Was ist der Unterschied zwischen Streitwert und Gegenstandswert?</p>
+          <p style={{margin:"0 0 16px"}}>Im gerichtlichen Verfahren spricht man vom Streitwert, bei außergerichtlicher Tätigkeit vom Gegenstandswert. Beide bezeichnen den wirtschaftlichen Wert des Streitgegenstands und bilden die Grundlage für die Gebührenberechnung. Bei einer Kündigungsschutzklage entspricht der Streitwert in der Regel drei Bruttomonatsgehältern (§ 42 Abs. 2 GKG). Bei einer Abfindungsverhandlung ist der Streitwert die Höhe der geforderten Abfindung.</p>
+
+          <p style={{fontWeight:700,color:D.dark,margin:"0 0 6px"}}>Kann ich eine Vergütungsvereinbarung mit meinem Anwalt treffen?</p>
+          <p style={{margin:"0 0 16px"}}>Ja, nach § 3a RVG können Anwalt und Mandant eine abweichende Vergütungsvereinbarung treffen. Diese muss als Textform vorliegen und deutlich von der gesetzlichen Vergütung abgrenzen. In der Praxis sind Stundenhonorarvereinbarungen verbreitet, insbesondere bei hohen Streitwerten. Unser Tab &bdquo;Honorarvergleich&ldquo; zeigt Ihnen den Unterschied zwischen RVG-Gebühren und einem Stundenhonorar. Die gesetzlichen RVG-Gebühren stellen dabei stets die Mindestvergütung dar, die nicht unterschritten werden darf.</p>
+
+          <p style={{fontWeight:700,color:D.dark,margin:"0 0 6px"}}>Wer zahlt die Anwaltskosten wenn ich gewinne?</p>
+          <p style={{margin:"0 0 16px"}}>Das hängt von der Instanz und dem Rechtsgebiet ab. Vor dem Arbeitsgericht in der 1. Instanz gilt § 12a ArbGG: Jede Partei trägt ihre eigenen Anwaltskosten, auch bei einem Sieg. Ab der 2. Instanz (LAG) sowie vor Amts-, Land- und Oberlandesgerichten gilt § 91 ZPO: Die unterlegene Partei trägt die gesamten Kosten einschließlich der Anwaltskosten der Gegenseite. Bei Teilunterliegen werden die Kosten nach § 92 ZPO quotiert.</p>
+
+          <p style={{fontWeight:700,color:D.dark,margin:"0 0 6px"}}>Was kostet eine Kündigungsschutzklage beim Arbeitsgericht?</p>
+          <p style={{margin:"0 0 16px"}}>Die Kosten einer Kündigungsschutzklage richten sich nach dem Streitwert, der in der Regel drei Bruttomonatsgehältern entspricht. Bei einem Bruttogehalt von 4.000 € ergibt sich ein Streitwert von 12.000 €. Nach KostBRÄG 2025 betragen die Anwaltskosten dann ca. 2.600 € brutto (mit Termin und Vergleich). Bei APOS Legal erhalten Sie eine kostenlose Ersteinschätzung Ihrer Erfolgsaussichten, bevor Kosten entstehen.</p>
+        </div>
+
+        {/* CTA-Kasten */}
+        <div style={{marginTop:28,padding:"22px 24px",border:`2px solid ${D.gold}`,borderRadius:8,background:D.cream,display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:16}}>
+          <div>
+            <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,fontWeight:700,color:D.dark}}>Sie haben eine Kündigung erhalten?</div>
+            <div style={{fontSize:13,color:D.muted,marginTop:4}}>Wir prüfen Ihre Chancen kostenlos.</div>
+          </div>
+          <a href="/kuendigung-pruefen" style={{display:"inline-flex",alignItems:"center",gap:7,background:D.gold,color:D.white,border:"none",borderRadius:6,padding:"10px 20px",fontSize:13,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>
+            Kostenlos prüfen <span style={{fontSize:16}}>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
       {/* Footer */}
       <div style={{marginTop:28,borderTop:`1px solid ${D.border}`,paddingTop:14,display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8}}>
         <div style={{fontSize:11,color:D.muted}}>
@@ -673,9 +759,11 @@ export default function App(){
         "@context":"https://schema.org",
         "@type":"FAQPage",
         "mainEntity":[
-          {"@type":"Question","name":"Was kostet ein Anwalt beim Arbeitsgericht?","acceptedAnswer":{"@type":"Answer","text":"Die Anwaltskosten beim Arbeitsgericht berechnen sich nach dem RVG (Rechtsanwaltsvergütungsgesetz). Sie setzen sich aus Verfahrensgebühr (1,3-fach), Terminsgebühr (1,2-fach) und ggf. Einigungsgebühr (1,0-fach) zusammen. Die Höhe hängt vom Streitwert ab. Wichtig: Nach § 12a ArbGG trägt in der 1. Instanz jede Partei ihre eigenen Anwaltskosten – unabhängig vom Ausgang."}},
-          {"@type":"Question","name":"Wie hoch sind die Gerichtskosten beim Arbeitsgericht?","acceptedAnswer":{"@type":"Answer","text":"Beim Arbeitsgericht beträgt die Gerichtsgebühr 2,0 nach GKG bei einem Urteilsverfahren. Bei einem Vergleich entfallen die Gerichtskosten gemäß § 54 Abs. 2 ArbGG vollständig. Die Gebührenhöhe richtet sich nach dem Streitwert und der GKG-Tabelle in der Fassung des KostBRÄG 2025 (ab 01.06.2025)."}},
-          {"@type":"Question","name":"Was ist der Unterschied zwischen RVG 2021 und RVG 2025?","acceptedAnswer":{"@type":"Answer","text":"Das KostBRÄG 2025 (Kostenrechtsbereinigungsgesetz) erhöhte alle Wertgebühren um ca. 6% gegenüber dem KostRÄG 2021. Die Erhöhung gilt für alle ab dem 01.06.2025 beauftragten Angelegenheiten. Auch die GKG-Gebühren wurden entsprechend angepasst."}}
+          {"@type":"Question","name":"Sind die berechneten Kosten verbindlich?","acceptedAnswer":{"@type":"Answer","text":"Die Berechnung basiert auf den gesetzlichen Gebührentabellen des RVG und GKG und ist bei Standardfällen sehr genau. Dennoch handelt es sich um eine unverbindliche Schätzung gemäß § 3a RVG. In der Praxis können Abweichungen entstehen, etwa durch eine abweichende Streitwertfestsetzung durch das Gericht oder durch eine individuelle Vergütungsvereinbarung zwischen Anwalt und Mandant."}},
+          {"@type":"Question","name":"Was ist der Unterschied zwischen Streitwert und Gegenstandswert?","acceptedAnswer":{"@type":"Answer","text":"Im gerichtlichen Verfahren spricht man vom Streitwert, bei außergerichtlicher Tätigkeit vom Gegenstandswert. Beide bezeichnen den wirtschaftlichen Wert des Streitgegenstands und bilden die Grundlage für die Gebührenberechnung. Bei einer Kündigungsschutzklage entspricht der Streitwert in der Regel drei Bruttomonatsgehältern (§ 42 Abs. 2 GKG)."}},
+          {"@type":"Question","name":"Kann ich eine Vergütungsvereinbarung mit meinem Anwalt treffen?","acceptedAnswer":{"@type":"Answer","text":"Ja, nach § 3a RVG können Anwalt und Mandant eine abweichende Vergütungsvereinbarung treffen. Diese muss in Textform vorliegen. In der Praxis sind Stundenhonorarvereinbarungen verbreitet, insbesondere bei hohen Streitwerten. Die gesetzlichen RVG-Gebühren stellen dabei stets die Mindestvergütung dar, die nicht unterschritten werden darf."}},
+          {"@type":"Question","name":"Wer zahlt die Anwaltskosten wenn ich gewinne?","acceptedAnswer":{"@type":"Answer","text":"Das hängt von der Instanz ab. Vor dem Arbeitsgericht in der 1. Instanz gilt § 12a ArbGG: Jede Partei trägt ihre eigenen Anwaltskosten, auch bei einem Sieg. Ab der 2. Instanz (LAG) sowie vor Amts-, Land- und Oberlandesgerichten gilt § 91 ZPO: Die unterlegene Partei trägt die gesamten Kosten einschließlich der gegnerischen Anwaltskosten."}},
+          {"@type":"Question","name":"Was kostet eine Kündigungsschutzklage beim Arbeitsgericht?","acceptedAnswer":{"@type":"Answer","text":"Die Kosten einer Kündigungsschutzklage richten sich nach dem Streitwert, der in der Regel drei Bruttomonatsgehältern entspricht. Bei einem Bruttogehalt von 4.000 € ergibt sich ein Streitwert von 12.000 €. Nach KostBRÄG 2025 betragen die Anwaltskosten dann ca. 2.600 € brutto (mit Termin und Vergleich). Bei APOS Legal erhalten Sie eine kostenlose Ersteinschätzung."}}
         ]
       })}}/>
     </div>
