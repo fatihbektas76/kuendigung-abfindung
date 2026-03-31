@@ -88,6 +88,11 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
+            <Link href="/rvg-rechner" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+              RVG Rechner
+            </Link>
+          </li>
+          <li>
             <Link
               href="/kuendigung-pruefen"
               onClick={closeMenu}
