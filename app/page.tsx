@@ -13,6 +13,7 @@ import ContactForm from '@/components/ContactForm';
 import CTA from '@/components/CTA';
 import StandortTeaser from '@/components/StandortTeaser';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
+import StatistikTeaser from '@/components/StatistikTeaser';
 
 export const revalidate = 86400;
 
@@ -147,6 +148,7 @@ export default function Home() {
         <TeamTeaser />
         <FAQ />
         <StandortTeaser />
+        <StatistikTeaser />
         <ContactForm />
         <CTA />
       </main>
