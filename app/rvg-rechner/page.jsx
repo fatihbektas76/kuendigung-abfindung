@@ -252,33 +252,24 @@ export default function App(){
         @media(max-width:600px){.g2{grid-template-columns:1fr!important;}.gtabs{overflow-x:auto!important;}}
       `}</style>
 
-      {/* ── HEADER ── */}
-      <div style={{background:D.dark,borderBottom:`3px solid ${D.gold}`}}>
-        <div style={{maxWidth:960,margin:"0 auto",padding:"18px 20px 0",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:12}}>
-          <div>
-            <div style={{fontSize:10,color:"#8B7B5A",letterSpacing:".12em",textTransform:"uppercase",marginBottom:3}}>APOS Legal · Fachanwalt für Arbeitsrecht</div>
-            <div style={{display:"flex",alignItems:"center",gap:10,flexWrap:"wrap"}}>
-              <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:21,fontWeight:900,color:D.white,letterSpacing:"-.01em",margin:0}}>RVG Gebührenrechner</h1>
-              <span style={{background:D.gold,color:D.white,fontSize:9,fontWeight:700,padding:"2px 8px",borderRadius:3,letterSpacing:".08em"}}>KostBRÄG 2025</span>
-            </div>
-            <div style={{fontSize:11,color:"#8B7B5A",marginTop:2}}>Anwalts- &amp; Gerichtskosten · Gegner · Teilunterliegen · Honorarvergleich</div>
+      {/* ── TAB BAR + PDF ── */}
+      <div style={{maxWidth:960,margin:"0 auto",padding:"24px 20px 0"}}>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:12}}>
+          <div className="gtabs" style={{display:"flex",gap:0,overflowX:"auto",borderBottom:`2px solid ${D.border}`,flex:1}}>
+            {TABS.map(t=>(
+              <button key={t.id} onClick={()=>setTab(t.id)}
+                style={{display:"inline-flex",alignItems:"center",gap:6,padding:"11px 16px",fontSize:13,fontWeight:tab===t.id?700:500,color:tab===t.id?D.gold:D.muted,background:"transparent",border:"none",borderBottom:tab===t.id?`3px solid ${D.gold}`:"3px solid transparent",cursor:"pointer",whiteSpace:"nowrap",fontFamily:"inherit",transition:"all .15s",letterSpacing:"0.01em",marginBottom:-2}}>
+                <span style={{color:tab===t.id?D.gold:D.muted,display:"inline-flex",alignItems:"center"}}><Ico name={t.icon} size={13}/></span>
+                {t.label}
+              </button>
+            ))}
           </div>
           {R&&(
-            <button onClick={exportPDF} disabled={pdfLoading} className="bg" style={{...btnG(),marginBottom:6,opacity:pdfLoading?.6:1}}>
+            <button onClick={exportPDF} disabled={pdfLoading} className="bg" style={{...btnG(),opacity:pdfLoading?.6:1}}>
               {pdfLoading?<Ico name="spinner" size={15} style={{color:D.white}}/>:<Ico name="download" size={15} style={{color:D.white}}/>}
               {pdfLoading?"Generiere…":"PDF exportieren"}
             </button>
           )}
-        </div>
-        {/* Tab Bar */}
-        <div className="gtabs" style={{maxWidth:960,margin:"0 auto",padding:"0 12px",display:"flex",gap:0,overflowX:"auto"}}>
-          {TABS.map(t=>(
-            <button key={t.id} onClick={()=>setTab(t.id)}
-              style={{display:"inline-flex",alignItems:"center",gap:6,padding:"11px 16px",fontSize:13,fontWeight:tab===t.id?700:500,color:tab===t.id?D.white:"#C4B08A",background:"transparent",border:"none",borderBottom:tab===t.id?`3px solid ${D.gold}`:"3px solid transparent",cursor:"pointer",whiteSpace:"nowrap",fontFamily:"inherit",transition:"all .15s",letterSpacing:"0.01em"}}>
-              <TabIco name={t.icon} active={tab===t.id}/>
-              {t.label}
-            </button>
-          ))}
         </div>
       </div>
 
