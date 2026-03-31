@@ -252,15 +252,25 @@ export default function App(){
       `}</style>
 
       {/* ── HERO ── */}
-      <div style={{textAlign:"center",padding:"48px 20px",borderBottom:`1px solid ${D.border}`}}>
-        <div style={{maxWidth:960,margin:"0 auto"}}>
-          <span style={{display:"inline-block",fontSize:11,fontWeight:700,color:D.gold,border:`1.5px solid ${D.gold}`,borderRadius:20,padding:"4px 14px",letterSpacing:".06em",textTransform:"uppercase",marginBottom:16}}>Kostenloser Rechner</span>
-          <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:48,fontWeight:900,color:D.dark,letterSpacing:"-.02em",margin:0,lineHeight:1.1}}>RVG Rechner 2025</h1>
-          <p style={{fontSize:18,color:D.muted,margin:"12px 0 0",lineHeight:1.5}}>Anwaltskosten &amp; Gerichtskosten kostenlos berechnen</p>
-          <div style={{display:"flex",justifyContent:"center",gap:24,marginTop:24,flexWrap:"wrap"}}>
-            {[["KostBRÄG 2025","check"],["Alle Instanzen","check"],["PDF-Export","check"]].map(([label,icon])=>(
-              <span key={label} style={{display:"inline-flex",alignItems:"center",gap:6,fontSize:13,color:D.muted,fontWeight:500}}>
-                <span style={{color:D.gold,display:"inline-flex",alignItems:"center"}}><Ico name={icon} size={15}/></span>
+      <div style={{textAlign:"center",padding:"150px 32px 100px",background:"#FAF8F3",position:"relative",overflow:"hidden"}}>
+        <div style={{position:"absolute",top:"-40%",right:"-15%",width:600,height:600,background:"radial-gradient(circle, rgba(166,139,75,0.07) 0%, transparent 70%)",zIndex:2}}/>
+        <div style={{maxWidth:800,margin:"0 auto",position:"relative",zIndex:3}}>
+          <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:"1.1rem",color:"#7A6530",fontWeight:600,marginBottom:6}}>
+            Kanzlei für Arbeitsrecht{" "}
+            <span style={{display:"inline-block",fontSize:"0.68rem",fontWeight:700,color:"#2B4C35",background:"rgba(74,124,89,0.08)",border:"1.5px solid rgba(43,76,53,0.2)",borderRadius:4,padding:"3px 10px",letterSpacing:".08em",textTransform:"uppercase",marginLeft:10,verticalAlign:"middle"}}>
+              Kostenloser Rechner
+            </span>
+          </div>
+          <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:"clamp(2.1rem, 4.5vw, 3.2rem)",fontWeight:800,lineHeight:1.15,marginTop:18,marginBottom:22,letterSpacing:"-0.02em",color:"#1A1A1A"}}>
+            RVG Rechner 2025
+          </h1>
+          <p style={{fontSize:"1.12rem",color:"#555555",maxWidth:620,margin:"0 auto 24px",lineHeight:1.65}}>
+            Anwaltskosten &amp; Gerichtskosten kostenlos berechnen – nach dem Rechtsanwaltsvergütungsgesetz in der Fassung des KostBRÄG 2025 (ab 01.06.2025). Für Arbeitsrecht, Zivilrecht und alle Instanzen.
+          </p>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:20,flexWrap:"wrap",fontSize:"0.82rem",color:"#4A4A4A"}}>
+            {["KostBRÄG 2025","Alle Instanzen","PDF-Export"].map(label=>(
+              <span key={label} style={{display:"flex",alignItems:"center",gap:6}}>
+                <svg style={{width:16,height:16,color:"#2B4C35",flexShrink:0}} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                 {label}
               </span>
             ))}
