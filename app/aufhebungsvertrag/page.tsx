@@ -14,7 +14,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
   description:
-    'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag – kostenlose Ersteinschätzung.',
+    'Aufhebungsvertrag erhalten? Sperrzeit vermeiden & Abfindung maximieren. Fachanwalt prüft Ihren Vertrag. Kostenlose Ersteinschätzung.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/`,
   },

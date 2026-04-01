@@ -16,7 +16,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
   description:
-    'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer. Fachanwalt für Arbeitsrecht – kostenlose Ersteinschätzung.',
+    'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB & Abfindungschancen. Jetzt kostenlos prüfen.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/kuendigung/`,
   },

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getLebenssituation(params.situation);
   if (!entry) return {};
   const title = `${entry.h1} (${new Date().getFullYear()})`;
-  const description = `${entry.h1} — Ihre Rechte nach ${entry.gesetz}, 3-Wochen-Klagefrist, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`;
+  const description = `${entry.h1} — Rechte nach ${entry.gesetz}, Klagefrist & Abfindung. Kostenlose Ersteinschätzung.`;
   const url = `${SEO_CONFIG.baseUrl}/kuendigung/${entry.slug}/`;
   return {
     title,

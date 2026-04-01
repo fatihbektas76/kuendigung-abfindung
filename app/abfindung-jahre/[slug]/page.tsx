@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lower = (0.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const upper = (1.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const title = `Abfindung nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit (${new Date().getFullYear()})`;
-  const description = `Abfindung nach ${yl}: Zwischen ${lower} und ${upper} Monatsgehältern. Tabelle, Rechner, Steuerrechner und kostenlose Prüfung. Kündigungsfrist: ${entry.kuendigungsfrist}.`;
+  const description = `Abfindung nach ${yl}: ${lower}–${upper} Monatsgehälter. Rechner, Tabelle & kostenlose Prüfung vom Fachanwalt.`;
   const url = `${SEO_CONFIG.baseUrl}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,

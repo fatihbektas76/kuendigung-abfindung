@@ -15,7 +15,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
   description:
-    'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht — kostenlose Ersteinschätzung.',
+    'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Ihre Rechte & Abfindung. Jetzt kostenlos prüfen.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`,
   },

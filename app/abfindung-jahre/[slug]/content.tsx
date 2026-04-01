@@ -703,7 +703,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
               <Image
                 src="/Fatih.webp"
-                alt="Fatih Bektas — Fachanwalt für Arbeitsrecht"
+                alt={`Fachanwalt berät zu Abfindung nach ${entry.year} ${entry.year === 1 ? 'Jahr' : 'Jahren'}`}
                 width={80}
                 height={80}
                 className="w-full h-full object-cover object-top"

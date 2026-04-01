@@ -15,7 +15,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
   description:
-    'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht. Kostenlose Ersteinschätzung.',
+    'Abfindung nach Kündigung: Anspruch, Höhe & Berechnung. Formel, Tabelle und Praxistipps vom Fachanwalt. Jetzt kostenlos prüfen.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/abfindung/`,
   },

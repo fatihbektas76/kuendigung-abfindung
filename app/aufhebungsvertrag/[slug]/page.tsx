@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getAufhebungsvertragEntry(params.slug);
   if (!entry) return {};
   const title = `${entry.h1} (${new Date().getFullYear()})`;
-  const description = `${entry.h1} — ${entry.description} Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.`;
+  const description = `${entry.description} Fachanwalt für Arbeitsrecht berät Sie. Kostenlose Ersteinschätzung.`;
   const url = `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/${entry.slug}/`;
   return {
     title,

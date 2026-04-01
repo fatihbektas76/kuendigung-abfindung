@@ -55,7 +55,7 @@ export async function generateMetadata({
   const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}/`;
 
   return {
-    title: `Fachanwalt Arbeitsrecht ${ort.name} | APOS Legal`,
+    title: `Fachanwalt Arbeitsrecht ${ort.name} — Kündigung & Abfindung (${new Date().getFullYear()})`,
     description: content?.metaDescription ??
       `Kündigung erhalten in ${ort.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${ort.arbeitsgericht}. Kostenlose Ersteinschätzung.`,
     ...(isGemeinde ? { robots: { index: false, follow: true } } : {}),
@@ -416,7 +416,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8 flex gap-5">
           <Image
             src="/Fatih.webp"
-            alt="Fatih Bektas – Fachanwalt für Arbeitsrecht"
+            alt={`Fachanwalt für Arbeitsrecht in ${ort.name}`}
             width={64}
             height={64}
             className="w-16 h-16 rounded-full object-cover border-2 border-[#d4c98a] shrink-0"

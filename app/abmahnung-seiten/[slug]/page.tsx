@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const label = abmahnungLabel(entry.count);
   return {
     title: `Kündigung nach ${entry.word} ${entry.count === 1 ? 'Abmahnung' : 'Abmahnungen'} — wirksam oder nicht? (${new Date().getFullYear()})`,
-    description: `Kündigung nach ${label} erhalten? Ist die Kündigung wirksam? Formfehler prüfen, Kündigungsschutzklage, Abfindungschancen. Kostenlose Ersteinschätzung vom Fachanwalt.`,
+    description: `Kündigung nach ${label} erhalten? Formfehler, Kündigungsschutzklage & Abfindungschancen. Jetzt kostenlos prüfen.`,
     alternates: {
       canonical: `${SEO_CONFIG.baseUrl}/kuendigung-nach-${entry.slug}/`,
     },

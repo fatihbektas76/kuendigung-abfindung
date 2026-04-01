@@ -17,8 +17,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const urteil = getUrteil(params.slug);
   if (!urteil) return {};
-  const title = `${urteil.titel} — ${urteil.gericht} ${urteil.az} (${new Date().getFullYear()})`;
-  const description = urteil.kurzfassung.slice(0, 155) + '...';
+  const title = `${urteil.az} — ${urteil.kategorie}: Urteil & Bedeutung (${new Date().getFullYear()})`;
+  const description = urteil.kurzfassung.slice(0, 150).replace(/\s+\S*$/, '') + ' …';
   const url = `${SEO_CONFIG.baseUrl}/urteile/${urteil.slug}/`;
   return {
     title,
