@@ -332,8 +332,8 @@ export default function App(){
             </button>
           )}
         </div>
-        {/* DESKTOP: Tabs + PDF-Button nebeneinander */}
-        <div style={{alignItems:"center",justifyContent:"space-between"}} className="rvg-desktop-tabs">
+        {/* DESKTOP: Tabs oben, PDF-Button darunter links */}
+        <div style={{flexDirection:"column"}} className="rvg-desktop-tabs">
           <div style={{display:"flex",gap:0,overflowX:"hidden"}}>
             {TABS.map(t=>(
               <button key={t.id} onClick={()=>setTab(t.id)}
@@ -344,11 +344,13 @@ export default function App(){
             ))}
           </div>
           {R&&(
-            <button onClick={exportPDF} disabled={pdfLoading} className="bg"
-              style={{display:"inline-flex",alignItems:"center",gap:7,background:D.gold,color:D.white,border:"none",borderRadius:6,padding:"7px 14px",fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit",flexShrink:0}}>
-              {pdfLoading?<Ico name="spinner" size={15} style={{color:D.white}}/>:<Ico name="download" size={15} style={{color:D.white}}/>}
-              {pdfLoading?"Generiere…":"PDF exportieren"}
-            </button>
+            <div style={{marginTop:10}}>
+              <button onClick={exportPDF} disabled={pdfLoading} className="bg"
+                style={{display:"inline-flex",alignItems:"center",gap:7,background:D.gold,color:D.white,border:"none",borderRadius:6,padding:"7px 14px",fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>
+                {pdfLoading?<Ico name="spinner" size={15} style={{color:D.white}}/>:<Ico name="download" size={15} style={{color:D.white}}/>}
+                {pdfLoading?"Generiere…":"PDF exportieren"}
+              </button>
+            </div>
           )}
         </div>
       </div>
