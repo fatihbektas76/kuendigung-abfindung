@@ -43,7 +43,7 @@ export const musterPages: MusterPageEntry[] = [
   {
     slug: 'kuendigungsschutzklage',
     h1: 'Muster: Kündigungsschutzklage',
-    description: 'Kostenloses Muster: Kündigungsschutzklage beim Arbeitsgericht mit Ausfüllhilfe. Vorlage direkt kopieren und an Ihren Fall anpassen. Vom Fachanwalt geprüft.',
+    description: 'Kostenloses Muster: Kündigungsschutzklage beim Arbeitsgericht mit Ausfüllhilfe. Vorlage kopieren & anpassen. Vom Fachanwalt geprüft.',
     keywords: 'Kündigungsschutzklage Muster, Kündigungsschutzklage Vorlage, Klageschrift Kündigung',
     type: 'muster',
     contentKey: 'kuendigungsschutzklage',
