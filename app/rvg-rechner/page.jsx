@@ -618,7 +618,7 @@ export default function App(){
                   <div style={{marginTop:8,fontSize:11,color:D.muted}}>Orientierung: Fachanwalt einschätzen lassen →{" "}<a href="/kuendigung-pruefen" style={{color:D.gold,fontWeight:600}}>Kostenlose Ersteinschätzung</a></div>
                 </div>
                 <div>
-                  <label style={lbl}>Vergleichsangebot des Arbeitgebers (optional)</label>
+                  <label style={lbl}>Vergleichsangebot der Gegenseite (optional)</label>
                   <div style={{position:"relative"}}>
                     <input type="text" inputMode="decimal" value={rawVergleich} onChange={e=>setRawVergleich(e.target.value.replace(/[^\d,.]/g,""))} placeholder="z. B. 8.000" style={inp}/>
                     <span style={{position:"absolute",right:12,top:"50%",transform:"translateY(-50%)",color:D.muted,fontWeight:700}}>&euro;</span>
