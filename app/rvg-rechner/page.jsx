@@ -154,11 +154,11 @@ export default function App(){
     const muted=[107,99,86];       // #6B6356 – für Labels und Footer-Text
     const white=[255,255,255];
     const bd=[221,213,192];        // #DDD5C0 – Rahmenfarben
-    doc.setFillColor(...gold);doc.rect(0,0,W,30,"F");
-    doc.setFont("helvetica","bold");doc.setFontSize(18);doc.setTextColor(...white);doc.text("RVG Gebührenrechner",M,13);
-    doc.setFont("helvetica","normal");doc.setFontSize(8.5);doc.setTextColor(200,185,145);
+    doc.setFillColor(...cream);doc.rect(0,0,W,30,"F");doc.setDrawColor(...bd);doc.setLineWidth(.3);doc.line(0,30,W,30);
+    doc.setFont("helvetica","bold");doc.setFontSize(18);doc.setTextColor(...dark);doc.text("RVG Gebührenrechner",M,13);
+    doc.setFont("helvetica","normal");doc.setFontSize(8.5);doc.setTextColor(...muted);
     doc.text(`${yr==="2025"?"KostBRÄG 2025 (ab 01.06.2025)":"KostRÄG 2021"}  ·  ${new Date().toLocaleDateString("de-DE")}  ·  APOS Legal`,M,21);
-    doc.setTextColor(160,140,100);doc.text("www.gekuendigt-abfindung.de",M,27);
+    doc.setTextColor(...gold);doc.text("www.gekuendigt-abfindung.de",M,27);
     y=37;
     doc.setFillColor(...cream);doc.roundedRect(M,y,W-2*M,22,2,2,"F");doc.setDrawColor(...bd);doc.setLineWidth(.25);doc.roundedRect(M,y,W-2*M,22,2,2,"S");
     doc.setFont("helvetica","bold");doc.setFontSize(8);doc.setTextColor(...gold);doc.text("BERECHNUNGSPARAMETER",M+4,y+6);
@@ -242,7 +242,7 @@ export default function App(){
 
 
   return(
-    <div style={{fontFamily:"'Inter',system-ui,sans-serif",background:D.cream,minHeight:"100vh",paddingBottom:56,overflowX:"hidden"}}>
+    <div style={{fontFamily:"'Inter',system-ui,sans-serif",background:"#FAF8F3",minHeight:"100vh",paddingBottom:56,overflowX:"hidden"}}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap');
         *{box-sizing:border-box;}
