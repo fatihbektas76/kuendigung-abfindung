@@ -160,7 +160,7 @@ export default function App(){
     ps.forEach(([a,b],i)=>{doc.setFont("helvetica","normal");doc.setFontSize(8.5);doc.setTextColor(...dark);doc.text(a,M+4,y+12+i*4);doc.text(b,M+90,y+12+i*4);});
     y+=28;
     const aH=t=>{y+=3;doc.setFillColor(...gold);doc.rect(M,y,W-2*M,7,"F");doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(...white);doc.text(t,M+3,y+4.8);y+=9;};
-    const aT=(h,r,ft=null)=>{doc.autoTable({startY:y,margin:{left:M,right:M},head:[h],body:r,foot:ft?[ft]:[],showFoot:ft?"lastPage":"never",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:dark,textColor:[255,243,200],fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:[245,241,232]},columnStyles:{0:{cellWidth:34},2:{halign:"right",cellWidth:14},3:{halign:"right",cellWidth:28,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;};
+    const aT=(h,r,ft=null)=>{doc.autoTable({startY:y,margin:{left:M,right:M},head:[h],body:r,foot:ft?[ft]:[],showFoot:ft?"lastPage":"never",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:dark,textColor:[255,243,200],fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:[250,246,237]},columnStyles:{0:{cellWidth:34},2:{halign:"right",cellWidth:14},3:{halign:"right",cellWidth:28,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;};
     if(R.agFee){aH("Ang. 1: Außergerichtliche Tätigkeit (§ 15 RVG)");aT(["Rechtsgrundlage","Position","Satz","Betrag"],[["Nr. 2300 VV RVG","Geschäftsgebühr","1,3",eur(R.agFee.betrag)],["Nr. 7002 VV RVG","Auslagenpauschale (20%, max. 20€)","—",eur(R.agFee.ausl)],...(mwst?[["Nr. 7008 VV RVG","Umsatzsteuer 19%","19%",eur(R.agFee.mwstB)]]:[])]  ,["","Außergerichtl. Angelegenheit gesamt","",eur(R.agFee.total)]);}
     aH((R.agFee?"Ang. 2: ":"")+"Anwaltsgebühren – "+vf.kurz);
     const fr=R.items.map(it=>[it.nr,it.lbl,it.f>0?it.f.toFixed(1):it.f.toFixed(2),eur(it.b)]);
@@ -170,15 +170,15 @@ export default function App(){
     if(vf.note){doc.setFontSize(7.5);doc.setTextColor(100,70,0);doc.setFont("helvetica","italic");doc.text("Hinweis: "+vf.note,M,y+3,{maxWidth:W-2*M});y+=10;}
     if(vf.hasGKG){aH("Gerichtskosten (GKG)");aT(["Rechtsgrundlage","Position","Satz","Betrag"],[["Anlage 1 GKG",R.gkgL,R.gkgF.toFixed(1),eur(R.gkgB)]],["","Gerichtskosten gesamt","",eur(R.gkgB)]);}
     if(R.gegner!==null){aH("Gegnerische Anwaltskosten (§ 91 ZPO)");aT(["Rechtsgrundlage","Position","Satz","Betrag"],[["RVG","Verfahrens-/Terminsgebühr"+(mwst?" inkl. MwSt.":""),"—",eur(R.gegner)]],["","Gegnerische Kosten gesamt (geschätzt)","",eur(R.gegner)]);}
-    if(TU&&vf.isG){aH(`Teilunterliegen ${unterliegen}% – § 92 ZPO`);doc.autoTable({startY:y,margin:{left:M,right:M},head:[["Position","Anteil","Betrag"]],body:[["Eigene Anwaltskosten",unterliegen+"%","~"+eur(TU.meinAnw)],R.gegner!==null&&["Gegneranwaltskosten (zu tragen)",(100-unterliegen)+"%","~"+eur(TU.gegnerAnw)],[`Gerichtskosten (${unterliegen}%)`,unterliegen+"%","~"+eur(TU.gkgMein)]].filter(Boolean),foot:[["","Effektive Kostenbelastung gesamt","~"+eur(TU.gesamt)]],showFoot:"lastPage",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:dark,textColor:[255,243,200],fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:[245,241,232]},columnStyles:{0:{cellWidth:70},1:{cellWidth:25},2:{halign:"right",cellWidth:40,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;}
+    if(TU&&vf.isG){aH(`Teilunterliegen ${unterliegen}% – § 92 ZPO`);doc.autoTable({startY:y,margin:{left:M,right:M},head:[["Position","Anteil","Betrag"]],body:[["Eigene Anwaltskosten",unterliegen+"%","~"+eur(TU.meinAnw)],R.gegner!==null&&["Gegneranwaltskosten (zu tragen)",(100-unterliegen)+"%","~"+eur(TU.gegnerAnw)],[`Gerichtskosten (${unterliegen}%)`,unterliegen+"%","~"+eur(TU.gkgMein)]].filter(Boolean),foot:[["","Effektive Kostenbelastung gesamt","~"+eur(TU.gesamt)]],showFoot:"lastPage",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:dark,textColor:[255,243,200],fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:[250,246,237]},columnStyles:{0:{cellWidth:70},1:{cellWidth:25},2:{halign:"right",cellWidth:40,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;}
     y+=4;doc.setFillColor(...dark);doc.roundedRect(M,y,W-2*M,34,2,2,"F");
     doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor(...white);doc.text("Gesamtprozesskostenrisiko",M+4,y+8);
     doc.setDrawColor(...gold);doc.setLineWidth(.3);doc.line(M+4,y+10.5,W-M-4,y+10.5);
     const si=[R.agFee&&["Außergerichtl.",eur(R.agFee.total)],["Anwaltskosten",eur(R.total)],vf.hasGKG&&["Gerichtskosten",eur(R.gkgB)],R.gegner!==null&&["Gegner §91",eur(R.gegner)]].filter(Boolean);
     const iW=(W-2*M-8)/si.length;
-    si.forEach(([l,v],i)=>{const px=M+4+i*(iW+1);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(160,140,100);doc.text(l.toUpperCase(),px,y+16);doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(220,200,120);doc.text(v,px,y+22);});
+    si.forEach(([l,v],i)=>{const px=M+4+i*(iW+1);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(160,140,100);doc.text(l.toUpperCase(),px,y+16);doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(244,200,66);doc.text(v,px,y+22);});
     doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.setTextColor(160,140,100);doc.text("GESAMT",M+4,y+30);
-    doc.setFontSize(13);doc.setTextColor(255,243,200);doc.text(eur(R.gesamt),M+25,y+30);y+=40;
+    doc.setFontSize(13);doc.setTextColor(244,200,66);doc.text(eur(R.gesamt),M+25,y+30);y+=40;
     const pN=doc.getNumberOfPages();
     for(let i=1;i<=pN;i++){doc.setPage(i);doc.setFillColor(...cream);doc.rect(0,280,W,17,"F");doc.setDrawColor(...bd);doc.setLineWidth(.2);doc.line(M,280.5,W-M,280.5);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(...muted);doc.text("APOS Legal · Fachanwalt Fatih Bektas · bektas@apos.legal",M,286);doc.text(`Seite ${i}/${pN}`,W-M,286,{align:"right"});doc.setFontSize(6);doc.setTextColor(...gold);doc.text("www.gekuendigt-abfindung.de · Berechnung unverbindlich gem. § 3a RVG",W/2,292,{align:"center"});}
     doc.save(`RVG_${vf.kurz}_${Math.round(sw)}EUR_${new Date().toISOString().slice(0,10)}.pdf`);
@@ -236,7 +236,7 @@ export default function App(){
 
 
   return(
-    <div style={{fontFamily:"'Inter',system-ui,sans-serif",background:D.cream,minHeight:"100vh",paddingBottom:56}}>
+    <div style={{fontFamily:"'Inter',system-ui,sans-serif",background:D.cream,minHeight:"100vh",paddingBottom:56,overflowX:"hidden"}}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap');
         *{box-sizing:border-box;}
@@ -248,7 +248,8 @@ export default function App(){
         input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:${D.gold};border-radius:50%;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);}
         textarea{resize:vertical;font-family:inherit;}
         @keyframes rvg-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-        @media(max-width:600px){.g2{grid-template-columns:1fr!important;}.gtabs{overflow-x:auto!important;}}
+        @media(max-width:639px){.g2{grid-template-columns:1fr!important;}.rvg-tabs-desktop{display:none!important;}.rvg-tabs-mobile{display:block!important;}.rvg-pdf-btn{width:100%!important;justify-content:center!important;}}
+        @media(min-width:640px){.rvg-tabs-mobile{display:none!important;}.rvg-tabs-desktop{display:flex!important;}}
       `}</style>
 
       {/* ── HERO ── */}
@@ -280,22 +281,33 @@ export default function App(){
 
       {/* ── TAB BAR + PDF ── */}
       <div style={{maxWidth:960,margin:"0 auto",padding:"48px 20px 0"}}>
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:12}}>
-          <div className="gtabs" style={{display:"flex",gap:0,overflowX:"auto",borderBottom:`2px solid ${D.border}`,flex:1}}>
-            {TABS.map(t=>(
-              <button key={t.id} onClick={()=>setTab(t.id)}
-                style={{display:"inline-flex",alignItems:"center",gap:6,padding:"11px 16px",fontSize:13,fontWeight:tab===t.id?700:500,color:tab===t.id?D.gold:D.muted,background:"transparent",border:"none",borderBottom:tab===t.id?`3px solid ${D.gold}`:"3px solid transparent",cursor:"pointer",whiteSpace:"nowrap",fontFamily:"inherit",transition:"all .15s",letterSpacing:"0.01em",marginBottom:-2}}>
-                <span style={{color:tab===t.id?D.gold:D.muted,display:"inline-flex",alignItems:"center"}}><Ico name={t.icon} size={13}/></span>
-                {t.label}
+        <div style={{display:"flex",flexDirection:"column",gap:12}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:12}}>
+            {/* Mobile: Dropdown */}
+            <select className="rvg-tabs-mobile" value={tab} onChange={e=>setTab(e.target.value)}
+              style={{padding:"10px 14px",border:`1.5px solid ${D.border}`,borderRadius:6,background:"#FDFAF4",color:D.dark,fontSize:14,fontWeight:600,fontFamily:"inherit",flex:1,outline:"none"}}>
+              <option value="rechner">Gebührenrechner</option>
+              <option value="teil">Teilunterliegen § 92 ZPO</option>
+              <option value="honorar">Honorarvergleich</option>
+              <option value="embed">Embed-Widget</option>
+            </select>
+            {/* Desktop: Tabs */}
+            <div className="rvg-tabs-desktop" style={{gap:0,borderBottom:`2px solid ${D.border}`,flex:1}}>
+              {TABS.map(t=>(
+                <button key={t.id} onClick={()=>setTab(t.id)}
+                  style={{display:"inline-flex",alignItems:"center",gap:6,padding:"11px 16px",fontSize:13,fontWeight:tab===t.id?700:500,color:tab===t.id?D.gold:D.muted,background:"transparent",border:"none",borderBottom:tab===t.id?`3px solid ${D.gold}`:"3px solid transparent",cursor:"pointer",whiteSpace:"nowrap",fontFamily:"inherit",transition:"all .15s",letterSpacing:"0.01em",marginBottom:-2}}>
+                  <span style={{color:tab===t.id?D.gold:D.muted,display:"inline-flex",alignItems:"center"}}><Ico name={t.icon} size={13}/></span>
+                  {t.label}
+                </button>
+              ))}
+            </div>
+            {R&&(
+              <button onClick={exportPDF} disabled={pdfLoading} className="bg rvg-pdf-btn" style={{...btnG(),opacity:pdfLoading?.6:1,flexShrink:0}}>
+                {pdfLoading?<Ico name="spinner" size={15} style={{color:D.white}}/>:<Ico name="download" size={15} style={{color:D.white}}/>}
+                {pdfLoading?"Generiere…":"PDF exportieren"}
               </button>
-            ))}
+            )}
           </div>
-          {R&&(
-            <button onClick={exportPDF} disabled={pdfLoading} className="bg" style={{...btnG(),opacity:pdfLoading?.6:1}}>
-              {pdfLoading?<Ico name="spinner" size={15} style={{color:D.white}}/>:<Ico name="download" size={15} style={{color:D.white}}/>}
-              {pdfLoading?"Generiere…":"PDF exportieren"}
-            </button>
-          )}
         </div>
       </div>
 
@@ -424,7 +436,7 @@ export default function App(){
                 <thead><tr>{["Rechtsgrundlage","Position","Satz","Betrag"].map((h,i)=><th key={h} style={th(i>=2)}>{h}</th>)}</tr></thead>
                 <tbody>
                   <tr className="rh"><td style={{...td(false,true)}}><small style={{color:D.muted,fontFamily:"'IBM Plex Mono',monospace"}}>RVG</small></td><td style={td()}>Verfahrens-/Terminsgebühr {mwst?"inkl. MwSt. ":""}(gegnerischer Anwalt)</td><td style={td(true,true)}>—</td><td style={td(true,true,false,true)}>{eur(R.gegner)}</td></tr>
-                  <tr style={{background:"#2C3240"}}><td colSpan={3} style={{padding:"11px 12px",color:D.white,fontWeight:700,fontSize:14}}>Gegnerische Kosten gesamt (geschätzt)</td><td style={{padding:"11px 12px",textAlign:"right",fontFamily:"'IBM Plex Mono',monospace",fontWeight:700,fontSize:15,color:"#FFF3CC"}}>{eur(R.gegner)}</td></tr>
+                  <tr style={{background:D.dark}}><td colSpan={3} style={{padding:"11px 12px",color:D.white,fontWeight:700,fontSize:14}}>Gegnerische Kosten gesamt (geschätzt)</td><td style={{padding:"11px 12px",textAlign:"right",fontFamily:"'IBM Plex Mono',monospace",fontWeight:700,fontSize:15,color:"#F4C842"}}>{eur(R.gegner)}</td></tr>
                 </tbody>
               </table>
             </div>
@@ -527,9 +539,9 @@ export default function App(){
                 <div style={{height:6,background:D.creamD,borderRadius:3,marginBottom:8,overflow:"hidden"}}>
                   <div style={{width:`${Math.min((HV.rvg/Math.max(HV.rvg,HV.st))*100,100)}%`,height:"100%",background:D.gold,transition:"width .4s"}}/>
                 </div>
-                <div style={{marginBottom:4,display:"flex",alignItems:"center",gap:8,fontSize:11,color:D.muted}}><span style={{width:10,height:10,background:"#4B5563",borderRadius:2,display:"inline-block"}}/>Stundenhonorar</div>
+                <div style={{marginBottom:4,display:"flex",alignItems:"center",gap:8,fontSize:11,color:D.muted}}><span style={{width:10,height:10,background:D.muted,borderRadius:2,display:"inline-block"}}/>Stundenhonorar</div>
                 <div style={{height:6,background:D.creamD,borderRadius:3,marginBottom:16,overflow:"hidden"}}>
-                  <div style={{width:`${Math.min((HV.st/Math.max(HV.rvg,HV.st))*100,100)}%`,height:"100%",background:"#4B5563",transition:"width .4s"}}/>
+                  <div style={{width:`${Math.min((HV.st/Math.max(HV.rvg,HV.st))*100,100)}%`,height:"100%",background:D.muted,transition:"width .4s"}}/>
                 </div>
                 <div style={{padding:"12px 14px",background:HV.rvgBesser?"#F0FDF4":D.amberBg,border:`1px solid ${HV.rvgBesser?"#BBF7D0":"#FDE68A"}`,borderRadius:6,fontSize:13,color:HV.rvgBesser?"#166534":"#92400E",display:"flex",gap:8,alignItems:"flex-start"}}>
                   <span style={{flexShrink:0,marginTop:1,color:HV.rvgBesser?D.green:D.amber}}><Ico name={HV.rvgBesser?"check":"warn"} size={14}/></span>
