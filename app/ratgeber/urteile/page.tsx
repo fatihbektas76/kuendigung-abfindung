@@ -8,7 +8,7 @@ import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `Aktuelle Urteile: Kündigung & Abfindung (${new Date().getFullYear()})`,
+  title: `BAG-Urteile zu Kündigung & Abfindung — aktuell (${new Date().getFullYear()})`,
   description:
     'Wichtige BAG-Urteile zu Kündigung, Abfindung, Aufhebungsvertrag und Abmahnung. Laufend aktualisiert. Was die Rechtsprechung für Arbeitnehmer bedeutet.',
   path: '/ratgeber/urteile',

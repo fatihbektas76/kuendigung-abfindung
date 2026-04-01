@@ -5,7 +5,7 @@ export const revalidate = 86400;
 export const metadata = buildMetadata({
   title: `Urlaub Teilzeit berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
   description:
-    'Berechnen Sie kostenlos Ihren Urlaubsanspruch in Teilzeit. Sofortergebnis nach der Pro-rata-temporis-Formel + kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
+    'Urlaubsanspruch in Teilzeit berechnen. Kostenloser Rechner nach Pro-rata-temporis-Formel. Sofortergebnis.',
   path: '/urlaub-teilzeit-rechner',
 });
 

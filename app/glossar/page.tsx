@@ -6,7 +6,7 @@ import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `Glossar Arbeitsrecht — Wichtige Begriffe einfach erklärt (${new Date().getFullYear()})`,
+  title: `Glossar Arbeitsrecht — Begriffe einfach erklärt (${new Date().getFullYear()})`,
   description:
     'Arbeitsrecht-Glossar: Abfindung, Kündigungsschutzklage, Aufhebungsvertrag, Sozialauswahl und 30+ weitere Begriffe — verständlich erklärt vom Fachanwalt.',
   path: '/glossar',

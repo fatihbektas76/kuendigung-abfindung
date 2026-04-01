@@ -20,7 +20,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt (${new Date().getFullYear()})`,
   description:
-    'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Kostenlose Ersteinschätzung. 20+ Jahre Erfahrung, 2.000+ Verfahren.',
+    'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Kostenlose Ersteinschätzung.',
   alternates: {
     canonical: 'https://www.gekuendigt-abfindung.de/',
   },

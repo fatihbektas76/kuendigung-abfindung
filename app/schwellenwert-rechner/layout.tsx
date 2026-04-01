@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/seo-config';
 export const metadata = buildMetadata({
   title: 'Schwellenwert §23 KSchG berechnen | Kostenlos | APOS Legal',
   description:
-    'Schwellenwert berechnen — prüfen Sie kostenlos, ob das Kündigungsschutzgesetz (KSchG) für Ihren Betrieb gilt. Berechnung nach §23 KSchG mit Vollzeitäquivalenten.',
+    'Schwellenwert berechnen — gilt das KSchG für Ihren Betrieb? Kostenloser Rechner nach §23 KSchG. Sofortergebnis.',
   path: '/schwellenwert-rechner',
 });
 

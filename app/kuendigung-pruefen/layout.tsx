@@ -5,7 +5,7 @@ export const revalidate = 86400;
 export const metadata = buildMetadata({
   title: `Kündigung kostenlos prüfen lassen — in 2 Minuten (${new Date().getFullYear()})`,
   description:
-    'Kündigung erhalten? Prüfen Sie kostenlos Ihre Abfindungschancen in 2 Minuten. Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich.',
+    'Kündigung erhalten? Prüfen Sie kostenlos Ihre Abfindungschancen in 2 Minuten. Ersteinschätzung vom Fachanwalt.',
   path: '/kuendigung-pruefen',
 });
 

@@ -7,7 +7,7 @@ import { SEO_CONFIG } from '@/lib/seo-config';
 export const metadata: Metadata = {
   title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
   description:
-    'Lernen Sie unser Team kennen: Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten. Über 2.000 erfolgreiche Verfahren.',
+    'Spezialisierte Fachanwälte für Arbeitsrecht. Jahrzehntelange Erfahrung & über 2.000 erfolgreiche Verfahren.',
   alternates: {
     canonical: 'https://www.gekuendigt-abfindung.de/team/',
   },

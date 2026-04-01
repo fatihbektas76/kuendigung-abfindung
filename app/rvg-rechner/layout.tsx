@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'RVG Rechner 2026 – Anwaltskosten kostenlos berechnen | APOS Legal',
-  description: 'Kostenloser RVG-Gebührenrechner nach KostBRÄG 2025. Berechnen Sie Anwaltsgebühren, Gerichtskosten und Ihr Prozesskostenrisiko – für Arbeitsgericht, Amtsgericht, Landgericht. Fachanwalt für Arbeitsrecht Heidelberg.',
+  title: 'RVG Rechner 2026 — Anwaltskosten berechnen | APOS Legal',
+  description: 'Kostenloser RVG-Rechner: Anwaltsgebühren, Gerichtskosten & Prozesskostenrisiko berechnen. Für alle Instanzen.',
   keywords: ['RVG Rechner', 'RVG Rechner 2026', 'Anwaltskosten berechnen', 'Prozesskostenrechner', 'RVG 2025', 'Gerichtskosten', 'Anwaltsgebühren'],
   alternates: { canonical: 'https://www.gekuendigt-abfindung.de/rvg-rechner' },
   openGraph: {

@@ -5,7 +5,7 @@ export const revalidate = 86400;
 export const metadata = buildMetadata({
   title: `Arbeitsrecht Tools & Rechner — kostenlos nutzen (${new Date().getFullYear()})`,
   description:
-    'Kostenlose Arbeitsrechts-Tools: Abfindungsrechner, Kündigungscheck & mehr. Sofortige Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich.',
+    'Kostenlose Arbeitsrechts-Tools: Abfindungsrechner, Kündigungscheck, Aufhebungsvertrag-Checker & mehr. Fachanwalt für Arbeitsrecht.',
   path: '/tools',
 });
 

@@ -15,7 +15,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Abmahnung – Ihre Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
   description:
-    'Abmahnung erhalten? Was ist eine Abmahnung, wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung, Rechte als Arbeitnehmer. Kostenlose Ersteinschätzung vom Fachanwalt.',
+    'Abmahnung erhalten? Wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung & Ihre Rechte. Jetzt kostenlos prüfen.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/abmahnung/`,
   },

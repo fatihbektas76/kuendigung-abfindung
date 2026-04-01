@@ -5,7 +5,7 @@ export const revalidate = 86400;
 export const metadata = buildMetadata({
   title: `Kündigungsfrist berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
   description:
-    'Kündigungsfrist berechnen — kostenloser Rechner nach §622 BGB. Taggenau, zum Monatsende oder Quartalsende. Sofortergebnis + kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
+    'Kündigungsfrist berechnen nach §622 BGB. Taggenau, zum Monatsende oder Quartalsende. Kostenloser Rechner mit Sofortergebnis.',
   path: '/kuendigungsfrist-rechner',
 });
 

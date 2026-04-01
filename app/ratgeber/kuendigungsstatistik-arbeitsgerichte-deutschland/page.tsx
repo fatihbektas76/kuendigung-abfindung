@@ -7,9 +7,9 @@ import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: 'Kündigungsschutzklage Statistik Deutschland 2003\u20132024 | Daten & Fakten',
+  title: 'Kündigungsschutzklage Statistik 2003\u20132024 | Daten & Fakten',
   description:
-    'Wie viele Kündigungsschutzklagen werden in Deutschland eingereicht? Erledigungsarten, Erfolgsquoten, Bundesländer-Vergleich \u2014 alle Daten aus 20 Jahren auf einen Blick.',
+    'Kündigungsschutzklagen in Deutschland: Erledigungsarten, Erfolgsquoten & Bundesländer-Vergleich. 20 Jahre Daten auf einen Blick.',
   path: '/ratgeber/kuendigungsstatistik-arbeitsgerichte-deutschland',
 });
 
