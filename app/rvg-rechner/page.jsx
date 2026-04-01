@@ -146,15 +146,21 @@ export default function App(){
     if(!R||!sw)return null;
     const q=gewinn/100;
     const vergleich=pSW(rawVergleich);
-    const risikoVerlust=R.total+(R.agFee?.total||0)+(R.gkgB||0);
-    const kostenSieg=R.total+(R.agFee?.total||0);
+    const eigeneAnw=R.total+(R.agFee?.total||0);
+    const gk=R.gkgB||0;
+    const gegner=R.gegner||0;
+    // § 12a ArbGG: Jede Seite trägt eigene Anwaltskosten, auch bei Sieg
+    // § 91 ZPO (AG/LG/OLG/LAG): Verlierer zahlt alles (eigene + gegnerische AK + GK)
+    const istArbG1=vf.id==="arbg";
+    const kostenSieg=istArbG1?eigeneAnw:0; // ArbG: selbst zahlen; Zivil: Gegner erstattet
+    const risikoVerlust=istArbG1?eigeneAnw+gk:eigeneAnw+gk+gegner; // ArbG: kein Gegner; Zivil: + Gegner-AK
     const erwartungsBrutto=sw*q;
     const erwartungsKosten=risikoVerlust*(1-q)+kostenSieg*q;
     const erwartungsNetto=erwartungsBrutto-erwartungsKosten;
     const breakEvenVergleich=erwartungsNetto;
     const klageSinnvoll=vergleich>0?vergleich<breakEvenVergleich:null;
     const vorteilKlage=vergleich>0?breakEvenVergleich-vergleich:null;
-    return{q,sw,vergleich,risikoVerlust,kostenSieg,erwartungsBrutto,erwartungsKosten,erwartungsNetto,breakEvenVergleich,klageSinnvoll,vorteilKlage};
+    return{q,sw,vergleich,risikoVerlust,kostenSieg,erwartungsBrutto,erwartungsKosten,erwartungsNetto,breakEvenVergleich,klageSinnvoll,vorteilKlage,istArbG1,eigeneAnw,gk,gegner};
   },[R,sw,vf,gewinn,rawVergleich]);
 
 
@@ -606,7 +612,15 @@ export default function App(){
             <div style={cH}><span style={sT}><GoldIco name="chart"/> Break-even Analyse</span><span style={{fontSize:11,color:D.muted}}>Lohnt sich die Klage vs. Vergleich?</span></div>
             <div style={{padding:"20px 20px 16px"}}>
               <div style={{padding:"12px 16px",background:D.cream,borderRadius:8,border:`1px solid ${D.border}`,fontSize:13,color:D.muted,marginBottom:20,lineHeight:1.7}}>
-                Dieser Rechner berechnet den <strong style={{color:D.text}}>wirtschaftlichen Erwartungswert</strong> einer Klage und vergleicht ihn mit einem vorliegenden Vergleichsangebot. Grundlage ist die Entscheidungstheorie: Erwartungswert = Gewinnchance × Streitwert minus erwartete Prozesskosten.
+                Dieser Rechner berechnet den <strong style={{color:D.text}}>wirtschaftlichen Erwartungswert</strong> Ihrer Klage und vergleicht ihn mit einem vorliegenden Vergleichsangebot. Grundlage ist die Entscheidungstheorie: Erwartungswert = Gewinnchance × Streitwert minus erwartete Prozesskosten.
+                <span style={{display:"block",marginTop:8,padding:"8px 12px",background:D.white,borderRadius:6,border:`1px solid ${D.border}`,fontSize:12}}>
+                  <strong style={{color:D.text}}>Kostenmodell:</strong>{" "}
+                  {vf.id==="arbg"
+                    ?"Arbeitsgericht 1. Instanz — § 12a ArbGG: Jede Partei trägt ihre eigenen Anwaltskosten, auch bei Sieg. Gerichtskosten trägt der Verlierer."
+                    :vf.id==="ag_"
+                    ?"Außergerichtlich — keine Gerichtskosten, keine Kostenerstattung."
+                    :`${vf.kurz} — § 91 ZPO: Der Verlierer trägt sämtliche Kosten (eigene + gegnerische Anwaltskosten + Gerichtskosten). Bei Obsiegen erhalten Sie Ihre Kosten erstattet.`}
+                </span>
               </div>
               <div className="g2" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:16}}>
                 <div>
@@ -615,7 +629,7 @@ export default function App(){
                   <div style={{display:"flex",justifyContent:"space-between",fontSize:10,color:D.muted}}>
                     <span>5% – Kaum Chancen</span><span>50% – Offen</span><span>95% – Sehr stark</span>
                   </div>
-                  <div style={{marginTop:8,fontSize:11,color:D.muted}}>Orientierung: Fachanwalt einschätzen lassen →{" "}<a href="/kuendigung-pruefen" style={{color:D.gold,fontWeight:600}}>Kostenlose Ersteinschätzung</a></div>
+                  <div style={{marginTop:8,fontSize:11,color:D.muted}}>Tipp: Lassen Sie die Erfolgsaussichten anwaltlich einschätzen →{" "}<a href="#kontakt" style={{color:D.gold,fontWeight:600}}>Kostenlose Ersteinschätzung</a></div>
                 </div>
                 <div>
                   <label style={lbl}>Vergleichsangebot der Gegenseite (optional)</label>
@@ -687,10 +701,10 @@ export default function App(){
                         {BE.klageSinnvoll?"Klage ist wirtschaftlich sinnvoller":"Vergleich könnte die bessere Wahl sein"}
                       </div>
                       <div style={{fontSize:13,color:D.text,lineHeight:1.7}}>
-                        {BE.klageSinnvoll?<>Der Erwartungswert der Klage beträgt <strong>{eur(BE.erwartungsNetto)}</strong>. Das vorliegende Vergleichsangebot von <strong>{eur(BE.vergleich)}</strong> liegt um <strong style={{color:D.green}}>{eur(BE.vorteilKlage)}</strong> darunter. Bei einer Gewinnwahrscheinlichkeit von {gewinn}% ist die Klage wirtschaftlich vorteilhafter.</>:<>Der Erwartungswert der Klage beträgt <strong>{eur(BE.erwartungsNetto)}</strong>. Das Vergleichsangebot von <strong>{eur(BE.vergleich)}</strong> liegt <strong style={{color:D.amber}}>{eur(Math.abs(BE.vorteilKlage))} darüber</strong>. Bei dieser Gewinnwahrscheinlichkeit ist der Vergleich wirtschaftlich günstiger — es sei denn, es gibt andere als finanzielle Gründe für eine Klage.</>}
+                        {BE.klageSinnvoll?<>Der Erwartungswert der Klage beträgt <strong>{eur(BE.erwartungsNetto)}</strong>. Das vorliegende Vergleichsangebot von <strong>{eur(BE.vergleich)}</strong> liegt um <strong style={{color:D.green}}>{eur(BE.vorteilKlage)}</strong> darunter. Bei einer Gewinnwahrscheinlichkeit von {gewinn}% ist die Klage wirtschaftlich vorteilhafter.</>:<>Der Erwartungswert der Klage beträgt <strong>{eur(BE.erwartungsNetto)}</strong>. Das Vergleichsangebot von <strong>{eur(BE.vergleich)}</strong> liegt <strong style={{color:D.amber}}>{eur(Math.abs(BE.vorteilKlage))} darüber</strong>. Bei dieser Gewinnwahrscheinlichkeit ist der Vergleich wirtschaftlich günstiger — es sei denn, es gibt nicht-finanzielle Gründe für eine Klage (z.&nbsp;B. Präzedenzwirkung, Prinzip).</>}
                       </div>
                       <div style={{marginTop:12,padding:"10px 14px",background:D.cream,borderRadius:6,fontSize:12,color:D.muted}}>
-                        <strong style={{color:D.text}}>Wichtig:</strong> Diese Analyse basiert auf dem eingegebenen Streitwert und der geschätzten Gewinnwahrscheinlichkeit. Für eine präzise Einschätzung Ihrer konkreten Chancen empfehlen wir die <a href="/kuendigung-pruefen" style={{color:D.gold,fontWeight:600}}>kostenlose Ersteinschätzung</a>.
+                        <strong style={{color:D.text}}>Wichtig:</strong> Diese Analyse basiert auf dem eingegebenen Streitwert, der gewählten Verfahrensart ({vf.kurz}) und der geschätzten Gewinnwahrscheinlichkeit. Für eine präzise Einschätzung Ihrer Erfolgsaussichten empfehlen wir eine <a href="#kontakt" style={{color:D.gold,fontWeight:600}}>anwaltliche Ersteinschätzung</a>.
                       </div>
                     </div>
                   </div>
@@ -703,9 +717,9 @@ export default function App(){
               <div style={{background:D.cream,borderRadius:8,border:`1px solid ${D.border}`,padding:"24px",marginTop:16,display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:16}}>
                 <div>
                   <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,color:D.dark,fontWeight:700,marginBottom:4}}>Liegt ein Vergleichsangebot vor?</div>
-                  <div style={{fontSize:13,color:D.muted}}>Gib den Betrag oben ein — dann berechnen wir ob die Klage oder der Vergleich wirtschaftlich besser ist.</div>
+                  <div style={{fontSize:13,color:D.muted}}>Geben Sie den Betrag oben ein — dann berechnen wir ob die Klage oder der Vergleich wirtschaftlich sinnvoller ist.</div>
                 </div>
-                <a href="/kuendigung-pruefen" style={{display:"inline-flex",alignItems:"center",gap:6,background:D.gold,color:D.white,textDecoration:"none",borderRadius:6,padding:"10px 20px",fontSize:13,fontWeight:700}}>Kostenlose Ersteinschätzung <Ico name="arrow" size={14} style={{color:D.white}}/></a>
+                <a href="#kontakt" style={{display:"inline-flex",alignItems:"center",gap:6,background:D.gold,color:D.white,textDecoration:"none",borderRadius:6,padding:"10px 20px",fontSize:13,fontWeight:700}}>Anwaltliche Einschätzung <Ico name="arrow" size={14} style={{color:D.white}}/></a>
               </div>
             )}
           </>}
