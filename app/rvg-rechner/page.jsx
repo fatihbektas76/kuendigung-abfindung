@@ -147,7 +147,7 @@ export default function App(){
     const{jsPDF}=window.jspdf;
     const doc=new jsPDF({orientation:"portrait",unit:"mm",format:"a4"});
     const W=210,M=18;let y=0;
-    const gold=[122,101,40],cream=[240,234,217],dark=[26,23,20],muted=[107,99,86],white=[255,255,255],bd=[221,213,192];
+    const gold=[122,101,40],cream=[240,234,217],dark=[122,101,40],muted=[107,99,86],white=[255,255,255],bd=[221,213,192];
     doc.setFillColor(...gold);doc.rect(0,0,W,30,"F");
     doc.setFont("helvetica","bold");doc.setFontSize(18);doc.setTextColor(...white);doc.text("RVG Gebührenrechner",M,13);
     doc.setFont("helvetica","normal");doc.setFontSize(8.5);doc.setTextColor(200,185,145);
@@ -170,17 +170,17 @@ export default function App(){
     if(vf.note){doc.setFontSize(7.5);doc.setTextColor(100,70,0);doc.setFont("helvetica","italic");doc.text("Hinweis: "+vf.note,M,y+3,{maxWidth:W-2*M});y+=10;}
     if(vf.hasGKG){aH("Gerichtskosten (GKG)");aT(["Rechtsgrundlage","Position","Satz","Betrag"],[["Anlage 1 GKG",R.gkgL,R.gkgF.toFixed(1),eur(R.gkgB)]],["","Gerichtskosten gesamt","",eur(R.gkgB)]);}
     if(R.gegner!==null){aH("Gegnerische Anwaltskosten (§ 91 ZPO)");aT(["Rechtsgrundlage","Position","Satz","Betrag"],[["RVG","Verfahrens-/Terminsgebühr"+(mwst?" inkl. MwSt.":""),"—",eur(R.gegner)]],["","Gegnerische Kosten gesamt (geschätzt)","",eur(R.gegner)]);}
-    if(TU&&vf.isG){aH(`Teilunterliegen ${unterliegen}% – § 92 ZPO`);doc.autoTable({startY:y,margin:{left:M,right:M},head:[["Position","Anteil","Betrag"]],body:[["Eigene Anwaltskosten",unterliegen+"%","~"+eur(TU.meinAnw)],R.gegner!==null&&["Gegneranwaltskosten (zu tragen)",(100-unterliegen)+"%","~"+eur(TU.gegnerAnw)],[`Gerichtskosten (${unterliegen}%)`,unterliegen+"%","~"+eur(TU.gkgMein)]].filter(Boolean),foot:[["","Effektive Kostenbelastung gesamt","~"+eur(TU.gesamt)]],showFoot:"lastPage",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:dark,textColor:[255,243,200],fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:[250,246,237]},columnStyles:{0:{cellWidth:70},1:{cellWidth:25},2:{halign:"right",cellWidth:40,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;}
-    y+=4;doc.setFillColor(...dark);doc.roundedRect(M,y,W-2*M,34,2,2,"F");
+    if(TU&&vf.isG){aH(`Teilunterliegen ${unterliegen}% – § 92 ZPO`);doc.autoTable({startY:y,margin:{left:M,right:M},head:[["Position","Anteil","Betrag"]],body:[["Eigene Anwaltskosten",unterliegen+"%","~"+eur(TU.meinAnw)],R.gegner!==null&&["Gegneranwaltskosten (zu tragen)",(100-unterliegen)+"%","~"+eur(TU.gegnerAnw)],[`Gerichtskosten (${unterliegen}%)`,unterliegen+"%","~"+eur(TU.gkgMein)]].filter(Boolean),foot:[["","Effektive Kostenbelastung gesamt","~"+eur(TU.gesamt)]],showFoot:"lastPage",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:dark,textColor:[255,243,200],fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:[250,246,237]},columnStyles:{0:{cellWidth:72},1:{cellWidth:28},2:{halign:"right",cellWidth:44,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;}
+    y+=4;doc.setFillColor(122,101,40);doc.roundedRect(M,y,W-2*M,34,2,2,"F");
     doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor(...white);doc.text("Gesamtprozesskostenrisiko",M+4,y+8);
-    doc.setDrawColor(...gold);doc.setLineWidth(.3);doc.line(M+4,y+10.5,W-M-4,y+10.5);
+    doc.setDrawColor(...white);doc.setLineWidth(.2);doc.line(M+4,y+10.5,W-M-4,y+10.5);
     const si=[R.agFee&&["Außergerichtl.",eur(R.agFee.total)],["Anwaltskosten",eur(R.total)],vf.hasGKG&&["Gerichtskosten",eur(R.gkgB)],R.gegner!==null&&["Gegner §91",eur(R.gegner)]].filter(Boolean);
     const iW=(W-2*M-8)/si.length;
-    si.forEach(([l,v],i)=>{const px=M+4+i*(iW+1);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(160,140,100);doc.text(l.toUpperCase(),px,y+16);doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(244,200,66);doc.text(v,px,y+22);});
-    doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.setTextColor(160,140,100);doc.text("GESAMT",M+4,y+30);
-    doc.setFontSize(13);doc.setTextColor(244,200,66);doc.text(eur(R.gesamt),M+25,y+30);y+=40;
+    si.forEach(([l,v],i)=>{const px=M+4+i*(iW+1);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(...cream);doc.text(l.toUpperCase(),px,y+16);doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(...white);doc.text(v,px,y+22);});
+    doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.setTextColor(...cream);doc.text("GESAMT",M+4,y+30);
+    doc.setFontSize(13);doc.setTextColor(...white);doc.text(eur(R.gesamt),M+25,y+30);y+=40;
     const pN=doc.getNumberOfPages();
-    for(let i=1;i<=pN;i++){doc.setPage(i);doc.setFillColor(...cream);doc.rect(0,280,W,17,"F");doc.setDrawColor(...bd);doc.setLineWidth(.2);doc.line(M,280.5,W-M,280.5);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(...muted);doc.text("APOS Legal · Fachanwalt Fatih Bektas · bektas@apos.legal",M,286);doc.text(`Seite ${i}/${pN}`,W-M,286,{align:"right"});doc.setFontSize(6);doc.setTextColor(...gold);doc.text("www.gekuendigt-abfindung.de · Berechnung unverbindlich gem. § 3a RVG",W/2,292,{align:"center"});}
+    for(let i=1;i<=pN;i++){doc.setPage(i);doc.setFillColor(...cream);doc.rect(0,280,W,17,"F");doc.setDrawColor(...bd);doc.setLineWidth(.2);doc.line(M,280.5,W-M,280.5);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(...muted);doc.text("APOS Legal · Fachanwalt Fatih Bektas",M,289);doc.text(`Seite ${i}/${pN}`,W-M,289,{align:"right"});doc.setFontSize(6);doc.setTextColor(...muted);doc.text("www.gekuendigt-abfindung.de · Unverbindlich gem. § 3a RVG",W/2,294,{align:"center"});}
     doc.save(`RVG_${vf.kurz}_${Math.round(sw)}EUR_${new Date().toISOString().slice(0,10)}.pdf`);
     setPdfLoading(false);
   },[R,vf,sw,yr,term,ein,mwst,anr,TU,unterliegen]);
@@ -248,8 +248,10 @@ export default function App(){
         input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:${D.gold};border-radius:50%;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);}
         textarea{resize:vertical;font-family:inherit;}
         @keyframes rvg-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-        @media(max-width:639px){.g2{grid-template-columns:1fr!important;}.rvg-tabs-desktop{display:none!important;}.rvg-tabs-mobile{display:block!important;}.rvg-pdf-btn{width:100%!important;justify-content:center!important;}}
-        @media(min-width:640px){.rvg-tabs-mobile{display:none!important;}.rvg-tabs-desktop{display:flex!important;}}
+        @media(max-width:639px){.g2{grid-template-columns:1fr!important;}}
+        .rvg-mobile-tabs{display:flex!important;}
+        .rvg-desktop-tabs{display:none!important;}
+        @media(min-width:640px){.rvg-mobile-tabs{display:none!important;}.rvg-desktop-tabs{display:flex!important;}}
       `}</style>
 
       {/* ── HERO ── */}
@@ -281,33 +283,41 @@ export default function App(){
 
       {/* ── TAB BAR + PDF ── */}
       <div style={{maxWidth:960,margin:"0 auto",padding:"48px 20px 0"}}>
-        <div style={{display:"flex",flexDirection:"column",gap:12}}>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:12}}>
-            {/* Mobile: Dropdown */}
-            <select className="rvg-tabs-mobile" value={tab} onChange={e=>setTab(e.target.value)}
-              style={{padding:"10px 14px",border:`1.5px solid ${D.border}`,borderRadius:6,background:"#FDFAF4",color:D.dark,fontSize:14,fontWeight:600,fontFamily:"inherit",flex:1,outline:"none"}}>
-              <option value="rechner">Gebührenrechner</option>
-              <option value="teil">Teilunterliegen § 92 ZPO</option>
-              <option value="honorar">Honorarvergleich</option>
-              <option value="embed">Embed-Widget</option>
-            </select>
-            {/* Desktop: Tabs */}
-            <div className="rvg-tabs-desktop" style={{gap:0,borderBottom:`2px solid ${D.border}`,flex:1}}>
-              {TABS.map(t=>(
-                <button key={t.id} onClick={()=>setTab(t.id)}
-                  style={{display:"inline-flex",alignItems:"center",gap:6,padding:"11px 16px",fontSize:13,fontWeight:tab===t.id?700:500,color:tab===t.id?D.gold:D.muted,background:"transparent",border:"none",borderBottom:tab===t.id?`3px solid ${D.gold}`:"3px solid transparent",cursor:"pointer",whiteSpace:"nowrap",fontFamily:"inherit",transition:"all .15s",letterSpacing:"0.01em",marginBottom:-2}}>
-                  <span style={{color:tab===t.id?D.gold:D.muted,display:"inline-flex",alignItems:"center"}}><Ico name={t.icon} size={13}/></span>
-                  {t.label}
-                </button>
-              ))}
-            </div>
-            {R&&(
-              <button onClick={exportPDF} disabled={pdfLoading} className="bg rvg-pdf-btn" style={{...btnG(),opacity:pdfLoading?.6:1,flexShrink:0}}>
-                {pdfLoading?<Ico name="spinner" size={15} style={{color:D.white}}/>:<Ico name="download" size={15} style={{color:D.white}}/>}
-                {pdfLoading?"Generiere…":"PDF exportieren"}
+        {/* MOBILE: Dropdown + PDF-Button untereinander */}
+        <div style={{display:"flex",flexDirection:"column",gap:8,padding:"12px 16px"}} className="rvg-mobile-tabs">
+          <select value={tab} onChange={e=>setTab(e.target.value)}
+            style={{width:"100%",padding:"10px 14px",border:`1.5px solid ${D.border}`,borderRadius:6,background:"#FDFAF4",color:D.dark,fontSize:14,fontWeight:600,fontFamily:"inherit",outline:"none"}}>
+            <option value="rechner">Gebührenrechner</option>
+            <option value="teil">Teilunterliegen § 92 ZPO</option>
+            <option value="honorar">Honorarvergleich</option>
+            <option value="embed">Embed-Widget</option>
+          </select>
+          {R&&(
+            <button onClick={exportPDF} disabled={pdfLoading}
+              style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center",gap:7,background:D.gold,color:D.white,border:"none",borderRadius:6,padding:"10px 20px",fontSize:13,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>
+              {pdfLoading?<Ico name="spinner" size={15} style={{color:D.white}}/>:<Ico name="download" size={15} style={{color:D.white}}/>}
+              {pdfLoading?"Generiere…":"PDF exportieren"}
+            </button>
+          )}
+        </div>
+        {/* DESKTOP: Tabs + PDF-Button nebeneinander */}
+        <div style={{alignItems:"center",justifyContent:"space-between"}} className="rvg-desktop-tabs">
+          <div style={{display:"flex",gap:0,overflowX:"hidden"}}>
+            {TABS.map(t=>(
+              <button key={t.id} onClick={()=>setTab(t.id)}
+                style={{display:"inline-flex",alignItems:"center",gap:6,padding:"11px 16px",fontSize:13,fontWeight:tab===t.id?700:500,color:tab===t.id?D.gold:D.muted,background:"transparent",border:"none",borderBottom:tab===t.id?`3px solid ${D.gold}`:"3px solid transparent",cursor:"pointer",whiteSpace:"nowrap",fontFamily:"inherit",transition:"all .15s",letterSpacing:"0.01em",marginBottom:-2}}>
+                <span style={{color:tab===t.id?D.gold:D.muted,display:"inline-flex",alignItems:"center"}}><Ico name={t.icon} size={13}/></span>
+                {t.label}
               </button>
-            )}
+            ))}
           </div>
+          {R&&(
+            <button onClick={exportPDF} disabled={pdfLoading} className="bg"
+              style={{display:"inline-flex",alignItems:"center",gap:7,background:D.gold,color:D.white,border:"none",borderRadius:6,padding:"7px 14px",fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit",flexShrink:0}}>
+              {pdfLoading?<Ico name="spinner" size={15} style={{color:D.white}}/>:<Ico name="download" size={15} style={{color:D.white}}/>}
+              {pdfLoading?"Generiere…":"PDF exportieren"}
+            </button>
+          )}
         </div>
       </div>
 
