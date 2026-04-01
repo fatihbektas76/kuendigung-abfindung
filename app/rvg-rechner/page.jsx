@@ -123,11 +123,11 @@ export default function App(){
   const R=useMemo(()=>sw>0?calcR(sw,vf,rvgT,gkgT,{term,ein,mwst,anr}):null,[sw,vf,rvgT,gkgT,term,ein,mwst,anr]);
 
   const TU=useMemo(()=>{
-    if(!R||!R.gesamt)return null;
+    if(!R)return null;
     const q=unterliegen/100;
     const meinAnw=R.total*q+(R.agFee?.total||0)*q;
-    const gegnerAnw=R.gegner?(R.gegner*(1-q)):0;
-    const gkgMein=R.gkgB*q;
+    const gegnerAnw=R.gegner?R.gegner*q:0;
+    const gkgMein=(R.gkgB||0)*q;
     return{q,meinAnw,gegnerAnw,gkgMein,gesamt:meinAnw+gegnerAnw+gkgMein};
   },[R,unterliegen]);
 
@@ -490,7 +490,7 @@ export default function App(){
             {!R?<div style={{textAlign:"center",color:D.muted,padding:"32px 0"}}>Bitte zuerst im Tab &bdquo;Gebührenrechner&ldquo; einen Streitwert eingeben.</div>:<>
               <div style={{marginBottom:24}}>
                 <label style={lbl}>Mein Unterliegen: <strong style={{color:D.gold,fontSize:16,textTransform:"none",letterSpacing:0}}>{unterliegen} %</strong></label>
-                <input type="range" min={0} max={100} step={5} value={unterliegen} onChange={e=>setUnterliegen(+e.target.value)} style={{width:"100%",marginBottom:6}}/>
+                <input type="range" min={0} max={100} step={5} value={unterliegen} onChange={e=>setUnterliegen(Number(e.target.value))} style={{width:"100%",marginBottom:6}}/>
                 <div style={{display:"flex",justifyContent:"space-between",fontSize:10,color:D.muted}}>
                   <span>0% – Volles Obsiegen</span><span>50% – Halb/halb</span><span>100% – Volles Unterliegen</span>
                 </div>
@@ -505,7 +505,7 @@ export default function App(){
                   <tbody>
                     <tr className="rh"><td style={td()}>Eigene Anwaltskosten</td><td style={td(true,true)}>{eur(R.total)}</td><td style={{...td(true,true),color:D.amber,fontWeight:700}}>~{eur(R.total*unterliegen/100)}</td><td style={td(true,true)}>—</td></tr>
                     {R.agFee&&<tr className="rh"><td style={td()}>Außergerichtl. Anwaltskosten</td><td style={td(true,true)}>{eur(R.agFee.total)}</td><td style={{...td(true,true),color:D.amber,fontWeight:700}}>~{eur(R.agFee.total*unterliegen/100)}</td><td style={td(true,true)}>—</td></tr>}
-                    {R.gegner!==null&&<tr className="rh"><td style={td()}>Gegneranwaltskosten (zu tragen)</td><td style={td(true,true)}>{eur(R.gegner)}</td><td style={{...td(true,true),color:D.amber,fontWeight:700}}>~{eur(R.gegner*(100-unterliegen)/100)}</td><td style={td(true,true)}>~{eur(R.gegner*unterliegen/100)}</td></tr>}
+                    {R.gegner!==null&&<tr className="rh"><td style={td()}>Gegneranwaltskosten (zu tragen)</td><td style={td(true,true)}>{eur(R.gegner)}</td><td style={{...td(true,true),color:D.amber,fontWeight:700}}>~{eur(R.gegner*unterliegen/100)}</td><td style={td(true,true)}>~{eur(R.gegner*(100-unterliegen)/100)}</td></tr>}
                     {vf.hasGKG&&<tr className="rh"><td style={td()}>Gerichtskosten</td><td style={td(true,true)}>{eur(R.gkgB)}</td><td style={{...td(true,true),color:D.amber,fontWeight:700}}>~{eur(R.gkgB*unterliegen/100)}</td><td style={td(true,true)}>~{eur(R.gkgB*(100-unterliegen)/100)}</td></tr>}
                     <tr style={{background:D.dark}}><td style={{padding:"11px 12px",color:D.white,fontWeight:700}}>Effektive Gesamtbelastung bei {unterliegen}% Unterliegen</td><td style={{padding:"11px 12px",textAlign:"right",fontFamily:"'IBM Plex Mono',monospace",color:"#8B7B5A"}}>{eur(R.gesamt)}</td><td style={{padding:"11px 12px",textAlign:"right",fontFamily:"'IBM Plex Mono',monospace",fontWeight:700,fontSize:15,color:"#FFF3CC"}}>~{eur(TU?.gesamt)}</td><td style={{padding:"11px 12px",textAlign:"right",color:"#8B7B5A"}}>—</td></tr>
                   </tbody>
