@@ -51,13 +51,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const result = lookupOrt(params.stadt);
   if (!result) return {};
-  const { ort, content } = result;
+  const { ort, content, isGemeinde } = result;
   const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}/`;
 
   return {
     title: `Fachanwalt Arbeitsrecht ${ort.name} | APOS Legal`,
     description: content?.metaDescription ??
       `Kündigung erhalten in ${ort.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${ort.arbeitsgericht}. Kostenlose Ersteinschätzung.`,
+    ...(isGemeinde ? { robots: { index: false, follow: true } } : {}),
     alternates: { canonical: url },
     other: {
       "geo.region": `DE-${ort.bundesland === "Berlin" ? "BE" : ort.bundesland === "Hamburg" ? "HH" : ort.bundesland === "Bremen" ? "HB" : ort.bundesland === "Bayern" ? "BY" : ort.bundesland === "Baden-Württemberg" ? "BW" : ort.bundesland === "Hessen" ? "HE" : ort.bundesland === "Nordrhein-Westfalen" ? "NW" : ort.bundesland === "Niedersachsen" ? "NI" : ort.bundesland === "Sachsen" ? "SN" : ort.bundesland === "Sachsen-Anhalt" ? "ST" : ort.bundesland === "Schleswig-Holstein" ? "SH" : ort.bundesland === "Rheinland-Pfalz" ? "RP" : ort.bundesland === "Thüringen" ? "TH" : ort.bundesland === "Mecklenburg-Vorpommern" ? "MV" : "DE"}`,

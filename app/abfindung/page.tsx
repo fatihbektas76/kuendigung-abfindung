@@ -4,7 +4,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
-import { entries } from '@/lib/betriebszugehoerigkeit';
+import { activeEntries } from '@/lib/betriebszugehoerigkeit';
 import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
@@ -217,7 +217,7 @@ export default function AbfindungPage() {
             Abfindung nach Jahren im Betrieb
           </h2>
           <div className="flex flex-wrap gap-3">
-            {entries.map((e) => (
+            {activeEntries.map((e) => (
               <Link
                 key={e.year}
                 href={`/abfindung-nach-${e.slug}-betriebszugehoerigkeit/`}

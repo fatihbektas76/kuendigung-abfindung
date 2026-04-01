@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { entries } from '@/lib/betriebszugehoerigkeit';
+import { activeEntries } from '@/lib/betriebszugehoerigkeit';
 import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
@@ -245,7 +245,7 @@ export default function FristloseKuendigungPage() {
             Kündigung wirksam ist und welche Abfindung möglich ist.
           </p>
           <div className="flex flex-wrap gap-2.5">
-            {entries.map((e) => (
+            {activeEntries.map((e) => (
               <Link
                 key={e.year}
                 href={`/fristlose-kuendigung-nach-${e.slug}-betriebszugehoerigkeit/`}
