@@ -147,7 +147,13 @@ export default function App(){
     const{jsPDF}=window.jspdf;
     const doc=new jsPDF({orientation:"portrait",unit:"mm",format:"a4"});
     const W=210,M=18;let y=0;
-    const gold=[122,101,40],cream=[240,234,217],dark=[122,101,40],muted=[107,99,86],white=[255,255,255],bd=[221,213,192];
+    const gold=[122,101,40];       // #7A6528 – nur für Abschnitts-Header-Balken
+    const cream=[240,234,217];     // #F0EAD9 – Creme für Hintergründe
+    const warmWhite=[253,250,245]; // #FDFAF5 – warmes Weiß für Cards
+    const dark=[44,40,32];         // #2C2820 – nur für Texte, NICHT als Hintergrund
+    const muted=[107,99,86];       // #6B6356 – für Labels und Footer-Text
+    const white=[255,255,255];
+    const bd=[221,213,192];        // #DDD5C0 – Rahmenfarben
     doc.setFillColor(...gold);doc.rect(0,0,W,30,"F");
     doc.setFont("helvetica","bold");doc.setFontSize(18);doc.setTextColor(...white);doc.text("RVG Gebührenrechner",M,13);
     doc.setFont("helvetica","normal");doc.setFontSize(8.5);doc.setTextColor(200,185,145);
@@ -160,7 +166,7 @@ export default function App(){
     ps.forEach(([a,b],i)=>{doc.setFont("helvetica","normal");doc.setFontSize(8.5);doc.setTextColor(...dark);doc.text(a,M+4,y+12+i*4);doc.text(b,M+90,y+12+i*4);});
     y+=28;
     const aH=t=>{y+=3;doc.setFillColor(...gold);doc.rect(M,y,W-2*M,7,"F");doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(...white);doc.text(t,M+3,y+4.8);y+=9;};
-    const aT=(h,r,ft=null)=>{doc.autoTable({startY:y,margin:{left:M,right:M},head:[h],body:r,foot:ft?[ft]:[],showFoot:ft?"lastPage":"never",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:dark,textColor:[255,243,200],fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:[250,246,237]},columnStyles:{0:{cellWidth:34},2:{halign:"right",cellWidth:14},3:{halign:"right",cellWidth:28,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;};
+    const aT=(h,r,ft=null)=>{doc.autoTable({startY:y,margin:{left:M,right:M},head:[h],body:r,foot:ft?[ft]:[],showFoot:ft?"lastPage":"never",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:cream,textColor:gold,fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:warmWhite},columnStyles:{0:{cellWidth:34},2:{halign:"right",cellWidth:14},3:{halign:"right",cellWidth:28,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;};
     if(R.agFee){aH("Ang. 1: Außergerichtliche Tätigkeit (§ 15 RVG)");aT(["Rechtsgrundlage","Position","Satz","Betrag"],[["Nr. 2300 VV RVG","Geschäftsgebühr","1,3",eur(R.agFee.betrag)],["Nr. 7002 VV RVG","Auslagenpauschale (20%, max. 20€)","—",eur(R.agFee.ausl)],...(mwst?[["Nr. 7008 VV RVG","Umsatzsteuer 19%","19%",eur(R.agFee.mwstB)]]:[])]  ,["","Außergerichtl. Angelegenheit gesamt","",eur(R.agFee.total)]);}
     aH((R.agFee?"Ang. 2: ":"")+"Anwaltsgebühren – "+vf.kurz);
     const fr=R.items.map(it=>[it.nr,it.lbl,it.f>0?it.f.toFixed(1):it.f.toFixed(2),eur(it.b)]);
@@ -170,15 +176,15 @@ export default function App(){
     if(vf.note){doc.setFontSize(7.5);doc.setTextColor(100,70,0);doc.setFont("helvetica","italic");doc.text("Hinweis: "+vf.note,M,y+3,{maxWidth:W-2*M});y+=10;}
     if(vf.hasGKG){aH("Gerichtskosten (GKG)");aT(["Rechtsgrundlage","Position","Satz","Betrag"],[["Anlage 1 GKG",R.gkgL,R.gkgF.toFixed(1),eur(R.gkgB)]],["","Gerichtskosten gesamt","",eur(R.gkgB)]);}
     if(R.gegner!==null){aH("Gegnerische Anwaltskosten (§ 91 ZPO)");aT(["Rechtsgrundlage","Position","Satz","Betrag"],[["RVG","Verfahrens-/Terminsgebühr"+(mwst?" inkl. MwSt.":""),"—",eur(R.gegner)]],["","Gegnerische Kosten gesamt (geschätzt)","",eur(R.gegner)]);}
-    if(TU&&vf.isG){aH(`Teilunterliegen ${unterliegen}% – § 92 ZPO`);doc.autoTable({startY:y,margin:{left:M,right:M},head:[["Position","Anteil","Betrag"]],body:[["Eigene Anwaltskosten",unterliegen+"%","~"+eur(TU.meinAnw)],R.gegner!==null&&["Gegneranwaltskosten (zu tragen)",(100-unterliegen)+"%","~"+eur(TU.gegnerAnw)],[`Gerichtskosten (${unterliegen}%)`,unterliegen+"%","~"+eur(TU.gkgMein)]].filter(Boolean),foot:[["","Effektive Kostenbelastung gesamt","~"+eur(TU.gesamt)]],showFoot:"lastPage",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:dark,textColor:[255,243,200],fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:[250,246,237]},columnStyles:{0:{cellWidth:72},1:{cellWidth:28},2:{halign:"right",cellWidth:44,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;}
-    y+=4;doc.setFillColor(122,101,40);doc.roundedRect(M,y,W-2*M,34,2,2,"F");
-    doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor(...white);doc.text("Gesamtprozesskostenrisiko",M+4,y+8);
-    doc.setDrawColor(...white);doc.setLineWidth(.2);doc.line(M+4,y+10.5,W-M-4,y+10.5);
+    if(TU&&vf.isG){aH(`Teilunterliegen ${unterliegen}% – § 92 ZPO`);doc.autoTable({startY:y,margin:{left:M,right:M},head:[["Position","Anteil","Betrag"]],body:[["Eigene Anwaltskosten",unterliegen+"%","~"+eur(TU.meinAnw)],R.gegner!==null&&["Gegneranwaltskosten (zu tragen)",(100-unterliegen)+"%","~"+eur(TU.gegnerAnw)],[`Gerichtskosten (${unterliegen}%)`,unterliegen+"%","~"+eur(TU.gkgMein)]].filter(Boolean),foot:[["","Effektive Kostenbelastung gesamt","~"+eur(TU.gesamt)]],showFoot:"lastPage",theme:"plain",headStyles:{fillColor:cream,textColor:muted,fontSize:7,fontStyle:"bold",cellPadding:{top:2,bottom:2,left:3,right:3},lineWidth:.15,lineColor:bd},bodyStyles:{fontSize:8,cellPadding:{top:2.5,bottom:2.5,left:3,right:3},lineWidth:.1,lineColor:bd,textColor:dark},footStyles:{fillColor:cream,textColor:gold,fontStyle:"bold",fontSize:9,cellPadding:{top:3,bottom:3,left:3,right:3}},alternateRowStyles:{fillColor:warmWhite},columnStyles:{0:{cellWidth:72},1:{cellWidth:28},2:{halign:"right",cellWidth:44,fontStyle:"bold"}}});y=doc.lastAutoTable.finalY+2;}
+    y+=4;doc.setFillColor(...cream);doc.roundedRect(M,y,W-2*M,34,2,2,"F");doc.setDrawColor(...bd);doc.setLineWidth(.3);doc.roundedRect(M,y,W-2*M,34,2,2,"S");
+    doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor(...dark);doc.text("Gesamtprozesskostenrisiko",M+4,y+8);
+    doc.setDrawColor(...bd);doc.setLineWidth(.2);doc.line(M+4,y+10.5,W-M-4,y+10.5);
     const si=[R.agFee&&["Außergerichtl.",eur(R.agFee.total)],["Anwaltskosten",eur(R.total)],vf.hasGKG&&["Gerichtskosten",eur(R.gkgB)],R.gegner!==null&&["Gegner §91",eur(R.gegner)]].filter(Boolean);
     const iW=(W-2*M-8)/si.length;
-    si.forEach(([l,v],i)=>{const px=M+4+i*(iW+1);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(...cream);doc.text(l.toUpperCase(),px,y+16);doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(...white);doc.text(v,px,y+22);});
-    doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.setTextColor(...cream);doc.text("GESAMT",M+4,y+30);
-    doc.setFontSize(13);doc.setTextColor(...white);doc.text(eur(R.gesamt),M+25,y+30);y+=40;
+    si.forEach(([l,v],i)=>{const px=M+4+i*(iW+1);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(...muted);doc.text(l.toUpperCase(),px,y+16);doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(...gold);doc.text(v,px,y+22);});
+    doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.setTextColor(...muted);doc.text("GESAMT",M+4,y+30);
+    doc.setFontSize(13);doc.setTextColor(...gold);doc.text(eur(R.gesamt),M+25,y+30);y+=40;
     const pN=doc.getNumberOfPages();
     for(let i=1;i<=pN;i++){doc.setPage(i);doc.setFillColor(...cream);doc.rect(0,280,W,17,"F");doc.setDrawColor(...bd);doc.setLineWidth(.2);doc.line(M,280.5,W-M,280.5);doc.setFont("helvetica","normal");doc.setFontSize(6.5);doc.setTextColor(...muted);doc.text("APOS Legal · Fachanwalt Fatih Bektas",M,289);doc.text(`Seite ${i}/${pN}`,W-M,289,{align:"right"});doc.setFontSize(6);doc.setTextColor(...muted);doc.text("www.gekuendigt-abfindung.de · Unverbindlich gem. § 3a RVG",W/2,294,{align:"center"});}
     doc.save(`RVG_${vf.kurz}_${Math.round(sw)}EUR_${new Date().toISOString().slice(0,10)}.pdf`);
