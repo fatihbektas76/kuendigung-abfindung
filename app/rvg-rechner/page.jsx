@@ -5,7 +5,7 @@ const D = {
   cream:"#F0EAD9",creamD:"#E4DCC8",gold:"#7A6528",goldH:"#5E4D1E",goldBg:"#FAF6ED",
   white:"#FFFFFF",dark:"#1A1714",text:"#2C2820",muted:"#6B6356",
   border:"#DDD5C0",borderL:"#EDE6D4",shadow:"rgba(26,23,20,0.08)",
-  amber:"#D97706",amberBg:"#FFFBEB",green:"#16A34A",
+  amber:"#D97706",amberBg:"#FFFBEB",green:"#16A34A",red:"#DC2626",
 };
 
 // ─── SVG ICON SYSTEM ────────────────────────────────────────────
@@ -30,6 +30,7 @@ const Ico = ({ name, size=16, style={} }) => {
   if (name==="sliders")  return <svg {...p}><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>;
   if (name==="spinner")  return <svg {...p} strokeWidth="2" style={{...p.style, animation:"rvg-spin 0.8s linear infinite"}}><circle cx="12" cy="12" r="10" strokeOpacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>;
   if (name==="arrow")    return <svg {...p} strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>;
+  if (name==="chart")    return <svg {...p}><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>;
   return null;
 };
 
@@ -88,6 +89,7 @@ const TABS=[
   {id:"rechner", icon:"scales",  label:"Gebührenrechner"},
   {id:"teil",    icon:"percent", label:"Teilunterliegen"},
   {id:"honorar", icon:"clock",   label:"Honorarvergleich"},
+  {id:"breakeven",icon:"chart",   label:"Lohnt sich die Klage?"},
   {id:"embed",   icon:"link",    label:"Embed-Widget"},
 ];
 
@@ -103,6 +105,8 @@ export default function App(){
   const[unterliegen,setUnterliegen]=useState(50);
   const[stunden,setStunden]=useState("10");
   const[stundensatz,setStundensatz]=useState("250");
+  const[gewinn,setGewinn]=useState(60);
+  const[rawVergleich,setRawVergleich]=useState("");
   const[pdfLoading,setPdfLoading]=useState(false);
   const[copied,setCopied]=useState(false);
 
@@ -137,6 +141,21 @@ export default function App(){
     const st=h*s*(mwst?1.19:1);
     return{st,rvg:R.total,diff:st-R.total,rvgBesser:st>R.total};
   },[R,stunden,stundensatz,mwst]);
+
+  const BE=useMemo(()=>{
+    if(!R||!sw)return null;
+    const q=gewinn/100;
+    const vergleich=pSW(rawVergleich);
+    const risikoVerlust=R.total+(R.agFee?.total||0)+(R.gkgB||0);
+    const kostenSieg=R.total+(R.agFee?.total||0);
+    const erwartungsBrutto=sw*q;
+    const erwartungsKosten=risikoVerlust*(1-q)+kostenSieg*q;
+    const erwartungsNetto=erwartungsBrutto-erwartungsKosten;
+    const breakEvenVergleich=erwartungsNetto;
+    const klageSinnvoll=vergleich>0?vergleich<breakEvenVergleich:null;
+    const vorteilKlage=vergleich>0?breakEvenVergleich-vergleich:null;
+    return{q,sw,vergleich,risikoVerlust,kostenSieg,erwartungsBrutto,erwartungsKosten,erwartungsNetto,breakEvenVergleich,klageSinnvoll,vorteilKlage};
+  },[R,sw,vf,gewinn,rawVergleich]);
 
 
   const exportPDF=useCallback(async()=>{
@@ -296,6 +315,7 @@ export default function App(){
             <option value="rechner">Gebührenrechner</option>
             <option value="teil">Teilunterliegen § 92 ZPO</option>
             <option value="honorar">Honorarvergleich</option>
+            <option value="breakeven">Lohnt sich die Klage?</option>
             <option value="embed">Embed-Widget</option>
           </select>
           {R&&(
@@ -573,6 +593,124 @@ export default function App(){
         </div>
       </div>}
 
+
+      {/* ═══ TAB: BREAK-EVEN ANALYSE ═══ */}
+      {tab==="breakeven"&&<div style={{marginTop:24}}>
+        {!R?<div style={{...card(),padding:"48px 20px",textAlign:"center",color:D.muted}}>
+          <div style={{color:D.gold,marginBottom:12,display:"flex",justifyContent:"center"}}><Ico name="chart" size={40}/></div>
+          <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,color:D.dark,marginBottom:5}}>Zuerst Streitwert eingeben</div>
+          <div style={{fontSize:13}}>Gehe zum Tab &bdquo;Gebührenrechner&ldquo; und gib deinen Streitwert ein.</div>
+        </div>:(<>
+          {/* Eingaben */}
+          <div style={card()}>
+            <div style={cH}><span style={sT}><GoldIco name="chart"/> Break-even Analyse</span><span style={{fontSize:11,color:D.muted}}>Lohnt sich die Klage vs. Vergleich?</span></div>
+            <div style={{padding:"20px 20px 16px"}}>
+              <div style={{padding:"12px 16px",background:D.cream,borderRadius:8,border:`1px solid ${D.border}`,fontSize:13,color:D.muted,marginBottom:20,lineHeight:1.7}}>
+                Dieser Rechner berechnet den <strong style={{color:D.text}}>wirtschaftlichen Erwartungswert</strong> einer Klage und vergleicht ihn mit einem vorliegenden Vergleichsangebot. Grundlage ist die Entscheidungstheorie: Erwartungswert = Gewinnchance × Streitwert minus erwartete Prozesskosten.
+              </div>
+              <div className="g2" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:16}}>
+                <div>
+                  <label style={lbl}>Geschätzte Gewinnwahrscheinlichkeit: <strong style={{color:D.gold,fontSize:16,textTransform:"none",letterSpacing:0,marginLeft:6}}>{gewinn} %</strong></label>
+                  <input type="range" min={5} max={95} step={5} value={gewinn} onChange={e=>setGewinn(Number(e.target.value))} style={{width:"100%",marginBottom:6}}/>
+                  <div style={{display:"flex",justifyContent:"space-between",fontSize:10,color:D.muted}}>
+                    <span>5% – Kaum Chancen</span><span>50% – Offen</span><span>95% – Sehr stark</span>
+                  </div>
+                  <div style={{marginTop:8,fontSize:11,color:D.muted}}>Orientierung: Fachanwalt einschätzen lassen →{" "}<a href="/kuendigung-pruefen" style={{color:D.gold,fontWeight:600}}>Kostenlose Ersteinschätzung</a></div>
+                </div>
+                <div>
+                  <label style={lbl}>Vergleichsangebot des Arbeitgebers (optional)</label>
+                  <div style={{position:"relative"}}>
+                    <input type="text" inputMode="decimal" value={rawVergleich} onChange={e=>setRawVergleich(e.target.value.replace(/[^\d,.]/g,""))} placeholder="z. B. 8.000" style={inp}/>
+                    <span style={{position:"absolute",right:12,top:"50%",transform:"translateY(-50%)",color:D.muted,fontWeight:700}}>&euro;</span>
+                  </div>
+                  <div style={{fontSize:11,color:D.muted,marginTop:4}}>Liegt ein konkretes Angebot vor? Dann kann der Rechner eine klare Empfehlung geben.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Ergebnis */}
+          {BE&&<>
+            <div style={{...card(),marginTop:16}}>
+              <div style={cH}><span style={sT}>Ergebnis der Analyse</span></div>
+              <div style={{padding:"20px"}}>
+                <div className="g2" style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:12,marginBottom:20}}>
+                  {[
+                    {label:"Erwarteter Brutto-Gewinn",value:eur(BE.erwartungsBrutto),sub:`${gewinn}% × ${eur(sw)} Streitwert`,color:D.gold},
+                    {label:"Erwartete Prozesskosten",value:eur(BE.erwartungsKosten),sub:"Gewichtetes Kostenrisiko",color:D.amber},
+                    {label:"Erwartungswert der Klage (netto)",value:eur(BE.erwartungsNetto),sub:"Brutto-Gewinn minus Kosten",color:BE.erwartungsNetto>0?D.green:D.red,big:true},
+                    {label:"Break-even Vergleichsbetrag",value:eur(BE.breakEvenVergleich),sub:"Unter diesem Wert: Klage lohnt sich",color:D.gold,big:true},
+                  ].map(({label,value,sub,color,big},i)=>(
+                    <div key={i} style={{background:D.cream,borderRadius:8,border:`1px solid ${D.border}`,padding:"16px"}}>
+                      <div style={{fontSize:10,color:D.muted,letterSpacing:".08em",textTransform:"uppercase",marginBottom:6}}>{label}</div>
+                      <div style={{fontFamily:"'IBM Plex Mono',monospace",fontWeight:700,fontSize:big?20:16,color}}>{value}</div>
+                      <div style={{fontSize:11,color:D.muted,marginTop:4}}>{sub}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Visualisierung */}
+                <div style={{marginBottom:16}}>
+                  <div style={{display:"flex",justifyContent:"space-between",fontSize:11,color:D.muted,marginBottom:4}}>
+                    <span>Kostenrisiko bei Verlust</span><span>Erwarteter Nettogewinn</span>
+                  </div>
+                  <div style={{height:8,borderRadius:4,overflow:"hidden",background:D.creamD,display:"flex"}}>
+                    <div style={{width:`${Math.min((BE.risikoVerlust/(BE.risikoVerlust+Math.max(BE.erwartungsNetto,0)))*100,100)}%`,background:D.amber,transition:"width .4s"}}/>
+                    <div style={{flex:1,background:BE.erwartungsNetto>0?D.green:D.red}}/>
+                  </div>
+                </div>
+
+                {/* Detailtabelle */}
+                <div style={{overflowX:"auto"}}>
+                  <table style={{width:"100%",borderCollapse:"collapse"}}>
+                    <thead><tr>{["Szenario","Wahrscheinlichkeit","Bruttogewinn","Ihre Kosten","Netto"].map((h,i)=><th key={h} style={th(i>=2)}>{h}</th>)}</tr></thead>
+                    <tbody>
+                      <tr className="rh"><td style={td()}><strong style={{color:D.green}}>Obsiegen</strong></td><td style={td(false,true)}>{gewinn} %</td><td style={td(true,true)}>{eur(sw)}</td><td style={{...td(true,true),color:D.amber}}>{eur(BE.kostenSieg)}</td><td style={{...td(true,true,false,true),color:D.green}}>{eur(sw-BE.kostenSieg)}</td></tr>
+                      <tr className="rh"><td style={td()}><strong style={{color:D.red}}>Unterliegen</strong></td><td style={td(false,true)}>{100-gewinn} %</td><td style={td(true,true)}>0,00 &euro;</td><td style={{...td(true,true),color:D.red}}>{eur(BE.risikoVerlust)}</td><td style={{...td(true,true,false,true),color:D.red}}>&minus;{eur(BE.risikoVerlust)}</td></tr>
+                      <tr style={{background:D.cream}}><td colSpan={4} style={{padding:"11px 12px",fontWeight:700,color:D.dark,fontSize:14}}>Erwartungswert gesamt</td><td style={{padding:"11px 12px",textAlign:"right",fontFamily:"'IBM Plex Mono',monospace",fontWeight:700,fontSize:16,color:BE.erwartungsNetto>0?D.green:D.red}}>{BE.erwartungsNetto>=0?"+":""}{eur(BE.erwartungsNetto)}</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Empfehlung bei Vergleichsangebot */}
+            {BE.vergleich>0&&BE.klageSinnvoll!==null&&(
+              <div style={{...card(),marginTop:16,borderLeft:`5px solid ${BE.klageSinnvoll?D.green:D.amber}`}}>
+                <div style={{padding:"20px 24px"}}>
+                  <div style={{display:"flex",alignItems:"flex-start",gap:14}}>
+                    <div style={{width:44,height:44,borderRadius:"50%",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center",background:BE.klageSinnvoll?"#F0FDF4":D.amberBg}}>
+                      <Ico name={BE.klageSinnvoll?"check":"info"} size={20} style={{color:BE.klageSinnvoll?D.green:D.amber}}/>
+                    </div>
+                    <div>
+                      <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:18,fontWeight:700,color:BE.klageSinnvoll?"#166534":"#92400E",marginBottom:6}}>
+                        {BE.klageSinnvoll?"Klage ist wirtschaftlich sinnvoller":"Vergleich könnte die bessere Wahl sein"}
+                      </div>
+                      <div style={{fontSize:13,color:D.text,lineHeight:1.7}}>
+                        {BE.klageSinnvoll?<>Der Erwartungswert der Klage beträgt <strong>{eur(BE.erwartungsNetto)}</strong>. Das vorliegende Vergleichsangebot von <strong>{eur(BE.vergleich)}</strong> liegt um <strong style={{color:D.green}}>{eur(BE.vorteilKlage)}</strong> darunter. Bei einer Gewinnwahrscheinlichkeit von {gewinn}% ist die Klage wirtschaftlich vorteilhafter.</>:<>Der Erwartungswert der Klage beträgt <strong>{eur(BE.erwartungsNetto)}</strong>. Das Vergleichsangebot von <strong>{eur(BE.vergleich)}</strong> liegt <strong style={{color:D.amber}}>{eur(Math.abs(BE.vorteilKlage))} darüber</strong>. Bei dieser Gewinnwahrscheinlichkeit ist der Vergleich wirtschaftlich günstiger — es sei denn, es gibt andere als finanzielle Gründe für eine Klage.</>}
+                      </div>
+                      <div style={{marginTop:12,padding:"10px 14px",background:D.cream,borderRadius:6,fontSize:12,color:D.muted}}>
+                        <strong style={{color:D.text}}>Wichtig:</strong> Diese Analyse basiert auf dem eingegebenen Streitwert und der geschätzten Gewinnwahrscheinlichkeit. Für eine präzise Einschätzung Ihrer konkreten Chancen empfehlen wir die <a href="/kuendigung-pruefen" style={{color:D.gold,fontWeight:600}}>kostenlose Ersteinschätzung</a>.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* CTA wenn kein Vergleichsangebot */}
+            {!BE.vergleich&&(
+              <div style={{background:D.cream,borderRadius:8,border:`1px solid ${D.border}`,padding:"24px",marginTop:16,display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:16}}>
+                <div>
+                  <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:17,color:D.dark,fontWeight:700,marginBottom:4}}>Liegt ein Vergleichsangebot vor?</div>
+                  <div style={{fontSize:13,color:D.muted}}>Gib den Betrag oben ein — dann berechnen wir ob die Klage oder der Vergleich wirtschaftlich besser ist.</div>
+                </div>
+                <a href="/kuendigung-pruefen" style={{display:"inline-flex",alignItems:"center",gap:6,background:D.gold,color:D.white,textDecoration:"none",borderRadius:6,padding:"10px 20px",fontSize:13,fontWeight:700}}>Kostenlose Ersteinschätzung <Ico name="arrow" size={14} style={{color:D.white}}/></a>
+              </div>
+            )}
+          </>}
+        </>)}
+      </div>}
 
       {/* ═══ TAB: EMBED WIDGET ═══ */}
       {tab==="embed"&&<div style={{marginTop:24}}>
