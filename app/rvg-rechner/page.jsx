@@ -195,7 +195,7 @@ export default function App(){
 <div style="border:1px solid #DDD5C0;border-radius:8px;overflow:hidden;font-family:system-ui,sans-serif;max-width:480px;box-shadow:0 2px 12px rgba(0,0,0,.07);">
   <div style="background:${wHdr};padding:14px 18px;">
     <div style="font-size:10px;letter-spacing:.1em;color:${wHdrTxt};opacity:0.7;margin-bottom:3px;text-transform:uppercase;">Kostenloser Gebührenrechner</div>
-    <div style="font-size:17px;font-weight:700;color:${wHdrTxt};">RVG Prozesskostenrechner 2025</div>
+    <div style="font-size:17px;font-weight:700;color:${wHdrTxt};">RVG Prozesskostenrechner 2026</div>
   </div>
   <div style="padding:16px 18px;background:${wBody};">
     <p style="margin:0 0 6px;font-size:13px;color:${wBodyTxt};line-height:1.6;">
@@ -271,7 +271,7 @@ export default function App(){
             </span>
           </div>
           <h1 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:"clamp(2.1rem, 4.5vw, 3.2rem)",fontWeight:800,lineHeight:1.15,marginTop:18,marginBottom:22,letterSpacing:"-0.02em",color:"#1A1A1A"}}>
-            RVG Rechner 2025
+            RVG Rechner 2026
           </h1>
           <p style={{fontSize:"1.12rem",color:"#555555",maxWidth:620,margin:"0 auto 24px",lineHeight:1.65}}>
             Anwaltskosten &amp; Gerichtskosten kostenlos berechnen – nach dem Rechtsanwaltsvergütungsgesetz in der Fassung des KostBRÄG 2025 (ab 01.06.2025). Für Arbeitsrecht, Zivilrecht und alle Instanzen.
@@ -650,7 +650,7 @@ export default function App(){
               <div style={{border:`1px solid ${D.border}`,borderRadius:8,overflow:"hidden",maxWidth:480,fontFamily:"system-ui,sans-serif",boxShadow:`0 2px 12px ${D.shadow}`}}>
                 <div style={{background:wHdr,padding:"14px 18px"}}>
                   <div style={{fontSize:10,letterSpacing:".1em",color:wHdrTxt,opacity:.7,marginBottom:3,textTransform:"uppercase"}}>Kostenloser Gebührenrechner</div>
-                  <div style={{fontSize:17,fontWeight:700,color:wHdrTxt}}>RVG Prozesskostenrechner 2025</div>
+                  <div style={{fontSize:17,fontWeight:700,color:wHdrTxt}}>RVG Prozesskostenrechner 2026</div>
                 </div>
                 <div style={{padding:"16px 18px",background:wBody}}>
                   <p style={{margin:"0 0 6px",fontSize:13,color:wBodyTxt,lineHeight:1.6}}>Berechnen Sie Anwalts- &amp; Gerichtskosten nach <strong>RVG 2025 (KostBRÄG 2025)</strong>. Inkl. gegnerischer Kosten, Teilunterliegen &amp; Gesamtprozesskostenrisiko.</p>
