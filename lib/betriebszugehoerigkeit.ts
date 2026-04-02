@@ -64,9 +64,6 @@ export const entries: BetriebsEntry[] = raw.map((e) => ({
   kuendigungsfrist: getFrist(e.year),
 }));
 
-/** Jahre 1-20: Aktive Seiten für Sitemap, generateStaticParams, Hub-Links */
-export const activeEntries: BetriebsEntry[] = entries.filter((e) => e.year <= 20);
-
 export function getEntry(slug: string): BetriebsEntry | undefined {
   return entries.find((e) => e.slug === slug);
 }

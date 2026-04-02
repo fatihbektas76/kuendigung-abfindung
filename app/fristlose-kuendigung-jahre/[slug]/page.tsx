@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { activeEntries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
+import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
 import FristlosContent from './content';
 import fristloseData from '@/data/generated/fristlose-data.json';
 import SeoGeoBase from '@/components/SeoGeoBase';
@@ -11,7 +11,7 @@ export const revalidate = 86400;
 type Props = { params: { slug: string } };
 
 export function generateStaticParams() {
-  return activeEntries.map((e) => ({ slug: e.slug }));
+  return entries.map((e) => ({ slug: e.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -50,8 +50,8 @@ export default function Page({ params }: Props) {
   };
   if (!yearData) notFound();
 
-  const prev = activeEntries.find((e) => e.year === entry.year - 1);
-  const next = activeEntries.find((e) => e.year === entry.year + 1);
+  const prev = entries.find((e) => e.year === entry.year - 1);
+  const next = entries.find((e) => e.year === entry.year + 1);
 
   const yl = yearLabel(entry.year);
   const pageUrl = `${SEO_CONFIG.baseUrl}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`;

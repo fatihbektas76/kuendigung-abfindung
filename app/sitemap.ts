@@ -1,10 +1,12 @@
 import type { MetadataRoute } from 'next';
-import { activeEntries } from '@/lib/betriebszugehoerigkeit';
+import { entries } from '@/lib/betriebszugehoerigkeit';
 import { abmahnungEntries } from '@/lib/abmahnung-content';
 import { lebenssituationData } from '@/lib/lebenssituation-data';
 import { aufhebungsvertragData } from '@/lib/aufhebungsvertrag-data';
 import { musterPages } from '@/lib/muster-data';
 import { staedte } from '@/data/staedte';
+import { gemeinden } from '@/data/gemeinden';
+import { berlinBezirke } from '@/data/bezirke';
 import { urteile } from '@/lib/urteile';
 
 export const revalidate = 3600;
@@ -53,14 +55,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/team/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.5 },
   ];
 
-  const clusterAPages: MetadataRoute.Sitemap = activeEntries.map((e) => ({
+  const clusterAPages: MetadataRoute.Sitemap = entries.map((e) => ({
     url: `${BASE_URL}/abfindung-nach-${e.slug}-betriebszugehoerigkeit/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
-  const clusterDPages: MetadataRoute.Sitemap = activeEntries.map((e) => ({
+  const clusterDPages: MetadataRoute.Sitemap = entries.map((e) => ({
     url: `${BASE_URL}/gekuendigt-nach-${e.slug}-betriebszugehoerigkeit/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
@@ -95,7 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 0.9,
     },
-    ...activeEntries.map((e) => ({
+    ...entries.map((e) => ({
       url: `${BASE_URL}/fristlose-kuendigung-nach-${e.slug}-betriebszugehoerigkeit/`,
       lastModified: monthly as Date,
       changeFrequency: 'weekly' as const,
@@ -122,6 +124,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: monthly as Date,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
+    })),
+    ...gemeinden.map((ort) => ({
+      url: `${BASE_URL}/arbeitsrecht-anwalt/${ort.slug}/`,
+      lastModified: monthly as Date,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    })),
+    ...berlinBezirke.map((b) => ({
+      url: `${BASE_URL}/arbeitsrecht-anwalt/${b.slug}/`,
+      lastModified: monthly as Date,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
     })),
   ];
 

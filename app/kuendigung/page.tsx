@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { activeEntries } from '@/lib/betriebszugehoerigkeit';
+import { entries } from '@/lib/betriebszugehoerigkeit';
 import { lebenssituationData } from '@/lib/lebenssituation-data';
 import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
@@ -231,7 +231,7 @@ export default function KuendigungPage() {
             Kündigungsfristen und Abfindungschancen.
           </p>
           <div className="flex flex-wrap gap-2.5">
-            {activeEntries.map((e) => (
+            {entries.map((e) => (
               <Link
                 key={e.year}
                 href={`/gekuendigt-nach-${e.slug}-betriebszugehoerigkeit/`}
@@ -258,7 +258,7 @@ export default function KuendigungPage() {
             2-Wochen-Ausschlussfrist &mdash; für jede Betriebszugehörigkeit.
           </p>
           <div className="flex flex-wrap gap-2.5">
-            {activeEntries.map((e) => (
+            {entries.map((e) => (
               <Link
                 key={e.year}
                 href={`/fristlose-kuendigung-nach-${e.slug}-betriebszugehoerigkeit/`}
