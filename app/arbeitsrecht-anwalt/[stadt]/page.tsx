@@ -55,7 +55,7 @@ export async function generateMetadata({
   const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}/`;
 
   return {
-    title: `Fachanwalt Arbeitsrecht ${ort.name} — Kündigung & Abfindung (${new Date().getFullYear()})`,
+    title: `Kündigung oder Abfindung in ${ort.name} - bundesweit`,
     description: content?.metaDescription ??
       `Kündigung erhalten in ${ort.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${ort.arbeitsgericht}. Kostenlose Ersteinschätzung.`,
     alternates: { canonical: url },
