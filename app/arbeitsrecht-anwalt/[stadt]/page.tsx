@@ -287,9 +287,11 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Wichtige Begriffe kurz erklärt</h2>
           <div className="divide-y divide-gray-200">
             {[
-              { term: "Betriebsbedingte Kündigung", def: "Eine betriebsbedingte Kündigung liegt vor, wenn der Arbeitsplatz aus unternehmerischen Gründen wegfällt und keine zumutbare Weiterbeschäftigung möglich ist. Der Arbeitgeber muss eine soziale Auswahl durchführen." },
+              { term: `Betriebsbedingte Kündigung in ${ort.name}`, def: "Eine betriebsbedingte Kündigung liegt vor, wenn der Arbeitsplatz aus unternehmerischen Gründen wegfällt und keine zumutbare Weiterbeschäftigung möglich ist. Der Arbeitgeber muss eine soziale Auswahl durchführen." },
+              { term: `Personenbedingte Kündigung in ${ort.name}`, def: "Eine personenbedingte Kündigung liegt vor, wenn der Arbeitnehmer aufgrund persönlicher Eigenschaften oder Umstände – etwa dauerhafter Krankheit oder fehlender Eignung – seine arbeitsvertraglichen Pflichten nicht mehr erfüllen kann. Anders als bei der verhaltensbedingten Kündigung trifft den Arbeitnehmer kein Verschulden." },
+              { term: `Verhaltensbedingte Kündigung in ${ort.name}`, def: "Eine verhaltensbedingte Kündigung setzt ein schuldhaftes Fehlverhalten des Arbeitnehmers voraus – typischerweise nach vorheriger Abmahnung. Klassische Fälle sind Arbeitsverweigerung, wiederholte Unpünktlichkeit oder Diebstahl. Ohne wirksame Abmahnung ist die Kündigung oft angreifbar." },
               { term: "Kündigungsschutzklage", def: "Die Kündigungsschutzklage ist der rechtliche Weg, die Unwirksamkeit einer Kündigung festzustellen. Sie muss binnen 3 Wochen nach Zugang beim zuständigen Arbeitsgericht eingereicht werden." },
-              { term: "Aufhebungsvertrag", def: "Ein Aufhebungsvertrag ist eine einvernehmliche Auflösung des Arbeitsverhältnisses. Er sollte nie ohne anwaltliche Prüfung unterschrieben werden, da er oft eine Sperrzeit beim Arbeitslosengeld auslöst." },
+              { term: `Aufhebungsvertrag in ${ort.name}`, def: "Ein Aufhebungsvertrag ist eine einvernehmliche Auflösung des Arbeitsverhältnisses. Er sollte nie ohne anwaltliche Prüfung unterschrieben werden, da er oft eine Sperrzeit beim Arbeitslosengeld auslöst." },
             ].map(({ term, def }) => (
               <div key={term} className="py-3">
                 <p className="text-sm font-semibold text-gray-900 mb-1">{term}</p>
