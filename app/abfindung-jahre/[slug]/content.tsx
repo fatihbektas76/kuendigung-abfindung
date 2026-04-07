@@ -575,11 +575,6 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               </span>
             </div>
 
-            <div className="px-4 py-3 bg-gray-50 border-t border-gray-200">
-              <p className="text-xs text-gray-400">
-                * Anonymisierter Mandantenfall. Jeder Fall ist individuell &mdash; Ergebnisse können abweichen.
-              </p>
-            </div>
           </div>
           <p className="text-xs text-gray-400 mt-2 italic">* Fiktives Fallbeispiel zur Veranschaulichung. Alle Namen und Angaben sind frei erfunden.</p>
         </div>
