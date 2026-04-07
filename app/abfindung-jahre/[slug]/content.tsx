@@ -513,7 +513,8 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
       {/* ═══ 12. Beispielsfall ═══ */}
       <section className="py-3 px-4 sm:px-8 mb-3">
         <div className="max-w-content mx-auto">
-          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden relative">
+            <span className="absolute top-3 right-3 bg-[#7A6528] text-[#F0EAD9] text-xs font-semibold px-2 py-0.5 rounded-full">Beispielfall</span>
             <div className="p-4">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-full bg-[#6B6626] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
@@ -580,6 +581,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               </p>
             </div>
           </div>
+          <p className="text-xs text-gray-400 mt-2 italic">* Fiktives Fallbeispiel zur Veranschaulichung. Alle Namen und Angaben sind frei erfunden.</p>
         </div>
       </section>
 
