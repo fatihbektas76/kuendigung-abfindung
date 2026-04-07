@@ -82,6 +82,33 @@ export default function LegalNoticePage() {
           {' '}abrufbar.
         </p>
 
+        <h2>Schlichtungsstelle der Rechtsanwaltschaft (&sect;191f BRAO)</h2>
+        <p>
+          Bei der Bundesrechtsanwaltskammer ist eine Schlichtungsstelle eingerichtet. Näheres unter{' '}
+          <a href="https://www.brak.de" target="_blank" rel="noopener noreferrer">
+            www.brak.de
+          </a>
+          , E-Mail:{' '}
+          <a href="mailto:schlichtungsstelle@brak.de">schlichtungsstelle@brak.de</a>.
+        </p>
+
+        <h2>Hinweis gemäß &sect;&sect;36, 37 VSBG</h2>
+        <p>
+          Nach &sect;&sect;36, 37 Verbraucherstreitbeilegungsgesetz (VSBG) ist die APOS Legal Rechtsanwaltsgesellschaft mbH &amp; Co. KG verpflichtet, Auftraggeber, die Verbraucher im Sinne von &sect;13 BGB sind, auf die Möglichkeit hinzuweisen, dass bei nicht beigelegten vermögensrechtlichen Streitigkeiten aus dem Mandatsverhältnis kostenlos auch eine Verbraucherschlichtungsstelle angerufen werden kann. Die hierfür zuständige Verbraucherschlichtungsstelle ist die Schlichtungsstelle der Rechtsanwaltschaft, Rauchstraße 26, 10787 Berlin (
+          <a href="https://www.schlichtungsstelle-der-rechtsanwaltschaft.de" target="_blank" rel="noopener noreferrer">
+            www.schlichtungsstelle-der-rechtsanwaltschaft.de
+          </a>
+          ).
+        </p>
+        <p>
+          Die APOS Legal Rechtsanwaltsgesellschaft mbH &amp; Co. KG ist nicht bereit und nicht verpflichtet, an einem Verfahren vor dieser Schlichtungsstelle teilzunehmen.
+        </p>
+
+        <h2>Interessenkonflikte</h2>
+        <p>
+          Die Wahrnehmung widerstreitender Interessen ist Rechtsanwälten aufgrund berufsrechtlicher Regelungen untersagt (&sect;43a Abs. 4 BRAO). Vor Annahme eines Mandats wird deshalb geprüft, ob ein Interessenkonflikt vorliegt.
+        </p>
+
         <h2>Datenschutz</h2>
         <p>
           Unsere Datenschutzerklärung finden Sie{' '}
