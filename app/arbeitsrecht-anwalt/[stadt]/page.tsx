@@ -190,10 +190,13 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight">
           Fachanwalt für Arbeitsrecht für Arbeitnehmer in {ort.name} – Kündigung & Abfindung
         </h1>
-        <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-          Kündigung erhalten in {ort.name}? Als Fachanwalt für Arbeitsrecht vertreten wir Arbeitnehmer
-          aus {ort.name} bei Kündigung, Abfindungsverhandlung und Aufhebungsvertrag – bundesweit und vollständig digital.
-        </p>
+        {/* Direktantwort (GEO) */}
+        <div id="direktantwort">
+          <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+            Kündigung erhalten in {ort.name}? Als Fachanwalt für Arbeitsrecht vertreten wir Arbeitnehmer
+            aus {ort.name} bei Kündigung, Abfindungsverhandlung und Aufhebungsvertrag – bundesweit und vollständig digital.
+          </p>
+        </div>
 
         {/* Badges */}
         <div className="flex flex-wrap gap-2 mb-8">

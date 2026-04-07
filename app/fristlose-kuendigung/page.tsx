@@ -127,24 +127,27 @@ export default function FristloseKuendigungPage() {
               </p>
             </div>
 
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Eine <strong>fristlose Kündigung</strong> nach &sect;626 BGB beendet Ihr Arbeitsverhältnis von heute auf morgen &mdash;
-              ohne Kündigungsfrist, ohne Übergabe, ohne Vorbereitung. Der Schock sitzt tief. Aber die gute Nachricht:
-              <strong> Die meisten fristlosen Kündigungen sind unwirksam.</strong>
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Der Arbeitgeber muss nach &sect;626 BGB einen <strong>&bdquo;wichtigen Grund&ldquo;</strong> nachweisen, der so schwerwiegend ist,
-              dass ihm die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Kündigungsfrist nicht
-              zumutbar ist. Zudem muss er die <strong>2-Wochen-Frist</strong> einhalten: Die fristlose Kündigung muss
-              innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes ausgesprochen werden. Versäumt er diese Frist,
-              ist die Kündigung automatisch unwirksam.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Bei der <strong>Interessenabwägung</strong> spielt Ihre Betriebszugehörigkeit eine zentrale Rolle:
-              Je länger Sie im Unternehmen sind, desto höher die Hürde für eine fristlose Kündigung. Bei
-              Arbeitnehmern mit langer Betriebszugehörigkeit reicht oft selbst ein schwerwiegendes Fehlverhalten
-              nicht aus &mdash; der Arbeitgeber muss zunächst abmahnen.
-            </p>
+            {/* Direktantwort (GEO) */}
+            <div id="direktantwort">
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Eine <strong>fristlose Kündigung</strong> nach &sect;626 BGB beendet Ihr Arbeitsverhältnis von heute auf morgen &mdash;
+                ohne Kündigungsfrist, ohne Übergabe, ohne Vorbereitung. Der Schock sitzt tief. Aber die gute Nachricht:
+                <strong> Die meisten fristlosen Kündigungen sind unwirksam.</strong>
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Der Arbeitgeber muss nach &sect;626 BGB einen <strong>&bdquo;wichtigen Grund&ldquo;</strong> nachweisen, der so schwerwiegend ist,
+                dass ihm die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Kündigungsfrist nicht
+                zumutbar ist. Zudem muss er die <strong>2-Wochen-Frist</strong> einhalten: Die fristlose Kündigung muss
+                innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes ausgesprochen werden. Versäumt er diese Frist,
+                ist die Kündigung automatisch unwirksam.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Bei der <strong>Interessenabwägung</strong> spielt Ihre Betriebszugehörigkeit eine zentrale Rolle:
+                Je länger Sie im Unternehmen sind, desto höher die Hürde für eine fristlose Kündigung. Bei
+                Arbeitnehmern mit langer Betriebszugehörigkeit reicht oft selbst ein schwerwiegendes Fehlverhalten
+                nicht aus &mdash; der Arbeitgeber muss zunächst abmahnen.
+              </p>
+            </div>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
               Ein <strong>Fachanwalt für Arbeitsrecht</strong> prüft die Wirksamkeit Ihrer fristlosen Kündigung:
               Liegt ein wichtiger Grund vor? Wurde die 2-Wochen-Frist eingehalten? War eine Abmahnung erforderlich?

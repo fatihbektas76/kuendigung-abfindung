@@ -161,15 +161,18 @@ export default function AufhebungsvertragPage() {
               </p>
             </div>
 
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Ein <strong>Aufhebungsvertrag</strong> beendet Ihr Arbeitsverhältnis einvernehmlich &mdash; anders als bei einer Kündigung müssen Sie hier zustimmen. Das klingt zunächst fair, birgt aber erhebliche Risiken: Eine <strong>Sperrzeit beim Arbeitslosengeld</strong> von bis zu 12 Wochen, eine zu niedrige Abfindung, der Verlust von Kündigungsschutzrechten und ungünstige Klauseln zu Zeugnis, Freistellung oder Wettbewerbsverbot.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Arbeitgeber bieten Aufhebungsverträge oft an, um eine Kündigungsschutzklage zu vermeiden &mdash; das zeigt, dass Ihre <strong>Verhandlungsposition stärker ist, als Sie denken</strong>. In vielen Fällen können wir die Abfindung deutlich über die Regelformel (0,5 Monatsgehälter pro Jahr) hinaus verhandeln und gleichzeitig die Sperrzeit vermeiden.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
-              Ein Fachanwalt für Arbeitsrecht prüft den gesamten Vertrag auf versteckte Fallstricke: Ist die Abfindung angemessen? Droht eine Sperrzeit? Sind Freistellung, Zeugnis und Urlaubsabgeltung korrekt geregelt? Gibt es ein Wettbewerbsverbot, das Sie in Ihrer neuen Stelle einschränkt?
-            </p>
+            {/* Direktantwort (GEO) */}
+            <div id="direktantwort">
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Ein <strong>Aufhebungsvertrag</strong> beendet Ihr Arbeitsverhältnis einvernehmlich &mdash; anders als bei einer Kündigung müssen Sie hier zustimmen. Das klingt zunächst fair, birgt aber erhebliche Risiken: Eine <strong>Sperrzeit beim Arbeitslosengeld</strong> von bis zu 12 Wochen, eine zu niedrige Abfindung, der Verlust von Kündigungsschutzrechten und ungünstige Klauseln zu Zeugnis, Freistellung oder Wettbewerbsverbot.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Arbeitgeber bieten Aufhebungsverträge oft an, um eine Kündigungsschutzklage zu vermeiden &mdash; das zeigt, dass Ihre <strong>Verhandlungsposition stärker ist, als Sie denken</strong>. In vielen Fällen können wir die Abfindung deutlich über die Regelformel (0,5 Monatsgehälter pro Jahr) hinaus verhandeln und gleichzeitig die Sperrzeit vermeiden.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
+                Ein Fachanwalt für Arbeitsrecht prüft den gesamten Vertrag auf versteckte Fallstricke: Ist die Abfindung angemessen? Droht eine Sperrzeit? Sind Freistellung, Zeugnis und Urlaubsabgeltung korrekt geregelt? Gibt es ein Wettbewerbsverbot, das Sie in Ihrer neuen Stelle einschränkt?
+              </p>
+            </div>
 
             {/* CTA 1 */}
             <a

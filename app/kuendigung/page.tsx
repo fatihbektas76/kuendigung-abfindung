@@ -137,15 +137,18 @@ export default function KuendigungPage() {
               </p>
             </div>
 
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Eine Kündigung zu erhalten ist ein Schock &mdash; aber kein Grund zur Panik, wenn Sie richtig reagieren. Ihr wichtigstes Werkzeug: die <strong>Kündigungsschutzklage</strong>. Innerhalb von nur drei Wochen nach Zugang der Kündigung müssen Sie Klage beim Arbeitsgericht einreichen. Verpassen Sie diese Frist, verlieren Sie alle Ansprüche &mdash; egal wie rechtswidrig die Kündigung war.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Die gute Nachricht: Viele Kündigungen sind angreifbar. Fehler in der <strong>Sozialauswahl</strong>, eine fehlende <strong>Betriebsratsanhörung</strong>, Formfehler oder die Missachtung besonderer Schutzrechte machen die Kündigung unwirksam. Selbst wenn die Kündigung rechtmäßig ist, führt die Klage in der Praxis fast immer zu einer <strong>Abfindung</strong> im Vergleich.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
-              Ein Fachanwalt für Arbeitsrecht prüft Ihre Kündigung auf alle Schwachstellen, berechnet Ihre Abfindungschancen und vertritt Sie vor dem Arbeitsgericht. In der ersten Instanz tragen Sie nur Ihre eigenen Anwaltskosten (&sect;12a ArbGG) &mdash; und wenn Sie eine Rechtsschutzversicherung haben, übernimmt diese die Kosten.
-            </p>
+            {/* Direktantwort (GEO) */}
+            <div id="direktantwort">
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Eine Kündigung zu erhalten ist ein Schock &mdash; aber kein Grund zur Panik, wenn Sie richtig reagieren. Ihr wichtigstes Werkzeug: die <strong>Kündigungsschutzklage</strong>. Innerhalb von nur drei Wochen nach Zugang der Kündigung müssen Sie Klage beim Arbeitsgericht einreichen. Verpassen Sie diese Frist, verlieren Sie alle Ansprüche &mdash; egal wie rechtswidrig die Kündigung war.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Die gute Nachricht: Viele Kündigungen sind angreifbar. Fehler in der <strong>Sozialauswahl</strong>, eine fehlende <strong>Betriebsratsanhörung</strong>, Formfehler oder die Missachtung besonderer Schutzrechte machen die Kündigung unwirksam. Selbst wenn die Kündigung rechtmäßig ist, führt die Klage in der Praxis fast immer zu einer <strong>Abfindung</strong> im Vergleich.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
+                Ein Fachanwalt für Arbeitsrecht prüft Ihre Kündigung auf alle Schwachstellen, berechnet Ihre Abfindungschancen und vertritt Sie vor dem Arbeitsgericht. In der ersten Instanz tragen Sie nur Ihre eigenen Anwaltskosten (&sect;12a ArbGG) &mdash; und wenn Sie eine Rechtsschutzversicherung haben, übernimmt diese die Kosten.
+              </p>
+            </div>
 
             {/* CTA 1 */}
             <a

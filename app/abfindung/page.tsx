@@ -119,15 +119,18 @@ export default function AbfindungPage() {
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Wenn Ihr Arbeitgeber Ihnen kündigt, stellt sich sofort die Frage: <strong>Steht mir eine Abfindung zu?</strong> Obwohl es in Deutschland keinen automatischen gesetzlichen Abfindungsanspruch gibt, erhalten Arbeitnehmer in der Praxis in der großen Mehrheit aller Kündigungsschutzverfahren eine Abfindung &mdash; oft deutlich mehr als erwartet.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Die gängige <strong>Abfindungsformel</strong> lautet: <span className="font-semibold text-ink">0,5 Bruttomonatsgehälter &times; Jahre der Betriebszugehörigkeit</span>. Bei einem Bruttogehalt von 4.000&nbsp;&euro; und 10 Jahren Betriebszugehörigkeit ergibt das 20.000&nbsp;&euro; als Ausgangspunkt. Je nach Verhandlungsposition &mdash; etwa bei Formfehlern in der Kündigung, fehlerhafter Sozialauswahl oder besonderem Kündigungsschutz &mdash; kann der Faktor auf 1,0 oder höher steigen.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
-              Entscheidend ist, dass Sie die <strong>3-Wochen-Klagefrist</strong> nach &sect;4 KSchG nicht verpassen. Nur wer rechtzeitig Kündigungsschutzklage erhebt, hat die Verhandlungsposition, eine angemessene Abfindung durchzusetzen. Ein Fachanwalt für Arbeitsrecht kann Ihre Chancen und die realistische Höhe einschätzen.
-            </p>
+            {/* Direktantwort (GEO) */}
+            <div id="direktantwort">
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Wenn Ihr Arbeitgeber Ihnen kündigt, stellt sich sofort die Frage: <strong>Steht mir eine Abfindung zu?</strong> Obwohl es in Deutschland keinen automatischen gesetzlichen Abfindungsanspruch gibt, erhalten Arbeitnehmer in der Praxis in der großen Mehrheit aller Kündigungsschutzverfahren eine Abfindung &mdash; oft deutlich mehr als erwartet.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Die gängige <strong>Abfindungsformel</strong> lautet: <span className="font-semibold text-ink">0,5 Bruttomonatsgehälter &times; Jahre der Betriebszugehörigkeit</span>. Bei einem Bruttogehalt von 4.000&nbsp;&euro; und 10 Jahren Betriebszugehörigkeit ergibt das 20.000&nbsp;&euro; als Ausgangspunkt. Je nach Verhandlungsposition &mdash; etwa bei Formfehlern in der Kündigung, fehlerhafter Sozialauswahl oder besonderem Kündigungsschutz &mdash; kann der Faktor auf 1,0 oder höher steigen.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
+                Entscheidend ist, dass Sie die <strong>3-Wochen-Klagefrist</strong> nach &sect;4 KSchG nicht verpassen. Nur wer rechtzeitig Kündigungsschutzklage erhebt, hat die Verhandlungsposition, eine angemessene Abfindung durchzusetzen. Ein Fachanwalt für Arbeitsrecht kann Ihre Chancen und die realistische Höhe einschätzen.
+              </p>
+            </div>
 
             {/* CTA 1 */}
             <a

@@ -123,24 +123,27 @@ export default function AbmahnungPage() {
               </p>
             </div>
 
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Eine Abmahnung vom Arbeitgeber ist kein Grund zur Panik &mdash; aber ein ernstes Signal.
-              Sie zeigt, dass Ihr Arbeitgeber ein bestimmtes Verhalten beanstandet und
-              für den Wiederholungsfall Konsequenzen androht. Im Arbeitsrecht hat die Abmahnung eine
-              doppelte Funktion: Sie <strong>rügt</strong> ein konkretes Fehlverhalten und <strong>warnt</strong> vor
-              einer Kündigung bei Wiederholung.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Die gute Nachricht: Viele Abmahnungen sind <strong>formell oder inhaltlich fehlerhaft</strong> und
-              damit unwirksam. Ein Fachanwalt für Arbeitsrecht kann Ihre Abmahnung prüfen, Formfehler
-              aufdecken und die richtige Strategie für Ihre Situation entwickeln &mdash; ob Widerspruch,
-              Gegendarstellung oder stille Dokumentation.
-            </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
-              Auf dieser Seite erfahren Sie alles, was Sie über Abmahnungen im Arbeitsrecht wissen
-              müssen: Wann sie wirksam sind, wie Sie reagieren sollten und wann Sie einen Anwalt
-              einschalten sollten.
-            </p>
+            {/* Direktantwort (GEO) */}
+            <div id="direktantwort">
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Eine Abmahnung vom Arbeitgeber ist kein Grund zur Panik &mdash; aber ein ernstes Signal.
+                Sie zeigt, dass Ihr Arbeitgeber ein bestimmtes Verhalten beanstandet und
+                für den Wiederholungsfall Konsequenzen androht. Im Arbeitsrecht hat die Abmahnung eine
+                doppelte Funktion: Sie <strong>rügt</strong> ein konkretes Fehlverhalten und <strong>warnt</strong> vor
+                einer Kündigung bei Wiederholung.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+                Die gute Nachricht: Viele Abmahnungen sind <strong>formell oder inhaltlich fehlerhaft</strong> und
+                damit unwirksam. Ein Fachanwalt für Arbeitsrecht kann Ihre Abmahnung prüfen, Formfehler
+                aufdecken und die richtige Strategie für Ihre Situation entwickeln &mdash; ob Widerspruch,
+                Gegendarstellung oder stille Dokumentation.
+              </p>
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
+                Auf dieser Seite erfahren Sie alles, was Sie über Abmahnungen im Arbeitsrecht wissen
+                müssen: Wann sie wirksam sind, wie Sie reagieren sollten und wann Sie einen Anwalt
+                einschalten sollten.
+              </p>
+            </div>
 
             {/* CTA 1 */}
             <a
