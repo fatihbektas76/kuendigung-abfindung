@@ -4,8 +4,20 @@ const nextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
+      // Non-www → www (301 permanent)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'gekuendigt-abfindung.de' }],
+        destination: 'https://www.gekuendigt-abfindung.de/:path*',
+        permanent: true,
+      },
       { source: '/blog/:path*', destination: '/', permanent: true },
       { source: '/blog', destination: '/', permanent: true },
+      // Redirect internal routes to public rewritten URLs (prevents duplicate indexing)
+      { source: '/abfindung-jahre/:slug/', destination: '/abfindung-nach-:slug-betriebszugehoerigkeit/', permanent: true },
+      { source: '/gekuendigt-jahre/:slug/', destination: '/gekuendigt-nach-:slug-betriebszugehoerigkeit/', permanent: true },
+      { source: '/abmahnung-seiten/:slug/', destination: '/kuendigung-nach-:slug/', permanent: true },
+      { source: '/fristlose-kuendigung-jahre/:slug/', destination: '/fristlose-kuendigung-nach-:slug-betriebszugehoerigkeit/', permanent: true },
     ];
   },
   async rewrites() {
