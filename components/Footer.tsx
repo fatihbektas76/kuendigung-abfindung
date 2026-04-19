@@ -19,6 +19,11 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
             <div className="text-white/70 mt-1.5 text-[0.8rem]">
               Am Paradeplatz 20 &middot; 69126 Heidelberg
             </div>
+            <div className="text-white/70 mt-1 text-[0.8rem]">
+              <a href="tel:+49622295992400" className="text-white/70 no-underline hover:text-gold-light transition-colors">+49 6222 9599 2400</a>
+              <span className="mx-1.5">&middot;</span>
+              <a href="mailto:info@apos.legal" className="text-white/70 no-underline hover:text-gold-light transition-colors">info@apos.legal</a>
+            </div>
             <div className="text-white/70 mt-0.5 text-[0.8rem]">
               Ein Angebot der APOS Legal Rechtsanwaltsgesellschaft mbH&nbsp;&amp;&nbsp;Co.&nbsp;KG
             </div>
