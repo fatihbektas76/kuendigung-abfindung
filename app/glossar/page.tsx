@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ShareButtons from '@/components/ShareButtons';
+import TldrBox from '@/components/TldrBox';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 
@@ -441,6 +442,19 @@ export default function GlossarPage() {
           </nav>
         </div>
       </div>
+
+      {/* TL;DR */}
+      <section className="px-8 pt-4 pb-0 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <TldrBox items={[
+              '30+ Begriffe aus dem Arbeitsrecht — von Abfindung bis Zwischenzeugnis, verständlich erklärt.',
+              'Jeder Begriff mit Rechtsgrundlage und weiterführendem Link zum passenden Ratgeber.',
+              'Das Glossar ersetzt keine anwaltliche Beratung — bei konkreten Fragen nutzen Sie unsere kostenlose Ersteinschätzung.',
+            ]} />
+          </div>
+        </div>
+      </section>
 
       {/* Glossar-Liste */}
       <section className="py-[70px] px-8 bg-white">
