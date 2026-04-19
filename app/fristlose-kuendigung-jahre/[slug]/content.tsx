@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
+import TldrBox from '@/components/TldrBox';
+import DefinitionBox from '@/components/DefinitionBox';
+import BagQuote from '@/components/BagQuote';
 
 /* ── Types ── */
 type Beispielsfall = {
@@ -77,6 +80,15 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
               </span>
             ))}
           </div>
+          <div className="mt-6">
+            <TldrBox items={[
+              'Über 80 % aller fristlosen Kündigungen sind unwirksam — Ihre Chancen stehen gut.',
+              `Ausschlussfrist für den Arbeitgeber: 2 Wochen ab Kenntnis des Grundes (§ 626 Abs. 2 BGB).`,
+              `Ihre Klagefrist: 3 Wochen ab Zugang (§ 4 KSchG) — danach wird die Kündigung wirksam.`,
+              `Abfindungschance bei ${yl}: Faustformel 0,5 × Gehalt × ${ylKurz}, bei unwirksamer fristloser Kündigung oft höher.`,
+              'Wichtiger Grund (§ 626 BGB) wird von Gerichten sehr streng geprüft — viele Kündigungen scheitern daran.',
+            ]} />
+          </div>
         </div>
       </section>
 
@@ -100,6 +112,12 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-3 px-4 sm:px-8 mb-3">
+        <div className="max-w-content mx-auto">
+          <DefinitionBox term="Fristlose Kündigung (§ 626 BGB)" definition="Eine außerordentliche Kündigung, die das Arbeitsverhältnis sofort beendet — ohne Einhaltung einer Kündigungsfrist. Sie erfordert einen wichtigen Grund, der dem Kündigenden die Fortsetzung des Arbeitsverhältnisses unzumutbar macht. Der Arbeitgeber muss die 2-Wochen-Ausschlussfrist einhalten. Fehlt eine dieser Voraussetzungen, ist die Kündigung unwirksam." />
         </div>
       </section>
 
@@ -142,6 +160,10 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
                 </div>
               ))}
             </div>
+
+            <BagQuote az="2 AZR 265/21" gericht="BAG" datum="17. März 2022">
+              Eine fristlose Kündigung setzt voraus, dass dem Kündigenden unter Berücksichtigung aller Umstände des Einzelfalls und unter Abwägung der Interessen beider Vertragsteile die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der Kündigungsfrist nicht zugemutet werden kann.
+            </BagQuote>
 
             {/* Grüne Statistik-Zeile */}
             <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-center">

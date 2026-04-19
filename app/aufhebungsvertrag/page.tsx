@@ -7,6 +7,9 @@ import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import TldrBox from '@/components/TldrBox';
+import BagQuote from '@/components/BagQuote';
+import DefinitionBox from '@/components/DefinitionBox';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
@@ -149,6 +152,20 @@ export default function AufhebungsvertragPage() {
         </div>
       </div>
 
+      {/* TL;DR */}
+      <section className="px-8 pt-4 pb-0 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <TldrBox items={[
+              'Unterschreiben Sie niemals sofort — einmal unterschrieben, gibt es kein Zurück.',
+              'Sperrzeit beim Arbeitslosengeld von bis zu 12 Wochen droht, wenn der Vertrag nicht richtig formuliert ist.',
+              'Ihre Verhandlungsposition ist oft stärker, als Sie denken: Arbeitgeber bieten Aufhebungsverträge an, um Kündigungsschutzklagen zu vermeiden.',
+              'Die Abfindung lässt sich in vielen Fällen deutlich über die Regelformel (0,5 Monatsgehälter pro Jahr) verhandeln.',
+            ]} />
+          </div>
+        </div>
+      </section>
+
       {/* Intro */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -173,6 +190,15 @@ export default function AufhebungsvertragPage() {
                 Ein Fachanwalt für Arbeitsrecht prüft den gesamten Vertrag auf versteckte Fallstricke: Ist die Abfindung angemessen? Droht eine Sperrzeit? Sind Freistellung, Zeugnis und Urlaubsabgeltung korrekt geregelt? Gibt es ein Wettbewerbsverbot, das Sie in Ihrer neuen Stelle einschränkt?
               </p>
             </div>
+
+            <DefinitionBox
+              term="Aufhebungsvertrag"
+              definition="Ein Aufhebungsvertrag ist eine einvernehmliche Vereinbarung zwischen Arbeitgeber und Arbeitnehmer zur Beendigung des Arbeitsverhältnisses. Anders als bei einer Kündigung bedarf er der Zustimmung beider Seiten und unterliegt nicht den Beschränkungen des Kündigungsschutzgesetzes."
+            />
+
+            <BagQuote az="6 AZR 75/18" gericht="BAG" datum="07.02.2019">
+              Beim Abschluss eines Aufhebungsvertrags muss der Arbeitgeber das Gebot fairen Verhandelns beachten. Wird der Arbeitnehmer in einer psychischen Drucksituation — etwa durch unangekündigte Konfrontation in einer Krankheitssituation — zur Unterschrift gedrängt, kann der Vertrag unwirksam sein.
+            </BagQuote>
 
             {/* CTA 1 */}
             <a

@@ -7,6 +7,8 @@ import { aufhebungsvertragData } from '@/lib/aufhebungsvertrag-data';
 import DejureText from '@/components/DejureText';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
+import TldrBox from '@/components/TldrBox';
+import DefinitionBox from '@/components/DefinitionBox';
 
 type Props = {
   entry: AufhebungsvertragEntry;
@@ -47,6 +49,14 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
           <p className="text-[1.05rem] text-ink-light max-w-[640px] leading-relaxed mt-4">
             <DejureText text={uniqueIntro} />
           </p>
+          <div className="mt-4">
+            <TldrBox items={[
+              'Aufhebungsverträge sind freiwillig — Sie müssen nicht sofort unterschreiben.',
+              'Sperrzeit-Risiko: Bis zu 12 Wochen Sperrzeit beim Arbeitslosengeld (§ 159 SGB III).',
+              'Abfindung: Faustformel 0,5 × Bruttomonatsgehalt × Beschäftigungsjahre — verhandelbar.',
+              'Lassen Sie jeden Aufhebungsvertrag vor der Unterschrift anwaltlich prüfen.',
+            ]} />
+          </div>
         </div>
       </div>
 
@@ -67,6 +77,15 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
                 Unterschreiben Sie nie sofort. Lassen Sie den Vertrag vorher prüfen.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── b2. DefinitionBox ───── */}
+      <section className="py-4 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <DefinitionBox term="Aufhebungsvertrag" definition="Eine einvernehmliche Vereinbarung zwischen Arbeitgeber und Arbeitnehmer zur Beendigung des Arbeitsverhältnisses. Anders als bei einer Kündigung ist die Zustimmung beider Seiten erforderlich. Vorsicht: Ein Aufhebungsvertrag kann eine Sperrzeit beim Arbeitslosengeld auslösen (§ 159 SGB III) und sollte nie ohne anwaltliche Prüfung unterschrieben werden." />
           </div>
         </div>
       </section>

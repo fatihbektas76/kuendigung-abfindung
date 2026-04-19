@@ -8,6 +8,9 @@ import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import TldrBox from '@/components/TldrBox';
+import BagQuote from '@/components/BagQuote';
+import DefinitionBox from '@/components/DefinitionBox';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
@@ -111,6 +114,20 @@ export default function AbmahnungPage() {
         </div>
       </div>
 
+      {/* TL;DR */}
+      <section className="px-8 pt-4 pb-0 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <TldrBox items={[
+              'Eine Abmahnung ist die Vorstufe zur Kündigung — aber keine verhaltensbedingte Kündigung ohne vorherige Abmahnung.',
+              'Sie können gegen eine Abmahnung Gegendarstellung einlegen und Entfernung aus der Personalakte verlangen.',
+              'Eine unwirksame Abmahnung (fehlende Konkretheit, unverhältnismäßig, verspätet) kann nicht als Grundlage für eine Kündigung dienen.',
+              'Prüfen Sie, ob die Abmahnung formell und inhaltlich korrekt ist — viele Abmahnungen sind angreifbar.',
+            ]} />
+          </div>
+        </div>
+      </section>
+
       {/* Intro + Warning box */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -190,6 +207,15 @@ export default function AbmahnungPage() {
               </div>
             </div>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
+              <BagQuote az="2 AZR 258/11" gericht="BAG" datum="19.04.2012">
+                Eine Abmahnung muss das beanstandete Verhalten so genau bezeichnen, dass der Arbeitnehmer erkennen kann, was der Arbeitgeber als Vertragsverstoß ansieht. Zugleich muss sie die Androhung einer Kündigung für den Wiederholungsfall enthalten.
+              </BagQuote>
+
+              <DefinitionBox
+                term="Abmahnung"
+                definition="Eine formale Rüge des Arbeitgebers, die ein konkretes Fehlverhalten benennt (Rügefunktion) und für den Wiederholungsfall arbeitsrechtliche Konsequenzen bis hin zur Kündigung androht (Warnfunktion). Sie ist nach ständiger BAG-Rechtsprechung in der Regel Voraussetzung für eine verhaltensbedingte Kündigung."
+              />
+
               Die rechtliche Grundlage der Abmahnung ergibt sich aus dem allgemeinen Grundsatz der
               Verhältnismäßigkeit und dem Ultima-Ratio-Prinzip: Bevor der Arbeitgeber das Arbeitsverhältnis
               durch eine verhaltensbedingte Kündigung beendet, muss er dem Arbeitnehmer durch eine

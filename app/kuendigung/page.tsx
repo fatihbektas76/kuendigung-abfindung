@@ -9,6 +9,9 @@ import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import TldrBox from '@/components/TldrBox';
+import BagQuote from '@/components/BagQuote';
+import DefinitionBox from '@/components/DefinitionBox';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
@@ -125,6 +128,20 @@ export default function KuendigungPage() {
         </div>
       </div>
 
+      {/* TL;DR */}
+      <section className="px-8 pt-4 pb-0 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <TldrBox items={[
+              '3-Wochen-Klagefrist ab Zugang der Kündigung (§4 KSchG) — verpassen Sie diese Frist, verlieren Sie alle Ansprüche.',
+              'Kündigungsschutzklage ist Ihr stärkstes Werkzeug: Selbst bei wirksamer Kündigung führt die Klage in der Praxis fast immer zu einer Abfindung.',
+              'Häufige Unwirksamkeitsgründe: Fehlerhafte Sozialauswahl, fehlende Betriebsratsanhörung (§102 BetrVG), Formfehler, besonderer Kündigungsschutz.',
+              'Kündigungsfristen nach §622 BGB steigen mit der Betriebszugehörigkeit von 4 Wochen auf bis zu 7 Monate.',
+            ]} />
+          </div>
+        </div>
+      </section>
+
       {/* Intro + Urgency box */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -149,6 +166,15 @@ export default function KuendigungPage() {
                 Ein Fachanwalt für Arbeitsrecht prüft Ihre Kündigung auf alle Schwachstellen, berechnet Ihre Abfindungschancen und vertritt Sie vor dem Arbeitsgericht. In der ersten Instanz tragen Sie nur Ihre eigenen Anwaltskosten (&sect;12a ArbGG) &mdash; und wenn Sie eine Rechtsschutzversicherung haben, übernimmt diese die Kosten.
               </p>
             </div>
+
+            <DefinitionBox
+              term="Kündigungsschutzklage"
+              definition="Die Kündigungsschutzklage nach §4 KSchG ist die Klage des Arbeitnehmers vor dem Arbeitsgericht mit dem Ziel, die Unwirksamkeit einer Kündigung feststellen zu lassen. Sie muss innerhalb von drei Wochen nach Zugang der Kündigung erhoben werden — andernfalls gilt die Kündigung als von Anfang an wirksam."
+            />
+
+            <BagQuote az="2 AZR 140/12" gericht="BAG" datum="24.01.2013">
+              Leiharbeitnehmer, die regelmäßig im Betrieb eingesetzt werden, sind bei der Berechnung des Schwellenwerts nach §23 KSchG zu berücksichtigen. Dies kann dazu führen, dass der Kündigungsschutz auch für Arbeitnehmer in kleineren Betrieben greift.
+            </BagQuote>
 
             {/* CTA 1 */}
             <a

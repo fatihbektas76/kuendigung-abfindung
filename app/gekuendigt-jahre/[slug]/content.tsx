@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
+import TldrBox from '@/components/TldrBox';
+import BagQuote from '@/components/BagQuote';
+import DefinitionBox from '@/components/DefinitionBox';
 
 /* ── Types ── */
 type Beispielsfall = {
@@ -82,6 +85,18 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
               </span>
             ))}
           </div>
+
+          <div className="mt-6">
+            <TldrBox items={[
+              `Kündigungsfrist bei ${yl}: ${entry.kuendigungsfrist} (§ 622 BGB).`,
+              `Kündigungsschutzklage innerhalb von 3 Wochen einreichen — sonst wird die Kündigung automatisch wirksam.`,
+              `Abfindungschance: Faustformel 0,5 × Bruttomonatsgehalt × ${ylKurz} — verhandelbar auf bis zu 1,5×.`,
+              yearData.kschgGilt
+                ? 'Das Kündigungsschutzgesetz (KSchG) gilt für Sie — Ihr Arbeitgeber braucht einen anerkannten Kündigungsgrund.'
+                : 'Das Kündigungsschutzgesetz (KSchG) gilt erst ab 6 Monaten Betriebszugehörigkeit und 10 Mitarbeitern.',
+              'Kostenrisiko: Im Arbeitsrecht 1. Instanz trägt jede Partei ihre eigenen Anwaltskosten (§ 12a ArbGG).',
+            ]} />
+          </div>
         </div>
       </section>
 
@@ -154,6 +169,13 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
               Gilt das KSchG in Ihrem Betrieb? Jetzt prüfen mit dem Schwellenwertrechner &rarr;
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ═══ 2b. Definitionsbox Kündigungsschutzklage ═══ */}
+      <section className="py-3 px-4 sm:px-8 mb-3">
+        <div className="max-w-content mx-auto">
+          <DefinitionBox term="Kündigungsschutzklage" definition="Die Klage vor dem Arbeitsgericht auf Feststellung, dass eine Kündigung unwirksam ist. Die Klagefrist beträgt 3 Wochen ab Zugang der Kündigung (§ 4 KSchG). In ca. 80 % der Fälle endet das Verfahren mit einem Vergleich — in der Regel einer Abfindung." />
         </div>
       </section>
 
@@ -243,6 +265,10 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
               ))}
             </div>
           </div>
+
+          <BagQuote az="2 AZR 140/22" gericht="BAG" datum="13. Juli 2023">
+            Der Arbeitgeber muss die Sozialauswahl nach den Kriterien des § 1 Abs. 3 KSchG ordnungsgemäß durchführen. Eine fehlerhafte Sozialauswahl führt zur Unwirksamkeit der Kündigung.
+          </BagQuote>
         </div>
       </section>
 

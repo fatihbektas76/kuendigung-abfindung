@@ -8,6 +8,9 @@ import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import TldrBox from '@/components/TldrBox';
+import BagQuote from '@/components/BagQuote';
+import DefinitionBox from '@/components/DefinitionBox';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
@@ -115,6 +118,20 @@ export default function FristloseKuendigungPage() {
         </div>
       </div>
 
+      {/* TL;DR */}
+      <section className="px-8 pt-4 pb-0 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <TldrBox items={[
+              'Die meisten fristlosen Kündigungen sind unwirksam — §626 BGB stellt sehr hohe Anforderungen an den „wichtigen Grund".',
+              '3-Wochen-Klagefrist ab Zugang der Kündigung — handeln Sie sofort.',
+              'Der Arbeitgeber muss die 2-Wochen-Ausschlussfrist (§626 Abs. 2 BGB) ab Kenntnis des Kündigungsgrundes einhalten.',
+              'Abfindungschancen sind bei fristlosen Kündigungen oft besonders hoch, weil die Wirksamkeitsanforderungen streng sind.',
+            ]} />
+          </div>
+        </div>
+      </section>
+
       {/* Intro */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -154,6 +171,15 @@ export default function FristloseKuendigungPage() {
               Fällt die Interessenabwägung zu Ihren Gunsten aus? In vielen Fällen wird die fristlose Kündigung
               vor Gericht in eine ordentliche umgewandelt &mdash; mit Abfindung.
             </p>
+
+            <DefinitionBox
+              term="Fristlose Kündigung (§626 BGB)"
+              definition="Die fristlose Kündigung ist eine außerordentliche Kündigung, die das Arbeitsverhältnis sofort — ohne Einhaltung einer Kündigungsfrist — beendet. Sie setzt einen wichtigen Grund voraus, der die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Kündigungsfrist unzumutbar macht."
+            />
+
+            <BagQuote az="2 AZR 541/09" gericht="BAG" datum="10.06.2010">
+              Bei der Prüfung einer fristlosen Kündigung wegen eines Vermögensdelikts ist im Rahmen der Interessenabwägung eine langjährige beanstandungsfreie Betriebszugehörigkeit zugunsten des Arbeitnehmers zu berücksichtigen. Eine Kündigung ohne vorherige Abmahnung kommt nur bei schwersten Pflichtverletzungen in Betracht.
+            </BagQuote>
 
             {/* CTA 1 */}
             <a

@@ -6,6 +6,8 @@ import type { LebenssituationEntry } from '@/lib/lebenssituation-data';
 import DejureText from '@/components/DejureText';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
+import TldrBox from '@/components/TldrBox';
+import DefinitionBox from '@/components/DefinitionBox';
 
 type Props = {
   entry: LebenssituationEntry;
@@ -47,6 +49,14 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
           <p className="text-[1.05rem] text-ink-light max-w-[640px] leading-relaxed mt-4">
             <DejureText text={uniqueIntro} />
           </p>
+          <div className="mt-4">
+            <TldrBox items={[
+              `Besonderer Kündigungsschutz: ${entry.gesetz} schützt Sie in dieser Situation.`,
+              'Klagefrist: 3 Wochen ab Zugang der Kündigung — keine Ausnahme.',
+              'Abfindung: Verhandlungssache — Faustformel 0,5 × Monatsgehalt × Beschäftigungsjahre.',
+              'Kostenlose Ersteinschätzung durch Fachanwalt für Arbeitsrecht innerhalb von 24 Stunden.',
+            ]} />
+          </div>
         </div>
       </div>
 
@@ -67,6 +77,15 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
                 Frist verpasst = Kündigung wirksam, auch wenn sie rechtswidrig war.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── b2. DefinitionBox ───── */}
+      <section className="py-4 px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <DefinitionBox term="Besonderer Kündigungsschutz" definition={`Bestimmte Personengruppen genießen besonderen Schutz vor Kündigung. In Ihrem Fall schützt ${entry.gesetz} vor willkürlicher Entlassung. Der Arbeitgeber benötigt in der Regel die Zustimmung einer Behörde oder muss strengere Voraussetzungen erfüllen, bevor er kündigen darf.`} />
           </div>
         </div>
       </section>

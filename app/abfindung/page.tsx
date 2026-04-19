@@ -8,6 +8,9 @@ import { entries } from '@/lib/betriebszugehoerigkeit';
 import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import TldrBox from '@/components/TldrBox';
+import BagQuote from '@/components/BagQuote';
+import DefinitionBox from '@/components/DefinitionBox';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 export const revalidate = 86400;
@@ -115,6 +118,20 @@ export default function AbfindungPage() {
         </div>
       </div>
 
+      {/* TL;DR */}
+      <section className="px-8 pt-4 pb-0 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <TldrBox items={[
+              'Kein automatischer gesetzlicher Abfindungsanspruch — aber in über 80 % der Kündigungsschutzverfahren wird eine Abfindung ausgehandelt.',
+              'Faustformel: 0,5 Bruttomonatsgehälter × Jahre der Betriebszugehörigkeit. Je nach Verhandlungsposition kann der Faktor auf 1,0 oder höher steigen.',
+              'Die 3-Wochen-Klagefrist (§4 KSchG) ist entscheidend: Nur wer rechtzeitig Kündigungsschutzklage erhebt, kann eine Abfindung verhandeln.',
+              'Abfindungen sind steuerpflichtig, aber die Fünftelregelung (§34 EStG) senkt die Steuerlast. Sozialversicherungsbeiträge fallen nicht an.',
+            ]} />
+          </div>
+        </div>
+      </section>
+
       {/* Intro */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
@@ -131,6 +148,15 @@ export default function AbfindungPage() {
                 Entscheidend ist, dass Sie die <strong>3-Wochen-Klagefrist</strong> nach &sect;4 KSchG nicht verpassen. Nur wer rechtzeitig Kündigungsschutzklage erhebt, hat die Verhandlungsposition, eine angemessene Abfindung durchzusetzen. Ein Fachanwalt für Arbeitsrecht kann Ihre Chancen und die realistische Höhe einschätzen.
               </p>
             </div>
+
+            <DefinitionBox
+              term="Abfindung"
+              definition="Eine Abfindung ist eine einmalige Geldzahlung des Arbeitgebers an den Arbeitnehmer anlässlich der Beendigung des Arbeitsverhältnisses. Sie dient als Entschädigung für den Verlust des Arbeitsplatzes und wird in der Regel im Rahmen eines Vergleichs vor dem Arbeitsgericht oder in einem Aufhebungsvertrag vereinbart."
+            />
+
+            <BagQuote az="2 AZR 541/09" gericht="BAG" datum="10.06.2010">
+              Auch bei einem geringfügigen Vermögensdelikt kann eine fristlose Kündigung nach 31 Jahren beanstandungsfreier Betriebszugehörigkeit unverhältnismäßig sein. Die Interessenabwägung muss die gesamte Dauer des Arbeitsverhältnisses berücksichtigen.
+            </BagQuote>
 
             {/* CTA 1 */}
             <a

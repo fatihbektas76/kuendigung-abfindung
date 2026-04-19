@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
+import TldrBox from '@/components/TldrBox';
+import BagQuote from '@/components/BagQuote';
+import DefinitionBox from '@/components/DefinitionBox';
 
 /* ── Types ── */
 type Beispielsfall = {
@@ -121,6 +124,16 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               </span>
             ))}
           </div>
+
+          <div className="mt-6">
+            <TldrBox items={[
+              `Faustformel: 0,5 × Bruttomonatsgehalt × ${ylKurz} = ${y * 0.5} Monatsgehälter als Abfindung.`,
+              `Kündigungsfrist bei ${yl}: ${entry.kuendigungsfrist} (§ 622 BGB).`,
+              'Kein gesetzlicher Anspruch auf Abfindung — über 80 % werden per Klage oder Vergleich verhandelt.',
+              'Klagefrist: 3 Wochen ab Zugang der Kündigung (§ 4 KSchG) — keine Verlängerung möglich.',
+              'Steuervorteil: Abfindung kann per Fünftelregelung (§ 34 EStG) begünstigt versteuert werden.',
+            ]} />
+          </div>
         </div>
       </section>
 
@@ -197,6 +210,12 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-3 px-4 sm:px-8 mb-3">
+        <div className="max-w-content mx-auto">
+          <DefinitionBox term="Abfindung" definition={`Eine einmalige Geldzahlung des Arbeitgebers an den Arbeitnehmer bei Beendigung des Arbeitsverhältnisses. Ein gesetzlicher Anspruch besteht nur ausnahmsweise (§ 1a KSchG, Sozialplan, Tarifvertrag). Nach ${yl} Betriebszugehörigkeit beträgt die Regelabfindung nach der Faustformel ${y * 0.5} Bruttomonatsgehälter.`} />
         </div>
       </section>
 
@@ -336,6 +355,14 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-3 px-4 sm:px-8 mb-3">
+        <div className="max-w-content mx-auto">
+          <BagQuote az="2 AZR 537/21" gericht="BAG" datum="23. Mai 2022">
+            Die Sozialauswahl ist auch dann durchzuführen, wenn der Arbeitgeber dem Arbeitnehmer ein Abfindungsangebot nach § 1a KSchG unterbreitet hat.
+          </BagQuote>
         </div>
       </section>
 
