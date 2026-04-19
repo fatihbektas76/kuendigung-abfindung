@@ -45,13 +45,13 @@ const personSchemas = [
     description:
       'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
     image: `${BASE_URL}/Fatih.webp`,
-    url: `${BASE_URL}/team/`,
+    url: `${BASE_URL}/autor/fatih-bektas/`,
     email: 'bektas@apos.legal',
     telephone: '+49622295992400',
     sameAs: [
       'https://www.anwalt.de/fatihbektas',
       'https://www.linkedin.com/in/fatih-bektas',
-      'https://www.gekuendigt-abfindung.de/team/',
+      'https://www.gekuendigt-abfindung.de/autor/fatih-bektas/',
     ],
     worksFor: { '@id': `${BASE_URL}/#organization` },
     hasCredential: [

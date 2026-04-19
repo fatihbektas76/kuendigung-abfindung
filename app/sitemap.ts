@@ -55,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/glossar/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/ratgeber/kuendigungsstatistik-arbeitsgerichte-deutschland/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/team/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/autor/fatih-bektas/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.6 },
   ];
 
   const clusterAPages: MetadataRoute.Sitemap = entries.map((e) => ({

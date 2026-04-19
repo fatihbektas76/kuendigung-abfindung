@@ -38,7 +38,7 @@ export default function AuthorBox() {
             LinkedIn
           </a>
           <a
-            href="/#anwalt"
+            href="/autor/fatih-bektas/"
             className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-gold hover:text-gold-dark no-underline transition-colors"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
