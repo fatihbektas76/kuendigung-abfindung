@@ -18,10 +18,14 @@ type Props = {
   praxistipp: string;
 };
 
+const BESONDERE_GESETZE = ['§17 MuSchG', '§18 BEEG', '§168 SGB IX', '§613a BGB', '§15 KSchG', '§22 BBiG'];
+
 export default function LebenssituationContent({ entry, related, faqs, uniqueIntro, besondererSchutz, praxistipp }: Props) {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [gehalt, setGehalt] = useState('3500');
   const [jahre, setJahre] = useState('5');
+
+  const hatBesonderenSchutz = BESONDERE_GESETZE.includes(entry.gesetz);
 
   const fmt = (n: number) => n.toLocaleString('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 });
   const g = parseFloat(gehalt) || 0;
@@ -51,8 +55,8 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
           </p>
           <div className="mt-4">
             <TldrBox items={[
-              `Besonderer Kündigungsschutz: ${entry.gesetz} schützt Sie in dieser Situation.`,
-              'Klagefrist: 3 Wochen ab Zugang der Kündigung — keine Ausnahme.',
+              `${entry.gesetz} schützt Sie in dieser Situation.`,
+              'Klagefrist: 3 Wochen ab Zugang der Kündigung.',
               'Abfindung: Verhandlungssache — Faustformel 0,5 × Monatsgehalt × Beschäftigungsjahre.',
               'Kostenlose Ersteinschätzung durch Fachanwalt für Arbeitsrecht innerhalb von 24 Stunden.',
             ]} />
@@ -85,7 +89,13 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
       <section className="py-4 px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
-            <DefinitionBox term="Besonderer Kündigungsschutz" definition={`Bestimmte Personengruppen genießen besonderen Schutz vor Kündigung. In Ihrem Fall schützt ${entry.gesetz} vor willkürlicher Entlassung. Der Arbeitgeber benötigt in der Regel die Zustimmung einer Behörde oder muss strengere Voraussetzungen erfüllen, bevor er kündigen darf.`} />
+            <DefinitionBox
+            term={hatBesonderenSchutz ? 'Besonderer Kündigungsschutz' : 'Allgemeiner Kündigungsschutz'}
+            definition={hatBesonderenSchutz
+              ? `Bestimmte Personengruppen genießen besonderen Schutz vor Kündigung. In Ihrem Fall schützt ${entry.gesetz} vor willkürlicher Entlassung. Der Arbeitgeber benötigt in der Regel die Zustimmung einer Behörde oder muss strengere Voraussetzungen erfüllen, bevor er kündigen darf.`
+              : `Das Kündigungsschutzgesetz (KSchG) schützt Arbeitnehmer, die nicht in einem Kleinbetrieb arbeiten, vor sozial ungerechtfertigten Kündigungen. Eine Kündigung muss sozial gerechtfertigt sein — andernfalls können Sie mit einer Kündigungsschutzklage dagegen vorgehen.`
+            }
+          />
           </div>
         </div>
       </section>
@@ -172,7 +182,7 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-              Besonderer Kündigungsschutz
+              {hatBesonderenSchutz ? 'Besonderer Kündigungsschutz' : 'Allgemeiner Kündigungsschutz'}
             </div>
             <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Ihr Schutz nach {entry.gesetz}
