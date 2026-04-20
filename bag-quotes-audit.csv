@@ -1,0 +1,9 @@
+datei;az;datum;gericht;quote_start;urlCite
+app/abfindung/page.tsx;2 AZR 541/09;10.06.2010;BAG;Auch bei einem geringfügigen Vermögensdelikt kann eine fristlose Kündigung nach 31 Jahren beanstand;
+app/fristlose-kuendigung/page.tsx;2 AZR 541/09;10.06.2010;BAG;Bei der Prüfung einer fristlosen Kündigung wegen eines Vermögensdelikts ist im Rahmen der Interess;
+app/kuendigung/page.tsx;2 AZR 140/12;24.01.2013;BAG;Leiharbeitnehmer, die regelmäßig im Betrieb eingesetzt werden, sind bei der Berechnung des Schwelle;
+app/abmahnung/page.tsx;2 AZR 258/11;19.04.2012;BAG;Eine Abmahnung muss das beanstandete Verhalten so genau bezeichnen, dass der Arbeitnehmer erkennen ;
+app/aufhebungsvertrag/page.tsx;6 AZR 75/18;07.02.2019;BAG;Beim Abschluss eines Aufhebungsvertrags muss der Arbeitgeber das Gebot fairen Verhandelns beachten.;
+app/abfindung-jahre/[slug]/content.tsx;2 AZR 537/21;23. Mai 2022;BAG;Die Sozialauswahl ist auch dann durchzuführen, wenn der Arbeitgeber dem Arbeitnehmer ein Abfindungs;
+app/gekuendigt-jahre/[slug]/content.tsx;2 AZR 140/22;13. Juli 2023;BAG;Der Arbeitgeber muss die Sozialauswahl nach den Kriterien des § 1 Abs. 3 KSchG ordnungsgemäß durch;
+app/fristlose-kuendigung-jahre/[slug]/content.tsx;2 AZR 265/21;17. März 2022;BAG;Eine fristlose Kündigung setzt voraus, dass dem Kündigenden unter Berücksichtigung aller Umstände d;
