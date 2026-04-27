@@ -29,7 +29,7 @@ export default function SeoGeoBase({
   speakableSelectors,
   breadcrumbs,
   datePublished = '2025-01-15',
-  dateModified = new Date().toISOString().slice(0, 10),
+  dateModified,
   includeRating = false,
   includeOrganization = false,
 }: SeoGeoBaseProps) {

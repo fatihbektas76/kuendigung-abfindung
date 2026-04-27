@@ -3,6 +3,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import FaqAccordion from '@/components/FaqAccordion';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 const tools = [
   {
@@ -211,7 +212,7 @@ export default function ToolsPage() {
             <span className="mx-2">/</span>
             <span>Tools &amp; Rechner</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.tools} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Kostenlos &amp; unverbindlich
           </div>

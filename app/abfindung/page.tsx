@@ -9,9 +9,13 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
-import BagQuote from '@/components/BagQuote';
+
 import DefinitionBox from '@/components/DefinitionBox';
+import Quellen from '@/components/Quellen';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
+import { QUELLEN_ABFINDUNG } from '@/lib/quellen-defaults';
+import { generateArticleSchema } from '@/lib/article-schema';
 
 export const revalidate = 86400;
 
@@ -75,6 +79,7 @@ export default function AbfindungPage() {
         includeOrganization={false}
         includeRating={false}
         speakableSelectors={['.faq-section']}
+        dateModified={PAGE_DATES.abfindung}
         isBasedOn={[
           { name: 'Kündigungsschutzgesetz (KSchG) §1a', url: 'https://www.gesetze-im-internet.de/kschg/__1a.html' },
           { name: 'Bürgerliches Gesetzbuch (BGB) §622', url: 'https://www.gesetze-im-internet.de/bgb/__622.html' },
@@ -100,6 +105,20 @@ export default function AbfindungPage() {
         }}
       />
 
+      {/* Schema.org - Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateArticleSchema({
+            headline: 'Abfindung nach Kündigung: Was Ihnen zusteht',
+            description: 'Abfindung nach Kündigung: Anspruch, Höhe & Berechnung. Formel, Tabelle und Praxistipps vom Fachanwalt.',
+            dateModified: PAGE_DATES.abfindung,
+            url: `${SEO_CONFIG.baseUrl}/abfindung/`,
+            articleSection: 'Abfindung',
+          })),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -108,7 +127,7 @@ export default function AbfindungPage() {
             <span className="mx-2">/</span>
             <span>Abfindung</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.abfindung} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Abfindung
           </div>
@@ -154,9 +173,6 @@ export default function AbfindungPage() {
               definition="Eine Abfindung ist eine einmalige Geldzahlung des Arbeitgebers an den Arbeitnehmer anlässlich der Beendigung des Arbeitsverhältnisses. Sie dient als Entschädigung für den Verlust des Arbeitsplatzes und wird in der Regel im Rahmen eines Vergleichs vor dem Arbeitsgericht oder in einem Aufhebungsvertrag vereinbart."
             />
 
-            <BagQuote az="2 AZR 541/09" gericht="BAG" datum="10.06.2010">
-              Auch bei einem geringfügigen Vermögensdelikt kann eine fristlose Kündigung nach 31 Jahren beanstandungsfreier Betriebszugehörigkeit unverhältnismäßig sein. Die Interessenabwägung muss die gesamte Dauer des Arbeitsverhältnisses berücksichtigen.
-            </BagQuote>
 
             {/* CTA 1 */}
             <a
@@ -284,6 +300,8 @@ export default function AbfindungPage() {
           </div>
         </div>
       </section>
+
+      <Quellen quellen={QUELLEN_ABFINDUNG} />
 
       <RelatedTopics current="abfindung" />
 

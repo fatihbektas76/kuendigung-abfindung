@@ -5,6 +5,7 @@ import { urteile, getUrteil } from '@/lib/urteile';
 import StandAnzeige from '@/components/StandAnzeige';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 export const revalidate = 86400;
 
@@ -116,7 +117,7 @@ export default function UrteilDetailPage({ params }: Props) {
             <span className="mx-2">/</span>
             <span>{urteil.titel}</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.urteile} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             {urteil.gericht} &middot; {urteil.senat}
           </div>

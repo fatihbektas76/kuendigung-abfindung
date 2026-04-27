@@ -8,6 +8,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
 import TldrBox from '@/components/TldrBox';
 import DefinitionBox from '@/components/DefinitionBox';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 type Props = {
   entry: LebenssituationEntry;
@@ -43,7 +44,7 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
             <span className="mx-2">/</span>
             <span>Ihre Situation</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.kuendigungSituationen} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Kündigung &middot; Ihre Situation
           </div>

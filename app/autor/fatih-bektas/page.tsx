@@ -4,6 +4,7 @@ import Link from 'next/link';
 import StandAnzeige from '@/components/StandAnzeige';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 export const revalidate = 86400;
 
@@ -155,7 +156,7 @@ export default function AutorFatihBektasPage() {
             <span className="mx-2">/</span>
             <span>Fatih Bektas</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.autor} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Autor &amp; Fachanwalt
           </div>

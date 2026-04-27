@@ -7,6 +7,7 @@ import { abmahnungEntries } from '@/lib/abmahnung-content';
 import DejureText from '@/components/DejureText';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 type Props = {
   entry: AbmahnungEntry;
@@ -34,7 +35,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
             <span className="mx-2">/</span>
             <span>Nach {label}</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.abmahnungDetail} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Kündigung &middot; Abmahnung
           </div>

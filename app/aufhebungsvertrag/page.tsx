@@ -8,9 +8,13 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
-import BagQuote from '@/components/BagQuote';
+
 import DefinitionBox from '@/components/DefinitionBox';
+import Quellen from '@/components/Quellen';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
+import { QUELLEN_AUFHEBUNGSVERTRAG } from '@/lib/quellen-defaults';
+import { generateArticleSchema } from '@/lib/article-schema';
 
 export const revalidate = 86400;
 
@@ -105,6 +109,7 @@ export default function AufhebungsvertragPage() {
         includeOrganization={false}
         includeRating={false}
         speakableSelectors={['.faq-section']}
+        dateModified={PAGE_DATES.aufhebungsvertrag}
         breadcrumbs={[
           { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Aufhebungsvertrag', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/` },
@@ -134,6 +139,20 @@ export default function AufhebungsvertragPage() {
         }}
       />
 
+      {/* Schema.org - Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateArticleSchema({
+            headline: 'Aufhebungsvertrag erhalten – was Sie wissen müssen',
+            description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag.',
+            dateModified: PAGE_DATES.aufhebungsvertrag,
+            url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/`,
+            articleSection: 'Aufhebungsvertrag',
+          })),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -142,7 +161,7 @@ export default function AufhebungsvertragPage() {
             <span className="mx-2">/</span>
             <span>Aufhebungsvertrag</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.aufhebungsvertrag} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Aufhebungsvertrag
           </div>
@@ -196,9 +215,6 @@ export default function AufhebungsvertragPage() {
               definition="Ein Aufhebungsvertrag ist eine einvernehmliche Vereinbarung zwischen Arbeitgeber und Arbeitnehmer zur Beendigung des Arbeitsverhältnisses. Anders als bei einer Kündigung bedarf er der Zustimmung beider Seiten und unterliegt nicht den Beschränkungen des Kündigungsschutzgesetzes."
             />
 
-            <BagQuote az="6 AZR 75/18" gericht="BAG" datum="07.02.2019">
-              Beim Abschluss eines Aufhebungsvertrags muss der Arbeitgeber das Gebot fairen Verhandelns beachten. Wird der Arbeitnehmer in einer psychischen Drucksituation — etwa durch unangekündigte Konfrontation in einer Krankheitssituation — zur Unterschrift gedrängt, kann der Vertrag unwirksam sein.
-            </BagQuote>
 
             {/* CTA 1 */}
             <a
@@ -278,6 +294,8 @@ export default function AufhebungsvertragPage() {
       </section>
 
       <AktuelleRechtslage />
+
+      <Quellen quellen={QUELLEN_AUFHEBUNGSVERTRAG} />
 
       <RelatedTopics current="aufhebungsvertrag" />
 

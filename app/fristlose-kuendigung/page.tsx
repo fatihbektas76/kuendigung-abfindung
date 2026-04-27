@@ -9,9 +9,13 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
-import BagQuote from '@/components/BagQuote';
+
 import DefinitionBox from '@/components/DefinitionBox';
+import Quellen from '@/components/Quellen';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
+import { QUELLEN_FRISTLOSE } from '@/lib/quellen-defaults';
+import { generateArticleSchema } from '@/lib/article-schema';
 
 export const revalidate = 86400;
 
@@ -68,6 +72,7 @@ export default function FristloseKuendigungPage() {
         includeOrganization={false}
         includeRating={false}
         speakableSelectors={['.faq-section']}
+        dateModified={PAGE_DATES.fristloseKuendigung}
         breadcrumbs={[
           { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Kündigung', url: `${SEO_CONFIG.baseUrl}/kuendigung/` },
@@ -98,6 +103,20 @@ export default function FristloseKuendigungPage() {
         }}
       />
 
+      {/* Schema.org - Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateArticleSchema({
+            headline: 'Fristlose Kündigung – Ihre Rechte nach §626 BGB',
+            description: 'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist.',
+            dateModified: PAGE_DATES.fristloseKuendigung,
+            url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`,
+            articleSection: 'Fristlose Kündigung',
+          })),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -108,7 +127,7 @@ export default function FristloseKuendigungPage() {
             <span className="mx-2">/</span>
             <span>Fristlose Kündigung</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.fristloseKuendigung} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Fristlose Kündigung
           </div>
@@ -177,9 +196,6 @@ export default function FristloseKuendigungPage() {
               definition="Die fristlose Kündigung ist eine außerordentliche Kündigung, die das Arbeitsverhältnis sofort — ohne Einhaltung einer Kündigungsfrist — beendet. Sie setzt einen wichtigen Grund voraus, der die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Kündigungsfrist unzumutbar macht."
             />
 
-            <BagQuote az="2 AZR 541/09" gericht="BAG" datum="10.06.2010">
-              Bei der Prüfung einer fristlosen Kündigung wegen eines Vermögensdelikts ist im Rahmen der Interessenabwägung eine langjährige beanstandungsfreie Betriebszugehörigkeit zugunsten des Arbeitnehmers zu berücksichtigen. Eine Kündigung ohne vorherige Abmahnung kommt nur bei schwersten Pflichtverletzungen in Betracht.
-            </BagQuote>
 
             {/* CTA 1 */}
             <a
@@ -347,6 +363,8 @@ export default function FristloseKuendigungPage() {
       </section>
 
       <AktuelleRechtslage />
+
+      <Quellen quellen={QUELLEN_FRISTLOSE} />
 
       <RelatedTopics current="fristlose-kuendigung" />
 

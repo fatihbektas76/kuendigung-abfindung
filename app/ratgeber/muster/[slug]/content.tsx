@@ -8,6 +8,7 @@ import type { GeneratedMusterPageContent } from '@/lib/generated-muster-page-con
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 type Props = {
   entry: MusterPageEntry;
@@ -62,7 +63,7 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
             <span className="mx-2">/</span>
             <span>{entry.h1}</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.musterDetail} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             {isMuster ? 'Kostenlose Vorlage' : 'Kostenlose Checkliste'}
           </div>

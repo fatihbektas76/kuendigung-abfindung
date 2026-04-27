@@ -10,9 +10,13 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
-import BagQuote from '@/components/BagQuote';
+
 import DefinitionBox from '@/components/DefinitionBox';
+import Quellen from '@/components/Quellen';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
+import { QUELLEN_KUENDIGUNG } from '@/lib/quellen-defaults';
+import { generateArticleSchema } from '@/lib/article-schema';
 
 export const revalidate = 86400;
 
@@ -85,6 +89,7 @@ export default function KuendigungPage() {
         includeOrganization={false}
         includeRating={false}
         speakableSelectors={['.faq-section']}
+        dateModified={PAGE_DATES.kuendigung}
         isBasedOn={[
           { name: 'Kündigungsschutzgesetz (KSchG)', url: 'https://www.gesetze-im-internet.de/kschg/' },
           { name: 'Bürgerliches Gesetzbuch (BGB) §622', url: 'https://www.gesetze-im-internet.de/bgb/__622.html' },
@@ -110,6 +115,20 @@ export default function KuendigungPage() {
         }}
       />
 
+      {/* Schema.org - Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateArticleSchema({
+            headline: 'Kündigung erhalten – was jetzt tun?',
+            description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
+            dateModified: PAGE_DATES.kuendigung,
+            url: `${SEO_CONFIG.baseUrl}/kuendigung/`,
+            articleSection: 'Kündigung',
+          })),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">
@@ -118,7 +137,7 @@ export default function KuendigungPage() {
             <span className="mx-2">/</span>
             <span>Kündigung</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.kuendigung} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5 mt-4">
             Ratgeber Kündigung
           </div>
@@ -172,9 +191,6 @@ export default function KuendigungPage() {
               definition="Die Kündigungsschutzklage nach §4 KSchG ist die Klage des Arbeitnehmers vor dem Arbeitsgericht mit dem Ziel, die Unwirksamkeit einer Kündigung feststellen zu lassen. Sie muss innerhalb von drei Wochen nach Zugang der Kündigung erhoben werden — andernfalls gilt die Kündigung als von Anfang an wirksam."
             />
 
-            <BagQuote az="2 AZR 140/12" gericht="BAG" datum="24.01.2013">
-              Leiharbeitnehmer, die regelmäßig im Betrieb eingesetzt werden, sind bei der Berechnung des Schwellenwerts nach §23 KSchG zu berücksichtigen. Dies kann dazu führen, dass der Kündigungsschutz auch für Arbeitnehmer in kleineren Betrieben greift.
-            </BagQuote>
 
             {/* CTA 1 */}
             <a
@@ -396,6 +412,8 @@ export default function KuendigungPage() {
           </div>
         </div>
       </section>
+
+      <Quellen quellen={QUELLEN_KUENDIGUNG} />
 
       <RelatedTopics current="kuendigung" />
 

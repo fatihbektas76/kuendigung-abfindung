@@ -9,6 +9,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
 import TldrBox from '@/components/TldrBox';
 import DefinitionBox from '@/components/DefinitionBox';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 type Props = {
   entry: AufhebungsvertragEntry;
@@ -39,7 +40,7 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
             <span className="mx-2">/</span>
             <span>{entry.h1.replace(/ — .*$/, '')}</span>
           </nav>
-          <StandAnzeige />
+          <StandAnzeige modifiedAt={PAGE_DATES.aufhebungsvertragDetail} />
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Aufhebungsvertrag
           </div>

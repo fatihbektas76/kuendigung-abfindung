@@ -3,17 +3,15 @@ const monate = [
   'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember',
 ];
 
-function firstOfMonth(): Date {
-  const now = new Date();
-  return new Date(now.getFullYear(), now.getMonth(), 1);
-}
-
 interface StandAnzeigeProps {
   modifiedAt?: Date | string;
 }
 
-export default function StandAnzeige({ modifiedAt }: StandAnzeigeProps = {}) {
-  const date = modifiedAt ? new Date(modifiedAt) : firstOfMonth();
+export default function StandAnzeige({ modifiedAt }: StandAnzeigeProps) {
+  const now = new Date();
+  const date = modifiedAt
+    ? new Date(modifiedAt)
+    : new Date(now.getFullYear(), now.getMonth(), 1);
   const monat = monate[date.getMonth()];
   const jahr = date.getFullYear();
   const iso = date.toISOString().slice(0, 10);

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import StandAnzeige from '@/components/StandAnzeige';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 /* ───── Types ───── */
 interface Answers {
@@ -343,7 +344,7 @@ export default function KuendigungPruefenPage() {
       </div>
 
       <div className="mt-auto">
-        <StandAnzeige />
+        <StandAnzeige modifiedAt={PAGE_DATES.kuendigungPruefen} />
         <div className="flex items-center gap-1 text-gold text-[1rem] mt-3">
           {'★★★★★'}
         </div>
