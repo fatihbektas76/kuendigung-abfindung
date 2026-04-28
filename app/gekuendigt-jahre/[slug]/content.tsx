@@ -90,7 +90,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
             <TldrBox items={[
               `Kündigungsfrist bei ${yl}: ${entry.kuendigungsfrist} (§ 622 BGB).`,
               `Kündigungsschutzklage innerhalb von 3 Wochen einreichen — sonst wird die Kündigung automatisch wirksam.`,
-              `Abfindungschance: Faustformel 0,5 × Bruttomonatsgehalt × ${ylKurz} — verhandelbar auf bis zu 1,5×.`,
+              `Abfindungschance: Faustformel 0,5 × Bruttomonatsgehalt × ${ylKurz} — erfahrungsgemäß auch viel höhere Abfindungen möglich.`,
               yearData.kschgGilt
                 ? 'Das Kündigungsschutzgesetz (KSchG) gilt für Sie — Ihr Arbeitgeber braucht einen anerkannten Kündigungsgrund.'
                 : 'Das Kündigungsschutzgesetz (KSchG) gilt erst ab 6 Monaten Betriebszugehörigkeit und 10 Mitarbeitern.',
