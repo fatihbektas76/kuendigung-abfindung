@@ -11,7 +11,6 @@ import ShareButtons from '@/components/ShareButtons';
 import TldrBox from '@/components/TldrBox';
 import OptionCompare from '@/components/OptionCompare';
 import Quellen from '@/components/Quellen';
-import DejureText from '@/components/DejureText';
 import { QUELLEN_ABMAHNUNG } from '@/lib/quellen-defaults';
 import { PAGE_DATES } from '@/lib/page-dates';
 
