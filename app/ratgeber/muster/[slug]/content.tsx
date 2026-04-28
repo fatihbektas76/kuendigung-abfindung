@@ -8,6 +8,11 @@ import type { GeneratedMusterPageContent } from '@/lib/generated-muster-page-con
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
 import ShareButtons from '@/components/ShareButtons';
+import TldrBox from '@/components/TldrBox';
+import OptionCompare from '@/components/OptionCompare';
+import Quellen from '@/components/Quellen';
+import DejureText from '@/components/DejureText';
+import { QUELLEN_ABMAHNUNG } from '@/lib/quellen-defaults';
 import { PAGE_DATES } from '@/lib/page-dates';
 
 type Props = {
@@ -75,6 +80,25 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
           </p>
         </div>
       </div>
+
+      {/* ───── TL;DR (nur Abmahnung unentschuldigtes Fehlen) ───── */}
+      {entry.slug === 'abmahnung-unentschuldigtes-fehlen' && (
+        <section className="pt-8 pb-0 px-8 bg-white">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-[740px]">
+              <TldrBox
+                items={[
+                  'Abmahnung wegen unentschuldigten Fehlens ist Vorstufe zur Kündigung — aber oft angreifbar.',
+                  'Die 5 häufigsten Mängel: fehlende Datumsangabe, keine Kündigungsandrohung, Verhältnismäßigkeit, falsche Unterschrift, verspätete Zustellung.',
+                  'Drei Reaktionsmöglichkeiten: Gegendarstellung, Widerspruch mit Entfernungsanspruch oder strategisches Abwarten.',
+                  'Empfangsbestätigung ≠ Schuldeingeständnis — Sie müssen nur den Erhalt bestätigen, nicht den Inhalt anerkennen.',
+                  'Bei bereits bestehender Abmahnung: Fachanwalt einschalten, bevor eine Kündigung folgt.',
+                ]}
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ───── Disclaimer oben ───── */}
       <section className="pt-8 pb-0 px-8 bg-white">
@@ -168,6 +192,125 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
           </div>
         </div>
       </section>
+
+      {/* ───── Sofortmaßnahmen (nur Abmahnung unentschuldigtes Fehlen) ───── */}
+      {entry.slug === 'abmahnung-unentschuldigtes-fehlen' && (
+        <section className="py-[60px] px-8 bg-cream">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-[740px]">
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+                Sofort handeln
+              </div>
+              <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold leading-[1.25] mb-5">
+                3 Sofortmaßnahmen nach Erhalt der Abmahnung
+              </h2>
+              <div className="space-y-4">
+                {[
+                  { nr: '1', title: 'Empfang bestätigen — nicht mehr', text: 'Unterschreiben Sie nur die Empfangsbestätigung. Jede Formulierung, die ein Schuldeingeständnis enthält („Ich erkenne die Abmahnung an"), sollten Sie streichen oder verweigern. Sie sind lediglich verpflichtet, den Erhalt zu quittieren.' },
+                  { nr: '2', title: 'Beweise sichern', text: 'Dokumentieren Sie sofort Ihre eigene Version der Ereignisse: E-Mails, Krankmeldungen, Chatverläufe, Schichtpläne, Zeugenaussagen. Je schneller Sie Belege sammeln, desto besser ist Ihre Position.' },
+                  { nr: '3', title: 'Frist setzen — intern 14 Tage', text: 'Es gibt keine gesetzliche Frist für eine Reaktion, aber planen Sie innerhalb von 14 Tagen eine Entscheidung: Gegendarstellung, Widerspruch oder strategisches Abwarten. Bei Unsicherheit: Fachanwalt konsultieren.' },
+                ].map((step) => (
+                  <div key={step.nr} className="flex gap-4 py-4 px-5 bg-white rounded-sm border border-border">
+                    <div className="w-8 h-8 min-w-[32px] rounded-full bg-gold-dark flex items-center justify-center text-white text-[0.82rem] font-bold mt-0.5">
+                      {step.nr}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-[0.92rem] text-ink mb-1">{step.title}</div>
+                      <p className="text-[0.88rem] text-ink-light leading-relaxed m-0">{step.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ───── 5 häufigste Mängel (nur Abmahnung unentschuldigtes Fehlen) ───── */}
+      {entry.slug === 'abmahnung-unentschuldigtes-fehlen' && (
+        <section className="py-[60px] px-8 bg-white">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-[740px]">
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+                Prüfpunkte
+              </div>
+              <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold leading-[1.25] mb-5">
+                5 häufigste Mängel einer Abmahnung wegen Fehlens
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-[0.88rem]">
+                  <thead>
+                    <tr className="border-b-2 border-gold">
+                      <th className="text-left py-3 px-4 font-semibold text-ink">#</th>
+                      <th className="text-left py-3 px-4 font-semibold text-ink">Mangel</th>
+                      <th className="text-left py-3 px-4 font-semibold text-ink">Warum unwirksam?</th>
+                      <th className="text-left py-3 px-4 font-semibold text-ink">Rechtsgrundlage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { nr: '1', mangel: 'Fehltag nicht konkret benannt', warum: 'Pauschale Vorwürfe wie „häufiges Fehlen" genügen nicht — Datum und Uhrzeit müssen angegeben sein.', recht: 'BAG, st. Rspr.' },
+                      { nr: '2', mangel: 'Keine Kündigungsandrohung', warum: 'Ohne ausdrückliche Warnung vor Kündigung im Wiederholungsfall fehlt die erforderliche Warnfunktion.', recht: '§ 314 Abs. 2 BGB' },
+                      { nr: '3', mangel: 'Unverhältnismäßigkeit', warum: 'Einmaliges Fehlen von wenigen Stunden bei jahrelang beanstandungsfreiem Arbeitsverhältnis kann unverhältnismäßig sein.', recht: 'Verhältnismäßigkeitsgrundsatz' },
+                      { nr: '4', mangel: 'Falsche Unterschrift', warum: 'Abmahnung durch nicht bevollmächtigte Person (z. B. Teamleiter ohne Personalverantwortung) ist unwirksam.', recht: 'BAG 2 AZR 258/11' },
+                      { nr: '5', mangel: 'Verspätete Zustellung', warum: 'Abmahnung Monate nach dem Vorfall ohne plausiblen Grund kann als verwirkt gelten.', recht: 'Verwirkung, § 242 BGB' },
+                    ].map((row) => (
+                      <tr key={row.nr} className="border-b border-border">
+                        <td className="py-3 px-4 font-bold text-gold-dark">{row.nr}</td>
+                        <td className="py-3 px-4 font-semibold">{row.mangel}</td>
+                        <td className="py-3 px-4 text-ink-light">{row.warum}</td>
+                        <td className="py-3 px-4 text-ink-muted whitespace-nowrap"><DejureText text={row.recht} /></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ───── 3 Reaktionsmöglichkeiten (nur Abmahnung unentschuldigtes Fehlen) ───── */}
+      {entry.slug === 'abmahnung-unentschuldigtes-fehlen' && (
+        <section className="py-[60px] px-8 bg-cream">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-[740px]">
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+                Ihre Optionen
+              </div>
+              <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold leading-[1.25] mb-5">
+                3 Reaktionsmöglichkeiten als Arbeitnehmer
+              </h2>
+            </div>
+            <div className="max-w-[900px]">
+              <OptionCompare
+                options={[
+                  {
+                    number: 1,
+                    title: 'Gegendarstellung',
+                    subtitle: 'Ihre Sicht dokumentieren',
+                    body: 'Sie schildern Ihre Version der Ereignisse schriftlich. Die Gegendarstellung wird gemäß § 83 Abs. 2 BetrVG zur Personalakte genommen. Geeignet, wenn der Sachverhalt teilweise stimmt, aber der Kontext fehlt.',
+                  },
+                  {
+                    number: 2,
+                    title: 'Widerspruch',
+                    subtitle: 'Entfernung aus der Personalakte fordern',
+                    body: 'Sie weisen die Abmahnung als unberechtigt zurück und fordern deren Entfernung aus der Personalakte. Geeignet, wenn die Abmahnung formell oder inhaltlich fehlerhaft ist. Nötigenfalls per Klage beim Arbeitsgericht durchsetzbar.',
+                    recommended: true,
+                    recommendationLabel: 'Empfohlen bei Mängeln',
+                  },
+                  {
+                    number: 3,
+                    title: 'Strategisches Abwarten',
+                    subtitle: 'Nichts tun — aber dokumentieren',
+                    body: 'Sie reagieren zunächst nicht, sammeln aber Beweise und dokumentieren Ihre Version intern. Kann sinnvoll sein, wenn die Abmahnung isoliert steht und keine Kündigung droht. Risiko: Kann als stillschweigende Akzeptanz gewertet werden.',
+                  },
+                ]}
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ───── CTA 1 ───── */}
       <section className="py-[50px] px-8 bg-cream">
@@ -273,6 +416,20 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
           </div>
         </div>
       </section>
+
+      {/* ───── Quellen (nur Abmahnung unentschuldigtes Fehlen) ───── */}
+      {entry.slug === 'abmahnung-unentschuldigtes-fehlen' && (
+        <Quellen
+          quellen={QUELLEN_ABMAHNUNG}
+          bagUrteile={[
+            {
+              az: 'BAG 2 AZR 258/11',
+              datum: '19.04.2012',
+              kernaussage: 'Anforderungen an die formelle Wirksamkeit einer Abmahnung',
+            },
+          ]}
+        />
+      )}
 
       {/* ───── Autorenbox ───── */}
       <section className="py-8 px-8 bg-white">

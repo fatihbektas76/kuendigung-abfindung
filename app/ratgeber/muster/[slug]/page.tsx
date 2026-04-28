@@ -37,13 +37,22 @@ export default function Page({ params }: Props) {
   const original = (musterContent as unknown as Record<string, { title: string; intro: string; muster?: string; punkte?: string[] }>)[entry.contentKey];
   if (!original) notFound();
 
-  const faqs = [
-    { q: entry.type === 'muster' ? 'Kann ich das Muster direkt so verwenden?' : 'Kann ich die Checkliste alleine durchgehen?', a: generated.faqAnswers.verwendung },
-    { q: entry.type === 'muster' ? 'Was muss ich im Muster unbedingt anpassen?' : 'Was mache ich, wenn ein Punkt nicht zutrifft?', a: generated.faqAnswers.anpassung },
-    { q: 'Welche Fristen muss ich beachten?', a: generated.faqAnswers.frist },
-    { q: 'Brauche ich trotzdem einen Anwalt?', a: generated.faqAnswers.anwalt },
-    { q: 'Was kostet die anwaltliche Beratung?', a: generated.faqAnswers.kosten },
-  ];
+  const faqs =
+    entry.slug === 'abmahnung-unentschuldigtes-fehlen'
+      ? [
+          { q: 'Muss ich die Abmahnung unterschreiben?', a: generated.faqAnswers.frist },
+          { q: 'Ist eine mündliche Abmahnung wirksam?', a: 'Eine mündliche Abmahnung ist grundsätzlich wirksam — das Gesetz schreibt keine Schriftform vor. Allerdings hat der Arbeitgeber bei einer mündlichen Abmahnung erhebliche Beweisprobleme. Wenn er später eine Kündigung darauf stützen will, muss er beweisen, dass die Abmahnung tatsächlich ausgesprochen wurde. In der Praxis sind mündliche Abmahnungen daher deutlich weniger gefährlich als schriftliche.' },
+          { q: 'Wie lange bleibt die Abmahnung in der Personalakte?', a: 'Eine Abmahnung bleibt grundsätzlich zeitlich unbegrenzt in der Personalakte. Das BAG hat jedoch entschieden, dass eine Abmahnung nach einer angemessenen Zeit (je nach Schwere meist 2–3 Jahre) ihre Warnfunktion verliert und auf Antrag entfernt werden muss. Bei geringfügigen Verstößen wie einmaligem unentschuldigtem Fehlen kann die Entfernung bereits nach 1–2 Jahren verlangt werden, wenn sich der Arbeitnehmer seitdem beanstandungsfrei verhalten hat.' },
+          { q: 'Kann ich nach einer Abmahnung gekündigt werden?', a: generated.faqAnswers.anwalt },
+          { q: 'Was kostet die anwaltliche Prüfung einer Abmahnung?', a: generated.faqAnswers.kosten },
+        ]
+      : [
+          { q: entry.type === 'muster' ? 'Kann ich das Muster direkt so verwenden?' : 'Kann ich die Checkliste alleine durchgehen?', a: generated.faqAnswers.verwendung },
+          { q: entry.type === 'muster' ? 'Was muss ich im Muster unbedingt anpassen?' : 'Was mache ich, wenn ein Punkt nicht zutrifft?', a: generated.faqAnswers.anpassung },
+          { q: 'Welche Fristen muss ich beachten?', a: generated.faqAnswers.frist },
+          { q: 'Brauche ich trotzdem einen Anwalt?', a: generated.faqAnswers.anwalt },
+          { q: 'Was kostet die anwaltliche Beratung?', a: generated.faqAnswers.kosten },
+        ];
 
   return (
     <>
@@ -104,6 +113,54 @@ export default function Page({ params }: Props) {
           }),
         }}
       />
+
+      {/* Schema.org - HowTo (nur Abmahnung unentschuldigtes Fehlen) */}
+      {entry.slug === 'abmahnung-unentschuldigtes-fehlen' && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'HowTo',
+              name: 'So reagieren Sie auf eine Abmahnung wegen unentschuldigtem Fehlen',
+              description:
+                'Schritt-für-Schritt-Anleitung: Abmahnung wegen unentschuldigtem Fehlen prüfen und richtig reagieren.',
+              step: [
+                {
+                  '@type': 'HowToStep',
+                  position: 1,
+                  name: 'Empfang bestätigen',
+                  text: 'Unterschreiben Sie nur die Empfangsbestätigung. Streichen Sie Formulierungen, die ein Schuldeingeständnis enthalten.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  position: 2,
+                  name: 'Beweise sichern',
+                  text: 'Dokumentieren Sie Ihre Version: E-Mails, Krankmeldungen, Chatverläufe, Schichtpläne und Zeugenaussagen sammeln.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  position: 3,
+                  name: 'Abmahnung auf Mängel prüfen',
+                  text: 'Prüfen Sie die 5 häufigsten Mängel: konkrete Datumsangabe, Kündigungsandrohung, Verhältnismäßigkeit, Unterschriftsberechtigung und zeitnahe Zustellung.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  position: 4,
+                  name: 'Reaktion wählen',
+                  text: 'Entscheiden Sie innerhalb von 14 Tagen zwischen Gegendarstellung, Widerspruch mit Entfernungsanspruch oder strategischem Abwarten.',
+                },
+                {
+                  '@type': 'HowToStep',
+                  position: 5,
+                  name: 'Fachanwalt konsultieren',
+                  text: 'Lassen Sie Ihre Abmahnung von einem Fachanwalt für Arbeitsrecht prüfen — insbesondere wenn bereits weitere Abmahnungen vorliegen.',
+                },
+              ],
+            }),
+          }}
+        />
+      )}
 
       <MusterPageContent
         entry={entry}

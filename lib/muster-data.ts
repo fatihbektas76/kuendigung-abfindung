@@ -48,6 +48,14 @@ export const musterPages: MusterPageEntry[] = [
     type: 'muster',
     contentKey: 'kuendigungsschutzklage',
   },
+  {
+    slug: 'abmahnung-unentschuldigtes-fehlen',
+    h1: 'Abmahnung wegen unentschuldigtem Fehlen — Muster & Reaktion',
+    description: 'Muster-Abmahnung wegen unentschuldigten Fehlens als PDF-Download. Mit Checkliste der typischen Mängel und drei Reaktionsmöglichkeiten vom Fachanwalt für Arbeitsrecht.',
+    keywords: 'Abmahnung unentschuldigtes Fehlen, Abmahnung Muster, Gegendarstellung Abmahnung Fehlen',
+    type: 'muster',
+    contentKey: 'abmahnungUnentschuldigtesFehlen',
+  },
 ];
 
 export function getMusterPage(slug: string): MusterPageEntry | undefined {
