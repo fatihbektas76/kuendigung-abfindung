@@ -331,8 +331,8 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
         </div>
       </section>
 
-      {/* ───── Ausfüllhilfe ───── */}
-      <section className="py-[60px] px-8 bg-white">
+      {/* ───── Ausfüllhilfe (nicht bei Abmahnung unentschuldigtes Fehlen) ───── */}
+      {entry.slug !== 'abmahnung-unentschuldigtes-fehlen' && <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
@@ -353,7 +353,7 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ───── FAQ ───── */}
       <section className="py-[70px] px-8 bg-cream">
