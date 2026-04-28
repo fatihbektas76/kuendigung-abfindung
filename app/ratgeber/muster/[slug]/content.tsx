@@ -252,7 +252,7 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
                       { nr: '1', mangel: 'Fehltag nicht konkret benannt', warum: 'Pauschale Vorwürfe wie „häufiges Fehlen" genügen nicht — Datum und Uhrzeit müssen angegeben sein.', recht: 'BAG, st. Rspr.' },
                       { nr: '2', mangel: 'Keine Kündigungsandrohung', warum: 'Ohne ausdrückliche Warnung vor Kündigung im Wiederholungsfall fehlt die erforderliche Warnfunktion.', recht: '§ 314 Abs. 2 BGB' },
                       { nr: '3', mangel: 'Unverhältnismäßigkeit', warum: 'Einmaliges Fehlen von wenigen Stunden bei jahrelang beanstandungsfreiem Arbeitsverhältnis kann unverhältnismäßig sein.', recht: 'Verhältnismäßigkeitsgrundsatz' },
-                      { nr: '4', mangel: 'Falsche Unterschrift', warum: 'Abmahnung durch nicht bevollmächtigte Person (z. B. Teamleiter ohne Personalverantwortung) ist unwirksam.', recht: 'BAG 2 AZR 258/11' },
+                      { nr: '4', mangel: 'Nicht abmahnungsberechtigte Person', warum: 'Nur wer auch zur Kündigung berechtigt ist oder eine ausdrückliche Vollmacht hat, darf wirksam abmahnen. Ein Teamleiter ohne Personalverantwortung reicht nicht.', recht: 'BAG, st. Rspr.' },
                       { nr: '5', mangel: 'Verspätete Zustellung', warum: 'Abmahnung Monate nach dem Vorfall ohne plausiblen Grund kann als verwirkt gelten.', recht: 'Verwirkung, § 242 BGB' },
                     ].map((row) => (
                       <tr key={row.nr} className="border-b border-border">
@@ -287,25 +287,26 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
                 options={[
                   {
                     number: 1,
-                    title: 'Gegendarstellung',
-                    subtitle: 'Ihre Sicht dokumentieren',
-                    body: 'Sie schildern Ihre Version der Ereignisse schriftlich. Die Gegendarstellung wird gemäß § 83 Abs. 2 BetrVG zur Personalakte genommen. Geeignet, wenn der Sachverhalt teilweise stimmt, aber der Kontext fehlt.',
+                    title: 'Nichts unternehmen',
+                    body: 'Sie nehmen die Abmahnung schweigend hin — sie verbleibt unkommentiert in der Personalakte.',
+                    detail: '**Risiko:** Schweigen wird vom Arbeitgeber später nicht als Zustimmung gewertet — entwertet aber Ihre Verteidigung in einem Kündigungsschutzprozess, weil Ihre Sicht nirgends dokumentiert ist.',
                   },
                   {
                     number: 2,
-                    title: 'Widerspruch',
-                    subtitle: 'Entfernung aus der Personalakte fordern',
-                    body: 'Sie weisen die Abmahnung als unberechtigt zurück und fordern deren Entfernung aus der Personalakte. Geeignet, wenn die Abmahnung formell oder inhaltlich fehlerhaft ist. Nötigenfalls per Klage beim Arbeitsgericht durchsetzbar.',
+                    title: 'Gegendarstellung verfassen',
+                    body: 'Sie dokumentieren Ihre Sicht des Sachverhalts — die Erklärung wandert nach § 83 Abs. 2 BetrVG mit in die Personalakte.',
+                    detail: '**Vorteil:** Belastet das Arbeitsverhältnis kaum, sichert aber Ihre Position für einen späteren Kündigungsschutzprozess. **Wichtig:** Immer vorher Rücksprache mit einem Fachanwalt — eine ungeschickte Formulierung kann mehr schaden als nützen.',
                     recommended: true,
-                    recommendationLabel: 'Empfohlen bei Mängeln',
+                    recommendationLabel: 'Häufig empfohlen',
                   },
                   {
                     number: 3,
-                    title: 'Strategisches Abwarten',
-                    subtitle: 'Nichts tun — aber dokumentieren',
-                    body: 'Sie reagieren zunächst nicht, sammeln aber Beweise und dokumentieren Ihre Version intern. Kann sinnvoll sein, wenn die Abmahnung isoliert steht und keine Kündigung droht. Risiko: Kann als stillschweigende Akzeptanz gewertet werden.',
+                    title: 'Klage auf Entfernung',
+                    body: 'Sie verlangen die Entfernung der Abmahnung aus der Personalakte vor dem Arbeitsgericht (§§ 242, 1004 BGB analog).',
+                    detail: '**Wann sinnvoll:** Eine Klage belastet das Arbeitsverhältnis erheblich. Sie ist nur dann zu empfehlen, wenn das Verhältnis ohnehin schon zerrüttet ist und absehbar auf eine Trennung hinausläuft.',
                   },
                 ]}
+                note="**Unsere Erfahrung:** In der überwiegenden Mehrzahl der Fälle ist Option 2 — die anwaltlich vorbereitete Gegendarstellung — das beste Verhältnis aus Wirkung und Risiko. Sie sichert Ihre Position, ohne den Konflikt zu eskalieren."
               />
             </div>
           </div>
