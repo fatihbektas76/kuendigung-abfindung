@@ -129,8 +129,8 @@ export default function Page({ params }: Props) {
                 {
                   '@type': 'HowToStep',
                   position: 1,
-                  name: 'Empfang bestätigen',
-                  text: 'Unterschreiben Sie nur die Empfangsbestätigung. Streichen Sie Formulierungen, die ein Schuldeingeständnis enthalten.',
+                  name: 'Unterschrift verweigern oder nur Empfang quittieren',
+                  text: 'Sie sind nicht verpflichtet, eine Abmahnung gegenzuzeichnen — auch keine Empfangsbestätigung. Wenn Sie dennoch quittieren, bestätigen Sie ausschließlich den Empfang, nicht die inhaltliche Richtigkeit. Formulierungen wie „Ich erkenne die Abmahnung an" streichen oder Unterschrift verweigern.',
                 },
                 {
                   '@type': 'HowToStep',

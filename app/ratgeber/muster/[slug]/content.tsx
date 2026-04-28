@@ -90,7 +90,7 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
                   'Abmahnung wegen unentschuldigten Fehlens ist Vorstufe zur Kündigung — aber oft angreifbar.',
                   'Die 5 häufigsten Mängel: fehlende Datumsangabe, keine Kündigungsandrohung, Verhältnismäßigkeit, falsche Unterschrift, verspätete Zustellung.',
                   'Drei Reaktionsmöglichkeiten: Gegendarstellung, Widerspruch mit Entfernungsanspruch oder strategisches Abwarten.',
-                  'Empfangsbestätigung ≠ Schuldeingeständnis — Sie müssen nur den Erhalt bestätigen, nicht den Inhalt anerkennen.',
+                  'Sie sind nicht verpflichtet, eine Abmahnung gegenzuzeichnen — die Verweigerung hat keine Folgen. Quittieren Sie allenfalls den Empfang, nie den Inhalt.',
                   'Bei bereits bestehender Abmahnung: Fachanwalt einschalten, bevor eine Kündigung folgt.',
                 ]}
               />
@@ -205,7 +205,7 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
               </h2>
               <div className="space-y-4">
                 {[
-                  { nr: '1', title: 'Empfang bestätigen — nicht mehr', text: 'Unterschreiben Sie nur die Empfangsbestätigung. Jede Formulierung, die ein Schuldeingeständnis enthält („Ich erkenne die Abmahnung an"), sollten Sie streichen oder verweigern. Sie sind lediglich verpflichtet, den Erhalt zu quittieren.' },
+                  { nr: '1', title: 'Unterschrift verweigern oder nur Empfang quittieren', text: 'Sie sind nicht verpflichtet, eine Abmahnung gegenzuzeichnen — auch keine Empfangsbestätigung. Die Verweigerung der Unterschrift hat keine arbeitsrechtlichen Folgen; den Zugang muss der Arbeitgeber dann über Zeugen oder Einschreiben beweisen. Wenn Sie den Erhalt dennoch quittieren möchten (z. B. weil Sie den Konflikt nicht eskalieren wollen), achten Sie darauf, dass die Unterschrift ausschließlich den Empfang bestätigt — nicht die inhaltliche Richtigkeit der Vorwürfe. Formulierungen wie „Ich erkenne die Abmahnung an" oder „Mit dem Inhalt einverstanden" sollten Sie streichen oder die Unterschrift komplett verweigern.' },
                   { nr: '2', title: 'Beweise sichern', text: 'Dokumentieren Sie sofort Ihre eigene Version der Ereignisse: E-Mails, Krankmeldungen, Chatverläufe, Schichtpläne, Zeugenaussagen. Je schneller Sie Belege sammeln, desto besser ist Ihre Position.' },
                   { nr: '3', title: 'Frist setzen — intern 14 Tage', text: 'Es gibt keine gesetzliche Frist für eine Reaktion, aber planen Sie innerhalb von 14 Tagen eine Entscheidung: Gegendarstellung, Widerspruch oder strategisches Abwarten. Bei Unsicherheit: Fachanwalt konsultieren.' },
                 ].map((step) => (
