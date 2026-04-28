@@ -66,10 +66,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Abfindung nach Jahren</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/abfindung-nach-einem-jahr-betriebszugehoerigkeit/" className={linkClass}>Nach 1 Jahr</Link></li>
-              <li><Link href="/abfindung-nach-fuenf-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
-              <li><Link href="/abfindung-nach-zehn-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
-              <li><Link href="/abfindung-nach-zwanzig-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
+              <li><Link href="/abfindung-nach-1-jahr-betriebszugehoerigkeit/" className={linkClass}>Nach 1 Jahr</Link></li>
+              <li><Link href="/abfindung-nach-5-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
+              <li><Link href="/abfindung-nach-10-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
+              <li><Link href="/abfindung-nach-20-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
               <li><Link href="/abfindung" className={linkClass}>Alle anzeigen &rarr;</Link></li>
             </ul>
           </div>
@@ -78,10 +78,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Gekündigt nach Jahren</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/gekuendigt-nach-einem-jahr-betriebszugehoerigkeit/" className={linkClass}>Nach 1 Jahr</Link></li>
-              <li><Link href="/gekuendigt-nach-fuenf-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
-              <li><Link href="/gekuendigt-nach-zehn-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
-              <li><Link href="/gekuendigt-nach-zwanzig-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
+              <li><Link href="/gekuendigt-nach-1-jahr-betriebszugehoerigkeit/" className={linkClass}>Nach 1 Jahr</Link></li>
+              <li><Link href="/gekuendigt-nach-5-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
+              <li><Link href="/gekuendigt-nach-10-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
+              <li><Link href="/gekuendigt-nach-20-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
               <li><Link href="/kuendigung" className={linkClass}>Alle anzeigen &rarr;</Link></li>
             </ul>
           </div>
@@ -90,10 +90,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Fristlos nach Jahren</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/fristlose-kuendigung-nach-einem-jahr-betriebszugehoerigkeit/" className={linkClass}>Nach 1 Jahr</Link></li>
-              <li><Link href="/fristlose-kuendigung-nach-fuenf-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
-              <li><Link href="/fristlose-kuendigung-nach-zehn-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
-              <li><Link href="/fristlose-kuendigung-nach-zwanzig-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
+              <li><Link href="/fristlose-kuendigung-nach-1-jahr-betriebszugehoerigkeit/" className={linkClass}>Nach 1 Jahr</Link></li>
+              <li><Link href="/fristlose-kuendigung-nach-5-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
+              <li><Link href="/fristlose-kuendigung-nach-10-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
+              <li><Link href="/fristlose-kuendigung-nach-20-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
               <li><Link href="/fristlose-kuendigung" className={linkClass}>Alle anzeigen &rarr;</Link></li>
             </ul>
           </div>
