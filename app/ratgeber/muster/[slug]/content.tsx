@@ -85,6 +85,15 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
               <strong>Wichtiger Hinweis:</strong> {isMuster ? 'Dieses Muster' : 'Diese Checkliste'} ersetzt keine anwaltliche Beratung. Wir raten dringend, vor dem Versenden solcher Schreiben einen Fachanwalt für Arbeitsrecht zu konsultieren, da sie weitgehende rechtliche Konsequenzen haben können.
             </p>
           </div>
+
+          {entry.slug === 'widerspruch-abmahnung' && (
+            <div className="max-w-[740px] flex gap-4 py-5 px-6 bg-[#FEF2F2] border border-[#FECACA] rounded-sm mt-4">
+              <div className="text-[1.3rem] mt-0.5" aria-hidden="true">&#9888;</div>
+              <p className="text-[0.88rem] text-ink leading-relaxed m-0">
+                <strong>Achtung:</strong> Eine Gegendarstellung oder ein Widerspruch sollte immer vorher mit einem spezialisierten Anwalt abgestimmt werden, da jedes falsche Wort sp&auml;ter problematisch sein k&ouml;nnte.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
