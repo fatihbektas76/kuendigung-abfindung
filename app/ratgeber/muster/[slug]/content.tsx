@@ -232,38 +232,24 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
           <div className="max-w-content mx-auto">
             <div className="max-w-[740px]">
               <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-                Prüfpunkte
+                Aktualisiert
               </div>
               <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold leading-[1.25] mb-5">
-                5 häufigste Mängel einer Abmahnung wegen Fehlens
+                5 typische Mängel — die jede Abmahnung angreifbar machen
               </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse text-[0.88rem]">
-                  <thead>
-                    <tr className="border-b-2 border-gold">
-                      <th className="text-left py-3 px-4 font-semibold text-ink">#</th>
-                      <th className="text-left py-3 px-4 font-semibold text-ink">Mangel</th>
-                      <th className="text-left py-3 px-4 font-semibold text-ink">Warum unwirksam?</th>
-                      <th className="text-left py-3 px-4 font-semibold text-ink">Rechtsgrundlage</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      { nr: '1', mangel: 'Fehltag nicht konkret benannt', warum: 'Pauschale Vorwürfe wie „häufiges Fehlen" genügen nicht — Datum und Uhrzeit müssen angegeben sein.', recht: 'BAG, st. Rspr.' },
-                      { nr: '2', mangel: 'Keine Kündigungsandrohung', warum: 'Ohne ausdrückliche Warnung vor Kündigung im Wiederholungsfall fehlt die erforderliche Warnfunktion.', recht: '§ 314 Abs. 2 BGB' },
-                      { nr: '3', mangel: 'Unverhältnismäßigkeit', warum: 'Einmaliges Fehlen von wenigen Stunden bei jahrelang beanstandungsfreiem Arbeitsverhältnis kann unverhältnismäßig sein.', recht: 'Verhältnismäßigkeitsgrundsatz' },
-                      { nr: '4', mangel: 'Nicht abmahnungsberechtigte Person', warum: 'Nur wer auch zur Kündigung berechtigt ist oder eine ausdrückliche Vollmacht hat, darf wirksam abmahnen. Ein Teamleiter ohne Personalverantwortung reicht nicht.', recht: 'BAG, st. Rspr.' },
-                      { nr: '5', mangel: 'Verspätete Zustellung', warum: 'Abmahnung Monate nach dem Vorfall ohne plausiblen Grund kann als verwirkt gelten.', recht: 'Verwirkung, § 242 BGB' },
-                    ].map((row) => (
-                      <tr key={row.nr} className="border-b border-border">
-                        <td className="py-3 px-4 font-bold text-gold-dark">{row.nr}</td>
-                        <td className="py-3 px-4 font-semibold">{row.mangel}</td>
-                        <td className="py-3 px-4 text-ink-light">{row.warum}</td>
-                        <td className="py-3 px-4 text-ink-muted whitespace-nowrap"><DejureText text={row.recht} /></td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+                {[
+                  { title: 'Unbestimmtheit', text: '\u201ESie fehlen häufig\u201C — kein konkreter Fehltag, keine Uhrzeit, keine konkrete Pflicht benannt.' },
+                  { title: 'Unrichtige Tatsachen', text: 'Behauptetes Fehlen ist falsch — AU lag vor, Krankmeldung erfolgte fristgerecht, Tag war Urlaub.' },
+                  { title: 'Sammelabmahnung', text: 'Ist ein Vorwurf falsch, kippen alle anderen auch.' },
+                  { title: 'Fehlende Warnfunktion', text: 'Keine eindeutige Androhung von Konsequenzen für den Wiederholungsfall — bloße Ermahnung.' },
+                  { title: 'Unverhältnismäßigkeit / falsche rechtliche Bewertung', text: 'Das Verhalten war keine Pflichtverletzung (z.\u00A0B. genehmigter Arztbesuch, Freistellung, Pause) oder die Abmahnung steht in keinem Verhältnis zum Vorfall.' },
+                ].map((item, i) => (
+                  <div key={i} className={`py-4 px-5 bg-cream rounded-sm border border-border ${i === 4 ? 'col-span-2 max-md:col-span-1' : ''}`}>
+                    <div className="font-semibold text-[0.92rem] text-gold-dark mb-1">{item.title}</div>
+                    <p className="text-[0.88rem] text-ink-light leading-relaxed m-0">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
