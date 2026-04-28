@@ -31,6 +31,18 @@ const tools = [
     href: '/kuendigung-pruefen',
   },
   {
+    label: 'Abmahnung',
+    title: 'Abmahnchecker',
+    text: 'Abmahnung erhalten? Prüfen Sie in 3 Minuten, ob Ihre Abmahnung wirksam ist — mit Erkennung von KO-Kriterien, konkreten BAG-Fundstellen und PDF-Auswertung zum Download.',
+    checks: [
+      'Formelle & materielle Prüfung',
+      'KO-Kriterien automatisch erkennen',
+      'PDF-Auswertung mit BAG-Rechtsprechung',
+    ],
+    linkText: 'Abmahnung prüfen',
+    href: '/abmahnung-pruefen',
+  },
+  {
     label: 'Aufhebungsvertrag',
     title: 'Aufhebungsvertrag-Checker',
     text: 'Aufhebungsvertrag erhalten? Prüfen Sie in 3 Minuten ob Ihr Vertrag faire Konditionen enthält — mit Ampelbewertung in 8 Kategorien.',
