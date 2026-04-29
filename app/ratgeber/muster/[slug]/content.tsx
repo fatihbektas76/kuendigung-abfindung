@@ -255,6 +255,26 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
         </section>
       )}
 
+      {/* ───── Abmahnchecker CTA (nur Abmahnung unentschuldigtes Fehlen) ───── */}
+      {entry.slug === 'abmahnung-unentschuldigtes-fehlen' && (
+        <section className="py-[50px] px-8 bg-cream">
+          <div className="max-w-content mx-auto text-center">
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold mb-3">
+              Treffen diese Mängel auf Ihre Abmahnung zu?
+            </h2>
+            <p className="text-[0.95rem] text-ink-muted max-w-[480px] mx-auto mb-5">
+              Unser kostenloser Abmahnchecker prüft in 3 Minuten, ob Ihre Abmahnung formell und inhaltlich angreifbar ist &mdash; mit konkreten BAG-Fundstellen.
+            </p>
+            <Link
+              href="/abmahnung-pruefen/"
+              className="inline-block py-3 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
+            >
+              Abmahnung jetzt prüfen &rarr;
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* ───── 3 Reaktionsmöglichkeiten (nur Abmahnung unentschuldigtes Fehlen) ───── */}
       {entry.slug === 'abmahnung-unentschuldigtes-fehlen' && (
         <section className="py-[60px] px-8 bg-cream">

@@ -315,15 +315,23 @@ export default function AbmahnungPage() {
             Ist Ihre Abmahnung wirksam?
           </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
-            Wir prüfen Ihre Abmahnung kostenlos und schätzen ein, ob sie formell und inhaltlich
-            Bestand hat &mdash; innerhalb von 48 Stunden.
+            Unser kostenloser Abmahnchecker prüft in 3 Minuten, ob Ihre Abmahnung formell und inhaltlich
+            Bestand hat &mdash; mit konkreten BAG-Fundstellen und PDF-Auswertung.
           </p>
-          <a
-            href="/#kontakt"
-            className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
-          >
-            Abmahnung prüfen lassen &rarr;
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="/abmahnung-pruefen/"
+              className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
+            >
+              Jetzt kostenlos prüfen &rarr;
+            </a>
+            <a
+              href="/#kontakt"
+              className="inline-block py-3.5 px-8 bg-transparent text-gold-dark border-2 border-gold-dark rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-gold-bg"
+            >
+              Direkt zum Anwalt
+            </a>
+          </div>
         </div>
       </section>
 
@@ -489,15 +497,23 @@ export default function AbmahnungPage() {
             Abmahnung erhalten? Lassen Sie sie prüfen.
           </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
-            Eine fehlerhafte Abmahnung kann eine spätere Kündigung zu Fall bringen. Nutzen Sie
-            unsere kostenlose Ersteinschätzung, um Ihre Rechte zu sichern.
+            Eine fehlerhafte Abmahnung kann eine spätere Kündigung zu Fall bringen. Prüfen Sie
+            Ihre Abmahnung kostenlos in 3 Minuten &mdash; oder lassen Sie sich direkt beraten.
           </p>
-          <a
-            href="/#kontakt"
-            className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
-          >
-            Kostenlose Ersteinschätzung &rarr;
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="/abmahnung-pruefen/"
+              className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
+            >
+              Jetzt kostenlos prüfen &rarr;
+            </a>
+            <a
+              href="/#kontakt"
+              className="inline-block py-3.5 px-8 bg-transparent text-gold-dark border-2 border-gold-dark rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-gold-dark hover:text-white hover:-translate-y-px"
+            >
+              Direkt zum Anwalt
+            </a>
+          </div>
         </div>
       </section>
     </main>
