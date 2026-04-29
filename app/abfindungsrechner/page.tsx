@@ -232,6 +232,12 @@ export default function AbfindungsrechnerPage() {
                   Die Berechnung basiert auf der Formel: Faktor &times; Bruttomonatsgehalt &times; Betriebsjahre.
                   Die tatsächliche Abfindung hängt von den Umständen Ihres Falls ab.
                 </p>
+                <div className="mt-4 py-3 px-4 bg-amber-50 rounded-sm border border-amber-300">
+                  <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
+                    <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Abfindungshöhe hängt von vielen individuellen Faktoren ab. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                    <a href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</a>.
+                  </p>
+                </div>
 
                 {/* CTA 1 */}
                 <div className="mt-8 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold">

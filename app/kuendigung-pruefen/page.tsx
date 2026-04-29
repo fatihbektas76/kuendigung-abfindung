@@ -386,6 +386,11 @@ export default function KuendigungPruefenPage() {
                 </div>
               </div>
             )}
+            <div className="py-4 px-5 bg-amber-50 rounded-sm border border-amber-300 mb-6">
+              <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
+                <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ist eine automatisierte Orientierungshilfe und ersetzt keine individuelle anwaltliche Beratung. Die tatsächliche Abfindungshöhe hängt von vielen Faktoren ab, die nur ein Fachanwalt nach Sichtung Ihrer Unterlagen beurteilen kann.
+              </p>
+            </div>
             <a
               href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
               target="_blank"
@@ -873,10 +878,16 @@ export default function KuendigungPruefenPage() {
               </label>
             </div>
 
+            <div className="mt-6 py-4 px-5 bg-amber-50 rounded-sm border border-amber-300">
+              <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
+                <strong>Wichtiger Hinweis:</strong> Dieses Tool dient der unverbindlichen Erstorientierung und ersetzt keine individuelle anwaltliche Beratung. Eine verbindliche rechtliche Beurteilung kann nur durch einen Fachanwalt nach Sichtung Ihrer Unterlagen erfolgen.
+              </p>
+            </div>
+
             <button
               onClick={handleSubmit}
               disabled={!answers.email || !answers.datenschutz || !answers.vorname || !answers.nachname || loading}
-              className="w-full mt-6 py-4 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
+              className="w-full mt-4 py-4 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
             >
               {loading ? 'Wird gesendet...' : 'Jetzt Ergebnis anfordern \u2192'}
             </button>

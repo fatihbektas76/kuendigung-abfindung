@@ -139,6 +139,11 @@ export default function TeilzeitRechnerClient() {
                 <div className="text-[0.84rem] text-ink-muted mt-2.5 text-center">
                   Das entspricht {prozent}&nbsp;% des Vollzeiturlaubs.
                 </div>
+                <div className="mt-4 py-4 px-5 bg-amber-50 rounded-sm border border-amber-300">
+                  <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
+                    <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Der tatsächliche Urlaubsanspruch kann durch Arbeitsvertrag, Tarifvertrag oder besondere Regelungen abweichen.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

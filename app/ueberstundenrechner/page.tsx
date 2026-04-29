@@ -388,8 +388,16 @@ export default function UeberstundenrechnerPage() {
                     </div>
                   )}
 
+                  {/* Disclaimer */}
+                  <div className="mt-6 py-3 px-4 bg-amber-50 rounded-sm border border-amber-300">
+                    <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
+                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Ob und in welcher Höhe ein Anspruch auf Überstundenvergütung besteht, hängt von Ihrem Arbeitsvertrag und den konkreten Umständen ab. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                      <Link href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</Link>.
+                    </p>
+                  </div>
+
                   {/* CTA in Ergebnis */}
-                  <div className="mt-6 py-4 px-5 bg-white rounded-sm border-l-[3px] border-gold">
+                  <div className="mt-4 py-4 px-5 bg-white rounded-sm border-l-[3px] border-gold">
                     <p className="text-[0.88rem] font-semibold text-ink mb-3 m-0">
                       Stehen Ihnen diese Überstunden noch zu?
                     </p>

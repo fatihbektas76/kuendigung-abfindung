@@ -499,6 +499,14 @@ export default function UrlaubsabgeltungRechnerPage() {
                     </div>
                   </div>
 
+                  {/* Disclaimer */}
+                  <div className="py-3 px-4 bg-amber-50 rounded-sm border border-amber-300 mb-4">
+                    <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
+                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Urlaubsabgeltung hängt von Ihrem Arbeitsvertrag und den konkreten Umständen ab. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                      <Link href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</Link>.
+                    </p>
+                  </div>
+
                   {/* CTA */}
                   <Link
                     href="/kuendigung-pruefen"

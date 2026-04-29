@@ -304,9 +304,12 @@ export default function AbmahncheckerFlow() {
               </div>
 
               {/* Disclaimer */}
-              <p className="text-[0.7rem] text-ink-muted/60 leading-relaxed mt-8 m-0">
-                Dieses Ergebnis ist eine automatisierte Orientierungshilfe auf Basis Ihrer Angaben und ersetzt keine individuelle Rechtsberatung. Eine verbindliche Beurteilung kann nur nach Sichtung der konkreten Abmahnung durch einen Rechtsanwalt erfolgen.
-              </p>
+              <div className="mt-8 py-4 px-5 bg-amber-50 rounded-sm border border-amber-300">
+                <p className="text-[0.88rem] text-amber-900 leading-relaxed m-0">
+                  <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ist eine automatisierte Orientierungshilfe auf Basis Ihrer Angaben und ersetzt keine individuelle anwaltliche Beratung. Eine verbindliche rechtliche Beurteilung kann nur nach Sichtung der konkreten Abmahnung durch einen Fachanwalt erfolgen. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                  <Link href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</Link>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
