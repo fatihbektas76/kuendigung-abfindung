@@ -54,11 +54,6 @@ const initialAnswers: Answers = {
 };
 
 /* ───── Helpers ───── */
-function daysBetween(from: string, to: string): number {
-  const a = new Date(from);
-  const b = new Date(to);
-  return Math.floor((b.getTime() - a.getTime()) / (1000 * 60 * 60 * 24));
-}
 
 function yearsAndMonths(monat: string, jahr: string): { years: number; months: number } {
   if (!monat || !jahr) return { years: 0, months: 0 };
@@ -205,12 +200,6 @@ export default function KuendigungPruefenPage() {
   const abfindungMin = gehaltNum * 0.5 * betriebsjahre;
   const abfindungMax = gehaltNum * 1.5 * betriebsjahre;
 
-  /* Frist calculation */
-  const fristTage = useMemo(() => {
-    if (!answers.kuendigungsDatum) return 21;
-    const days = daysBetween(answers.kuendigungsDatum, new Date().toISOString().slice(0, 10));
-    return 21 - days;
-  }, [answers.kuendigungsDatum]);
 
   /* Submit handler */
   const handleSubmit = async () => {
@@ -220,7 +209,7 @@ export default function KuendigungPruefenPage() {
     const message = [
       `Fall: ${answers.fall}`,
       answers.kuendigungErwartet ? `Kündigung erwartet: ${answers.kuendigungErwartet}` : '',
-      answers.kuendigungsDatum ? `Kündigungsdatum: ${answers.kuendigungsDatum}` : '',
+      answers.kuendigungsDatum ? `Kündigungsdatum: ${answers.kuendigungsDatum} (3-Wochen-Klagefrist beachten)` : '',
       answers.sechsMonate ? `Länger als 6 Monate beschäftigt: ${answers.sechsMonate}` : '',
       answers.mitarbeiter ? `Mehr als 10 Mitarbeiter: ${answers.mitarbeiter}` : '',
       answers.besondereUmstaende ? `Besondere Umstände: ${answers.besondereUmstaende}` : '',
@@ -232,7 +221,6 @@ export default function KuendigungPruefenPage() {
       answers.gehalt ? `Bruttogehalt: ${answers.gehalt} €` : '',
       abfindungMin > 0 ? `Mögliche Abfindung: ${fmt(abfindungMin)} – ${fmt(abfindungMax)}` : '',
       answers.rechtsschutz ? `Rechtsschutzversicherung: ${answers.rechtsschutz}` : '',
-      fristTage < 21 ? `Klagefrist verbleibend: ${fristTage} Tage` : '',
     ].filter(Boolean).join('\n');
 
     try {
@@ -512,30 +500,14 @@ export default function KuendigungPruefenPage() {
               onChange={(e) => set('kuendigungsDatum', e.target.value)}
               className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.95rem] text-ink bg-white outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] transition-all"
             />
-            {answers.kuendigungsDatum && (
-              <div
-                className={`mt-4 py-4 px-5 rounded-sm border-l-[3px] ${
-                  fristTage <= 0
-                    ? 'bg-red-50 border-red-500'
-                    : fristTage <= 7
-                    ? 'bg-red-50 border-red-500'
-                    : 'bg-gold-bg border-gold'
-                }`}
-              >
-                {fristTage > 0 ? (
-                  <p className={`text-[0.92rem] font-semibold m-0 ${fristTage <= 7 ? 'text-red-700' : 'text-gold-dark'}`}>
-                    Nur noch {fristTage} {fristTage === 1 ? 'Tag' : 'Tage'} Zeit Einreichung einer Kündigungsschutzklage!
-                  </p>
-                ) : (
-                  <p className="text-[0.92rem] font-semibold text-red-700 m-0">
-                    Frist abgelaufen &mdash; trotzdem kontaktieren!
-                  </p>
-                )}
-                <p className="text-[0.78rem] text-ink-muted mt-1 m-0">
-                  Die 3-Wochen-Klagefrist nach &sect;4 KSchG beginnt ab Zugang der Kündigung.
-                </p>
-              </div>
-            )}
+            <div className="mt-4 py-4 px-5 rounded-sm border-l-[3px] bg-gold-bg border-gold">
+              <p className="text-[0.92rem] font-semibold text-gold-dark m-0">
+                Sie haben nur 3 Wochen Zeit gegen eine Kündigung Klage zu erheben.
+              </p>
+              <p className="text-[0.78rem] text-ink-muted mt-1 m-0">
+                Die Klagefrist beginnt mit Zugang der Kündigung (&sect;4 KSchG). Es kommt nicht darauf an, wann Sie die Kündigung zur Kenntnis genommen haben, sondern wann sie bei Ihnen eingegangen ist.
+              </p>
+            </div>
           </div>
         );
 
