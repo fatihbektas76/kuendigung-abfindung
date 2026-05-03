@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getEntry(params.slug);
   if (!entry) return {};
   const yl = yearLabel(entry.year);
-  const title = `Gekündigt nach ${entry.word} ${entry.year === 1 ? 'Jahr' : 'Jahren'} — Ihre Rechte & Abfindung (${new Date().getFullYear()})`;
+  const title = `Gekündigt nach ${yl} — Ihre Rechte & Abfindung (${new Date().getFullYear()})`;
   const description = `Kündigung nach ${yl} erhalten? Sofortmaßnahmen, 3-Wochen-Frist & Abfindungschancen. Jetzt kostenlos prüfen.`;
   const url = `${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {

@@ -1,5 +1,7 @@
 import { buildMetadata } from '@/lib/seo-config';
 
+export const revalidate = 86400;
+
 export const metadata = buildMetadata({
   title: `Abfindung berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
   description:

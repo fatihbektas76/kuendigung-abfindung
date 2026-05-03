@@ -530,7 +530,7 @@ export default function AufhebungsvertragPruefenPage() {
             </div>
             {answers.abfindungVorhanden === 'nein' && (
               <InfoBox>
-                Kein gesetzlicher Anspruch auf Abfindung, aber bei Aufhebungsverträgen verhandelbar. Faustformel: 0,5 Monatsgehälter &times; Beschäftigungsjahre.
+                Kein gesetzlicher Anspruch auf Abfindung, aber bei Aufhebungsverträgen verhandelbar. Faustformel: 0,5 Monatsgehälter &times; Beschäftigungsjahre. Aber oftmals ist mehr drin und Arbeitgeber bieten selten bei einer außergerichtlichen Verhandlung das Maximum an.
               </InfoBox>
             )}
           </div>
@@ -546,7 +546,7 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Über 0,5 Monatsgehälter pro Beschäftigungsjahr"
                 selected={answers.abfindungHoehe === 'ueber'}
-                onClick={() => autoAdvance('abfindungHoehe', 'ueber', 'S3', 'S2', 1, 'green')}
+                onClick={() => selectWithInfo('abfindungHoehe', 'ueber', 'S3', 'S2', 1, 'green')}
               />
               <RadioOption
                 label="Genau 0,5 Monatsgehälter pro Beschäftigungsjahr"
@@ -564,6 +564,11 @@ export default function AufhebungsvertragPruefenPage() {
                 onClick={() => autoAdvance('abfindungHoehe', 'unsicher', 'S3', 'S2', 1, 'yellow')}
               />
             </div>
+            {answers.abfindungHoehe === 'ueber' && (
+              <InfoBox>
+                Bei einer Abfindung über 0,5 Monatsgehälter pro Beschäftigungsjahr droht eine Sperre bzgl. des Arbeitslosengeldes von der Arbeitsagentur.
+              </InfoBox>
+            )}
           </div>
         );
 

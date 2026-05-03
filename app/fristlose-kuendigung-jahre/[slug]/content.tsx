@@ -63,7 +63,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
           </nav>
 
           <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight max-w-[750px]">
-            Fristlose Kündigung nach {entry.word} {y === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit &mdash; wirksam oder nicht?
+            Fristlose Kündigung nach {yl} Betriebszugehörigkeit &mdash; wirksam oder nicht?
           </h1>
           <p className="text-lg text-gray-600 max-w-[680px] leading-relaxed mb-6">
             Über 80 % aller fristlosen Kündigungen sind unwirksam. Nach &sect; 626 BGB müssen drei Voraussetzungen

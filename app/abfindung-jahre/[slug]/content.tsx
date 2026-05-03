@@ -107,7 +107,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
           </nav>
 
           <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight max-w-[750px]">
-            Abfindung nach {entry.word} {y === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit &mdash; wie viel steht mir zu?
+            Abfindung nach {yl} Betriebszugehörigkeit &mdash; wie viel steht mir zu?
           </h1>
           <p className="text-lg text-gray-600 max-w-[680px] leading-relaxed mb-6">
             Nach {yl} Betriebszugehörigkeit berechnet sich die Abfindung nach der Faustformel:

@@ -69,7 +69,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
           </nav>
 
           <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight max-w-[750px]">
-            Gekündigt nach {entry.word} {y === 1 ? 'Jahr' : 'Jahren'} Betriebszugehörigkeit &mdash; was jetzt?
+            Gekündigt nach {yl} Betriebszugehörigkeit &mdash; was jetzt?
           </h1>
           <p className="text-lg text-gray-600 max-w-[680px] leading-relaxed mb-6">
             Sie haben nach {yl} eine Kündigung erhalten? Erfahren Sie, welche Rechte Sie haben,
