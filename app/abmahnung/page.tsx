@@ -413,7 +413,7 @@ export default function AbmahnungPage() {
               <p className="text-[0.95rem] text-ink leading-relaxed m-0">
                 <strong>Ausnahme:</strong> Bei besonders schweren Pflichtverletzungen wie Diebstahl,
                 Betrug oder schwerer Beleidigung kann der Arbeitgeber auch ohne vorherige Abmahnung
-                fristlos kündigen (&sect;626 BGB). Aber auch hier gilt: Die meisten fristlosen
+                <Link href="/fristlose-kuendigung/" className="text-gold-dark font-semibold no-underline hover:underline">fristlos kündigen</Link> (&sect;626 BGB). Aber auch hier gilt: Die meisten fristlosen
                 Kündigungen scheitern vor dem Arbeitsgericht.
               </p>
             </div>
@@ -477,6 +477,30 @@ export default function AbmahnungPage() {
           <div className="max-w-[740px]">
             <AuthorBox />
             <ShareButtons url="/abmahnung/" title="Abmahnung erhalten – Rechte & Reaktion" />
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-cluster links */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px] grid grid-cols-2 gap-4 max-md:grid-cols-1">
+            <Link
+              href="/kuendigung/"
+              className="block py-6 px-6 bg-cream border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">Verwandtes Thema</div>
+              <span className="font-serif text-[1.05rem] font-bold">Kündigung nach Abmahnung?</span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">Ihre Rechte, Fristen &amp; Abfindungschancen. &rarr;</span>
+            </Link>
+            <Link
+              href="/fristlose-kuendigung/"
+              className="block py-6 px-6 bg-cream border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">Verwandtes Thema</div>
+              <span className="font-serif text-[1.05rem] font-bold">Fristlose Kündigung erhalten?</span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">Die meisten sind unwirksam &mdash; Ihre Rechte nach &sect;626 BGB. &rarr;</span>
+            </Link>
           </div>
         </div>
       </section>

@@ -14,6 +14,7 @@ import CTA from '@/components/CTA';
 import StandortTeaser from '@/components/StandortTeaser';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import StatistikTeaser from '@/components/StatistikTeaser';
+import TldrBox from '@/components/TldrBox';
 
 export const revalidate = 86400;
 
@@ -139,6 +140,18 @@ export default function Home() {
       <main>
         <Hero />
         <AktuelleRechtslage />
+        <section className="py-4 px-8 bg-white">
+          <div className="max-w-content mx-auto">
+            <TldrBox
+              items={[
+                '3-Wochen-Frist: Nach Zugang der Kündigung haben Sie nur 3 Wochen für eine Klage (§ 4 KSchG).',
+                'Abfindungsformel: 0,5 Bruttomonatsgehälter × Beschäftigungsjahre — oft ist deutlich mehr möglich.',
+                'Kostenloser Kündigungscheck: Fachanwalt prüft Ihren Fall — kostenlos und unverbindlich.',
+                'Über 2.000 erfolgreiche Verfahren vor deutschen Arbeitsgerichten seit 2005.',
+              ]}
+            />
+          </div>
+        </section>
         <Situations />
         <Disputes />
         <Process />

@@ -29,6 +29,7 @@ export const SEO_CONFIG = {
       'https://www.anwalt.de/fatihbektas',
       'https://www.linkedin.com/in/fatih-bektas',
       'https://www.gekuendigt-abfindung.de/team/',
+      'https://www.gekuendigt-abfindung.de/autor/fatih-bektas/',
     ],
   },
 

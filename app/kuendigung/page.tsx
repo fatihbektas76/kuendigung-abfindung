@@ -179,7 +179,7 @@ export default function KuendigungPage() {
                 Eine Kündigung zu erhalten ist ein Schock &mdash; aber kein Grund zur Panik, wenn Sie richtig reagieren. Ihr wichtigstes Werkzeug: die <strong>Kündigungsschutzklage</strong>. Innerhalb von nur drei Wochen nach Zugang der Kündigung müssen Sie Klage beim Arbeitsgericht einreichen. Verpassen Sie diese Frist, verlieren Sie alle Ansprüche &mdash; egal wie rechtswidrig die Kündigung war.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-                Die gute Nachricht: Viele Kündigungen sind angreifbar. Fehler in der <strong>Sozialauswahl</strong>, eine fehlende <strong>Betriebsratsanhörung</strong>, Formfehler oder die Missachtung besonderer Schutzrechte machen die Kündigung unwirksam. Selbst wenn die Kündigung rechtmäßig ist, führt die Klage in der Praxis fast immer zu einer <strong>Abfindung</strong> im Vergleich.
+                Die gute Nachricht: Viele Kündigungen sind angreifbar. Fehler in der <strong>Sozialauswahl</strong>, eine fehlende <strong>Betriebsratsanhörung</strong>, Formfehler oder die Missachtung besonderer Schutzrechte machen die Kündigung unwirksam. Selbst wenn die Kündigung rechtmäßig ist, führt die Klage in der Praxis fast immer zu einer <Link href="/abfindung/" className="text-gold-dark font-semibold no-underline hover:underline">Abfindung</Link> im Vergleich.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
                 Ein Fachanwalt für Arbeitsrecht prüft Ihre Kündigung auf alle Schwachstellen, berechnet Ihre Abfindungschancen und vertritt Sie vor dem Arbeitsgericht. In der ersten Instanz tragen Sie nur Ihre eigenen Anwaltskosten (&sect;12a ArbGG) &mdash; und wenn Sie eine Rechtsschutzversicherung haben, übernimmt diese die Kosten.
@@ -381,6 +381,28 @@ export default function KuendigungPage() {
                 className="inline-block py-3 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold no-underline whitespace-nowrap transition-all hover:bg-[#635428]"
               >
                 Zum Ratgeber Abmahnung &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Aufhebungsvertrag - Link Card */}
+      <section className="py-[50px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <div className="flex items-center justify-between gap-6 py-5 px-6 bg-white rounded-sm border-l-[3px] border-gold max-md:flex-col max-md:items-start">
+              <div>
+                <p className="text-[1rem] font-semibold text-ink m-0">Aufhebungsvertrag auf dem Tisch?</p>
+                <p className="text-[0.84rem] text-ink-muted mt-1 m-0">
+                  Nicht vorschnell unterschreiben. Sperrzeit vermeiden &amp; Abfindung maximieren.
+                </p>
+              </div>
+              <Link
+                href="/aufhebungsvertrag/"
+                className="inline-block py-3 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold no-underline whitespace-nowrap transition-all hover:bg-[#635428]"
+              >
+                Zum Ratgeber &rarr;
               </Link>
             </div>
           </div>

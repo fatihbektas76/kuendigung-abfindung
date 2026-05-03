@@ -4,6 +4,8 @@ import TeamCard from '@/components/TeamCard';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
   description:

@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+export const revalidate = 86400;
 import { getStadtBySlug, staedte, Stadt } from "@/data/staedte";
 import { gemeinden, getGemeindeBySlug } from "@/data/gemeinden";
 import { berlinBezirke, getBezirkBySlug } from "@/data/bezirke";

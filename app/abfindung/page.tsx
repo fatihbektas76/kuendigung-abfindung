@@ -164,7 +164,7 @@ export default function AbfindungPage() {
                 Die gängige <strong>Abfindungsformel</strong> lautet: <span className="font-semibold text-ink">0,5 Bruttomonatsgehälter &times; Jahre der Betriebszugehörigkeit</span>. Bei einem Bruttogehalt von 4.000&nbsp;&euro; und 10 Jahren Betriebszugehörigkeit ergibt das 20.000&nbsp;&euro; als Ausgangspunkt. Je nach Verhandlungsposition &mdash; etwa bei Formfehlern in der Kündigung, fehlerhafter Sozialauswahl oder besonderem Kündigungsschutz &mdash; kann der Faktor auf 1,0 oder höher steigen.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
-                Entscheidend ist, dass Sie die <strong>3-Wochen-Klagefrist</strong> nach &sect;4 KSchG nicht verpassen. Nur wer rechtzeitig Kündigungsschutzklage erhebt, hat die Verhandlungsposition, eine angemessene Abfindung durchzusetzen. Ein Fachanwalt für Arbeitsrecht kann Ihre Chancen und die realistische Höhe einschätzen.
+                Entscheidend ist, dass Sie die <strong>3-Wochen-Klagefrist</strong> nach &sect;4 KSchG nicht verpassen. Nur wer rechtzeitig <Link href="/kuendigung/" className="text-gold-dark font-semibold no-underline hover:underline">Kündigungsschutzklage</Link> erhebt, hat die Verhandlungsposition, eine angemessene Abfindung durchzusetzen. Ein Fachanwalt für Arbeitsrecht kann Ihre Chancen und die realistische Höhe einschätzen.
               </p>
             </div>
 
@@ -277,6 +277,30 @@ export default function AbfindungPage() {
 
       {/* Aktuelle Rechtslage */}
       <AktuelleRechtslage />
+
+      {/* Cross-cluster links */}
+      <section className="py-[50px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px] grid grid-cols-2 gap-4 max-md:grid-cols-1">
+            <Link
+              href="/kuendigung/"
+              className="block py-6 px-6 bg-white border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">Verwandtes Thema</div>
+              <span className="font-serif text-[1.05rem] font-bold">Kündigung erhalten?</span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">3-Wochen-Frist, Kündigungsfristen &amp; Sofortmaßnahmen. &rarr;</span>
+            </Link>
+            <Link
+              href="/aufhebungsvertrag/"
+              className="block py-6 px-6 bg-white border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">Verwandtes Thema</div>
+              <span className="font-serif text-[1.05rem] font-bold">Aufhebungsvertrag erhalten?</span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">Sperrzeit vermeiden, Abfindung maximieren. &rarr;</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="py-[70px] px-8 bg-white">

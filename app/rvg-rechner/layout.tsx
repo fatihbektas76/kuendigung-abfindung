@@ -1,18 +1,22 @@
-import type { Metadata } from 'next'
+import { buildMetadata } from '@/lib/seo-config';
+import StandAnzeige from '@/components/StandAnzeige';
 
-export const metadata: Metadata = {
-  title: 'RVG Rechner 2026 — Anwaltskosten berechnen | APOS Legal',
-  description: 'Kostenloser RVG-Rechner: Anwaltsgebühren, Gerichtskosten & Prozesskostenrisiko berechnen. Für alle Instanzen.',
-  keywords: ['RVG Rechner', 'RVG Rechner 2026', 'Anwaltskosten berechnen', 'Prozesskostenrechner', 'RVG 2025', 'Gerichtskosten', 'Anwaltsgebühren'],
-  alternates: { canonical: 'https://www.gekuendigt-abfindung.de/rvg-rechner/' },
-  openGraph: {
-    title: 'RVG Rechner 2026 – Kostenloser Prozesskostenrechner',
-    description: 'Anwaltskosten & Gerichtskosten nach RVG 2026 berechnen. Inkl. Teilunterliegen, gegnerische Kosten & PDF-Export.',
-    url: 'https://www.gekuendigt-abfindung.de/rvg-rechner/',
-    type: 'website',
-  },
-}
+export const revalidate = 86400;
+
+export const metadata = buildMetadata({
+  title: `RVG Rechner ${new Date().getFullYear()} — Anwaltskosten berechnen | APOS Legal`,
+  description:
+    'Kostenloser RVG-Rechner: Anwaltsgebühren, Gerichtskosten & Prozesskostenrisiko berechnen. Für alle Instanzen.',
+  path: '/rvg-rechner',
+});
 
 export default function RvgRechnerLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      {children}
+      <div className="max-w-content mx-auto px-8 pb-6">
+        <StandAnzeige />
+      </div>
+    </>
+  );
 }

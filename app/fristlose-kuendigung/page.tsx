@@ -181,7 +181,7 @@ export default function FristloseKuendigungPage() {
                 Bei der <strong>Interessenabwägung</strong> spielt Ihre Betriebszugehörigkeit eine zentrale Rolle:
                 Je länger Sie im Unternehmen sind, desto höher die Hürde für eine fristlose Kündigung. Bei
                 Arbeitnehmern mit langer Betriebszugehörigkeit reicht oft selbst ein schwerwiegendes Fehlverhalten
-                nicht aus &mdash; der Arbeitgeber muss zunächst abmahnen.
+                nicht aus &mdash; der Arbeitgeber muss zunächst <Link href="/abmahnung/" className="text-gold-dark font-semibold no-underline hover:underline">abmahnen</Link>.
               </p>
             </div>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">

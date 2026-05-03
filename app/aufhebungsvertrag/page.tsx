@@ -203,7 +203,7 @@ export default function AufhebungsvertragPage() {
                 Ein <strong>Aufhebungsvertrag</strong> beendet Ihr Arbeitsverhältnis einvernehmlich &mdash; anders als bei einer Kündigung müssen Sie hier zustimmen. Das klingt zunächst fair, birgt aber erhebliche Risiken: Eine <strong>Sperrzeit beim Arbeitslosengeld</strong> von bis zu 12 Wochen, eine zu niedrige Abfindung, der Verlust von Kündigungsschutzrechten und ungünstige Klauseln zu Zeugnis, Freistellung oder Wettbewerbsverbot.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-                Arbeitgeber bieten Aufhebungsverträge oft an, um eine Kündigungsschutzklage zu vermeiden &mdash; das zeigt, dass Ihre <strong>Verhandlungsposition stärker ist, als Sie denken</strong>. In vielen Fällen können wir die Abfindung deutlich über die Regelformel (0,5 Monatsgehälter pro Jahr) hinaus verhandeln und gleichzeitig die Sperrzeit vermeiden.
+                Arbeitgeber bieten Aufhebungsverträge oft an, um eine <Link href="/kuendigung/" className="text-gold-dark font-semibold no-underline hover:underline">Kündigungsschutzklage</Link> zu vermeiden &mdash; das zeigt, dass Ihre <strong>Verhandlungsposition stärker ist, als Sie denken</strong>. In vielen Fällen können wir die Abfindung deutlich über die Regelformel (0,5 Monatsgehälter pro Jahr) hinaus verhandeln und gleichzeitig die Sperrzeit vermeiden.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
                 Ein Fachanwalt für Arbeitsrecht prüft den gesamten Vertrag auf versteckte Fallstricke: Ist die Abfindung angemessen? Droht eine Sperrzeit? Sind Freistellung, Zeugnis und Urlaubsabgeltung korrekt geregelt? Gibt es ein Wettbewerbsverbot, das Sie in Ihrer neuen Stelle einschränkt?
@@ -289,6 +289,30 @@ export default function AufhebungsvertragPage() {
           <div className="max-w-[740px]">
             <AuthorBox />
             <ShareButtons url="/aufhebungsvertrag/" title="Aufhebungsvertrag – Abfindung, Sperrzeit & Prüfung" />
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-cluster links */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px] grid grid-cols-2 gap-4 max-md:grid-cols-1">
+            <Link
+              href="/kuendigung/"
+              className="block py-6 px-6 bg-cream border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">Verwandtes Thema</div>
+              <span className="font-serif text-[1.05rem] font-bold">Kündigung statt Aufhebungsvertrag?</span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">Ihre Rechte bei ordentlicher Kündigung. &rarr;</span>
+            </Link>
+            <Link
+              href="/abfindung/"
+              className="block py-6 px-6 bg-cream border border-border rounded-sm no-underline text-ink hover:border-gold transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">Verwandtes Thema</div>
+              <span className="font-serif text-[1.05rem] font-bold">Abfindung berechnen</span>
+              <span className="block text-[0.84rem] text-ink-muted mt-1">Formel, Tabelle &amp; Praxistipps vom Fachanwalt. &rarr;</span>
+            </Link>
           </div>
         </div>
       </section>
