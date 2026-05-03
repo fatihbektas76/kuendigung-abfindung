@@ -567,7 +567,34 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
         </div>
       </section>
 
-      {/* ═══ 15. Autor-Box ═══ */}
+      {/* ═══ 15. Cluster-Querverweise ═══ */}
+      <section className="py-6 px-4 sm:px-8">
+        <div className="max-w-content mx-auto">
+          <h2 className="text-base font-semibold text-gray-500 uppercase tracking-wide mb-3">
+            Auch relevant bei {yl} Betriebszugehörigkeit
+          </h2>
+          <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
+            <Link
+              href={`/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`}
+              className="block bg-white border border-gray-200 rounded-lg p-4 no-underline hover:border-[#8B7A3A] hover:bg-[#faf8f0] transition-colors group"
+            >
+              <p className="text-xs font-semibold text-[#8B7A3A] uppercase tracking-wide mb-1">Abfindung</p>
+              <p className="text-[15px] font-semibold text-gray-900 group-hover:text-[#6B6626]">Abfindung nach {yl} &rarr;</p>
+              <p className="text-xs text-gray-500 mt-1">Höhe, Berechnung &amp; Verhandlungstipps</p>
+            </Link>
+            <Link
+              href={`/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`}
+              className="block bg-white border border-gray-200 rounded-lg p-4 no-underline hover:border-[#8B7A3A] hover:bg-[#faf8f0] transition-colors group"
+            >
+              <p className="text-xs font-semibold text-[#8B7A3A] uppercase tracking-wide mb-1">Kündigung erhalten</p>
+              <p className="text-[15px] font-semibold text-gray-900 group-hover:text-[#6B6626]">Gekündigt nach {yl} &rarr;</p>
+              <p className="text-xs text-gray-500 mt-1">Sofortmaßnahmen, 3-Wochen-Frist &amp; Ihre Rechte</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 16. Autor-Box ═══ */}
       <section className="py-3 px-4 sm:px-8">
         <div className="max-w-content mx-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-4 flex gap-6 items-start max-md:flex-col max-md:items-center max-md:text-center">

@@ -39,7 +39,9 @@ export default function ArbeitsrechtAnwaltPage() {
         pageUrl={`${SEO_CONFIG.baseUrl}/arbeitsrecht-anwalt/`}
         pageTitle="Anwalt für Arbeitsrecht – Wir sind bundesweit tätig"
         pageDescription="Fachanwalt für Arbeitsrecht in Ihrer Stadt. Kündigung, Abfindung, Aufhebungsvertrag – bundesweit und digital."
-        pageType="WebPage"
+        pageType="CollectionPage"
+        includeOrganization
+        includeRating
         breadcrumbs={[
           { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Arbeitsrecht Anwalt', url: `${SEO_CONFIG.baseUrl}/arbeitsrecht-anwalt/` },
