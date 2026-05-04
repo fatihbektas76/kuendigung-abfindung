@@ -360,7 +360,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
                   </tr>
                 </thead>
                 <tbody>
-                  {[2500, 3500, 5000, 7500].map((salary, i) => (
+                  {Array.from({ length: 23 }, (_, i) => 1000 + i * 500).map((salary, i) => (
                     <tr key={salary} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
                       <td className="py-3 px-4 font-medium text-gray-900">{fmtPlain(salary)} &euro;</td>
                       <td className="py-3 px-4 text-center font-bold text-[#6B6626] bg-[#8B7A3A]/5">{fmt(salary * 0.5 * y)}</td>
