@@ -40,7 +40,8 @@ export async function createContact(data: {
 
   if (!res.ok && res.status !== 204) {
     const text = await res.text();
-    console.error('Brevo contact creation failed:', text);
+    console.error('Brevo contact creation failed:', res.status, text);
+    throw new Error(`Brevo contact creation failed: ${res.status}`);
   }
 }
 
@@ -78,7 +79,8 @@ export async function sendNotificationEmail(data: {
 
   if (!res.ok) {
     const text = await res.text();
-    console.error('Brevo email sending failed:', text);
+    console.error('Brevo email sending failed:', res.status, text);
+    throw new Error(`Brevo email sending failed: ${res.status}`);
   }
 }
 
