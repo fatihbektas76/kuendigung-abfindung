@@ -63,16 +63,16 @@ export async function sendNotificationEmail(data: {
     body: JSON.stringify({
       sender: { name: 'Website Contact Form', email: 'fb@fb-re.de' },
       to: [{ email: 'bektas@apos.legal', name: 'Fatih Bektas' }],
-      subject: `New Case Inquiry: ${data.disputeType || 'General'} — ${data.name}`,
+      subject: `Neue Anfrage: ${data.disputeType || 'Allgemein'} — ${data.name}`,
       htmlContent: `
-        <h2>New Inquiry from Website</h2>
+        <h2>Neue Anfrage über die Website</h2>
         <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
-        <p><strong>Company:</strong> ${escapeHtml(data.company || 'N/A')}</p>
-        <p><strong>Phone:</strong> ${escapeHtml(data.phone || 'N/A')}</p>
-        <p><strong>Dispute Type:</strong> ${escapeHtml(data.disputeType || 'N/A')}</p>
-        <p><strong>Dispute Value:</strong> ${escapeHtml(data.disputeValue || 'N/A')}</p>
-        <p><strong>Message:</strong><br>${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
+        <p><strong>E-Mail:</strong> ${escapeHtml(data.email)}</p>
+        <p><strong>Unternehmen:</strong> ${escapeHtml(data.company || 'Keine Angabe')}</p>
+        <p><strong>Telefon:</strong> ${escapeHtml(data.phone || 'Keine Angabe')}</p>
+        <p><strong>Anliegen:</strong> ${escapeHtml(data.disputeType || 'Keine Angabe')}</p>
+        <p><strong>Gehaltsspanne:</strong> ${escapeHtml(data.disputeValue || 'Keine Angabe')}</p>
+        <p><strong>Nachricht:</strong><br>${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
       `,
     }),
   });
