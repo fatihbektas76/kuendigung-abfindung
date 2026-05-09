@@ -62,7 +62,7 @@ export async function sendNotificationEmail(data: {
     },
     body: JSON.stringify({
       sender: { name: 'Website Contact Form', email: 'fb@fb-re.de' },
-      to: [{ email: 'fb@fb-re.de', name: 'Fatih Bektas' }],
+      to: [{ email: 'bektas@apos.legal', name: 'Fatih Bektas' }],
       subject: `Neue Anfrage: ${data.disputeType || 'Allgemein'} — ${data.name}`,
       htmlContent: `
         <h2>Neue Anfrage über die Website</h2>
