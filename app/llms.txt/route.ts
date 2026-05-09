@@ -30,7 +30,7 @@ export async function GET() {
 
 ## Das Team
 
-- [Team-Übersicht](${BASE_URL}/team): Fatih Bektas (Rechtsanwalt & Fachanwalt für Arbeitsrecht), Georg Willem Büchler (Rechtsanwalt & Fachanwalt), Dr. Martin Duncker (Rechtsanwalt & Fachanwalt).
+- [Team-Übersicht](${BASE_URL}/team): Fatih Bektas (Rechtsanwalt & Fachanwalt für Arbeitsrecht), Georg Willem Büchler (Rechtsanwalt), Dr. Martin Duncker (Rechtsanwalt).
 
 ## Kontakt & Beratung
 

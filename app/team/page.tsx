@@ -27,10 +27,10 @@ export const metadata: Metadata = {
 
 const team = [
   { src: '/Fatih.webp', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
-  { src: '/Buechler.webp', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
-  { src: '/Duncker.webp', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Buechler.webp', name: 'Georg Willem Büchler', title: 'Rechtsanwalt' },
+  { src: '/Duncker.webp', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt' },
   { src: '/Fuerniss.webp', name: 'Tobias Fürniss, Ph.D. (UIBE)', title: 'Rechtsanwalt' },
-  { src: '/Hofstaetter.webp', name: 'Dr. Heiko Hofstätter', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
+  { src: '/Hofstaetter.webp', name: 'Dr. Heiko Hofstätter', title: 'Rechtsanwalt' },
   { src: '/Samklu.webp', name: 'Vincent Samklu', title: 'Rechtsanwalt' },
 ];
 
@@ -90,7 +90,7 @@ const personSchemas = [
     name: 'Georg Willem Büchler',
     givenName: 'Georg Willem',
     familyName: 'Büchler',
-    jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
+    jobTitle: 'Rechtsanwalt',
     image: `${BASE_URL}/Buechler.webp`,
     url: `${BASE_URL}/team/`,
     worksFor: { '@id': `${BASE_URL}/#organization` },
@@ -102,7 +102,7 @@ const personSchemas = [
     name: 'Dr. Martin Duncker',
     givenName: 'Martin',
     familyName: 'Duncker',
-    jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
+    jobTitle: 'Rechtsanwalt',
     honorificPrefix: 'Dr.',
     image: `${BASE_URL}/Duncker.webp`,
     url: `${BASE_URL}/team/`,
@@ -128,7 +128,7 @@ const personSchemas = [
     name: 'Dr. Heiko Hofstätter',
     givenName: 'Heiko',
     familyName: 'Hofstätter',
-    jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
+    jobTitle: 'Rechtsanwalt',
     honorificPrefix: 'Dr.',
     image: `${BASE_URL}/Hofstaetter.webp`,
     url: `${BASE_URL}/team/`,

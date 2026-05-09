@@ -13,22 +13,17 @@ interface AufhebungsAnswer {
   abfindungVorhanden: string;
   abfindungHoehe: string;
   abfindungZeitpunkt: string;
+  turboklausel: string;
   bonusGeregelt: string;
   urlaubGeregelt: string;
-  widerrufsfrist: string;
+  beendigungsgrund: string;
   sperrzeitHinweis: string;
-  ausschlussfrist: string;
   freistellungArt: string;
   privatVersichert: string;
   zeugnisVereinbart: string;
-  zeugnisdatum: string;
-  wettbewerbsverbot: string;
-  karenzentschaedigung: string;
-  sonderschutz: string;
-  sonderschutzEinbezogen: string;
+  zwischenzeugnis: string;
   bedenkzeit: string;
   druckAusgeubt: string;
-  turboklausel: string;
 }
 
 const initialAnswers: AufhebungsAnswer = {
@@ -38,17 +33,12 @@ const initialAnswers: AufhebungsAnswer = {
   turboklausel: '',
   bonusGeregelt: '',
   urlaubGeregelt: '',
-  widerrufsfrist: '',
+  beendigungsgrund: '',
   sperrzeitHinweis: '',
-  ausschlussfrist: '',
   freistellungArt: '',
   privatVersichert: '',
   zeugnisVereinbart: '',
-  zeugnisdatum: '',
-  wettbewerbsverbot: '',
-  karenzentschaedigung: '',
-  sonderschutz: '',
-  sonderschutzEinbezogen: '',
+  zwischenzeugnis: '',
   bedenkzeit: '',
   druckAusgeubt: '',
 };
@@ -68,7 +58,7 @@ function scoreToPoints(c: ScoreColor): number {
   return 0;
 }
 
-/* ───── Radio Option Component (1:1 from kuendigung-pruefen) ───── */
+/* ───── Radio Option Component ───── */
 function RadioOption({ label, selected, onClick }: { label: string; selected: boolean; onClick: () => void }) {
   return (
     <button
@@ -106,17 +96,14 @@ function InfoBox({ children }: { children: React.ReactNode }) {
 /* ───── Constants ───── */
 type StepId =
   | 'S1' | 'S2' | 'S3' | 'S4' | 'S5' | 'S6' | 'S7' | 'S8' | 'S9'
-  | 'S10' | 'S11' | 'S12' | 'S13' | 'S14' | 'S15' | 'S16' | 'S17' | 'S18'
-  | 'S19' | 'ERGEBNIS';
+  | 'S10' | 'S11' | 'S12' | 'S13' | 'S19' | 'ERGEBNIS';
 
 const CATEGORIES = [
   'Abfindung',
   'Vergütung & Urlaub',
-  'Fristen & Sperrzeit',
+  'Sperrzeit',
   'Freistellung',
   'Zeugnis',
-  'Wettbewerbsverbot',
-  'Besonderer Schutz',
   'Verhandlung & Druck',
 ] as const;
 
@@ -126,20 +113,16 @@ function getCategoryForStep(s: StepId): { idx: number; catName: string } {
       return { idx: 1, catName: 'Abfindung' };
     case 'S4': case 'S5':
       return { idx: 2, catName: 'Vergütung & Urlaub' };
-    case 'S6': case 'S7': case 'S8':
-      return { idx: 3, catName: 'Fristen & Sperrzeit' };
-    case 'S9': case 'S10':
+    case 'S6': case 'S7':
+      return { idx: 3, catName: 'Sperrzeit' };
+    case 'S8': case 'S9':
       return { idx: 4, catName: 'Freistellung' };
-    case 'S11': case 'S12':
+    case 'S10': case 'S11':
       return { idx: 5, catName: 'Zeugnis' };
-    case 'S13': case 'S14':
-      return { idx: 6, catName: 'Wettbewerbsverbot' };
-    case 'S15': case 'S16':
-      return { idx: 7, catName: 'Besonderer Schutz' };
-    case 'S17': case 'S18':
-      return { idx: 8, catName: 'Verhandlung & Druck' };
+    case 'S12': case 'S13':
+      return { idx: 6, catName: 'Verhandlung & Druck' };
     case 'ERGEBNIS':
-      return { idx: 8, catName: 'Ergebnis' };
+      return { idx: 6, catName: 'Ergebnis' };
     default:
       return { idx: 1, catName: '' };
   }
@@ -157,7 +140,7 @@ const faqs = [
   },
   {
     q: 'Droht immer eine Sperrzeit beim Arbeitslosengeld?',
-    a: 'Grundsätzlich ja. Bei Aufhebungsverträgen verhängt die Agentur für Arbeit regelmäßig eine 12-wöchige Sperrzeit (§159 SGB III), weil der Arbeitnehmer das Arbeitsverhältnis „selbst aufgelöst" hat. Ausnahmen: drohende betriebsbedingte Kündigung oder wichtiger persönlicher Grund. Eine anwaltliche Beratung kann helfen, die Sperrzeit durch geeignete Formulierung zu vermeiden.',
+    a: 'Grundsätzlich ja. Bei Aufhebungsverträgen verhängt die Agentur für Arbeit regelmäßig eine 12-wöchige Sperrzeit (§159 SGB III), weil der Arbeitnehmer das Arbeitsverhältnis „selbst aufgelöst" hat. Es gibt zwar Ausnahmen, diese sollten Sie mit einem spezialisierten Anwalt besprechen.',
   },
   {
     q: 'Was ist das Gebot fairen Verhandelns?',
@@ -166,10 +149,6 @@ const faqs = [
   {
     q: 'Wie hoch sollte die Abfindung sein?',
     a: 'Es gibt keinen gesetzlichen Anspruch auf eine bestimmte Abfindungshöhe. In der Praxis hat sich die Faustformel von 0,5 Bruttomonatsgehältern pro Beschäftigungsjahr etabliert. Bei starkem Kündigungsschutz, Verfahrensfehlern des Arbeitgebers oder besonderen Schutztatbeständen sind deutlich höhere Beträge erzielbar. Lassen Sie Ihre Verhandlungsposition prüfen.',
-  },
-  {
-    q: 'Was gilt beim Wettbewerbsverbot ohne Karenzentschädigung?',
-    a: 'Ein nachvertragliches Wettbewerbsverbot ohne Karenzentschädigung von mindestens 50% des letzten Bruttogehalts ist nach §74 HGB unverbindlich. Sie müssen es nicht einhalten — haben dann aber auch keinen Anspruch auf Zahlung. Ob Sie das Verbot trotzdem respektieren wollen, hängt von Ihrer konkreten Situation ab.',
   },
 ];
 
@@ -183,7 +162,7 @@ export default function AufhebungsvertragPruefenPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const { idx: catIdx, catName } = getCategoryForStep(step);
-  const progress = step === 'ERGEBNIS' ? 100 : (catIdx / 8) * 100;
+  const progress = step === 'ERGEBNIS' ? 100 : (catIdx / 6) * 100;
 
   const set = <K extends keyof AufhebungsAnswer>(key: K, value: AufhebungsAnswer[K]) =>
     setAnswers((prev) => ({ ...prev, [key]: value }));
@@ -226,7 +205,6 @@ export default function AufhebungsvertragPruefenPage() {
     setTimeout(() => goTo(next), 300);
   };
 
-  /* Wie autoAdvance, aber OHNE auto-navigation — zeigt InfoBox + Weiter-Button */
   const selectWithInfo = <K extends keyof AufhebungsAnswer>(
     key: K,
     value: AufhebungsAnswer[K],
@@ -597,500 +575,12 @@ export default function AufhebungsvertragPruefenPage() {
               <RadioOption
                 label="Keine Regelung zum Auszahlungszeitpunkt"
                 selected={answers.abfindungZeitpunkt === 'keine'}
-                onClick={() => autoAdvance('abfindungZeitpunkt', 'keine', 'S19', 'S3', 1, 'red')}
+                onClick={() => autoAdvance('abfindungZeitpunkt', 'keine', 'S19', 'S3', 1, 'green')}
               />
             </div>
           </div>
         );
 
-      /* ── KATEGORIE 2: Vergütung & Urlaub ── */
-      case 'S4':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Sind ausstehende Vergütungsbestandteile geregelt? (Bonus, Provision, Tantieme, Überstunden)
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja, alles explizit geregelt"
-                selected={answers.bonusGeregelt === 'ja'}
-                onClick={() => autoAdvance('bonusGeregelt', 'ja', 'S5', 'S4', 2, 'green')}
-              />
-              <RadioOption
-                label="Teilweise geregelt"
-                selected={answers.bonusGeregelt === 'teilweise'}
-                onClick={() => autoAdvance('bonusGeregelt', 'teilweise', 'S5', 'S4', 2, 'yellow')}
-              />
-              <RadioOption
-                label="Nein, keine Regelung"
-                selected={answers.bonusGeregelt === 'nein'}
-                onClick={() => selectWithInfo('bonusGeregelt', 'nein', 'S5', 'S4', 2, 'red')}
-              />
-              <RadioOption
-                label="Ich habe keine solchen Ansprüche"
-                selected={answers.bonusGeregelt === 'keine_ansprueche'}
-                onClick={() => autoAdvance('bonusGeregelt', 'keine_ansprueche', 'S5', 'S4', 2, 'green')}
-              />
-            </div>
-            {answers.bonusGeregelt === 'nein' && (
-              <InfoBox>
-                Ohne ausdrückliche Regelung können Bonus- und Provisionsansprüche nach Vertragsende verfallen. Bestehen Sie auf einer klaren Klausel.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      case 'S5':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Ist Ihr Resturlaub im Vertrag geregelt?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja — Freistellung unter Urlaubsanrechnung"
-                selected={answers.urlaubGeregelt === 'freistellung'}
-                onClick={() => autoAdvance('urlaubGeregelt', 'freistellung', 'S6', 'S5', 2, 'green')}
-              />
-              <RadioOption
-                label="Ja — Urlaubsabgeltung in Geld vereinbart"
-                selected={answers.urlaubGeregelt === 'abgeltung'}
-                onClick={() => autoAdvance('urlaubGeregelt', 'abgeltung', 'S6', 'S5', 2, 'green')}
-              />
-              <RadioOption
-                label="Nein, Resturlaub nicht geregelt"
-                selected={answers.urlaubGeregelt === 'nein'}
-                onClick={() => selectWithInfo('urlaubGeregelt', 'nein', 'S6', 'S5', 2, 'red')}
-              />
-            </div>
-            {answers.urlaubGeregelt === 'nein' && (
-              <InfoBox>
-                Resturlaub muss entweder gewährt oder finanziell abgegolten werden (&sect;7 Abs. 4 BUrlG). Ohne Regelung verlieren Sie möglicherweise Ihren Anspruch.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      /* ── KATEGORIE 3: Fristen & Sperrzeit ── */
-      case 'S6':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Enthält der Vertrag eine Widerrufsfrist?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja, mindestens 1 Woche Widerrufsfrist"
-                selected={answers.widerrufsfrist === 'ja_1woche'}
-                onClick={() => autoAdvance('widerrufsfrist', 'ja_1woche', 'S7', 'S6', 3, 'green')}
-              />
-              <RadioOption
-                label="Ja, weniger als 1 Woche"
-                selected={answers.widerrufsfrist === 'ja_kurz'}
-                onClick={() => autoAdvance('widerrufsfrist', 'ja_kurz', 'S7', 'S6', 3, 'yellow')}
-              />
-              <RadioOption
-                label="Nein, keine Widerrufsfrist enthalten"
-                selected={answers.widerrufsfrist === 'nein'}
-                onClick={() => selectWithInfo('widerrufsfrist', 'nein', 'S7', 'S6', 3, 'red')}
-              />
-            </div>
-            {answers.widerrufsfrist === 'nein' && (
-              <InfoBox>
-                Eine Widerrufsfrist ist gesetzlich nicht vorgeschrieben, aber ein wichtiges Qualitätsmerkmal. Das BAG (6 AZR 75/18) hat das Gebot fairen Verhandelns etabliert. Ohne jede Bedenkzeit kann der Vertrag unter Umständen anfechtbar sein.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      case 'S7':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Wurden Sie auf die mögliche Sperrzeit beim Arbeitslosengeld hingewiesen?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja, ich wurde informiert und habe dem zugestimmt"
-                selected={answers.sperrzeitHinweis === 'ja'}
-                onClick={() => autoAdvance('sperrzeitHinweis', 'ja', 'S8', 'S7', 3, 'green')}
-              />
-              <RadioOption
-                label="Nein, kein Hinweis im Vertrag enthalten"
-                selected={answers.sperrzeitHinweis === 'nein'}
-                onClick={() => selectWithInfo('sperrzeitHinweis', 'nein', 'S8', 'S7', 3, 'red')}
-              />
-              <RadioOption
-                label="Ich weiß es nicht"
-                selected={answers.sperrzeitHinweis === 'unsicher'}
-                onClick={() => autoAdvance('sperrzeitHinweis', 'unsicher', 'S8', 'S7', 3, 'yellow')}
-              />
-            </div>
-            {answers.sperrzeitHinweis === 'nein' && (
-              <InfoBox>
-                Achtung: Bei Aufhebungsverträgen droht regelmäßig eine 12-wöchige Sperrzeit beim ALG I (&sect;159 SGB III). Eine Abfindung vermeidet diese nicht automatisch. Lassen Sie prüfen, ob eine Formulierung als &bdquo;betriebsbedingte&ldquo; Beendigung möglich ist.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      case 'S8':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Enthält der Vertrag Ausschlussfristen für weitere Ansprüche?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja, mit klarer Frist (mind. 3 Monate)"
-                selected={answers.ausschlussfrist === 'ja_3m'}
-                onClick={() => autoAdvance('ausschlussfrist', 'ja_3m', 'S9', 'S8', 3, 'green')}
-              />
-              <RadioOption
-                label="Ja, aber Frist unter 3 Monate"
-                selected={answers.ausschlussfrist === 'ja_kurz'}
-                onClick={() => selectWithInfo('ausschlussfrist', 'ja_kurz', 'S9', 'S8', 3, 'red')}
-              />
-              <RadioOption
-                label="Keine Ausschlussfrist enthalten"
-                selected={answers.ausschlussfrist === 'keine'}
-                onClick={() => autoAdvance('ausschlussfrist', 'keine', 'S9', 'S8', 3, 'yellow')}
-              />
-              <RadioOption
-                label="Ich weiß es nicht"
-                selected={answers.ausschlussfrist === 'unsicher'}
-                onClick={() => autoAdvance('ausschlussfrist', 'unsicher', 'S9', 'S8', 3, 'yellow')}
-              />
-            </div>
-            {answers.ausschlussfrist === 'ja_kurz' && (
-              <InfoBox>
-                Sehr kurze Ausschlussfristen können Sie unter Druck setzen, Ansprüche schnell geltend zu machen. Prüfen Sie welche Ansprüche davon betroffen sind.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      /* ── KATEGORIE 4: Freistellung ── */
-      case 'S9':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Wie ist Ihre Freistellung bis Vertragsende geregelt?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Bezahlte Freistellung unter voller Vergütungsfortzahlung"
-                selected={answers.freistellungArt === 'bezahlt'}
-                onClick={() => autoAdvance('freistellungArt', 'bezahlt', 'S10', 'S9', 4, 'green')}
-              />
-              <RadioOption
-                label="Ich muss bis Vertragsende weiterarbeiten"
-                selected={answers.freistellungArt === 'weiterarbeiten'}
-                onClick={() => autoAdvance('freistellungArt', 'weiterarbeiten', 'S10', 'S9', 4, 'yellow')}
-              />
-              <RadioOption
-                label="Unbezahlte Freistellung vereinbart"
-                selected={answers.freistellungArt === 'unbezahlt'}
-                onClick={() => selectWithInfo('freistellungArt', 'unbezahlt', 'S11', 'S9', 4, 'red')}
-              />
-              <RadioOption
-                label="Keine Regelung zur Freistellung"
-                selected={answers.freistellungArt === 'keine'}
-                onClick={() => autoAdvance('freistellungArt', 'keine', 'S11', 'S9', 4, 'red')}
-              />
-            </div>
-            {answers.freistellungArt === 'unbezahlt' && (
-              <InfoBox>
-                Bei unbezahlter Freistellung entfällt die Pflichtversicherung in der GKV. Sie müssen sich freiwillig versichern — prüfen Sie Kosten und Fristen unverzüglich.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      case 'S10':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Sind Sie privat krankenversichert?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Nein, ich bin gesetzlich versichert"
-                selected={answers.privatVersichert === 'nein'}
-                onClick={() => autoAdvance('privatVersichert', 'nein', 'S11', 'S10', 4, 'green')}
-              />
-              <RadioOption
-                label="Ja, ich bin privat versichert"
-                selected={answers.privatVersichert === 'ja'}
-                onClick={() => selectWithInfo('privatVersichert', 'ja', 'S11', 'S10', 4, 'yellow')}
-              />
-            </div>
-            {answers.privatVersichert === 'ja' && (
-              <InfoBox>
-                Hinweis: Nach Vertragsende entfällt der Arbeitgeberzuschuss zur PKV (ca. 50% des Beitrags). Kalkulieren Sie den vollen PKV-Beitrag ab dem ersten Monat nach Beendigung ein.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      /* ── KATEGORIE 5: Zeugnis ── */
-      case 'S11':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Ist ein Arbeitszeugnis im Vertrag vereinbart?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja, mit vereinbarter Note (sehr gut / gut)"
-                selected={answers.zeugnisVereinbart === 'ja_note'}
-                onClick={() => autoAdvance('zeugnisVereinbart', 'ja_note', 'S12', 'S11', 5, 'green')}
-              />
-              <RadioOption
-                label="Ja, aber ohne konkrete Notenvereinbarung"
-                selected={answers.zeugnisVereinbart === 'ja_ohne'}
-                onClick={() => autoAdvance('zeugnisVereinbart', 'ja_ohne', 'S12', 'S11', 5, 'yellow')}
-              />
-              <RadioOption
-                label="Nein, kein Zeugnis geregelt"
-                selected={answers.zeugnisVereinbart === 'nein'}
-                onClick={() => selectWithInfo('zeugnisVereinbart', 'nein', 'S12', 'S11', 5, 'red')}
-              />
-            </div>
-            {answers.zeugnisVereinbart === 'nein' && (
-              <InfoBox>
-                Sie haben gesetzlichen Anspruch auf ein qualifiziertes Arbeitszeugnis (&sect;109 GewO). Ohne vertragliche Regelung riskieren Sie eine schlechte Beurteilung. Bestehen Sie auf einer Vereinbarung.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      case 'S12':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Ist ein konkretes Ausstellungsdatum für das Zeugnis vereinbart?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja, konkretes Datum vereinbart"
-                selected={answers.zeugnisdatum === 'ja'}
-                onClick={() => autoAdvance('zeugnisdatum', 'ja', 'S13', 'S12', 5, 'green')}
-              />
-              <RadioOption
-                label="Nein, kein Datum vereinbart"
-                selected={answers.zeugnisdatum === 'nein'}
-                onClick={() => selectWithInfo('zeugnisdatum', 'nein', 'S13', 'S12', 5, 'yellow')}
-              />
-              <RadioOption
-                label="Kein Zeugnis im Vertrag vereinbart"
-                selected={answers.zeugnisdatum === 'kein_zeugnis'}
-                onClick={() => autoAdvance('zeugnisdatum', 'kein_zeugnis', 'S13', 'S12', 5, 'skip')}
-              />
-            </div>
-            {answers.zeugnisdatum === 'nein' && (
-              <InfoBox>
-                Ohne konkretes Datum kann sich die Ausstellung des Zeugnisses verzögern — was bei Bewerbungen problematisch ist.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      /* ── KATEGORIE 6: Wettbewerbsverbot ── */
-      case 'S13':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Enthält der Vertrag ein nachvertragliches Wettbewerbsverbot?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Nein"
-                selected={answers.wettbewerbsverbot === 'nein'}
-                onClick={() => autoAdvance('wettbewerbsverbot', 'nein', 'S15', 'S13', 6, 'green')}
-              />
-              <RadioOption
-                label="Ja"
-                selected={answers.wettbewerbsverbot === 'ja'}
-                onClick={() => autoAdvance('wettbewerbsverbot', 'ja', 'S14', 'S13', 6, 'skip')}
-              />
-              <RadioOption
-                label="Ich weiß es nicht"
-                selected={answers.wettbewerbsverbot === 'unsicher'}
-                onClick={() => autoAdvance('wettbewerbsverbot', 'unsicher', 'S15', 'S13', 6, 'yellow')}
-              />
-            </div>
-          </div>
-        );
-
-      case 'S14':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Enthält das Wettbewerbsverbot eine Karenzentschädigung?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja, mindestens 50% des letzten Bruttogehalts"
-                selected={answers.karenzentschaedigung === 'ja_50'}
-                onClick={() => autoAdvance('karenzentschaedigung', 'ja_50', 'S15', 'S14', 6, 'green')}
-              />
-              <RadioOption
-                label="Ja, aber unter 50% des letzten Bruttogehalts"
-                selected={answers.karenzentschaedigung === 'ja_unter50'}
-                onClick={() => selectWithInfo('karenzentschaedigung', 'ja_unter50', 'S15', 'S14', 6, 'red')}
-              />
-              <RadioOption
-                label="Nein, keine Karenzentschädigung vereinbart"
-                selected={answers.karenzentschaedigung === 'nein'}
-                onClick={() => selectWithInfo('karenzentschaedigung', 'nein', 'S15', 'S14', 6, 'red')}
-              />
-            </div>
-            {answers.karenzentschaedigung === 'ja_unter50' && (
-              <InfoBox>
-                Ein Wettbewerbsverbot ohne Karenzentschädigung von mindestens 50% ist nach &sect;74 HGB unverbindlich. Sie müssen es dann nicht einhalten, haben aber auch keinen Anspruch auf Entschädigung.
-              </InfoBox>
-            )}
-            {answers.karenzentschaedigung === 'nein' && (
-              <InfoBox>
-                Ohne Karenzentschädigung ist das Wettbewerbsverbot für Sie unverbindlich (&sect;74 HGB). Sie können frei entscheiden, ob Sie es einhalten — haben dann aber keinen Anspruch auf Zahlung.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      /* ── KATEGORIE 7: Besonderer Schutz ── */
-      case 'S15':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Haben Sie einen besonderen Schutzstatus?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Schwerbehinderung (anerkannt oder beantragt)"
-                selected={answers.sonderschutz === 'schwerbehindert'}
-                onClick={() => autoAdvance('sonderschutz', 'schwerbehindert', 'S16', 'S15', 7, 'skip')}
-              />
-              <RadioOption
-                label="Betriebsratsmitglied"
-                selected={answers.sonderschutz === 'betriebsrat'}
-                onClick={() => autoAdvance('sonderschutz', 'betriebsrat', 'S16', 'S15', 7, 'skip')}
-              />
-              <RadioOption
-                label="Schwangerschaft oder Elternzeit"
-                selected={answers.sonderschutz === 'schwangerschaft'}
-                onClick={() => autoAdvance('sonderschutz', 'schwangerschaft', 'S16', 'S15', 7, 'skip')}
-              />
-              <RadioOption
-                label="Datenschutzbeauftragter"
-                selected={answers.sonderschutz === 'datenschutz'}
-                onClick={() => autoAdvance('sonderschutz', 'datenschutz', 'S16', 'S15', 7, 'skip')}
-              />
-              <RadioOption
-                label="Nein / Keiner davon"
-                selected={answers.sonderschutz === 'nein'}
-                onClick={() => autoAdvance('sonderschutz', 'nein', 'S17', 'S15', 7, 'green')}
-              />
-            </div>
-          </div>
-        );
-
-      case 'S16':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Wurden die erforderlichen Stellen bei Ihrem Schutzstatus einbezogen bzw. wurden Sie umfassend über Ihre Rechte informiert?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Ja, ich wurde vollständig informiert und habe freiwillig zugestimmt"
-                selected={answers.sonderschutzEinbezogen === 'ja'}
-                onClick={() => autoAdvance('sonderschutzEinbezogen', 'ja', 'S17', 'S16', 7, 'green')}
-              />
-              <RadioOption
-                label="Nein / Ich bin nicht sicher"
-                selected={answers.sonderschutzEinbezogen === 'nein'}
-                onClick={() => selectWithInfo('sonderschutzEinbezogen', 'nein', 'S17', 'S16', 7, 'red')}
-              />
-            </div>
-            {answers.sonderschutzEinbezogen === 'nein' && (
-              <InfoBox>
-                Besonders wichtig: Bei Schwerbehinderten braucht der Arbeitgeber für eine Kündigung die Zustimmung des Integrationsamts (&sect;168 SGB IX). Beim Aufhebungsvertrag können Sie freiwillig zustimmen — aber nur nach vollständiger Information über Ihre Rechte. Lassen Sie dies unbedingt prüfen.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      /* ── KATEGORIE 8: Verhandlung & Druck ── */
-      case 'S17':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Wie lange hatten Sie Zeit, den Vertrag zu prüfen, bevor Sie unterschreiben sollten?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Mehrere Tage oder länger"
-                selected={answers.bedenkzeit === 'tage'}
-                onClick={() => autoAdvance('bedenkzeit', 'tage', 'S18', 'S17', 8, 'green')}
-              />
-              <RadioOption
-                label="1–2 Tage"
-                selected={answers.bedenkzeit === '1_2'}
-                onClick={() => autoAdvance('bedenkzeit', '1_2', 'S18', 'S17', 8, 'yellow')}
-              />
-              <RadioOption
-                label="Ich sollte sofort unterschreiben"
-                selected={answers.bedenkzeit === 'sofort'}
-                onClick={() => selectWithInfo('bedenkzeit', 'sofort', 'S18', 'S17', 8, 'red')}
-              />
-            </div>
-            {answers.bedenkzeit === 'sofort' && (
-              <InfoBox>
-                Das BAG hat in BAG 6 AZR 333/21 klargestellt: Sofortiger Unterschriftsdruck allein ist noch kein Verstoß gegen das Gebot fairen Verhandelns — aber in Kombination mit anderen Druckmitteln kann der Vertrag anfechtbar sein.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      case 'S18':
-        return (
-          <div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
-              Wurde Ihnen eine Kündigung oder andere Nachteile angedroht für den Fall, dass Sie nicht unterschreiben?
-            </h2>
-            <div className="space-y-3">
-              <RadioOption
-                label="Nein, keine Drohungen"
-                selected={answers.druckAusgeubt === 'nein'}
-                onClick={() => autoAdvance('druckAusgeubt', 'nein', 'ERGEBNIS', 'S18', 8, 'green')}
-              />
-              <RadioOption
-                label="Ja, mit Kündigung gedroht"
-                selected={answers.druckAusgeubt === 'kuendigung'}
-                onClick={() => selectWithInfo('druckAusgeubt', 'kuendigung', 'ERGEBNIS', 'S18', 8, 'yellow')}
-              />
-              <RadioOption
-                label="Ja, mit anderen Nachteilen gedroht"
-                selected={answers.druckAusgeubt === 'andere'}
-                onClick={() => selectWithInfo('druckAusgeubt', 'andere', 'ERGEBNIS', 'S18', 8, 'red')}
-              />
-            </div>
-            {answers.druckAusgeubt === 'kuendigung' && (
-              <InfoBox>
-                Eine Drohung mit Kündigung ist nicht automatisch unzulässig — nur wenn der Arbeitgeber keine realistische Grundlage für eine Kündigung hatte. Lassen Sie dies prüfen.
-              </InfoBox>
-            )}
-            {answers.druckAusgeubt === 'andere' && (
-              <InfoBox>
-                Widerrechtliche Drohung berechtigt zur Anfechtung des Aufhebungsvertrags (&sect;123 BGB). Handeln Sie schnell — die Anfechtungsfrist beträgt 1 Jahr.
-              </InfoBox>
-            )}
-          </div>
-        );
-
-      /* ── S19: Turboklausel (Kategorie 1: Abfindung) ── */
       case 'S19':
         return (
           <div>
@@ -1125,6 +615,331 @@ export default function AufhebungsvertragPruefenPage() {
           </div>
         );
 
+      /* ── KATEGORIE 2: Vergütung & Urlaub ── */
+      case 'S4':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Sind ausstehende Vergütungsbestandteile geregelt? (Bonus, Provision, Tantieme, Überstunden)
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja, alles explizit geregelt"
+                selected={answers.bonusGeregelt === 'ja'}
+                onClick={() => autoAdvance('bonusGeregelt', 'ja', 'S5', 'S4', 2, 'green')}
+              />
+              <RadioOption
+                label="Teilweise geregelt"
+                selected={answers.bonusGeregelt === 'teilweise'}
+                onClick={() => autoAdvance('bonusGeregelt', 'teilweise', 'S5', 'S4', 2, 'yellow')}
+              />
+              <RadioOption
+                label="Nein, keine Regelung"
+                selected={answers.bonusGeregelt === 'nein'}
+                onClick={() => selectWithInfo('bonusGeregelt', 'nein', 'S5', 'S4', 2, 'red')}
+              />
+              <RadioOption
+                label="Ich habe keine solchen Ansprüche"
+                selected={answers.bonusGeregelt === 'keine_ansprueche'}
+                onClick={() => autoAdvance('bonusGeregelt', 'keine_ansprueche', 'S5', 'S4', 2, 'green')}
+              />
+            </div>
+            {answers.bonusGeregelt === 'nein' && (
+              <InfoBox>
+                Ohne ausdrückliche Regelung können Bonus- und Provisionsansprüche nach Vertragsende verfallen. Bestehen Sie auf einer klaren Klausel. Zumal die meisten Aufhebungsverträge eine sogenannte Ausgleichsklausel enthalten, so dass später keine Ansprüche mehr geltend gemacht werden können.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      case 'S5':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Ist Ihr Resturlaub im Vertrag geregelt?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja — Freistellung unter Urlaubsanrechnung"
+                selected={answers.urlaubGeregelt === 'freistellung'}
+                onClick={() => autoAdvance('urlaubGeregelt', 'freistellung', 'S6', 'S5', 2, 'green')}
+              />
+              <RadioOption
+                label="Ja — Urlaubsabgeltung in Geld vereinbart"
+                selected={answers.urlaubGeregelt === 'abgeltung'}
+                onClick={() => autoAdvance('urlaubGeregelt', 'abgeltung', 'S6', 'S5', 2, 'green')}
+              />
+              <RadioOption
+                label="Nein, Resturlaub nicht geregelt"
+                selected={answers.urlaubGeregelt === 'nein'}
+                onClick={() => selectWithInfo('urlaubGeregelt', 'nein', 'S6', 'S5', 2, 'red')}
+              />
+            </div>
+            {answers.urlaubGeregelt === 'nein' && (
+              <InfoBox>
+                Resturlaub muss entweder gewährt oder finanziell abgegolten werden (&sect;7 Abs. 4 BUrlG). Achten Sie darauf, diesen bei Beendigung geltend zu machen. Oftmals sind kurze Ausschlussfristen vereinbart (häufig 3 Monate), so dass Sie nicht viel Zeit haben.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      /* ── KATEGORIE 3: Sperrzeit ── */
+      case 'S6':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Was ist als Beendigungsgrund im Aufhebungsvertrag genannt?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Betriebsbedingte Gründe, zur Vermeidung einer betriebsbedingten Kündigung"
+                selected={answers.beendigungsgrund === 'betriebsbedingt'}
+                onClick={() => autoAdvance('beendigungsgrund', 'betriebsbedingt', 'S7', 'S6', 3, 'green')}
+              />
+              <RadioOption
+                label="Andere als betriebsbedingte Gründe"
+                selected={answers.beendigungsgrund === 'andere'}
+                onClick={() => selectWithInfo('beendigungsgrund', 'andere', 'S7', 'S6', 3, 'yellow')}
+              />
+              <RadioOption
+                label="Keine Gründe genannt"
+                selected={answers.beendigungsgrund === 'keine'}
+                onClick={() => selectWithInfo('beendigungsgrund', 'keine', 'S7', 'S6', 3, 'red')}
+              />
+            </div>
+            {(answers.beendigungsgrund === 'andere' || answers.beendigungsgrund === 'keine') && (
+              <InfoBox>
+                Es droht eine Sperre durch die Arbeitsagentur bzgl. des Arbeitslosengeldes. Ohne betriebsbedingte Begründung verhängt die Agentur für Arbeit regelmäßig eine 12-wöchige Sperrzeit beim ALG I (&sect;159 SGB III).
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      case 'S7':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Wurden Sie auf die mögliche Sperrzeit beim Arbeitslosengeld hingewiesen?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja, ich wurde informiert und habe dem zugestimmt"
+                selected={answers.sperrzeitHinweis === 'ja'}
+                onClick={() => autoAdvance('sperrzeitHinweis', 'ja', 'S8', 'S7', 3, 'green')}
+              />
+              <RadioOption
+                label="Nein, kein Hinweis im Vertrag enthalten"
+                selected={answers.sperrzeitHinweis === 'nein'}
+                onClick={() => selectWithInfo('sperrzeitHinweis', 'nein', 'S8', 'S7', 3, 'red')}
+              />
+              <RadioOption
+                label="Ich weiß es nicht"
+                selected={answers.sperrzeitHinweis === 'unsicher'}
+                onClick={() => autoAdvance('sperrzeitHinweis', 'unsicher', 'S8', 'S7', 3, 'yellow')}
+              />
+            </div>
+            {(answers.sperrzeitHinweis === 'nein' || answers.sperrzeitHinweis === 'ja' || answers.sperrzeitHinweis === 'unsicher') && (
+              <InfoBox>
+                Achtung: Bei Aufhebungsverträgen droht regelmäßig eine 12-wöchige Sperrzeit beim ALG I (&sect;159 SGB III). Daher ist es bei jedem Aufhebungsvertrag zwingend, einen Fachanwalt für Arbeitsrecht zu konsultieren.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      /* ── KATEGORIE 4: Freistellung ── */
+      case 'S8':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Wie ist Ihre Freistellung bis Vertragsende geregelt?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Bezahlte Freistellung unter voller Vergütungsfortzahlung"
+                selected={answers.freistellungArt === 'bezahlt'}
+                onClick={() => autoAdvance('freistellungArt', 'bezahlt', 'S9', 'S8', 4, 'green')}
+              />
+              <RadioOption
+                label="Ich muss bis Vertragsende weiterarbeiten"
+                selected={answers.freistellungArt === 'weiterarbeiten'}
+                onClick={() => autoAdvance('freistellungArt', 'weiterarbeiten', 'S9', 'S8', 4, 'yellow')}
+              />
+              <RadioOption
+                label="Unbezahlte Freistellung vereinbart"
+                selected={answers.freistellungArt === 'unbezahlt'}
+                onClick={() => selectWithInfo('freistellungArt', 'unbezahlt', 'S10', 'S8', 4, 'red')}
+              />
+              <RadioOption
+                label="Keine Regelung zur Freistellung"
+                selected={answers.freistellungArt === 'keine'}
+                onClick={() => autoAdvance('freistellungArt', 'keine', 'S10', 'S8', 4, 'red')}
+              />
+            </div>
+            {answers.freistellungArt === 'unbezahlt' && (
+              <InfoBox>
+                Bei unbezahlter Freistellung entfällt die Pflichtversicherung in der GKV. Sie müssen sich freiwillig versichern — prüfen Sie Kosten und Fristen unverzüglich.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      case 'S9':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Sind Sie privat krankenversichert?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Nein, ich bin gesetzlich versichert"
+                selected={answers.privatVersichert === 'nein'}
+                onClick={() => autoAdvance('privatVersichert', 'nein', 'S10', 'S9', 4, 'green')}
+              />
+              <RadioOption
+                label="Ja, ich bin privat versichert"
+                selected={answers.privatVersichert === 'ja'}
+                onClick={() => selectWithInfo('privatVersichert', 'ja', 'S10', 'S9', 4, 'yellow')}
+              />
+            </div>
+            {answers.privatVersichert === 'ja' && (
+              <InfoBox>
+                Hinweis: Nach Vertragsende entfällt der Arbeitgeberzuschuss zur PKV (ca. 50% des Beitrags). Kalkulieren Sie den vollen PKV-Beitrag ab dem ersten Monat nach Beendigung ein.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      /* ── KATEGORIE 5: Zeugnis ── */
+      case 'S10':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Ist ein Arbeitszeugnis im Vertrag vereinbart?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja, mit vereinbarter Note (sehr gut / gut) — mit Vorschlagsrecht für den Arbeitnehmer"
+                selected={answers.zeugnisVereinbart === 'ja_vorschlagsrecht'}
+                onClick={() => autoAdvance('zeugnisVereinbart', 'ja_vorschlagsrecht', 'S11', 'S10', 5, 'green')}
+              />
+              <RadioOption
+                label="Ja, mit vereinbarter Note (sehr gut / gut)"
+                selected={answers.zeugnisVereinbart === 'ja_note'}
+                onClick={() => autoAdvance('zeugnisVereinbart', 'ja_note', 'S11', 'S10', 5, 'yellow')}
+              />
+              <RadioOption
+                label="Ja, aber ohne konkrete Notenvereinbarung"
+                selected={answers.zeugnisVereinbart === 'ja_ohne'}
+                onClick={() => autoAdvance('zeugnisVereinbart', 'ja_ohne', 'S11', 'S10', 5, 'red')}
+              />
+              <RadioOption
+                label="Nein, kein Zeugnis geregelt"
+                selected={answers.zeugnisVereinbart === 'nein'}
+                onClick={() => selectWithInfo('zeugnisVereinbart', 'nein', 'S11', 'S10', 5, 'red')}
+              />
+            </div>
+            {answers.zeugnisVereinbart === 'nein' && (
+              <InfoBox>
+                Sie haben gesetzlichen Anspruch auf ein qualifiziertes Arbeitszeugnis (&sect;109 GewO). Ohne vertragliche Regelung riskieren Sie eine schlechte Beurteilung. Bestehen Sie auf einer Vereinbarung mit einer guten Note. Anderenfalls muss der Arbeitgeber nur ein Zeugnis mit der Note befriedigend ausstellen.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      case 'S11':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Ist ein Zwischenzeugnis vereinbart?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Ja"
+                selected={answers.zwischenzeugnis === 'ja'}
+                onClick={() => autoAdvance('zwischenzeugnis', 'ja', 'S12', 'S11', 5, 'green')}
+              />
+              <RadioOption
+                label="Nein"
+                selected={answers.zwischenzeugnis === 'nein'}
+                onClick={() => selectWithInfo('zwischenzeugnis', 'nein', 'S12', 'S11', 5, 'yellow')}
+              />
+            </div>
+            {answers.zwischenzeugnis === 'nein' && (
+              <InfoBox>
+                Ein Zwischenzeugnis sollte vereinbart werden, insbesondere wenn die Beendigung weit in der Zukunft liegt. Anderenfalls wird es schwer, sich ohne Zwischenzeugnis anderweitig zu bewerben.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      /* ── KATEGORIE 6: Verhandlung & Druck ── */
+      case 'S12':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Wie lange hatten Sie Zeit, den Vertrag zu prüfen, bevor Sie unterschreiben sollten?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Mehrere Tage oder länger"
+                selected={answers.bedenkzeit === 'tage'}
+                onClick={() => autoAdvance('bedenkzeit', 'tage', 'S13', 'S12', 6, 'green')}
+              />
+              <RadioOption
+                label="1–2 Tage"
+                selected={answers.bedenkzeit === '1_2'}
+                onClick={() => autoAdvance('bedenkzeit', '1_2', 'S13', 'S12', 6, 'yellow')}
+              />
+              <RadioOption
+                label="Ich sollte sofort unterschreiben"
+                selected={answers.bedenkzeit === 'sofort'}
+                onClick={() => selectWithInfo('bedenkzeit', 'sofort', 'S13', 'S12', 6, 'red')}
+              />
+            </div>
+            {answers.bedenkzeit === 'sofort' && (
+              <InfoBox>
+                Das BAG hat in BAG 6 AZR 333/21 klargestellt: Sofortiger Unterschriftsdruck allein ist noch kein Verstoß gegen das Gebot fairen Verhandelns — aber in Kombination mit anderen Druckmitteln kann der Vertrag anfechtbar sein.
+              </InfoBox>
+            )}
+          </div>
+        );
+
+      case 'S13':
+        return (
+          <div>
+            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-6">
+              Wurde Ihnen eine Kündigung oder andere Nachteile angedroht für den Fall, dass Sie nicht unterschreiben?
+            </h2>
+            <div className="space-y-3">
+              <RadioOption
+                label="Nein, keine Drohungen"
+                selected={answers.druckAusgeubt === 'nein'}
+                onClick={() => autoAdvance('druckAusgeubt', 'nein', 'ERGEBNIS', 'S13', 6, 'green')}
+              />
+              <RadioOption
+                label="Ja, mit Kündigung gedroht"
+                selected={answers.druckAusgeubt === 'kuendigung'}
+                onClick={() => selectWithInfo('druckAusgeubt', 'kuendigung', 'ERGEBNIS', 'S13', 6, 'yellow')}
+              />
+              <RadioOption
+                label="Ja, mit anderen Nachteilen gedroht"
+                selected={answers.druckAusgeubt === 'andere'}
+                onClick={() => selectWithInfo('druckAusgeubt', 'andere', 'ERGEBNIS', 'S13', 6, 'red')}
+              />
+            </div>
+            {answers.druckAusgeubt === 'kuendigung' && (
+              <InfoBox>
+                Eine Drohung mit Kündigung ist nicht automatisch unzulässig — nur wenn der Arbeitgeber keine realistische Grundlage für eine Kündigung hatte. Lassen Sie dies prüfen. Haben Sie eine Rechtsschutzversicherung, übernimmt diese übrigens nur die Anwaltskosten, sofern eine Kündigung angedroht wurde, wenn der Aufhebungsvertrag nicht unterzeichnet wird.
+              </InfoBox>
+            )}
+            {answers.druckAusgeubt === 'andere' && (
+              <InfoBox>
+                Widerrechtliche Drohung berechtigt zur Anfechtung des Aufhebungsvertrags (&sect;123 BGB). Handeln Sie schnell und kontaktieren Sie einen Fachanwalt für Arbeitsrecht, falls Sie schon unterschrieben haben — die Anfechtungsfrist beträgt 1 Jahr.
+              </InfoBox>
+            )}
+          </div>
+        );
+
       default:
         return null;
     }
@@ -1136,7 +951,7 @@ export default function AufhebungsvertragPruefenPage() {
       <SeoGeoBase
         pageUrl={`${SEO_CONFIG.baseUrl}/aufhebungsvertrag-pruefen/`}
         pageTitle="Aufhebungsvertrag prüfen — Ist Ihr Vertrag fair?"
-        pageDescription="Aufhebungsvertrag erhalten? Prüfen Sie ob Ihr Vertrag faire Konditionen enthält — Ampelbewertung in 8 Kategorien + kostenlose Ersteinschätzung vom Fachanwalt."
+        pageDescription="Aufhebungsvertrag erhalten? Prüfen Sie ob Ihr Vertrag faire Konditionen enthält — Ampelbewertung in 6 Kategorien + kostenlose Ersteinschätzung vom Fachanwalt."
         pageType="WebApplication"
         appName="Aufhebungsvertrag-Checker"
         appCategory="Legal Tool"
@@ -1149,7 +964,6 @@ export default function AufhebungsvertragPruefenPage() {
           { name: 'Aufhebungsvertrag prüfen', url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag-pruefen/` },
         ]}
         isBasedOn={[
-          { name: '§74 HGB — Wettbewerbsverbot', url: 'https://www.gesetze-im-internet.de/hgb/__74.html' },
           { name: '§109 GewO — Zeugnis', url: 'https://www.gesetze-im-internet.de/gewo/__109.html' },
           { name: '§159 SGB III — Sperrzeit', url: 'https://www.gesetze-im-internet.de/sgb_3/__159.html' },
           { name: '§123 BGB — Anfechtung', url: 'https://www.gesetze-im-internet.de/bgb/__123.html' },
@@ -1183,10 +997,10 @@ export default function AufhebungsvertragPruefenPage() {
             '@context': 'https://schema.org',
             '@type': 'HowTo',
             name: 'Aufhebungsvertrag in 3 Minuten prüfen',
-            description: 'Prüfen Sie in 8 Kategorien ob Ihr Aufhebungsvertrag faire Konditionen enthält.',
+            description: 'Prüfen Sie in 6 Kategorien ob Ihr Aufhebungsvertrag faire Konditionen enthält.',
             totalTime: 'PT3M',
             step: [
-              { '@type': 'HowToStep', position: 1, name: '8 Kategorien beantworten', text: '8 Kategorien zum Vertrag beantworten' },
+              { '@type': 'HowToStep', position: 1, name: '6 Kategorien beantworten', text: '6 Kategorien zum Vertrag beantworten' },
               { '@type': 'HowToStep', position: 2, name: 'Ampelbewertung erhalten', text: 'Ampelbewertung pro Kategorie erhalten' },
               { '@type': 'HowToStep', position: 3, name: 'Gesamtergebnis ansehen', text: 'Gesamtergebnis und Handlungsempfehlung' },
             ],
@@ -1197,11 +1011,11 @@ export default function AufhebungsvertragPruefenPage() {
       {/* GEO-Optimierung */}
       <div itemScope itemType="https://schema.org/WebApplication" style={{ display: 'none' }}>
         <meta itemProp="name" content="Aufhebungsvertrag-Checker" />
-        <meta itemProp="description" content="Prüfen Sie ob Ihr Aufhebungsvertrag faire Konditionen enthält — Ampelbewertung in 8 Kategorien." />
+        <meta itemProp="description" content="Prüfen Sie ob Ihr Aufhebungsvertrag faire Konditionen enthält — Ampelbewertung in 6 Kategorien." />
         <meta itemProp="author" content="Fatih Bektas, Fachanwalt für Arbeitsrecht" />
         <meta itemProp="inLanguage" content="de" />
         <meta itemProp="applicationCategory" content="Legal Tool" />
-        <meta itemProp="isBasedOn" content="§74 HGB, §109 GewO, §123 BGB, §159 SGB III, §7 BUrlG, BAG 6 AZR 75/18" />
+        <meta itemProp="isBasedOn" content="§109 GewO, §123 BGB, §159 SGB III, §7 BUrlG, BAG 6 AZR 75/18" />
       </div>
 
       {sidebar}
@@ -1225,7 +1039,7 @@ export default function AufhebungsvertragPruefenPage() {
                 {catName}
               </span>
               <span className="text-[0.78rem] text-ink-muted">
-                Kategorie {catIdx} von 8
+                Kategorie {catIdx} von 6
               </span>
             </div>
             <div className="h-2 bg-border rounded-full overflow-hidden">
@@ -1290,137 +1104,77 @@ export default function AufhebungsvertragPruefenPage() {
                   </p>
                   <Link
                     href="/#kontakt"
-                    className="inline-block py-2.5 px-6 bg-gold-dark text-white rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px"
+                    className="inline-block py-3 px-6 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline text-center transition-all hover:bg-[#1a1409]"
                   >
-                    Kostenlose Erstberatung anfragen &rarr;
+                    Jetzt kostenlos prüfen lassen &rarr;
                   </Link>
                 </div>
               </>
             )}
 
-            {/* Step content */}
+            {/* Step Content */}
             {stepContent()}
 
-            {/* Weiter-Button wenn InfoBox angezeigt wird */}
+            {/* Weiter-Button (shown when InfoBox is displayed via selectWithInfo) */}
             {pendingNext && (
-              <div className="flex items-center justify-between mt-6 gap-4">
-                {step !== 'S1' ? (
-                  <button
-                    onClick={goBack}
-                    className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
-                  >
-                    &larr; Zurück
-                  </button>
-                ) : <span />}
-                <button
-                  onClick={continueFromInfo}
-                  className="py-3 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px"
-                >
-                  Weiter &rarr;
-                </button>
-              </div>
+              <button
+                onClick={continueFromInfo}
+                className="mt-6 w-full py-4 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#1a1409] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.25)]"
+              >
+                Weiter &rarr;
+              </button>
             )}
 
-            {/* Back button (nur wenn kein pendingNext, da sonst oben schon gezeigt) */}
-            {step !== 'S1' && !pendingNext && (
-              <div className="mt-8">
-                <button
-                  onClick={goBack}
-                  className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
-                >
-                  &larr; Zurück
-                </button>
-              </div>
-            )}
-
-            {/* Leitfaden-Sektion (after checker, on first step) */}
-            {step === 'S1' && !history.length && (
-              <div className="mt-12">
-                {/* Leitfaden */}
-                <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold text-ink mb-5">
-                  Was prüft der Aufhebungsvertrag-Checker?
-                </h2>
-
-                <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-5">
-                  Ein Aufhebungsvertrag ist eine einvernehmliche Beendigung des Arbeitsverhältnisses. Anders als bei einer Kündigung gibt es keine gesetzlich vorgeschriebenen Mindestinhalte — das bedeutet, Arbeitgeber können Verträge zu ihren Gunsten gestalten. Umso wichtiger ist eine sorgfältige Prüfung vor der Unterzeichnung.
-                </p>
-
-                <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-5">
-                  Unser Checker prüft acht zentrale Bereiche: Abfindung und Vergütung (&sect;74a HGB), Resturlaub (&sect;7 Abs. 4 BUrlG), Freistellung, Widerrufsfrist, Sperrzeit beim Arbeitslosengeld (&sect;159 SGB III), Zeugnis (&sect;109 GewO), Wettbewerbsverbot (&sect;74 HGB) und die Verhandlungssituation nach dem Gebot fairen Verhandelns (BAG 6 AZR 75/18, BAG 6 AZR 333/21). Nutzen Sie auch unseren{' '}
-                  <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>, um Ihre{' '}
-                  <Link href="/urlaubsabgeltung-rechner" className="text-gold no-underline hover:underline">Urlaubsabgeltung zu berechnen</Link> oder Ihre{' '}
-                  <Link href="/kuendigungsfrist-rechner" className="text-gold no-underline hover:underline">Kündigungsfrist zu prüfen</Link>.
-                </p>
-
-                <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-8">
-                  Besonders wichtig: Bei Aufhebungsverträgen droht regelmäßig eine 12-wöchige Sperrzeit beim Arbeitslosengeld I (&sect;159 SGB III). Dieser Aspekt wird von vielen Arbeitnehmern unterschätzt — und von Arbeitgebern selten thematisiert. Anwaltliche Beratung kann helfen, durch eine geschickte Vertragsgestaltung die Sperrzeit zu vermeiden oder zu verkürzen.
-                </p>
-
-                {/* FAQ */}
-                <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold text-ink mb-5">
-                  Häufige Fragen zum Aufhebungsvertrag
-                </h2>
-
-                <div className="max-w-[740px] mb-8">
-                  {faqs.map((faq, i) => (
-                    <div key={i} className="border-b border-border">
-                      <button
-                        className="w-full text-left py-5 flex justify-between items-center gap-4 bg-none border-none cursor-pointer hover:text-gold transition-colors font-sans font-semibold text-[0.95rem] text-ink"
-                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      >
-                        {faq.q}
-                        <span className={`text-gold text-[0.85rem] min-w-[16px] transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`}>
-                          &#9660;
-                        </span>
-                      </button>
-                      <div className={`overflow-hidden transition-all duration-300 text-[0.88rem] text-ink-muted leading-relaxed font-sans ${openFaq === i ? 'max-h-[400px] pb-5' : 'max-h-0'}`}>
-                        {faq.a}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Quellenbox */}
-                <div className="mb-8">
-                  <h3 className="font-serif text-[1.1rem] font-bold text-ink mb-3">Rechtsgrundlagen</h3>
-                  <div className="space-y-1.5 mb-4">
-                    <a href="https://www.gesetze-im-internet.de/hgb/__74.html" target="_blank" rel="noopener" className="block text-[0.88rem] text-gold no-underline hover:underline">&sect;74 HGB — Wettbewerbsverbot &rarr;</a>
-                    <a href="https://www.gesetze-im-internet.de/gewo/__109.html" target="_blank" rel="noopener" className="block text-[0.88rem] text-gold no-underline hover:underline">&sect;109 GewO — Zeugnis &rarr;</a>
-                    <a href="https://www.gesetze-im-internet.de/bgb/__123.html" target="_blank" rel="noopener" className="block text-[0.88rem] text-gold no-underline hover:underline">&sect;123 BGB — Anfechtung &rarr;</a>
-                    <a href="https://www.gesetze-im-internet.de/sgb_3/__159.html" target="_blank" rel="noopener" className="block text-[0.88rem] text-gold no-underline hover:underline">&sect;159 SGB III — Sperrzeit &rarr;</a>
-                    <a href="https://www.gesetze-im-internet.de/burlg/__7.html" target="_blank" rel="noopener" className="block text-[0.88rem] text-gold no-underline hover:underline">&sect;7 Abs. 4 BUrlG — Urlaubsabgeltung &rarr;</a>
-                    <a href="https://www.bundesarbeitsgericht.de" target="_blank" rel="noopener" className="block text-[0.88rem] text-gold no-underline hover:underline">BAG 6 AZR 75/18 — Gebot fairen Verhandelns &rarr;</a>
-                    <a href="https://www.bundesarbeitsgericht.de" target="_blank" rel="noopener" className="block text-[0.88rem] text-gold no-underline hover:underline">BAG 6 AZR 333/21 — Unterschriftsdruck &rarr;</a>
-                  </div>
-                  <p className="text-[0.82rem] text-ink-muted italic m-0">
-                    Erstellt und geprüft von Fachanwalt Fatih Bektas, Rechtsanwaltskammer Karlsruhe, Fachanwalt für Arbeitsrecht seit 2011. Stand: {new Date().toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}. Keine Rechtsberatung im Einzelfall.
-                  </p>
-                </div>
-
-                {/* Hinweis Banner am Ende */}
-                <div className="mb-8">
-                  <HinweisBanner />
-                </div>
-
-                {/* CTA #3 */}
-                <div className="py-7 px-7 bg-white rounded-sm border-2 border-gold">
-                  <h3 className="font-serif text-[1.15rem] font-bold text-ink mb-2">
-                    Aufhebungsvertrag erhalten — jetzt handeln.
-                  </h3>
-                  <p className="text-[0.92rem] text-ink-muted leading-relaxed mb-5">
-                    Fachanwalt Fatih Bektas zeigt Ihnen in einer kostenlosen Erstberatung Ihre Verhandlungsmöglichkeiten — Antwort innerhalb von 24 Stunden.
-                  </p>
-                  <Link
-                    href="/#kontakt"
-                    className="block w-full py-4 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#1a1409] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.25)]"
-                  >
-                    Kostenlose Ersteinschätzung &rarr;
-                  </Link>
-                </div>
-              </div>
+            {/* Zurück-Button */}
+            {history.length > 0 && (
+              <button
+                onClick={goBack}
+                className="mt-4 bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-gold transition-colors p-0"
+              >
+                &larr; Zurück
+              </button>
             )}
           </div>
         </div>
+
+        {/* FAQ Section (below checker) */}
+        {step === 'S1' && !history.length && (
+          <div className="px-6 pb-10">
+            <div className="w-full max-w-[540px] mx-auto">
+              <h2 className="font-serif text-[clamp(1.2rem,3vw,1.5rem)] font-bold text-ink mb-5">
+                Häufige Fragen zum Aufhebungsvertrag
+              </h2>
+              <div className="space-y-2">
+                {faqs.map((faq, i) => (
+                  <div key={i} className="bg-white border border-border rounded-sm overflow-hidden">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      className="w-full flex items-center justify-between py-4 px-5 bg-white border-none cursor-pointer font-sans text-left"
+                    >
+                      <span className="text-[0.95rem] font-semibold text-ink pr-4">{faq.q}</span>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className={`min-w-[18px] transition-transform ${openFaq === i ? 'rotate-180' : ''}`}
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
+                    {openFaq === i && (
+                      <div className="px-5 pb-4">
+                        <p className="text-[0.88rem] text-ink-muted leading-relaxed m-0">{faq.a}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -6,8 +6,8 @@ import FadeUp from './FadeUp';
 
 const teamPreview = [
   { src: '/Fatih.webp', name: 'Fatih Bektas', title: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht' },
-  { src: '/Buechler.webp', name: 'Georg Willem Büchler', title: 'Rechtsanwalt & Fachanwalt' },
-  { src: '/Duncker.webp', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt & Fachanwalt' },
+  { src: '/Buechler.webp', name: 'Georg Willem Büchler', title: 'Rechtsanwalt' },
+  { src: '/Duncker.webp', name: 'Dr. Martin Duncker', title: 'Rechtsanwalt' },
 ];
 
 export default function TeamTeaser() {

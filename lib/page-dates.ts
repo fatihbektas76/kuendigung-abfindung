@@ -20,7 +20,7 @@ export const PAGE_DATES = {
 
   // Tool pages (StandAnzeige added 2026-05-03)
   kuendigungPruefen: '2026-05-03',
-  aufhebungsvertragPruefen: '2026-05-03',
+  aufhebungsvertragPruefen: '2026-05-04',
   autor: '2026-04-27',
 
   // Template-level dates (all pages of this type share one date)
