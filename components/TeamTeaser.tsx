@@ -18,7 +18,7 @@ export default function TeamTeaser() {
           Unser Team
         </div>
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-[1.25] mb-3.5 max-md:text-2xl">
-          Erfahrene Fachanwälte an Ihrer Seite
+          Erfahrene Anwälte an Ihrer Seite
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed">
           Unser Team vertritt Arbeitnehmer bei Kündigung,
