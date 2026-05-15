@@ -41,6 +41,7 @@ export default function MultiSelect({
   function toggleOption(value: string) {
     if (value === 'keiner') {
       onChange(selected.includes('keiner') ? [] : ['keiner']);
+      setIsOpen(false);
       return;
     }
 
@@ -50,6 +51,7 @@ export default function MultiSelect({
     } else {
       onChange([...without, value]);
     }
+    setIsOpen(false);
   }
 
   const displayText = selected.length === 0
