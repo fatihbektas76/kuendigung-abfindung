@@ -10,5 +10,9 @@ export const metadata = buildMetadata({
 });
 
 export default function MandantenaufnahmeLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <div className="mandantenaufnahme-standalone">
+      {children}
+    </div>
+  );
 }
