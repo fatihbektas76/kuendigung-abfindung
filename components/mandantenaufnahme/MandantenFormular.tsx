@@ -6,6 +6,8 @@ import Image from 'next/image';
 
 import type { MandantenFormData, FileAttachment, StepErrors } from './types';
 import { initialFormData } from './types';
+import type { Translations } from './translations';
+import { LanguageProvider, useLanguage } from './LanguageContext';
 import ProgressBar from './ProgressBar';
 
 import Step1Persoenlich from './steps/Step1Persoenlich';
@@ -17,69 +19,96 @@ import Step5Dokumente from './steps/Step5Dokumente';
 import StandAnzeige from '@/components/StandAnzeige';
 import { PAGE_DATES } from '@/lib/page-dates';
 
+/* ───── Language Toggle ───── */
+
+function LanguageToggle() {
+  const { locale, setLocale } = useLanguage();
+
+  return (
+    <div className="flex items-center gap-0.5 bg-cream border border-border rounded-sm overflow-hidden">
+      {(['de', 'en'] as const).map((lang) => (
+        <button
+          key={lang}
+          type="button"
+          onClick={() => setLocale(lang)}
+          className={`px-2.5 py-1 text-[0.75rem] font-semibold border-none cursor-pointer transition-all ${
+            locale === lang
+              ? 'bg-gold text-white'
+              : 'bg-transparent text-ink-muted hover:text-ink'
+          }`}
+        >
+          {lang.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 /* ───── Validation ───── */
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function validateStep(step: number, data: MandantenFormData): StepErrors {
+function validateStep(step: number, data: MandantenFormData, t: Translations): StepErrors {
   const errors: StepErrors = {};
+  const v = t.validation;
 
   if (step === 1) {
-    if (!data.vorname.trim()) errors.vorname = 'Bitte Vorname eingeben.';
-    if (!data.nachname.trim()) errors.nachname = 'Bitte Nachname eingeben.';
-    if (!data.geburtsdatum) errors.geburtsdatum = 'Bitte Geburtsdatum eingeben.';
-    if (!data.strasseHausnummer.trim()) errors.strasseHausnummer = 'Bitte Straße und Hausnummer eingeben.';
-    if (!data.plz.trim()) errors.plz = 'Bitte PLZ eingeben.';
-    if (!data.ort.trim()) errors.ort = 'Bitte Ort eingeben.';
-    if (!data.handynummer.trim()) errors.handynummer = 'Bitte Handynummer eingeben.';
+    if (!data.vorname.trim()) errors.vorname = v.vorname;
+    if (!data.nachname.trim()) errors.nachname = v.nachname;
+    if (!data.geburtsdatum) errors.geburtsdatum = v.geburtsdatum;
+    if (!data.strasseHausnummer.trim()) errors.strasseHausnummer = v.strasseHausnummer;
+    if (!data.plz.trim()) errors.plz = v.plz;
+    if (!data.ort.trim()) errors.ort = v.ort;
+    if (!data.handynummer.trim()) errors.handynummer = v.handynummer;
     if (!data.email.trim()) {
-      errors.email = 'Bitte E-Mail eingeben.';
+      errors.email = v.emailRequired;
     } else if (!EMAIL_RE.test(data.email)) {
-      errors.email = 'Bitte gültige E-Mail eingeben.';
+      errors.email = v.emailInvalid;
     }
   }
 
   if (step === 2) {
-    if (!data.beziehungsstatus) errors.beziehungsstatus = 'Bitte Beziehungsstatus wählen.';
-    if (!data.kinder) errors.kinder = 'Bitte angeben, ob Sie Kinder haben.';
-    if (data.kinder === 'ja' && !data.kinderAnzahl) errors.kinderAnzahl = 'Bitte Anzahl der Kinder eingeben.';
+    if (!data.beziehungsstatus) errors.beziehungsstatus = v.beziehungsstatus;
+    if (!data.kinder) errors.kinder = v.kinder;
+    if (data.kinder === 'ja' && !data.kinderAnzahl) errors.kinderAnzahl = v.kinderAnzahl;
   }
 
   if (step === 3) {
-    if (!data.arbeitgeberName.trim()) errors.arbeitgeberName = 'Bitte Arbeitgeber eingeben.';
-    if (!data.arbeitgeberStrasse.trim()) errors.arbeitgeberStrasse = 'Bitte Straße eingeben.';
-    if (!data.arbeitgeberPlz.trim()) errors.arbeitgeberPlz = 'Bitte PLZ eingeben.';
-    if (!data.arbeitgeberOrt.trim()) errors.arbeitgeberOrt = 'Bitte Ort eingeben.';
-    if (!data.berufsbezeichnung.trim()) errors.berufsbezeichnung = 'Bitte Berufsbezeichnung eingeben.';
-    if (!data.arbeitsort.trim()) errors.arbeitsort = 'Bitte Arbeitsort eingeben.';
-    if (!data.bruttomonatslohn.trim()) errors.bruttomonatslohn = 'Bitte Bruttomonatslohn eingeben.';
-    if (!data.eintrittsdatum) errors.eintrittsdatum = 'Bitte Eintrittsdatum eingeben.';
-    if (!data.betriebsrat) errors.betriebsrat = 'Bitte angeben, ob ein Betriebsrat existiert.';
+    if (!data.arbeitgeberName.trim()) errors.arbeitgeberName = v.arbeitgeberName;
+    if (!data.arbeitgeberStrasse.trim()) errors.arbeitgeberStrasse = v.arbeitgeberStrasse;
+    if (!data.arbeitgeberPlz.trim()) errors.arbeitgeberPlz = v.arbeitgeberPlz;
+    if (!data.arbeitgeberOrt.trim()) errors.arbeitgeberOrt = v.arbeitgeberOrt;
+    if (!data.berufsbezeichnung.trim()) errors.berufsbezeichnung = v.berufsbezeichnung;
+    if (!data.arbeitsort.trim()) errors.arbeitsort = v.arbeitsort;
+    if (!data.bruttomonatslohn.trim()) errors.bruttomonatslohn = v.bruttomonatslohn;
+    if (!data.eintrittsdatum) errors.eintrittsdatum = v.eintrittsdatum;
+    if (!data.betriebsrat) errors.betriebsrat = v.betriebsrat;
   }
 
   if (step === 4) {
-    if (!data.kuendigungsAnzahl) errors.kuendigungsAnzahl = 'Bitte Anzahl der Kündigungen wählen.';
+    if (!data.kuendigungsAnzahl) errors.kuendigungsAnzahl = v.kuendigungsAnzahl;
     const count = data.kuendigungsAnzahl === '3+' ? 3 : data.kuendigungsAnzahl === '2' ? 2 : data.kuendigungsAnzahl === '1' ? 1 : 0;
     for (let i = 0; i < count; i++) {
-      if (!data.kuendigungen[i]?.kuendigungsDatum) errors[`kuendigungsDatum_${i}`] = 'Bitte Datum eingeben.';
-      if (!data.kuendigungen[i]?.zugangsDatum) errors[`zugangsDatum_${i}`] = 'Bitte Datum eingeben.';
+      if (!data.kuendigungen[i]?.kuendigungsDatum) errors[`kuendigungsDatum_${i}`] = v.kuendigungsDatum;
+      if (!data.kuendigungen[i]?.zugangsDatum) errors[`zugangsDatum_${i}`] = v.zugangsDatum;
     }
-    if (!data.rechtsschutz) errors.rechtsschutz = 'Bitte angeben, ob Sie eine RSV haben.';
+    if (!data.rechtsschutz) errors.rechtsschutz = v.rechtsschutz;
     if (data.rechtsschutz === 'ja' && !data.versicherungsgesellschaft.trim()) {
-      errors.versicherungsgesellschaft = 'Bitte Versicherung wählen.';
+      errors.versicherungsgesellschaft = v.versicherungsgesellschaft;
     }
   }
 
   if (step === 5) {
-    if (!data.datenschutz) errors.datenschutz = 'Bitte stimmen Sie der Datenschutzerklärung zu.';
+    if (!data.datenschutz) errors.datenschutz = v.datenschutz;
   }
 
   return errors;
 }
 
-/* ───── Main Component ───── */
+/* ───── Inner Component (needs context) ───── */
 
-export default function MandantenFormular() {
+function MandantenFormularInner() {
+  const { t } = useLanguage();
   const [step, setStep] = useState(1);
   const [data, setData] = useState<MandantenFormData>(initialFormData);
   const [files, setFiles] = useState<FileAttachment[]>([]);
@@ -102,7 +131,7 @@ export default function MandantenFormular() {
 
   /* Navigation */
   const goNext = () => {
-    const stepErrors = validateStep(step, data);
+    const stepErrors = validateStep(step, data, t);
     if (Object.keys(stepErrors).length > 0) {
       setErrors(stepErrors);
       return;
@@ -118,7 +147,7 @@ export default function MandantenFormular() {
 
   /* Submit */
   const handleSubmit = async () => {
-    const stepErrors = validateStep(5, data);
+    const stepErrors = validateStep(5, data, t);
     if (Object.keys(stepErrors).length > 0) {
       setErrors(stepErrors);
       return;
@@ -144,20 +173,23 @@ export default function MandantenFormular() {
       setSubmitted(true);
     } catch {
       setLoading(false);
-      alert('Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an bektas@apos.legal');
+      alert(t.submitError);
     }
   };
 
   /* ───── Sidebar ───── */
   const sidebar = (
     <aside className="hidden lg:flex flex-col w-[320px] min-w-[320px] bg-white border-r border-border p-8 min-h-screen">
-      <Link href="/" className="flex items-center gap-3 no-underline mb-10">
-        <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={140} height={48} className="h-9 w-auto" priority />
-      </Link>
+      <div className="flex items-center justify-between mb-10">
+        <Link href="/" className="flex items-center gap-3 no-underline">
+          <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={140} height={48} className="h-9 w-auto" priority />
+        </Link>
+        <LanguageToggle />
+      </div>
 
       <div className="mb-8">
         <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-4">
-          Mandantenaufnahme
+          {t.sidebar.heading}
         </div>
         <div className="space-y-4">
           <div className="flex items-start gap-3">
@@ -166,8 +198,8 @@ export default function MandantenFormular() {
               <path d="M8 12l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <div>
-              <div className="text-[0.88rem] font-semibold text-ink">Sichere Datenübertragung</div>
-              <div className="text-[0.78rem] text-ink-muted">SSL-verschlüsselt</div>
+              <div className="text-[0.88rem] font-semibold text-ink">{t.sidebar.secureTransfer}</div>
+              <div className="text-[0.78rem] text-ink-muted">{t.sidebar.secureTransferSub}</div>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -176,8 +208,8 @@ export default function MandantenFormular() {
               <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <div>
-              <div className="text-[0.88rem] font-semibold text-ink">Schnelle Bearbeitung</div>
-              <div className="text-[0.78rem] text-ink-muted">Vollmacht direkt per E-Mail</div>
+              <div className="text-[0.88rem] font-semibold text-ink">{t.sidebar.fastProcessing}</div>
+              <div className="text-[0.78rem] text-ink-muted">{t.sidebar.fastProcessingSub}</div>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -186,8 +218,8 @@ export default function MandantenFormular() {
               <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" strokeWidth="2" />
             </svg>
             <div>
-              <div className="text-[0.88rem] font-semibold text-ink">Datenschutz garantiert</div>
-              <div className="text-[0.78rem] text-ink-muted">DSGVO-konform</div>
+              <div className="text-[0.88rem] font-semibold text-ink">{t.sidebar.dataProtection}</div>
+              <div className="text-[0.78rem] text-ink-muted">{t.sidebar.dataProtectionSub}</div>
             </div>
           </div>
         </div>
@@ -195,7 +227,7 @@ export default function MandantenFormular() {
 
       <div className="mb-8">
         <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-3">
-          Hilfe und Kontakt
+          {t.sidebar.helpContact}
         </div>
         <div className="space-y-2">
           <a href="tel:+49622295992400" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
@@ -209,7 +241,7 @@ export default function MandantenFormular() {
 
       <div className="mb-8 py-4 px-4 bg-cream rounded-sm border border-border">
         <p className="text-[0.75rem] text-ink-muted leading-relaxed m-0">
-          <strong>Hinweis:</strong> Ihre Daten werden ausschließlich zur Bearbeitung Ihres Mandats verwendet und nicht an Dritte weitergegeben.
+          <strong>{t.sidebar.noticeLabel}</strong> {t.sidebar.notice}
         </p>
       </div>
 
@@ -219,7 +251,7 @@ export default function MandantenFormular() {
           {'★★★★★'}
         </div>
         <div className="text-[0.82rem] text-ink-muted mt-1">
-          5,0 &middot; 68 Bewertungen
+          5,0 &middot; 68 {t.sidebar.reviews}
         </div>
       </div>
     </aside>
@@ -238,17 +270,14 @@ export default function MandantenFormular() {
               </svg>
             </div>
             <h1 className="font-serif text-[1.8rem] font-bold text-ink mb-3">
-              Vielen Dank!
+              {t.thankYou.heading}
             </h1>
             <p className="text-[1rem] text-ink-muted leading-relaxed mb-6">
-              Ihre Mandantenaufnahme wurde erfolgreich übermittelt. Sie erhalten in Kürze eine E-Mail mit den
-              Unterlagen zur Vollmacht und den Mandantsbedingungen.
+              {t.thankYou.message}
             </p>
             <div className="py-4 px-5 bg-amber-50 rounded-sm border border-amber-300 mb-6">
               <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
-                <strong>Wichtiger Hinweis:</strong> Falls Sie eine Kündigung erhalten haben, beachten Sie die
-                3-Wochen-Klagefrist (&sect;4 KSchG). Bei Fragen erreichen Sie uns telefonisch unter
-                +49 6222 9599 2400.
+                <strong>{t.thankYou.warningLabel}</strong> {t.thankYou.warningText}
               </p>
             </div>
             <a
@@ -257,11 +286,11 @@ export default function MandantenFormular() {
               rel="noopener noreferrer"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px"
             >
-              Telefontermin buchen &rarr;
+              {t.thankYou.bookCall} &rarr;
             </a>
             <div className="mt-4">
               <Link href="/" className="text-[0.88rem] text-ink-muted no-underline hover:text-gold transition-colors">
-                Zur Startseite
+                {t.thankYou.backHome}
               </Link>
             </div>
           </div>
@@ -309,9 +338,12 @@ export default function MandantenFormular() {
           <Link href="/" className="flex items-center no-underline">
             <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={120} height={40} className="h-8 w-auto" priority />
           </Link>
-          <a href="tel:+49622295992400" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
-            +49 6222 9599 2400
-          </a>
+          <div className="flex items-center gap-3">
+            <LanguageToggle />
+            <a href="tel:+49622295992400" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
+              +49 6222 9599 2400
+            </a>
+          </div>
         </div>
 
         {/* Content area */}
@@ -337,7 +369,7 @@ export default function MandantenFormular() {
                     onClick={goBack}
                     className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
                   >
-                    &larr; Zurück
+                    &larr; {t.nav.back}
                   </button>
                 ) : (
                   <div />
@@ -347,7 +379,7 @@ export default function MandantenFormular() {
                   onClick={goNext}
                   className="py-3 px-8 bg-gold text-white border-none rounded-sm font-sans text-[0.92rem] font-semibold cursor-pointer transition-all hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
                 >
-                  Weiter &rarr;
+                  {t.nav.next} &rarr;
                 </button>
               </div>
             )}
@@ -360,7 +392,7 @@ export default function MandantenFormular() {
                   onClick={goBack}
                   className="bg-none border-none text-[0.88rem] text-ink-muted cursor-pointer font-sans hover:text-ink transition-colors p-0"
                 >
-                  &larr; Zurück
+                  &larr; {t.nav.back}
                 </button>
               </div>
             )}
@@ -368,5 +400,15 @@ export default function MandantenFormular() {
         </div>
       </div>
     </div>
+  );
+}
+
+/* ───── Exported Component with Provider ───── */
+
+export default function MandantenFormular() {
+  return (
+    <LanguageProvider>
+      <MandantenFormularInner />
+    </LanguageProvider>
   );
 }

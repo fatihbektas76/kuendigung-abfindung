@@ -1,7 +1,7 @@
 'use client';
 
 import type { StepProps } from '../types';
-import { BEZIEHUNGSSTATUS_OPTIONEN } from '../types';
+import { useLanguage } from '../LanguageContext';
 
 const INPUT_CLASS =
   'w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] placeholder:text-ink-muted';
@@ -32,19 +32,21 @@ function RadioOption({ label, selected, onClick }: { label: string; selected: bo
 }
 
 export default function Step2Familie({ data, onChange, errors }: StepProps) {
+  const { t } = useLanguage();
+
   return (
     <div className="space-y-5">
       <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-2">
-        Familienstatus
+        {t.step2.heading}
       </h2>
       <p className="text-[0.88rem] text-ink-muted mb-4">
-        Diese Angaben sind für die Berechnung der Abfindung und Sozialauswahl relevant.
+        {t.step2.description}
       </p>
 
       {/* Beziehungsstatus */}
       <div>
         <label htmlFor="beziehungsstatus" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-          Beziehungsstatus <span className="text-gold-dark ml-0.5">*</span>
+          {t.step2.beziehungsstatus} <span className="text-gold-dark ml-0.5">*</span>
         </label>
         <select
           id="beziehungsstatus"
@@ -52,8 +54,8 @@ export default function Step2Familie({ data, onChange, errors }: StepProps) {
           onChange={(e) => onChange('beziehungsstatus', e.target.value)}
           className={`form-select ${INPUT_CLASS} ${errors.beziehungsstatus ? 'border-red-400' : ''}`}
         >
-          <option value="" disabled>Bitte wählen</option>
-          {BEZIEHUNGSSTATUS_OPTIONEN.map((opt) => (
+          <option value="" disabled>{t.step2.selectPlaceholder}</option>
+          {t.beziehungsstatusOptionen.map((opt) => (
             <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
@@ -63,16 +65,16 @@ export default function Step2Familie({ data, onChange, errors }: StepProps) {
       {/* Kinder */}
       <div>
         <label className="block text-[0.84rem] font-semibold text-ink mb-2">
-          Haben Sie Kinder? <span className="text-gold-dark ml-0.5">*</span>
+          {t.step2.kinderFrage} <span className="text-gold-dark ml-0.5">*</span>
         </label>
         <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
           <RadioOption
-            label="Ja"
+            label={t.step2.ja}
             selected={data.kinder === 'ja'}
             onClick={() => onChange('kinder', 'ja')}
           />
           <RadioOption
-            label="Nein"
+            label={t.step2.nein}
             selected={data.kinder === 'nein'}
             onClick={() => onChange('kinder', 'nein')}
           />
@@ -85,7 +87,7 @@ export default function Step2Familie({ data, onChange, errors }: StepProps) {
         <div className="space-y-4 pl-0 border-l-[3px] border-gold/20 ml-0 p-4 bg-cream/50 rounded-sm">
           <div>
             <label htmlFor="kinderAnzahl" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-              Wie viele Kinder? <span className="text-gold-dark ml-0.5">*</span>
+              {t.step2.wieViele} <span className="text-gold-dark ml-0.5">*</span>
             </label>
             <input
               id="kinderAnzahl"
@@ -101,17 +103,17 @@ export default function Step2Familie({ data, onChange, errors }: StepProps) {
           </div>
           <div>
             <label htmlFor="kinderAlter" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-              Alter der Kinder
+              {t.step2.alterKinder}
             </label>
             <input
               id="kinderAlter"
               type="text"
               value={data.kinderAlter}
               onChange={(e) => onChange('kinderAlter', e.target.value)}
-              placeholder="z.B. 3, 7, 12"
+              placeholder={t.step2.placeholderAlter}
               className={INPUT_CLASS}
             />
-            <p className="text-[0.76rem] text-ink-muted mt-1">Kommagetrennt, z.B. &quot;3, 7, 12&quot;</p>
+            <p className="text-[0.76rem] text-ink-muted mt-1">{t.step2.alterHint}</p>
           </div>
         </div>
       )}

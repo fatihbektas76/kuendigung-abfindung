@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useLanguage } from './LanguageContext';
 
 interface MultiSelectProps {
-  options: Array<{ value: string; label: string }>;
+  options: ReadonlyArray<{ readonly value: string; readonly label: string }>;
   selected: string[];
   onChange: (selected: string[]) => void;
   label: string;
@@ -23,6 +24,7 @@ export default function MultiSelect({
   sonstigValue,
   onSonstigChange,
 }: MultiSelectProps) {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +53,7 @@ export default function MultiSelect({
   }
 
   const displayText = selected.length === 0
-    ? 'Bitte wählen'
+    ? t.multiSelect.placeholder
     : selected.map((s) => options.find((o) => o.value === s)?.label ?? s).join(', ');
 
   return (
@@ -97,7 +99,7 @@ export default function MultiSelect({
                   type="button"
                   onClick={() => toggleOption(s)}
                   className="bg-transparent border-none cursor-pointer p-0 text-gold-dark/60 hover:text-gold-dark"
-                  aria-label={`${opt?.label} entfernen`}
+                  aria-label={t.multiSelect.removeLabel.replace('{label}', opt?.label ?? s)}
                 >
                   &times;
                 </button>
@@ -133,7 +135,7 @@ export default function MultiSelect({
           type="text"
           value={sonstigValue ?? ''}
           onChange={(e) => onSonstigChange(e.target.value)}
-          placeholder="Welcher Sonderschutz?"
+          placeholder={t.multiSelect.sonstigPlaceholder}
           className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] placeholder:text-ink-muted mt-2"
         />
       )}

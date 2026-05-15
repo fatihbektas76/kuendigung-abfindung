@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { loadGoogleMaps } from './AddressAutocomplete';
 import type { GoogleAutocompleteInstance } from './AddressAutocomplete';
+import { useLanguage } from './LanguageContext';
 
 interface CompanyAutocompleteProps {
   nameValue: string;
@@ -28,6 +29,7 @@ export default function CompanyAutocomplete({
   required,
   errors,
 }: CompanyAutocompleteProps) {
+  const { t } = useLanguage();
   const inputRef = useRef<HTMLInputElement>(null);
   const [apiLoaded, setApiLoaded] = useState(false);
   const [manualMode, setManualMode] = useState(false);
@@ -98,12 +100,12 @@ export default function CompanyAutocomplete({
     return (
       <div className="space-y-3">
         <div>
-          {labelEl('Name des Arbeitgebers', 'arbeitgeberName', required)}
+          {labelEl(t.company.label, 'arbeitgeberName', required)}
           <input
             ref={inputRef}
             id="arbeitgeberName"
             type="text"
-            placeholder="Firma suchen..."
+            placeholder={t.company.searchPlaceholder}
             className={`${INPUT_CLASS} ${errors?.name ? 'border-red-400' : ''}`}
             defaultValue={nameValue}
           />
@@ -125,7 +127,7 @@ export default function CompanyAutocomplete({
           onClick={() => setManualMode(true)}
           className="text-[0.78rem] text-gold-dark underline cursor-pointer bg-transparent border-none p-0"
         >
-          Manuell eingeben
+          {t.company.manualEntry}
         </button>
       </div>
     );
@@ -135,32 +137,32 @@ export default function CompanyAutocomplete({
   return (
     <div className="space-y-3">
       <div>
-        {labelEl('Name des Arbeitgebers', 'arbeitgeberName', required)}
+        {labelEl(t.company.label, 'arbeitgeberName', required)}
         <input
           id="arbeitgeberName"
           type="text"
           value={nameValue}
           onChange={(e) => onCompanyChange({ name: e.target.value, strasse: strasseValue, plz: plzValue, ort: ortValue })}
-          placeholder="Firma GmbH"
+          placeholder={t.company.placeholderName}
           className={`${INPUT_CLASS} ${errors?.name ? 'border-red-400' : ''}`}
         />
         {errors?.name && <p className={ERROR_CLASS}>{errors.name}</p>}
       </div>
       <div>
-        {labelEl('Straße + Hausnummer', 'ag-strasse', required)}
+        {labelEl(t.address.strasse, 'ag-strasse', required)}
         <input
           id="ag-strasse"
           type="text"
           value={strasseValue}
           onChange={(e) => onCompanyChange({ name: nameValue, strasse: e.target.value, plz: plzValue, ort: ortValue })}
-          placeholder="Musterstraße 1"
+          placeholder={t.address.placeholderStrasse}
           className={`${INPUT_CLASS} ${errors?.strasse ? 'border-red-400' : ''}`}
         />
         {errors?.strasse && <p className={ERROR_CLASS}>{errors.strasse}</p>}
       </div>
       <div className="grid grid-cols-[120px_1fr] gap-3 max-md:grid-cols-1">
         <div>
-          {labelEl('PLZ', 'ag-plz', required)}
+          {labelEl(t.address.plz, 'ag-plz', required)}
           <input
             id="ag-plz"
             type="text"
@@ -168,19 +170,19 @@ export default function CompanyAutocomplete({
             maxLength={5}
             value={plzValue}
             onChange={(e) => onCompanyChange({ name: nameValue, strasse: strasseValue, plz: e.target.value.replace(/\D/g, ''), ort: ortValue })}
-            placeholder="69115"
+            placeholder={t.address.placeholderPlz}
             className={`${INPUT_CLASS} ${errors?.plz ? 'border-red-400' : ''}`}
           />
           {errors?.plz && <p className={ERROR_CLASS}>{errors.plz}</p>}
         </div>
         <div>
-          {labelEl('Ort', 'ag-ort', required)}
+          {labelEl(t.address.ort, 'ag-ort', required)}
           <input
             id="ag-ort"
             type="text"
             value={ortValue}
             onChange={(e) => onCompanyChange({ name: nameValue, strasse: strasseValue, plz: plzValue, ort: e.target.value })}
-            placeholder="Heidelberg"
+            placeholder={t.address.placeholderOrt}
             className={`${INPUT_CLASS} ${errors?.ort ? 'border-red-400' : ''}`}
           />
           {errors?.ort && <p className={ERROR_CLASS}>{errors.ort}</p>}
@@ -192,7 +194,7 @@ export default function CompanyAutocomplete({
           onClick={() => setManualMode(false)}
           className="text-[0.78rem] text-gold-dark underline cursor-pointer bg-transparent border-none p-0"
         >
-          Firma suchen
+          {t.company.searchCompany}
         </button>
       )}
     </div>

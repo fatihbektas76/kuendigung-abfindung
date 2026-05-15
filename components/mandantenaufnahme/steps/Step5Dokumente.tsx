@@ -2,6 +2,7 @@
 
 import type { StepErrors } from '../types';
 import type { FileAttachment } from '../types';
+import { useLanguage } from '../LanguageContext';
 import FileUpload from '../FileUpload';
 
 interface Step5Props {
@@ -23,13 +24,15 @@ export default function Step5Dokumente({
   loading,
   onSubmit,
 }: Step5Props) {
+  const { t } = useLanguage();
+
   return (
     <div className="space-y-5">
       <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-2">
-        Dokumente & Absenden
+        {t.step5.heading}
       </h2>
       <p className="text-[0.88rem] text-ink-muted mb-4">
-        Laden Sie relevante Unterlagen hoch und senden Sie Ihre Mandantenaufnahme ab.
+        {t.step5.description}
       </p>
 
       {/* File Upload */}
@@ -42,8 +45,7 @@ export default function Step5Dokumente({
             <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <p className="text-[0.82rem] text-amber-800 m-0 leading-relaxed">
-            <strong>Wichtiger Hinweis:</strong> Falls Sie eine Kündigung erhalten haben, beachten Sie die
-            3-Wochen-Klagefrist (§ 4 KSchG). Kontaktieren Sie uns umgehend.
+            <strong>{t.step5.warningLabel}</strong> {t.step5.warningText}
           </p>
         </div>
       </div>
@@ -58,11 +60,11 @@ export default function Step5Dokumente({
             className="w-5 h-5 mt-0.5 accent-gold min-w-[20px]"
           />
           <span className="text-[0.85rem] text-ink leading-relaxed">
-            Ich habe die{' '}
+            {t.step5.datenschutzPre}{' '}
             <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-dark underline">
-              Datenschutzerklärung
+              {t.step5.datenschutzLink}
             </a>{' '}
-            gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meines Anliegens zu.
+            {t.step5.datenschutzPost}
             <span className="text-gold-dark ml-0.5">*</span>
           </span>
         </label>
@@ -82,15 +84,15 @@ export default function Step5Dokumente({
               <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" className="opacity-25" />
               <path d="M4 12a8 8 0 0 1 8-8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="opacity-75" />
             </svg>
-            Wird gesendet...
+            {t.step5.submitting}
           </span>
         ) : (
-          'Mandantenaufnahme absenden →'
+          <>{t.step5.submitButton} &rarr;</>
         )}
       </button>
 
       <p className="text-[0.76rem] text-ink-muted text-center leading-relaxed">
-        Ihre Daten werden verschlüsselt übertragen und ausschließlich zur Bearbeitung Ihres Mandats verwendet.
+        {t.step5.submitHint}
       </p>
     </div>
   );

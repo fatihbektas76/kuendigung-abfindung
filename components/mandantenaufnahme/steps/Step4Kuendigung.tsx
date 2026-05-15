@@ -2,6 +2,7 @@
 
 import type { StepProps } from '../types';
 import { VERSICHERUNGEN } from '../types';
+import { useLanguage } from '../LanguageContext';
 import SearchableSelect from '../SearchableSelect';
 
 const INPUT_CLASS =
@@ -33,6 +34,7 @@ function RadioOption({ label, selected, onClick }: { label: string; selected: bo
 }
 
 export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
+  const { t } = useLanguage();
   const anzahl = data.kuendigungsAnzahl === '3+' ? 3 : data.kuendigungsAnzahl === '2' ? 2 : data.kuendigungsAnzahl === '1' ? 1 : 0;
 
   function updateKuendigung(index: number, field: 'kuendigungsDatum' | 'zugangsDatum', value: string) {
@@ -57,21 +59,21 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
   return (
     <div className="space-y-5">
       <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-2">
-        Kündigung & Versicherung
+        {t.step4.heading}
       </h2>
       <p className="text-[0.88rem] text-ink-muted mb-4">
-        Angaben zur Kündigung und Rechtsschutzversicherung.
+        {t.step4.description}
       </p>
 
       {/* Anzahl Kündigungen */}
       <div>
         <label className="block text-[0.84rem] font-semibold text-ink mb-2">
-          Wie viele Kündigungen sind eingegangen? <span className="text-gold-dark ml-0.5">*</span>
+          {t.step4.anzahlFrage} <span className="text-gold-dark ml-0.5">*</span>
         </label>
         <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
           <RadioOption label="1" selected={data.kuendigungsAnzahl === '1'} onClick={() => handleAnzahlChange('1')} />
           <RadioOption label="2" selected={data.kuendigungsAnzahl === '2'} onClick={() => handleAnzahlChange('2')} />
-          <RadioOption label="3 oder mehr" selected={data.kuendigungsAnzahl === '3+'} onClick={() => handleAnzahlChange('3+')} />
+          <RadioOption label={t.step4.dreiOderMehr} selected={data.kuendigungsAnzahl === '3+'} onClick={() => handleAnzahlChange('3+')} />
         </div>
         {errors.kuendigungsAnzahl && <p className="text-[0.78rem] text-red-500 mt-1">{errors.kuendigungsAnzahl}</p>}
       </div>
@@ -85,7 +87,7 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
               className="p-4 bg-cream/50 border-l-[3px] border-gold/20 rounded-sm space-y-3"
             >
               <div className="text-[0.84rem] font-semibold text-ink">
-                {anzahl > 1 ? `${i + 1}. Kündigung` : 'Kündigung'}
+                {anzahl > 1 ? t.step4.kuendigungNr.replace('{n}', String(i + 1)) : t.step4.kuendigung}
               </div>
               <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
                 <div>
@@ -93,7 +95,7 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
                     htmlFor={`kuendigungsDatum-${i}`}
                     className="block text-[0.84rem] font-semibold text-ink mb-1.5"
                   >
-                    Kündigung zu wann? <span className="text-gold-dark ml-0.5">*</span>
+                    {t.step4.kuendigungZuWann} <span className="text-gold-dark ml-0.5">*</span>
                   </label>
                   <input
                     id={`kuendigungsDatum-${i}`}
@@ -111,7 +113,7 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
                     htmlFor={`zugangsDatum-${i}`}
                     className="block text-[0.84rem] font-semibold text-ink mb-1.5"
                   >
-                    Wann eingegangen? <span className="text-gold-dark ml-0.5">*</span>
+                    {t.step4.wannEingegangen} <span className="text-gold-dark ml-0.5">*</span>
                   </label>
                   <input
                     id={`zugangsDatum-${i}`}
@@ -133,16 +135,16 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
       {/* Rechtsschutzversicherung */}
       <div>
         <label className="block text-[0.84rem] font-semibold text-ink mb-2">
-          Haben Sie eine Rechtsschutzversicherung (RSV)? <span className="text-gold-dark ml-0.5">*</span>
+          {t.step4.rsvFrage} <span className="text-gold-dark ml-0.5">*</span>
         </label>
         <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
           <RadioOption
-            label="Ja"
+            label={t.step4.ja}
             selected={data.rechtsschutz === 'ja'}
             onClick={() => onChange('rechtsschutz', 'ja')}
           />
           <RadioOption
-            label="Nein"
+            label={t.step4.nein}
             selected={data.rechtsschutz === 'nein'}
             onClick={() => onChange('rechtsschutz', 'nein')}
           />
@@ -157,7 +159,7 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
             options={VERSICHERUNGEN}
             value={data.versicherungsgesellschaft}
             onChange={(val) => onChange('versicherungsgesellschaft', val)}
-            label="Versicherungsgesellschaft"
+            label={t.step4.versicherungsgesellschaft}
             id="versicherungsgesellschaft"
             required
             error={errors.versicherungsgesellschaft}
@@ -165,14 +167,14 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
 
           <div>
             <label htmlFor="versicherungsnummer" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-              Versicherungsnummer
+              {t.step4.versicherungsnummer}
             </label>
             <input
               id="versicherungsnummer"
               type="text"
               value={data.versicherungsnummer}
               onChange={(e) => onChange('versicherungsnummer', e.target.value)}
-              placeholder="z.B. RS-123456789"
+              placeholder={t.step4.placeholderVsnr}
               className={INPUT_CLASS}
             />
           </div>

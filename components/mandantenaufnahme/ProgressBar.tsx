@@ -1,21 +1,25 @@
 'use client';
 
-const STEPS = [
-  { label: 'Persönlich', short: '1' },
-  { label: 'Familie', short: '2' },
-  { label: 'Arbeit', short: '3' },
-  { label: 'Kündigung', short: '4' },
-  { label: 'Dokumente', short: '5' },
-];
+import { useLanguage } from './LanguageContext';
 
 export default function ProgressBar({ currentStep }: { currentStep: number }) {
-  const progress = (currentStep / STEPS.length) * 100;
+  const { t } = useLanguage();
+
+  const steps = [
+    { label: t.progress.step1, short: '1' },
+    { label: t.progress.step2, short: '2' },
+    { label: t.progress.step3, short: '3' },
+    { label: t.progress.step4, short: '4' },
+    { label: t.progress.step5, short: '5' },
+  ];
+
+  const progress = (currentStep / steps.length) * 100;
 
   return (
     <div className="mb-8">
       {/* Step circles */}
       <div className="flex items-center justify-between mb-3">
-        {STEPS.map((s, i) => {
+        {steps.map((s, i) => {
           const stepNum = i + 1;
           const isCompleted = stepNum < currentStep;
           const isCurrent = stepNum === currentStep;
@@ -47,7 +51,7 @@ export default function ProgressBar({ currentStep }: { currentStep: number }) {
                     stepNum
                   )}
                 </div>
-                {i < STEPS.length - 1 && (
+                {i < steps.length - 1 && (
                   <div
                     className={`h-0.5 flex-1 transition-colors ${
                       stepNum < currentStep ? 'bg-gold' : 'bg-border'

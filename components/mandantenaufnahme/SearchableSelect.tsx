@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useLanguage } from './LanguageContext';
 
 interface SearchableSelectProps {
   options: string[];
@@ -20,12 +21,13 @@ export default function SearchableSelect({
   options,
   value,
   onChange,
-  placeholder = 'Suchen oder auswählen...',
+  placeholder,
   label,
   id,
   required,
   error,
 }: SearchableSelectProps) {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [customMode, setCustomMode] = useState(false);
@@ -99,7 +101,7 @@ export default function SearchableSelect({
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="Name der Versicherung eingeben"
+          placeholder={t.searchableSelect.customPlaceholder}
           className={`${INPUT_CLASS} ${error ? 'border-red-400' : ''}`}
         />
         <button
@@ -107,7 +109,7 @@ export default function SearchableSelect({
           onClick={() => { setCustomMode(false); onChange(''); }}
           className="text-[0.78rem] text-gold-dark mt-1 underline cursor-pointer bg-transparent border-none p-0"
         >
-          Aus Liste wählen
+          {t.searchableSelect.fromList}
         </button>
         {error && <p className="text-[0.78rem] text-red-500 mt-1">{error}</p>}
       </div>
@@ -132,7 +134,7 @@ export default function SearchableSelect({
           }}
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
-          placeholder={value || placeholder}
+          placeholder={value || placeholder || t.searchableSelect.placeholder}
           className={`${INPUT_CLASS} pr-10 ${error ? 'border-red-400' : ''}`}
           autoComplete="off"
         />
@@ -141,7 +143,7 @@ export default function SearchableSelect({
           onClick={() => { setIsOpen(!isOpen); inputRef.current?.focus(); }}
           className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-muted bg-transparent border-none cursor-pointer p-0"
           tabIndex={-1}
-          aria-label="Dropdown öffnen"
+          aria-label={t.searchableSelect.openDropdown}
         >
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
             <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -176,7 +178,7 @@ export default function SearchableSelect({
                   : 'bg-white text-gold-dark hover:bg-cream'
               }`}
             >
-              Sonstige eingeben...
+              {t.searchableSelect.enterOther}
             </button>
           </li>
         </ul>

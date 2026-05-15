@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback } from 'react';
 import type { FileAttachment } from './types';
+import { useLanguage } from './LanguageContext';
 
 interface FileUploadProps {
   files: FileAttachment[];
@@ -41,6 +42,7 @@ export default function FileUpload({
   onFilesChange,
   maxTotalSizeMB = 10,
 }: FileUploadProps) {
+  const { t } = useLanguage();
   const [dragOver, setDragOver] = useState(false);
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState('');
@@ -61,13 +63,13 @@ export default function FileUpload({
       for (const file of Array.from(fileList)) {
         // Type check
         if (!ACCEPTED_TYPES.includes(file.type) && !file.name.match(/\.(heic|heif)$/i)) {
-          setError(`"${file.name}" hat einen nicht unterstützten Dateityp.`);
+          setError(t.fileUpload.errorType.replace('{name}', file.name));
           continue;
         }
 
         // Size check
         if (runningTotal + file.size > maxBytes) {
-          setError(`Maximale Gesamtgröße von ${maxTotalSizeMB} MB überschritten.`);
+          setError(t.fileUpload.errorSize.replace('{max}', String(maxTotalSizeMB)));
           break;
         }
 
@@ -87,7 +89,7 @@ export default function FileUpload({
 
       setProcessing(false);
     },
-    [files, onFilesChange, totalSize, maxBytes, maxTotalSizeMB]
+    [files, onFilesChange, totalSize, maxBytes, maxTotalSizeMB, t]
   );
 
   function removeFile(index: number) {
@@ -106,10 +108,10 @@ export default function FileUpload({
   return (
     <div>
       <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-        Dokumente hochladen
+        {t.fileUpload.label}
       </label>
       <p className="text-[0.82rem] text-ink-muted mb-3">
-        Laden Sie relevante Dokumente hoch: Kündigungsschreiben, Arbeitsvertrag, Gehaltsabrechnungen etc.
+        {t.fileUpload.description}
       </p>
 
       {/* Drop zone */}
@@ -127,7 +129,7 @@ export default function FileUpload({
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <p className="text-[0.88rem] text-ink-muted mb-3">
-          {processing ? 'Wird verarbeitet...' : 'Dateien hierher ziehen'}
+          {processing ? t.fileUpload.processing : t.fileUpload.dragHint}
         </p>
         <div className="flex items-center justify-center gap-3 flex-wrap">
           <button
@@ -136,7 +138,7 @@ export default function FileUpload({
             disabled={processing}
             className="py-2.5 px-5 border-2 border-gold text-gold-dark font-semibold text-[0.85rem] rounded-sm cursor-pointer transition-all bg-white hover:bg-gold-bg disabled:opacity-50"
           >
-            Datei auswählen
+            {t.fileUpload.selectFile}
           </button>
           {/* Camera button — shown on all devices, only functional on mobile */}
           <button
@@ -150,7 +152,7 @@ export default function FileUpload({
                 <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 <circle cx="12" cy="13" r="4" stroke="currentColor" strokeWidth="1.5" />
               </svg>
-              Foto aufnehmen
+              {t.fileUpload.takePhoto}
             </span>
           </button>
         </div>
@@ -216,7 +218,7 @@ export default function FileUpload({
                 type="button"
                 onClick={() => removeFile(i)}
                 className="text-ink-muted hover:text-red-500 transition-colors bg-transparent border-none cursor-pointer p-1"
-                aria-label={`${file.name} entfernen`}
+                aria-label={t.fileUpload.removeLabel.replace('{name}', file.name)}
               >
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
                   <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

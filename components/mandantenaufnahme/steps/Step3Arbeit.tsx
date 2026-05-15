@@ -1,7 +1,7 @@
 'use client';
 
 import type { StepProps } from '../types';
-import { KUENDIGUNGSSCHUTZ_OPTIONEN } from '../types';
+import { useLanguage } from '../LanguageContext';
 import CompanyAutocomplete from '../CompanyAutocomplete';
 import MultiSelect from '../MultiSelect';
 
@@ -34,13 +34,15 @@ function RadioOption({ label, selected, onClick }: { label: string; selected: bo
 }
 
 export default function Step3Arbeit({ data, onChange, errors }: StepProps) {
+  const { t } = useLanguage();
+
   return (
     <div className="space-y-5">
       <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-2">
-        Arbeitsverhältnis
+        {t.step3.heading}
       </h2>
       <p className="text-[0.88rem] text-ink-muted mb-4">
-        Angaben zu Ihrem Arbeitgeber und Ihrer Beschäftigung.
+        {t.step3.description}
       </p>
 
       {/* Arbeitgeber Name + Adresse */}
@@ -68,28 +70,28 @@ export default function Step3Arbeit({ data, onChange, errors }: StepProps) {
       <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
         <div>
           <label htmlFor="berufsbezeichnung" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-            Berufsbezeichnung <span className="text-gold-dark ml-0.5">*</span>
+            {t.step3.berufsbezeichnung} <span className="text-gold-dark ml-0.5">*</span>
           </label>
           <input
             id="berufsbezeichnung"
             type="text"
             value={data.berufsbezeichnung}
             onChange={(e) => onChange('berufsbezeichnung', e.target.value)}
-            placeholder="z.B. Projektmanager"
+            placeholder={t.step3.placeholderBeruf}
             className={`${INPUT_CLASS} ${errors.berufsbezeichnung ? 'border-red-400' : ''}`}
           />
           {errors.berufsbezeichnung && <p className="text-[0.78rem] text-red-500 mt-1">{errors.berufsbezeichnung}</p>}
         </div>
         <div>
           <label htmlFor="arbeitsort" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-            Arbeitsort <span className="text-gold-dark ml-0.5">*</span>
+            {t.step3.arbeitsort} <span className="text-gold-dark ml-0.5">*</span>
           </label>
           <input
             id="arbeitsort"
             type="text"
             value={data.arbeitsort}
             onChange={(e) => onChange('arbeitsort', e.target.value)}
-            placeholder="z.B. Heidelberg"
+            placeholder={t.step3.placeholderOrt}
             className={`${INPUT_CLASS} ${errors.arbeitsort ? 'border-red-400' : ''}`}
           />
           {errors.arbeitsort && <p className="text-[0.78rem] text-red-500 mt-1">{errors.arbeitsort}</p>}
@@ -100,7 +102,7 @@ export default function Step3Arbeit({ data, onChange, errors }: StepProps) {
       <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
         <div>
           <label htmlFor="bruttomonatslohn" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-            Bruttomonatslohn (€) <span className="text-gold-dark ml-0.5">*</span>
+            {t.step3.bruttomonatslohn} <span className="text-gold-dark ml-0.5">*</span>
           </label>
           <div className="relative">
             <input
@@ -109,7 +111,7 @@ export default function Step3Arbeit({ data, onChange, errors }: StepProps) {
               inputMode="numeric"
               value={data.bruttomonatslohn}
               onChange={(e) => onChange('bruttomonatslohn', e.target.value.replace(/[^\d.,]/g, ''))}
-              placeholder="4.500"
+              placeholder={t.step3.placeholderLohn}
               className={`${INPUT_CLASS} pr-10 ${errors.bruttomonatslohn ? 'border-red-400' : ''}`}
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted font-semibold">€</span>
@@ -118,7 +120,7 @@ export default function Step3Arbeit({ data, onChange, errors }: StepProps) {
         </div>
         <div>
           <label htmlFor="eintrittsdatum" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-            Eintritt im Unternehmen <span className="text-gold-dark ml-0.5">*</span>
+            {t.step3.eintrittsdatum} <span className="text-gold-dark ml-0.5">*</span>
           </label>
           <input
             id="eintrittsdatum"
@@ -135,16 +137,16 @@ export default function Step3Arbeit({ data, onChange, errors }: StepProps) {
       {/* Betriebsrat */}
       <div>
         <label className="block text-[0.84rem] font-semibold text-ink mb-2">
-          Gibt es einen Betriebsrat? <span className="text-gold-dark ml-0.5">*</span>
+          {t.step3.betriebsratFrage} <span className="text-gold-dark ml-0.5">*</span>
         </label>
         <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
           <RadioOption
-            label="Ja"
+            label={t.step3.ja}
             selected={data.betriebsrat === 'ja'}
             onClick={() => onChange('betriebsrat', 'ja')}
           />
           <RadioOption
-            label="Nein"
+            label={t.step3.nein}
             selected={data.betriebsrat === 'nein'}
             onClick={() => onChange('betriebsrat', 'nein')}
           />
@@ -154,10 +156,10 @@ export default function Step3Arbeit({ data, onChange, errors }: StepProps) {
 
       {/* Besonderer Kündigungsschutz */}
       <MultiSelect
-        options={KUENDIGUNGSSCHUTZ_OPTIONEN}
+        options={t.kuendigungsschutzOptionen}
         selected={data.kuendigungsschutz}
         onChange={(val) => onChange('kuendigungsschutz', val)}
-        label="Besonderer Kündigungsschutz"
+        label={t.step3.kuendigungsschutz}
         id="kuendigungsschutz"
         sonstigValue={data.kuendigungsschutzSonstig}
         onSonstigChange={(val) => onChange('kuendigungsschutzSonstig', val)}

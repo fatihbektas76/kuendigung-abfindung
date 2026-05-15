@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { useLanguage } from './LanguageContext';
 
 interface AddressAutocompleteProps {
   label: string;
@@ -86,6 +87,7 @@ export default function AddressAutocomplete({
   id,
   errors,
 }: AddressAutocompleteProps) {
+  const { t } = useLanguage();
   const inputRef = useRef<HTMLInputElement>(null);
   const [apiLoaded, setApiLoaded] = useState(false);
   const [manualMode, setManualMode] = useState(false);
@@ -157,7 +159,7 @@ export default function AddressAutocomplete({
           ref={inputRef}
           id={id}
           type="text"
-          placeholder="Adresse eingeben..."
+          placeholder={t.address.enterAddress}
           className={INPUT_CLASS}
           defaultValue={strasseValue ? `${strasseValue}, ${plzValue} ${ortValue}` : ''}
         />
@@ -173,7 +175,7 @@ export default function AddressAutocomplete({
           onClick={() => setManualMode(true)}
           className="text-[0.78rem] text-gold-dark mt-1 underline cursor-pointer bg-transparent border-none p-0"
         >
-          Manuell eingeben
+          {t.address.manualEntry}
         </button>
         {errors?.strasse && <p className={ERROR_CLASS}>{errors.strasse}</p>}
       </div>
@@ -184,20 +186,20 @@ export default function AddressAutocomplete({
   return (
     <div className="space-y-3">
       <div>
-        {labelEl('Straße + Hausnummer', `${id}-strasse`, required)}
+        {labelEl(t.address.strasse, `${id}-strasse`, required)}
         <input
           id={`${id}-strasse`}
           type="text"
           value={strasseValue}
           onChange={(e) => onAddressChange({ strasse: e.target.value, plz: plzValue, ort: ortValue })}
-          placeholder="Musterstraße 1"
+          placeholder={t.address.placeholderStrasse}
           className={`${INPUT_CLASS} ${errors?.strasse ? 'border-red-400' : ''}`}
         />
         {errors?.strasse && <p className={ERROR_CLASS}>{errors.strasse}</p>}
       </div>
       <div className="grid grid-cols-[120px_1fr] gap-3 max-md:grid-cols-1">
         <div>
-          {labelEl('PLZ', `${id}-plz`, required)}
+          {labelEl(t.address.plz, `${id}-plz`, required)}
           <input
             id={`${id}-plz`}
             type="text"
@@ -205,19 +207,19 @@ export default function AddressAutocomplete({
             maxLength={5}
             value={plzValue}
             onChange={(e) => onAddressChange({ strasse: strasseValue, plz: e.target.value.replace(/\D/g, ''), ort: ortValue })}
-            placeholder="69115"
+            placeholder={t.address.placeholderPlz}
             className={`${INPUT_CLASS} ${errors?.plz ? 'border-red-400' : ''}`}
           />
           {errors?.plz && <p className={ERROR_CLASS}>{errors.plz}</p>}
         </div>
         <div>
-          {labelEl('Ort', `${id}-ort`, required)}
+          {labelEl(t.address.ort, `${id}-ort`, required)}
           <input
             id={`${id}-ort`}
             type="text"
             value={ortValue}
             onChange={(e) => onAddressChange({ strasse: strasseValue, plz: plzValue, ort: e.target.value })}
-            placeholder="Heidelberg"
+            placeholder={t.address.placeholderOrt}
             className={`${INPUT_CLASS} ${errors?.ort ? 'border-red-400' : ''}`}
           />
           {errors?.ort && <p className={ERROR_CLASS}>{errors.ort}</p>}
@@ -229,7 +231,7 @@ export default function AddressAutocomplete({
           onClick={() => setManualMode(false)}
           className="text-[0.78rem] text-gold-dark underline cursor-pointer bg-transparent border-none p-0"
         >
-          Google Autocomplete verwenden
+          {t.address.useAutocomplete}
         </button>
       )}
     </div>
