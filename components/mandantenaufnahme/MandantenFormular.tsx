@@ -137,11 +137,13 @@ function MandantenFormularInner() {
     }
     setErrors({});
     setStep((s) => Math.min(s + 1, 5));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const goBack = () => {
     setErrors({});
     setStep((s) => Math.max(s - 1, 1));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   /* Submit */
