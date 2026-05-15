@@ -33,6 +33,9 @@ const slugRedirects = oldToNew.flatMap(([oldSlug, newSlug]) =>
 );
 
 const nextConfig = {
+  experimental: {
+    serverActions: { bodySizeLimit: '35mb' },
+  },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   trailingSlash: true,
   poweredByHeader: false,
