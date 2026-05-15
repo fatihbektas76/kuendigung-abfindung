@@ -74,6 +74,7 @@ const de = {
     alterKinder: 'Alter der Kinder',
     placeholderAlter: 'z.B. 3, 7, 12',
     alterHint: 'Kommagetrennt, z.B. "3, 7, 12"',
+    kindLabel: 'Kind',
   },
 
   // Step 3 — Employment
@@ -308,6 +309,7 @@ const en: Translations = {
     alterKinder: 'Ages of children',
     placeholderAlter: 'e.g. 3, 7, 12',
     alterHint: 'Comma-separated, e.g. "3, 7, 12"',
+    kindLabel: 'Child',
   },
 
   step3: {

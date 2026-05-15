@@ -102,18 +102,35 @@ export default function Step2Familie({ data, onChange, errors }: StepProps) {
             {errors.kinderAnzahl && <p className="text-[0.78rem] text-red-500 mt-1">{errors.kinderAnzahl}</p>}
           </div>
           <div>
-            <label htmlFor="kinderAlter" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+            <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
               {t.step2.alterKinder}
             </label>
-            <input
-              id="kinderAlter"
-              type="text"
-              value={data.kinderAlter}
-              onChange={(e) => onChange('kinderAlter', e.target.value)}
-              placeholder={t.step2.placeholderAlter}
-              className={INPUT_CLASS}
-            />
-            <p className="text-[0.76rem] text-ink-muted mt-1">{t.step2.alterHint}</p>
+            {(() => {
+              const count = Math.min(Math.max(parseInt(data.kinderAnzahl) || 0, 0), 20);
+              const ages = (data.kinderAlter || '').split(',').map((a) => a.trim());
+              if (count === 0) return null;
+              return (
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {Array.from({ length: count }, (_, i) => (
+                    <input
+                      key={i}
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={ages[i] || ''}
+                      onChange={(e) => {
+                        const updated = [...ages];
+                        while (updated.length < count) updated.push('');
+                        updated[i] = e.target.value;
+                        onChange('kinderAlter', updated.join(', '));
+                      }}
+                      placeholder={`${t.step2.kindLabel} ${i + 1}`}
+                      className={`${INPUT_CLASS}`}
+                    />
+                  ))}
+                </div>
+              );
+            })()}
           </div>
         </div>
       )}
