@@ -24,7 +24,7 @@ function LanguageToggle() {
   const { locale, setLocale } = useLanguage();
 
   return (
-    <div className="flex items-center gap-0 border border-gray-300 rounded-md overflow-hidden shadow-sm">
+    <div className="inline-flex items-center gap-0 border border-gray-300 rounded-md overflow-hidden shadow-sm">
       {(['de', 'en'] as const).map((lang) => (
         <button
           key={lang}
