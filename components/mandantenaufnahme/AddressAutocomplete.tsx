@@ -18,9 +18,10 @@ const INPUT_CLASS =
 
 const ERROR_CLASS = 'text-[0.78rem] text-red-500 mt-1';
 
-interface GoogleAutocompleteInstance {
+export interface GoogleAutocompleteInstance {
   addListener: (event: string, cb: () => void) => void;
   getPlace: () => {
+    name?: string;
     address_components?: Array<{
       long_name: string;
       short_name: string;
@@ -45,7 +46,7 @@ declare global {
   }
 }
 
-function loadGoogleMaps(): Promise<boolean> {
+export function loadGoogleMaps(): Promise<boolean> {
   if (window.google?.maps?.places) return Promise.resolve(true);
 
   const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;

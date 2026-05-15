@@ -2,7 +2,7 @@
 
 import type { StepProps } from '../types';
 import { KUENDIGUNGSSCHUTZ_OPTIONEN } from '../types';
-import AddressAutocomplete from '../AddressAutocomplete';
+import CompanyAutocomplete from '../CompanyAutocomplete';
 import MultiSelect from '../MultiSelect';
 
 const INPUT_CLASS =
@@ -43,36 +43,21 @@ export default function Step3Arbeit({ data, onChange, errors }: StepProps) {
         Angaben zu Ihrem Arbeitgeber und Ihrer Beschäftigung.
       </p>
 
-      {/* Arbeitgeber Name */}
-      <div>
-        <label htmlFor="arbeitgeberName" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-          Name des Arbeitgebers <span className="text-gold-dark ml-0.5">*</span>
-        </label>
-        <input
-          id="arbeitgeberName"
-          type="text"
-          value={data.arbeitgeberName}
-          onChange={(e) => onChange('arbeitgeberName', e.target.value)}
-          placeholder="Firma GmbH"
-          className={`${INPUT_CLASS} ${errors.arbeitgeberName ? 'border-red-400' : ''}`}
-        />
-        {errors.arbeitgeberName && <p className="text-[0.78rem] text-red-500 mt-1">{errors.arbeitgeberName}</p>}
-      </div>
-
-      {/* Arbeitgeber Adresse */}
-      <AddressAutocomplete
-        label="Adresse des Arbeitgebers"
-        id="ag-adresse"
+      {/* Arbeitgeber Name + Adresse */}
+      <CompanyAutocomplete
+        nameValue={data.arbeitgeberName}
         strasseValue={data.arbeitgeberStrasse}
         plzValue={data.arbeitgeberPlz}
         ortValue={data.arbeitgeberOrt}
-        onAddressChange={({ strasse, plz, ort }) => {
+        onCompanyChange={({ name, strasse, plz, ort }) => {
+          onChange('arbeitgeberName', name);
           onChange('arbeitgeberStrasse', strasse);
           onChange('arbeitgeberPlz', plz);
           onChange('arbeitgeberOrt', ort);
         }}
         required
         errors={{
+          name: errors.arbeitgeberName,
           strasse: errors.arbeitgeberStrasse,
           plz: errors.arbeitgeberPlz,
           ort: errors.arbeitgeberOrt,
