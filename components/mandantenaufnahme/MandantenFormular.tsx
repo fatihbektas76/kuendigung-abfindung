@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 import type { MandantenFormData, FileAttachment, StepErrors } from './types';
 import { initialFormData } from './types';
