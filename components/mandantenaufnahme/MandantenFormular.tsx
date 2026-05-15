@@ -180,10 +180,7 @@ function MandantenFormularInner() {
   /* ───── Sidebar ───── */
   const sidebar = (
     <aside className="hidden lg:flex flex-col w-[320px] min-w-[320px] bg-white border-r border-border p-8 min-h-screen">
-      <div className="flex items-center justify-between mb-10">
-        <Link href="/" className="flex items-center gap-3 no-underline">
-          <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={140} height={48} className="h-9 w-auto" priority />
-        </Link>
+      <div className="mb-10">
         <LanguageToggle />
       </div>
 
@@ -335,15 +332,10 @@ function MandantenFormularInner() {
       <div className="flex-1 flex flex-col">
         {/* Mobile header */}
         <div className="lg:hidden flex items-center justify-between py-4 px-6 bg-white border-b border-border">
-          <Link href="/" className="flex items-center no-underline">
-            <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={120} height={40} className="h-8 w-auto" priority />
-          </Link>
-          <div className="flex items-center gap-3">
-            <LanguageToggle />
-            <a href="tel:+49622295992400" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
-              +49 6222 9599 2400
-            </a>
-          </div>
+          <LanguageToggle />
+          <a href="tel:+49622295992400" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
+            +49 6222 9599 2400
+          </a>
         </div>
 
         {/* Content area */}
