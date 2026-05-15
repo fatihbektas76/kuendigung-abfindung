@@ -25,19 +25,19 @@ function LanguageToggle() {
   const { locale, setLocale } = useLanguage();
 
   return (
-    <div className="flex items-center gap-0.5 bg-cream border border-border rounded-sm overflow-hidden">
+    <div className="flex items-center gap-0 border border-gray-300 rounded-md overflow-hidden shadow-sm">
       {(['de', 'en'] as const).map((lang) => (
         <button
           key={lang}
           type="button"
           onClick={() => setLocale(lang)}
-          className={`px-2.5 py-1 text-[0.75rem] font-semibold border-none cursor-pointer transition-all ${
+          className={`px-3 py-1.5 text-[0.8rem] font-bold border-none cursor-pointer transition-all uppercase tracking-wide ${
             locale === lang
-              ? 'bg-gold text-white'
-              : 'bg-transparent text-ink-muted hover:text-ink'
+              ? 'bg-gold-dark text-white'
+              : 'bg-white text-gray-500 hover:bg-gray-50 hover:text-gray-800'
           }`}
         >
-          {lang.toUpperCase()}
+          {lang === 'de' ? '🇩🇪 DE' : '🇬🇧 EN'}
         </button>
       ))}
     </div>
