@@ -260,7 +260,7 @@ function MandantenFormularInner() {
   /* ───── Thank You ───── */
   if (submitted) {
     return (
-      <div className="flex min-h-screen bg-cream">
+      <div className="flex min-h-screen bg-cream pt-[72px]">
         {sidebar}
         <div className="flex-1 flex items-center justify-center p-8">
           <div className="max-w-[520px] text-center">
@@ -329,7 +329,7 @@ function MandantenFormularInner() {
 
   /* ───── Render ───── */
   return (
-    <div className="flex min-h-screen bg-cream">
+    <div className="flex min-h-screen bg-cream pt-[72px]">
       {sidebar}
 
       <div className="flex-1 flex flex-col">
