@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEchtlyWebhook } from '@/lib/echtly';
 
+export const config = {
+  api: { bodyParser: { sizeLimit: '35mb' } },
+};
+
 const BREVO_API_URL = 'https://api.brevo.com/v3';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

@@ -40,7 +40,7 @@ function readFileAsBase64(file: File): Promise<string> {
 export default function FileUpload({
   files,
   onFilesChange,
-  maxTotalSizeMB = 10,
+  maxTotalSizeMB = 25,
 }: FileUploadProps) {
   const { t } = useLanguage();
   const [dragOver, setDragOver] = useState(false);
