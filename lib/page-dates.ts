@@ -33,6 +33,7 @@ export const PAGE_DATES = {
   musterDetail: '2026-04-27',
   urteile: '2026-04-27',
   arbeitsrechtAnwalt: '2026-05-03',
+  mandantenaufnahme: '2026-05-15',
 } as const;
 
 export type PageDateKey = keyof typeof PAGE_DATES;
