@@ -223,10 +223,10 @@ export default function UrlaubsabgeltungRechnerPage() {
               Wurde Ihr Resturlaub nach der Kündigung nicht ausgezahlt? Wir prüfen Ihren Abgeltungsanspruch kostenlos.
             </p>
             <Link
-              href="/kuendigung-pruefen"
+              href="/kontakt"
               className="inline-block py-2.5 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] whitespace-nowrap"
             >
-              Jetzt kostenlos prüfen &rarr;
+              Jetzt kostenlos anfragen &rarr;
             </Link>
           </div>
         </div>
@@ -390,7 +390,7 @@ export default function UrlaubsabgeltungRechnerPage() {
                 <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
                   <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung.
                   Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
-                  <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
+                  <Link href="/kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
                 </p>
 
                 {/* Hinweis-Accordion */}
@@ -509,10 +509,10 @@ export default function UrlaubsabgeltungRechnerPage() {
 
                   {/* CTA */}
                   <Link
-                    href="/kuendigung-pruefen"
+                    href="/kontakt"
                     className="block w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
                   >
-                    Anspruch jetzt kostenlos prüfen &rarr;
+                    Jetzt kostenlos anfragen &rarr;
                   </Link>
                 </div>
               )}
@@ -693,7 +693,7 @@ export default function UrlaubsabgeltungRechnerPage() {
             Überstundenvergütung, Zeugnis. Fachanwalt Fatih Bektas prüft alles &mdash; kostenlos und innerhalb von 24 Stunden.
           </p>
           <Link
-            href="/kuendigung-pruefen"
+            href="/kontakt"
             className="inline-block py-3.5 px-8 bg-gold text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.35)]"
           >
             Jetzt kostenlos anfragen &rarr;
@@ -764,7 +764,7 @@ export default function UrlaubsabgeltungRechnerPage() {
               Wir prüfen Ihren gesamten Fall &mdash; kostenlos und unverbindlich.
             </p>
             <Link
-              href="/kuendigung-pruefen"
+              href="/kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
               Kostenlose Ersteinschätzung vom Fachanwalt &rarr;
