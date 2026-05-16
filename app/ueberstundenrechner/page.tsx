@@ -180,7 +180,7 @@ export default function UeberstundenrechnerPage() {
               Haben Sie unbezahlte Überstunden? Wir prüfen Ihre Ansprüche kostenlos.
             </p>
             <Link
-              href="/kuendigung-pruefen"
+              href="/#kontakt"
               className="inline-block py-2.5 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] whitespace-nowrap"
             >
               Jetzt kostenlos prüfen &rarr;
@@ -316,7 +316,7 @@ export default function UeberstundenrechnerPage() {
               </button>
               <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
                 <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine verbindliche Einschätzung Ihres Falls wenden Sie sich bitte an einen{' '}
-                <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
+                <Link href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
               </p>
             </div>
 
@@ -402,7 +402,7 @@ export default function UeberstundenrechnerPage() {
                       Stehen Ihnen diese Überstunden noch zu?
                     </p>
                     <Link
-                      href="/kuendigung-pruefen"
+                      href="/#kontakt"
                       className="inline-block py-2.5 px-5 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.85rem] font-semibold no-underline transition-all hover:bg-[#635428]"
                     >
                       Kostenlos prüfen &rarr;
@@ -510,7 +510,7 @@ export default function UeberstundenrechnerPage() {
               Unabhängig von der vertraglichen Regelung gilt: Unterschreitet die effektive Vergütung pro Stunde
               den gesetzlichen Mindestlohn, ist die Abgeltungsklausel insoweit unwirksam. Lassen Sie Ihre
               Vertragsklausel von einem{' '}
-              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">Fachanwalt prüfen</Link> —
+              <Link href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt prüfen</Link> —
               oft ist deutlich mehr möglich, als der Arbeitsvertrag vermuten lässt.
             </p>
           </div>
@@ -527,7 +527,7 @@ export default function UeberstundenrechnerPage() {
             Fachanwalt Fatih Bektas prüft Ihre Ansprüche — kostenlos und innerhalb von 24 Stunden.
           </p>
           <Link
-            href="/kuendigung-pruefen"
+            href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.35)]"
           >
             Jetzt kostenlos anfragen &rarr;
@@ -593,7 +593,7 @@ export default function UeberstundenrechnerPage() {
               Ausschlussfristen laufen schnell ab. Wir prüfen Ihren Fall kostenlos.
             </p>
             <Link
-              href="/kuendigung-pruefen"
+              href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
               Kostenlose Ersteinschätzung &rarr;

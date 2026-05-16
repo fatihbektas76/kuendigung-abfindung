@@ -188,7 +188,7 @@ export default function UrlaubTeilzeitRechnerPage() {
               Urlaubsanspruch nicht gewährt oder falsch berechnet? Wir prüfen Ihre Ansprüche kostenlos.
             </p>
             <Link
-              href="/kuendigung-pruefen"
+              href="/#kontakt"
               className="inline-block py-2.5 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] whitespace-nowrap"
             >
               Jetzt kostenlos prüfen &rarr;
@@ -389,7 +389,7 @@ export default function UrlaubTeilzeitRechnerPage() {
             Fachanwalt Fatih Bektas prüft Ihre Ansprüche &mdash; kostenlos und innerhalb von 24 Stunden.
           </p>
           <Link
-            href="/kuendigung-pruefen"
+            href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.35)]"
           >
             Jetzt kostenlos anfragen &rarr;
@@ -486,7 +486,7 @@ export default function UrlaubTeilzeitRechnerPage() {
               weitere Rechte bestehen: Abfindung, Überstunden, Abgeltung. Wir prüfen alles kostenlos.
             </p>
             <Link
-              href="/kuendigung-pruefen"
+              href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
               Kostenlose Ersteinschätzung vom Fachanwalt &rarr;

@@ -197,7 +197,7 @@ export default function TeilzeitRechnerClient() {
               <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen
               Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine verbindliche
               Einschätzung wenden Sie sich bitte an einen{' '}
-              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">
+              <Link href="/#kontakt" className="text-gold no-underline hover:underline">
                 Fachanwalt für Arbeitsrecht
               </Link>.
             </p>
@@ -214,7 +214,7 @@ export default function TeilzeitRechnerClient() {
             Wir setzen Ihre Rechte durch.
           </p>
           <Link
-            href="/kuendigung-pruefen"
+            href="/#kontakt"
             className="block w-full py-3.5 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#1a1408] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
             Anspruch kostenlos prüfen &rarr;
