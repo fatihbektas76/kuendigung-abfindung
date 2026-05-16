@@ -38,10 +38,11 @@ export async function createContact(data: {
     }),
   });
 
+  const contactResponseText = await res.text();
+  console.log('Brevo contact response:', res.status, contactResponseText);
   if (!res.ok && res.status !== 204) {
-    const text = await res.text();
-    console.error('Brevo contact creation failed:', res.status, text);
-    throw new Error(`Brevo contact creation failed: ${res.status}`);
+    console.error('Brevo contact creation failed:', res.status, contactResponseText);
+    throw new Error(`Brevo contact creation failed: ${res.status} — ${contactResponseText}`);
   }
 }
 
@@ -77,10 +78,11 @@ export async function sendNotificationEmail(data: {
     }),
   });
 
+  const responseText = await res.text();
+  console.log('Brevo email response:', res.status, responseText);
   if (!res.ok) {
-    const text = await res.text();
-    console.error('Brevo email sending failed:', res.status, text);
-    throw new Error(`Brevo email sending failed: ${res.status}`);
+    console.error('Brevo email sending failed:', res.status, responseText);
+    throw new Error(`Brevo email sending failed: ${res.status} — ${responseText}`);
   }
 }
 

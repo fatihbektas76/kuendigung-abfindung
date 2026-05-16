@@ -34,11 +34,20 @@ export async function POST(request: NextRequest) {
       message: String(message).slice(0, 5000),
     };
 
-    await Promise.all([
+    const results = await Promise.allSettled([
       createContact(contactData),
       sendNotificationEmail(contactData),
     ]);
 
+    const [contactResult, emailResult] = results;
+    if (contactResult.status === 'rejected') {
+      console.error('Brevo contact creation failed:', contactResult.reason);
+    }
+    if (emailResult.status === 'rejected') {
+      console.error('Brevo email sending failed:', emailResult.reason);
+    }
+
+    // Return success to user even if one fails, but log errors
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Contact form error:', error);
