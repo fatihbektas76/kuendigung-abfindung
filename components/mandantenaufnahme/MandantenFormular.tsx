@@ -92,6 +92,9 @@ function validateStep(step: number, data: MandantenFormData, t: Translations): S
       if (!data.kuendigungen[i]?.zugangsDatum) errors[`zugangsDatum_${i}`] = v.zugangsDatum;
     }
     if (!data.rechtsschutz) errors.rechtsschutz = v.rechtsschutz;
+    if (data.rechtsschutz === 'ja' && !data.rechtsschutzDauer) {
+      errors.rechtsschutzDauer = v.rechtsschutzDauer;
+    }
     if (data.rechtsschutz === 'ja' && !data.versicherungsgesellschaft.trim()) {
       errors.versicherungsgesellschaft = v.versicherungsgesellschaft;
     }

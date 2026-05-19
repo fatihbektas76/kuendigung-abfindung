@@ -155,6 +155,31 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
       {/* Conditional: Versicherung Details */}
       {data.rechtsschutz === 'ja' && (
         <div className="space-y-4 p-4 bg-cream/50 border-l-[3px] border-gold/20 rounded-sm">
+          {/* Dauer der RSV */}
+          <div>
+            <label className="block text-[0.84rem] font-semibold text-ink mb-2">
+              {t.step4.rsvDauerFrage} <span className="text-gold-dark ml-0.5">*</span>
+            </label>
+            <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
+              <RadioOption
+                label={t.step4.rsvDauerLaenger3}
+                selected={data.rechtsschutzDauer === 'laenger3'}
+                onClick={() => onChange('rechtsschutzDauer', 'laenger3')}
+              />
+              <RadioOption
+                label={t.step4.rsvDauerGenau3}
+                selected={data.rechtsschutzDauer === 'genau3'}
+                onClick={() => onChange('rechtsschutzDauer', 'genau3')}
+              />
+              <RadioOption
+                label={t.step4.rsvDauerKuerzer3}
+                selected={data.rechtsschutzDauer === 'kuerzer3'}
+                onClick={() => onChange('rechtsschutzDauer', 'kuerzer3')}
+              />
+            </div>
+            {errors.rechtsschutzDauer && <p className="text-[0.78rem] text-red-500 mt-1">{errors.rechtsschutzDauer}</p>}
+          </div>
+
           <SearchableSelect
             options={VERSICHERUNGEN}
             value={data.versicherungsgesellschaft}

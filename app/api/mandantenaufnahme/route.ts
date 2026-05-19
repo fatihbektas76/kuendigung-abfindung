@@ -81,6 +81,7 @@ export async function POST(request: NextRequest) {
           }))
         : [],
       rechtsschutz: s(body.rechtsschutz, 10),
+      rechtsschutzDauer: s(body.rechtsschutzDauer, 20),
       versicherungsgesellschaft: s(body.versicherungsgesellschaft, 200),
       versicherungsnummer: s(body.versicherungsnummer, 100),
     };
@@ -147,6 +148,7 @@ export async function POST(request: NextRequest) {
         <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:600;width:200px">Anzahl Kündigungen</td><td style="padding:6px 12px;border:1px solid #ddd">${escapeHtml(formData.kuendigungsAnzahl)}</td></tr>
         ${kuendigungenHtml}
         <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:600">Rechtsschutzversicherung</td><td style="padding:6px 12px;border:1px solid #ddd">${escapeHtml(formData.rechtsschutz)}</td></tr>
+        ${formData.rechtsschutz === 'ja' ? `<tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:600">RSV-Dauer</td><td style="padding:6px 12px;border:1px solid #ddd">${escapeHtml(formData.rechtsschutzDauer === 'laenger3' ? 'Länger als 3 Monate' : formData.rechtsschutzDauer === 'genau3' ? 'Genau 3 Monate' : formData.rechtsschutzDauer === 'kuerzer3' ? 'Kürzer als 3 Monate' : 'k.A.')}</td></tr>` : ''}
         ${formData.rechtsschutz === 'ja' ? `<tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:600">Versicherung</td><td style="padding:6px 12px;border:1px solid #ddd">${escapeHtml(formData.versicherungsgesellschaft)} (Nr: ${escapeHtml(formData.versicherungsnummer || 'k.A.')})</td></tr>` : ''}
       </table>
 

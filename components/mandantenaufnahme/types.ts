@@ -32,6 +32,7 @@ export interface MandantenFormData {
   kuendigungsAnzahl: '1' | '2' | '3+' | '';
   kuendigungen: Array<{ kuendigungsDatum: string; zugangsDatum: string }>;
   rechtsschutz: 'ja' | 'nein' | '';
+  rechtsschutzDauer: 'laenger3' | 'genau3' | 'kuerzer3' | '';
   versicherungsgesellschaft: string;
   versicherungsnummer: string;
 
@@ -76,6 +77,7 @@ export const initialFormData: MandantenFormData = {
   kuendigungsAnzahl: '',
   kuendigungen: [{ kuendigungsDatum: '', zugangsDatum: '' }],
   rechtsschutz: '',
+  rechtsschutzDauer: '',
   versicherungsgesellschaft: '',
   versicherungsnummer: '',
 
