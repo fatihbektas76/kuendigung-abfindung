@@ -306,10 +306,12 @@ export async function POST(request: NextRequest) {
     const webhookUrl = formType === 'kuendigung'
       ? process.env.ECHTLY_WEBHOOK_URL_KUENDIGUNG || process.env.ECHTLY_WEBHOOK_URL
       : process.env.ECHTLY_WEBHOOK_URL;
+    console.log('[Webhook] formType:', formType, '| URL:', webhookUrl ? webhookUrl.slice(0, 60) + '...' : 'MISSING');
     try {
       await sendEchtlyWebhook(webhookData, webhookUrl || undefined);
+      console.log('[Webhook] sent successfully');
     } catch (err) {
-      console.error('Echtly webhook error (non-fatal):', err);
+      console.error('[Webhook] error (non-fatal):', err);
     }
 
     return NextResponse.json({ success: true });
