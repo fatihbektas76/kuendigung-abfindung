@@ -303,8 +303,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Echtly webhook (fire-and-forget, no files)
+    const webhookUrl = formType === 'kuendigung'
+      ? process.env.ECHTLY_WEBHOOK_URL_KUENDIGUNG || process.env.ECHTLY_WEBHOOK_URL
+      : process.env.ECHTLY_WEBHOOK_URL;
     try {
-      await sendEchtlyWebhook(webhookData);
+      await sendEchtlyWebhook(webhookData, webhookUrl || undefined);
     } catch (err) {
       console.error('Echtly webhook error (non-fatal):', err);
     }

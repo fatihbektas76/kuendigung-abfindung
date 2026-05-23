@@ -1,5 +1,5 @@
-export async function sendEchtlyWebhook(data: Record<string, unknown>): Promise<void> {
-  const url = process.env.ECHTLY_WEBHOOK_URL;
+export async function sendEchtlyWebhook(data: Record<string, unknown>, webhookUrl?: string): Promise<void> {
+  const url = webhookUrl || process.env.ECHTLY_WEBHOOK_URL;
 
   if (!url) {
     console.warn('ECHTLY_WEBHOOK_URL is not configured — skipping webhook');
