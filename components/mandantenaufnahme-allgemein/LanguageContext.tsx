@@ -1,22 +1,22 @@
 'use client';
 
 import { createContext, useContext, useState, useMemo } from 'react';
-import type { Translations, Locale } from './translations';
-import { translations } from './translations';
+import type { AllgemeinTranslations, Locale } from './translations';
+import { allgemeinTranslations } from './translations';
 
 interface LanguageContextValue {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: Translations;
+  t: AllgemeinTranslations;
 }
 
-export const LanguageContext = createContext<LanguageContextValue | null>(null);
+const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>('de');
 
   const value = useMemo(
-    () => ({ locale, setLocale, t: translations[locale] }),
+    () => ({ locale, setLocale, t: allgemeinTranslations[locale] }),
     [locale],
   );
 

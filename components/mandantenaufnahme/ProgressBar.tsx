@@ -1,17 +1,11 @@
 'use client';
 
-import { useLanguage } from './LanguageContext';
+interface ProgressBarProps {
+  currentStep: number;
+  steps: Array<{ label: string; short: string }>;
+}
 
-export default function ProgressBar({ currentStep }: { currentStep: number }) {
-  const { t } = useLanguage();
-
-  const steps = [
-    { label: t.progress.step1, short: '1' },
-    { label: t.progress.step2, short: '2' },
-    { label: t.progress.step3, short: '3' },
-    { label: t.progress.step4, short: '4' },
-    { label: t.progress.step5, short: '5' },
-  ];
+export default function ProgressBar({ currentStep, steps }: ProgressBarProps) {
 
   const progress = (currentStep / steps.length) * 100;
 

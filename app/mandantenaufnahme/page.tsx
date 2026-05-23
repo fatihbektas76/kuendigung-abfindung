@@ -1,5 +1,5 @@
-import MandantenFormular from '@/components/mandantenaufnahme/MandantenFormular';
+import MandantenFormularAllgemein from '@/components/mandantenaufnahme-allgemein/MandantenFormularAllgemein';
 
 export default function MandantenaufnahmePage() {
-  return <MandantenFormular />;
+  return <MandantenFormularAllgemein />;
 }

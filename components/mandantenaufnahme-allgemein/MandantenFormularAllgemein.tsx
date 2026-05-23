@@ -1,19 +1,20 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 
-import type { MandantenFormData, FileAttachment, StepErrors } from './types';
-import { initialFormData } from './types';
-import type { Translations } from './translations';
+import type { AllgemeinFormData, FileAttachment, StepErrors } from './types';
+import { initialAllgemeinFormData } from './types';
+import type { AllgemeinTranslations } from './translations';
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import ProgressBar from './ProgressBar';
+import ProgressBar from '@/components/mandantenaufnahme/ProgressBar';
+import { LanguageContext as SharedLanguageContext } from '@/components/mandantenaufnahme/LanguageContext';
 
 import Step1Persoenlich from './steps/Step1Persoenlich';
-import Step2Familie from './steps/Step2Familie';
-import Step3Arbeit from './steps/Step3Arbeit';
-import Step4Kuendigung from './steps/Step4Kuendigung';
-import Step5Dokumente from './steps/Step5Dokumente';
+import Step3Rechtsgebiet from './steps/Step3Rechtsgebiet';
+import Step4Gegner from './steps/Step4Gegner';
+import Step5Rechtsschutz from './steps/Step5Rechtsschutz';
+import Step6Dokumente from './steps/Step6Dokumente';
 
 import StandAnzeige from '@/components/StandAnzeige';
 import { PAGE_DATES } from '@/lib/page-dates';
@@ -45,9 +46,10 @@ function LanguageToggle() {
 
 /* ───── Validation ───── */
 
+const TOTAL_STEPS = 5;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function validateStep(step: number, data: MandantenFormData, t: Translations): StepErrors {
+function validateStep(step: number, data: AllgemeinFormData, t: AllgemeinTranslations): StepErrors {
   const errors: StepErrors = {};
   const v = t.validation;
 
@@ -67,30 +69,20 @@ function validateStep(step: number, data: MandantenFormData, t: Translations): S
   }
 
   if (step === 2) {
-    if (!data.beziehungsstatus) errors.beziehungsstatus = v.beziehungsstatus;
-    if (!data.kinder) errors.kinder = v.kinder;
-    if (data.kinder === 'ja' && !data.kinderAnzahl) errors.kinderAnzahl = v.kinderAnzahl;
+    if (!data.rechtsgebiet) errors.rechtsgebiet = v.rechtsgebiet;
+    if (data.rechtsgebiet === 'sonstiges' && !data.rechtsgebietSonstiges.trim()) {
+      errors.rechtsgebietSonstiges = v.rechtsgebietSonstiges;
+    }
   }
 
   if (step === 3) {
-    if (!data.arbeitgeberName.trim()) errors.arbeitgeberName = v.arbeitgeberName;
-    if (!data.arbeitgeberStrasse.trim()) errors.arbeitgeberStrasse = v.arbeitgeberStrasse;
-    if (!data.arbeitgeberPlz.trim()) errors.arbeitgeberPlz = v.arbeitgeberPlz;
-    if (!data.arbeitgeberOrt.trim()) errors.arbeitgeberOrt = v.arbeitgeberOrt;
-    if (!data.berufsbezeichnung.trim()) errors.berufsbezeichnung = v.berufsbezeichnung;
-    if (!data.arbeitsort.trim()) errors.arbeitsort = v.arbeitsort;
-    if (!data.bruttomonatslohn.trim()) errors.bruttomonatslohn = v.bruttomonatslohn;
-    if (!data.eintrittsdatum) errors.eintrittsdatum = v.eintrittsdatum;
-    if (!data.betriebsrat) errors.betriebsrat = v.betriebsrat;
+    if (!data.gegnerName.trim()) errors.gegnerName = v.gegnerName;
+    if (!data.gegnerStrasse.trim()) errors.gegnerStrasse = v.gegnerStrasse;
+    if (!data.gegnerPlz.trim()) errors.gegnerPlz = v.gegnerPlz;
+    if (!data.gegnerOrt.trim()) errors.gegnerOrt = v.gegnerOrt;
   }
 
   if (step === 4) {
-    if (!data.kuendigungsAnzahl) errors.kuendigungsAnzahl = v.kuendigungsAnzahl;
-    const count = data.kuendigungsAnzahl === '3+' ? 3 : data.kuendigungsAnzahl === '2' ? 2 : data.kuendigungsAnzahl === '1' ? 1 : 0;
-    for (let i = 0; i < count; i++) {
-      if (!data.kuendigungen[i]?.kuendigungsDatum) errors[`kuendigungsDatum_${i}`] = v.kuendigungsDatum;
-      if (!data.kuendigungen[i]?.zugangsDatum) errors[`zugangsDatum_${i}`] = v.zugangsDatum;
-    }
     if (!data.rechtsschutz) errors.rechtsschutz = v.rechtsschutz;
     if (data.rechtsschutz === 'ja' && !data.rechtsschutzDauer) {
       errors.rechtsschutzDauer = v.rechtsschutzDauer;
@@ -109,10 +101,18 @@ function validateStep(step: number, data: MandantenFormData, t: Translations): S
 
 /* ───── Inner Component (needs context) ───── */
 
-function MandantenFormularInner() {
-  const { t } = useLanguage();
+function MandantenFormularAllgemeinInner() {
+  const { locale, setLocale, t } = useLanguage();
+
+  // Provide the shared (kuendigung) LanguageContext so shared components
+  // (FileUpload, AddressAutocomplete, SearchableSelect) can resolve their translations.
+  // The allgemein translations have the same keys for fileUpload, address, searchableSelect.
+  const sharedContextValue = useMemo(
+    () => ({ locale, setLocale, t: t as unknown as import('@/components/mandantenaufnahme/translations').Translations }),
+    [locale, setLocale, t],
+  );
   const [step, setStep] = useState(1);
-  const [data, setData] = useState<MandantenFormData>(initialFormData);
+  const [data, setData] = useState<AllgemeinFormData>(initialAllgemeinFormData);
   const [files, setFiles] = useState<FileAttachment[]>([]);
   const [errors, setErrors] = useState<StepErrors>({});
   const [loading, setLoading] = useState(false);
@@ -120,7 +120,7 @@ function MandantenFormularInner() {
   const [honeypot, setHoneypot] = useState('');
 
   const onChange = useCallback(
-    <K extends keyof MandantenFormData>(field: K, value: MandantenFormData[K]) => {
+    <K extends keyof AllgemeinFormData>(field: K, value: AllgemeinFormData[K]) => {
       setData((prev) => ({ ...prev, [field]: value }));
       setErrors((prev) => {
         const next = { ...prev };
@@ -139,7 +139,7 @@ function MandantenFormularInner() {
       return;
     }
     setErrors({});
-    setStep((s) => Math.min(s + 1, 5));
+    setStep((s) => Math.min(s + 1, TOTAL_STEPS));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -151,7 +151,7 @@ function MandantenFormularInner() {
 
   /* Submit */
   const handleSubmit = async () => {
-    const stepErrors = validateStep(5, data, t);
+    const stepErrors = validateStep(TOTAL_STEPS, data, t);
     if (Object.keys(stepErrors).length > 0) {
       setErrors(stepErrors);
       return;
@@ -165,7 +165,7 @@ function MandantenFormularInner() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
-          formType: 'kuendigung',
+          formType: 'allgemein',
           files: files.map((f) => ({
             name: f.name,
             content: f.content,
@@ -181,6 +181,15 @@ function MandantenFormularInner() {
       alert(t.submitError);
     }
   };
+
+  /* ───── Progress steps ───── */
+  const progressSteps = [
+    { label: t.progress.step1, short: '1' },
+    { label: t.progress.step2, short: '2' },
+    { label: t.progress.step3, short: '3' },
+    { label: t.progress.step4, short: '4' },
+    { label: t.progress.step5, short: '5' },
+  ];
 
   /* ───── Sidebar ───── */
   const sidebar = (
@@ -248,7 +257,7 @@ function MandantenFormularInner() {
       </div>
 
       <div className="mt-auto">
-        <StandAnzeige modifiedAt={PAGE_DATES['mandantenaufnahme-kuendigung']} />
+        <StandAnzeige modifiedAt={PAGE_DATES.mandantenaufnahme} />
         <div className="flex items-center gap-1 text-gold text-[1rem] mt-3">
           {'★★★★★'}
         </div>
@@ -262,6 +271,7 @@ function MandantenFormularInner() {
   /* ───── Thank You ───── */
   if (submitted) {
     return (
+      <SharedLanguageContext.Provider value={sharedContextValue}>
       <div className="flex min-h-screen bg-cream pt-[72px]">
         {sidebar}
         <div className="flex-1 flex items-center justify-center p-8">
@@ -298,6 +308,7 @@ function MandantenFormularInner() {
           </div>
         </div>
       </div>
+      </SharedLanguageContext.Provider>
     );
   }
 
@@ -307,14 +318,14 @@ function MandantenFormularInner() {
       case 1:
         return <Step1Persoenlich data={data} onChange={onChange} errors={errors} />;
       case 2:
-        return <Step2Familie data={data} onChange={onChange} errors={errors} />;
+        return <Step3Rechtsgebiet data={data} onChange={onChange} errors={errors} />;
       case 3:
-        return <Step3Arbeit data={data} onChange={onChange} errors={errors} />;
+        return <Step4Gegner data={data} onChange={onChange} errors={errors} />;
       case 4:
-        return <Step4Kuendigung data={data} onChange={onChange} errors={errors} />;
+        return <Step5Rechtsschutz data={data} onChange={onChange} errors={errors} />;
       case 5:
         return (
-          <Step5Dokumente
+          <Step6Dokumente
             files={files}
             onFilesChange={setFiles}
             datenschutz={data.datenschutz}
@@ -331,6 +342,7 @@ function MandantenFormularInner() {
 
   /* ───── Render ───── */
   return (
+    <SharedLanguageContext.Provider value={sharedContextValue}>
     <div className="flex min-h-screen bg-cream pt-[72px]">
       {sidebar}
 
@@ -353,21 +365,12 @@ function MandantenFormularInner() {
               <input type="text" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
             </div>
 
-            <ProgressBar
-              currentStep={step}
-              steps={[
-                { label: t.progress.step1, short: '1' },
-                { label: t.progress.step2, short: '2' },
-                { label: t.progress.step3, short: '3' },
-                { label: t.progress.step4, short: '4' },
-                { label: t.progress.step5, short: '5' },
-              ]}
-            />
+            <ProgressBar currentStep={step} steps={progressSteps} />
 
             {renderStep()}
 
-            {/* Navigation Buttons (not shown on step 5 — it has its own submit) */}
-            {step < 5 && (
+            {/* Navigation Buttons (not shown on last step — it has its own submit) */}
+            {step < TOTAL_STEPS && (
               <div className="flex items-center justify-between mt-8 gap-4">
                 {step > 1 ? (
                   <button
@@ -390,8 +393,8 @@ function MandantenFormularInner() {
               </div>
             )}
 
-            {/* Back button on step 5 */}
-            {step === 5 && (
+            {/* Back button on last step */}
+            {step === TOTAL_STEPS && (
               <div className="mt-4 text-center">
                 <button
                   type="button"
@@ -406,15 +409,16 @@ function MandantenFormularInner() {
         </div>
       </div>
     </div>
+    </SharedLanguageContext.Provider>
   );
 }
 
 /* ───── Exported Component with Provider ───── */
 
-export default function MandantenFormular() {
+export default function MandantenFormularAllgemein() {
   return (
     <LanguageProvider>
-      <MandantenFormularInner />
+      <MandantenFormularAllgemeinInner />
     </LanguageProvider>
   );
 }
