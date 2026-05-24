@@ -12,6 +12,7 @@ import TldrBox from '@/components/TldrBox';
 
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import { QUELLEN_ABFINDUNG } from '@/lib/quellen-defaults';
@@ -338,6 +339,13 @@ export default function AbfindungPage() {
               Fachanwalt für Arbeitsrecht in Ihrer Stadt finden &rarr;
             </a>
           </p>
+        </div>
+      </section>
+
+      {/* BERT-Interlinker: Weitere relevante Themen */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/abfindung" />
         </div>
       </section>
 

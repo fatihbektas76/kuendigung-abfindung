@@ -12,6 +12,7 @@ import TldrBox from '@/components/TldrBox';
 import BagQuote from '@/components/BagQuote';
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import { QUELLEN_ABMAHNUNG } from '@/lib/quellen-defaults';
@@ -510,6 +511,13 @@ export default function AbmahnungPage() {
       <Quellen quellen={QUELLEN_ABMAHNUNG} />
 
       <RelatedTopics current="abmahnung" />
+
+      {/* BERT-Interlinker: Weitere relevante Themen */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/abmahnung" />
+        </div>
+      </section>
 
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-white">

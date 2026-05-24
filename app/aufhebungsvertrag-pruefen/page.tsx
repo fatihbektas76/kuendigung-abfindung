@@ -7,6 +7,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 /* ───── Types ───── */
 interface AufhebungsAnswer {
@@ -1136,6 +1137,15 @@ export default function AufhebungsvertragPruefenPage() {
             )}
           </div>
         </div>
+
+        {/* BERT-Interlinker: Weitere relevante Themen */}
+        {step === 'S1' && !history.length && (
+          <div className="px-6 pb-6">
+            <div className="w-full max-w-[540px] mx-auto">
+              <WeitereLinkvorschlaege currentPath="/aufhebungsvertrag-pruefen" />
+            </div>
+          </div>
+        )}
 
         {/* FAQ Section (below checker) */}
         {step === 'S1' && !history.length && (

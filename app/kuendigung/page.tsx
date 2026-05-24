@@ -13,6 +13,7 @@ import TldrBox from '@/components/TldrBox';
 
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import { QUELLEN_KUENDIGUNG } from '@/lib/quellen-defaults';
@@ -448,6 +449,13 @@ export default function KuendigungPage() {
               Fachanwalt für Arbeitsrecht in Ihrer Stadt finden &rarr;
             </a>
           </p>
+        </div>
+      </section>
+
+      {/* BERT-Interlinker: Weitere relevante Themen */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/kuendigung" />
         </div>
       </section>
 

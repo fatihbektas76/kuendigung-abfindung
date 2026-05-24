@@ -7,6 +7,7 @@ import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
 import TldrBox from '@/components/TldrBox';
 import BagQuote from '@/components/BagQuote';
 import DefinitionBox from '@/components/DefinitionBox';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 /* ── Types ── */
 type Beispielsfall = {
@@ -631,6 +632,13 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
               </Link>
             ) : null}
           </div>
+        </div>
+      </section>
+
+      {/* ═══ BERT-Interlinker: Weitere relevante Themen ═══ */}
+      <section className="py-6 px-4 sm:px-8">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath={`/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit`} />
         </div>
       </section>
 

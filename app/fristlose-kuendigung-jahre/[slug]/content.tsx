@@ -7,6 +7,7 @@ import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
 import TldrBox from '@/components/TldrBox';
 import DefinitionBox from '@/components/DefinitionBox';
 import BagQuote from '@/components/BagQuote';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 /* ── Types ── */
 type Beispielsfall = {
@@ -564,6 +565,13 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
               </Link>
             ) : null}
           </div>
+        </div>
+      </section>
+
+      {/* ═══ BERT-Interlinker: Weitere relevante Themen ═══ */}
+      <section className="py-6 px-4 sm:px-8">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath={`/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit`} />
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import ShareButtons from '@/components/ShareButtons';
 import TldrBox from '@/components/TldrBox';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 
 export const revalidate = 86400;
@@ -507,6 +508,13 @@ export default function GlossarPage() {
           <div className="max-w-[740px]">
             <ShareButtons url="/glossar/" title="Glossar Arbeitsrecht — Wichtige Begriffe einfach erklärt" />
           </div>
+        </div>
+      </section>
+
+      {/* BERT-Interlinker: Weitere relevante Themen */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/glossar" />
         </div>
       </section>
 

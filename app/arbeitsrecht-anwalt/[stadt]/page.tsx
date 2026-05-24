@@ -8,6 +8,7 @@ import { berlinBezirke, getBezirkBySlug } from "@/data/bezirke";
 import { StadtContent, GemeindeContent } from "@/types/content";
 import { arbeitsgerichteUrls } from "@/data/arbeitsgerichte-urls";
 import Image from "next/image";
+import WeitereLinkvorschlaege from "@/components/WeitereLinkvorschlaege";
 import stadtContentsRaw from "@/data/generated/stadt-contents.json";
 import gemeindenContentsRaw from "@/data/generated/gemeinden-contents.json";
 import bezirkeContentsRaw from "@/data/generated/bezirke-contents.json";
@@ -481,6 +482,9 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             Individuelle Frage stellen →
           </a>
         </div>
+
+        {/* ═══ BERT-Interlinker: Weitere relevante Themen ═══ */}
+        <WeitereLinkvorschlaege currentPath={`/arbeitsrecht-anwalt/${params.stadt}`} />
 
         {/* Final CTA */}
         <div className="bg-[#6B6626] rounded-xl p-8 text-center">

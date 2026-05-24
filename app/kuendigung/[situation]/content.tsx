@@ -8,6 +8,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
 import TldrBox from '@/components/TldrBox';
 import DefinitionBox from '@/components/DefinitionBox';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { PAGE_DATES } from '@/lib/page-dates';
 
 type Props = {
@@ -391,6 +392,13 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══ BERT-Interlinker: Weitere relevante Themen ═══ */}
+      <section className="py-6 px-4 sm:px-8">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath={`/kuendigung/${entry.slug}`} />
         </div>
       </section>
 
