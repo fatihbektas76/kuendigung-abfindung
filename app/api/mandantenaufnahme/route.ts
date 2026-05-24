@@ -40,7 +40,6 @@ const RECHTSGEBIET_LABELS: Record<string, string> = {
   diskriminierung: 'Diskriminierung',
   mobbing: 'Mobbing',
   ueberstunden: 'Überstunden',
-  sonstiges: 'Sonstiges Arbeitsrecht',
 };
 
 const TD = 'padding:6px 12px;border:1px solid #ddd';
@@ -185,6 +184,7 @@ function sanitizeAllgemein(body: Record<string, unknown>) {
     gegnerPlz: s(body.gegnerPlz, 10),
     gegnerOrt: s(body.gegnerOrt, 200),
     gegnerAnsprechpartner: s(body.gegnerAnsprechpartner, 200),
+    gegnerEmail: s(body.gegnerEmail, 200),
     rechtsschutz: s(body.rechtsschutz, 10),
     rechtsschutzDauer: s(body.rechtsschutzDauer, 20),
     versicherungsgesellschaft: s(body.versicherungsgesellschaft, 200),
@@ -193,7 +193,7 @@ function sanitizeAllgemein(body: Record<string, unknown>) {
 }
 
 function buildAllgemeinHtml(formData: ReturnType<typeof sanitizeAllgemein>, attachmentCount: number): string {
-  const rechtsgebietLabel = RECHTSGEBIET_LABELS[formData.rechtsgebiet] || formData.rechtsgebiet;
+  const rechtsgebietLabel = RECHTSGEBIET_LABELS[formData.rechtsgebiet] || formData.rechtsgebietSonstiges || formData.rechtsgebiet || 'Nicht angegeben';
   const rsvDauerLabel = formData.rechtsschutzDauer === 'laenger3' ? 'Länger als 3 Monate' : formData.rechtsschutzDauer === 'genau3' ? 'Genau 3 Monate' : formData.rechtsschutzDauer === 'kuerzer3' ? 'Kürzer als 3 Monate' : 'k.A.';
 
   return `
@@ -211,7 +211,7 @@ function buildAllgemeinHtml(formData: ReturnType<typeof sanitizeAllgemein>, atta
     <h3 style="${H3}">Rechtsgebiet</h3>
     <table style="${TABLE}">
       ${row('Thema', rechtsgebietLabel)}
-      ${formData.rechtsgebiet === 'sonstiges' ? row('Beschreibung', formData.rechtsgebietSonstiges) : ''}
+      ${formData.rechtsgebietSonstiges && formData.rechtsgebiet ? row('Beschreibung', formData.rechtsgebietSonstiges) : ''}
     </table>
 
     <h3 style="${H3}">Gegner</h3>
@@ -219,6 +219,7 @@ function buildAllgemeinHtml(formData: ReturnType<typeof sanitizeAllgemein>, atta
       ${row('Name / Firma', formData.gegnerName)}
       ${row('Adresse', `${formData.gegnerStrasse}, ${formData.gegnerPlz} ${formData.gegnerOrt}`)}
       ${formData.gegnerAnsprechpartner ? row('Ansprechpartner', formData.gegnerAnsprechpartner) : ''}
+      ${formData.gegnerEmail ? row('E-Mail', formData.gegnerEmail) : ''}
     </table>
 
     <h3 style="${H3}">Rechtsschutzversicherung</h3>
@@ -264,7 +265,7 @@ export async function POST(request: NextRequest) {
 
     if (formType === 'allgemein') {
       const formData = sanitizeAllgemein(body);
-      const rechtsgebietLabel = RECHTSGEBIET_LABELS[formData.rechtsgebiet] || formData.rechtsgebiet;
+      const rechtsgebietLabel = RECHTSGEBIET_LABELS[formData.rechtsgebiet] || formData.rechtsgebietSonstiges || formData.rechtsgebiet || 'Allgemein';
       htmlContent = buildAllgemeinHtml(formData, attachments.length);
       subject = `Neue Mandantenaufnahme (${rechtsgebietLabel}): ${formData.vorname} ${formData.nachname}`;
       webhookData = { ...formData, name: `${formData.vorname} ${formData.nachname}`, formType: 'allgemein' };

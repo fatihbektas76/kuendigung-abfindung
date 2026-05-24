@@ -96,6 +96,21 @@ export default function Step4Gegner({ data, onChange, errors }: StepProps) {
           className={INPUT_CLASS}
         />
       </div>
+
+      {/* E-Mail Gegner (optional) */}
+      <div>
+        <label htmlFor="gegnerEmail" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+          {t.step4.gegnerEmail}
+        </label>
+        <input
+          id="gegnerEmail"
+          type="email"
+          value={data.gegnerEmail}
+          onChange={(e) => onChange('gegnerEmail', e.target.value)}
+          placeholder={t.step4.placeholderGegnerEmail}
+          className={INPUT_CLASS}
+        />
+      </div>
     </div>
   );
 }

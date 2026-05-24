@@ -26,34 +26,38 @@ export default function Step3Rechtsgebiet({ data, onChange, errors }: StepProps)
         <select
           id="rechtsgebiet"
           value={data.rechtsgebiet}
-          onChange={(e) => onChange('rechtsgebiet', e.target.value as typeof data.rechtsgebiet)}
-          className={`form-select ${INPUT_CLASS} ${errors.rechtsgebiet ? 'border-red-400' : ''}`}
+          onChange={(e) => {
+            onChange('rechtsgebiet', e.target.value as typeof data.rechtsgebiet);
+            if (e.target.value) onChange('rechtsgebietSonstiges', '');
+          }}
+          className={`form-select ${INPUT_CLASS} ${errors.rechtsgebiet && !data.rechtsgebietSonstiges.trim() ? 'border-red-400' : ''}`}
         >
           <option value="" disabled>{t.step3.selectPlaceholder}</option>
           {t.rechtsgebietOptionen.map((opt) => (
             <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
-        {errors.rechtsgebiet && <p className="text-[0.78rem] text-red-500 mt-1">{errors.rechtsgebiet}</p>}
       </div>
 
-      {/* Sonstiges Freitext */}
-      {data.rechtsgebiet === 'sonstiges' && (
-        <div>
-          <label htmlFor="rechtsgebietSonstiges" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-            {t.step3.sonstigesLabel} <span className="text-gold-dark ml-0.5">*</span>
-          </label>
-          <textarea
-            id="rechtsgebietSonstiges"
-            value={data.rechtsgebietSonstiges}
-            onChange={(e) => onChange('rechtsgebietSonstiges', e.target.value)}
-            placeholder={t.step3.sonstigesPlaceholder}
-            rows={3}
-            className={`${INPUT_CLASS} resize-y ${errors.rechtsgebietSonstiges ? 'border-red-400' : ''}`}
-          />
-          {errors.rechtsgebietSonstiges && <p className="text-[0.78rem] text-red-500 mt-1">{errors.rechtsgebietSonstiges}</p>}
-        </div>
-      )}
+      {/* Freitext alternativ */}
+      <div>
+        <label htmlFor="rechtsgebietSonstiges" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+          {t.step3.sonstigesLabel}
+        </label>
+        <textarea
+          id="rechtsgebietSonstiges"
+          value={data.rechtsgebietSonstiges}
+          onChange={(e) => {
+            onChange('rechtsgebietSonstiges', e.target.value);
+            if (e.target.value.trim()) onChange('rechtsgebiet', '');
+          }}
+          placeholder={t.step3.sonstigesPlaceholder}
+          rows={3}
+          className={`${INPUT_CLASS} resize-y`}
+        />
+      </div>
+
+      {errors.rechtsgebiet && <p className="text-[0.78rem] text-red-500 mt-1">{errors.rechtsgebiet}</p>}
     </div>
   );
 }

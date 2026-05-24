@@ -69,9 +69,8 @@ function validateStep(step: number, data: AllgemeinFormData, t: AllgemeinTransla
   }
 
   if (step === 2) {
-    if (!data.rechtsgebiet) errors.rechtsgebiet = v.rechtsgebiet;
-    if (data.rechtsgebiet === 'sonstiges' && !data.rechtsgebietSonstiges.trim()) {
-      errors.rechtsgebietSonstiges = v.rechtsgebietSonstiges;
+    if (!data.rechtsgebiet && !data.rechtsgebietSonstiges.trim()) {
+      errors.rechtsgebiet = v.rechtsgebiet;
     }
   }
 

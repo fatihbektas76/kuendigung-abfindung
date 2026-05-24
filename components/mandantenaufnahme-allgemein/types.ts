@@ -11,7 +11,6 @@ export type Rechtsgebiet =
   | 'diskriminierung'
   | 'mobbing'
   | 'ueberstunden'
-  | 'sonstiges'
   | '';
 
 export interface AllgemeinFormData {
@@ -35,6 +34,7 @@ export interface AllgemeinFormData {
   gegnerPlz: string;
   gegnerOrt: string;
   gegnerAnsprechpartner: string;
+  gegnerEmail: string;
 
   // Step 4 — Rechtsschutzversicherung
   rechtsschutz: 'ja' | 'nein' | '';
@@ -71,6 +71,7 @@ export const initialAllgemeinFormData: AllgemeinFormData = {
   gegnerPlz: '',
   gegnerOrt: '',
   gegnerAnsprechpartner: '',
+  gegnerEmail: '',
 
   rechtsschutz: '',
   rechtsschutzDauer: '',

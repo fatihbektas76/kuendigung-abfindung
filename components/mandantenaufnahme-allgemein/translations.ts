@@ -80,11 +80,13 @@ const de = {
     gegnerPlz: 'PLZ',
     gegnerOrt: 'Ort',
     gegnerAnsprechpartner: 'Ansprechpartner (optional)',
+    gegnerEmail: 'E-Mail (optional)',
     placeholderName: 'Firma GmbH',
     placeholderStrasse: 'Musterstraße 1',
     placeholderPlz: '69115',
     placeholderOrt: 'Heidelberg',
     placeholderAnsprechpartner: 'z.B. Frau Müller, Personalabteilung',
+    placeholderGegnerEmail: 'info@firma.de',
   },
 
   // Step 5 — Insurance
@@ -166,7 +168,6 @@ const de = {
     { value: 'diskriminierung', label: 'Diskriminierung' },
     { value: 'mobbing', label: 'Mobbing' },
     { value: 'ueberstunden', label: 'Überstunden' },
-    { value: 'sonstiges', label: 'Sonstiges Arbeitsrecht' },
   ],
 
   // Validation errors
@@ -180,8 +181,7 @@ const de = {
     handynummer: 'Bitte Handynummer eingeben.',
     emailRequired: 'Bitte E-Mail eingeben.',
     emailInvalid: 'Bitte gültige E-Mail eingeben.',
-    rechtsgebiet: 'Bitte Rechtsgebiet wählen.',
-    rechtsgebietSonstiges: 'Bitte beschreiben Sie Ihr Anliegen.',
+    rechtsgebiet: 'Bitte Rechtsgebiet wählen oder Anliegen beschreiben.',
     gegnerName: 'Bitte Name des Gegners eingeben.',
     gegnerStrasse: 'Bitte Straße eingeben.',
     gegnerPlz: 'Bitte PLZ eingeben.',
@@ -276,11 +276,13 @@ const en: AllgemeinTranslations = {
     gegnerPlz: 'Postal code',
     gegnerOrt: 'City',
     gegnerAnsprechpartner: 'Contact person (optional)',
+    gegnerEmail: 'Email (optional)',
     placeholderName: 'Company Ltd.',
     placeholderStrasse: 'Main Street 1',
     placeholderPlz: '69115',
     placeholderOrt: 'Heidelberg',
     placeholderAnsprechpartner: 'e.g. Mrs. Smith, HR Department',
+    placeholderGegnerEmail: 'info@company.com',
   },
 
   step5: {
@@ -356,7 +358,6 @@ const en: AllgemeinTranslations = {
     { value: 'diskriminierung', label: 'Discrimination' },
     { value: 'mobbing', label: 'Workplace bullying' },
     { value: 'ueberstunden', label: 'Overtime' },
-    { value: 'sonstiges', label: 'Other employment law' },
   ],
 
   validation: {
@@ -369,8 +370,7 @@ const en: AllgemeinTranslations = {
     handynummer: 'Please enter your mobile number.',
     emailRequired: 'Please enter your email.',
     emailInvalid: 'Please enter a valid email.',
-    rechtsgebiet: 'Please select a legal topic.',
-    rechtsgebietSonstiges: 'Please describe your concern.',
+    rechtsgebiet: 'Please select a legal topic or describe your concern.',
     gegnerName: 'Please enter the opposing party\'s name.',
     gegnerStrasse: 'Please enter the street.',
     gegnerPlz: 'Please enter the postal code.',
