@@ -12,6 +12,7 @@ import TldrBox from '@/components/TldrBox';
 
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import { QUELLEN_FRISTLOSE } from '@/lib/quellen-defaults';
@@ -367,6 +368,13 @@ export default function FristloseKuendigungPage() {
       <Quellen quellen={QUELLEN_FRISTLOSE} />
 
       <RelatedTopics current="fristlose-kuendigung" />
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/fristlose-kuendigung" />
+        </div>
+      </section>
 
       {/* CTA 3 */}
       <section className="py-[70px] px-8 bg-cream">

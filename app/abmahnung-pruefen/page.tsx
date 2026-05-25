@@ -4,6 +4,7 @@ import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import StandAnzeige from '@/components/StandAnzeige';
 import FaqAccordion from '@/components/FaqAccordion';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 export const revalidate = 86400;
 
@@ -192,6 +193,13 @@ export default function AbmahnungPruefenPage() {
                 <StandAnzeige />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* BERT-Interlinker */}
+        <section className="py-[50px] px-8 bg-white">
+          <div className="max-w-content mx-auto">
+            <WeitereLinkvorschlaege currentPath="/abmahnung-pruefen" />
           </div>
         </section>
       </div>

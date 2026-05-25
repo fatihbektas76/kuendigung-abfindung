@@ -13,6 +13,7 @@ import OptionCompare from '@/components/OptionCompare';
 import Quellen from '@/components/Quellen';
 import { QUELLEN_ABMAHNUNG } from '@/lib/quellen-defaults';
 import { PAGE_DATES } from '@/lib/page-dates';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 type Props = {
   entry: MusterPageEntry;
@@ -444,6 +445,13 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
             <AuthorBox />
             <ShareButtons url={`/ratgeber/muster/${entry.slug}/`} title={entry.h1} />
           </div>
+        </div>
+      </section>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath={`/ratgeber/muster/${entry.slug}`} />
         </div>
       </section>
 

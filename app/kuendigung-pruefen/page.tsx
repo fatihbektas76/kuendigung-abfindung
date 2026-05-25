@@ -7,6 +7,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 /* ───── Types ───── */
 interface Answers {
@@ -1072,6 +1073,13 @@ export default function KuendigungPruefenPage() {
           </div>
         </div>
       </div>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white w-full">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/kuendigung-pruefen" />
+        </div>
+      </section>
     </div>
   );
 }

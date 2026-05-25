@@ -2,6 +2,7 @@ import Link from 'next/link';
 import StandAnzeige from '@/components/StandAnzeige';
 import FaqAccordion from '@/components/FaqAccordion';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 
@@ -387,6 +388,13 @@ export default function ToolsPage() {
             Fragen zu unseren Tools
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/tools" />
         </div>
       </section>
 

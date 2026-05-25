@@ -6,6 +6,7 @@ import { musterPages } from '@/lib/muster-data';
 import { musterContent } from '@/lib/generated-muster-content';
 import ShareButtons from '@/components/ShareButtons';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 const faqs = [
@@ -179,6 +180,13 @@ export default function MusterOverviewPage() {
           <div className="max-w-[740px]">
             <ShareButtons url="/ratgeber/muster/" title="Muster & Vorlagen Arbeitsrecht — Kostenlos" />
           </div>
+        </div>
+      </section>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/ratgeber/muster" />
         </div>
       </section>
 

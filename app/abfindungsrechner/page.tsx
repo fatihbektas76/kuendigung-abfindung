@@ -5,6 +5,7 @@ import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 const faqs = [
   {
@@ -407,6 +408,13 @@ export default function AbfindungsrechnerPage() {
             Häufige Fragen zur Abfindung
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/abfindungsrechner" />
         </div>
       </section>
 

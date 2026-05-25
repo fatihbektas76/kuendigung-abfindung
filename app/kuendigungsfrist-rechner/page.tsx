@@ -5,6 +5,7 @@ import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 const gesetzlicheFristen = [
   { jahre: 0, frist: '4 Wochen zum 15. oder Monatsende' },
@@ -713,6 +714,13 @@ export default function KuendigungsfristRechnerPage() {
             Häufige Fragen zur Kündigungsfrist berechnen
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/kuendigungsfrist-rechner" />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import TeilzeitRechnerClient from '@/components/TeilzeitRechnerClient';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 const faqs = [
   {
@@ -471,6 +472,13 @@ export default function UrlaubTeilzeitRechnerPage() {
             Häufige Fragen zum Urlaubsanspruch in Teilzeit
           </h2>
           <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/urlaub-teilzeit-rechner" />
         </div>
       </section>
 

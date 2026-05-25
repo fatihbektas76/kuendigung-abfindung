@@ -1,5 +1,6 @@
 "use client";
 import { useState, useMemo, useCallback } from "react";
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 const D = {
   cream:"#F0EAD9",creamD:"#E4DCC8",gold:"#7A6528",goldH:"#5E4D1E",goldBg:"#FAF6ED",
@@ -1002,6 +1003,13 @@ export default function App(){
         <div style={{fontSize:11,color:D.muted}}>RVG 2025 (KostBRÄG 2025) · § 3a RVG</div>
       </div>
       </div>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath="/rvg-rechner" />
+        </div>
+      </section>
 
       {/* FAQ Schema JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({

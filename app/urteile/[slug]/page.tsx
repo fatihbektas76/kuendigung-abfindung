@@ -6,6 +6,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 export const revalidate = 86400;
 
@@ -348,6 +349,13 @@ export default function UrteilDetailPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath={`/urteile/${urteil.slug}`} />
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-[70px] px-8 bg-white">

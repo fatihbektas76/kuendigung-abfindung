@@ -7,6 +7,7 @@ import { abmahnungEntries } from '@/lib/abmahnung-content';
 import DejureText from '@/components/DejureText';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
+import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { PAGE_DATES } from '@/lib/page-dates';
 
 type Props = {
@@ -489,6 +490,13 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
           >
             Kündigung kostenlos prüfen lassen &rarr;
           </a>
+        </div>
+      </section>
+
+      {/* BERT-Interlinker */}
+      <section className="py-[50px] px-8 bg-white">
+        <div className="max-w-content mx-auto">
+          <WeitereLinkvorschlaege currentPath={`/abmahnung-seiten/${entry.slug}`} />
         </div>
       </section>
 
