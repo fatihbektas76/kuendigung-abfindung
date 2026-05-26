@@ -4,9 +4,9 @@ import StandAnzeige from '@/components/StandAnzeige';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `Schwellenwert §23 KSchG berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
+  title: `Schwellenwert-Rechner KSchG ${new Date().getFullYear()} — Gilt der Kündigungsschutz für Sie?`,
   description:
-    'Schwellenwert berechnen — gilt das KSchG für Ihren Betrieb? Kostenloser Rechner nach §23 KSchG. Sofortergebnis.',
+    `Kündigungsschutz prüfen: Schwellenwert nach §23 KSchG berechnen. Ab 10,25 Vollzeitäquivalenten gilt das KSchG. Kostenloser Rechner mit Sofortergebnis.`,
   path: '/schwellenwert-rechner',
 });
 

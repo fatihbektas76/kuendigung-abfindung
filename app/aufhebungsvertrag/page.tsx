@@ -20,21 +20,21 @@ import { generateArticleSchema } from '@/lib/article-schema';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
+  title: `Aufhebungsvertrag & Abfindung ${new Date().getFullYear()} — Sperrzeit vermeiden & Höhe maximieren`,
   description:
-    'Aufhebungsvertrag erhalten? Sperrzeit vermeiden & Abfindung maximieren. Fachanwalt prüft Ihren Vertrag. Kostenlose Ersteinschätzung.',
+    'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren & Fallstricke kennen. Fachanwalt prüft Ihren Vertrag — kostenlose Ersteinschätzung.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/`,
   },
   openGraph: {
-    title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
-    description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag.',
+    title: `Aufhebungsvertrag & Abfindung ${new Date().getFullYear()} — Sperrzeit vermeiden & Höhe maximieren`,
+    description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren & Fallstricke kennen. Fachanwalt prüft Ihren Vertrag — kostenlose Ersteinschätzung.',
     url: `${SEO_CONFIG.baseUrl}/aufhebungsvertrag/`,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Aufhebungsvertrag: Rechte, Abfindung & Sperrzeit (${new Date().getFullYear()})`,
-    description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren, Fallstricke kennen. Fachanwalt für Arbeitsrecht prüft Ihren Aufhebungsvertrag.',
+    title: `Aufhebungsvertrag & Abfindung ${new Date().getFullYear()} — Sperrzeit vermeiden & Höhe maximieren`,
+    description: 'Aufhebungsvertrag erhalten? Sperrzeit vermeiden, Abfindung maximieren & Fallstricke kennen. Fachanwalt prüft Ihren Vertrag — kostenlose Ersteinschätzung.',
   },
 };
 

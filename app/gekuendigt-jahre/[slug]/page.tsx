@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getEntry(params.slug);
   if (!entry) return {};
   const yl = yearLabel(entry.year);
-  const title = `Gekündigt nach ${yl} — Ihre Rechte & Abfindung (${new Date().getFullYear()})`;
-  const description = `Kündigung nach ${yl} erhalten? Sofortmaßnahmen, 3-Wochen-Frist & Abfindungschancen. Jetzt kostenlos prüfen.`;
+  const title = `Gekündigt nach ${yl} — Ihre Rechte, Fristen & Abfindung (${new Date().getFullYear()})`;
+  const description = `Kündigung nach ${yl} erhalten? 3-Wochen-Frist läuft! Sofortmaßnahmen, Kündigungsschutz & Abfindungschancen. Fachanwalt prüft kostenlos.`;
   const url = `${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,

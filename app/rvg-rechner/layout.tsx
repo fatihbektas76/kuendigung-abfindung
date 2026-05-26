@@ -4,9 +4,9 @@ import StandAnzeige from '@/components/StandAnzeige';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `RVG Rechner ${new Date().getFullYear()} — Anwaltskosten berechnen | APOS Legal`,
+  title: `RVG Rechner ${new Date().getFullYear()} — Anwaltskosten & Gerichtskosten berechnen [Kostenlos]`,
   description:
-    'Kostenloser RVG-Rechner: Anwaltsgebühren, Gerichtskosten & Prozesskostenrisiko berechnen. Für alle Instanzen.',
+    `Anwaltskosten berechnen nach RVG ${new Date().getFullYear()}: Gebühren, Gerichtskosten & Prozesskostenrisiko. Für Arbeitsrecht, Zivilrecht & alle Instanzen. Mit PDF-Export.`,
   path: '/rvg-rechner',
 });
 

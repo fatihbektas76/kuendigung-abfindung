@@ -4,9 +4,9 @@ import StandAnzeige from '@/components/StandAnzeige';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `Urlaubsabgeltung berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
+  title: `Urlaubsabgeltung berechnen ${new Date().getFullYear()} — Resturlaub in Euro [Kostenloser Rechner]`,
   description:
-    'Urlaubsabgeltung berechnen nach §7 Abs. 4 BUrlG. Kostenloser Rechner mit Sofortergebnis. Fachanwalt prüft Ihren Anspruch.',
+    `Urlaubsabgeltung ${new Date().getFullYear()} berechnen: Resturlaub nach §7 BUrlG in Euro umrechnen. Sofortergebnis — Fachanwalt prüft Ihren Anspruch kostenlos.`,
   path: '/urlaubsabgeltung-rechner',
 });
 

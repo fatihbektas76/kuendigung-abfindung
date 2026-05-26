@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const yl = yearLabel(entry.year);
   const lower = (0.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const upper = (1.5 * entry.year).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-  const title = `Abfindung nach ${yl} Betriebszugehörigkeit (${new Date().getFullYear()})`;
-  const description = `Abfindung nach ${yl}: ${lower}–${upper} Monatsgehälter. Rechner, Tabelle & kostenlose Prüfung vom Fachanwalt.`;
+  const title = `Abfindung nach ${yl}: ${lower}–${upper} Monatsgehälter? So viel steht Ihnen zu (${new Date().getFullYear()})`;
+  const description = `Abfindung nach ${yl} Betriebszugehörigkeit = ${lower}–${upper} Monatsgehälter. Kostenloser Rechner + Tabelle. Fachanwalt prüft Ihren Anspruch — Ersteinschätzung gratis.`;
   const url = `${SEO_CONFIG.baseUrl}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,

@@ -22,21 +22,21 @@ import { generateArticleSchema } from '@/lib/article-schema';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
+  title: `Kündigung erhalten ${new Date().getFullYear()} — 3-Wochen-Frist & Sofortmaßnahmen [Checkliste]`,
   description:
-    'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB & Abfindungschancen. Jetzt kostenlos prüfen.',
+    'Kündigung erhalten? 3-Wochen-Frist läuft! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB & Abfindungschancen. Fachanwalt prüft kostenlos.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/kuendigung/`,
   },
   openGraph: {
-    title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
-    description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
+    title: `Kündigung erhalten ${new Date().getFullYear()} — 3-Wochen-Frist & Sofortmaßnahmen [Checkliste]`,
+    description: 'Kündigung erhalten? 3-Wochen-Frist läuft! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB & Abfindungschancen. Fachanwalt prüft kostenlos.',
     url: `${SEO_CONFIG.baseUrl}/kuendigung/`,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Kündigung erhalten – Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
-    description: 'Kündigung erhalten? 3-Wochen-Frist beachten! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB, Ihre Rechte als Arbeitnehmer.',
+    title: `Kündigung erhalten ${new Date().getFullYear()} — 3-Wochen-Frist & Sofortmaßnahmen [Checkliste]`,
+    description: 'Kündigung erhalten? 3-Wochen-Frist läuft! Sofortmaßnahmen, Kündigungsfristen nach §622 BGB & Abfindungschancen. Fachanwalt prüft kostenlos.',
   },
 };
 

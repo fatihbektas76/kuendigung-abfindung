@@ -4,9 +4,9 @@ import StandAnzeige from '@/components/StandAnzeige';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `Kündigungsfrist berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
+  title: `Kündigungsfrist berechnen ${new Date().getFullYear()} — nach §622 BGB [Taggenauer Rechner]`,
   description:
-    'Kündigungsfrist berechnen nach §622 BGB. Taggenau, zum Monatsende oder Quartalsende. Kostenloser Rechner mit Sofortergebnis.',
+    `Kündigungsfrist ${new Date().getFullYear()} berechnen: Taggenau nach §622 BGB. Zum 15., Monatsende oder Quartalsende. Sofortergebnis + Fachanwalt-Prüfung kostenlos.`,
   path: '/kuendigungsfrist-rechner',
 });
 

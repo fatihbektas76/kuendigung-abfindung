@@ -4,9 +4,9 @@ import StandAnzeige from '@/components/StandAnzeige';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `Abfindung berechnen ${new Date().getFullYear()} | Kostenlos | APOS Legal`,
+  title: `Abfindungsrechner ${new Date().getFullYear()} — Abfindung berechnen [Kostenlos + 3 Szenarien]`,
   description:
-    'Abfindung berechnen — kostenloser Abfindungsrechner mit Erfahrungswerten aus der Praxis. Drei Szenarien in 30 Sekunden. Vom Fachanwalt für Arbeitsrecht.',
+    `Abfindung berechnen: Faustformel 0,5 Gehälter pro Jahr + realistische Praxis-Szenarien. Kostenloser Rechner vom Fachanwalt — Ergebnis in 30 Sekunden.`,
   path: '/abfindungsrechner',
 });
 

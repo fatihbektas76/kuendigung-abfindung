@@ -21,21 +21,21 @@ import { generateArticleSchema } from '@/lib/article-schema';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
+  title: `Abfindung bei Kündigung ${new Date().getFullYear()} — Anspruch, Höhe & Berechnung [Tabelle + Rechner]`,
   description:
-    'Abfindung nach Kündigung: Anspruch, Höhe & Berechnung. Formel, Tabelle und Praxistipps vom Fachanwalt. Jetzt kostenlos prüfen.',
+    'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt Anspruch kostenlos prüfen.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/abfindung/`,
   },
   openGraph: {
-    title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
-    description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
+    title: `Abfindung bei Kündigung ${new Date().getFullYear()} — Anspruch, Höhe & Berechnung [Tabelle + Rechner]`,
+    description: 'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt Anspruch kostenlos prüfen.',
     url: `${SEO_CONFIG.baseUrl}/abfindung/`,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Abfindung bei Kündigung – Anspruch & Höhe (${new Date().getFullYear()})`,
-    description: 'Abfindung nach Kündigung: Wann haben Sie Anspruch? Wie hoch fällt sie aus? Formel, Tabelle und Praxistipps vom Fachanwalt für Arbeitsrecht.',
+    title: `Abfindung bei Kündigung ${new Date().getFullYear()} — Anspruch, Höhe & Berechnung [Tabelle + Rechner]`,
+    description: 'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt Anspruch kostenlos prüfen.',
   },
 };
 
