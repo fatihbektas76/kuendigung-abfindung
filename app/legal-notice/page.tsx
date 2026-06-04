@@ -140,7 +140,7 @@ export default function LegalNoticePage() {
         <section>
           <SectionHeader number="02" title="Angaben gemäß §2 DL-InfoV" id="dlinfov" />
           <p className="text-ink-light text-[0.95rem] leading-relaxed mb-5">
-            Die gesetzlichen Berufsbezeichnungen „Rechtsanwalt" und „Rechtsanwältin" sowie die
+            Die gesetzlichen Berufsbezeichnungen &bdquo;Rechtsanwalt&ldquo; und &bdquo;Rechtsanwältin&ldquo; sowie die
             Fachanwaltsbezeichnungen wurden in der Bundesrepublik Deutschland verliehen.
           </p>
           <div className="rounded-xl border border-border bg-cream/40 p-6 space-y-3">

@@ -348,7 +348,7 @@ export default function PrivacyPolicyPage() {
           <SectionHeader number="07" title="Google Analytics" id="analytics" />
           <P>
             Diese Website verwendet Google Analytics 4, einen Webanalysedienst der Google Ireland
-            Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google").
+            Limited, Gordon House, Barrow Street, Dublin 4, Irland (&bdquo;Google&ldquo;).
           </P>
           <P>
             Google Analytics verwendet Cookies und ähnliche Technologien, um die Nutzung unserer
@@ -514,7 +514,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <P>
-            Sie können Ihre Cookie-Einstellungen jederzeit über den Link „Cookie-Einstellungen" in
+            Sie können Ihre Cookie-Einstellungen jederzeit über den Link &bdquo;Cookie-Einstellungen&ldquo; in
             der Fußzeile unserer Website verwalten.
           </P>
         </section>
@@ -526,7 +526,7 @@ export default function PrivacyPolicyPage() {
           <P>
             Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher
             Inhalte eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an
-            dem Präfix „https://" in der Adresszeile Ihres Browsers.
+            dem Präfix &bdquo;https://&ldquo; in der Adresszeile Ihres Browsers.
           </P>
         </section>
 
