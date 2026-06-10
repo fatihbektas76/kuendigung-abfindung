@@ -8,6 +8,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
 import TldrBox from '@/components/TldrBox';
 import DefinitionBox from '@/components/DefinitionBox';
+import NormLink, { NORM } from '@/components/NormLink';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { PAGE_DATES } from '@/lib/page-dates';
 
@@ -57,9 +58,9 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
           </p>
           <div className="mt-4">
             <TldrBox items={[
-              `${entry.gesetz} schützt Sie in dieser Situation.`,
-              'Klagefrist: 3 Wochen ab Zugang der Kündigung.',
-              'Abfindung: Verhandlungssache — Faustformel 0,5 × Monatsgehalt × Beschäftigungsjahre.',
+              <><DejureText text={`${entry.gesetz} schützt Sie in dieser Situation.`} /></>,
+              <>Klagefrist: 3 Wochen ab Zugang der Kündigung (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>).</>,
+              <>Abfindung: Verhandlungssache — Faustformel 0,5 × Monatsgehalt × Beschäftigungsjahre. Mit Fünftelregelung (<NormLink href={NORM.estg34}>§&nbsp;34 EStG</NormLink>) deutlich weniger Steuer.</>,
               'Kostenlose Ersteinschätzung durch Fachanwalt für Arbeitsrecht innerhalb von 24 Stunden.',
             ]} />
           </div>
@@ -77,10 +78,14 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
             <div>
               <p className="text-[0.95rem] font-semibold text-ink m-0">
                 Nur 3 Wochen Frist! Ab Zugang der Kündigung haben Sie 3 Wochen Zeit,
-                Kündigungsschutzklage einzureichen.
+                Kündigungsschutzklage einzureichen (
+                <NormLink href={NORM.kschg4}>&sect;&nbsp;4 KSchG</NormLink>).
               </p>
               <p className="text-[0.84rem] text-ink-muted mt-1 m-0">
-                Frist verpasst = Kündigung wirksam, auch wenn sie rechtswidrig war.
+                Wird die Frist versäumt, gilt die Kündigung in der Regel als wirksam — auch
+                wenn sie rechtswidrig war. Eine nachträgliche Zulassung nach{' '}
+                <NormLink href={NORM.kschg5}>&sect;&nbsp;5 KSchG</NormLink> ist nur in eng
+                begrenzten Ausnahmefällen möglich.
               </p>
             </div>
           </div>
@@ -187,7 +192,7 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
               {hatBesonderenSchutz ? 'Besonderer Kündigungsschutz' : 'Allgemeiner Kündigungsschutz'}
             </div>
             <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
-              Ihr Schutz nach {entry.gesetz}
+              Ihr Schutz nach <DejureText text={entry.gesetz} />
             </h2>
             <div className="py-5 px-6 bg-white rounded-sm border-l-[3px] border-gold">
               <p className="text-[0.95rem] text-ink leading-relaxed m-0">
