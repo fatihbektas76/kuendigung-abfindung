@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     q: 'Wie lange habe ich Zeit, gegen eine betriebsbedingte Kündigung zu klagen?',
-    a: 'Sie haben nach §4 KSchG genau 3 Wochen ab Zugang der Kündigung Zeit, Kündigungsschutzklage beim Arbeitsgericht einzureichen. Nach Ablauf dieser Frist gilt die Kündigung als wirksam — auch wenn sie es eigentlich nicht wäre. Handeln Sie sofort und kontaktieren Sie einen Fachanwalt für Arbeitsrecht.',
+    a: 'Sie haben nach § 4 KSchG genau 3 Wochen ab Zugang der Kündigung Zeit, Kündigungsschutzklage beim Arbeitsgericht einzureichen. Nach Ablauf dieser Frist gilt die Kündigung in der Regel als wirksam — auch wenn sie es eigentlich nicht wäre. Eine nachträgliche Zulassung der Klage nach § 5 KSchG kommt nur in eng begrenzten Ausnahmefällen in Betracht. Handeln Sie sofort und lassen Sie sich dringend von einem Fachanwalt für Arbeitsrecht beraten.',
   },
 ];
 
@@ -497,8 +497,10 @@ export default function BetriebsbedingteKuendigungPage() {
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
               Wenn Sie eine betriebsbedingte Kündigung erhalten haben, sollten Sie sofort handeln.
-              Die 3-Wochen-Klagefrist nach &sect;4 KSchG ist absolut &mdash; nach Ablauf ist keine
-              Klage mehr möglich.
+              Die 3-Wochen-Klagefrist nach &sect;&nbsp;4 KSchG ist sehr streng &mdash; nach Ablauf
+              ist eine Klage in der Regel nicht mehr möglich. Eine nachträgliche Zulassung nach
+              &sect;&nbsp;5 KSchG kommt nur in eng begrenzten Ausnahmefällen in Betracht; lassen
+              Sie sich daher dringend anwaltlich beraten.
             </p>
             <div className="space-y-4">
               {[

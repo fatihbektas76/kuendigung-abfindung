@@ -81,7 +81,7 @@ export default function Home() {
                 name: 'Wie lange habe ich Zeit, gegen eine Kündigung vorzugehen?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (§4 KSchG). Verpassen Sie diese Frist, gilt die Kündigung als wirksam – unabhängig davon, ob sie rechtmäßig war oder nicht. Kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht.',
+                  text: 'Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (§4 KSchG). Verpassen Sie diese Frist, gilt die Kündigung in der Regel als wirksam – unabhängig davon, ob sie rechtmäßig war oder nicht (eine nachträgliche Zulassung der Klage nach § 5 KSchG ist nur in seltenen Ausnahmefällen möglich). Kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht.',
                 },
               },
               {

@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: 'Muss ich eine Kündigungsschutzklage einreichen?',
-    a: 'Wenn Sie die 3-Wochen-Frist nach §4 KSchG versäumen, gilt die Kündigung als wirksam — auch wenn sie eigentlich unwirksam wäre. Eine Kündigungsschutzklage ist der einzige Weg, sich gegen eine Kündigung zu wehren und eine Abfindung zu verhandeln. Ohne Klage gibt es in der Regel keine Abfindung.',
+    a: 'Wenn Sie die 3-Wochen-Frist nach § 4 KSchG versäumen, gilt die Kündigung in der Regel als wirksam — auch wenn sie eigentlich unwirksam wäre. Eine nachträgliche Zulassung der Klage nach § 5 KSchG ist zwar theoretisch möglich (z. B. bei unverschuldeter Verhinderung), kommt in der Praxis aber nur in eng begrenzten Ausnahmefällen in Betracht. Eine Kündigungsschutzklage ist der einzige Weg, sich gegen eine Kündigung zu wehren und eine Abfindung zu verhandeln — ohne Klage gibt es in der Regel keine Abfindung. Lassen Sie sich daher dringend anwaltlich beraten.',
   },
   {
     q: 'Kann ich die Kündigungsschutzklage auch ohne Anwalt einreichen?',
@@ -142,7 +142,7 @@ export default function KuendigungsschutzKlagePage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <TldrBox items={[
-              '3-Wochen-Frist ab Zugang der Kündigung — versäumen Sie diese Frist, ist die Kündigung automatisch wirksam.',
+              '3-Wochen-Frist ab Zugang der Kündigung — wird sie versäumt, gilt die Kündigung in der Regel als wirksam (eine nachträgliche Zulassung nach § 5 KSchG ist nur in seltenen Ausnahmefällen möglich).',
               'Keine Erstattung gegnerischer Anwaltskosten im 1. Rechtszug (§12a ArbGG) — das Kostenrisiko ist überschaubar.',
               'Ca. 80% der Kündigungsschutzklagen enden mit einem Vergleich (= Abfindung).',
               'Typische Abfindung: 0,5–1,5 Monatsgehälter pro Beschäftigungsjahr.',
@@ -157,8 +157,10 @@ export default function KuendigungsschutzKlagePage() {
           <div className="max-w-[740px]">
             <div className="py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold mb-8">
               <p className="text-[0.95rem] font-semibold text-ink m-0">
-                Wichtig: Die Klagefrist nach &sect;4 KSchG beträgt exakt 3 Wochen ab Zugang der
-                Kündigung. Danach ist keine Klage mehr möglich.
+                Wichtig: Die Klagefrist nach &sect;&nbsp;4 KSchG beträgt exakt 3 Wochen ab Zugang der
+                Kündigung. Danach ist eine Klage in der Regel nicht mehr möglich. Eine
+                nachträgliche Zulassung nach &sect;&nbsp;5 KSchG kommt nur in eng begrenzten
+                Ausnahmefällen in Betracht — lassen Sie sich unbedingt anwaltlich beraten.
               </p>
             </div>
 
@@ -166,9 +168,11 @@ export default function KuendigungsschutzKlagePage() {
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
                 Die <strong>Kündigungsschutzklage</strong> ist Ihr wichtigstes Instrument gegen
                 eine unwirksame Kündigung. Sie muss innerhalb von <strong>3 Wochen ab Zugang
-                der Kündigung</strong> beim Arbeitsgericht eingereicht werden (&sect;4 KSchG).
-                Nach Ablauf dieser Frist gilt die Kündigung als wirksam &mdash; auch wenn sie
-                eigentlich rechtswidrig wäre.
+                der Kündigung</strong> beim Arbeitsgericht eingereicht werden (&sect;&nbsp;4 KSchG).
+                Nach Ablauf dieser Frist gilt die Kündigung <strong>in der Regel als wirksam</strong>
+                &mdash; auch wenn sie eigentlich rechtswidrig wäre. Eine nachträgliche Zulassung
+                der Klage nach &sect;&nbsp;5 KSchG kommt nur in eng begrenzten Ausnahmefällen
+                in Betracht; lassen Sie sich daher dringend anwaltlich beraten.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
                 Eine Besonderheit des Arbeitsrechts: Im ersten Rechtszug gibt es

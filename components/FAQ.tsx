@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'Wie lange habe ich Zeit, gegen eine Kündigung vorzugehen?',
-    a: 'Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (§4 KSchG). Verpassen Sie diese Frist, gilt die Kündigung als wirksam — unabhängig davon, ob sie rechtmäßig war oder nicht. Kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht.',
+    a: 'Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (§ 4 KSchG). Verpassen Sie diese Frist, gilt die Kündigung in der Regel als wirksam — unabhängig davon, ob sie rechtmäßig war oder nicht. Eine nachträgliche Zulassung der Klage nach § 5 KSchG ist nur in eng begrenzten Ausnahmefällen möglich; lassen Sie sich dringend von einem Fachanwalt für Arbeitsrecht beraten.',
   },
   {
     q: 'Was ist der Unterschied zwischen Kündigung und Aufhebungsvertrag?',

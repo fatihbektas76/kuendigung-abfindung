@@ -639,7 +639,7 @@ export default function KuendigungsfristRechnerPage() {
               <strong>2. 3-Wochen-Frist beachten:</strong> Ab dem Tag des Zugangs läuft die Frist für eine
               Kündigungsschutzklage nach &sect;4 KSchG. Innerhalb dieser drei Wochen müssen Sie entscheiden,
               ob Sie die Kündigung akzeptieren oder gerichtlich anfechten. Versäumen Sie die Frist,
-              gilt die Kündigung als wirksam — auch wenn sie rechtlich angreifbar war.
+              gilt die Kündigung in der Regel als wirksam — auch wenn sie rechtlich angreifbar war (eine nachträgliche Zulassung der Klage nach § 5 KSchG ist nur in seltenen Ausnahmefällen möglich).
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               <strong>3. Fachanwalt kontaktieren:</strong> Eine{' '}

@@ -110,7 +110,7 @@ const pruefenFaqs = [
   },
   {
     q: 'Welche 3-Wochen-Frist muss ich beachten?',
-    a: 'Nach §4 KSchG müssen Sie innerhalb von 3 Wochen nach Zugang der Kündigung Kündigungsschutzklage beim Arbeitsgericht erheben. Versäumen Sie diese Frist, gilt die Kündigung als wirksam — unabhängig davon, ob sie rechtmäßig war.',
+    a: 'Nach § 4 KSchG müssen Sie innerhalb von 3 Wochen nach Zugang der Kündigung Kündigungsschutzklage beim Arbeitsgericht erheben. Versäumen Sie diese Frist, gilt die Kündigung in der Regel als wirksam — unabhängig davon, ob sie rechtmäßig war. Eine nachträgliche Zulassung der Klage nach § 5 KSchG ist nur in eng begrenzten Ausnahmefällen möglich; lassen Sie sich dringend anwaltlich beraten.',
   },
 ];
 

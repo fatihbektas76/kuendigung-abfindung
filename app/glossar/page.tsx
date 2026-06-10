@@ -172,7 +172,7 @@ const glossar = [
     id: 'kuendigungsschutzklage',
     begriff: 'Kündigungsschutzklage',
     definition:
-      'Die Klage eines Arbeitnehmers vor dem Arbeitsgericht mit dem Ziel, die Unwirksamkeit einer Kündigung feststellen zu lassen. Die Klagefrist beträgt nur drei Wochen ab Zugang der Kündigung — wird sie versäumt, gilt die Kündigung als wirksam, auch wenn sie rechtswidrig war.',
+      'Die Klage eines Arbeitnehmers vor dem Arbeitsgericht mit dem Ziel, die Unwirksamkeit einer Kündigung feststellen zu lassen. Die Klagefrist beträgt nur drei Wochen ab Zugang der Kündigung — wird sie versäumt, gilt die Kündigung in der Regel als wirksam, auch wenn sie rechtswidrig war. Eine nachträgliche Zulassung der Klage nach § 5 KSchG kommt nur in eng begrenzten Ausnahmefällen in Betracht; anwaltlicher Rat ist dringend angeraten.',
     gesetz: '§\u00a04 KSchG',
     link: '/kuendigung-pruefen/',
     linkText: 'Kündigung jetzt prüfen',
