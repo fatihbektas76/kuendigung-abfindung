@@ -9,6 +9,7 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
+import NormLink, { NORM } from '@/components/NormLink';
 
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
@@ -167,16 +168,25 @@ export default function FristloseKuendigungPage() {
             {/* Direktantwort (GEO) */}
             <div id="direktantwort">
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-                Eine <strong>fristlose Kündigung</strong> nach &sect;626 BGB beendet Ihr Arbeitsverhältnis von heute auf morgen &mdash;
-                ohne Kündigungsfrist, ohne Übergabe, ohne Vorbereitung. Der Schock sitzt tief. Aber die gute Nachricht:
+                Eine <strong>fristlose Kündigung</strong> nach{' '}
+                <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink> beendet Ihr
+                Arbeitsverhältnis von heute auf morgen &mdash; ohne Kündigungsfrist, ohne
+                Übergabe, ohne Vorbereitung. Der Schock sitzt tief. Aber die gute Nachricht:
                 <strong> Die meisten fristlosen Kündigungen sind unwirksam.</strong>
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-                Der Arbeitgeber muss nach &sect;626 BGB einen <strong>&bdquo;wichtigen Grund&ldquo;</strong> nachweisen, der so schwerwiegend ist,
-                dass ihm die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Kündigungsfrist nicht
-                zumutbar ist. Zudem muss er die <strong>2-Wochen-Frist</strong> einhalten: Die fristlose Kündigung muss
-                innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes ausgesprochen werden. Versäumt er diese Frist,
-                ist die Kündigung automatisch unwirksam.
+                Der Arbeitgeber muss nach{' '}
+                <NormLink href={NORM.bgb626}>&sect;&nbsp;626 Abs.&nbsp;1 BGB</NormLink> einen{' '}
+                <strong>&bdquo;wichtigen Grund&ldquo;</strong> nachweisen, der so schwerwiegend
+                ist, dass ihm die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der
+                ordentlichen Kündigungsfrist nicht zumutbar ist. Zudem muss er die{' '}
+                <strong>2-Wochen-Erklärungsfrist</strong> nach{' '}
+                <NormLink href={NORM.bgb626}>&sect;&nbsp;626 Abs.&nbsp;2 BGB</NormLink> einhalten:
+                Die fristlose Kündigung muss innerhalb von 2 Wochen nach Kenntnis des
+                Kündigungsgrundes ausgesprochen werden. Versäumt er diese Frist, ist die Kündigung
+                automatisch unwirksam. Gegen die fristlose Kündigung müssen Sie zudem
+                innerhalb von 3 Wochen Kündigungsschutzklage erheben (
+                <NormLink href={NORM.kschg4}>&sect;&nbsp;4 KSchG</NormLink>).
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
                 Bei der <strong>Interessenabwägung</strong> spielt Ihre Betriebszugehörigkeit eine zentrale Rolle:
@@ -216,7 +226,7 @@ export default function FristloseKuendigungPage() {
             Rechtliche Grundlagen
           </div>
           <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Voraussetzungen nach &sect;626 BGB
+            Voraussetzungen nach <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink>
           </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Eine fristlose Kündigung ist nur unter strengen Voraussetzungen wirksam.

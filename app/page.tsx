@@ -15,6 +15,7 @@ import StandortTeaser from '@/components/StandortTeaser';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import StatistikTeaser from '@/components/StatistikTeaser';
 import TldrBox from '@/components/TldrBox';
+import NormLink, { NORM } from '@/components/NormLink';
 
 export const revalidate = 86400;
 
@@ -139,6 +140,39 @@ export default function Home() {
 
       <main>
         <Hero />
+
+        {/* GEO-Direktantwort — zitierfähige Prose-Antwort direkt nach Hero */}
+        <section id="direktantwort" className="pt-10 pb-2 px-8 bg-white">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-[760px]">
+              <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
+                Nach einer Kündigung in Deutschland haben Arbeitnehmer{' '}
+                <strong>genau 3 Wochen Zeit</strong>, um beim Arbeitsgericht
+                Kündigungsschutzklage zu erheben (
+                <NormLink href={NORM.kschg4}>&sect;&nbsp;4 KSchG</NormLink>). Wird diese Frist
+                versäumt, gilt die Kündigung in der Regel als wirksam — auch wenn sie
+                rechtswidrig war. Einen gesetzlichen Anspruch auf eine{' '}
+                <strong>Abfindung</strong> gibt es nur in Sonderfällen (
+                <NormLink href={NORM.kschg1a}>&sect;&nbsp;1a KSchG</NormLink>); in der Praxis
+                werden Abfindungen in über 80&nbsp;% der Kündigungsschutzverfahren im Vergleich
+                ausgehandelt. Die Faustformel: <strong>0,5 Bruttomonatsgehälter pro
+                Beschäftigungsjahr</strong>; bei guter Verhandlungsposition deutlich mehr.
+                Kündigungsfristen ergeben sich aus{' '}
+                <NormLink href={NORM.bgb622}>&sect;&nbsp;622 BGB</NormLink>; die soziale
+                Rechtfertigung jeder Kündigung an{' '}
+                <NormLink href={NORM.kschg1}>&sect;&nbsp;1 KSchG</NormLink>. Steuerlich greift
+                bei Abfindungen die Fünftelregelung (
+                <NormLink href={NORM.estg34}>&sect;&nbsp;34 EStG</NormLink>).
+              </p>
+              <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
+                <strong>Verfasst und geprüft von</strong> Fatih Bektas, Fachanwalt für
+                Arbeitsrecht (APOS Legal Heidelberg). Über 2.000 erfolgreiche Verfahren vor
+                deutschen Arbeitsgerichten.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <AktuelleRechtslage />
         <section className="py-4 px-8 bg-white">
           <div className="max-w-content mx-auto">

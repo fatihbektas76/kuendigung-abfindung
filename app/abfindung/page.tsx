@@ -9,6 +9,7 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
+import NormLink, { NORM } from '@/components/NormLink';
 
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
@@ -165,7 +166,15 @@ export default function AbfindungPage() {
                 Die gängige <strong>Abfindungsformel</strong> lautet: <span className="font-semibold text-ink">0,5 Bruttomonatsgehälter &times; Jahre der Betriebszugehörigkeit</span>. Bei einem Bruttogehalt von 4.000&nbsp;&euro; und 10 Jahren Betriebszugehörigkeit ergibt das 20.000&nbsp;&euro; als Ausgangspunkt. Je nach Verhandlungsposition &mdash; etwa bei Formfehlern in der Kündigung, fehlerhafter Sozialauswahl oder besonderem Kündigungsschutz &mdash; kann der Faktor auf 1,0 oder höher steigen.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
-                Entscheidend ist, dass Sie die <strong>3-Wochen-Klagefrist</strong> nach &sect;4 KSchG nicht verpassen. Nur wer rechtzeitig <Link href="/kuendigung/" className="text-gold-dark font-semibold no-underline hover:underline">Kündigungsschutzklage</Link> erhebt, hat die Verhandlungsposition, eine angemessene Abfindung durchzusetzen. Ein Fachanwalt für Arbeitsrecht kann Ihre Chancen und die realistische Höhe einschätzen.
+                Entscheidend ist, dass Sie die <strong>3-Wochen-Klagefrist</strong> nach{' '}
+                <NormLink href={NORM.kschg4}>&sect;&nbsp;4 KSchG</NormLink> nicht verpassen. Nur wer
+                rechtzeitig <Link href="/kuendigung/" className="text-gold-dark font-semibold no-underline hover:underline">Kündigungsschutzklage</Link> erhebt, hat die Verhandlungsposition, eine angemessene Abfindung durchzusetzen. Der gesetzliche Abfindungsanspruch nach{' '}
+                <NormLink href={NORM.kschg1a}>&sect;&nbsp;1a KSchG</NormLink> greift nur in
+                Sonderfällen; die Höhe einer freiwilligen Abfindung wird typischerweise im Rahmen
+                eines Vergleichs verhandelt &mdash; und die Steuerlast lässt sich über die
+                Fünftelregelung (<NormLink href={NORM.estg34}>&sect;&nbsp;34 EStG</NormLink>)
+                deutlich senken. Ein Fachanwalt für Arbeitsrecht kann Ihre Chancen und die
+                realistische Höhe einschätzen.
               </p>
             </div>
 

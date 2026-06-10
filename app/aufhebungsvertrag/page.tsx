@@ -8,6 +8,7 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
+import NormLink, { NORM } from '@/components/NormLink';
 
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
@@ -201,7 +202,17 @@ export default function AufhebungsvertragPage() {
             {/* Direktantwort (GEO) */}
             <div id="direktantwort">
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-                Ein <strong>Aufhebungsvertrag</strong> beendet Ihr Arbeitsverhältnis einvernehmlich &mdash; anders als bei einer Kündigung müssen Sie hier zustimmen. Das klingt zunächst fair, birgt aber erhebliche Risiken: Eine <strong>Sperrzeit beim Arbeitslosengeld</strong> von bis zu 12 Wochen, eine zu niedrige Abfindung, der Verlust von Kündigungsschutzrechten und ungünstige Klauseln zu Zeugnis, Freistellung oder Wettbewerbsverbot.
+                Ein <strong>Aufhebungsvertrag</strong> beendet Ihr Arbeitsverhältnis einvernehmlich
+                &mdash; anders als bei einer Kündigung müssen Sie hier zustimmen. Ein
+                Aufhebungsvertrag bedarf zwingend der{' '}
+                <strong>Schriftform</strong> (
+                <NormLink href={NORM.bgb623}>&sect;&nbsp;623 BGB</NormLink>); ein per E-Mail
+                geschlossener Vertrag ist unwirksam. Das klingt zunächst fair, birgt aber
+                erhebliche Risiken: Eine <strong>Sperrzeit beim Arbeitslosengeld</strong> von bis
+                zu 12 Wochen (
+                <NormLink href={NORM.sgb3159}>&sect;&nbsp;159 SGB&nbsp;III</NormLink>), eine zu
+                niedrige Abfindung, der Verlust von Kündigungsschutzrechten und ungünstige
+                Klauseln zu Zeugnis, Freistellung oder Wettbewerbsverbot.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
                 Arbeitgeber bieten Aufhebungsverträge oft an, um eine <Link href="/kuendigung/" className="text-gold-dark font-semibold no-underline hover:underline">Kündigungsschutzklage</Link> zu vermeiden &mdash; das zeigt, dass Ihre <strong>Verhandlungsposition stärker ist, als Sie denken</strong>. In vielen Fällen können wir die Abfindung deutlich über die Regelformel (0,5 Monatsgehälter pro Jahr) hinaus verhandeln und gleichzeitig die Sperrzeit vermeiden.

@@ -9,6 +9,7 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
+import NormLink, { NORM } from '@/components/NormLink';
 import BagQuote from '@/components/BagQuote';
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
@@ -239,8 +240,9 @@ export default function AbmahnungPage() {
               Die rechtliche Grundlage der Abmahnung ergibt sich aus dem allgemeinen Grundsatz der
               Verhältnismäßigkeit und dem Ultima-Ratio-Prinzip: Bevor der Arbeitgeber das Arbeitsverhältnis
               durch eine verhaltensbedingte Kündigung beendet, muss er dem Arbeitnehmer durch eine
-              Abmahnung die Möglichkeit zur Verhaltensänderung geben (&sect;314 Abs.&nbsp;2 BGB analog,
-              &sect;1 Abs.&nbsp;2 KSchG).
+              Abmahnung die Möglichkeit zur Verhaltensänderung geben (
+              <NormLink href={NORM.bgb314}>&sect;&nbsp;314 Abs.&nbsp;2 BGB</NormLink> analog,{' '}
+              <NormLink href={NORM.kschg1}>&sect;&nbsp;1 Abs.&nbsp;2 KSchG</NormLink>).
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               Eine Abmahnung kann mündlich oder schriftlich erfolgen &mdash; aus Beweisgründen wird
@@ -365,7 +367,9 @@ export default function AbmahnungPage() {
                 <h3 className="font-serif text-[1.05rem] font-bold mb-2">3. Gegendarstellung verfassen</h3>
                 <p className="text-[0.95rem] text-ink-light leading-relaxed">
                   Sie haben das Recht, eine Gegendarstellung zu verfassen und deren Aufnahme in die
-                  Personalakte zu verlangen (&sect;83 Abs.&nbsp;2 BetrVG). Schildern Sie sachlich Ihre
+                  Personalakte zu verlangen (
+                  <NormLink href={NORM.betrvg83}>&sect;&nbsp;83 Abs.&nbsp;2 BetrVG</NormLink>).
+                  Schildern Sie sachlich Ihre
                   Sicht und widerlegen Sie den Vorwurf mit konkreten Fakten.
                 </p>
               </div>
@@ -414,7 +418,9 @@ export default function AbmahnungPage() {
               <p className="text-[0.95rem] text-ink leading-relaxed m-0">
                 <strong>Ausnahme:</strong> Bei besonders schweren Pflichtverletzungen wie Diebstahl,
                 Betrug oder schwerer Beleidigung kann der Arbeitgeber auch ohne vorherige Abmahnung
-                <Link href="/fristlose-kuendigung/" className="text-gold-dark font-semibold no-underline hover:underline">fristlos kündigen</Link> (&sect;626 BGB). Aber auch hier gilt: Die meisten fristlosen
+                <Link href="/fristlose-kuendigung/" className="text-gold-dark font-semibold no-underline hover:underline">fristlos kündigen</Link> (
+                <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink>). Aber auch hier
+                gilt: Die meisten fristlosen
                 Kündigungen scheitern vor dem Arbeitsgericht.
               </p>
             </div>

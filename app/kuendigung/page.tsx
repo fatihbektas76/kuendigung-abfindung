@@ -10,6 +10,7 @@ import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
+import NormLink, { NORM } from '@/components/NormLink';
 
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
@@ -169,8 +170,8 @@ export default function KuendigungPage() {
             {/* Urgency box */}
             <div className="py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold mb-8">
               <p className="text-[0.95rem] font-semibold text-ink m-0">
-                Wichtig: Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (&sect;4 KSchG).
-                Handeln Sie sofort.
+                Wichtig: Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (
+                <NormLink href={NORM.kschg4}>&sect;&nbsp;4 KSchG</NormLink>). Handeln Sie sofort.
               </p>
             </div>
 
@@ -183,7 +184,15 @@ export default function KuendigungPage() {
                 Die gute Nachricht: Viele Kündigungen sind angreifbar. Fehler in der <strong>Sozialauswahl</strong>, eine fehlende <strong>Betriebsratsanhörung</strong>, Formfehler oder die Missachtung besonderer Schutzrechte machen die Kündigung unwirksam. Selbst wenn die Kündigung rechtmäßig ist, führt die Klage in der Praxis fast immer zu einer <Link href="/abfindung/" className="text-gold-dark font-semibold no-underline hover:underline">Abfindung</Link> im Vergleich.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
-                Ein Fachanwalt für Arbeitsrecht prüft Ihre Kündigung auf alle Schwachstellen, berechnet Ihre Abfindungschancen und vertritt Sie vor dem Arbeitsgericht. In der ersten Instanz tragen Sie nur Ihre eigenen Anwaltskosten (&sect;12a ArbGG) &mdash; und wenn Sie eine Rechtsschutzversicherung haben, übernimmt diese die Kosten.
+                Ein Fachanwalt für Arbeitsrecht prüft Ihre Kündigung auf alle Schwachstellen,
+                berechnet Ihre Abfindungschancen und vertritt Sie vor dem Arbeitsgericht. In der
+                ersten Instanz tragen Sie nur Ihre eigenen Anwaltskosten (
+                <NormLink href={NORM.arbgg12a}>&sect;&nbsp;12a ArbGG</NormLink>) &mdash; und wenn
+                Sie eine Rechtsschutzversicherung haben, übernimmt diese die Kosten. Die
+                gesetzlichen Kündigungsfristen ergeben sich aus{' '}
+                <NormLink href={NORM.bgb622}>&sect;&nbsp;622 BGB</NormLink>; die soziale
+                Rechtfertigung jeder ordentlichen Kündigung wird an{' '}
+                <NormLink href={NORM.kschg1}>&sect;&nbsp;1 KSchG</NormLink> gemessen.
               </p>
             </div>
 
@@ -325,7 +334,8 @@ export default function KuendigungPage() {
               <div>
                 <p className="text-[1rem] font-semibold text-ink m-0">Fristlose Kündigung erhalten?</p>
                 <p className="text-[0.84rem] text-ink-muted mt-1 m-0">
-                  Die meisten fristlosen Kündigungen sind unwirksam. &sect;626 BGB stellt sehr hohe Anforderungen.
+                  Die meisten fristlosen Kündigungen sind unwirksam.{' '}
+                  <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink> stellt sehr hohe Anforderungen.
                 </p>
               </div>
               <Link
