@@ -363,11 +363,11 @@ export default function KSchGAnwendungPage() {
             </p>
 
             <BagQuote az="2 AZR 373/03" datum="24.02.2005">
-              „Für die Bestimmung der nach &sect;&nbsp;23 Abs.&nbsp;1 KSchG maßgeblichen
+              &bdquo;Für die Bestimmung der nach &sect;&nbsp;23 Abs.&nbsp;1 KSchG maßgeblichen
               Beschäftigtenzahl ist nicht der zufällige Personalstand am Tag des Zugangs der
               Kündigung entscheidend. Vielmehr bedarf es eines Rückblicks auf die bisherige
               personelle Stärke des Betriebes und einer Berücksichtigung der absehbaren
-              zukünftigen Entwicklung."
+              zukünftigen Entwicklung.&ldquo;
             </BagQuote>
 
             <p className="text-[0.85rem] text-ink-muted mb-6">
@@ -434,9 +434,9 @@ export default function KSchGAnwendungPage() {
               az="2 AZR 140/12"
               datum="24.01.2013"
             >
-              „Bei der Bestimmung der nach &sect;&nbsp;23 Abs.&nbsp;1 Satz&nbsp;3 KSchG maßgeblichen
+              &bdquo;Bei der Bestimmung der nach &sect;&nbsp;23 Abs.&nbsp;1 Satz&nbsp;3 KSchG maßgeblichen
               Beschäftigtenzahl sind im Betrieb eingesetzte Leiharbeitnehmer mitzuzählen, wenn
-              ihr Einsatz auf einem in der Regel vorhandenen Personalbedarf beruht."
+              ihr Einsatz auf einem in der Regel vorhandenen Personalbedarf beruht.&ldquo;
               {' '}<span className="not-italic text-[0.82rem] text-ink-muted">(BAG, NZA 2013, 726)</span>
             </BagQuote>
 
@@ -591,7 +591,7 @@ export default function KSchGAnwendungPage() {
                 <li>8 × 0,5 = <strong>4,0</strong></li>
                 <li>4 × 0,75 = <strong>3,0</strong></li>
                 <li>3 × 1,0 = <strong>3,0</strong></li>
-                <li className="font-semibold mt-2">Summe: 10,0 → genau 10, nicht „mehr als 10“ → KSchG nicht anwendbar</li>
+                <li className="font-semibold mt-2">Summe: 10,0 → genau 10, nicht &bdquo;mehr als 10&ldquo; → KSchG nicht anwendbar</li>
               </ul>
             </div>
 
@@ -618,17 +618,17 @@ export default function KSchGAnwendungPage() {
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
               Seit dem 01.01.2004 gilt der Schwellenwert von <strong>mehr als 10 Arbeitnehmern</strong>.
               Für Arbeitnehmer, deren Arbeitsverhältnis bereits <strong>vor diesem Stichtag</strong>
-              {' '}im selben Betrieb begonnen hat („Altarbeitnehmer"), gilt eine Schutzregelung:
+              {' '}im selben Betrieb begonnen hat (&bdquo;Altarbeitnehmer&ldquo;), gilt eine Schutzregelung:
               Sie genießen Kündigungsschutz, solange im Betrieb regelmäßig
               <strong> mehr als 5 Arbeitnehmer</strong> beschäftigt sind (
               <NormLink href={NORM.kschg23}>&sect;&nbsp;23 Abs.&nbsp;1 Satz&nbsp;2 KSchG</NormLink>).
             </p>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Wichtig: Fällt die Anzahl der „Altarbeitnehmer" einmal <strong>auf fünf oder
+              Wichtig: Fällt die Anzahl der &bdquo;Altarbeitnehmer&ldquo; einmal <strong>auf fünf oder
               darunter</strong>, geht der Kündigungsschutz <strong>unwiderruflich verloren</strong>
               — und zwar auch dann, wenn später wieder neue Mitarbeiter eingestellt werden.
               Ersatzeinstellungen für ausgeschiedene Altarbeitnehmer reichen nicht. Erst wenn der
-              „normale" Schwellenwert von mehr als 10 Arbeitnehmern überschritten wird, entsteht
+              &bdquo;normale&ldquo; Schwellenwert von mehr als 10 Arbeitnehmern überschritten wird, entsteht
               erneut Kündigungsschutz.
             </p>
 
@@ -636,11 +636,11 @@ export default function KSchGAnwendungPage() {
               az="2 AZR 840/05"
               datum="21.09.2006"
             >
-              „Sinkt die Zahl der vor dem 01.01.2004 beschäftigten Arbeitnehmer auf fünf oder
+              &bdquo;Sinkt die Zahl der vor dem 01.01.2004 beschäftigten Arbeitnehmer auf fünf oder
               weniger, verlieren auch sie den allgemeinen Kündigungsschutz endgültig, sofern
               nicht insgesamt mehr als zehn Arbeitnehmer regelmäßig beschäftigt sind. Ersatz­einstellungen
-              für ausgeschiedene ‚Altarbeitnehmer' sind für den abgesenkten Schwellenwert nicht
-              zu berücksichtigen."
+              für ausgeschiedene &sbquo;Altarbeitnehmer&lsquo; sind für den abgesenkten Schwellenwert nicht
+              zu berücksichtigen.&ldquo;
               {' '}<span className="not-italic text-[0.82rem] text-ink-muted">(BAG, NZA 2007, 438)</span>
             </BagQuote>
 
@@ -695,12 +695,12 @@ export default function KSchGAnwendungPage() {
             </p>
 
             <BagQuote az="2 AZR 560/20">
-              „Ein gemeinsamer Betrieb mehrerer Unternehmen im Sinne von &sect;&nbsp;23 Abs.&nbsp;1
+              &bdquo;Ein gemeinsamer Betrieb mehrerer Unternehmen im Sinne von &sect;&nbsp;23 Abs.&nbsp;1
               KSchG liegt vor, wenn die in einer Betriebsstätte vorhandenen materiellen und
               immateriellen Betriebsmittel von mehreren Arbeitgebern gemeinsam für einen
               einheitlichen arbeitstechnischen Zweck eingesetzt werden und die Verwendung der
               Arbeitnehmer durch einen <strong>einheitlichen Leitungsapparat</strong>
-              institutionell geregelt ist."
+              institutionell geregelt ist.&ldquo;
             </BagQuote>
 
             <p className="text-[0.85rem] text-ink-muted mb-5">
