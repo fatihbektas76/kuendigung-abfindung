@@ -35,6 +35,14 @@ export const PAGE_DATES = {
   arbeitsrechtAnwalt: '2026-05-03',
   mandantenaufnahme: '2026-05-23',
   'mandantenaufnahme-kuendigung': '2026-05-15',
+
+  // Content-Gap-Seiten (Phase 3 SEO)
+  betriebsbedingteKuendigung: '2026-05-26',
+  kuendigungsschutzklage: '2026-05-26',
+  kuendigungsfristen: '2026-05-26',
+  abfindungstabelle: '2026-05-26',
+  kuendigungsschutzgesetzAnwendung: '2026-06-08',
+  ratgeberArbeitsrecht: '2026-06-09',
 } as const;
 
 export type PageDateKey = keyof typeof PAGE_DATES;

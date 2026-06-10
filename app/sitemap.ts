@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/aufhebungsvertrag/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
     { url: `${BASE_URL}/abmahnung/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
     { url: `${BASE_URL}/ratgeber/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${BASE_URL}/ratgeber/arbeitsrecht/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
     { url: `${BASE_URL}/ratgeber/urteile/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
     { url: `${BASE_URL}/ratgeber/muster/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.8 },
     { url: `${BASE_URL}/abfindungsrechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
@@ -58,6 +59,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ratgeber/kuendigungsstatistik-arbeitsgerichte-deutschland/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/team/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/autor/fatih-bektas/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/betriebsbedingte-kuendigung/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/kuendigungsschutzklage/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/kuendigungsfristen/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/abfindungstabelle/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/kuendigungsschutzgesetz-anwendung/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
   ];
 
   const clusterAPages: MetadataRoute.Sitemap = entries.map((e) => ({

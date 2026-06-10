@@ -56,6 +56,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/aufhebungsvertrag" className={linkClass}>Aufhebungsvertrag</Link></li>
               <li><Link href="/abmahnung" className={linkClass}>Abmahnung</Link></li>
               <li><Link href="/fristlose-kuendigung" className={linkClass}>Fristlose Kündigung</Link></li>
+              <li><Link href="/ratgeber/arbeitsrecht" className={linkClass}>Arbeitsrecht-Ratgeber</Link></li>
               <li><Link href="/ratgeber/muster" className={linkClass}>Muster &amp; Vorlagen</Link></li>
               <li><Link href="/ratgeber/urteile" className={linkClass}>Urteile</Link></li>
               <li><Link href="/glossar" className={linkClass}>Glossar</Link></li>

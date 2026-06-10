@@ -15,6 +15,20 @@ export const metadata = buildMetadata({
 
 const categories = [
   {
+    eyebrow: 'Praxis-Artikel',
+    title: 'Arbeitsrecht-Ratgeber',
+    description:
+      'Vertiefte Praxis-Artikel zu Kündigungsschutz, Kündigungsfristen, betriebsbedingter Kündigung und Abfindung — mit BAG-Urteilen, Gesetzes-Links und Beispielen.',
+    href: '/ratgeber/arbeitsrecht',
+    items: [
+      'Wann gilt das Kündigungsschutzgesetz?',
+      'Kündigungsschutzklage: Ablauf & Kosten',
+      'Betriebsbedingte Kündigung & Sozialauswahl',
+      'Kündigungsfristen nach § 622 BGB',
+      'Abfindungstabelle nach Betriebszugehörigkeit',
+    ],
+  },
+  {
     eyebrow: 'Vorlagen & Checklisten',
     title: 'Muster & Vorlagen',
     description:
