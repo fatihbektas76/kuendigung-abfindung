@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
 import TldrBox from '@/components/TldrBox';
+import NormLink, { NORM } from '@/components/NormLink';
 import DefinitionBox from '@/components/DefinitionBox';
 import BagQuote from '@/components/BagQuote';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
@@ -67,7 +68,8 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
             Fristlose Kündigung nach {yl} Betriebszugehörigkeit &mdash; wirksam oder nicht?
           </h1>
           <p className="text-lg text-gray-600 max-w-[680px] leading-relaxed mb-6">
-            Über 80 % aller fristlosen Kündigungen sind unwirksam. Nach &sect; 626 BGB müssen drei Voraussetzungen
+            Über 80 % aller fristlosen Kündigungen sind unwirksam. Nach{' '}
+            <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink> müssen drei Voraussetzungen
             gleichzeitig erfüllt sein: ein wichtiger Grund, eine vorherige Abmahnung (in den meisten Fällen) und
             die Einhaltung der 2-Wochen-Ausschlussfrist. Fehlt auch nur eine Voraussetzung, ist die Kündigung
             angreifbar &mdash; und Ihre Abfindungschancen steigen erheblich.
@@ -84,10 +86,10 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
           <div className="mt-6">
             <TldrBox items={[
               'Über 80 % aller fristlosen Kündigungen sind unwirksam — Ihre Chancen stehen gut.',
-              `Ausschlussfrist für den Arbeitgeber: 2 Wochen ab Kenntnis des Grundes (§ 626 Abs. 2 BGB).`,
-              `Ihre Klagefrist: 3 Wochen ab Zugang (§ 4 KSchG) — danach wird die Kündigung wirksam.`,
+              <>Ausschlussfrist für den Arbeitgeber: 2 Wochen ab Kenntnis des Grundes (<NormLink href={NORM.bgb626}>§&nbsp;626 Abs.&nbsp;2 BGB</NormLink>).</>,
+              <>Ihre Klagefrist: 3 Wochen ab Zugang (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>) — danach wird die Kündigung in der Regel wirksam.</>,
               `Abfindungschance bei ${yl}: Faustformel 0,5 × Gehalt × ${ylKurz}, bei unwirksamer fristloser Kündigung oft höher.`,
-              'Wichtiger Grund (§ 626 BGB) wird von Gerichten sehr streng geprüft — viele Kündigungen scheitern daran.',
+              <>Wichtiger Grund (<NormLink href={NORM.bgb626}>§&nbsp;626 Abs.&nbsp;1 BGB</NormLink>) wird von Gerichten sehr streng geprüft — viele Kündigungen scheitern daran.</>,
             ]} />
           </div>
         </div>
@@ -256,7 +258,9 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
       <section className="py-3 px-4 sm:px-8 mb-3">
         <div className="max-w-content mx-auto">
           <div className="border-l-4 border-red-700 bg-gray-50 rounded-r-lg p-4">
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">2-Wochen-Ausschlussfrist (&sect; 626 Abs. 2 BGB)</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">
+              2-Wochen-Ausschlussfrist (<NormLink href={NORM.bgb626}>&sect;&nbsp;626 Abs.&nbsp;2 BGB</NormLink>)
+            </h2>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
               Der Arbeitgeber muss die fristlose Kündigung innerhalb von 2 Wochen nach Kenntnis des
               Kündigungsgrundes aussprechen. Wird diese Frist überschritten, ist die fristlose Kündigung

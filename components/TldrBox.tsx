@@ -1,5 +1,8 @@
+import type { ReactNode } from 'react';
+
 interface TldrBoxProps {
-  items: string[];
+  /** Bullet items — strings or JSX (e.g. with inline NormLink). */
+  items: ReactNode[];
 }
 
 export default function TldrBox({ items }: TldrBoxProps) {

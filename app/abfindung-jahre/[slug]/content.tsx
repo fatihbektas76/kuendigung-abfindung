@@ -7,6 +7,7 @@ import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
 import TldrBox from '@/components/TldrBox';
 import BagQuote from '@/components/BagQuote';
 import DefinitionBox from '@/components/DefinitionBox';
+import NormLink, { NORM } from '@/components/NormLink';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
 /* ── Types ── */
@@ -129,10 +130,10 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
           <div className="mt-6">
             <TldrBox items={[
               `Faustformel: 0,5 × Bruttomonatsgehalt × ${ylKurz} = ${y * 0.5} Monatsgehälter als Abfindung.`,
-              `Kündigungsfrist bei ${yl}: ${entry.kuendigungsfrist} (§ 622 BGB).`,
+              <>Kündigungsfrist bei {yl}: {entry.kuendigungsfrist} (<NormLink href={NORM.bgb622}>§&nbsp;622 BGB</NormLink>).</>,
               'Kein gesetzlicher Anspruch auf Abfindung — über 80 % werden per Klage oder Vergleich verhandelt.',
-              'Klagefrist: 3 Wochen ab Zugang der Kündigung (§ 4 KSchG) — keine Verlängerung möglich.',
-              'Steuervorteil: Abfindung kann per Fünftelregelung (§ 34 EStG) begünstigt versteuert werden.',
+              <>Klagefrist: 3 Wochen ab Zugang der Kündigung (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>) — keine Verlängerung möglich.</>,
+              <>Steuervorteil: Abfindung kann per Fünftelregelung (<NormLink href={NORM.estg34}>§&nbsp;34 EStG</NormLink>) begünstigt versteuert werden.</>,
             ]} />
           </div>
         </div>
@@ -190,7 +191,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             {/* Red left bar warning */}
             <div className="border-l-4 border-red-700 bg-white rounded-r-lg p-4 mb-4">
               <p className="text-sm text-gray-700">
-                <strong>Kein automatischer Anspruch nach &sect; 1a KSchG:</strong> Ein gesetzlicher Abfindungsanspruch
+                <strong>Kein automatischer Anspruch nach <NormLink href={NORM.kschg1a}>&sect;&nbsp;1a KSchG</NormLink>:</strong> Ein gesetzlicher Abfindungsanspruch
                 entsteht nur, wenn der Arbeitgeber in der Kündigung ausdrücklich eine Abfindung anbietet &mdash;
                 und der Arbeitnehmer keine Klage erhebt. In der Praxis kommt dies selten vor.
               </p>
@@ -374,8 +375,9 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Muss ich die Abfindung versteuern?</h2>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
               Ja, Abfindungen sind einkommensteuerpflichtig. Sozialversicherungsbeiträge (Renten-, Kranken-, Pflege-
-              und Arbeitslosenversicherung) fallen dagegen nicht an. Mit der Fünftelregelung (&sect; 34 EStG) können
-              Sie die Steuerlast erheblich senken.
+              und Arbeitslosenversicherung) fallen dagegen nicht an. Mit der Fünftelregelung (
+              <NormLink href={NORM.estg34}>&sect;&nbsp;34 EStG</NormLink>) können Sie die
+              Steuerlast erheblich senken.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">

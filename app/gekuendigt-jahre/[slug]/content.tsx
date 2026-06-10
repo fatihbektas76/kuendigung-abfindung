@@ -6,6 +6,7 @@ import Image from 'next/image';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
 import TldrBox from '@/components/TldrBox';
 import BagQuote from '@/components/BagQuote';
+import NormLink, { NORM } from '@/components/NormLink';
 import DefinitionBox from '@/components/DefinitionBox';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 
@@ -89,13 +90,13 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
 
           <div className="mt-6">
             <TldrBox items={[
-              `Kündigungsfrist bei ${yl}: ${entry.kuendigungsfrist} (§ 622 BGB).`,
-              `Kündigungsschutzklage innerhalb von 3 Wochen einreichen — sonst wird die Kündigung in der Regel wirksam (eine nachträgliche Zulassung der Klage nach § 5 KSchG ist nur in seltenen Ausnahmefällen möglich).`,
+              <>Kündigungsfrist bei {yl}: {entry.kuendigungsfrist} (<NormLink href={NORM.bgb622}>§&nbsp;622 BGB</NormLink>).</>,
+              <>Kündigungsschutzklage innerhalb von 3 Wochen einreichen (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>) — sonst wird die Kündigung in der Regel wirksam (eine nachträgliche Zulassung nach <NormLink href={NORM.kschg5}>§&nbsp;5 KSchG</NormLink> ist nur in seltenen Ausnahmefällen möglich).</>,
               `Abfindungschance: Faustformel 0,5 × Bruttomonatsgehalt × ${ylKurz} — erfahrungsgemäß auch viel höhere Abfindungen möglich.`,
               yearData.kschgGilt
-                ? 'Das Kündigungsschutzgesetz (KSchG) gilt für Sie — Ihr Arbeitgeber braucht einen anerkannten Kündigungsgrund.'
-                : 'Das Kündigungsschutzgesetz (KSchG) gilt erst ab 6 Monaten Betriebszugehörigkeit und 10 Mitarbeitern.',
-              'Kostenrisiko: Im Arbeitsrecht 1. Instanz trägt jede Partei ihre eigenen Anwaltskosten (§ 12a ArbGG).',
+                ? <>Das Kündigungsschutzgesetz gilt für Sie (<NormLink href={NORM.kschg1}>§&nbsp;1 KSchG</NormLink>) — Ihr Arbeitgeber braucht einen anerkannten Kündigungsgrund.</>
+                : <>Das KSchG gilt erst ab 6 Monaten Betriebszugehörigkeit und mehr als 10 Mitarbeitern (<NormLink href={NORM.kschg23}>§&nbsp;23 KSchG</NormLink>).</>,
+              <>Kostenrisiko: Im Arbeitsrecht 1. Instanz trägt jede Partei ihre eigenen Anwaltskosten (<NormLink href={NORM.arbgg12a}>§&nbsp;12a ArbGG</NormLink>).</>,
             ]} />
           </div>
         </div>
