@@ -258,9 +258,14 @@ export default function SchwellenwertRechnerPage() {
                       </div>
                       <p className="text-[0.92rem] text-ink-light leading-relaxed">
                         Mit {result.fte} FTE liegt Ihr Betrieb <strong>bei oder unter dem Schwellenwert von 10</strong>.
-                        Das KSchG findet keine Anwendung. Aber: Kündigungsfristen nach &sect;622 BGB,
+                        Das KSchG findet keine Anwendung. Aber: Kündigungsfristen nach &sect;&nbsp;622 BGB,
                         Schutz vor sittenwidriger Kündigung und besonderer Kündigungsschutz
-                        (Schwangerschaft, Schwerbehinderung) gelten weiterhin.
+                        (Schwangerschaft, Schwerbehinderung) gelten weiterhin. Detaillierte
+                        Voraussetzungen und welche Personengruppen mitgezählt werden, finden Sie
+                        unter{' '}
+                        <Link href="/kuendigungsschutzgesetz-anwendung/" className="text-gold-dark font-semibold no-underline hover:underline">
+                          Wann findet das Kündigungsschutzgesetz Anwendung? &rarr;
+                        </Link>
                       </p>
                     </div>
                   )}
@@ -416,6 +421,32 @@ export default function SchwellenwertRechnerPage() {
               Die korrekte Berechnung des Schwellenwerts kann im Kündigungsschutzprozess den Unterschied
               zwischen Abfindung und leerem Ausgang machen.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-Link: Wann gilt das KSchG? — Personengruppen-Tabelle */}
+      <section className="py-[40px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[740px]">
+            <Link
+              href="/kuendigungsschutzgesetz-anwendung/"
+              className="block py-6 px-6 bg-white border border-border rounded-sm no-underline text-ink hover:border-gold hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.12)] transition-all"
+            >
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+                Vertiefender Ratgeber
+              </div>
+              <span className="font-serif text-[1.15rem] font-bold block">
+                Wann findet das Kündigungsschutzgesetz Anwendung?
+              </span>
+              <span className="block text-[0.9rem] text-ink-muted mt-2 leading-relaxed">
+                Komplette Übersicht: Wartezeit, Schwellenwert, Teilzeit-Zählmethodik und
+                vor allem &mdash; welche Personengruppen mitzählen und welche nicht
+                (Geschäftsführer, freie Mitarbeiter, Leiharbeitnehmer, Familienangehörige,
+                Auszubildende, Elternzeit, Aushilfen). Inkl. BAG-Urteilen und
+                Beweislast-Grundsätzen. &rarr;
+              </span>
+            </Link>
           </div>
         </div>
       </section>
