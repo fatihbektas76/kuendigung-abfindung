@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import LegalDisclaimer from './LegalDisclaimer';
 import CookieBanner from './CookieBanner';
 import ScrollToTop from './ScrollToTop';
 import MobileCTA from './MobileCTA';
@@ -26,6 +27,7 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
     <>
       <Navigation />
       {children}
+      {!hideFooter && <LegalDisclaimer />}
       {!hideFooter && <Footer onOpenCookieSettings={handleOpenCookieSettings} />}
       <CookieBanner />
       <ScrollToTop />
