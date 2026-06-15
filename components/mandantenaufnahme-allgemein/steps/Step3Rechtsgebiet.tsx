@@ -9,7 +9,11 @@ const INPUT_CLASS =
 export default function Step3Rechtsgebiet({ data, onChange, errors }: StepProps) {
   const { t } = useLanguage();
 
-  const hasError = !!errors.rechtsgebiet && !data.rechtsgebiet && !data.rechtsgebietSonstiges.trim();
+  const isSonstiges = data.rechtsgebiet === 'sonstiges';
+  const sonstigesRequired = isSonstiges;
+  const sonstigesEmpty = !data.rechtsgebietSonstiges.trim();
+  const hasError = !!errors.rechtsgebiet && !data.rechtsgebiet && sonstigesEmpty;
+  const sonstigesError = !!errors.rechtsgebiet && sonstigesRequired && sonstigesEmpty;
 
   return (
     <div className="space-y-5">
@@ -38,23 +42,28 @@ export default function Step3Rechtsgebiet({ data, onChange, errors }: StepProps)
         </select>
       </div>
 
-      {/* Freitext — kann zusätzlich oder alternativ ausgefüllt werden */}
+      {/* Freitext — Pflicht bei "Sonstiges", sonst optionale Zusatzinfo */}
       <div>
         <label htmlFor="rechtsgebietSonstiges" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
           {t.step3.sonstigesLabel}
+          {sonstigesRequired && <span className="text-gold-dark ml-0.5">*</span>}
         </label>
-        <p className="text-[0.78rem] text-ink-muted mb-1.5">{t.step3.sonstigesHint}</p>
+        <p className="text-[0.78rem] text-ink-muted mb-1.5">
+          {sonstigesRequired ? t.step3.sonstigesHintRequired : t.step3.sonstigesHint}
+        </p>
         <textarea
           id="rechtsgebietSonstiges"
           value={data.rechtsgebietSonstiges}
           onChange={(e) => onChange('rechtsgebietSonstiges', e.target.value)}
           placeholder={t.step3.sonstigesPlaceholder}
           rows={4}
-          className={`${INPUT_CLASS} resize-y`}
+          className={`${INPUT_CLASS} resize-y ${sonstigesError ? 'border-red-400' : ''}`}
         />
       </div>
 
-      {hasError && <p className="text-[0.78rem] text-red-500 mt-1">{errors.rechtsgebiet}</p>}
+      {(hasError || sonstigesError) && (
+        <p className="text-[0.78rem] text-red-500 mt-1">{errors.rechtsgebiet}</p>
+      )}
     </div>
   );
 }

@@ -78,6 +78,7 @@ const de = {
     selectPlaceholder: 'Bitte wählen',
     sonstigesLabel: 'Eigene Beschreibung oder ergänzende Angaben',
     sonstigesHint: 'Optional, kann zusätzlich zur Auswahl ausgefüllt werden.',
+    sonstigesHintRequired: 'Bitte beschreiben Sie kurz, um welches Thema es geht.',
     sonstigesPlaceholder: 'z.B. Betriebsvereinbarung, Altersteilzeit, kombiniertes Anliegen ...',
   },
 
@@ -186,6 +187,7 @@ const de = {
     { value: 'diskriminierung', label: 'Diskriminierung' },
     { value: 'mobbing', label: 'Mobbing' },
     { value: 'ueberstunden', label: 'Überstunden' },
+    { value: 'sonstiges', label: 'Sonstiges / anderes Thema' },
   ],
 
   // Validation errors
@@ -297,6 +299,7 @@ const en: AllgemeinTranslations = {
     selectPlaceholder: 'Please select',
     sonstigesLabel: 'Own description or additional notes',
     sonstigesHint: 'Optional — can be filled in alongside the selection.',
+    sonstigesHintRequired: 'Please briefly describe the topic.',
     sonstigesPlaceholder: 'e.g. Works agreement, partial retirement, combined matter ...',
   },
 
@@ -398,6 +401,7 @@ const en: AllgemeinTranslations = {
     { value: 'diskriminierung', label: 'Discrimination' },
     { value: 'mobbing', label: 'Workplace bullying' },
     { value: 'ueberstunden', label: 'Overtime' },
+    { value: 'sonstiges', label: 'Other / custom topic' },
   ],
 
   validation: {

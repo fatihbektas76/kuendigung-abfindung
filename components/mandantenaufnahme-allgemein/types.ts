@@ -11,6 +11,7 @@ export type Rechtsgebiet =
   | 'diskriminierung'
   | 'mobbing'
   | 'ueberstunden'
+  | 'sonstiges'
   | '';
 
 export type PartyType = 'privat' | 'unternehmen' | '';
