@@ -90,7 +90,7 @@ export default function AddressAutocomplete({
   const { t } = useLanguage();
   const inputRef = useRef<HTMLInputElement>(null);
   const [apiLoaded, setApiLoaded] = useState(false);
-  const [manualMode, setManualMode] = useState(false);
+  const [manualMode, setManualMode] = useState(true);
   const autocompleteRef = useRef<GoogleAutocompleteInstance | null>(null);
 
   const handlePlaceChanged = useCallback(() => {
