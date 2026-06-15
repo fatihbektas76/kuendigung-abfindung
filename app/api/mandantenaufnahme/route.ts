@@ -356,9 +356,14 @@ export async function POST(request: NextRequest) {
     }
 
     // Echtly webhook (fire-and-forget, no files)
+    // allgemein form: dedicated webhook for the Mandantenaufnahme-Allgemein flow
+    const ECHTLY_WEBHOOK_ALLGEMEIN_FALLBACK =
+      'https://sign.echtly.de/api/webhooks/incoming/e19067d3-4488-46d1-a7fe-3eb382f36e56';
     const webhookUrl = formType === 'kuendigung'
       ? process.env.ECHTLY_WEBHOOK_URL_KUENDIGUNG || process.env.ECHTLY_WEBHOOK_URL
-      : process.env.ECHTLY_WEBHOOK_URL;
+      : formType === 'allgemein'
+        ? process.env.ECHTLY_WEBHOOK_URL_ALLGEMEIN || ECHTLY_WEBHOOK_ALLGEMEIN_FALLBACK
+        : process.env.ECHTLY_WEBHOOK_URL;
     console.log('[Webhook] formType:', formType, '| URL:', webhookUrl ? webhookUrl.slice(0, 60) + '...' : 'MISSING');
     try {
       await sendEchtlyWebhook(webhookData, webhookUrl || undefined);
