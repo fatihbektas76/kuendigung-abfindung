@@ -54,9 +54,16 @@ function validateStep(step: number, data: AllgemeinFormData, t: AllgemeinTransla
   const v = t.validation;
 
   if (step === 1) {
-    if (!data.vorname.trim()) errors.vorname = v.vorname;
-    if (!data.nachname.trim()) errors.nachname = v.nachname;
-    if (!data.geburtsdatum) errors.geburtsdatum = v.geburtsdatum;
+    if (!data.mandantTyp) {
+      errors.mandantTyp = v.mandantTyp;
+    } else if (data.mandantTyp === 'unternehmen') {
+      if (!data.firmenname.trim()) errors.firmenname = v.firmenname;
+      if (!data.vertretungsberechtigt.trim()) errors.vertretungsberechtigt = v.vertretungsberechtigt;
+    } else {
+      if (!data.vorname.trim()) errors.vorname = v.vorname;
+      if (!data.nachname.trim()) errors.nachname = v.nachname;
+      if (!data.geburtsdatum) errors.geburtsdatum = v.geburtsdatum;
+    }
     if (!data.strasseHausnummer.trim()) errors.strasseHausnummer = v.strasseHausnummer;
     if (!data.plz.trim()) errors.plz = v.plz;
     if (!data.ort.trim()) errors.ort = v.ort;
@@ -75,6 +82,7 @@ function validateStep(step: number, data: AllgemeinFormData, t: AllgemeinTransla
   }
 
   if (step === 3) {
+    if (!data.gegnerTyp) errors.gegnerTyp = v.gegnerTyp;
     if (!data.gegnerName.trim()) errors.gegnerName = v.gegnerName;
     if (!data.gegnerStrasse.trim()) errors.gegnerStrasse = v.gegnerStrasse;
     if (!data.gegnerPlz.trim()) errors.gegnerPlz = v.gegnerPlz;

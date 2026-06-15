@@ -13,11 +13,20 @@ export type Rechtsgebiet =
   | 'ueberstunden'
   | '';
 
+export type PartyType = 'privat' | 'unternehmen' | '';
+
 export interface AllgemeinFormData {
-  // Step 1 — Persönliche Daten
+  // Step 1 — Mandant (Privatperson oder Unternehmen)
+  mandantTyp: PartyType;
+  // ── Felder Privatperson ──
   vorname: string;
   nachname: string;
   geburtsdatum: string;
+  // ── Felder Unternehmen ──
+  firmenname: string;
+  rechtsform: string;
+  vertretungsberechtigt: string;
+  // ── Anschrift / Kontakt (für beide) ──
   strasseHausnummer: string;
   plz: string;
   ort: string;
@@ -28,8 +37,10 @@ export interface AllgemeinFormData {
   rechtsgebiet: Rechtsgebiet;
   rechtsgebietSonstiges: string;
 
-  // Step 3 — Gegner
+  // Step 3 — Gegner (Privatperson oder Unternehmen)
+  gegnerTyp: PartyType;
   gegnerName: string;
+  gegnerRechtsform: string;
   gegnerStrasse: string;
   gegnerPlz: string;
   gegnerOrt: string;
@@ -54,9 +65,13 @@ export interface FileAttachment {
 }
 
 export const initialAllgemeinFormData: AllgemeinFormData = {
+  mandantTyp: 'privat',
   vorname: '',
   nachname: '',
   geburtsdatum: '',
+  firmenname: '',
+  rechtsform: '',
+  vertretungsberechtigt: '',
   strasseHausnummer: '',
   plz: '',
   ort: '',
@@ -66,7 +81,9 @@ export const initialAllgemeinFormData: AllgemeinFormData = {
   rechtsgebiet: '',
   rechtsgebietSonstiges: '',
 
+  gegnerTyp: 'unternehmen',
   gegnerName: '',
+  gegnerRechtsform: '',
   gegnerStrasse: '',
   gegnerPlz: '',
   gegnerOrt: '',

@@ -1,6 +1,6 @@
 'use client';
 
-import type { StepProps } from '../types';
+import type { StepProps, PartyType } from '../types';
 import { useLanguage } from '../LanguageContext';
 import AddressAutocomplete from '@/components/mandantenaufnahme/AddressAutocomplete';
 
@@ -9,6 +9,7 @@ const INPUT_CLASS =
 
 export default function Step1Persoenlich({ data, onChange, errors }: StepProps) {
   const { t } = useLanguage();
+  const isFirma = data.mandantTyp === 'unternehmen';
 
   return (
     <div className="space-y-5">
@@ -19,53 +20,143 @@ export default function Step1Persoenlich({ data, onChange, errors }: StepProps) 
         {t.step1.description}
       </p>
 
-      {/* Vorname / Nachname */}
-      <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-        <div>
-          <label htmlFor="a-vorname" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-            {t.step1.vorname} <span className="text-gold-dark ml-0.5">*</span>
-          </label>
-          <input
-            id="a-vorname"
-            type="text"
-            value={data.vorname}
-            onChange={(e) => onChange('vorname', e.target.value)}
-            placeholder={t.step1.placeholderVorname}
-            className={`${INPUT_CLASS} ${errors.vorname ? 'border-red-400' : ''}`}
-          />
-          {errors.vorname && <p className="text-[0.78rem] text-red-500 mt-1">{errors.vorname}</p>}
+      {/* Typ-Selector (Privatperson / Unternehmen) */}
+      <fieldset>
+        <legend className="block text-[0.84rem] font-semibold text-ink mb-2">
+          {t.step1.typFrage} <span className="text-gold-dark ml-0.5">*</span>
+        </legend>
+        <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
+          {(['privat', 'unternehmen'] as PartyType[]).filter(Boolean).map((typ) => {
+            const active = data.mandantTyp === typ;
+            const label = typ === 'privat' ? t.step1.typPrivat : t.step1.typUnternehmen;
+            return (
+              <label
+                key={typ}
+                className={`flex items-center gap-2.5 py-3 px-4 border rounded-sm cursor-pointer transition-all ${
+                  active
+                    ? 'border-gold bg-cream'
+                    : 'border-border bg-white hover:border-gold-dark'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="mandantTyp"
+                  value={typ}
+                  checked={active}
+                  onChange={() => onChange('mandantTyp', typ)}
+                  className="accent-gold-dark"
+                />
+                <span className="text-[0.9rem] font-medium text-ink">{label}</span>
+              </label>
+            );
+          })}
         </div>
-        <div>
-          <label htmlFor="a-nachname" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-            {t.step1.nachname} <span className="text-gold-dark ml-0.5">*</span>
-          </label>
-          <input
-            id="a-nachname"
-            type="text"
-            value={data.nachname}
-            onChange={(e) => onChange('nachname', e.target.value)}
-            placeholder={t.step1.placeholderNachname}
-            className={`${INPUT_CLASS} ${errors.nachname ? 'border-red-400' : ''}`}
-          />
-          {errors.nachname && <p className="text-[0.78rem] text-red-500 mt-1">{errors.nachname}</p>}
-        </div>
-      </div>
+        {errors.mandantTyp && (
+          <p className="text-[0.78rem] text-red-500 mt-1">{errors.mandantTyp}</p>
+        )}
+      </fieldset>
 
-      {/* Geburtsdatum */}
-      <div>
-        <label htmlFor="a-geburtsdatum" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-          {t.step1.geburtsdatum} <span className="text-gold-dark ml-0.5">*</span>
-        </label>
-        <input
-          id="a-geburtsdatum"
-          type="date"
-          value={data.geburtsdatum}
-          onChange={(e) => onChange('geburtsdatum', e.target.value)}
-          max={new Date().toISOString().slice(0, 10)}
-          className={`${INPUT_CLASS} ${errors.geburtsdatum ? 'border-red-400' : ''}`}
-        />
-        {errors.geburtsdatum && <p className="text-[0.78rem] text-red-500 mt-1">{errors.geburtsdatum}</p>}
-      </div>
+      {/* ── Felder Privatperson ── */}
+      {!isFirma && (
+        <>
+          <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+            <div>
+              <label htmlFor="a-vorname" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+                {t.step1.vorname} <span className="text-gold-dark ml-0.5">*</span>
+              </label>
+              <input
+                id="a-vorname"
+                type="text"
+                value={data.vorname}
+                onChange={(e) => onChange('vorname', e.target.value)}
+                placeholder={t.step1.placeholderVorname}
+                className={`${INPUT_CLASS} ${errors.vorname ? 'border-red-400' : ''}`}
+              />
+              {errors.vorname && <p className="text-[0.78rem] text-red-500 mt-1">{errors.vorname}</p>}
+            </div>
+            <div>
+              <label htmlFor="a-nachname" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+                {t.step1.nachname} <span className="text-gold-dark ml-0.5">*</span>
+              </label>
+              <input
+                id="a-nachname"
+                type="text"
+                value={data.nachname}
+                onChange={(e) => onChange('nachname', e.target.value)}
+                placeholder={t.step1.placeholderNachname}
+                className={`${INPUT_CLASS} ${errors.nachname ? 'border-red-400' : ''}`}
+              />
+              {errors.nachname && <p className="text-[0.78rem] text-red-500 mt-1">{errors.nachname}</p>}
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="a-geburtsdatum" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+              {t.step1.geburtsdatum} <span className="text-gold-dark ml-0.5">*</span>
+            </label>
+            <input
+              id="a-geburtsdatum"
+              type="date"
+              value={data.geburtsdatum}
+              onChange={(e) => onChange('geburtsdatum', e.target.value)}
+              max={new Date().toISOString().slice(0, 10)}
+              className={`${INPUT_CLASS} ${errors.geburtsdatum ? 'border-red-400' : ''}`}
+            />
+            {errors.geburtsdatum && <p className="text-[0.78rem] text-red-500 mt-1">{errors.geburtsdatum}</p>}
+          </div>
+        </>
+      )}
+
+      {/* ── Felder Unternehmen ── */}
+      {isFirma && (
+        <>
+          <div>
+            <label htmlFor="a-firmenname" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+              {t.step1.firmenname} <span className="text-gold-dark ml-0.5">*</span>
+            </label>
+            <input
+              id="a-firmenname"
+              type="text"
+              value={data.firmenname}
+              onChange={(e) => onChange('firmenname', e.target.value)}
+              placeholder={t.step1.placeholderFirmenname}
+              className={`${INPUT_CLASS} ${errors.firmenname ? 'border-red-400' : ''}`}
+            />
+            {errors.firmenname && <p className="text-[0.78rem] text-red-500 mt-1">{errors.firmenname}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="a-rechtsform" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+              {t.step1.rechtsform}
+            </label>
+            <input
+              id="a-rechtsform"
+              type="text"
+              value={data.rechtsform}
+              onChange={(e) => onChange('rechtsform', e.target.value)}
+              placeholder={t.step1.placeholderRechtsform}
+              className={INPUT_CLASS}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="a-vertretung" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+              {t.step1.vertretungsberechtigt} <span className="text-gold-dark ml-0.5">*</span>
+            </label>
+            <input
+              id="a-vertretung"
+              type="text"
+              value={data.vertretungsberechtigt}
+              onChange={(e) => onChange('vertretungsberechtigt', e.target.value)}
+              placeholder={t.step1.placeholderVertretung}
+              className={`${INPUT_CLASS} ${errors.vertretungsberechtigt ? 'border-red-400' : ''}`}
+            />
+            {errors.vertretungsberechtigt && (
+              <p className="text-[0.78rem] text-red-500 mt-1">{errors.vertretungsberechtigt}</p>
+            )}
+          </div>
+        </>
+      )}
 
       {/* Adresse */}
       <AddressAutocomplete

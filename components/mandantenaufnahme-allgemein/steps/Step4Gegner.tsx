@@ -1,6 +1,6 @@
 'use client';
 
-import type { StepProps } from '../types';
+import type { StepProps, PartyType } from '../types';
 import { useLanguage } from '../LanguageContext';
 
 const INPUT_CLASS =
@@ -8,6 +8,9 @@ const INPUT_CLASS =
 
 export default function Step4Gegner({ data, onChange, errors }: StepProps) {
   const { t } = useLanguage();
+  const isFirma = data.gegnerTyp === 'unternehmen';
+  const nameLabel = isFirma ? t.step4.gegnerNameFirma : t.step4.gegnerNamePrivat;
+  const namePlaceholder = isFirma ? t.step4.placeholderName : t.step4.placeholderNamePrivat;
 
   return (
     <div className="space-y-5">
@@ -18,21 +21,74 @@ export default function Step4Gegner({ data, onChange, errors }: StepProps) {
         {t.step4.description}
       </p>
 
-      {/* Gegner Name */}
+      {/* Typ-Selector (Privatperson / Unternehmen) */}
+      <fieldset>
+        <legend className="block text-[0.84rem] font-semibold text-ink mb-2">
+          {t.step4.typFrage} <span className="text-gold-dark ml-0.5">*</span>
+        </legend>
+        <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
+          {(['privat', 'unternehmen'] as PartyType[]).filter(Boolean).map((typ) => {
+            const active = data.gegnerTyp === typ;
+            const label = typ === 'privat' ? t.step4.typPrivat : t.step4.typUnternehmen;
+            return (
+              <label
+                key={typ}
+                className={`flex items-center gap-2.5 py-3 px-4 border rounded-sm cursor-pointer transition-all ${
+                  active
+                    ? 'border-gold bg-cream'
+                    : 'border-border bg-white hover:border-gold-dark'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="gegnerTyp"
+                  value={typ}
+                  checked={active}
+                  onChange={() => onChange('gegnerTyp', typ)}
+                  className="accent-gold-dark"
+                />
+                <span className="text-[0.9rem] font-medium text-ink">{label}</span>
+              </label>
+            );
+          })}
+        </div>
+        {errors.gegnerTyp && (
+          <p className="text-[0.78rem] text-red-500 mt-1">{errors.gegnerTyp}</p>
+        )}
+      </fieldset>
+
+      {/* Name / Firma */}
       <div>
         <label htmlFor="gegnerName" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-          {t.step4.gegnerName} <span className="text-gold-dark ml-0.5">*</span>
+          {nameLabel} <span className="text-gold-dark ml-0.5">*</span>
         </label>
         <input
           id="gegnerName"
           type="text"
           value={data.gegnerName}
           onChange={(e) => onChange('gegnerName', e.target.value)}
-          placeholder={t.step4.placeholderName}
+          placeholder={namePlaceholder}
           className={`${INPUT_CLASS} ${errors.gegnerName ? 'border-red-400' : ''}`}
         />
         {errors.gegnerName && <p className="text-[0.78rem] text-red-500 mt-1">{errors.gegnerName}</p>}
       </div>
+
+      {/* Rechtsform (nur bei Unternehmen, optional) */}
+      {isFirma && (
+        <div>
+          <label htmlFor="gegnerRechtsform" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+            {t.step4.gegnerRechtsform}
+          </label>
+          <input
+            id="gegnerRechtsform"
+            type="text"
+            value={data.gegnerRechtsform}
+            onChange={(e) => onChange('gegnerRechtsform', e.target.value)}
+            placeholder={t.step4.placeholderRechtsformGegner}
+            className={INPUT_CLASS}
+          />
+        </div>
+      )}
 
       {/* Gegner Straße */}
       <div>
@@ -83,19 +139,21 @@ export default function Step4Gegner({ data, onChange, errors }: StepProps) {
       </div>
 
       {/* Ansprechpartner (optional) */}
-      <div>
-        <label htmlFor="gegnerAnsprechpartner" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-          {t.step4.gegnerAnsprechpartner}
-        </label>
-        <input
-          id="gegnerAnsprechpartner"
-          type="text"
-          value={data.gegnerAnsprechpartner}
-          onChange={(e) => onChange('gegnerAnsprechpartner', e.target.value)}
-          placeholder={t.step4.placeholderAnsprechpartner}
-          className={INPUT_CLASS}
-        />
-      </div>
+      {isFirma && (
+        <div>
+          <label htmlFor="gegnerAnsprechpartner" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
+            {t.step4.gegnerAnsprechpartner}
+          </label>
+          <input
+            id="gegnerAnsprechpartner"
+            type="text"
+            value={data.gegnerAnsprechpartner}
+            onChange={(e) => onChange('gegnerAnsprechpartner', e.target.value)}
+            placeholder={t.step4.placeholderAnsprechpartner}
+            className={INPUT_CLASS}
+          />
+        </div>
+      )}
 
       {/* E-Mail Gegner (optional) */}
       <div>

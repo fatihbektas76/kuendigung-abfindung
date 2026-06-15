@@ -9,6 +9,8 @@ const INPUT_CLASS =
 export default function Step3Rechtsgebiet({ data, onChange, errors }: StepProps) {
   const { t } = useLanguage();
 
+  const hasError = !!errors.rechtsgebiet && !data.rechtsgebiet && !data.rechtsgebietSonstiges.trim();
+
   return (
     <div className="space-y-5">
       <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-2">
@@ -26,11 +28,8 @@ export default function Step3Rechtsgebiet({ data, onChange, errors }: StepProps)
         <select
           id="rechtsgebiet"
           value={data.rechtsgebiet}
-          onChange={(e) => {
-            onChange('rechtsgebiet', e.target.value as typeof data.rechtsgebiet);
-            if (e.target.value) onChange('rechtsgebietSonstiges', '');
-          }}
-          className={`form-select ${INPUT_CLASS} ${errors.rechtsgebiet && !data.rechtsgebietSonstiges.trim() ? 'border-red-400' : ''}`}
+          onChange={(e) => onChange('rechtsgebiet', e.target.value as typeof data.rechtsgebiet)}
+          className={`form-select ${INPUT_CLASS} ${hasError ? 'border-red-400' : ''}`}
         >
           <option value="" disabled>{t.step3.selectPlaceholder}</option>
           {t.rechtsgebietOptionen.map((opt) => (
@@ -39,25 +38,23 @@ export default function Step3Rechtsgebiet({ data, onChange, errors }: StepProps)
         </select>
       </div>
 
-      {/* Freitext alternativ */}
+      {/* Freitext — kann zusätzlich oder alternativ ausgefüllt werden */}
       <div>
         <label htmlFor="rechtsgebietSonstiges" className="block text-[0.84rem] font-semibold text-ink mb-1.5">
           {t.step3.sonstigesLabel}
         </label>
+        <p className="text-[0.78rem] text-ink-muted mb-1.5">{t.step3.sonstigesHint}</p>
         <textarea
           id="rechtsgebietSonstiges"
           value={data.rechtsgebietSonstiges}
-          onChange={(e) => {
-            onChange('rechtsgebietSonstiges', e.target.value);
-            if (e.target.value.trim()) onChange('rechtsgebiet', '');
-          }}
+          onChange={(e) => onChange('rechtsgebietSonstiges', e.target.value)}
           placeholder={t.step3.sonstigesPlaceholder}
-          rows={3}
+          rows={4}
           className={`${INPUT_CLASS} resize-y`}
         />
       </div>
 
-      {errors.rechtsgebiet && <p className="text-[0.78rem] text-red-500 mt-1">{errors.rechtsgebiet}</p>}
+      {hasError && <p className="text-[0.78rem] text-red-500 mt-1">{errors.rechtsgebiet}</p>}
     </div>
   );
 }

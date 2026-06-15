@@ -168,10 +168,21 @@ function buildKuendigungHtml(formData: ReturnType<typeof sanitizeKuendigung>, at
 /* ─── Allgemein form ─── */
 
 function sanitizeAllgemein(body: Record<string, unknown>) {
+  const rawMandantTyp = s(body.mandantTyp, 20);
+  const mandantTyp: 'privat' | 'unternehmen' =
+    rawMandantTyp === 'unternehmen' ? 'unternehmen' : 'privat';
+  const rawGegnerTyp = s(body.gegnerTyp, 20);
+  const gegnerTyp: 'privat' | 'unternehmen' =
+    rawGegnerTyp === 'privat' ? 'privat' : 'unternehmen';
+
   return {
+    mandantTyp,
     vorname: s(body.vorname, 200),
     nachname: s(body.nachname, 200),
     geburtsdatum: s(body.geburtsdatum, 20),
+    firmenname: s(body.firmenname, 300),
+    rechtsform: s(body.rechtsform, 100),
+    vertretungsberechtigt: s(body.vertretungsberechtigt, 300),
     strasseHausnummer: s(body.strasseHausnummer, 300),
     plz: s(body.plz, 10),
     ort: s(body.ort, 200),
@@ -179,7 +190,9 @@ function sanitizeAllgemein(body: Record<string, unknown>) {
     email: s(body.email, 200),
     rechtsgebiet: s(body.rechtsgebiet, 100),
     rechtsgebietSonstiges: s(body.rechtsgebietSonstiges, 500),
+    gegnerTyp,
     gegnerName: s(body.gegnerName, 300),
+    gegnerRechtsform: s(body.gegnerRechtsform, 100),
     gegnerStrasse: s(body.gegnerStrasse, 300),
     gegnerPlz: s(body.gegnerPlz, 10),
     gegnerOrt: s(body.gegnerOrt, 200),
@@ -196,27 +209,53 @@ function buildAllgemeinHtml(formData: ReturnType<typeof sanitizeAllgemein>, atta
   const rechtsgebietLabel = RECHTSGEBIET_LABELS[formData.rechtsgebiet] || formData.rechtsgebietSonstiges || formData.rechtsgebiet || 'Nicht angegeben';
   const rsvDauerLabel = formData.rechtsschutzDauer === 'laenger3' ? 'Länger als 3 Monate' : formData.rechtsschutzDauer === 'genau3' ? 'Genau 3 Monate' : formData.rechtsschutzDauer === 'kuerzer3' ? 'Kürzer als 3 Monate' : 'k.A.';
 
+  const mandantTypLabel = formData.mandantTyp === 'unternehmen' ? 'Unternehmen' : 'Privatperson';
+  const gegnerTypLabel = formData.gegnerTyp === 'privat' ? 'Privatperson' : 'Unternehmen';
+
+  const mandantRows = formData.mandantTyp === 'unternehmen'
+    ? `
+      ${row('Mandantentyp', mandantTypLabel)}
+      ${row('Firmenname', formData.firmenname)}
+      ${formData.rechtsform ? row('Rechtsform', formData.rechtsform) : ''}
+      ${row('Vertretungsberechtigt', formData.vertretungsberechtigt)}
+    `
+    : `
+      ${row('Mandantentyp', mandantTypLabel)}
+      ${row('Name', `${formData.vorname} ${formData.nachname}`)}
+      ${row('Geburtsdatum', formData.geburtsdatum)}
+    `;
+
+  const gegnerRows = formData.gegnerTyp === 'privat'
+    ? `
+      ${row('Gegnertyp', gegnerTypLabel)}
+      ${row('Name', formData.gegnerName)}
+    `
+    : `
+      ${row('Gegnertyp', gegnerTypLabel)}
+      ${row('Firma', formData.gegnerName)}
+      ${formData.gegnerRechtsform ? row('Rechtsform', formData.gegnerRechtsform) : ''}
+    `;
+
   return `
     <h2 style="color:#333;font-family:sans-serif">Neue Mandantenaufnahme (${escapeHtml(rechtsgebietLabel)})</h2>
 
-    <h3 style="${H3}">Persönliche Daten</h3>
+    <h3 style="${H3}">Mandant (${escapeHtml(mandantTypLabel)})</h3>
     <table style="${TABLE}">
-      ${row('Name', `${formData.vorname} ${formData.nachname}`)}
-      ${row('Geburtsdatum', formData.geburtsdatum)}
+      ${mandantRows}
       ${row('Adresse', `${formData.strasseHausnummer}, ${formData.plz} ${formData.ort}`)}
-      ${row('Handynummer', formData.handynummer)}
+      ${row('Telefon', formData.handynummer)}
       ${row('E-Mail', formData.email)}
     </table>
 
     <h3 style="${H3}">Rechtsgebiet</h3>
     <table style="${TABLE}">
       ${row('Thema', rechtsgebietLabel)}
-      ${formData.rechtsgebietSonstiges && formData.rechtsgebiet ? row('Beschreibung', formData.rechtsgebietSonstiges) : ''}
+      ${formData.rechtsgebietSonstiges ? row('Eigene Beschreibung', formData.rechtsgebietSonstiges) : ''}
     </table>
 
-    <h3 style="${H3}">Gegner</h3>
+    <h3 style="${H3}">Gegner (${escapeHtml(gegnerTypLabel)})</h3>
     <table style="${TABLE}">
-      ${row('Name / Firma', formData.gegnerName)}
+      ${gegnerRows}
       ${row('Adresse', `${formData.gegnerStrasse}, ${formData.gegnerPlz} ${formData.gegnerOrt}`)}
       ${formData.gegnerAnsprechpartner ? row('Ansprechpartner', formData.gegnerAnsprechpartner) : ''}
       ${formData.gegnerEmail ? row('E-Mail', formData.gegnerEmail) : ''}
@@ -245,18 +284,28 @@ export async function POST(request: NextRequest) {
     }
 
     // Required fields (shared)
-    const vorname = s(body.vorname, 200);
-    const nachname = s(body.nachname, 200);
     const email = s(body.email, 200);
+    const formType = s(body.formType, 20) || 'kuendigung';
+    const mandantTypRaw = s(body.mandantTyp, 20);
+    const isUnternehmen = formType === 'allgemein' && mandantTypRaw === 'unternehmen';
 
-    if (!vorname || !nachname || !email) {
-      return NextResponse.json({ error: 'Pflichtfelder fehlen.' }, { status: 400 });
+    if (isUnternehmen) {
+      const firmenname = s(body.firmenname, 300);
+      const vertretung = s(body.vertretungsberechtigt, 300);
+      if (!firmenname || !vertretung || !email) {
+        return NextResponse.json({ error: 'Pflichtfelder fehlen.' }, { status: 400 });
+      }
+    } else {
+      const vorname = s(body.vorname, 200);
+      const nachname = s(body.nachname, 200);
+      if (!vorname || !nachname || !email) {
+        return NextResponse.json({ error: 'Pflichtfelder fehlen.' }, { status: 400 });
+      }
     }
     if (!EMAIL_RE.test(email)) {
       return NextResponse.json({ error: 'Ungültige E-Mail.' }, { status: 400 });
     }
 
-    const formType = s(body.formType, 20) || 'kuendigung';
     const attachments = buildAttachments(body);
 
     let htmlContent: string;
@@ -266,9 +315,12 @@ export async function POST(request: NextRequest) {
     if (formType === 'allgemein') {
       const formData = sanitizeAllgemein(body);
       const rechtsgebietLabel = RECHTSGEBIET_LABELS[formData.rechtsgebiet] || formData.rechtsgebietSonstiges || formData.rechtsgebiet || 'Allgemein';
+      const mandantLabel = formData.mandantTyp === 'unternehmen'
+        ? formData.firmenname
+        : `${formData.vorname} ${formData.nachname}`;
       htmlContent = buildAllgemeinHtml(formData, attachments.length);
-      subject = `Neue Mandantenaufnahme (${rechtsgebietLabel}): ${formData.vorname} ${formData.nachname}`;
-      webhookData = { ...formData, name: `${formData.vorname} ${formData.nachname}`, formType: 'allgemein' };
+      subject = `Neue Mandantenaufnahme (${rechtsgebietLabel}): ${mandantLabel}`;
+      webhookData = { ...formData, name: mandantLabel, formType: 'allgemein' };
     } else {
       const formData = sanitizeKuendigung(body);
       htmlContent = buildKuendigungHtml(formData, attachments.length);
