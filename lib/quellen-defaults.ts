@@ -1,7 +1,7 @@
 export type Quelle = {
   text: string;
   url: string;
-  art: 'gesetz' | 'urteil' | 'amtlich';
+  art: 'gesetz' | 'urteil' | 'amtlich' | 'externer-ratgeber';
 };
 
 export type BagUrteil = {
@@ -204,6 +204,11 @@ export const QUELLEN_KSCHG_ANWENDUNG: Quelle[] = [
     text: 'BAG – 2 AZR 560/20 — Gemeinschaftsbetrieb mehrerer Unternehmen (einheitlicher Leitungsapparat)',
     url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Aktenzeichen=2%20AZR%20560%2F20',
     art: 'urteil',
+  },
+  {
+    text: 'Weiterführender Ratgeber: rightmart — Allgemeiner Kündigungsschutz',
+    url: 'https://rightmart.de/ratgeber/allgemeiner-kuendigungsschutz',
+    art: 'externer-ratgeber',
   },
 ];
 
