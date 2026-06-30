@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { headers } from 'next/headers';
 import './globals.css';
 import LayoutClient from '@/components/LayoutClient';
+import EnLayoutClient from '@/components/en/LayoutClient';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { BASE_URL, STATIC_SLUG_MAP, REVERSE_SLUG_MAP } from '@/lib/i18n';
 
 const playfair = localFont({
   src: [
@@ -85,10 +88,37 @@ export const metadata: Metadata = {
   },
 };
 
+function buildHreflangPair(pathname: string): { de: string; en: string | null } {
+  const isEn = pathname.startsWith('/en');
+  if (isEn) {
+    const trimmed = pathname.replace(/\/$/, '') || '/en';
+    const dePath = REVERSE_SLUG_MAP[trimmed] ?? null;
+    return {
+      de: dePath ? `${BASE_URL}${dePath === '/' ? '/' : dePath + '/'}` : `${BASE_URL}/`,
+      en: `${BASE_URL}${pathname}${pathname.endsWith('/') ? '' : '/'}`,
+    };
+  }
+  const trimmed = pathname.replace(/\/$/, '') || '/';
+  const enPath = STATIC_SLUG_MAP[trimmed] ?? null;
+  return {
+    de: `${BASE_URL}${pathname}${pathname.endsWith('/') ? '' : '/'}`,
+    en: enPath ? `${BASE_URL}${enPath === '/en/' ? '/en/' : enPath + '/'}` : null,
+  };
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const headerList = headers();
+  const pathname = headerList.get('x-pathname') ?? '/';
+  const isEnglish = pathname.startsWith('/en');
+  const htmlLang = isEnglish ? 'en' : 'de';
+  const { de: deHref, en: enHref } = buildHreflangPair(pathname);
+
   return (
-    <html lang="de" dir="ltr" className={`${playfair.variable} ${sourceSans.variable}`}>
+    <html lang={htmlLang} dir="ltr" className={`${playfair.variable} ${sourceSans.variable}`}>
       <head>
+        <link rel="alternate" hrefLang="de" href={deHref} />
+        {enHref && <link rel="alternate" hrefLang="en" href={enHref} />}
+        <link rel="alternate" hrefLang="x-default" href={deHref} />
         {/* Schema.org - WebSite */}
         <script
           type="application/ld+json"
@@ -97,9 +127,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@context': 'https://schema.org',
               '@type': 'WebSite',
               name: 'gekuendigt-abfindung.de',
-              alternateName: 'Gekündigt? Abfindung & Kündigungsschutz',
-              url: 'https://www.gekuendigt-abfindung.de/',
-              inLanguage: 'de-DE',
+              alternateName: isEnglish
+                ? 'German employment law for English speakers'
+                : 'Gekündigt? Abfindung & Kündigungsschutz',
+              url: isEnglish
+                ? 'https://www.gekuendigt-abfindung.de/en/'
+                : 'https://www.gekuendigt-abfindung.de/',
+              inLanguage: isEnglish ? 'en' : 'de-DE',
               publisher: {
                 '@type': 'Organization',
                 name: 'APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG',
@@ -109,25 +143,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 '@type': 'SearchAction',
                 target: {
                   '@type': 'EntryPoint',
-                  urlTemplate: 'https://www.google.com/search?q=site%3Agekuendigt-abfindung.de+{search_term_string}',
+                  urlTemplate:
+                    'https://www.google.com/search?q=site%3Agekuendigt-abfindung.de+{search_term_string}',
                 },
                 'query-input': 'required name=search_term_string',
               },
             }),
           }}
         />
-
       </head>
       <body className="font-sans text-ink bg-white leading-relaxed">
         <SeoGeoBase
-          pageUrl={SEO_CONFIG.baseUrl + '/'}
+          pageUrl={SEO_CONFIG.baseUrl + (isEnglish ? '/en/' : '/')}
           pageTitle={SEO_CONFIG.siteName}
-          pageDescription="Arbeitsrecht-Tools und kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht"
+          pageDescription={
+            isEnglish
+              ? 'Employment-law tools and a free initial review by a German employment-law specialist.'
+              : 'Arbeitsrecht-Tools und kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht'
+          }
           pageType="WebPage"
           includeOrganization={true}
           includeRating={false}
         />
-        <LayoutClient>{children}</LayoutClient>
+        {isEnglish ? (
+          <EnLayoutClient>{children}</EnLayoutClient>
+        ) : (
+          <LayoutClient>{children}</LayoutClient>
+        )}
       </body>
     </html>
   );

@@ -1,0 +1,101 @@
+import FadeUp from '../FadeUp';
+
+export default function Hero() {
+  return (
+    <header
+      className="pt-[150px] pb-[100px] px-8 bg-cream text-center relative overflow-hidden max-md:pt-[120px] max-md:pb-[70px] max-md:px-6"
+      role="banner"
+    >
+      <div className="absolute -top-[40%] -right-[15%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(166,139,75,0.07)_0%,transparent_70%)] z-[2]" />
+      <div className="max-w-[820px] mx-auto relative z-[3]">
+        <div className="font-serif text-[1.1rem] text-gold-dark font-semibold mb-1.5">
+          German Employment Law Firm{' '}
+          <span className="inline-block text-[0.68rem] font-bold text-green bg-green-bg border-[1.5px] border-green/20 rounded px-2.5 py-[3px] tracking-wider uppercase ml-2.5 align-middle">
+            Free Case Review
+          </span>
+        </div>
+        <h1 className="font-serif text-[clamp(2.1rem,4.5vw,3.2rem)] font-extrabold leading-[1.15] mt-[18px] mb-[22px] tracking-tight max-md:text-[1.9rem]">
+          Dismissed in Germany?
+          <br />
+          Maximize your severance.
+        </h1>
+        <p className="text-[1.12rem] text-ink-muted max-w-[640px] mx-auto mb-6 leading-relaxed">
+          You have only 3 weeks after a dismissal to file an unfair-dismissal claim
+          (&sect;&nbsp;4 KSchG). We review your case for free — whether the dismissal is
+          legally sound, and how high your severance can be. German-qualified employment-law
+          specialist with 20+ years of experience and 2,000+ successful proceedings.
+        </p>
+        <div className="flex items-center justify-center gap-x-5 gap-y-1.5 flex-wrap mb-8 text-[0.82rem] text-ink-light">
+          <span className="flex items-center gap-1.5">
+            <svg
+              className="w-4 h-4 text-green shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            Specialist lawyer since 2011
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg
+              className="w-4 h-4 text-green shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            Free initial review
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg
+              className="w-4 h-4 text-green shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            English-speaking
+          </span>
+        </div>
+        <div className="flex gap-3.5 justify-center flex-wrap max-md:flex-col max-md:items-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-[30px] py-3.5 rounded-sm text-[0.95rem] font-semibold no-underline transition-all bg-gold-dark text-white hover:bg-[#735F32] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(166,139,75,0.25)] max-md:w-full max-md:justify-center"
+          >
+            Review my severance for free &rarr;
+          </a>
+          <a
+            href="/en/severance-calculator"
+            className="inline-flex items-center gap-2 px-[30px] py-3.5 rounded-sm text-[0.95rem] font-semibold no-underline transition-all bg-transparent text-ink border-[1.5px] border-border hover:border-gold hover:text-gold max-md:w-full max-md:justify-center"
+          >
+            Calculate severance
+          </a>
+        </div>
+        <FadeUp className="flex gap-10 justify-center mt-12 pt-9 border-t border-border max-md:gap-5 max-md:flex-wrap">
+          <div>
+            <div className="font-serif text-[1.6rem] font-bold text-gold-dark">20+</div>
+            <div className="text-[0.82rem] text-ink-muted mt-0.5">Years experience</div>
+          </div>
+          <div>
+            <div className="font-serif text-[1.6rem] font-bold text-gold-dark">2,000+</div>
+            <div className="text-[0.82rem] text-ink-muted mt-0.5">Successful cases</div>
+          </div>
+          <div>
+            <div className="font-serif text-[1.6rem] font-bold text-gold-dark">3 weeks</div>
+            <div className="text-[0.82rem] text-ink-muted mt-0.5">Filing deadline</div>
+          </div>
+          <div>
+            <div className="font-serif text-[1.6rem] font-bold text-gold-dark">5.0 &#9733;</div>
+            <div className="text-[0.82rem] text-ink-muted mt-0.5">Client rating</div>
+          </div>
+        </FadeUp>
+      </div>
+    </header>
+  );
+}

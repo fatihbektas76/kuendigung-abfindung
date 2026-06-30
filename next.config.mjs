@@ -90,6 +90,19 @@ const nextConfig = {
         source: '/fristlose-kuendigung-nach-:slug-betriebszugehoerigkeit/',
         destination: '/fristlose-kuendigung-jahre/:slug/',
       },
+      // English programmatic-page rewrites: public URLs map to internal dynamic routes
+      {
+        source: '/en/severance-after-:slug-years-of-employment/',
+        destination: '/en/severance-years/:slug/',
+      },
+      {
+        source: '/en/dismissed-after-:slug-years-of-employment/',
+        destination: '/en/dismissed-years/:slug/',
+      },
+      {
+        source: '/en/summary-dismissal-after-:slug-years-of-employment/',
+        destination: '/en/summary-dismissal-years/:slug/',
+      },
     ];
   },
 };

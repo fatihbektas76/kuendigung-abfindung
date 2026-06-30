@@ -8,6 +8,7 @@ import { staedte } from '@/data/staedte';
 import { gemeinden } from '@/data/gemeinden';
 import { berlinBezirke } from '@/data/bezirke';
 import { urteile } from '@/lib/urteile';
+import { EN_TENURE_ENTRIES } from '@/lib/en-tenure';
 
 export const revalidate = 3600;
 
@@ -157,5 +158,92 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...clusterAPages, ...clusterDPages, ...clusterGPages, ...clusterHPages, ...clusterJPages, ...clusterFPages, ...musterSubPages, ...arbeitsrechtAnwaltPages, ...urteilPages];
+  /**
+   * English subfolder. Only the routes that already have a corresponding
+   * page file are listed here — programmatic /en/* routes will be added in
+   * Phase 3 when the English content generation pipeline lands.
+   */
+  const enStaticPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/en/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.95 },
+    { url: `${BASE_URL}/en/severance-pay/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/en/dismissal/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/en/termination-agreement/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/en/written-warning/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.85 },
+    { url: `${BASE_URL}/en/summary-dismissal/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.85 },
+    { url: `${BASE_URL}/en/notice-periods/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/en/unfair-dismissal-claim/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${BASE_URL}/en/dismissal-protection-act/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/en/redundancy-dismissal/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/en/severance-table/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/en/severance-calculator/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE_URL}/en/notice-period-calculator/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/en/check-dismissal/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE_URL}/en/tools/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/en/guides/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/en/team/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/en/author/fatih-bektas/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/en/legal-notice/`, lastModified: monthly, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE_URL}/en/privacy-policy/`, lastModified: monthly, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE_URL}/en/overtime-calculator/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/en/unused-holiday-pay-calculator/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/en/part-time-holiday-calculator/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/en/small-business-threshold-calculator/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/en/legal-fees-calculator/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/en/check-written-warning/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${BASE_URL}/en/check-termination-agreement/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${BASE_URL}/en/glossary/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/en/employment-lawyer/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${BASE_URL}/en/client-intake/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/en/guides/employment-law/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/en/guides/templates/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/en/guides/court-rulings/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/en/guides/dismissal-statistics-german-labour-courts/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.7 },
+  ];
+
+  // English programmatic pages — severance / dismissed / summary by tenure
+  const enSeverancePages: MetadataRoute.Sitemap = EN_TENURE_ENTRIES.map((e) => ({
+    url: `${BASE_URL}/en/severance-after-${e.slug}-years-of-employment/`,
+    lastModified: monthly,
+    changeFrequency: 'weekly',
+    priority: 0.75,
+  }));
+
+  const enDismissedPages: MetadataRoute.Sitemap = EN_TENURE_ENTRIES.map((e) => ({
+    url: `${BASE_URL}/en/dismissed-after-${e.slug}-years-of-employment/`,
+    lastModified: monthly,
+    changeFrequency: 'weekly',
+    priority: 0.75,
+  }));
+
+  const enSummaryPages: MetadataRoute.Sitemap = EN_TENURE_ENTRIES.map((e) => ({
+    url: `${BASE_URL}/en/summary-dismissal-after-${e.slug}-years-of-employment/`,
+    lastModified: monthly,
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
+  const enCityPages: MetadataRoute.Sitemap = staedte.map((s) => ({
+    url: `${BASE_URL}/en/employment-lawyer/${s.slug}/`,
+    lastModified: monthly,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticPages,
+    ...clusterAPages,
+    ...clusterDPages,
+    ...clusterGPages,
+    ...clusterHPages,
+    ...clusterJPages,
+    ...clusterFPages,
+    ...musterSubPages,
+    ...arbeitsrechtAnwaltPages,
+    ...urteilPages,
+    ...enStaticPages,
+    ...enSeverancePages,
+    ...enDismissedPages,
+    ...enSummaryPages,
+    ...enCityPages,
+  ];
 }

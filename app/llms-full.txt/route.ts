@@ -143,6 +143,110 @@ export async function GET() {
   lines.push(`- [Impressum](${BASE}/legal-notice/)`);
   lines.push('');
 
+  // -------------------------------------------------------------------
+  // English section — full English /en/ tree for AI crawlers / LLMs
+  // -------------------------------------------------------------------
+  lines.push('---');
+  lines.push('');
+  lines.push('# English — German employment law for English speakers');
+  lines.push('');
+  lines.push(`> The /en/ subfolder targets English-speaking employees of German companies. All substantive law is German labour law (KSchG, BGB, BUrlG, ArbZG). Written and reviewed by Fatih Bektas, German employment-law specialist (Fachanwalt für Arbeitsrecht).`);
+  lines.push('');
+
+  lines.push('## Pillar pages (English)');
+  lines.push('');
+  lines.push(`- [Home](${BASE}/en/): Dismissed in Germany? Free severance review by a specialist.`);
+  lines.push(`- [Severance pay](${BASE}/en/severance-pay/): Formula, entitlement, tax (Fünftelregelung), negotiation leverage.`);
+  lines.push(`- [Dismissal](${BASE}/en/dismissal/): 3-week deadline, types, first-24-hours playbook.`);
+  lines.push(`- [Termination agreement](${BASE}/en/termination-agreement/): When to sign, Sperrzeit risk, must-have clauses.`);
+  lines.push(`- [Summary dismissal](${BASE}/en/summary-dismissal/): § 626 BGB, 2-week rule, defence strategy.`);
+  lines.push(`- [Written warning](${BASE}/en/written-warning/): Invalid warnings and removal claims.`);
+  lines.push(`- [Redundancy dismissal](${BASE}/en/redundancy-dismissal/): Social selection, § 1a KSchG offer.`);
+  lines.push(`- [Unfair-dismissal claim](${BASE}/en/unfair-dismissal-claim/): Filing procedure, costs, settlement.`);
+  lines.push(`- [Notice periods (§ 622 BGB)](${BASE}/en/notice-periods/): Statutory minimum by tenure.`);
+  lines.push(`- [Dismissal Protection Act](${BASE}/en/dismissal-protection-act/): When the KSchG applies — 6-month qualification & small-business threshold.`);
+  lines.push(`- [Severance table](${BASE}/en/severance-table/): Half-month and full-month factors across salary brackets.`);
+  lines.push('');
+
+  lines.push('## Calculators (English)');
+  lines.push('');
+  lines.push(`- [Severance calculator](${BASE}/en/severance-calculator/): Salary × years × negotiation factor.`);
+  lines.push(`- [Notice-period calculator](${BASE}/en/notice-period-calculator/): § 622 BGB stepped notice periods.`);
+  lines.push(`- [Overtime calculator](${BASE}/en/overtime-calculator/): Hourly rate, base pay and supplement.`);
+  lines.push(`- [Unused-holiday pay calculator](${BASE}/en/unused-holiday-pay-calculator/): § 7 (4) BUrlG cash-out.`);
+  lines.push(`- [Part-time holiday calculator](${BASE}/en/part-time-holiday-calculator/): Pro-rated entitlement.`);
+  lines.push(`- [Small-business threshold calculator](${BASE}/en/small-business-threshold-calculator/): § 23 KSchG part-time weighting.`);
+  lines.push(`- [Legal-fees calculator (RVG)](${BASE}/en/legal-fees-calculator/): Lawyer fees from value in dispute.`);
+  lines.push(`- [Check your dismissal](${BASE}/en/check-dismissal/): 5-question quiz with verdict.`);
+  lines.push(`- [Check your written warning](${BASE}/en/check-written-warning/): Formal-flaw quiz.`);
+  lines.push(`- [Check your termination agreement](${BASE}/en/check-termination-agreement/): Sperrzeit & clause check.`);
+  lines.push(`- [Tools overview](${BASE}/en/tools/): Full index.`);
+  lines.push('');
+
+  lines.push('## Severance by tenure (English programmatic — 40 pages)');
+  lines.push('');
+  lines.push(`- [Severance after 1 year](${BASE}/en/severance-after-1-year-of-employment/)`);
+  lines.push(`- [Severance after 5 years](${BASE}/en/severance-after-5-years-of-employment/)`);
+  lines.push(`- [Severance after 10 years](${BASE}/en/severance-after-10-years-of-employment/)`);
+  lines.push(`- [Severance after 15 years](${BASE}/en/severance-after-15-years-of-employment/)`);
+  lines.push(`- [Severance after 20 years](${BASE}/en/severance-after-20-years-of-employment/)`);
+  lines.push(`- [Severance after 25 years](${BASE}/en/severance-after-25-years-of-employment/)`);
+  lines.push(`- [Severance after 30 years](${BASE}/en/severance-after-30-years-of-employment/)`);
+  lines.push(`- Pattern for all 1–40 years: ${BASE}/en/severance-after-N-years-of-employment/`);
+  lines.push('');
+
+  lines.push('## Dismissed by tenure (English programmatic — 40 pages)');
+  lines.push('');
+  lines.push(`- [Dismissed after 1 year](${BASE}/en/dismissed-after-1-year-of-employment/)`);
+  lines.push(`- [Dismissed after 5 years](${BASE}/en/dismissed-after-5-years-of-employment/)`);
+  lines.push(`- [Dismissed after 10 years](${BASE}/en/dismissed-after-10-years-of-employment/)`);
+  lines.push(`- [Dismissed after 15 years](${BASE}/en/dismissed-after-15-years-of-employment/)`);
+  lines.push(`- [Dismissed after 20 years](${BASE}/en/dismissed-after-20-years-of-employment/)`);
+  lines.push(`- Pattern for all 1–40 years: ${BASE}/en/dismissed-after-N-years-of-employment/`);
+  lines.push('');
+
+  lines.push('## Summary dismissal by tenure (English programmatic — 40 pages)');
+  lines.push('');
+  lines.push(`- [Summary dismissal after 1 year](${BASE}/en/summary-dismissal-after-1-year-of-employment/)`);
+  lines.push(`- [Summary dismissal after 5 years](${BASE}/en/summary-dismissal-after-5-years-of-employment/)`);
+  lines.push(`- [Summary dismissal after 10 years](${BASE}/en/summary-dismissal-after-10-years-of-employment/)`);
+  lines.push(`- [Summary dismissal after 20 years](${BASE}/en/summary-dismissal-after-20-years-of-employment/)`);
+  lines.push(`- Pattern for all 1–40 years: ${BASE}/en/summary-dismissal-after-N-years-of-employment/`);
+  lines.push('');
+
+  lines.push('## English-speaking employment lawyer by city');
+  lines.push('');
+  lines.push(`- [Employment lawyer — overview](${BASE}/en/employment-lawyer/): English-speaking representation at any German Arbeitsgericht.`);
+  lines.push(`- [Berlin](${BASE}/en/employment-lawyer/berlin/)`);
+  lines.push(`- [Hamburg](${BASE}/en/employment-lawyer/hamburg/)`);
+  lines.push(`- [Munich](${BASE}/en/employment-lawyer/muenchen/)`);
+  lines.push(`- [Frankfurt am Main](${BASE}/en/employment-lawyer/frankfurt-am-main/)`);
+  lines.push(`- [Cologne](${BASE}/en/employment-lawyer/koeln/)`);
+  lines.push(`- [Stuttgart](${BASE}/en/employment-lawyer/stuttgart/)`);
+  lines.push(`- [Düsseldorf](${BASE}/en/employment-lawyer/duesseldorf/)`);
+  lines.push(`- [Heidelberg](${BASE}/en/employment-lawyer/heidelberg/)`);
+  lines.push(`- Pattern: ${BASE}/en/employment-lawyer/<city-slug>/`);
+  lines.push('');
+
+  lines.push('## Reference & guides (English)');
+  lines.push('');
+  lines.push(`- [Guides overview](${BASE}/en/guides/)`);
+  lines.push(`- [Employment-law reference](${BASE}/en/guides/employment-law/): Sources, working hours, holiday, special protections, AGG, references.`);
+  lines.push(`- [Landmark court rulings](${BASE}/en/guides/court-rulings/): BAG 6 AZR 333/21, BAG 2 AZR 541/09 (Emmely), CJEU C-684/16.`);
+  lines.push(`- [Dismissal statistics](${BASE}/en/guides/dismissal-statistics-german-labour-courts/): Settlement rates, time to hearing, severance multiples.`);
+  lines.push(`- [Letter templates](${BASE}/en/guides/templates/)`);
+  lines.push(`- [Glossary](${BASE}/en/glossary/): English definitions for Abmahnung, Aufhebungsvertrag, Sperrzeit, etc.`);
+  lines.push('');
+
+  lines.push('## About and contact (English)');
+  lines.push('');
+  lines.push(`- [About Fatih Bektas](${BASE}/en/author/fatih-bektas/): Specialist credentials and background.`);
+  lines.push(`- [Team](${BASE}/en/team/): APOS Legal Heidelberg.`);
+  lines.push(`- [Client intake — free case review](${BASE}/en/client-intake/): Send your case (response within 48 hours).`);
+  lines.push(`- [Legal notice](${BASE}/en/legal-notice/) (English summary; legally binding: ${BASE}/legal-notice/)`);
+  lines.push(`- [Privacy policy](${BASE}/en/privacy-policy/) (English summary; legally binding: ${BASE}/privacy-policy/)`);
+  lines.push('');
+
   const content = lines.join('\n');
 
   return new NextResponse(content, {
