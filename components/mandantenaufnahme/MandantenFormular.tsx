@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import type { MandantenFormData, FileAttachment, StepErrors } from './types';
 import { initialFormData } from './types';
+import { isoToGermanDate } from '@/lib/format-date';
 import type { Translations } from './translations';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import ProgressBar from './ProgressBar';
@@ -165,6 +166,14 @@ function MandantenFormularInner() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
+          // Convert ISO dates to DD.MM.YYYY for the lead notification
+          geburtsdatum: isoToGermanDate(data.geburtsdatum),
+          eintrittsdatum: isoToGermanDate(data.eintrittsdatum),
+          kuendigungen: data.kuendigungen.map((k) => ({
+            ...k,
+            kuendigungsDatum: isoToGermanDate(k.kuendigungsDatum),
+            zugangsDatum: isoToGermanDate(k.zugangsDatum),
+          })),
           formType: 'kuendigung',
           files: files.map((f) => ({
             name: f.name,

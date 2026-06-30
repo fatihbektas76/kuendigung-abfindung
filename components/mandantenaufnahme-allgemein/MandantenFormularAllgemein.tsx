@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import type { AllgemeinFormData, FileAttachment, StepErrors } from './types';
 import { initialAllgemeinFormData } from './types';
+import { isoToGermanDate } from '@/lib/format-date';
 import type { AllgemeinTranslations } from './translations';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import ProgressBar from '@/components/mandantenaufnahme/ProgressBar';
@@ -174,6 +175,8 @@ function MandantenFormularAllgemeinInner() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
+          // Convert ISO date to DD.MM.YYYY for the lead notification
+          geburtsdatum: isoToGermanDate(data.geburtsdatum),
           formType: 'allgemein',
           files: files.map((f) => ({
             name: f.name,
