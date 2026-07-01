@@ -65,6 +65,11 @@ function validateStep(step: number, data: MandantenFormData, t: Translations): S
     } else if (!EMAIL_RE.test(data.email)) {
       errors.email = v.emailInvalid;
     }
+    if (!data.emailConfirm.trim()) {
+      errors.emailConfirm = v.emailConfirmRequired;
+    } else if (data.emailConfirm.trim().toLowerCase() !== data.email.trim().toLowerCase()) {
+      errors.emailConfirm = v.emailMismatch;
+    }
   }
 
   if (step === 2) {
@@ -161,15 +166,17 @@ function MandantenFormularInner() {
     setLoading(true);
 
     try {
+      // emailConfirm ist reine UI-Validierung, nicht an das Backend senden.
+      const { emailConfirm: _emailConfirm, ...payload } = data;
       const res = await fetch('/api/mandantenaufnahme', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...data,
+          ...payload,
           // Convert ISO dates to DD.MM.YYYY for the lead notification
-          geburtsdatum: isoToGermanDate(data.geburtsdatum),
-          eintrittsdatum: isoToGermanDate(data.eintrittsdatum),
-          kuendigungen: data.kuendigungen.map((k) => ({
+          geburtsdatum: isoToGermanDate(payload.geburtsdatum),
+          eintrittsdatum: isoToGermanDate(payload.eintrittsdatum),
+          kuendigungen: payload.kuendigungen.map((k) => ({
             ...k,
             kuendigungsDatum: isoToGermanDate(k.kuendigungsDatum),
             zugangsDatum: isoToGermanDate(k.zugangsDatum),

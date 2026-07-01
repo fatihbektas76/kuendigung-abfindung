@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import type { StepProps, PartyType } from '../types';
 import { useLanguage } from '../LanguageContext';
 import AddressAutocomplete from '@/components/mandantenaufnahme/AddressAutocomplete';
+import { suggestEmail } from '@/lib/email-suggest';
 
 const INPUT_CLASS =
   'w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] placeholder:text-ink-muted';
@@ -10,6 +12,21 @@ const INPUT_CLASS =
 export default function Step1Persoenlich({ data, onChange, errors }: StepProps) {
   const { t } = useLanguage();
   const isFirma = data.mandantTyp === 'unternehmen';
+  const [emailSuggestion, setEmailSuggestion] = useState<string | null>(null);
+
+  const handleEmailBlur = () => {
+    const suggestion = suggestEmail(data.email);
+    setEmailSuggestion(suggestion && suggestion !== data.email ? suggestion : null);
+  };
+
+  const applySuggestion = () => {
+    if (!emailSuggestion) return;
+    onChange('email', emailSuggestion);
+    if (!data.emailConfirm || data.emailConfirm === data.email) {
+      onChange('emailConfirm', emailSuggestion);
+    }
+    setEmailSuggestion(null);
+  };
 
   return (
     <div className="space-y-5">
@@ -202,12 +219,56 @@ export default function Step1Persoenlich({ data, onChange, errors }: StepProps) 
         <input
           id="a-email"
           type="email"
+          autoComplete="email"
+          inputMode="email"
           value={data.email}
-          onChange={(e) => onChange('email', e.target.value)}
+          onChange={(e) => {
+            onChange('email', e.target.value);
+            if (emailSuggestion) setEmailSuggestion(null);
+          }}
+          onBlur={handleEmailBlur}
           placeholder={t.step1.placeholderEmail}
           className={`${INPUT_CLASS} ${errors.email ? 'border-red-400' : ''}`}
         />
         {errors.email && <p className="text-[0.78rem] text-red-500 mt-1">{errors.email}</p>}
+        {!errors.email && emailSuggestion && (
+          <p className="text-[0.8rem] text-gold-dark mt-1.5">
+            {t.step1.didYouMean}{' '}
+            <button
+              type="button"
+              onClick={applySuggestion}
+              className="font-semibold underline underline-offset-2 hover:text-ink transition-colors"
+            >
+              {emailSuggestion}
+            </button>
+            {'?'}
+          </p>
+        )}
+        <p className="text-[0.76rem] text-ink-muted mt-1.5">{t.step1.emailHint}</p>
+      </div>
+
+      {/* E-Mail Bestätigung */}
+      <div>
+        <label
+          htmlFor="a-email-confirm"
+          className="block text-[0.84rem] font-semibold text-ink mb-1.5"
+        >
+          {t.step1.emailConfirm} <span className="text-gold-dark ml-0.5">*</span>
+        </label>
+        <input
+          id="a-email-confirm"
+          type="email"
+          autoComplete="off"
+          inputMode="email"
+          value={data.emailConfirm}
+          onChange={(e) => onChange('emailConfirm', e.target.value)}
+          onPaste={(e) => e.preventDefault()}
+          placeholder={t.step1.placeholderEmailConfirm}
+          className={`${INPUT_CLASS} ${errors.emailConfirm ? 'border-red-400' : ''}`}
+        />
+        {errors.emailConfirm && (
+          <p className="text-[0.78rem] text-red-500 mt-1">{errors.emailConfirm}</p>
+        )}
       </div>
     </div>
   );
