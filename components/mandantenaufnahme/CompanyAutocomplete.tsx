@@ -32,7 +32,9 @@ export default function CompanyAutocomplete({
   const { t } = useLanguage();
   const inputRef = useRef<HTMLInputElement>(null);
   const [apiLoaded, setApiLoaded] = useState(false);
-  const [manualMode, setManualMode] = useState(false);
+  // Manuelle Eingabe ist Default — Nutzer kippt bei Bedarf per Button auf
+  // Google-Suche um. Analog zu AddressAutocomplete.
+  const [manualMode, setManualMode] = useState(true);
   const autocompleteRef = useRef<GoogleAutocompleteInstance | null>(null);
 
   const handlePlaceChanged = useCallback(() => {
