@@ -46,6 +46,10 @@ export interface FileAttachment {
   content: string; // base64
   size: number;
   type: string;
+  // UI-only: gesetzt, wenn die Datei durch die Scan-Pipeline lief.
+  // Wird nicht an das Backend übermittelt.
+  originalSize?: number;
+  scanned?: boolean;
 }
 
 export const initialFormData: MandantenFormData = {

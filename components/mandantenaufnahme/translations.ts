@@ -141,11 +141,15 @@ const de = {
     description: 'Laden Sie relevante Dokumente hoch: Kündigungsschreiben, Arbeitsvertrag, Gehaltsabrechnungen etc.',
     dragHint: 'Dateien hierher ziehen',
     processing: 'Wird verarbeitet...',
+    scanning: 'Fotos werden als Scan-PDF optimiert...',
     selectFile: 'Datei auswählen',
     takePhoto: 'Foto aufnehmen',
     removeLabel: '{name} entfernen',
     errorType: '"{name}" hat einen nicht unterstützten Dateityp.',
     errorSize: 'Maximale Gesamtgröße von {max} MB überschritten.',
+    scanBadge: 'Scan-PDF',
+    sizeReduced: 'von {from}',
+    hintScan: 'Fotos werden automatisch begradigt, aufgehellt und als kompaktes PDF hochgeladen.',
   },
 
   // Searchable select
@@ -384,11 +388,15 @@ const en: Translations = {
     description: 'Upload relevant documents: termination letter, employment contract, pay slips, etc.',
     dragHint: 'Drag files here',
     processing: 'Processing...',
+    scanning: 'Optimising photos as scan PDF...',
     selectFile: 'Select file',
     takePhoto: 'Take photo',
     removeLabel: 'Remove {name}',
     errorType: '"{name}" has an unsupported file type.',
     errorSize: 'Maximum total size of {max} MB exceeded.',
+    scanBadge: 'Scan PDF',
+    sizeReduced: 'from {from}',
+    hintScan: 'Photos are automatically brightened and uploaded as a compact PDF.',
   },
 
   searchableSelect: {

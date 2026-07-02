@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from 'react';
 import type { FileAttachment } from './types';
 import { useLanguage } from './LanguageContext';
+import { isProcessableImage, photoToScanPdf } from '@/lib/scan-image';
 
 interface FileUploadProps {
   files: FileAttachment[];
@@ -37,6 +38,31 @@ function readFileAsBase64(file: File): Promise<string> {
   });
 }
 
+interface Prepared {
+  file: File;
+  scanned: boolean;
+  originalSize: number;
+}
+
+async function prepareForUpload(input: File): Promise<Prepared> {
+  const originalSize = input.size;
+  if (!isProcessableImage(input)) {
+    return { file: input, scanned: false, originalSize };
+  }
+  try {
+    const pdf = await photoToScanPdf(input);
+    // Falls die Scan-Version größer als das Original wäre (z. B. sehr
+    // kleines Foto), lieber das Original behalten.
+    if (pdf.size >= originalSize) {
+      return { file: input, scanned: false, originalSize };
+    }
+    return { file: pdf, scanned: true, originalSize };
+  } catch {
+    // HEIC auf Chrome / kaputte Bilder / OOM → Rohdatei durchlassen.
+    return { file: input, scanned: false, originalSize };
+  }
+}
+
 export default function FileUpload({
   files,
   onFilesChange,
@@ -60,27 +86,37 @@ export default function FileUpload({
       const newFiles: FileAttachment[] = [];
       let runningTotal = totalSize;
 
-      for (const file of Array.from(fileList)) {
-        // Type check
-        if (!ACCEPTED_TYPES.includes(file.type) && !file.name.match(/\.(heic|heif)$/i)) {
-          setError(t.fileUpload.errorType.replace('{name}', file.name));
+      for (const raw of Array.from(fileList)) {
+        // Type check (auf der Rohdatei, vor der Scan-Konvertierung)
+        if (!ACCEPTED_TYPES.includes(raw.type) && !raw.name.match(/\.(heic|heif)$/i)) {
+          setError(t.fileUpload.errorType.replace('{name}', raw.name));
           continue;
         }
 
-        // Size check
-        if (runningTotal + file.size > maxBytes) {
+        // Duplicate check auf der Rohdatei (Name + Original-Größe)
+        if (files.some((f) => f.name === raw.name && (f.originalSize ?? f.size) === raw.size)) {
+          continue;
+        }
+
+        // Scan-Pipeline: Foto → optimiertes PDF. Andere Dateien bleiben unverändert.
+        const { file: prepared, scanned, originalSize } = await prepareForUpload(raw);
+
+        // Size check auf die endgültige (komprimierte) Größe
+        if (runningTotal + prepared.size > maxBytes) {
           setError(t.fileUpload.errorSize.replace('{max}', String(maxTotalSizeMB)));
           break;
         }
 
-        // Duplicate check
-        if (files.some((f) => f.name === file.name && f.size === file.size)) {
-          continue;
-        }
-
-        const content = await readFileAsBase64(file);
-        newFiles.push({ name: file.name, content, size: file.size, type: file.type });
-        runningTotal += file.size;
+        const content = await readFileAsBase64(prepared);
+        newFiles.push({
+          name: prepared.name,
+          content,
+          size: prepared.size,
+          type: prepared.type,
+          scanned: scanned || undefined,
+          originalSize: scanned ? originalSize : undefined,
+        });
+        runningTotal += prepared.size;
       }
 
       if (newFiles.length > 0) {
@@ -129,7 +165,7 @@ export default function FileUpload({
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <p className="text-[0.88rem] text-ink-muted mb-3">
-          {processing ? t.fileUpload.processing : t.fileUpload.dragHint}
+          {processing ? t.fileUpload.scanning : t.fileUpload.dragHint}
         </p>
         <div className="flex items-center justify-center gap-3 flex-wrap">
           <button
@@ -182,6 +218,7 @@ export default function FileUpload({
           {formatSize(totalSize)} / {maxTotalSizeMB} MB
         </span>
       </div>
+      <p className="text-[0.72rem] text-ink-muted mt-1">{t.fileUpload.hintScan}</p>
 
       {/* Progress bar for total size */}
       {totalSize > 0 && (
@@ -212,7 +249,18 @@ export default function FileUpload({
                   <path d="M14 2v6h6M16 13H8M16 17H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span className="text-[0.82rem] text-ink truncate">{file.name}</span>
-                <span className="text-[0.72rem] text-ink-muted whitespace-nowrap">({formatSize(file.size)})</span>
+                <span className="text-[0.72rem] text-ink-muted whitespace-nowrap">
+                  ({formatSize(file.size)}
+                  {file.scanned && file.originalSize
+                    ? ` · ${t.fileUpload.sizeReduced.replace('{from}', formatSize(file.originalSize))}`
+                    : ''}
+                  )
+                </span>
+                {file.scanned && (
+                  <span className="text-[0.68rem] font-semibold text-gold-dark bg-gold-bg py-0.5 px-1.5 rounded-sm whitespace-nowrap">
+                    {t.fileUpload.scanBadge}
+                  </span>
+                )}
               </div>
               <button
                 type="button"
