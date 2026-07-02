@@ -50,6 +50,10 @@ export interface FileAttachment {
   // Wird nicht an das Backend übermittelt.
   originalSize?: number;
   scanned?: boolean;
+  /** JPEG-Rohdaten (data-URL) für Multi-Page-Merge. UI-only. */
+  scanJpeg?: string;
+  /** Seitenverhältnis der Scan-Vorlage (w/h). UI-only. */
+  scanAspect?: number;
 }
 
 export const initialFormData: MandantenFormData = {

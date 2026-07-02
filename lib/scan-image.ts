@@ -2,20 +2,56 @@
  * Foto → „Scan"-PDF (client-seitig).
  *
  * Nimmt ein Handy-Foto und liefert ein A4-PDF zurück, das kleiner ist,
- * gleichmäßig hell/kontrastreich (Weißpunkt-Stretch) und die richtige
- * EXIF-Rotation hat. Kein Server, keine WASM-Abhängigkeit — nur Canvas +
- * das ohnehin vorhandene jsPDF.
+ * gleichmäßig hell/kontrastreich (Weißpunkt-Stretch), die richtige
+ * EXIF-Rotation hat — und optional perspektivisch entzerrt ist, wenn
+ * der Aufrufer vier Ecken übergibt (siehe DeskewModal).
  *
- * Bewusst nicht enthalten: echte Perspektiv-/Trapez-Entzerrung.
- * Das bräuchte OpenCV.js (~10 MB WASM) und lohnt für ein Intake-Formular
- * nicht. Für gerade fotografierte Dokumente reicht das Ergebnis.
+ * Kein Server, keine WASM-Abhängigkeit — nur Canvas + jsPDF +
+ * die eigene Homographie-Implementierung in lib/perspective-transform.ts.
  */
+
+import type { Quad } from './perspective-transform';
+import { warpPerspective, estimateDstSize } from './perspective-transform';
 
 export interface ScanOptions {
   /** Max. Langkante nach Skalierung (px). Default 2000. */
   maxDimension?: number;
   /** JPEG-Qualität (0..1). Default 0.82. */
   jpegQuality?: number;
+  /**
+   * Optional: Perspektivkorrektur mit den vier Blatt-Ecken (im Koordinaten-
+   * system des Originalbilds, in Pixeln). Wird üblicherweise vom DeskewModal
+   * gesetzt. Ohne diesen Parameter läuft nur Skalierung + Enhance.
+   */
+  warpQuad?: Quad;
+}
+
+export interface ImageLoadResult {
+  canvas: HTMLCanvasElement;
+  width: number;
+  height: number;
+}
+
+/**
+ * Lädt ein Bild in ein Canvas — respektiert EXIF-Rotation. Nützlich für
+ * das DeskewModal, damit die Ecken im rotierten Koordinatensystem
+ * definiert werden.
+ */
+export async function loadImageIntoCanvas(file: File): Promise<ImageLoadResult> {
+  const bitmap = await createImageBitmap(file, { imageOrientation: 'from-image' });
+  const canvas = document.createElement('canvas');
+  canvas.width = bitmap.width;
+  canvas.height = bitmap.height;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) {
+    bitmap.close?.();
+    throw new Error('Canvas 2D-Kontext nicht verfügbar');
+  }
+  ctx.drawImage(bitmap, 0, 0);
+  const w = bitmap.width;
+  const h = bitmap.height;
+  bitmap.close?.();
+  return { canvas, width: w, height: h };
 }
 
 const MIME_IMAGE_PREFIX = 'image/';
@@ -127,40 +163,64 @@ function blobToDataUrl(blob: Blob): Promise<string> {
   });
 }
 
+export interface ScanResult {
+  /** Fertiges einseitiges A4-PDF. */
+  pdf: File;
+  /** JPEG als data-URL (für späteres Multi-Page-Merge, siehe pdf-combine). */
+  jpegDataUrl: string;
+  /** Seitenverhältnis w/h für Portrait/Landscape-Entscheidung. */
+  aspect: number;
+}
+
 /**
  * Wandelt ein Foto in ein A4-PDF um. Wirft, wenn der Browser die Datei
  * nicht als Bild dekodieren kann (z. B. HEIC auf Non-Safari). Der Aufrufer
  * sollte das abfangen und die Originaldatei behalten.
  */
-export async function photoToScanPdf(file: File, opts: ScanOptions = {}): Promise<File> {
+export async function photoToScanPdf(file: File, opts: ScanOptions = {}): Promise<ScanResult> {
   const maxDim = opts.maxDimension ?? 2000;
   const quality = opts.jpegQuality ?? 0.82;
 
-  const bitmap = await loadBitmap(file);
-  const { w, h } = computeTargetSize(bitmap.width, bitmap.height, maxDim);
+  let canvas: HTMLCanvasElement;
+  let w: number;
+  let h: number;
 
-  const canvas = document.createElement('canvas');
-  canvas.width = w;
-  canvas.height = h;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) {
+  if (opts.warpQuad) {
+    // Mit Perspektivkorrektur: erst auf voller Auflösung entzerren, dann
+    // ggf. downsizen. Die Zielgröße ergibt sich aus dem Quad selbst.
+    const src = await loadImageIntoCanvas(file);
+    const size = estimateDstSize(opts.warpQuad, maxDim);
+    canvas = warpPerspective(src.canvas, opts.warpQuad, size.w, size.h);
+    w = size.w;
+    h = size.h;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) throw new Error('Warp-Canvas ohne 2D-Kontext');
+    applyScanEnhancement(ctx, w, h);
+  } else {
+    const bitmap = await loadBitmap(file);
+    const target = computeTargetSize(bitmap.width, bitmap.height, maxDim);
+    w = target.w;
+    h = target.h;
+    canvas = document.createElement('canvas');
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) {
+      bitmap.close?.();
+      throw new Error('Canvas 2D-Kontext nicht verfügbar');
+    }
+    ctx.drawImage(bitmap, 0, 0, w, h);
     bitmap.close?.();
-    throw new Error('Canvas 2D-Kontext nicht verfügbar');
+    applyScanEnhancement(ctx, w, h);
   }
-  ctx.drawImage(bitmap, 0, 0, w, h);
-  bitmap.close?.();
-
-  applyScanEnhancement(ctx, w, h);
 
   const jpegBlob = await canvasToJpegBlob(canvas, quality);
   const jpegDataUrl = await blobToDataUrl(jpegBlob);
 
-  // jsPDF dynamisch laden — spart Bundle-Größe für Nutzer, die nichts hochladen.
+  const aspect = w / h;
+  const landscape = aspect > 1;
   const jsPDFModule = await import('jspdf');
   const JsPDF = jsPDFModule.jsPDF;
-
-  const imgAspect = w / h;
-  const landscape = imgAspect > 1;
   const pdf = new JsPDF({
     orientation: landscape ? 'landscape' : 'portrait',
     unit: 'mm',
@@ -176,10 +236,10 @@ export async function photoToScanPdf(file: File, opts: ScanOptions = {}): Promis
   const maxH = pageH - margin * 2;
 
   let drawW = maxW;
-  let drawH = drawW / imgAspect;
+  let drawH = drawW / aspect;
   if (drawH > maxH) {
     drawH = maxH;
-    drawW = drawH * imgAspect;
+    drawW = drawH * aspect;
   }
   const offsetX = (pageW - drawW) / 2;
   const offsetY = (pageH - drawH) / 2;
@@ -188,5 +248,6 @@ export async function photoToScanPdf(file: File, opts: ScanOptions = {}): Promis
 
   const pdfBlob = pdf.output('blob');
   const newName = file.name.replace(/\.[^.]+$/, '') + '.pdf';
-  return new File([pdfBlob], newName, { type: 'application/pdf' });
+  const pdfFile = new File([pdfBlob], newName, { type: 'application/pdf' });
+  return { pdf: pdfFile, jpegDataUrl, aspect };
 }

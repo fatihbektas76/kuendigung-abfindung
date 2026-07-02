@@ -150,6 +150,30 @@ const de = {
     scanBadge: 'Scan-PDF',
     sizeReduced: 'von {from}',
     hintScan: 'Fotos werden automatisch begradigt, aufgehellt und als kompaktes PDF hochgeladen.',
+    combineButton: 'Alle Scans zu einem PDF zusammenfassen',
+    combineName: 'Dokument-Scan.pdf',
+  },
+
+  // Deskew modal (Ecken ziehen)
+  deskew: {
+    title: 'Ecken des Dokuments markieren',
+    instruction: 'Ziehen Sie die vier Ecken auf die Ränder des Blatts. Das Bild wird begradigt.',
+    loading: 'Bild wird geladen …',
+    apply: 'Übernehmen',
+    skip: 'Ohne Entzerrung',
+    reset: 'Ecken zurücksetzen',
+    close: 'Schließen',
+  },
+
+  // Reorder modal (Multi-Page-PDF)
+  reorder: {
+    title: 'Scans zu einem PDF zusammenfassen',
+    instruction: 'Reihenfolge der Seiten festlegen. Die einzelnen Scans werden ersetzt durch ein mehrseitiges PDF.',
+    moveUp: 'Nach oben',
+    moveDown: 'Nach unten',
+    combine: 'Zusammenfassen',
+    cancel: 'Abbrechen',
+    close: 'Schließen',
   },
 
   // Searchable select
@@ -397,6 +421,28 @@ const en: Translations = {
     scanBadge: 'Scan PDF',
     sizeReduced: 'from {from}',
     hintScan: 'Photos are automatically brightened and uploaded as a compact PDF.',
+    combineButton: 'Combine all scans into one PDF',
+    combineName: 'Document-Scan.pdf',
+  },
+
+  deskew: {
+    title: 'Mark the document corners',
+    instruction: 'Drag the four corners to the edges of the sheet. The image will be straightened.',
+    loading: 'Loading image …',
+    apply: 'Apply',
+    skip: 'Skip straightening',
+    reset: 'Reset corners',
+    close: 'Close',
+  },
+
+  reorder: {
+    title: 'Combine scans into one PDF',
+    instruction: 'Set the page order. The individual scans will be replaced by one multi-page PDF.',
+    moveUp: 'Move up',
+    moveDown: 'Move down',
+    combine: 'Combine',
+    cancel: 'Cancel',
+    close: 'Close',
   },
 
   searchableSelect: {

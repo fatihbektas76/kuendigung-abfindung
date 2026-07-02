@@ -4,6 +4,10 @@ import { useState, useRef, useCallback } from 'react';
 import type { FileAttachment } from './types';
 import { useLanguage } from './LanguageContext';
 import { isProcessableImage, photoToScanPdf } from '@/lib/scan-image';
+import { combineJpegsToPdf } from '@/lib/pdf-combine';
+import type { Quad } from '@/lib/perspective-transform';
+import DeskewModal from './DeskewModal';
+import ReorderModal, { type ReorderItem } from './ReorderModal';
 
 interface FileUploadProps {
   files: FileAttachment[];
@@ -38,29 +42,13 @@ function readFileAsBase64(file: File): Promise<string> {
   });
 }
 
-interface Prepared {
-  file: File;
-  scanned: boolean;
-  originalSize: number;
-}
-
-async function prepareForUpload(input: File): Promise<Prepared> {
-  const originalSize = input.size;
-  if (!isProcessableImage(input)) {
-    return { file: input, scanned: false, originalSize };
-  }
-  try {
-    const pdf = await photoToScanPdf(input);
-    // Falls die Scan-Version größer als das Original wäre (z. B. sehr
-    // kleines Foto), lieber das Original behalten.
-    if (pdf.size >= originalSize) {
-      return { file: input, scanned: false, originalSize };
-    }
-    return { file: pdf, scanned: true, originalSize };
-  } catch {
-    // HEIC auf Chrome / kaputte Bilder / OOM → Rohdatei durchlassen.
-    return { file: input, scanned: false, originalSize };
-  }
+function blobToBase64(blob: Blob): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
 }
 
 export default function FileUpload({
@@ -75,57 +63,172 @@ export default function FileUpload({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
 
+  // Deskew-Queue: alle noch nicht verarbeiteten Bild-Dateien
+  const [deskewQueue, setDeskewQueue] = useState<File[]>([]);
+  // Reorder-Modal-Sichtbarkeit
+  const [showReorder, setShowReorder] = useState(false);
+
   const totalSize = files.reduce((sum, f) => sum + f.size, 0);
   const maxBytes = maxTotalSizeMB * 1024 * 1024;
 
-  const processFiles = useCallback(
-    async (fileList: FileList | File[]) => {
-      setError('');
-      setProcessing(true);
+  const scannableCount = files.filter((f) => f.scanned && f.scanJpeg && f.scanAspect).length;
 
-      const newFiles: FileAttachment[] = [];
-      let runningTotal = totalSize;
-
+  const validateAndSplit = useCallback(
+    (fileList: FileList | File[]): { images: File[]; others: File[] } => {
+      const images: File[] = [];
+      const others: File[] = [];
       for (const raw of Array.from(fileList)) {
-        // Type check (auf der Rohdatei, vor der Scan-Konvertierung)
         if (!ACCEPTED_TYPES.includes(raw.type) && !raw.name.match(/\.(heic|heif)$/i)) {
           setError(t.fileUpload.errorType.replace('{name}', raw.name));
           continue;
         }
-
-        // Duplicate check auf der Rohdatei (Name + Original-Größe)
         if (files.some((f) => f.name === raw.name && (f.originalSize ?? f.size) === raw.size)) {
           continue;
         }
+        if (isProcessableImage(raw)) images.push(raw);
+        else others.push(raw);
+      }
+      return { images, others };
+    },
+    [files, t],
+  );
 
-        // Scan-Pipeline: Foto → optimiertes PDF. Andere Dateien bleiben unverändert.
-        const { file: prepared, scanned, originalSize } = await prepareForUpload(raw);
-
-        // Size check auf die endgültige (komprimierte) Größe
-        if (runningTotal + prepared.size > maxBytes) {
+  /**
+   * Nicht-Bild-Dateien direkt in die Liste hängen. Bilder werden über die
+   * Deskew-Queue verarbeitet (siehe processImageWithQuad).
+   */
+  const appendOthers = useCallback(
+    async (others: File[]) => {
+      const newFiles: FileAttachment[] = [];
+      let runningTotal = totalSize;
+      for (const raw of others) {
+        if (runningTotal + raw.size > maxBytes) {
           setError(t.fileUpload.errorSize.replace('{max}', String(maxTotalSizeMB)));
           break;
         }
-
-        const content = await readFileAsBase64(prepared);
-        newFiles.push({
-          name: prepared.name,
-          content,
-          size: prepared.size,
-          type: prepared.type,
-          scanned: scanned || undefined,
-          originalSize: scanned ? originalSize : undefined,
-        });
-        runningTotal += prepared.size;
+        const content = await readFileAsBase64(raw);
+        newFiles.push({ name: raw.name, content, size: raw.size, type: raw.type });
+        runningTotal += raw.size;
       }
-
-      if (newFiles.length > 0) {
-        onFilesChange([...files, ...newFiles]);
-      }
-
-      setProcessing(false);
+      if (newFiles.length > 0) onFilesChange([...files, ...newFiles]);
     },
-    [files, onFilesChange, totalSize, maxBytes, maxTotalSizeMB, t]
+    [files, onFilesChange, totalSize, maxBytes, maxTotalSizeMB, t],
+  );
+
+  const processFiles = useCallback(
+    async (fileList: FileList | File[]) => {
+      setError('');
+      const { images, others } = validateAndSplit(fileList);
+      if (others.length > 0) {
+        setProcessing(true);
+        await appendOthers(others);
+        setProcessing(false);
+      }
+      if (images.length > 0) {
+        // Deskew-Modal öffnet automatisch, sobald deskewQueue nicht leer ist.
+        setDeskewQueue((prev) => [...prev, ...images]);
+      }
+    },
+    [validateAndSplit, appendOthers],
+  );
+
+  /**
+   * Wird vom DeskewModal aufgerufen — quad=null bedeutet „ohne Entzerrung".
+   */
+  const processImageWithQuad = useCallback(
+    async (raw: File, quad: Quad | null) => {
+      setProcessing(true);
+      try {
+        let attachment: FileAttachment;
+        try {
+          const result = await photoToScanPdf(raw, { warpQuad: quad ?? undefined });
+          if (result.pdf.size >= raw.size && !quad) {
+            // Scan-Version wäre größer als Original UND es wurde nicht entzerrt → Original nehmen.
+            const content = await readFileAsBase64(raw);
+            attachment = { name: raw.name, content, size: raw.size, type: raw.type };
+          } else {
+            const content = await readFileAsBase64(result.pdf);
+            attachment = {
+              name: result.pdf.name,
+              content,
+              size: result.pdf.size,
+              type: result.pdf.type,
+              scanned: true,
+              originalSize: raw.size,
+              scanJpeg: result.jpegDataUrl,
+              scanAspect: result.aspect,
+            };
+          }
+        } catch {
+          // HEIC auf Chrome / OOM → Rohdatei durchlassen
+          const content = await readFileAsBase64(raw);
+          attachment = { name: raw.name, content, size: raw.size, type: raw.type };
+        }
+
+        // Size check erst nach der Konvertierung
+        if (totalSize + attachment.size > maxBytes) {
+          setError(t.fileUpload.errorSize.replace('{max}', String(maxTotalSizeMB)));
+        } else {
+          onFilesChange([...files, attachment]);
+        }
+      } finally {
+        setProcessing(false);
+        setDeskewQueue((prev) => prev.slice(1));
+      }
+    },
+    [files, onFilesChange, totalSize, maxBytes, maxTotalSizeMB, t],
+  );
+
+  const currentDeskewFile = deskewQueue[0] ?? null;
+
+  const handleDeskewConfirm = (quad: Quad | null) => {
+    if (currentDeskewFile) processImageWithQuad(currentDeskewFile, quad);
+  };
+
+  const handleDeskewCancel = () => {
+    // Aktuelles Bild komplett verwerfen und mit dem nächsten weitermachen.
+    setDeskewQueue((prev) => prev.slice(1));
+  };
+
+  const combineScans = useCallback(
+    async (orderedIds: string[]) => {
+      setShowReorder(false);
+      setProcessing(true);
+      try {
+        const scans = files.filter((f) => f.scanned && f.scanJpeg && f.scanAspect);
+        const ordered = orderedIds
+          .map((id) => scans.find((s) => s.name === id))
+          .filter((s): s is FileAttachment => Boolean(s));
+        if (ordered.length < 2) return;
+
+        const pdfBlob = await combineJpegsToPdf(
+          ordered.map((s) => ({ jpegDataUrl: s.scanJpeg!, aspect: s.scanAspect! })),
+        );
+        const content = await blobToBase64(pdfBlob);
+        const combined: FileAttachment = {
+          name: t.fileUpload.combineName,
+          content,
+          size: pdfBlob.size,
+          type: 'application/pdf',
+          scanned: true,
+        };
+
+        // Alle bisherigen Scans entfernen, kombiniertes PDF anhängen
+        const remaining = files.filter((f) => !(f.scanned && f.scanJpeg && f.scanAspect));
+        // Größen-Check
+        const newTotal = remaining.reduce((s, f) => s + f.size, 0) + pdfBlob.size;
+        if (newTotal > maxBytes) {
+          setError(t.fileUpload.errorSize.replace('{max}', String(maxTotalSizeMB)));
+          return;
+        }
+        onFilesChange([...remaining, combined]);
+      } catch {
+        setError(t.fileUpload.errorType.replace('{name}', t.fileUpload.combineName));
+      } finally {
+        setProcessing(false);
+      }
+    },
+    [files, onFilesChange, maxBytes, maxTotalSizeMB, t],
   );
 
   function removeFile(index: number) {
@@ -141,6 +244,10 @@ export default function FileUpload({
     }
   }
 
+  const scanItems: ReorderItem[] = files
+    .filter((f) => f.scanned && f.scanJpeg && f.scanAspect)
+    .map((f) => ({ id: f.name, name: f.name, thumb: f.scanJpeg! }));
+
   return (
     <div>
       <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
@@ -150,7 +257,6 @@ export default function FileUpload({
         {t.fileUpload.description}
       </p>
 
-      {/* Drop zone */}
       <div
         onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
         onDragLeave={() => setDragOver(false)}
@@ -176,7 +282,6 @@ export default function FileUpload({
           >
             {t.fileUpload.selectFile}
           </button>
-          {/* Camera button — shown on all devices, only functional on mobile */}
           <button
             type="button"
             onClick={() => cameraInputRef.current?.click()}
@@ -198,7 +303,10 @@ export default function FileUpload({
           type="file"
           accept={ACCEPTED_EXTENSIONS}
           multiple
-          onChange={(e) => e.target.files && processFiles(e.target.files)}
+          onChange={(e) => {
+            if (e.target.files) processFiles(e.target.files);
+            e.target.value = '';
+          }}
           className="hidden"
         />
         <input
@@ -206,12 +314,14 @@ export default function FileUpload({
           type="file"
           accept="image/*"
           capture="environment"
-          onChange={(e) => e.target.files && processFiles(e.target.files)}
+          onChange={(e) => {
+            if (e.target.files) processFiles(e.target.files);
+            e.target.value = '';
+          }}
           className="hidden"
         />
       </div>
 
-      {/* Size indicator */}
       <div className="flex items-center justify-between mt-2 text-[0.76rem] text-ink-muted">
         <span>JPG, PNG, HEIC, PDF, DOC, DOCX</span>
         <span>
@@ -220,7 +330,6 @@ export default function FileUpload({
       </div>
       <p className="text-[0.72rem] text-ink-muted mt-1">{t.fileUpload.hintScan}</p>
 
-      {/* Progress bar for total size */}
       {totalSize > 0 && (
         <div className="h-1 bg-border rounded-full overflow-hidden mt-1">
           <div
@@ -232,10 +341,8 @@ export default function FileUpload({
         </div>
       )}
 
-      {/* Error */}
       {error && <p className="text-[0.78rem] text-red-500 mt-2">{error}</p>}
 
-      {/* File list */}
       {files.length > 0 && (
         <ul className="mt-3 space-y-2">
           {files.map((file, i) => (
@@ -275,6 +382,33 @@ export default function FileUpload({
             </li>
           ))}
         </ul>
+      )}
+
+      {scannableCount >= 2 && (
+        <button
+          type="button"
+          onClick={() => setShowReorder(true)}
+          disabled={processing}
+          className="mt-3 py-2 px-4 border-2 border-gold text-gold-dark font-semibold text-[0.82rem] rounded-sm cursor-pointer bg-white hover:bg-gold-bg disabled:opacity-50"
+        >
+          {t.fileUpload.combineButton}
+        </button>
+      )}
+
+      {currentDeskewFile && (
+        <DeskewModal
+          file={currentDeskewFile}
+          onConfirm={handleDeskewConfirm}
+          onCancel={handleDeskewCancel}
+        />
+      )}
+
+      {showReorder && (
+        <ReorderModal
+          items={scanItems}
+          onConfirm={combineScans}
+          onCancel={() => setShowReorder(false)}
+        />
       )}
     </div>
   );
