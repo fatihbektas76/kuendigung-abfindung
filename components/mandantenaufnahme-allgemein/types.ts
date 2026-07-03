@@ -33,7 +33,6 @@ export interface AllgemeinFormData {
   ort: string;
   handynummer: string;
   email: string;
-  emailConfirm: string;
 
   // Step 2 — Rechtsgebiet
   rechtsgebiet: Rechtsgebiet;
@@ -87,7 +86,6 @@ export const initialAllgemeinFormData: AllgemeinFormData = {
   ort: '',
   handynummer: '',
   email: '',
-  emailConfirm: '',
 
   rechtsgebiet: '',
   rechtsgebietSonstiges: '',

@@ -8,7 +8,6 @@ export interface MandantenFormData {
   ort: string;
   handynummer: string;
   email: string;
-  emailConfirm: string;
 
   // Step 2 — Familienstatus
   beziehungsstatus: string;
@@ -65,7 +64,6 @@ export const initialFormData: MandantenFormData = {
   ort: '',
   handynummer: '',
   email: '',
-  emailConfirm: '',
 
   beziehungsstatus: '',
   kinder: '',

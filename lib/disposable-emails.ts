@@ -1,0 +1,81 @@
+/**
+ * Wegwerf-/Temp-Mail-Domains, die wir für die Mandantenaufnahme sperren.
+ *
+ * Nicht erschöpfend — es gibt >10.000 solcher Domains — aber der Cover
+ * für die meistgenutzten Anbieter reicht in der Praxis. Bei Bedarf
+ * ergänzen; die Liste ist bewusst klein gehalten, damit sie ohne
+ * Bundle-Kosten client-seitig geprüft werden könnte.
+ */
+
+const DISPOSABLE_DOMAINS: ReadonlySet<string> = new Set([
+  '10minutemail.com',
+  '10minutemail.net',
+  '20minutemail.com',
+  'anonbox.net',
+  'byom.de',
+  'crazymailing.com',
+  'discard.email',
+  'discardmail.com',
+  'discardmail.de',
+  'dispomail.eu',
+  'dropmail.me',
+  'einmalmail.de',
+  'emailfake.com',
+  'emailondeck.com',
+  'emailtemporanea.com',
+  'fakeinbox.com',
+  'fakemail.net',
+  'guerrillamail.biz',
+  'guerrillamail.com',
+  'guerrillamail.de',
+  'guerrillamail.info',
+  'guerrillamail.net',
+  'guerrillamail.org',
+  'guerrillamailblock.com',
+  'harakirimail.com',
+  'inbox.si',
+  'inboxbear.com',
+  'jetable.org',
+  'kasmail.com',
+  'mailcatch.com',
+  'maildrop.cc',
+  'mailexpire.com',
+  'mailinator.com',
+  'mailinator.net',
+  'mailmoat.com',
+  'mailnesia.com',
+  'mailtemp.info',
+  'mintemail.com',
+  'mohmal.com',
+  'moot.es',
+  'muellemail.com',
+  'muellmail.com',
+  'nowmymail.com',
+  'proxymail.eu',
+  'rcpt.at',
+  'sharklasers.com',
+  'spamex.com',
+  'spamgourmet.com',
+  'temp-mail.io',
+  'temp-mail.org',
+  'tempinbox.com',
+  'tempmail.de',
+  'tempmail.net',
+  'tempmailer.com',
+  'tempmailo.com',
+  'temporaryemail.net',
+  'temporarymail.com',
+  'throwawaymail.com',
+  'trashmail.com',
+  'trashmail.de',
+  'trashmail.net',
+  'trashmail.ws',
+  'yopmail.com',
+  'yopmail.fr',
+  'yopmail.net',
+  'zetmail.com',
+]);
+
+export function isDisposableDomain(domain: string): boolean {
+  return DISPOSABLE_DOMAINS.has(domain.trim().toLowerCase());
+}

@@ -74,11 +74,6 @@ function validateStep(step: number, data: AllgemeinFormData, t: AllgemeinTransla
     } else if (!EMAIL_RE.test(data.email)) {
       errors.email = v.emailInvalid;
     }
-    if (!data.emailConfirm.trim()) {
-      errors.emailConfirm = v.emailConfirmRequired;
-    } else if (data.emailConfirm.trim().toLowerCase() !== data.email.trim().toLowerCase()) {
-      errors.emailConfirm = v.emailMismatch;
-    }
   }
 
   if (step === 2) {
@@ -175,12 +170,10 @@ function MandantenFormularAllgemeinInner() {
     setLoading(true);
 
     try {
-      // emailConfirm ist reine UI-Validierung, nicht an das Backend senden.
-      const { emailConfirm: _emailConfirm, ...payload } = data;
       const jsonBody = JSON.stringify({
-        ...payload,
+        ...data,
         // Convert ISO date to DD.MM.YYYY for the lead notification
-        geburtsdatum: isoToGermanDate(payload.geburtsdatum),
+        geburtsdatum: isoToGermanDate(data.geburtsdatum),
         formType: 'allgemein',
         files: files.map((f) => ({
           name: f.name,
