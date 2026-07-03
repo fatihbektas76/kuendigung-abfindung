@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEchtlyWebhook } from '@/lib/echtly';
+import { getGraphConfig, sendMailViaGraph } from '@/lib/graph-mailer';
 
+export const runtime = 'nodejs';
 export const maxDuration = 30;
 
 const BREVO_API_URL = 'https://api.brevo.com/v3';
@@ -328,31 +330,46 @@ export async function POST(request: NextRequest) {
       webhookData = { ...formData, name: `${formData.vorname} ${formData.nachname}`, formType: 'kuendigung' };
     }
 
-    // Send email via Brevo
-    const emailPayload: Record<string, unknown> = {
-      sender: { name: 'Mandantenaufnahme', email: 'fb@fb-re.de' },
-      to: [{ email: 'bektas@apos.legal', name: 'Fatih Bektas' }],
-      subject,
-      htmlContent,
-    };
-
-    if (attachments.length > 0) {
-      emailPayload.attachment = attachments;
-    }
-
-    const emailRes = await fetch(`${BREVO_API_URL}/smtp/email`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'api-key': getApiKey(),
-      },
-      body: JSON.stringify(emailPayload),
-    });
-
-    if (!emailRes.ok) {
-      const text = await emailRes.text();
-      console.error('Brevo email failed:', emailRes.status, text);
-      throw new Error(`Brevo email failed: ${emailRes.status}`);
+    // Versand: MS Graph, falls konfiguriert; sonst Brevo als Fallback.
+    // So kann die Umstellung ohne Downtime geflippt werden, indem einfach
+    // die vier MS_GRAPH_*-Env-Variablen in Vercel gesetzt werden.
+    const graphCfg = getGraphConfig();
+    if (graphCfg) {
+      console.log('[Mail] Sende via MS Graph als', graphCfg.senderEmail);
+      await sendMailViaGraph(graphCfg, {
+        subject,
+        htmlBody: htmlContent,
+        toRecipients: ['bektas@apos.legal'],
+        attachments: attachments.map((a) => ({
+          name: a.name,
+          contentType: 'application/octet-stream',
+          contentBytes: a.content,
+        })),
+      });
+    } else {
+      console.log('[Mail] Sende via Brevo (kein MS-Graph-Config gefunden)');
+      const emailPayload: Record<string, unknown> = {
+        sender: { name: 'Mandantenaufnahme', email: 'fb@fb-re.de' },
+        to: [{ email: 'bektas@apos.legal', name: 'Fatih Bektas' }],
+        subject,
+        htmlContent,
+      };
+      if (attachments.length > 0) {
+        emailPayload.attachment = attachments;
+      }
+      const emailRes = await fetch(`${BREVO_API_URL}/smtp/email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-key': getApiKey(),
+        },
+        body: JSON.stringify(emailPayload),
+      });
+      if (!emailRes.ok) {
+        const text = await emailRes.text();
+        console.error('Brevo email failed:', emailRes.status, text);
+        throw new Error(`Brevo email failed: ${emailRes.status}`);
+      }
     }
 
     // Echtly webhook (fire-and-forget, no files)
