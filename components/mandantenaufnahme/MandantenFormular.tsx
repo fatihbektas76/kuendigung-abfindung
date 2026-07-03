@@ -168,33 +168,51 @@ function MandantenFormularInner() {
     try {
       // emailConfirm ist reine UI-Validierung, nicht an das Backend senden.
       const { emailConfirm: _emailConfirm, ...payload } = data;
+      const jsonBody = JSON.stringify({
+        ...payload,
+        // Convert ISO dates to DD.MM.YYYY for the lead notification
+        geburtsdatum: isoToGermanDate(payload.geburtsdatum),
+        eintrittsdatum: isoToGermanDate(payload.eintrittsdatum),
+        kuendigungen: payload.kuendigungen.map((k) => ({
+          ...k,
+          kuendigungsDatum: isoToGermanDate(k.kuendigungsDatum),
+          zugangsDatum: isoToGermanDate(k.zugangsDatum),
+        })),
+        formType: 'kuendigung',
+        files: files.map((f) => ({
+          name: f.name,
+          content: f.content,
+          type: f.type,
+        })),
+        website: honeypot,
+      });
+
+      // Vercel Functions haben 4,5 MB Body-Limit. Wenn wir drüber sind,
+      // sagen wir es früh — sonst kommt nur der 413 aus der Edge zurück.
+      if (jsonBody.length > 4_400_000) {
+        throw new Error('payload:too-large');
+      }
+
       const res = await fetch('/api/mandantenaufnahme', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...payload,
-          // Convert ISO dates to DD.MM.YYYY for the lead notification
-          geburtsdatum: isoToGermanDate(payload.geburtsdatum),
-          eintrittsdatum: isoToGermanDate(payload.eintrittsdatum),
-          kuendigungen: payload.kuendigungen.map((k) => ({
-            ...k,
-            kuendigungsDatum: isoToGermanDate(k.kuendigungsDatum),
-            zugangsDatum: isoToGermanDate(k.zugangsDatum),
-          })),
-          formType: 'kuendigung',
-          files: files.map((f) => ({
-            name: f.name,
-            content: f.content,
-            type: f.type,
-          })),
-          website: honeypot,
-        }),
+        body: jsonBody,
       });
-      if (!res.ok) throw new Error('Failed');
+      if (!res.ok) {
+        let serverMsg = '';
+        try {
+          const body = await res.json();
+          serverMsg = typeof body?.error === 'string' ? body.error : '';
+        } catch {
+          // ignore parse errors
+        }
+        throw new Error(serverMsg || `HTTP ${res.status}`);
+      }
       setSubmitted(true);
-    } catch {
+    } catch (err) {
       setLoading(false);
-      alert(t.submitError);
+      const detail = err instanceof Error ? err.message : '';
+      alert(detail ? `${t.submitError}\n\n(${detail})` : t.submitError);
     }
   };
 
