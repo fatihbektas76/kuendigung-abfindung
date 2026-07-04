@@ -170,37 +170,93 @@ function MandantenFormularAllgemeinInner() {
     setLoading(true);
 
     try {
-      const jsonBody = JSON.stringify({
+      const formPayload = {
         ...data,
-        // Convert ISO date to DD.MM.YYYY for the lead notification
         geburtsdatum: isoToGermanDate(data.geburtsdatum),
-        formType: 'allgemein',
-        files: files.map((f) => ({
-          name: f.name,
-          content: f.content,
-          type: f.type,
-        })),
+        formType: 'allgemein' as const,
         website: honeypot,
-      });
+      };
 
-      if (jsonBody.length > 4_400_000) {
-        throw new Error('payload:too-large');
+      let graphUpload = false;
+      try {
+        const cfgRes = await fetch('/api/mandantenaufnahme/config');
+        if (cfgRes.ok) {
+          const cfg = await cfgRes.json();
+          graphUpload = Boolean(cfg?.graphUpload);
+        }
+      } catch {
+        // Config nicht verfügbar → Legacy-Pfad
       }
 
-      const res = await fetch('/api/mandantenaufnahme', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: jsonBody,
-      });
-      if (!res.ok) {
-        let serverMsg = '';
-        try {
-          const body = await res.json();
-          serverMsg = typeof body?.error === 'string' ? body.error : '';
-        } catch {
-          // ignore parse errors
+      if (graphUpload && files.length > 0) {
+        const { dataUrlToBlob, uploadAllBlobs } = await import('@/lib/graph-upload-client');
+        const blobs = files.map((f) => ({ file: f, blob: dataUrlToBlob(f.content) }));
+
+        const initRes = await fetch('/api/mandantenaufnahme/init', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...formPayload,
+            files: blobs.map(({ file, blob }) => ({
+              name: file.name,
+              size: blob.size,
+              contentType: file.type,
+            })),
+          }),
+        });
+        if (!initRes.ok) {
+          const body = await initRes.json().catch(() => null);
+          throw new Error(body?.error || `HTTP ${initRes.status}`);
         }
-        throw new Error(serverMsg || `HTTP ${res.status}`);
+        const initBody = (await initRes.json()) as {
+          draftId: string;
+          uploadUrls: Array<{ name: string; uploadUrl: string }>;
+        };
+
+        const urlByName = new Map(initBody.uploadUrls.map((u) => [u.name, u.uploadUrl]));
+        const targets = blobs
+          .map(({ file, blob }) => {
+            const uploadUrl = urlByName.get(file.name);
+            return uploadUrl ? { name: file.name, uploadUrl, blob } : null;
+          })
+          .filter((t): t is { name: string; uploadUrl: string; blob: Blob } => Boolean(t));
+
+        await uploadAllBlobs(targets);
+
+        const sendRes = await fetch('/api/mandantenaufnahme/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...formPayload,
+            draftId: initBody.draftId,
+            attachmentCount: targets.length,
+          }),
+        });
+        if (!sendRes.ok) {
+          const body = await sendRes.json().catch(() => null);
+          throw new Error(body?.error || `HTTP ${sendRes.status}`);
+        }
+      } else {
+        const jsonBody = JSON.stringify({
+          ...formPayload,
+          files: files.map((f) => ({
+            name: f.name,
+            content: f.content,
+            type: f.type,
+          })),
+        });
+        if (jsonBody.length > 4_400_000) {
+          throw new Error('payload:too-large');
+        }
+        const res = await fetch('/api/mandantenaufnahme', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: jsonBody,
+        });
+        if (!res.ok) {
+          const body = await res.json().catch(() => null);
+          throw new Error(body?.error || `HTTP ${res.status}`);
+        }
       }
       setSubmitted(true);
     } catch (err) {

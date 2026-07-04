@@ -130,3 +130,120 @@ export async function sendMailViaGraph(cfg: GraphConfig, input: GraphMailInput):
   }
   // 202 Accepted = queued for delivery.
 }
+
+/* ─── Draft + Upload Session Path (für große Anhänge) ─── */
+
+export interface DraftInput {
+  subject: string;
+  htmlBody: string;
+  toRecipients: string[];
+}
+
+/**
+ * Legt einen Draft im Postfach des Senders an. Retourniert die
+ * Message-ID, mit der wir Upload-Sessions anhängen und am Ende
+ * senden können.
+ */
+export async function createDraft(cfg: GraphConfig, input: DraftInput): Promise<string> {
+  const token = await getAccessToken(cfg);
+  const body = {
+    subject: input.subject.slice(0, 250),
+    body: { contentType: 'HTML', content: input.htmlBody },
+    toRecipients: input.toRecipients.map((email) => ({ emailAddress: { address: email } })),
+  };
+  const url = `${GRAPH_BASE}/users/${encodeURIComponent(cfg.senderEmail)}/messages`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`Graph createDraft fehlgeschlagen (${res.status}): ${text.slice(0, 400)}`);
+  }
+  const json = (await res.json()) as { id: string };
+  if (!json.id) throw new Error('Graph createDraft: keine Message-ID zurück');
+  return json.id;
+}
+
+export interface UploadSessionInput {
+  name: string;
+  size: number;
+  contentType: string;
+}
+
+/**
+ * Erzeugt eine Upload-Session für eine große Datei am Draft. Der Client
+ * lädt dann per PUT + Content-Range direkt zu der zurückgegebenen URL —
+ * die Datei geht NICHT durch unsere Vercel-Function, also kein 4,5-MB-
+ * Body-Limit.
+ */
+export async function createUploadSession(
+  cfg: GraphConfig,
+  draftId: string,
+  input: UploadSessionInput,
+): Promise<{ uploadUrl: string; expirationDateTime: string }> {
+  const token = await getAccessToken(cfg);
+  const body = {
+    AttachmentItem: {
+      attachmentType: 'file',
+      name: input.name.slice(0, 240),
+      size: input.size,
+      contentType: input.contentType || 'application/octet-stream',
+    },
+  };
+  const url = `${GRAPH_BASE}/users/${encodeURIComponent(cfg.senderEmail)}/messages/${encodeURIComponent(draftId)}/attachments/createUploadSession`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`Graph createUploadSession fehlgeschlagen (${res.status}): ${text.slice(0, 400)}`);
+  }
+  const json = (await res.json()) as { uploadUrl: string; expirationDateTime: string };
+  if (!json.uploadUrl) throw new Error('Graph createUploadSession: keine uploadUrl');
+  return { uploadUrl: json.uploadUrl, expirationDateTime: json.expirationDateTime };
+}
+
+/**
+ * Verschickt den vollständig hochgeladenen Draft. Ergebnis: die Mail
+ * liegt sofort im Postausgang und beim Empfänger.
+ */
+export async function sendDraft(cfg: GraphConfig, draftId: string): Promise<void> {
+  const token = await getAccessToken(cfg);
+  const url = `${GRAPH_BASE}/users/${encodeURIComponent(cfg.senderEmail)}/messages/${encodeURIComponent(draftId)}/send`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (res.status !== 202 && !res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`Graph sendDraft fehlgeschlagen (${res.status}): ${text.slice(0, 400)}`);
+  }
+}
+
+/**
+ * Löscht einen Draft, wenn wir den Prozess abbrechen müssen (z. B. wenn
+ * einer der Upload-Sessions fehlschlägt und wir keinen halben Draft
+ * stehenlassen wollen).
+ */
+export async function deleteDraft(cfg: GraphConfig, draftId: string): Promise<void> {
+  try {
+    const token = await getAccessToken(cfg);
+    const url = `${GRAPH_BASE}/users/${encodeURIComponent(cfg.senderEmail)}/messages/${encodeURIComponent(draftId)}`;
+    await fetch(url, {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  } catch {
+    // Best effort — Draft kann auch später manuell aufgeräumt werden.
+  }
+}

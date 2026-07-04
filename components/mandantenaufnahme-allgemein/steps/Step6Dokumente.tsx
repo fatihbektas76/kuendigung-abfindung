@@ -34,9 +34,10 @@ export default function Step6Dokumente({
         {t.step6.description}
       </p>
 
-      {/* File Upload — 4 MB reicht dank Scan-Kompression für ~15–20 Fotos;
-          höhere Werte werden von Vercel Functions verworfen (4,5 MB Body-Limit). */}
-      <FileUpload files={files} onFilesChange={onFilesChange} maxTotalSizeMB={4} />
+      {/* File Upload — 20 MB. Dank MS-Graph-Upload-Session gehen die Dateien
+          direkt vom Client zu Microsoft (an unserer Function vorbei), das
+          alte 4,5-MB-Vercel-Body-Limit gilt hier nicht mehr. */}
+      <FileUpload files={files} onFilesChange={onFilesChange} maxTotalSizeMB={20} />
 
       {/* Disclaimer */}
       <div className="py-4 px-5 bg-amber-50 border border-amber-200 rounded-sm">
