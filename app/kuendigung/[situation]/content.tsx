@@ -6,6 +6,7 @@ import type { LebenssituationEntry } from '@/lib/lebenssituation-data';
 import DejureText from '@/components/DejureText';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
+import AuthorByline from '@/components/AuthorByline';
 import TldrBox from '@/components/TldrBox';
 import DefinitionBox from '@/components/DefinitionBox';
 import NormLink, { NORM } from '@/components/NormLink';
@@ -53,6 +54,9 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
             {entry.h1}
           </h1>
+          <div className="max-w-[700px]">
+            <AuthorByline updatedIso={PAGE_DATES.kuendigungSituationen} />
+          </div>
           <p className="text-[1.05rem] text-ink-light max-w-[640px] leading-relaxed mt-4">
             <DejureText text={uniqueIntro} />
           </p>

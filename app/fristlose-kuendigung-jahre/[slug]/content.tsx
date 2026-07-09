@@ -9,6 +9,7 @@ import NormLink, { NORM } from '@/components/NormLink';
 import DefinitionBox from '@/components/DefinitionBox';
 import BagQuote from '@/components/BagQuote';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
+import AuthorByline from '@/components/AuthorByline';
 
 /* ── Types ── */
 type Beispielsfall = {
@@ -67,6 +68,9 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
           <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight max-w-[750px]">
             Fristlose Kündigung nach {yl} Betriebszugehörigkeit &mdash; wirksam oder nicht?
           </h1>
+          <div className="max-w-[750px] mb-4">
+            <AuthorByline />
+          </div>
           <p className="text-lg text-gray-600 max-w-[680px] leading-relaxed mb-6">
             Über 80 % aller fristlosen Kündigungen sind unwirksam. Nach{' '}
             <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink> müssen drei Voraussetzungen

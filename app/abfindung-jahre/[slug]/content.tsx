@@ -9,6 +9,7 @@ import BagQuote from '@/components/BagQuote';
 import DefinitionBox from '@/components/DefinitionBox';
 import NormLink, { NORM } from '@/components/NormLink';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
+import AuthorByline from '@/components/AuthorByline';
 
 /* ── Types ── */
 type Beispielsfall = {
@@ -111,6 +112,9 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
           <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight max-w-[750px]">
             Abfindung nach {yl} Betriebszugehörigkeit &mdash; wie viel steht mir zu?
           </h1>
+          <div className="max-w-[750px] mb-4">
+            <AuthorByline />
+          </div>
           <p className="text-lg text-gray-600 max-w-[680px] leading-relaxed mb-6">
             Nach {yl} Betriebszugehörigkeit berechnet sich die Abfindung nach der Faustformel:
             0,5 &times; Bruttomonatsgehalt &times; {ylKurz}. Einen gesetzlichen Anspruch auf Abfindung gibt es

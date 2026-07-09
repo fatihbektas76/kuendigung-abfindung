@@ -9,6 +9,7 @@ import BagQuote from '@/components/BagQuote';
 import NormLink, { NORM } from '@/components/NormLink';
 import DefinitionBox from '@/components/DefinitionBox';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
+import AuthorByline from '@/components/AuthorByline';
 
 /* ── Types ── */
 type Beispielsfall = {
@@ -73,6 +74,9 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
           <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight max-w-[750px]">
             Gekündigt nach {yl} Betriebszugehörigkeit &mdash; was jetzt?
           </h1>
+          <div className="max-w-[750px] mb-4">
+            <AuthorByline />
+          </div>
           <p className="text-lg text-gray-600 max-w-[680px] leading-relaxed mb-6">
             Sie haben nach {yl} eine Kündigung erhalten? Erfahren Sie, welche Rechte Sie haben,
             wie hoch Ihre Abfindungschancen sind und was Sie jetzt sofort tun müssen.

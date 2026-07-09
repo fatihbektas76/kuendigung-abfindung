@@ -6,6 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
+import AuthorByline from '@/components/AuthorByline';
 
 const faqs = [
   {
@@ -123,6 +124,9 @@ export default function AbfindungsrechnerPage() {
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
             Abfindung berechnen &mdash; Kostenloser Abfindungsrechner
           </h1>
+          <div className="max-w-[700px]">
+            <AuthorByline />
+          </div>
           <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed mt-3">
             Berechnen Sie Ihre voraussichtliche Abfindung nach Kündigung kostenlos in 30 Sekunden.
             Drei Szenarien &mdash; von konservativ bis optimistisch.

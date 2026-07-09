@@ -44,19 +44,67 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* Schema.org - AggregateRating für LegalService (nur auf Startseite, wo Testimonials sichtbar) */}
+      {/* Schema.org - LegalService + Attorney/Person Graph
+          Der #author-Anchor ist Grundlage für Article-Schema auf allen
+          Unterseiten (article-schema.ts referenziert ihn via @id).
+          Ohne diese Definition ist die Referenz „dangling" — Google
+          löst dann E-E-A-T-Signale weniger stark auf. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'LegalService',
-            '@id': SEO_CONFIG.organization.id,
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ...SEO_CONFIG.rating,
-            },
-            review: SEO_CONFIG.reviews,
+            '@graph': [
+              {
+                '@type': 'LegalService',
+                '@id': SEO_CONFIG.organization.id,
+                name: SEO_CONFIG.organization.name,
+                legalName: SEO_CONFIG.organization.legalName,
+                url: SEO_CONFIG.organization.url,
+                description: SEO_CONFIG.organization.description,
+                telephone: SEO_CONFIG.organization.telephone,
+                email: SEO_CONFIG.organization.email,
+                address: {
+                  '@type': 'PostalAddress',
+                  ...SEO_CONFIG.organization.address,
+                },
+                areaServed: SEO_CONFIG.organization.areaServed,
+                serviceType: SEO_CONFIG.organization.serviceType,
+                knowsLanguage: SEO_CONFIG.organization.knowsLanguage,
+                founder: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
+                employee: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
+                aggregateRating: {
+                  '@type': 'AggregateRating',
+                  ...SEO_CONFIG.rating,
+                },
+                review: SEO_CONFIG.reviews,
+              },
+              {
+                '@type': ['Person', 'Attorney'],
+                '@id': `${SEO_CONFIG.baseUrl}/#author`,
+                name: SEO_CONFIG.author.name,
+                jobTitle: SEO_CONFIG.author.jobTitle,
+                description: `${SEO_CONFIG.author.credential}, Zulassung ${SEO_CONFIG.author.organization}. Über 2.000 Verfahren im Arbeitsrecht.`,
+                image: `${SEO_CONFIG.baseUrl}/Fatih.webp`,
+                url: `${SEO_CONFIG.baseUrl}/autor/fatih-bektas/`,
+                telephone: SEO_CONFIG.author.telephone,
+                email: SEO_CONFIG.author.email,
+                worksFor: { '@id': SEO_CONFIG.organization.id },
+                memberOf: SEO_CONFIG.author.memberOf,
+                hasCredential: SEO_CONFIG.author.hasCredential,
+                sameAs: SEO_CONFIG.author.sameAs,
+                knowsLanguage: SEO_CONFIG.organization.knowsLanguage,
+                knowsAbout: [
+                  'Arbeitsrecht',
+                  'Kündigungsschutz',
+                  'Abfindung',
+                  'Aufhebungsvertrag',
+                  'Kündigungsschutzklage',
+                  'Fristlose Kündigung',
+                  'Abmahnung',
+                ],
+              },
+            ],
           }),
         }}
       />
