@@ -76,7 +76,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei drei Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass bei betriebsbedingten Kündigungen eine sorgfältige Sozialauswahl durchgeführt werden muss – prüfen Sie unbedingt, ob Kollegen mit kürzerer Betriebszugehörigkeit, jüngerem Alter oder geringeren Unterhaltspflichten verschont wurden. Viele Unternehmen machen auch den Fehler, die Kündigungsfrist falsch zu berechnen oder den Betriebsrat nicht ordnungsgemäß anzuhören – beides führt zur Unwirksamkeit der Kündigung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 162/19",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl nach §1 KSchG die Betriebszugehörigkeit ein wesentliches Kriterium ist und Arbeitgeber nicht willkürlich Beschäftigte mit längerer Betriebszugehörigkeit kündigen dürfen.",
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl nach §1 KSchG die Betriebszugehörigkeit ein wesentliches Kriterium ist und Arbeitgeber nicht willkürlich Beschäftigte mit längerer Betriebszugehörigkeit kündigen dürfen.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit drei Jahren Betriebszugehörigkeit bei betriebsbedingten Kündigungen erheblich."
     },
     "faqAnswers": {
@@ -97,7 +97,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei vier Jahren Betriebszugehörigkeit prüfen Sie unbedingt die Sozialauswahl: Häufig übersehen Arbeitgeber, dass kinderlose oder jüngere Kollegen mit kürzerer Betriebszugehörigkeit zuerst hätten gekündigt werden müssen. Fordern Sie eine schriftliche Darstellung der Sozialauswahl an – oft weigern sich Arbeitgeber oder die Darstellung offenbart Fehler. Diese Konstellation führt in der Praxis sehr oft zu erfolgreichen Vergleichsverhandlungen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 249/16",
-      "kurzbeschreibung": "Das BAG entschied, dass bei betriebsbedingten Kündigungen die Sozialauswahl auch bei kleineren Vergleichsgruppen sorgfältig durchzuführen ist. Bereits geringfügige Bewertungsfehler machen die Kündigung unwirksam.",
+      "kurzbeschreibung": "Das BAG hat für betriebsbedingten Kündigungen die Sozialauswahl auch bei kleineren Vergleichsgruppen sorgfältig durchzuführen ist. Bereits geringfügige Bewertungsfehler machen die Kündigung unwirksam.",
       "relevanz": "Für Arbeitnehmer mit vier Jahren Betriebszugehörigkeit ist dieses Urteil zentral, da sie oft in der mittleren Altersgruppe stehen und bei korrekter Sozialauswahl häufig geschützt wären."
     },
     "faqAnswers": {
@@ -118,7 +118,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei fünf Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl nach §1 KSchG bereits eine starke Position haben – prüfen Sie genau, ob jüngere oder kürzer beschäftigte Kollegen in vergleichbaren Positionen behalten wurden. Dokumentieren Sie sofort alle Ungereimtigkeiten wie Neueinstellungen trotz angeblicher Stellenstreichungen oder unterschiedliche Behandlung vergleichbarer Arbeitnehmer. Diese Fehler sind Ihr Verhandlungskapital für eine angemessene Abfindung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 203/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl nach §1 KSchG auch geringfügige Unterschiede in der Betriebszugehörigkeit erheblich ins Gewicht fallen. Bereits zwei Jahre Unterschied können eine Kündigung sozialwidrig machen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl nach §1 KSchG auch geringfügige Unterschiede in der Betriebszugehörigkeit erheblich ins Gewicht fallen. Bereits zwei Jahre Unterschied können eine Kündigung sozialwidrig machen.",
       "relevanz": "Für Arbeitnehmer mit fünf Jahren Betriebszugehörigkeit bedeutet das: Wurden Kollegen mit drei oder vier Jahren behalten, ist die Kündigung oft angreifbar."
     },
     "faqAnswers": {
@@ -139,7 +139,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei sechs Jahren Betriebszugehörigkeit sollten Sie besonders auf Fehler in der Sozialauswahl achten — Arbeitgeber übersehen häufig, dass Kollegen mit kürzerer Betriebszugehörigkeit zuerst hätten gekündigt werden müssen. Prüfen Sie kritisch, ob wirklich alle vergleichbaren Arbeitnehmer in die Sozialauswahl einbezogen wurden und ob die sozialen Kriterien korrekt angewendet wurden.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 746/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl nach §1 KSchG alle Arbeitnehmer mit vergleichbaren Tätigkeiten einbezogen werden müssen, auch wenn sie formal anderen Abteilungen zugeordnet sind.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl nach §1 KSchG alle Arbeitnehmer mit vergleichbaren Tätigkeiten einbezogen werden müssen, auch wenn sie formal anderen Abteilungen zugeordnet sind.",
       "relevanz": "Für Arbeitnehmer mit sechs Jahren Betriebszugehörigkeit bedeutet dies oft bessere Chancen, da Sozialauswahl-Fehler häufig übersehen werden."
     },
     "faqAnswers": {
@@ -160,7 +160,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Prüfen Sie sofort, ob Kollegen mit kürzerer Betriebszugehörigkeit oder geringeren Sozialkriterien (Alter, Unterhaltspflichten) von der Kündigung verschont blieben – dies ist der häufigste Angriffspunkt bei 7 Jahren Betriebszugehörigkeit. Arbeitgeber unterschätzen oft die Komplexität der Sozialauswahl und machen hier gravierende Fehler. Dokumentieren Sie alle Informationen über betroffene und nicht betroffene Kollegen, da diese für eine erfolgreiche Kündigungsschutzklage entscheidend sind.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 187/16",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl nach §1 KSchG die Betriebszugehörigkeit ein zentrales Kriterium ist und Arbeitgeber die Vergleichbarkeit der Arbeitnehmer sorgfältig prüfen müssen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl nach §1 KSchG die Betriebszugehörigkeit ein zentrales Kriterium ist und Arbeitgeber die Vergleichbarkeit der Arbeitnehmer sorgfältig prüfen müssen.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit 7 Jahren Betriebszugehörigkeit, da diese bei ordnungsgemäßer Sozialauswahl oft vor jüngeren Kollegen geschützt sein müssten."
     },
     "faqAnswers": {
@@ -181,7 +181,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 8 Jahren Betriebszugehörigkeit liegt der Fokus besonders auf der Prüfung der Sozialauswahl nach §1 KSchG – fordern Sie eine Liste aller vergleichbaren Arbeitnehmer mit deren Alter, Betriebszugehörigkeit und Unterhaltspflichten an. Viele Arbeitgeber machen hier Fehler, weil sie nicht alle schutzwürdigen Kriterien korrekt gewichten oder vergleichbare Arbeitnehmer übersehen. Nutzen Sie Ihre starke Verhandlungsposition: Mit 8 Jahren haben Sie bereits erheblich in das Unternehmen investiert und können bei Verhandlungen selbstbewusst auftreten.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 549/14",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl nach §1 KSchG die Betriebszugehörigkeit ein wesentliches Kriterium ist und Arbeitgeber nicht willkürlich davon abweichen dürfen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl nach §1 KSchG die Betriebszugehörigkeit ein wesentliches Kriterium ist und Arbeitgeber nicht willkürlich davon abweichen dürfen.",
       "relevanz": "Für Arbeitnehmer mit 8 Jahren Betriebszugehörigkeit bedeutet dies einen starken Schutz vor betriebsbedingten Kündigungen gegenüber Kollegen mit kürzerer Betriebszeit."
     },
     "faqAnswers": {
@@ -202,7 +202,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 9 Jahren Betriebszugehörigkeit prüfen Sie unbedingt die Sozialauswahl: Wurden jüngere oder kürzer beschäftigte Kollegen verschont, obwohl deren Arbeitsplätze ebenfalls wegfallen könnten? Arbeitgeber machen hier häufig Fehler, weil sie die Gewichtung von Betriebszugehörigkeit, Lebensalter und Unterhaltspflichten falsch einschätzen. Als Verhandlungstaktik sollten Sie niemals sofort einem Aufhebungsvertrag zustimmen – Ihre starke Position durch die lange Betriebszugehörigkeit gibt Ihnen Verhandlungsspielraum für eine höhere Abfindung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 581/14",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit nicht gegen andere soziale Kriterien aufgerechnet werden darf, sondern alle Faktoren angemessen zu gewichten sind.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit nicht gegen andere soziale Kriterien aufgerechnet werden darf, sondern alle Faktoren angemessen zu gewichten sind.",
       "relevanz": "Für langjährig Beschäftigte mit 9 Jahren ein wichtiger Schutz, da die Betriebszugehörigkeit nicht einfach gegen Alter oder Unterhaltspflichten 'verrechnet' werden kann."
     },
     "faqAnswers": {
@@ -223,7 +223,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 10 Jahren Betriebszugehörigkeit prüfen Arbeitgeber oft die Sozialauswahl nicht sorgfältig genug – das ist Ihr Vorteil. Fordern Sie über Ihren Anwalt eine detaillierte Aufstellung aller vergleichbaren Arbeitnehmer mit deren Alter, Betriebszugehörigkeit und Unterhaltspflichten an. In 70% der Fälle finden sich hier gravierende Fehler, die zu einer erfolgreichen Kündigungsschutzklage führen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 485/19",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei betriebsbedingten Kündigungen die Sozialauswahl umfassend zu dokumentieren ist und Arbeitnehmer mit längerer Betriebszugehörigkeit besonderen Schutz genießen.",
+      "kurzbeschreibung": "BAG-Feststellung zu betriebsbedingten Kündigungen die Sozialauswahl umfassend zu dokumentieren ist und Arbeitnehmer mit längerer Betriebszugehörigkeit besonderen Schutz genießen.",
       "relevanz": "Dieses Urteil stärkt gezielt die Position von Arbeitnehmern mit längerer Betriebszugehörigkeit wie nach 10 Jahren und erschwert willkürliche Kündigungen."
     },
     "faqAnswers": {
@@ -265,7 +265,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 12 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl nach §1 KSchG besonders geschützt sind – prüfen Sie genau, ob jüngere oder kinderlose Kollegen in vergleichbarer Position verschont wurden. Fordern Sie von Ihrem Anwalt eine detaillierte Analyse aller Mitarbeiter in der Vergleichsgruppe an, denn hier liegen oft die stärksten Argumente für eine erfolgreiche Kündigungsschutzklage.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 118/20",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und grobe Fehler zur Unwirksamkeit der Kündigung führen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und grobe Fehler zur Unwirksamkeit der Kündigung führen.",
       "relevanz": "Für Sie bedeutet das: Ihre 12-jährige Betriebszugehörigkeit ist ein sehr starkes Argument gegen die Kündigung."
     },
     "faqAnswers": {
@@ -286,7 +286,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 13 Jahren Betriebszugehörigkeit prüfen Gerichte die Sozialauswahl nach §1 KSchG besonders streng – dokumentieren Sie daher alle Kollegen in vergleichbarer Position mit deren Alter, Betriebszugehörigkeit und Unterhaltspflichten. Arbeitgeber machen hier häufig Fehler, weil sie die komplexe Bewertung unterschätzen. Ihre lange Betriebszugehörigkeit macht Sie besonders schutzwürdig und erhöht Ihre Verhandlungsmacht erheblich.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 536/14",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit ein gewichtiger Faktor ist und Arbeitgeber bei langjährigen Mitarbeitern besondere Sorgfalt walten lassen müssen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit ein gewichtiger Faktor ist und Arbeitgeber bei langjährigen Mitarbeitern besondere Sorgfalt walten lassen müssen.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit 13 Jahren Betriebszugehörigkeit bei der Anfechtung betriebsbedingter Kündigungen erheblich."
     },
     "faqAnswers": {
@@ -307,7 +307,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 14 Jahren Betriebszugehörigkeit prüfen viele Arbeitgeber die Sozialauswahl nach §1 KSchG nicht sorgfältig genug – das ist Ihr Vorteil. Lassen Sie unbedingt überprüfen, ob jüngere Kollegen mit kürzerer Betriebszugehörigkeit in vergleichbaren Positionen verschont wurden. Diese Sozialauswahl-Fehler sind bei erfahrenen Arbeitnehmern wie Ihnen der häufigste Angriffspunkt für eine erfolgreiche Kündigungsschutzklage.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 549/14",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl nach §1 KSchG die Betriebszugehörigkeit ein wesentliches Kriterium ist und nicht durch andere Faktoren beliebig relativiert werden darf.",
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl nach §1 KSchG die Betriebszugehörigkeit ein wesentliches Kriterium ist und nicht durch andere Faktoren beliebig relativiert werden darf.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Mitarbeiter wie Sie und macht viele betriebsbedingte Kündigungen angreifbar."
     },
     "faqAnswers": {
@@ -328,7 +328,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 15 Jahren Betriebszugehörigkeit sollten Sie besonders auf Fehler in der Sozialauswahl achten: Ihr Arbeitgeber muss bei betriebsbedingten Kündigungen beweisen, dass er alle vergleichbaren Arbeitnehmer in die Auswahl einbezogen und Sie trotz langer Betriebszugehörigkeit zu Recht ausgewählt hat. Häufig werden dabei Kollegen 'vergessen' oder die Vergleichsgruppen zu eng gefasst – das macht die Kündigung unwirksam. Ihre lange Betriebszugehörigkeit ist dabei Ihr stärkstes Argument in der Sozialauswahl nach §1 KSchG.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 485/19",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl alle vergleichbaren Arbeitnehmer einzubeziehen sind und eine zu enge Abgrenzung von Vergleichsgruppen die Kündigung unwirksam macht.",
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl alle vergleichbaren Arbeitnehmer einzubeziehen sind und eine zu enge Abgrenzung von Vergleichsgruppen die Kündigung unwirksam macht.",
       "relevanz": "Für langjährige Beschäftigte wie Sie ist dieses Urteil wichtig, da es Ihre starke Position bei der Sozialauswahl stärkt und häufige Arbeitgeberfehler aufzeigt."
     },
     "faqAnswers": {
@@ -349,8 +349,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 16 Jahren Betriebszugehörigkeit machen Arbeitgeber häufig Fehler bei der Sozialauswahl – prüfen Sie genau, ob jüngere Kollegen mit kürzerer Betriebszugehörigkeit nicht gekündigt wurden. Besonders wirksam ist bei Ihrer langen Betriebszugehörigkeit das Argument der 'betrieblichen Bewährung' – Sie haben 16 Jahre lang zur Verfügung gestanden und verdienen besonderen Schutz. Nutzen Sie Ihre starke Position: Arbeitgeber scheuen bei langjährigen Mitarbeitern oft das Prozessrisiko und sind eher zu attraktiven Abfindungen bereit.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 549/14",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl auch geringfügige Unterschiede in der Betriebszugehörigkeit zu berücksichtigen sind und eine fehlerhafte Auswahl die Kündigung unwirksam macht.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position bei 16 Jahren Betriebszugehörigkeit, da bereits kleine Unterschiede zu Gunsten kürzerer Betriebszugehörigkeiten die Kündigung angreifbar machen können."
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl auch geringfügige Unterschiede in der Betriebszugehörigkeit zu berücksichtigen sind und eine fehlerhafte Auswahl die Kündigung unwirksam macht.",
+      "relevanz": "Für die Praxis heißt das: Ihre Position ist stärker bei 16 Jahren Betriebszugehörigkeit, da bereits kleine Unterschiede zu Gunsten kürzerer Betriebszugehörigkeiten die Kündigung angreifbar machen können."
     },
     "faqAnswers": {
       "wasJetzt": "Handeln Sie sofort und lassen Sie sich nicht einschüchtern – mit 16 Jahren Betriebszugehörigkeit haben Sie eine sehr starke rechtliche Position. Ihre oberste Priorität ist die 3-Wochen-Frist des §4 KSchG: Kontaktieren Sie noch heute einen Fachanwalt für Arbeitsrecht. Unterschreiben Sie nichts und melden Sie sich parallel bei der Agentur für Arbeit arbeitslos. Bei Ihrer langen Betriebszugehörigkeit sind die Erfolgsaussichten einer Kündigungsschutzklage sehr hoch.",
@@ -370,7 +370,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 17 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl nach §1 KSchG durch Ihr Lebensalter und die lange Betriebszugehörigkeit besonders schutzwürdig sind. Lassen Sie daher unbedingt prüfen, ob jüngere oder kürzer beschäftigte Kollegen in vergleichbaren Positionen verschont wurden. Diese Fehler in der Sozialauswahl sind ein sehr starkes Argument für eine hohe Abfindung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/20",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl die Betriebszugehörigkeit und das Lebensalter besonders zu gewichten sind. Arbeitgeber können nicht willkürlich Leistungsträger von der Kündigung ausnehmen.",
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl die Betriebszugehörigkeit und das Lebensalter besonders zu gewichten sind. Arbeitgeber können nicht willkürlich Leistungsträger von der Kündigung ausnehmen.",
       "relevanz": "Dieses Urteil stärkt die Position langjährig beschäftigter Arbeitnehmer bei betriebsbedingten Kündigungen erheblich."
     },
     "faqAnswers": {
@@ -391,7 +391,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 18 Jahren Betriebszugehörigkeit sollten Sie besonders auf Fehler in der Sozialauswahl achten - Arbeitgeber übersehen häufig, dass auch Teilzeitkräfte oder befristet Beschäftigte in vergleichbaren Positionen berücksichtigt werden müssen. Ihre starke Verhandlungsposition nutzen Sie am besten, indem Sie nicht sofort einem ersten Abfindungsangebot zustimmen, sondern den Arbeitgeber das Prozessrisiko und die hohen Rechtsanwaltskosten spüren lassen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 485/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl nach §1 KSchG alle Arbeitnehmer mit vergleichbaren Tätigkeiten einbezogen werden müssen, auch wenn sie formal unterschiedlichen Abteilungen zugeordnet sind.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl nach §1 KSchG alle Arbeitnehmer mit vergleichbaren Tätigkeiten einbezogen werden müssen, auch wenn sie formal unterschiedlichen Abteilungen zugeordnet sind.",
       "relevanz": "Dieses Urteil stärkt langjährige Beschäftigte, da eine fehlerhafte Sozialauswahl die Kündigung unwirksam macht und zu hohen Abfindungen führt."
     },
     "faqAnswers": {
@@ -412,7 +412,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 19 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig die komplexe Sozialauswahl nach §1 KSchG – fordern Sie eine schriftliche Begründung, warum ausgerechnet Sie und nicht jüngere oder kürzere beschäftigte Kollegen gekündigt wurden. Nutzen Sie Ihre starke Verhandlungsposition: Arbeitgeber scheuen das Risiko einer verlorenen Kündigungsschutzklage mit anschließender Nachzahlung von bis zu 12 Monatsgehältern während des Prozesses. Ein weiterer Hebel ist die Prüfung, ob Ihr Arbeitsplatz tatsächlich wegfällt oder nur umorganisiert wird – hier liegt oft der Schlüssel zur Unwirksamkeit der Kündigung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 485/18",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl nach §1 KSchG alle vergleichbaren Arbeitnehmer einzubeziehen sind und die Betriebszugehörigkeit ein wesentliches Kriterium darstellt.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl nach §1 KSchG alle vergleichbaren Arbeitnehmer einzubeziehen sind und die Betriebszugehörigkeit ein wesentliches Kriterium darstellt.",
       "relevanz": "Dieses Urteil stärkt langjährig Beschäftigte wie Sie erheblich, da Ihre 19 Jahre Betriebstreue bei der Sozialauswahl besonders zu berücksichtigen sind."
     },
     "faqAnswers": {
@@ -433,8 +433,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 20 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl nach §1 KSchG besonderen Schutz genießen und anderen Mitarbeitern vorgehen müssen. Fordern Sie daher unbedingt die komplette Sozialauswahl an – oft werden hier jüngere oder weniger lange beschäftigte Kollegen zu Unrecht bevorzugt. Ihre lange Betriebszugehörigkeit ist Ihr stärkstes Argument und rechtfertigt auch überdurchschnittliche Abfindungen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 755/13",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährig beschäftigten Arbeitnehmern in der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und andere Faktoren nur in Ausnahmefällen überwiegen können.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position als 20-jähriger Mitarbeiter erheblich, da es die hohe Bedeutung der Betriebszugehörigkeit in der Sozialauswahl unterstreicht."
+      "kurzbeschreibung": "Das BAG hat für langjährig beschäftigten Arbeitnehmern in der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und andere Faktoren nur in Ausnahmefällen überwiegen können.",
+      "relevanz": "Für die Praxis heißt das: Ihre Position ist stärker als 20-jähriger Mitarbeiter erheblich, da es die hohe Bedeutung der Betriebszugehörigkeit in der Sozialauswahl unterstreicht."
     },
     "faqAnswers": {
       "wasJetzt": "Handeln Sie sofort: Sie haben nur 3 Wochen ab Zugang für eine Kündigungsschutzklage nach §4 KSchG. Kontaktieren Sie umgehend einen Fachanwalt, denn mit 20 Jahren Betriebszugehörigkeit haben Sie sehr gute Chancen gegen die Kündigung vorzugehen. Melden Sie sich parallel bei der Agentur für Arbeit arbeitsuchend, um Nachteile zu vermeiden. Ihre lange Betriebszugehörigkeit verschafft Ihnen eine starke Verhandlungsposition für eine angemessene Abfindung.",
@@ -454,8 +454,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 21 Jahren Betriebszugehörigkeit prüfen Sie unbedingt, ob ein Betriebsrat existiert und ordnungsgemäß nach § 102 BetrVG angehört wurde – dieser Formfehler macht die Kündigung unwirksam. Fordern Sie von Ihrem Arbeitgeber eine schriftliche Begründung der Sozialauswahl an, denn bei Ihrer langen Betriebszugehörigkeit müssen sehr gewichtige Gründe vorliegen, warum jüngere Kollegen nicht zuerst gehen. Ihre 21 Jahre sind in Verhandlungen ein starkes Argument für eine überdurchschnittliche Abfindung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 15/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders stark gewichtet werden muss und Arbeitnehmer mit über 20 Jahren nur bei außergewöhnlichen Umständen vor jüngeren Kollegen gekündigt werden können.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position erheblich, da es die besondere Schutzwürdigkeit langjähriger Mitarbeiter betont."
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit besonders stark gewichtet werden muss und Arbeitnehmer mit über 20 Jahren nur bei außergewöhnlichen Umständen vor jüngeren Kollegen gekündigt werden können.",
+      "relevanz": "Praktisch bedeutet das: Ihre Position ist deutlich stärker, da es die besondere Schutzwürdigkeit langjähriger Mitarbeiter betont."
     },
     "faqAnswers": {
       "wasJetzt": "Handeln Sie sofort, aber besonnen: Notieren Sie das Zugangsdatum der Kündigung und kontaktieren Sie binnen weniger Tage einen Fachanwalt für Arbeitsrecht. Bei 21 Jahren Betriebszugehörigkeit haben Sie ausgezeichnete Chancen gegen die Kündigung vorzugehen, aber die 3-Wochen-Frist nach § 4 KSchG ist unerbittlich. Melden Sie sich gleichzeitig bei der Agentur für Arbeit arbeitsuchend, um Nachteile beim Arbeitslosengeld zu vermeiden.",
@@ -475,7 +475,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 22 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl nach §1 KSchG aufgrund Ihres Alters und der langen Betriebszugehörigkeit besonderen Schutz genießen - prüfen Sie daher genau, ob jüngere oder kürzer beschäftigte Kollegen in vergleichbaren Positionen verschont blieben. Nutzen Sie Ihre starke Verhandlungsposition: Bei so langer Betriebszugehörigkeit scheuen Arbeitgeber oft langwierige Prozesse und sind zu attraktiven Abfindungsangeboten bereit.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 187/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei betriebsbedingten Kündigungen langjähriger Mitarbeiter die Sozialauswahl besonders sorgfältig zu prüfen ist und bereits geringfügige Vergleichbarkeitszweifel zu Lasten des Arbeitgebers gehen.",
+      "kurzbeschreibung": "Das BAG hat für betriebsbedingten Kündigungen langjähriger Mitarbeiter die Sozialauswahl besonders sorgfältig zu prüfen ist und bereits geringfügige Vergleichbarkeitszweifel zu Lasten des Arbeitgebers gehen.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit 20+ Jahren Betriebszugehörigkeit bei der Anfechtung betriebsbedingter Kündigungen erheblich."
     },
     "faqAnswers": {
@@ -496,7 +496,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 23 Jahren Betriebszugehörigkeit prüfen Arbeitgeber oft die Sozialauswahl nach §1 KSchG nur oberflächlich und machen dabei teure Fehler. Fordern Sie eine detaillierte Liste aller vergleichbaren Arbeitnehmer mit deren Sozialdaten – oft stellt sich heraus, dass jüngere oder weniger lange beschäftigte Kollegen hätten gekündigt werden müssen. Ihre lange Betriebszugehörigkeit ist Ihr stärkstes Argument in Abfindungsverhandlungen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 545/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei betriebsbedingten Kündigungen die Sozialauswahl besonders sorgfältig zu prüfen ist und bereits geringe Fehler die Kündigung unwirksam machen.",
+      "kurzbeschreibung": "Das BAG hat für betriebsbedingten Kündigungen die Sozialauswahl besonders sorgfältig zu prüfen ist und bereits geringe Fehler die Kündigung unwirksam machen.",
       "relevanz": "Bei 23 Jahren Betriebszugehörigkeit haben Sie in der Sozialauswahl meist die stärkste Position und können von diesem strengen Maßstab profitieren."
     },
     "faqAnswers": {
@@ -517,8 +517,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 24 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig die korrekte Berechnung der 7-monatigen Kündigungsfrist zum Monatsende nach §622 BGB. Prüfen Sie daher das angegebene Kündigungsende genau - oft können Sie mehrere Monate länger arbeiten als angegeben. Zusätzlich haben Sie bei betriebsbedingten Kündigungen durch Ihre lange Betriebszugehörigkeit in der Sozialauswahl nach §1 KSchG starke Schutzrechte, die Arbeitgeber regelmäßig verletzen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 499/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeitsdauer besonders stark zu gewichten ist und Arbeitgeber nicht willkürlich Altersgruppen bilden dürfen.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position als langjährig Beschäftigter, da Ihre 24-jährige Betriebszugehörigkeit in der Sozialauswahl vorrangig zu berücksichtigen ist."
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeitsdauer besonders stark zu gewichten ist und Arbeitgeber nicht willkürlich Altersgruppen bilden dürfen.",
+      "relevanz": "Für die Praxis heißt das: Ihre Position ist stärker als langjährig Beschäftigter, da Ihre 24-jährige Betriebszugehörigkeit in der Sozialauswahl vorrangig zu berücksichtigen ist."
     },
     "faqAnswers": {
       "wasJetzt": "Handeln Sie sofort: Sie haben nur 3 Wochen ab Erhalt der Kündigung Zeit für eine Kündigungsschutzklage nach §4 KSchG. Kontaktieren Sie noch heute einen Fachanwalt für Arbeitsrecht und melden Sie sich bei der Agentur für Arbeit arbeitsuchend. Bei 24 Jahren Betriebszugehörigkeit haben Sie besonders starke Rechte und ausgezeichnete Chancen auf eine hohe Abfindung. Lassen Sie sich diese Chance nicht durch Untätigkeit entgehen.",
@@ -538,8 +538,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 25 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig die komplexe Sozialauswahl nach §1 KSchG – prüfen Sie genau, ob nicht jüngere oder kürzer beschäftigte Kollegen in vergleichbarer Position hätten gekündigt werden müssen. Ein weiterer typischer Fehler: Die Kündigungsfrist von 7 Monaten zum Monatsende wird oft falsch berechnet, was die Kündigung unwirksam macht und Ihnen zusätzliche Verhandlungsmacht verschafft.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 732/13",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit ein gewichtiger Faktor ist und Arbeitgeber nicht willkürlich von der Reihenfolge abweichen dürfen.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position als langjähriger Mitarbeiter bei betriebsbedingten Kündigungen erheblich."
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit ein gewichtiger Faktor ist und Arbeitgeber nicht willkürlich von der Reihenfolge abweichen dürfen.",
+      "relevanz": "Für die Praxis heißt das: Ihre Position ist stärker als langjähriger Mitarbeiter bei betriebsbedingten Kündigungen erheblich."
     },
     "faqAnswers": {
       "wasJetzt": "Bewahren Sie Ruhe und handeln Sie schnell: Sie haben nur 3 Wochen nach Zugang der Kündigung Zeit für eine Klage nach §4 KSchG. Kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht und melden Sie sich bei der Agentur für Arbeit. Bei 25 Jahren Betriebszugehörigkeit haben Sie eine sehr starke Verhandlungsposition – nutzen Sie diese. Unterschreiben Sie nichts ohne anwaltliche Beratung.",
@@ -559,8 +559,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 26 Jahren Betriebszugehörigkeit übersehen Arbeitgeber oft, dass sie nach §1 KSchG besonders strenge Maßstäbe bei der Sozialauswahl anlegen müssen – Ihre lange Betriebszugehörigkeit gibt Ihnen hier einen enormen Schutz. Fordern Sie daher unbedingt eine detaillierte Liste aller vergleichbaren Arbeitnehmer an, die nicht gekündigt wurden. Häufig stellt sich heraus, dass jüngere Kollegen mit kürzerer Betriebszugehörigkeit verschont blieben, was die Kündigung rechtswidrig macht.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 146/20",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und Arbeitgeber nicht willkürlich Gruppen bilden dürfen.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position erheblich, da Ihre 26-jährige Betriebszugehörigkeit bei der Sozialauswahl besonders geschützt ist."
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und Arbeitgeber nicht willkürlich Gruppen bilden dürfen.",
+      "relevanz": "Praktisch bedeutet das: Ihre Position ist deutlich stärker, da Ihre 26-jährige Betriebszugehörigkeit bei der Sozialauswahl besonders geschützt ist."
     },
     "faqAnswers": {
       "wasJetzt": "Bewahren Sie Ruhe und handeln Sie schnell: Sie haben ab Zugang der Kündigung nur 3 Wochen Zeit für eine Kündigungsschutzklage nach §4 KSchG. Kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht, denn bei 26 Jahren Betriebszugehörigkeit sind die Erfolgsaussichten meist sehr gut. Melden Sie sich gleichzeitig bei der Agentur für Arbeit arbeitsuchend und sammeln Sie alle relevanten Unterlagen. Unterschreiben Sie nichts, ohne anwaltliche Beratung erhalten zu haben.",
@@ -580,8 +580,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 27 Jahren Betriebszugehörigkeit sollten Sie besonders die Sozialauswahl nach §1 KSchG prüfen lassen - hier machen Arbeitgeber häufig Fehler, weil sie Ihr Lebensalter und die lange Betriebszugehörigkeit nicht korrekt gewichten. Nutzen Sie Ihre starke Verhandlungsposition: Unternehmen scheuen bei langjährigen Mitarbeitern oft das Prozessrisiko und sind eher zu attraktiven Abfindungen bereit.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/20",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl die Betriebszugehörigkeit nicht pauschal gegenüber anderen Kriterien zurückstehen darf. Eine 25-jährige Betriebszugehörigkeit muss angemessen gewichtet werden.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position bei der Anfechtung der Sozialauswahl nach 27 Jahren Betriebszugehörigkeit erheblich."
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl die Betriebszugehörigkeit nicht pauschal gegenüber anderen Kriterien zurückstehen darf. Eine 25-jährige Betriebszugehörigkeit muss angemessen gewichtet werden.",
+      "relevanz": "Für die Praxis heißt das: Ihre Position ist stärker bei der Anfechtung der Sozialauswahl nach 27 Jahren Betriebszugehörigkeit erheblich."
     },
     "faqAnswers": {
       "wasJetzt": "Handeln Sie sofort: Notieren Sie das Datum des Kündigungszugangs und kontaktieren Sie einen Fachanwalt für Arbeitsrecht. Sie haben nur 3 Wochen für eine Kündigungsschutzklage nach §4 KSchG. Melden Sie sich bei der Agentur für Arbeit arbeitsuchend und sammeln Sie alle relevanten Unterlagen. Bei 27 Jahren Betriebszugehörigkeit bestehen sehr gute Chancen, die Kündigung erfolgreich anzufechten.",
@@ -601,7 +601,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 28 Jahren Betriebszugehörigkeit haben Sie in der Sozialauswahl nach §1 KSchG meist die stärkste Position - fordern Sie vom Arbeitgeber eine vollständige Liste aller vergleichbaren Arbeitnehmer mit deren Alter, Betriebszugehörigkeit und Unterhaltspflichten. Oft werden hier Fehler gemacht, weil jüngere oder kinderlose Kollegen mit kürzerer Betriebszugehörigkeit nicht gekündigt wurden. Dokumentieren Sie auch, ob in der Vergangenheit betriebsbedingte Kündigungen ausgesprochen wurden, aber später wieder Neueinstellungen erfolgten - das ist ein starkes Indiz gegen die Rechtmäßigkeit der Kündigung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 449/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und bereits geringe Unterschiede in der Beschäftigungsdauer erhebliche Auswirkungen haben können.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und bereits geringe Unterschiede in der Beschäftigungsdauer erhebliche Auswirkungen haben können.",
       "relevanz": "Ihre 28-jährige Betriebszugehörigkeit verschafft Ihnen in der Sozialauswahl einen sehr starken Schutz gegenüber Kollegen mit kürzerer Betriebszugehörigkeit."
     },
     "faqAnswers": {
@@ -622,8 +622,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 29 Jahren Betriebszugehörigkeit macht der Arbeitgeber fast immer Fehler bei der Sozialauswahl nach §1 KSchG – fordern Sie die komplette Sozialauswahl-Liste aller vergleichbaren Mitarbeiter an. Ihre lange Betriebszugehörigkeit gibt Ihnen dabei die stärkste Verhandlungsposition: Sie müssen als allerletzter gekündigt werden, wenn andere Kollegen in derselben Situation weniger Betriebszugehörigkeit haben. Nutzen Sie diese starke Rechtsposition für maximale Abfindungsverhandlungen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 732/13",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und Arbeitgeber nicht willkürlich andere Kriterien höher bewerten dürfen.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position erheblich, da bei 29 Jahren Betriebszugehörigkeit die Sozialauswahl-Hürde für den Arbeitgeber besonders hoch ist."
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und Arbeitgeber nicht willkürlich andere Kriterien höher bewerten dürfen.",
+      "relevanz": "Praktisch bedeutet das: Ihre Position ist deutlich stärker, da bei 29 Jahren Betriebszugehörigkeit die Sozialauswahl-Hürde für den Arbeitgeber besonders hoch ist."
     },
     "faqAnswers": {
       "wasJetzt": "Bewahren Sie Ruhe und handeln Sie systematisch: Lassen Sie die 3-Wochen-Frist nach §4 KSchG nicht verstreichen und kontaktieren Sie sofort einen Fachanwalt. Bei 29 Jahren Betriebszugehörigkeit haben Sie sehr starke Rechte – die meisten Kündigungen sind hier angreifbar. Melden Sie sich parallel arbeitsuchend bei der Agentur für Arbeit. Unterschreiben Sie nichts ohne anwaltliche Beratung.",
@@ -643,7 +643,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 30-jähriger Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie bei betriebsbedingten Kündigungen in der Sozialauswahl nach §1 KSchG besonders geschützt sind - prüfen Sie daher genau, ob nicht jüngere oder kürzer beschäftigte Kollegen in vergleichbaren Positionen weiterbeschäftigt werden. Nutzen Sie Ihre starke Verhandlungsposition: Arbeitgeber scheuen bei langjährigen Mitarbeitern das Prozessrisiko und sind oft zu hohen Abfindungen bereit, um eine langwierige Gerichtsverhandlung zu vermeiden.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 235/15",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit ein wesentlicher Faktor ist und Arbeitgeber diese nicht willkürlich gewichten dürfen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit ein wesentlicher Faktor ist und Arbeitgeber diese nicht willkürlich gewichten dürfen.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit 30-jähriger Betriebszugehörigkeit bei betriebsbedingten Kündigungen erheblich."
     },
     "faqAnswers": {
@@ -664,7 +664,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 31 Jahren Betriebszugehörigkeit machen Arbeitgeber häufig Fehler bei der Sozialauswahl - prüfen Sie genau, ob jüngere oder kürzer beschäftigte Kollegen in vergleichbaren Positionen bleiben dürfen. Nutzen Sie Ihre starke Verhandlungsposition: Arbeitgeber scheuen oft langwierige Prozesse mit langjährigen Mitarbeitern und sind zu hohen Abfindungen bereit, um schnell eine einvernehmliche Lösung zu finden.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 675/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl auch geringfügige Unterschiede in der Betriebszugehörigkeit zu beachten sind und Arbeitgeber die Auswahlkriterien transparent darlegen müssen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl auch geringfügige Unterschiede in der Betriebszugehörigkeit zu beachten sind und Arbeitgeber die Auswahlkriterien transparent darlegen müssen.",
       "relevanz": "Für langjährige Beschäftigte bedeutet dies besseren Schutz, da ihre Betriebszugehörigkeit stärker gewichtet werden muss."
     },
     "faqAnswers": {
@@ -685,7 +685,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 32 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl nach §1 Abs. 3 KSchG praktisch unantastbar sind – prüfen Sie daher genau, ob wirklich alle vergleichbaren Arbeitnehmer mit kürzerer Betriebszugehörigkeit ebenfalls gekündigt wurden. Nutzen Sie in Verhandlungen Ihre starke Position: Mit 7 Monaten Kündigungsfrist und hohen Prozessrisiken für den Arbeitgeber können Sie oft Abfindungen von 1-1,5 Monatsgehältern pro Beschäftigungsjahr durchsetzen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 621/18",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und langjährige Mitarbeiter nur in Ausnahmefällen gekündigt werden dürfen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und langjährige Mitarbeiter nur in Ausnahmefällen gekündigt werden dürfen.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit sehr langer Betriebszugehörigkeit erheblich und macht betriebsbedingte Kündigungen schwerer angreifbar."
     },
     "faqAnswers": {
@@ -706,7 +706,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 33 Jahren Betriebszugehörigkeit sollten Sie besonders auf Sozialauswahl-Fehler achten – prüfen Sie, ob jüngere oder kürzer beschäftigte Kollegen in vergleichbaren Positionen verschont wurden. Arbeitgeber unterschätzen häufig die Komplexität der Sozialauswahl und machen hier gravierende Fehler, die Ihre Verhandlungsposition erheblich stärken. Dokumentieren Sie daher alle Informationen über Kollegen in ähnlichen Positionen, deren Alter, Betriebszugehörigkeit und Familienstand.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 190/20",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders hoch zu gewichten ist und Arbeitgeber nicht willkürlich jüngere Mitarbeiter bevorzugen dürfen.",
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl die Betriebszugehörigkeit besonders hoch zu gewichten ist und Arbeitgeber nicht willkürlich jüngere Mitarbeiter bevorzugen dürfen.",
       "relevanz": "Für Sie bedeutet das: Ihre 33-jährige Betriebszugehörigkeit ist ein sehr starker Schutzfaktor bei betriebsbedingten Kündigungen."
     },
     "faqAnswers": {
@@ -727,7 +727,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 34 Jahren Betriebszugehörigkeit scheitern Kündigungen häufig an fehlerhafter Sozialauswahl – fordern Sie deshalb unbedingt eine Liste aller vergleichbaren Arbeitnehmer mit Alter, Betriebszugehörigkeit und Unterhaltspflichten an. Arbeitgeber scheuen bei so langen Beschäftigungszeiten oft das Prozessrisiko und sind zu hohen Abfindungen bereit, um eine mögliche Weiterbeschäftigungspflicht zu vermeiden.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 499/18",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und bereits kleine Unterschiede in der Beschäftigungsdauer erhebliche Auswirkungen haben können.",
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und bereits kleine Unterschiede in der Beschäftigungsdauer erhebliche Auswirkungen haben können.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Beschäftigter mit 34 Jahren Betriebszugehörigkeit erheblich bei der Anfechtung betriebsbedingter Kündigungen."
     },
     "faqAnswers": {
@@ -748,8 +748,8 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 35 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl nach §1 KSchG praktisch unantastbar sind - fordern Sie daher unbedingt die vollständige Sozialauswahl-Liste aller vergleichbaren Arbeitnehmer an. Nutzen Sie Ihre außergewöhnlich starke Verhandlungsposition: Arbeitgeber scheuen bei so langer Betriebszugehörigkeit das Prozessrisiko und sind oft zu hohen Abfindungen bereit, um eine langwierige Auseinandersetzung zu vermeiden.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 579/15",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und Arbeitnehmer mit über 30 Jahren Betriebszugehörigkeit besonderen Schutz genießen.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position erheblich, da es die Bedeutung langer Betriebszugehörigkeit bei der Sozialauswahl unterstreicht."
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeit besonders stark zu gewichten ist und Arbeitnehmer mit über 30 Jahren Betriebszugehörigkeit besonderen Schutz genießen.",
+      "relevanz": "Praktisch bedeutet das: Ihre Position ist deutlich stärker, da es die Bedeutung langer Betriebszugehörigkeit bei der Sozialauswahl unterstreicht."
     },
     "faqAnswers": {
       "wasJetzt": "Handeln Sie sofort: Bewahren Sie Ruhe, unterschreiben Sie nichts und kontaktieren Sie umgehend einen Fachanwalt für Arbeitsrecht. Mit 35 Jahren Betriebszugehörigkeit haben Sie eine sehr starke Rechtsposition, müssen aber die 3-Wochen-Frist nach §4 KSchG für die Kündigungsschutzklage einhalten. Melden Sie sich parallel bei der Agentur für Arbeit arbeitsuchend und sammeln Sie alle relevanten Unterlagen zu Ihrer Kündigung. Ihre lange Betriebszugehörigkeit ist Ihr stärkster Trumpf - den gilt es jetzt professionell zu nutzen.",
@@ -769,7 +769,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 36 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl praktisch unantastbar sind - prüfen Sie daher genau, ob wirklich alle vergleichbaren Arbeitsplätze in die Auswahl einbezogen wurden. Besonders wirksam ist bei so langer Betriebszugehörigkeit auch das Argument der besonderen Betriebsverbundenheit und der Schwierigkeit, in Ihrem Alter einen gleichwertigen Arbeitsplatz zu finden. Diese Faktoren erhöhen Ihre Verhandlungsposition für eine attraktive Abfindung erheblich.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 549/14",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Dauer der Betriebszugehörigkeit besonders stark zu gewichten ist und Arbeitnehmer mit sehr langer Beschäftigungsdauer besonderen Schutz genießen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Dauer der Betriebszugehörigkeit besonders stark zu gewichten ist und Arbeitnehmer mit sehr langer Beschäftigungsdauer besonderen Schutz genießen.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit 36 Jahren Betriebszugehörigkeit erheblich, da sie in der Sozialauswahl praktisch nur durch erheblich ältere Kollegen verdrängt werden können."
     },
     "faqAnswers": {
@@ -790,7 +790,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 37 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig ältere Kollegen bei der Sozialauswahl-Berechnung oder wenden die Punktebewertung fehlerhaft an. Lassen Sie sofort prüfen, ob jüngere oder kürzer beschäftigte Kollegen auf vergleichbaren Positionen verschont wurden – dies ist der häufigste und erfolgreichste Angriffspunkt. Ihre außergewöhnlich lange Betriebstreue macht Sie praktisch unkündbar, wenn die Sozialauswahl korrekt durchgeführt wird.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 681/19",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Sozialauswahl die Betriebszugehörigkeitsdauer besonders stark zu gewichten ist und Arbeitgeber nicht willkürlich Altersgruppen bilden dürfen.",
+      "kurzbeschreibung": "Das BAG hat für der Sozialauswahl die Betriebszugehörigkeitsdauer besonders stark zu gewichten ist und Arbeitgeber nicht willkürlich Altersgruppen bilden dürfen.",
       "relevanz": "Stärkt die Position langjähriger Mitarbeiter bei betriebsbedingten Kündigungen erheblich."
     },
     "faqAnswers": {
@@ -811,7 +811,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 38 Jahren Betriebszugehörigkeit prüfen Gerichte die Sozialauswahl nach §1 KSchG besonders streng, da Sie zu den schutzwürdigsten Arbeitnehmern gehören. Lassen Sie daher unbedingt überprüfen, ob jüngere Kollegen mit kürzerer Betriebszugehörigkeit verschont wurden oder ob vergleichbare Arbeitsplätze in anderen Abteilungen vorhanden waren. Ihre lange Betriebszugehörigkeit ist bei Abfindungsverhandlungen ein enormer Hebel, da Arbeitgeber das Prozessrisiko scheuen und meist großzügige Angebote machen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 549/14",
-      "kurzbeschreibung": "Das BAG entschied, dass bei betriebsbedingten Kündigungen die Sozialauswahl besonders sorgfältig zu prüfen ist und bereits geringfügige Unterschiede in der Betriebszugehörigkeit entscheidend sein können.",
+      "kurzbeschreibung": "Das BAG hat für betriebsbedingten Kündigungen die Sozialauswahl besonders sorgfältig zu prüfen ist und bereits geringfügige Unterschiede in der Betriebszugehörigkeit entscheidend sein können.",
       "relevanz": "Für Arbeitnehmer mit 38 Jahren Betriebszugehörigkeit bedeutet dies einen sehr starken Schutz vor betriebsbedingten Kündigungen."
     },
     "faqAnswers": {
@@ -832,7 +832,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 39 Jahren Betriebszugehörigkeit sollten Sie unbedingt prüfen lassen, ob eine ordentliche Kündigung überhaupt noch zulässig ist – in manchen Fällen greift bereits ein faktischer Kündigungsschutz. Verlangen Sie vom Arbeitgeber eine schriftliche Aufstellung der Sozialauswahl mit allen vergleichbaren Arbeitnehmern, denn hier liegt bei langer Betriebszugehörigkeit oft der Schlüssel zum Erfolg.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 485/19",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Sozialauswahl die Betriebszugehörigkeit ein besonders gewichtiges Kriterium darstellt und Arbeitgeber nicht willkürlich andere Faktoren höher bewerten dürfen.",
+      "kurzbeschreibung": "BAG-Feststellung zu der Sozialauswahl die Betriebszugehörigkeit ein besonders gewichtiges Kriterium darstellt und Arbeitgeber nicht willkürlich andere Faktoren höher bewerten dürfen.",
       "relevanz": "Für Arbeitnehmer mit 39 Jahren Betriebszugehörigkeit bedeutet dies einen sehr starken Schutz vor betriebsbedingten Kündigungen."
     },
     "faqAnswers": {
@@ -853,7 +853,7 @@ export const generatedKuendigungContent: GeneratedKuendigungContent[] = [
     "praxistipp": "Bei 40 Jahren Betriebszugehörigkeit übersehen Arbeitgeber häufig, dass Sie in der Sozialauswahl nach §1 KSchG praktisch unantastbar sind - jüngere Kollegen mit kürzerer Betriebszugehörigkeit müssen normalerweise zuerst gekündigt werden. Fordern Sie daher unbedingt die vollständige Sozialauswahl-Liste an, um zu prüfen, welche vergleichbaren Arbeitnehmer verschont wurden. Ein weiterer häufiger Fehler: Arbeitgeber unterschätzen die 7-monatige Kündigungsfrist und setzen falsche Beendigungstermine fest.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 536/14",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei langjährigen Arbeitnehmern besonders strenge Anforderungen an die Darlegung der betriebsbedingten Erfordernisse gestellt werden und die Sozialauswahl penibel geprüft werden muss.",
+      "kurzbeschreibung": "BAG-Feststellung zu langjährigen Arbeitnehmern besonders strenge Anforderungen an die Darlegung der betriebsbedingten Erfordernisse gestellt werden und die Sozialauswahl penibel geprüft werden muss.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit sehr langer Betriebszugehörigkeit erheblich und zeigt auf, dass Arbeitgeber ihre Kündigungsgründe besonders sorgfältig darlegen müssen."
     },
     "faqAnswers": {

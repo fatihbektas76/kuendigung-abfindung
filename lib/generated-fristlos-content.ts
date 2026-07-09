@@ -32,7 +32,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Notieren Sie sofort das Zugangsdatum der Kündigung und reichen Sie binnen drei Wochen Kündigungsschutzklage ein (§ 4 KSchG). Dokumentieren Sie alle Unterlagen und suchen Sie sich schnell anwaltliche Unterstützung — bei einem Jahr Betriebszugehörigkeit stehen die Chancen sehr gut, dass die Kündigung unwirksam ist und Sie eine attraktive Abfindung aushandeln können.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 255/11",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit wesentlich zu berücksichtigen ist. Je länger das Arbeitsverhältnis bestand, desto schwerwiegender muss der Kündigungsgrund sein.",
+      "kurzbeschreibung": "Das BAG hat für der Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit wesentlich zu berücksichtigen ist. Je länger das Arbeitsverhältnis bestand, desto schwerwiegender muss der Kündigungsgrund sein.",
       "relevanz": "Dieses Urteil stärkt Arbeitnehmer mit längerer Betriebszugehörigkeit erheblich, da bereits ein Jahr als gewisse Bewährung gilt."
     },
     "faqAnswers": {
@@ -72,7 +72,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Reagieren Sie sofort auf die fristlose Kündigung und sammeln Sie alle Unterlagen, die Ihre bisherige tadellose Arbeitsleistung belegen - Zeugnisse, Beurteilungen, Auszeichnungen der letzten drei Jahre. Melden Sie sich umgehend arbeitslos, um eine Sperrzeit beim Arbeitslosengeld zu vermeiden, auch wenn Sie gegen die Kündigung vorgehen. Dokumentieren Sie den Kündigungsgrund und mögliche Zeugen, da die Beweislast beim Arbeitgeber liegt.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei einer Kündigung wegen Verdachts einer Straftat eine umfassende Interessenabwägung unter Berücksichtigung der Betriebszugehörigkeit erforderlich ist. Eine längere beschwerdefreie Betriebszugehörigkeit kann gegen eine fristlose Kündigung sprechen.",
+      "kurzbeschreibung": "Das BAG hat für einer Kündigung wegen Verdachts einer Straftat eine umfassende Interessenabwägung unter Berücksichtigung der Betriebszugehörigkeit erforderlich ist. Eine längere beschwerdefreie Betriebszugehörigkeit kann gegen eine fristlose Kündigung sprechen.",
       "relevanz": "Ihre dreijährige Betriebszugehörigkeit muss bei der Interessenabwägung zugunsten einer milderen Sanktion berücksichtigt werden."
     },
     "faqAnswers": {
@@ -112,7 +112,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich sofort krankschreiben, wenn möglich, denn dann haben Sie Anspruch auf Krankengeld statt ALG II. Sammeln Sie alle Unterlagen und Beweise, die für Sie sprechen - Arbeitszeugnisse, Beurteilungen, Auszeichnungen. Gehen Sie nicht zum Personalgespräch ohne anwaltliche Beratung und unterschreiben Sie niemals einen Aufhebungsvertrag unter Zeitdruck.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährig beschäftigten Arbeitnehmern besonders strenge Maßstäbe für die Verhältnismäßigkeitsprüfung gelten. Eine fristlose Kündigung kommt nur bei schwerwiegenden Pflichtverletzungen in Betracht.",
+      "kurzbeschreibung": "Das BAG hat für langjährig beschäftigten Arbeitnehmern besonders strenge Maßstäbe für die Verhältnismäßigkeitsprüfung gelten. Eine fristlose Kündigung kommt nur bei schwerwiegenden Pflichtverletzungen in Betracht.",
       "relevanz": "Bei 5 Jahren Betriebszugehörigkeit muss der Arbeitgeber besonders gewichtige Gründe für eine fristlose Kündigung nachweisen."
     },
     "faqAnswers": {
@@ -172,7 +172,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich sofort krankschreiben und suchen Sie binnen 48 Stunden einen Fachanwalt auf. Dokumentieren Sie alle Umstände der Kündigung und sammeln Sie Beweise für Ihre ordentliche Arbeitsleistung der letzten Jahre. Wichtig: Unterschreiben Sie nichts vom Arbeitgeber und gehen Sie nicht auf Aufhebungsverträge ohne anwaltliche Prüfung ein.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjähriger Betriebszugehörigkeit besonders strenge Maßstäbe für fristlose Kündigungen gelten. Eine Interessenabwägung muss die Dauer der Beschäftigung angemessen berücksichtigen.",
+      "kurzbeschreibung": "Das BAG hat für langjähriger Betriebszugehörigkeit besonders strenge Maßstäbe für fristlose Kündigungen gelten. Eine Interessenabwägung muss die Dauer der Beschäftigung angemessen berücksichtigen.",
       "relevanz": "Ihre 8-jährige Betriebstreue ist ein starkes Argument gegen die Verhältnismäßigkeit einer fristlosen Kündigung."
     },
     "faqAnswers": {
@@ -192,7 +192,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nach einer fristlosen Kündigung sofort arbeitslos melden, um Sperrzeiten zu vermeiden - erklären Sie dabei, dass Sie die Kündigung für unwirksam halten. Sammeln Sie alle Unterlagen zu Ihrer Betriebszugehörigkeit und bisherigen Leistungen. Reichen Sie innerhalb von drei Wochen eine Kündigungsschutzklage ein - bei 9 Jahren Betriebszugehörigkeit stehen die Chancen sehr gut für eine hohe Abfindung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Prüfung einer fristlosen Kündigung eine umfassende Interessenabwägung erforderlich ist, die auch die Dauer der Betriebszugehörigkeit berücksichtigt.",
+      "kurzbeschreibung": "Das BAG hat für der Prüfung einer fristlosen Kündigung eine umfassende Interessenabwägung erforderlich ist, die auch die Dauer der Betriebszugehörigkeit berücksichtigt.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Mitarbeiter, da die Betriebszugehörigkeit als wichtiger Faktor gegen eine fristlose Kündigung gewertet wird."
     },
     "faqAnswers": {
@@ -212,7 +212,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich sofort krankschreiben und suchen Sie binnen 48 Stunden einen Fachanwalt für Arbeitsrecht auf - die 3-Wochen-Frist für die Kündigungsschutzklage läuft bereits. Sammeln Sie alle Unterlagen zu Ihrer bisherigen Arbeitsleistung und dokumentieren Sie den Kündigungsvorgang genau. Unterschreiben Sie auf keinen Fall einen Aufhebungsvertrag ohne anwaltliche Prüfung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Interessenabwägung für eine fristlose Kündigung die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers besonders zu berücksichtigen sind.",
+      "kurzbeschreibung": "Das BAG hat für der Interessenabwägung für eine fristlose Kündigung die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers besonders zu berücksichtigen sind.",
       "relevanz": "Diese Rechtsprechung stärkt die Position langjähriger Mitarbeiter erheblich und macht fristlose Kündigungen nach 10 Jahren deutlich schwerer durchsetzbar."
     },
     "faqAnswers": {
@@ -252,7 +252,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich bei einer fristlosen Kündigung nach 12 Jahren nicht einschüchtern und klagen Sie innerhalb von 3 Wochen gegen die Kündigung. Sammeln Sie sofort alle Unterlagen und dokumentieren Sie den Sachverhalt aus Ihrer Sicht schriftlich. Mit Ihrer langen Betriebszugehörigkeit stehen die Chancen sehr gut, dass die Kündigung unwirksam ist und Sie eine attraktive Abfindung aushandeln können.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei einer Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit erhebliches Gewicht hat. Eine lange Betriebszugehörigkeit spricht grundsätzlich gegen eine fristlose Kündigung.",
+      "kurzbeschreibung": "BAG-Feststellung zu einer Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit erhebliches Gewicht hat. Eine lange Betriebszugehörigkeit spricht grundsätzlich gegen eine fristlose Kündigung.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Mitarbeiter, da das BAG die Betriebstreue als wichtigen Faktor gegen eine fristlose Kündigung wertet."
     },
     "faqAnswers": {
@@ -272,7 +272,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nicht unter Druck setzen - nach 13 Jahren haben Sie starke Rechte. Unterschreiben Sie keinen Aufhebungsvertrag vorschnell und reichen Sie sofort Kündigungsschutzklage ein. Sammeln Sie alle Unterlagen und dokumentieren Sie das Kündigungsgespräch schriftlich - oft sind bereits formale Fehler bei der 2-Wochen-Frist gemacht worden.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährigen Arbeitnehmern selbst schwere Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Die Betriebszugehörigkeit ist bei der Interessenabwägung besonders zu berücksichtigen.",
+      "kurzbeschreibung": "Das BAG hat für langjährigen Arbeitnehmern selbst schwere Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Die Betriebszugehörigkeit ist bei der Interessenabwägung besonders zu berücksichtigen.",
       "relevanz": "Ihre 13-jährige Betriebstreue ist ein starkes Argument gegen die Wirksamkeit der fristlosen Kündigung."
     },
     "faqAnswers": {
@@ -292,7 +292,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich sofort von einem Fachanwalt für Arbeitsrecht beraten und sammeln Sie alle Unterlagen zu dem vorgeworfenen Verhalten. Dokumentieren Sie Ihre bisherige Arbeitsleistung und eventuelle Unstimmigkeiten im Kündigungsschreiben - oft übersehen Arbeitgeber wichtige Formalien oder die 2-Wochen-Frist. Verweigern Sie die Unterschrift unter einen Aufhebungsvertrag und lassen Sie sich nicht unter Zeitdruck setzen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Interessenabwägung für eine fristlose Kündigung die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers wesentliche Faktoren sind. Eine lange störungsfreie Beschäftigung spricht grundsätzlich gegen die Annahme der Unzumutbarkeit.",
+      "kurzbeschreibung": "Das BAG hat für der Interessenabwägung für eine fristlose Kündigung die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers wesentliche Faktoren sind. Eine lange störungsfreie Beschäftigung spricht grundsätzlich gegen die Annahme der Unzumutbarkeit.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Arbeitnehmer erheblich, da es die Bedeutung der 14-jährigen Betriebstreue bei der rechtlichen Bewertung fristloser Kündigungen unterstreicht."
     },
     "faqAnswers": {
@@ -332,7 +332,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Gehen Sie sofort gegen die fristlose Kündigung vor und lassen Sie sich nicht unter Druck setzen - die 16 Jahre Betriebszugehörigkeit sind Ihr stärkstes Argument. Sammeln Sie alle Unterlagen zu Ihrer bisherigen tadellosen Arbeitsleistung und dokumentieren Sie eventuelle Unregelmäßigkeiten im Kündigungsverfahren. Verhandeln Sie selbstbewusst über eine Abfindung, denn Ihr Arbeitgeber hat bei langjähriger Betriebstreue ein schwaches Blatt in der Hand.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 146/11",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährig beschäftigten Arbeitnehmern besonders hohe Anforderungen an eine fristlose Kündigung zu stellen sind. Eine lange Betriebszugehörigkeit kann selbst schwerwiegende Pflichtverletzungen relativieren.",
+      "kurzbeschreibung": "Das BAG hat für langjährig beschäftigten Arbeitnehmern besonders hohe Anforderungen an eine fristlose Kündigung zu stellen sind. Eine lange Betriebszugehörigkeit kann selbst schwerwiegende Pflichtverletzungen relativieren.",
       "relevanz": "Zeigt, dass 16 Jahre Betriebstreue ein gewichtiges Argument gegen die fristlose Kündigung darstellen."
     },
     "faqAnswers": {
@@ -352,7 +352,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich keinesfalls zur sofortigen Unterschrift einer Aufhebungsvereinbarung drängen und nehmen Sie umgehend anwaltliche Hilfe in Anspruch. Sammeln Sie alle Unterlagen zur Kündigung und dokumentieren Sie den Sachverhalt detailliert. Bei 17 Jahren Betriebszugehörigkeit ist Ihre Verhandlungsposition stark - nutzen Sie diese für eine angemessene Abfindung statt vorschnell aufzugeben.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 627/13",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährigen Arbeitnehmern eine besonders sorgfältige Interessenabwägung erforderlich ist. Selbst schwere Pflichtverletzungen können bei sehr langer Betriebszugehörigkeit eine ordentliche Kündigung rechtfertigen, aber nicht zwingend eine fristlose.",
+      "kurzbeschreibung": "Das BAG hat für langjährigen Arbeitnehmern eine besonders sorgfältige Interessenabwägung erforderlich ist. Selbst schwere Pflichtverletzungen können bei sehr langer Betriebszugehörigkeit eine ordentliche Kündigung rechtfertigen, aber nicht zwingend eine fristlose.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Beschäftigter und zeigt, dass 17 Jahre Betriebstreue ein gewichtiger Faktor gegen fristlose Kündigungen sind."
     },
     "faqAnswers": {
@@ -372,7 +372,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nicht einschüchtern - handeln Sie sofort innerhalb der 3-Wochen-Frist nach §4 KSchG. Sammeln Sie alle Unterlagen zu Ihrer 18-jährigen Betriebszugehörigkeit, bisherigen Beurteilungen und eventuelle Abmahnungen. Mit 18 Jahren im Unternehmen haben Sie eine sehr starke Position für eine Kündigungsschutzklage oder Abfindungsverhandlung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 146/85",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjähriger Betriebszugehörigkeit auch schwerwiegende Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Die Dauer der Beschäftigung ist bei der Interessenabwägung besonders zu berücksichtigen.",
+      "kurzbeschreibung": "Das BAG hat für langjähriger Betriebszugehörigkeit auch schwerwiegende Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Die Dauer der Beschäftigung ist bei der Interessenabwägung besonders zu berücksichtigen.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit 18-jähriger Betriebszugehörigkeit erheblich, da es die lange Beschäftigungsdauer als gewichtiges Argument gegen fristlose Kündigungen etabliert."
     },
     "faqAnswers": {
@@ -392,7 +392,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich sofort nach Erhalt der fristlosen Kündigung arbeitslos melden, um Sperrzeit zu vermeiden, und kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht. Bei 19 Jahren Betriebszugehörigkeit haben Sie exzellente Chancen auf eine hohe Abfindung - gehen Sie deshalb nicht vorschnell auf erste Vergleichsangebote ein. Dokumentieren Sie alle Umstände der Kündigung und sammeln Sie Belege für Ihre bisherige tadellose Arbeitsleistung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei der Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit und die bisherige Führung des Arbeitnehmers besonders zu berücksichtigen sind.",
+      "kurzbeschreibung": "BAG-Feststellung zu der Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit und die bisherige Führung des Arbeitnehmers besonders zu berücksichtigen sind.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Arbeitnehmer erheblich, da es die Betriebstreue als gewichtigen Faktor gegen eine fristlose Kündigung etabliert."
     },
     "faqAnswers": {
@@ -412,7 +412,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich bei einer fristlosen Kündigung nach 20 Jahren Betriebszugehörigkeit sofort arbeitsrechtlich beraten - die Erfolgschancen einer Kündigungsschutzklage sind sehr hoch. Sammeln Sie alle Unterlagen zu Ihrer bisherigen Arbeitsleistung, Beurteilungen und möglichen Abmahnungen. Gehen Sie nicht vorschnell auf Aufhebungsverträge ein, sondern nutzen Sie Ihre starke Position für eine angemessene Abfindungsverhandlung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Prüfung einer fristlosen Kündigung die gesamten Umstände des Einzelfalls, insbesondere die Dauer der Betriebszugehörigkeit, in die Interessenabwägung einzubeziehen sind.",
+      "kurzbeschreibung": "Das BAG hat für der Prüfung einer fristlosen Kündigung die gesamten Umstände des Einzelfalls, insbesondere die Dauer der Betriebszugehörigkeit, in die Interessenabwägung einzubeziehen sind.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Mitarbeiter erheblich, da die Betriebstreue als wichtiger Faktor gegen eine fristlose Kündigung gewertet wird."
     },
     "faqAnswers": {
@@ -432,7 +432,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Notieren Sie sofort das Zugangsdatum der Kündigung und lassen Sie sich krankschreiben, falls der Stress Sie arbeitsunfähig macht. Sammeln Sie alle Unterlagen zu Ihren Arbeitsleistungen der letzten Jahre und dokumentieren Sie positive Bewertungen oder Auszeichnungen. Kontaktieren Sie innerhalb von drei Tagen einen Fachanwalt für Arbeitsrecht, da die Klagefrist nur drei Wochen beträgt.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährigen Mitarbeitern die Betriebszugehörigkeit erhebliches Gewicht in der Interessenabwägung hat und fristlose Kündigungen nur bei schwerwiegendsten Pflichtverletzungen gerechtfertigt sind.",
+      "kurzbeschreibung": "Das BAG hat für langjährigen Mitarbeitern die Betriebszugehörigkeit erhebliches Gewicht in der Interessenabwägung hat und fristlose Kündigungen nur bei schwerwiegendsten Pflichtverletzungen gerechtfertigt sind.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Mitarbeiter erheblich und macht fristlose Kündigungen nach 21 Jahren noch schwerer durchsetzbar."
     },
     "faqAnswers": {
@@ -452,7 +452,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Reagieren Sie sofort und sammeln Sie alle Unterlagen zum Kündigungsvorwurf sowie Belege für Ihre langjährige treue Mitarbeit (Zeugnisse, Beurteilungen, Auszeichnungen). Lassen Sie sich keinesfalls zu einem Aufhebungsvertrag drängen, sondern nutzen Sie Ihre starke Position durch die 22-jährige Betriebszugehörigkeit für Verhandlungen. Reichen Sie innerhalb von drei Wochen Kündigungsschutzklage ein, um alle Rechte zu wahren.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjähriger Betriebszugehörigkeit besonders hohe Anforderungen an die Rechtfertigung einer fristlosen Kündigung zu stellen sind. Die Dauer der Beschäftigung ist ein wesentlicher Faktor bei der Interessenabwägung.",
+      "kurzbeschreibung": "Das BAG hat für langjähriger Betriebszugehörigkeit besonders hohe Anforderungen an die Rechtfertigung einer fristlosen Kündigung zu stellen sind. Die Dauer der Beschäftigung ist ein wesentlicher Faktor bei der Interessenabwägung.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Arbeitnehmer erheblich und macht fristlose Kündigungen nach vielen Berufsjahren noch schwerer durchsetzbar."
     },
     "faqAnswers": {
@@ -472,7 +472,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nach einer fristlosen Kündigung sofort krankschreiben und wenden Sie sich binnen 24 Stunden an einen Fachanwalt für Arbeitsrecht. Sammeln Sie alle Unterlagen der letzten Jahre, die Ihre gute Arbeitsleistung belegen. Bei 23 Jahren Betriebszugehörigkeit sind Ihre Chancen auf eine hohe Abfindung exzellent - gehen Sie nicht vorschnell auf die ersten Vergleichsangebote des Arbeitgebers ein.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährigen Arbeitnehmern auch schwerwiegende Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Eine Interessenabwägung unter Berücksichtigung der Betriebszugehörigkeit ist zwingend erforderlich.",
+      "kurzbeschreibung": "Das BAG hat für langjährigen Arbeitnehmern auch schwerwiegende Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Eine Interessenabwägung unter Berücksichtigung der Betriebszugehörigkeit ist zwingend erforderlich.",
       "relevanz": "Bei 23 Jahren Betriebszugehörigkeit stärkt dieses Urteil Ihre Position erheblich, da selbst schwere Verfehlungen abgewogen werden müssen."
     },
     "faqAnswers": {
@@ -492,7 +492,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nicht von der fristlosen Kündigung einschüchtern und unterschreiben Sie auf keinen Fall vorschnell einen Aufhebungsvertrag. Kontaktieren Sie innerhalb von drei Wochen einen Fachanwalt für Arbeitsrecht und reichen Sie Kündigungsschutzklage ein. Bei 24 Jahren Betriebszugehörigkeit stehen die Chancen sehr gut, dass Sie entweder den Arbeitsplatz behalten oder eine hohe Abfindung erhalten.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Prüfung einer fristlosen Kündigung die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers besonders zu berücksichtigen sind.",
+      "kurzbeschreibung": "Das BAG hat für der Prüfung einer fristlosen Kündigung die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers besonders zu berücksichtigen sind.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Mitarbeiter, da es die Bedeutung der Betriebstreue bei der Interessenabwägung hervorhebt."
     },
     "faqAnswers": {
@@ -512,7 +512,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nicht von der fristlosen Kündigung einschüchtern und unterschreiben Sie keine Aufhebungsverträge vorschnell. Reichen Sie innerhalb von drei Wochen Kündigungsschutzklage ein und dokumentieren Sie alle relevanten Unterlagen zu Ihrem Arbeitsverhältnis. Bei 25 Jahren Betriebszugehörigkeit stehen die Chancen sehr gut, dass die Kündigung unwirksam ist oder zu einer hohen Abfindung führt.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 170/16",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Prüfung einer fristlosen Kündigung die gesamten Umstände des Einzelfalls, insbesondere die Dauer der Betriebszugehörigkeit, zu berücksichtigen sind.",
+      "kurzbeschreibung": "Das BAG hat für der Prüfung einer fristlosen Kündigung die gesamten Umstände des Einzelfalls, insbesondere die Dauer der Betriebszugehörigkeit, zu berücksichtigen sind.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Mitarbeiter, da eine umfassende Interessenabwägung unter Einbeziehung der Beschäftigungsdauer erfolgen muss."
     },
     "faqAnswers": {
@@ -572,7 +572,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nicht einschüchtern und reagieren Sie sofort: Kontaktieren Sie sofort einen Fachanwalt für Arbeitsrecht, denn die Klagefrist beträgt nur drei Wochen. Sammeln Sie alle Unterlagen zu Ihrer Arbeitsleistung der letzten Jahre und dokumentieren Sie den Kündigungsvorgang genau. Bei 28 Jahren Betriebszugehörigkeit stehen die Chancen sehr gut, dass die fristlose Kündigung unwirksam ist oder Sie eine hohe Abfindung aushandeln können.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG stellte klar, dass bei langjähriger Betriebszugehörigkeit besonders strenge Anforderungen an eine fristlose Kündigung zu stellen sind. Eine Interessenabwägung muss alle Umstände würdigen.",
+      "kurzbeschreibung": "BAG-Feststellung zu langjähriger Betriebszugehörigkeit besonders strenge Anforderungen an eine fristlose Kündigung zu stellen sind. Eine Interessenabwägung muss alle Umstände würdigen.",
       "relevanz": "Bei 28 Jahren Betriebszugehörigkeit müssen Gerichte eine besonders gründliche Verhältnismäßigkeitsprüfung vornehmen, was die Erfolgsaussichten deutlich verbessert."
     },
     "faqAnswers": {
@@ -592,7 +592,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nach einer fristlosen Kündigung sofort arbeitslos melden und reichen Sie unverzüglich eine Kündigungsschutzklage ein – die 3-Wochen-Frist ist unbedingt einzuhalten. Mit 29 Jahren Betriebszugehörigkeit sollten Sie nicht auf außergerichtliche Verhandlungen setzen, sondern direkt den Klageweg beschreiten. Dokumentieren Sie alle Umstände der Kündigung und sammeln Sie Belege für Ihre bisherige ordnungsgemäße Arbeitsleistung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 584/14",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährig Beschäftigten auch schwerwiegende Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Eine umfassende Interessenabwägung unter Berücksichtigung der Beschäftigungsdauer ist zwingend erforderlich.",
+      "kurzbeschreibung": "Das BAG hat für langjährig Beschäftigten auch schwerwiegende Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Eine umfassende Interessenabwägung unter Berücksichtigung der Beschäftigungsdauer ist zwingend erforderlich.",
       "relevanz": "Dieses Urteil stärkt die Position von Arbeitnehmern mit 29 Jahren Betriebszugehörigkeit erheblich, da die lange Beschäftigungsdauer besonders gewichtet wird."
     },
     "faqAnswers": {
@@ -652,7 +652,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich auf keinen Fall zu einer Aufhebungsvereinbarung drängen und unterschreiben Sie nichts vorschnell. Wenden Sie sich sofort an einen Fachanwalt für Arbeitsrecht, um innerhalb der 3-Wochen-Frist Kündigungsschutzklage zu erheben. Bei 32 Jahren Betriebszugehörigkeit stehen Ihre Chancen sehr gut, eine hohe Abfindung zu verhandeln oder das Arbeitsverhältnis fortzusetzen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 147/08",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers besonders zu berücksichtigen sind. Eine lange Betriebszugehörigkeit spricht grundsätzlich gegen eine fristlose Kündigung.",
+      "kurzbeschreibung": "Das BAG hat für der Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers besonders zu berücksichtigen sind. Eine lange Betriebszugehörigkeit spricht grundsätzlich gegen eine fristlose Kündigung.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Arbeitnehmer erheblich, da es die Betriebszugehörigkeit als wichtigen Schutzfaktor anerkennt."
     },
     "faqAnswers": {
@@ -672,7 +672,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich sofort von einem Fachanwalt beraten und sammeln Sie alle Unterlagen zu Ihrem Fall. Reichen Sie fristgerecht Kündigungsschutzklage ein (§ 4 KSchG, 3-Wochen-Frist) und betonen Sie Ihre 33-jährige tadellose Betriebszugehörigkeit. Gehen Sie nicht vorschnell auf Vergleichsangebote ein — Ihre Verhandlungsposition ist aufgrund der langen Betriebszugehörigkeit außergewöhnlich stark.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 240/16",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjähriger Betriebszugehörigkeit auch schwerwiegende Verstöße nicht automatisch eine fristlose Kündigung rechtfertigen. Die Interessenabwägung muss die gesamte Beschäftigungszeit würdigen.",
+      "kurzbeschreibung": "Das BAG hat für langjähriger Betriebszugehörigkeit auch schwerwiegende Verstöße nicht automatisch eine fristlose Kündigung rechtfertigen. Die Interessenabwägung muss die gesamte Beschäftigungszeit würdigen.",
       "relevanz": "Das Urteil stärkt die Position von Arbeitnehmern mit sehr langer Betriebszugehörigkeit und macht fristlose Kündigungen noch schwerer durchsetzbar."
     },
     "faqAnswers": {
@@ -712,7 +712,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nicht einschüchtern und unterschreiben Sie keinen Aufhebungsvertrag vorschnell. Reichen Sie sofort, spätestens innerhalb von drei Wochen, Kündigungsschutzklage ein und dokumentieren Sie alle Umstände der Kündigung. Bei 35 Jahren Betriebszugehörigkeit stehen die Chancen sehr gut, dass die Kündigung unwirksam ist oder Sie eine hohe Abfindung aushandeln können.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers besonders zu berücksichtigen sind.",
+      "kurzbeschreibung": "Das BAG hat für der Interessenabwägung nach §626 BGB die Dauer der Betriebszugehörigkeit und das bisherige Verhalten des Arbeitnehmers besonders zu berücksichtigen sind.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Arbeitnehmer erheblich, da es die Bedeutung der Betriebstreue für die Verhältnismäßigkeitsprüfung unterstreicht."
     },
     "faqAnswers": {
@@ -732,7 +732,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich sofort von einem Fachanwalt für Arbeitsrecht beraten und reichen Sie innerhalb von drei Wochen Kündigungsschutzklage ein. Bei 36 Jahren Betriebszugehörigkeit stehen die Chancen sehr gut, dass die fristlose Kündigung unwirksam ist oder Sie eine hohe Abfindung aushandeln können. Sammeln Sie alle Unterlagen und dokumentieren Sie den Sachverhalt detailliert.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjähriger Betriebszugehörigkeit auch schwerwiegende Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Eine Interessenabwägung unter Berücksichtigung der Beschäftigungsdauer ist zwingend erforderlich.",
+      "kurzbeschreibung": "Das BAG hat für langjähriger Betriebszugehörigkeit auch schwerwiegende Pflichtverletzungen nicht automatisch eine fristlose Kündigung rechtfertigen. Eine Interessenabwägung unter Berücksichtigung der Beschäftigungsdauer ist zwingend erforderlich.",
       "relevanz": "Bei 36 Jahren Betriebszugehörigkeit muss das Fehlverhalten besonders gravierend sein, um eine fristlose Kündigung zu rechtfertigen."
     },
     "faqAnswers": {
@@ -752,7 +752,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nicht von der fristlosen Kündigung einschüchtern – gehen Sie sofort zum Fachanwalt für Arbeitsrecht. Bei 37 Jahren Betriebszugehörigkeit stehen die Chancen ausgezeichnet, dass die Kündigung unwirksam ist. Sammeln Sie alle positiven Arbeitszeugnisse und Dokumente Ihrer Betriebszugehörigkeit – diese sind Ihre stärksten Argumente in der Verhandlung.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjährigen Arbeitnehmern eine besonders strenge Interessenabwägung erforderlich ist und mildere Mittel vorrangig zu prüfen sind.",
+      "kurzbeschreibung": "Das BAG hat für langjährigen Arbeitnehmern eine besonders strenge Interessenabwägung erforderlich ist und mildere Mittel vorrangig zu prüfen sind.",
       "relevanz": "Diese Rechtsprechung stärkt Ihre Position erheblich, da 37 Jahre Betriebszugehörigkeit ein gewichtiges Argument gegen die Verhältnismäßigkeit einer fristlosen Kündigung darstellen."
     },
     "faqAnswers": {
@@ -772,7 +772,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nach einer fristlosen Kündigung sofort arbeitslos melden, um Sperrzeiten zu vermeiden, und wenden Sie sich umgehend an einen Fachanwalt für Arbeitsrecht. Sammeln Sie alle Unterlagen und Beweise, die gegen die Kündigung sprechen könnten. Mit 38 Jahren Betriebszugehörigkeit haben Sie ausgezeichnete Chancen auf eine hohe Abfindung – nutzen Sie diese starke Position für Verhandlungen.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei der Interessenabwägung im Rahmen einer außerordentlichen Kündigung die Dauer der Betriebszugehörigkeit erhebliches Gewicht hat und gegen eine fristlose Kündigung spricht.",
+      "kurzbeschreibung": "Das BAG hat für der Interessenabwägung im Rahmen einer außerordentlichen Kündigung die Dauer der Betriebszugehörigkeit erhebliches Gewicht hat und gegen eine fristlose Kündigung spricht.",
       "relevanz": "Dieses Urteil stärkt die Position langjähriger Arbeitnehmer und macht deutlich, dass 38 Jahre Betriebstreue ein gewichtiges Argument gegen fristlose Kündigungen darstellen."
     },
     "faqAnswers": {
@@ -792,8 +792,8 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich nicht einschüchtern und unterschreiben Sie keinen Aufhebungsvertrag vorschnell. Reichen Sie sofort Klage beim Arbeitsgericht ein - Sie haben nur drei Wochen Zeit. Mit 39 Jahren Betriebszugehörigkeit stehen Ihre Chancen ausgezeichnet, entweder den Arbeitsplatz zu behalten oder eine sehr hohe Abfindung zu erhalten.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjähriger Betriebszugehörigkeit auch schwerwiegende Pflichtverletzungen zunächst eine Abmahnung erfordern können. Eine fristlose Kündigung ist nur ultima ratio.",
-      "relevanz": "Dieses Urteil stärkt Ihre Position erheblich, da 39 Jahre Betriebstreue selbst bei größeren Verfehlungen zunächst eine mildere Reaktion erfordern."
+      "kurzbeschreibung": "Das BAG hat für langjähriger Betriebszugehörigkeit auch schwerwiegende Pflichtverletzungen zunächst eine Abmahnung erfordern können. Eine fristlose Kündigung ist nur ultima ratio.",
+      "relevanz": "Praktisch bedeutet das: Ihre Position ist deutlich stärker, da 39 Jahre Betriebstreue selbst bei größeren Verfehlungen zunächst eine mildere Reaktion erfordern."
     },
     "faqAnswers": {
       "wirksamkeit": "Eine fristlose Kündigung nach 39 Jahren ist nur sehr schwer wirksam durchsetzbar. §626 BGB verlangt eine umfassende Interessenabwägung, bei der Ihre lange Betriebstreue schwer ins Gewicht fällt. Selbst bei schwerwiegenden Pflichtverletzungen müssen Gerichte prüfen, ob nicht zunächst eine Abmahnung hätte erfolgen müssen. In den meisten Fällen überwiegen bei 39 Jahren die Interessen des Arbeitnehmers.",
@@ -812,7 +812,7 @@ export const generatedFristlosContent: GeneratedFristlosContent[] = [
     "praxistipp": "Lassen Sie sich bei einer fristlosen Kündigung nach 40 Jahren Betriebszugehörigkeit sofort anwaltlich beraten - Ihre Chancen stehen ausgezeichnet. Sammeln Sie alle Unterlagen zu Ihrer bisherigen Arbeitsleistung, Beurteilungen und eventuelle Auszeichnungen. Gehen Sie nicht auf schnelle Aufhebungsverträge mit geringen Abfindungen ein, sondern nutzen Sie Ihre starke Verhandlungsposition.",
     "bagUrteil": {
       "aktenzeichen": "2 AZR 140/12",
-      "kurzbeschreibung": "Das BAG entschied, dass bei langjähriger Betriebszugehörigkeit selbst erhebliche Pflichtverletzungen eine vorherige Abmahnung erfordern. Eine fristlose Kündigung ist nur bei schwersten Vertrauensbrüchen ohne Abmahnung möglich.",
+      "kurzbeschreibung": "Das BAG hat für langjähriger Betriebszugehörigkeit selbst erhebliche Pflichtverletzungen eine vorherige Abmahnung erfordern. Eine fristlose Kündigung ist nur bei schwersten Vertrauensbrüchen ohne Abmahnung möglich.",
       "relevanz": "Dieses Urteil stärkt Arbeitnehmer mit 40 Jahren Betriebszugehörigkeit erheblich, da es das Gewicht der langen Betriebstreue in der Interessenabwägung betont."
     },
     "faqAnswers": {

@@ -313,6 +313,56 @@ export default function AbfindungPage() {
       </section>
 
       {/* FAQ */}
+      {/* Deep-Dive-Hub: Money Page ist der Einstiegspunkt, die tenure-
+          spezifischen Seiten sind die Deep Dives. Die Hub-und-Spoke-
+          Verlinkung sagt Google: /abfindung/ ist der Hauptartikel, die
+          Nebenseiten targeten Long-Tail wie "abfindung nach X jahren". */}
+      <section className="py-[70px] px-8 bg-cream border-t border-border">
+        <div className="max-w-content mx-auto">
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+            Nach Betriebszugehörigkeit
+          </div>
+          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+            Abfindung nach Ihren Jahren berechnen
+          </h2>
+          <p className="text-[0.98rem] text-ink-light max-w-[720px] leading-relaxed mb-6">
+            Die Faustformel liefert einen Startpunkt — die konkrete Abfindungshöhe
+            hängt aber stark von Ihrer Betriebszugehörigkeit ab. Für jedes Beschäftigungsjahr
+            haben wir einen eigenen Ratgeber mit BAG-Urteil, Praxis-Fall und Verhandlungsspielraum:
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 max-w-[720px]">
+            {[
+              { j: 1, l: '1 Jahr' },
+              { j: 2, l: '2 Jahren' },
+              { j: 3, l: '3 Jahren' },
+              { j: 5, l: '5 Jahren' },
+              { j: 7, l: '7 Jahren' },
+              { j: 10, l: '10 Jahren' },
+              { j: 15, l: '15 Jahren' },
+              { j: 20, l: '20 Jahren' },
+            ].map(({ j, l }) => (
+              <Link
+                key={j}
+                href={`/abfindung-jahre/${j}-jahren/`}
+                className="py-2.5 px-3 bg-white border border-border-light rounded-sm text-[0.88rem] text-ink no-underline hover:border-gold hover:bg-gold-bg transition-all"
+              >
+                Abfindung nach {l} <span className="text-gold-dark">→</span>
+              </Link>
+            ))}
+          </div>
+          <p className="text-[0.82rem] text-ink-muted mt-4">
+            Sie sind gekündigt worden? Direkt zum passenden Ratgeber:{' '}
+            <Link href="/gekuendigt-jahre/" className="text-gold-dark font-semibold no-underline hover:underline">
+              Gekündigt nach X Jahren — was jetzt?
+            </Link>{' '}
+            oder zur{' '}
+            <Link href="/abfindungstabelle/" className="text-gold-dark font-semibold no-underline hover:underline">
+              Abfindungstabelle
+            </Link>.
+          </p>
+        </div>
+      </section>
+
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
