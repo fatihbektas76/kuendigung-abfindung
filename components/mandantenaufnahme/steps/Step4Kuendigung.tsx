@@ -56,6 +56,16 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
     onChange('kuendigungen', updated.slice(0, count));
   }
 
+  function handleErhaltenChange(val: 'ja' | 'nein') {
+    onChange('kuendigungErhalten', val);
+    // Bei „Nein" alle abhängigen Kündigungs-Felder zurücksetzen —
+    // sonst tragen wir versehentlich alte Werte in die Mandatsnotiz ein.
+    if (val === 'nein') {
+      onChange('kuendigungsAnzahl', '');
+      onChange('kuendigungen', [{ kuendigungsDatum: '', zugangsDatum: '' }]);
+    }
+  }
+
   return (
     <div className="space-y-5">
       <h2 className="font-serif text-[clamp(1.3rem,3vw,1.6rem)] font-bold text-ink mb-2">
@@ -65,21 +75,43 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
         {t.step4.description}
       </p>
 
-      {/* Anzahl Kündigungen */}
+      {/* Kündigung erhalten? */}
       <div>
         <label className="block text-[0.84rem] font-semibold text-ink mb-2">
-          {t.step4.anzahlFrage} <span className="text-gold-dark ml-0.5">*</span>
+          {t.step4.erhaltenFrage} <span className="text-gold-dark ml-0.5">*</span>
         </label>
-        <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
-          <RadioOption label="1" selected={data.kuendigungsAnzahl === '1'} onClick={() => handleAnzahlChange('1')} />
-          <RadioOption label="2" selected={data.kuendigungsAnzahl === '2'} onClick={() => handleAnzahlChange('2')} />
-          <RadioOption label={t.step4.dreiOderMehr} selected={data.kuendigungsAnzahl === '3+'} onClick={() => handleAnzahlChange('3+')} />
+        <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
+          <RadioOption
+            label={t.step4.ja}
+            selected={data.kuendigungErhalten === 'ja'}
+            onClick={() => handleErhaltenChange('ja')}
+          />
+          <RadioOption
+            label={t.step4.nein}
+            selected={data.kuendigungErhalten === 'nein'}
+            onClick={() => handleErhaltenChange('nein')}
+          />
         </div>
-        {errors.kuendigungsAnzahl && <p className="text-[0.78rem] text-red-500 mt-1">{errors.kuendigungsAnzahl}</p>}
+        {errors.kuendigungErhalten && <p className="text-[0.78rem] text-red-500 mt-1">{errors.kuendigungErhalten}</p>}
       </div>
 
-      {/* Kündigung Details */}
-      {anzahl > 0 && (
+      {/* Anzahl Kündigungen — nur wenn Ja */}
+      {data.kuendigungErhalten === 'ja' && (
+        <div>
+          <label className="block text-[0.84rem] font-semibold text-ink mb-2">
+            {t.step4.anzahlFrage} <span className="text-gold-dark ml-0.5">*</span>
+          </label>
+          <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
+            <RadioOption label="1" selected={data.kuendigungsAnzahl === '1'} onClick={() => handleAnzahlChange('1')} />
+            <RadioOption label="2" selected={data.kuendigungsAnzahl === '2'} onClick={() => handleAnzahlChange('2')} />
+            <RadioOption label={t.step4.dreiOderMehr} selected={data.kuendigungsAnzahl === '3+'} onClick={() => handleAnzahlChange('3+')} />
+          </div>
+          {errors.kuendigungsAnzahl && <p className="text-[0.78rem] text-red-500 mt-1">{errors.kuendigungsAnzahl}</p>}
+        </div>
+      )}
+
+      {/* Kündigung Details — nur wenn Ja + Anzahl gewählt */}
+      {data.kuendigungErhalten === 'ja' && anzahl > 0 && (
         <div className="space-y-4">
           {Array.from({ length: anzahl }).map((_, i) => (
             <div

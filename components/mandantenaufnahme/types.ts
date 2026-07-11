@@ -29,6 +29,7 @@ export interface MandantenFormData {
   kuendigungsschutzSonstig: string;
 
   // Step 4 — Kündigung & Versicherung
+  kuendigungErhalten: 'ja' | 'nein' | '';
   kuendigungsAnzahl: '1' | '2' | '3+' | '';
   kuendigungen: Array<{ kuendigungsDatum: string; zugangsDatum: string }>;
   rechtsschutz: 'ja' | 'nein' | '';
@@ -82,6 +83,7 @@ export const initialFormData: MandantenFormData = {
   kuendigungsschutz: [],
   kuendigungsschutzSonstig: '',
 
+  kuendigungErhalten: '',
   kuendigungsAnzahl: '',
   kuendigungen: [{ kuendigungsDatum: '', zugangsDatum: '' }],
   rechtsschutz: '',

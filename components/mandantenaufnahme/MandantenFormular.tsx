@@ -86,11 +86,15 @@ function validateStep(step: number, data: MandantenFormData, t: Translations): S
   }
 
   if (step === 4) {
-    if (!data.kuendigungsAnzahl) errors.kuendigungsAnzahl = v.kuendigungsAnzahl;
-    const count = data.kuendigungsAnzahl === '3+' ? 3 : data.kuendigungsAnzahl === '2' ? 2 : data.kuendigungsAnzahl === '1' ? 1 : 0;
-    for (let i = 0; i < count; i++) {
-      if (!data.kuendigungen[i]?.kuendigungsDatum) errors[`kuendigungsDatum_${i}`] = v.kuendigungsDatum;
-      if (!data.kuendigungen[i]?.zugangsDatum) errors[`zugangsDatum_${i}`] = v.zugangsDatum;
+    if (!data.kuendigungErhalten) {
+      errors.kuendigungErhalten = v.kuendigungErhalten;
+    } else if (data.kuendigungErhalten === 'ja') {
+      if (!data.kuendigungsAnzahl) errors.kuendigungsAnzahl = v.kuendigungsAnzahl;
+      const count = data.kuendigungsAnzahl === '3+' ? 3 : data.kuendigungsAnzahl === '2' ? 2 : data.kuendigungsAnzahl === '1' ? 1 : 0;
+      for (let i = 0; i < count; i++) {
+        if (!data.kuendigungen[i]?.kuendigungsDatum) errors[`kuendigungsDatum_${i}`] = v.kuendigungsDatum;
+        if (!data.kuendigungen[i]?.zugangsDatum) errors[`zugangsDatum_${i}`] = v.zugangsDatum;
+      }
     }
     if (!data.rechtsschutz) errors.rechtsschutz = v.rechtsschutz;
     if (data.rechtsschutz === 'ja' && !data.rechtsschutzDauer) {

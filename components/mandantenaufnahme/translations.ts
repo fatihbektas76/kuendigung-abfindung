@@ -107,6 +107,7 @@ const de = {
   step4: {
     heading: 'Kündigung & Versicherung',
     description: 'Angaben zur Kündigung und Rechtsschutzversicherung.',
+    erhaltenFrage: 'Haben Sie eine Kündigung erhalten?',
     anzahlFrage: 'Wie viele Kündigungen sind eingegangen?',
     dreiOderMehr: '3 oder mehr',
     kuendigung: 'Kündigung',
@@ -242,6 +243,7 @@ const de = {
     bruttomonatslohn: 'Bitte Bruttomonatslohn eingeben.',
     eintrittsdatum: 'Bitte Eintrittsdatum eingeben.',
     betriebsrat: 'Bitte angeben, ob ein Betriebsrat existiert.',
+    kuendigungErhalten: 'Bitte angeben, ob eine Kündigung eingegangen ist.',
     kuendigungsAnzahl: 'Bitte Anzahl der Kündigungen wählen.',
     kuendigungsDatum: 'Bitte Datum eingeben.',
     zugangsDatum: 'Bitte Datum eingeben.',
@@ -383,6 +385,7 @@ const en: Translations = {
   step4: {
     heading: 'Termination & Insurance',
     description: 'Details about your termination and legal protection insurance.',
+    erhaltenFrage: 'Have you received a termination notice?',
     anzahlFrage: 'How many terminations have been received?',
     dreiOderMehr: '3 or more',
     kuendigung: 'Termination',
@@ -509,6 +512,7 @@ const en: Translations = {
     bruttomonatslohn: 'Please enter your gross monthly salary.',
     eintrittsdatum: 'Please enter your start date.',
     betriebsrat: 'Please indicate whether a works council exists.',
+    kuendigungErhalten: 'Please indicate whether a termination notice was received.',
     kuendigungsAnzahl: 'Please select the number of terminations.',
     kuendigungsDatum: 'Please enter the date.',
     zugangsDatum: 'Please enter the date.',
