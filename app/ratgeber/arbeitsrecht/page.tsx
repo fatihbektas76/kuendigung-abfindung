@@ -94,6 +94,19 @@ const articles: Article[] = [
     ],
     dateKey: 'abfindungstabelle',
   },
+  {
+    href: '/urlaubsanspruch-bei-kuendigung/',
+    eyebrow: 'Urlaubsrecht',
+    title: 'Urlaubsanspruch bei Kündigung — Rechner & Ratgeber § 5 BUrlG',
+    description:
+      'Wie viel Resturlaub bleibt nach Kündigung? Halbjahres-Regel nach § 5 BUrlG, Wartezeit, Verfall, Urlaubsabgeltung und Ausschlussfristen — mit kostenlosem Rechner.',
+    facts: [
+      '§ 5 BUrlG: Halbjahres-Regel bestimmt den Anspruch',
+      'EuGH C-684/16 & BAG 9 AZR 541/15: kein Verfall ohne Hinweis',
+      '§ 7 Abs. 4 BUrlG: Abgeltung, wenn Urlaub nicht mehr genommen werden kann',
+    ],
+    dateKey: 'urlaubsanspruchBeiKuendigung',
+  },
 ];
 
 export default function RatgeberArbeitsrechtPage() {

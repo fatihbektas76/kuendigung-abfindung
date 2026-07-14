@@ -42,7 +42,8 @@ export const PAGE_DATES = {
   kuendigungsfristen: '2026-05-26',
   abfindungstabelle: '2026-05-26',
   kuendigungsschutzgesetzAnwendung: '2026-06-08',
-  ratgeberArbeitsrecht: '2026-06-09',
+  ratgeberArbeitsrecht: '2026-07-14',
+  urlaubsanspruchBeiKuendigung: '2026-07-14',
 } as const;
 
 export type PageDateKey = keyof typeof PAGE_DATES;
