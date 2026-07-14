@@ -133,10 +133,6 @@ function berechneResturlaub(input: {
   };
 }
 
-function formatDatum(d: Date): string {
-  return d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
-}
-
 /* ─── UI ─── */
 
 export default function ResturlaubRechner() {
@@ -362,7 +358,7 @@ export default function ResturlaubRechner() {
                 <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
                   Pro-rata-Klausel im Arbeitsvertrag?{' '}
                   <span className="text-ink-muted font-normal">
-                    (Formulierung „anteilig entsprechend der Beschäftigungsdauer")
+                    (Formulierung &bdquo;anteilig entsprechend der Beschäftigungsdauer&ldquo;)
                   </span>
                 </label>
                 <div className="flex gap-3">
