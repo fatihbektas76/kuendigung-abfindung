@@ -104,6 +104,18 @@ const tools = [
     href: '/urlaubsabgeltung-rechner',
   },
   {
+    label: 'Resturlaub',
+    title: 'Resturlaub bei Kündigung Rechner',
+    text: 'Wie viele Urlaubstage stehen Ihnen bei Kündigung noch zu? Der Rechner unterscheidet nach § 5 BUrlG zwischen 1. und 2. Halbjahr und berücksichtigt Pro-rata-Klauseln im Arbeitsvertrag — sofort und kostenlos.',
+    checks: [
+      'Berechnung nach § 5 BUrlG',
+      '1. Halbjahr, 2. Halbjahr & Wartezeit',
+      'Pro-rata-Klausel automatisch geprüft',
+    ],
+    linkText: 'Jetzt berechnen',
+    href: '/resturlaub-bei-kuendigung-rechner',
+  },
+  {
     label: 'Teilzeit',
     title: 'Urlaubsrechner Teilzeit',
     text: 'Wie viel Urlaub steht Ihnen in Teilzeit zu? Berechnen Sie Ihren anteiligen Urlaubsanspruch nach §3 BUrlG — sofort und kostenlos.',
@@ -195,7 +207,8 @@ export default function ToolsPage() {
               { '@type': 'ListItem', position: 5, name: 'Überstundenrechner', url: `${SEO_CONFIG.baseUrl}/ueberstundenrechner/` },
               { '@type': 'ListItem', position: 6, name: 'Kündigungsfrist-Rechner', url: `${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner/` },
               { '@type': 'ListItem', position: 7, name: 'Urlaubsabgeltungsrechner', url: `${SEO_CONFIG.baseUrl}/urlaubsabgeltung-rechner/` },
-              { '@type': 'ListItem', position: 8, name: 'Urlaubsrechner Teilzeit', url: `${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner/` },
+              { '@type': 'ListItem', position: 8, name: 'Resturlaub bei Kündigung Rechner', url: `${SEO_CONFIG.baseUrl}/resturlaub-bei-kuendigung-rechner/` },
+              { '@type': 'ListItem', position: 9, name: 'Urlaubsrechner Teilzeit', url: `${SEO_CONFIG.baseUrl}/urlaub-teilzeit-rechner/` },
             ],
           }),
         }}
