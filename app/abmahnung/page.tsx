@@ -227,16 +227,16 @@ export default function AbmahnungPage() {
                 </p>
               </div>
             </div>
+            <BagQuote az="2 AZR 258/11" gericht="BAG" datum="19.04.2012">
+              Eine Abmahnung muss das beanstandete Verhalten so genau bezeichnen, dass der Arbeitnehmer erkennen kann, was der Arbeitgeber als Vertragsverstoß ansieht. Zugleich muss sie die Androhung einer Kündigung für den Wiederholungsfall enthalten.
+            </BagQuote>
+
+            <DefinitionBox
+              term="Abmahnung"
+              definition="Eine formale Rüge des Arbeitgebers, die ein konkretes Fehlverhalten benennt (Rügefunktion) und für den Wiederholungsfall arbeitsrechtliche Konsequenzen bis hin zur Kündigung androht (Warnfunktion). Sie ist nach ständiger BAG-Rechtsprechung in der Regel Voraussetzung für eine verhaltensbedingte Kündigung."
+            />
+
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
-              <BagQuote az="2 AZR 258/11" gericht="BAG" datum="19.04.2012">
-                Eine Abmahnung muss das beanstandete Verhalten so genau bezeichnen, dass der Arbeitnehmer erkennen kann, was der Arbeitgeber als Vertragsverstoß ansieht. Zugleich muss sie die Androhung einer Kündigung für den Wiederholungsfall enthalten.
-              </BagQuote>
-
-              <DefinitionBox
-                term="Abmahnung"
-                definition="Eine formale Rüge des Arbeitgebers, die ein konkretes Fehlverhalten benennt (Rügefunktion) und für den Wiederholungsfall arbeitsrechtliche Konsequenzen bis hin zur Kündigung androht (Warnfunktion). Sie ist nach ständiger BAG-Rechtsprechung in der Regel Voraussetzung für eine verhaltensbedingte Kündigung."
-              />
-
               Die rechtliche Grundlage der Abmahnung ergibt sich aus dem allgemeinen Grundsatz der
               Verhältnismäßigkeit und dem Ultima-Ratio-Prinzip: Bevor der Arbeitgeber das Arbeitsverhältnis
               durch eine verhaltensbedingte Kündigung beendet, muss er dem Arbeitnehmer durch eine
