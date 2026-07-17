@@ -118,6 +118,53 @@ export default function KuendigungsschutzKlagePage() {
         }}
       />
 
+      {/* Schema.org — HowTo: Ablauf des Verfahrens in 5 Schritten */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'Kündigungsschutzklage einreichen und führen — Ablauf in 5 Schritten',
+            description:
+              'So läuft eine Kündigungsschutzklage vor dem Arbeitsgericht ab — von der Prüfung bis zum Vergleich oder Kammertermin.',
+            totalTime: 'P60D',
+            step: [
+              {
+                '@type': 'HowToStep',
+                position: 1,
+                name: 'Klagefrist prüfen (§ 4 KSchG)',
+                text: 'Innerhalb von 3 Wochen ab Zugang der Kündigung muss die Kündigungsschutzklage beim Arbeitsgericht eingehen. Fristsäumnis führt zur Wirksamkeitsfiktion der Kündigung.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 2,
+                name: 'Anwaltliche Ersteinschätzung einholen',
+                text: 'Fachanwalt prüft Kündigungsgrund, Sozialauswahl, Formfehler und Erfolgsaussichten. Streitwert wird typischerweise mit einem Bruttomonatsgehalt angesetzt.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 3,
+                name: 'Klage beim zuständigen Arbeitsgericht einreichen',
+                text: 'Schriftliche Klageschrift mit Antrag und Sachverhalt beim örtlich zuständigen Arbeitsgericht einreichen. Zuständig ist regelmäßig das Gericht am Beschäftigungsort.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 4,
+                name: 'Gütetermin wahrnehmen',
+                text: '2 bis 6 Wochen nach Klageeinreichung findet der Gütetermin statt. In rund 80 % der Fälle endet er mit einem Vergleich (Abfindung 0,5–1,5 Bruttomonatsgehälter pro Beschäftigungsjahr).',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 5,
+                name: 'Kammertermin oder Vergleich',
+                text: 'Bleibt der Gütetermin ergebnislos, folgt der Kammertermin nach weiteren 2–4 Monaten mit ehrenamtlichen Richtern. Alternativer Ausgang: außergerichtlicher Vergleich mit Abfindung.',
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
         <div className="max-w-content mx-auto">

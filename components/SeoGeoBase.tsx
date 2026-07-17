@@ -14,6 +14,12 @@ interface SeoGeoBaseProps {
   dateModified?: string;
   includeRating?: boolean;
   includeOrganization?: boolean;
+  /** Nur wirksam bei pageType="Article". Rendert eine reichere Article-
+   *  Repräsentation mit headline + mainEntityOfPage + articleSection
+   *  und macht damit die separate generateArticleSchema-Emission
+   *  redundant. Nicht setzen = Legacy-Verhalten (basic Article). */
+  headline?: string;
+  articleSection?: string;
 }
 
 const { baseUrl, author, organization, rating, reviews } = SEO_CONFIG;
@@ -36,6 +42,8 @@ export default function SeoGeoBase({
   dateModified,
   includeRating = false,
   includeOrganization = false,
+  headline,
+  articleSection,
 }: SeoGeoBaseProps) {
   const effectiveDateModified = dateModified ?? datePublished;
   // Speakable ohne explizite Selektoren: '#direktantwort' + 'h1' sind der
@@ -164,6 +172,15 @@ export default function SeoGeoBase({
         name: ref.name,
         url: ref.url,
       }));
+    }
+    // Rich-Article-Felder — nur wenn pageType="Article" und headline gesetzt.
+    // Ersetzt die separate generateArticleSchema-Emission.
+    if (pageType === 'Article' && headline) {
+      pageSchema.headline = headline;
+      pageSchema.mainEntityOfPage = pageUrl;
+      if (articleSection) {
+        pageSchema.articleSection = articleSection;
+      }
     }
     schemas.push(pageSchema);
   }

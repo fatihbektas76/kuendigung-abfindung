@@ -13,49 +13,13 @@ import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import BagQuote from '@/components/BagQuote';
+import NormLink, { NORM, bagDejureUrl } from '@/components/NormLink';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import { QUELLEN_KSCHG_ANWENDUNG } from '@/lib/quellen-defaults';
 import { generateArticleSchema } from '@/lib/article-schema';
 
 export const revalidate = 86400;
-
-/** dejure.org Inline-Link für eine zitierte Norm */
-function NormLink({ children, href }: { children: React.ReactNode; href: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-gold-dark no-underline hover:underline decoration-gold underline-offset-2"
-    >
-      {children}
-    </a>
-  );
-}
-
-const NORM = {
-  kschg1: 'https://dejure.org/gesetze/KSchG/1.html',
-  kschg4: 'https://dejure.org/gesetze/KSchG/4.html',
-  kschg9: 'https://dejure.org/gesetze/KSchG/9.html',
-  kschg14: 'https://dejure.org/gesetze/KSchG/14.html',
-  kschg15: 'https://dejure.org/gesetze/KSchG/15.html',
-  kschg23: 'https://dejure.org/gesetze/KSchG/23.html',
-  bgb622: 'https://dejure.org/gesetze/BGB/622.html',
-  bgb623: 'https://dejure.org/gesetze/BGB/623.html',
-  bgb242: 'https://dejure.org/gesetze/BGB/242.html',
-  muschg17: 'https://dejure.org/gesetze/MuSchG/17.html',
-  sgbIX168: 'https://dejure.org/gesetze/SGB_IX/168.html',
-  beeg18: 'https://dejure.org/gesetze/BEEG/18.html',
-} as const;
-
-/** dejure.org Vernetzungs-URL für BAG-Urteile — landet zuverlässig auf der Trefferseite */
-function bagDejureUrl(datum: string | null, az: string): string {
-  const base = 'https://dejure.org/dienste/vernetzung/rechtsprechung';
-  const params = new URLSearchParams({ Gericht: 'BAG', Aktenzeichen: az });
-  if (datum) params.set('Datum', datum);
-  return `${base}?${params.toString()}`;
-}
 
 const year = new Date().getFullYear();
 const PAGE_URL = `${SEO_CONFIG.baseUrl}/kuendigungsschutzgesetz-anwendung/`;
@@ -851,7 +815,7 @@ export default function KSchGAnwendungPage() {
               Sonderkündigungsschutz für <strong>Schwangere</strong> (
               <NormLink href={NORM.muschg17}>&sect;&nbsp;17 MuSchG</NormLink>),{' '}
               <strong>Schwerbehinderte</strong> (
-              <NormLink href={NORM.sgbIX168}>&sect;&nbsp;168 SGB&nbsp;IX</NormLink>),{' '}
+              <NormLink href={NORM.sgb9168}>&sect;&nbsp;168 SGB&nbsp;IX</NormLink>),{' '}
               <strong>Betriebsräte</strong> (
               <NormLink href={NORM.kschg15}>&sect;&nbsp;15 KSchG</NormLink>) und{' '}
               <strong>Elternzeitler</strong> (
