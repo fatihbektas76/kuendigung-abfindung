@@ -1072,14 +1072,16 @@ export default function KuendigungPruefenPage() {
             )}
           </div>
         </div>
-      </div>
 
-      {/* BERT-Interlinker */}
-      <section className="py-[50px] px-8 bg-white w-full">
-        <div className="max-w-content mx-auto">
-          <WeitereLinkvorschlaege currentPath="/kuendigung-pruefen" />
-        </div>
-      </section>
+        {/* BERT-Interlinker — muss innerhalb der Mittenspalte liegen,
+            sonst rendert die Section rechts neben dem Fragebogen im
+            äußeren Flex-Row-Container. */}
+        <section className="py-[50px] px-8 bg-white border-t border-border">
+          <div className="max-w-content mx-auto">
+            <WeitereLinkvorschlaege currentPath="/kuendigung-pruefen" />
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

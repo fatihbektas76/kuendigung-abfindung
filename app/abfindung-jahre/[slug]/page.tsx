@@ -5,6 +5,14 @@ import AbfindungJahreContent from './content';
 import abfindungData from '@/data/generated/abfindung-data.json';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
+import { PAGE_DATES } from '@/lib/page-dates';
+import { generateArticleSchema } from '@/lib/article-schema';
+
+const ABFINDUNG_ISBASEDON = [
+  { name: '§ 1a KSchG — Abfindungsanspruch bei betriebsbedingter Kündigung', url: 'https://www.gesetze-im-internet.de/kschg/__1a.html' },
+  { name: '§ 10 KSchG — Höhe der Abfindung', url: 'https://www.gesetze-im-internet.de/kschg/__10.html' },
+  { name: '§ 34 EStG — Fünftelregelung', url: 'https://www.gesetze-im-internet.de/estg/__34.html' },
+];
 
 export const revalidate = 86400;
 
@@ -61,16 +69,35 @@ export default function Page({ params }: Props) {
   return (
     <>
       <SeoGeoBase
-        pageType="WebPage"
+        pageType="Article"
         pageUrl={pageUrl}
         pageTitle={`Abfindung nach ${yl}`}
-        pageDescription={`Abfindung nach ${yl} Betriebszugehörigkeit`}
+        pageDescription={`Abfindung nach ${yl} Betriebszugehörigkeit — Anspruch, Höhe und Vorgehen nach § 1a KSchG.`}
         speakableSelectors={['.fakt-box', '.faq-list', '.abfindung-formel']}
+        dateModified={PAGE_DATES.abfindungJahre}
+        datePublished="2025-01-15"
+        isBasedOn={ABFINDUNG_ISBASEDON}
         breadcrumbs={[
           { name: 'Startseite', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Abfindung', url: `${SEO_CONFIG.baseUrl}/abfindung/` },
           { name: `Abfindung nach ${yl}`, url: pageUrl },
         ]}
+      />
+
+      {/* Schema.org - Article (Ratgeber-Content, GEO-Signal) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateArticleSchema({
+              headline: `Abfindung nach ${yl} Betriebszugehörigkeit`,
+              description: `Abfindungshöhe, Anspruch und Vorgehen nach ${yl} Betriebszugehörigkeit — Fachanwalts-Ratgeber mit Beispielsfall.`,
+              dateModified: PAGE_DATES.abfindungJahre,
+              url: pageUrl,
+              articleSection: 'Abfindung',
+            }),
+          ),
+        }}
       />
 
       {/* Schema.org - FAQPage (8 Fragen) */}

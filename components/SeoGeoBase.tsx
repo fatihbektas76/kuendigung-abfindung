@@ -29,10 +29,20 @@ export default function SeoGeoBase({
   speakableSelectors,
   breadcrumbs,
   datePublished = '2025-01-15',
-  dateModified = new Date().toISOString().split('T')[0],
+  // Falls die Seite kein eigenes dateModified übergibt, sagen wir "seit
+  // Veröffentlichung nicht geändert" statt "heute geändert". Das verhindert,
+  // dass jede ISR-Revalidation ein neues dateModified in die Schemas kippt —
+  // was Google als Content-Freshness-Rauschen wertet.
+  dateModified,
   includeRating = false,
   includeOrganization = false,
 }: SeoGeoBaseProps) {
+  const effectiveDateModified = dateModified ?? datePublished;
+  // Speakable ohne explizite Selektoren: '#direktantwort' + 'h1' sind der
+  // Site-weite GEO-Standard. Explizite Werte werden weiterhin angehängt.
+  const effectiveSpeakable = speakableSelectors && speakableSelectors.length > 0
+    ? ['#direktantwort', 'h1', ...speakableSelectors]
+    : ['#direktantwort', 'h1'];
   const schemas: Record<string, unknown>[] = [];
 
   // Block 1: Person / Author (immer)
@@ -95,7 +105,7 @@ export default function SeoGeoBase({
       provider: { '@id': organization.id },
       author: { '@id': `${baseUrl}/#author` },
       datePublished,
-      dateModified,
+      dateModified: effectiveDateModified,
     };
     if (isBasedOn && isBasedOn.length > 0) {
       appSchema.isBasedOn = isBasedOn.map((ref) => ({
@@ -106,28 +116,27 @@ export default function SeoGeoBase({
     }
     schemas.push(appSchema);
 
-    // Zusätzlicher WebPage+Speakable-Block für WebApplication-Seiten
-    if (speakableSelectors && speakableSelectors.length > 0) {
-      schemas.push({
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        name: pageTitle,
-        url: pageUrl,
-        speakable: {
-          '@type': 'SpeakableSpecification',
-          cssSelector: ['#direktantwort', 'h1', ...speakableSelectors],
-        },
-        ...(isBasedOn && isBasedOn.length > 0
-          ? {
-              isBasedOn: isBasedOn.map((ref) => ({
-                '@type': 'Legislation',
-                name: ref.name,
-                url: ref.url,
-              })),
-            }
-          : {}),
-      });
-    }
+    // Zusätzlicher WebPage+Speakable-Block für WebApplication-Seiten —
+    // wird immer emittiert, damit auch Tools als LLM-Quelle zitierbar sind.
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: pageTitle,
+      url: pageUrl,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: effectiveSpeakable,
+      },
+      ...(isBasedOn && isBasedOn.length > 0
+        ? {
+            isBasedOn: isBasedOn.map((ref) => ({
+              '@type': 'Legislation',
+              name: ref.name,
+              url: ref.url,
+            })),
+          }
+        : {}),
+    });
   } else if (pageUrl) {
     // WebPage, CollectionPage, Article
     const pageSchema: Record<string, unknown> = {
@@ -140,14 +149,15 @@ export default function SeoGeoBase({
       author: { '@id': `${baseUrl}/#author` },
       publisher: { '@id': organization.id },
       datePublished,
-      dateModified,
+      dateModified: effectiveDateModified,
     };
-    if (speakableSelectors && speakableSelectors.length > 0) {
-      pageSchema.speakable = {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['#direktantwort', 'h1', ...speakableSelectors],
-      };
-    }
+    // Speakable-Selektoren werden immer emittiert — auch ohne explizite
+    // Angabe fällt die Seite auf den Site-Standard '#direktantwort' + 'h1'
+    // zurück. So bleibt jede Seite mindestens rudimentär voice-search-ready.
+    pageSchema.speakable = {
+      '@type': 'SpeakableSpecification',
+      cssSelector: effectiveSpeakable,
+    };
     if (isBasedOn && isBasedOn.length > 0) {
       pageSchema.isBasedOn = isBasedOn.map((ref) => ({
         '@type': 'Legislation',
