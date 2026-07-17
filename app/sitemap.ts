@@ -54,6 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/urlaub-teilzeit-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/resturlaub-bei-kuendigung-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE_URL}/urlaubsanspruch-bei-kuendigung/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/kuendigungsfrist-berechnen-arbeitnehmer/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/aufhebungsvertrag-pruefen/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/abmahnung-pruefen/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
     { url: `${BASE_URL}/abmahnung-pruefen/pruefung/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },

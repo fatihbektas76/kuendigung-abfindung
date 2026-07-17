@@ -107,6 +107,19 @@ const articles: Article[] = [
     ],
     dateKey: 'urlaubsanspruchBeiKuendigung',
   },
+  {
+    href: '/kuendigungsfrist-berechnen-arbeitnehmer/',
+    eyebrow: 'Fristen · Arbeitnehmer',
+    title: 'Kündigungsfrist berechnen (Arbeitnehmer) — kostenlos § 622 BGB',
+    description:
+      'Kündigungsfrist als Arbeitnehmer: gesetzliche Grundfrist 4 Wochen, Probezeit, Tarifvertrag, Schriftform (§ 623 BGB) — mit kostenlosem Rechner und Fachanwalts-Ratgeber.',
+    facts: [
+      '§ 622 Abs. 1 BGB: 4 Wochen zum 15. oder Monatsende',
+      '§ 622 Abs. 3 BGB: 2 Wochen in der Probezeit',
+      '§ 622 Abs. 6 BGB: kürzere AN-Fristen unwirksam',
+    ],
+    dateKey: 'kuendigungsfristBerechnenArbeitnehmer',
+  },
 ];
 
 export default function RatgeberArbeitsrechtPage() {
