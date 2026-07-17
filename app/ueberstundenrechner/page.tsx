@@ -76,6 +76,11 @@ export default function UeberstundenrechnerPage() {
           { name: 'Überstundenrechner', url: `${SEO_CONFIG.baseUrl}/ueberstundenrechner/` },
         ]}
         speakableSelectors={['.ergebnis-box']}
+        isBasedOn={[
+          { name: '§ 612 BGB — Vergütung', url: 'https://www.gesetze-im-internet.de/bgb/__612.html' },
+          { name: '§ 3 ArbZG — Arbeitszeit der Arbeitnehmer', url: 'https://www.gesetze-im-internet.de/arbzg/__3.html' },
+          { name: '§ 16 ArbZG — Aufzeichnungspflicht', url: 'https://www.gesetze-im-internet.de/arbzg/__16.html' },
+        ]}
         includeOrganization={false}
         includeRating={false}
       />

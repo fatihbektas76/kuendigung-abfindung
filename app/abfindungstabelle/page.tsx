@@ -4,6 +4,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
+import AuthorByline from '@/components/AuthorByline';
 import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
@@ -137,6 +138,9 @@ export default function AbfindungstabellePage() {
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
             Abfindungstabelle {year} &ndash; Abfindung nach Jahren &amp; Gehalt
           </h1>
+          <div className="max-w-[820px]">
+            <AuthorByline />
+          </div>
         </div>
       </div>
 

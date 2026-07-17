@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
+import AuthorByline from '@/components/AuthorByline';
+import FaqAccordion from '@/components/FaqAccordion';
 import ShareButtons from '@/components/ShareButtons';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
@@ -122,6 +124,29 @@ const articles: Article[] = [
   },
 ];
 
+const ratgeberFaqs = [
+  {
+    q: 'Welche Themen deckt der Arbeitsrecht-Ratgeber ab?',
+    a: 'Der Ratgeber bündelt Praxis-Artikel zu den zentralen Themen nach einer Kündigung: Kündigungsschutzgesetz und seine Anwendung, Kündigungsschutzklage inkl. 3-Wochen-Frist nach § 4 KSchG, gesetzliche Kündigungsfristen nach § 622 BGB, betriebsbedingte Kündigung mit Sozialauswahl, Abfindungshöhe und Abfindungstabelle sowie Urlaubsrecht bei Beendigung des Arbeitsverhältnisses. Jeder Artikel enthält Gesetzeslinks, BAG-Urteile und konkrete Beispiele.',
+  },
+  {
+    q: 'Woher stammen die zitierten Rechtsquellen?',
+    a: 'Alle zitierten Normen verlinken direkt auf gesetze-im-internet.de (Bundesministerium der Justiz). BAG-Urteile werden mit Aktenzeichen, Datum und Kernaussage angeführt und wo möglich zur Original-Entscheidung des Bundesarbeitsgerichts verlinkt. So können Sie jede Aussage prüfen — und Suchmaschinen wie LLMs erkennen die Zitierfähigkeit der Inhalte.',
+  },
+  {
+    q: 'Wie aktuell ist der Inhalt der Artikel?',
+    a: 'Jeder Artikel trägt oben den Stand des letzten inhaltlichen Updates („Stand: Monat Jahr"). Neue BAG-Urteile und Gesetzesänderungen — zum Beispiel EuGH-Rechtsprechung zum Urlaubsverfall (C-684/16) oder BAG 8 AZR 300/24 (Equal Pay) — werden zeitnah eingearbeitet. Bei größeren Reformen (etwa der Umsetzung der EU-Entgelttransparenzrichtlinie 2026) veröffentlichen wir gesonderte Fachbeiträge.',
+  },
+  {
+    q: 'Wer verantwortet die Inhalte des Ratgebers?',
+    a: 'Redaktionelle Verantwortung trägt Fachanwalt für Arbeitsrecht Fatih Bektas (APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG, Heidelberg). Die Artikel werden anwaltlich geprüft, bevor sie veröffentlicht werden. Trotzdem ersetzen sie keine individuelle Rechtsberatung — für konkrete Fälle bieten wir eine kostenlose Ersteinschätzung an.',
+  },
+  {
+    q: 'Sind die Ratgeber-Artikel für Arbeitnehmer oder Arbeitgeber gedacht?',
+    a: 'Primär richten sich die Artikel an Arbeitnehmer, die eine Kündigung erhalten haben oder erwarten. Viele Themen — etwa Kündigungsfristen nach § 622 BGB oder die Anwendung des Kündigungsschutzgesetzes — sind aber neutral aufbereitet und für Arbeitgeber ebenso relevant. Bei arbeitgeberspezifischen Fragen (Compliance, Aufhebungsverträge, Personalprozesse) beraten wir gesondert.',
+  },
+];
+
 export default function RatgeberArbeitsrechtPage() {
   return (
     <main>
@@ -138,6 +163,22 @@ export default function RatgeberArbeitsrechtPage() {
           { name: 'Ratgeber', url: `${SEO_CONFIG.baseUrl}/ratgeber/` },
           { name: 'Arbeitsrecht', url: PAGE_URL },
         ]}
+      />
+
+      {/* Schema.org — FAQPage (GEO / Zero-Click) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: ratgeberFaqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
 
       {/* Schema.org — ItemList für die Artikel-Sammlung (GEO/Citability) */}
@@ -177,6 +218,9 @@ export default function RatgeberArbeitsrechtPage() {
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[820px]">
             Praxis-Artikel zu Kündigung, Abfindung &amp; Aufhebungsvertrag
           </h1>
+          <div className="max-w-[820px]">
+            <AuthorByline />
+          </div>
           <p className="text-[1.05rem] text-ink-light max-w-[680px] leading-relaxed mt-4">
             Vertiefte Ratgeber-Artikel zu den zentralen Themen des deutschen Arbeitsrechts &mdash;
             mit Gesetzesgrundlagen, BAG-Urteilen und konkreten Praxis-Beispielen. Verfasst und
@@ -276,8 +320,23 @@ export default function RatgeberArbeitsrechtPage() {
         </div>
       </section>
 
+      {/* FAQ — GEO / Zero-Click */}
+      <section className="py-[60px] px-8 bg-white faq-section">
+        <div className="max-w-content mx-auto">
+          <div className="max-w-[760px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Häufige Fragen
+            </div>
+            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zum Arbeitsrecht-Ratgeber
+            </h2>
+            <FaqAccordion items={ratgeberFaqs} />
+          </div>
+        </div>
+      </section>
+
       {/* Author */}
-      <section className="py-[50px] px-8 bg-white">
+      <section className="py-[50px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="max-w-[760px]">
             <AuthorBox />

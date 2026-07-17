@@ -151,6 +151,11 @@ export default function KuendigungsfristRechnerPage() {
           { name: 'Kündigungsfrist berechnen', url: `${SEO_CONFIG.baseUrl}/kuendigungsfrist-rechner/` },
         ]}
         speakableSelectors={['.ergebnis-box']}
+        isBasedOn={[
+          { name: '§ 622 BGB — Kündigungsfristen bei Arbeitsverhältnissen', url: 'https://www.gesetze-im-internet.de/bgb/__622.html' },
+          { name: '§ 623 BGB — Schriftform der Kündigung', url: 'https://www.gesetze-im-internet.de/bgb/__623.html' },
+          { name: '§ 4 KSchG — Klagefrist (3 Wochen)', url: 'https://www.gesetze-im-internet.de/kschg/__4.html' },
+        ]}
         includeOrganization={false}
         includeRating={false}
       />

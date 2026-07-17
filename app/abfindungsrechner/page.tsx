@@ -56,6 +56,11 @@ export default function AbfindungsrechnerPage() {
           { name: 'Abfindungsrechner', url: `${SEO_CONFIG.baseUrl}/abfindungsrechner/` },
         ]}
         speakableSelectors={['.ergebnis-box']}
+        isBasedOn={[
+          { name: '§ 1a KSchG — Abfindungsanspruch bei betriebsbedingter Kündigung', url: 'https://www.gesetze-im-internet.de/kschg/__1a.html' },
+          { name: '§ 10 KSchG — Höhe der Abfindung', url: 'https://www.gesetze-im-internet.de/kschg/__10.html' },
+          { name: '§ 34 EStG — Fünftelregelung', url: 'https://www.gesetze-im-internet.de/estg/__34.html' },
+        ]}
         includeOrganization={false}
         includeRating={false}
       />

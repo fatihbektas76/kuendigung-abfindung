@@ -16,6 +16,8 @@ import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import StatistikTeaser from '@/components/StatistikTeaser';
 import TldrBox from '@/components/TldrBox';
 import NormLink, { NORM } from '@/components/NormLink';
+import SeoGeoBase from '@/components/SeoGeoBase';
+import { PAGE_DATES } from '@/lib/page-dates';
 
 export const revalidate = 86400;
 
@@ -44,6 +46,23 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      {/* SeoGeoBase ergänzt WebPage + BreadcrumbList + Speakable auf
+          #direktantwort. LegalService + Person werden bewusst nicht hier
+          gerendert, weil das @graph-Rohschema weiter unten reichere
+          Felder (image, url, knowsAbout, review) mitbringt. Beide Person-
+          Blöcke tragen dieselbe @id — Google merged sie über @id. */}
+      <SeoGeoBase
+        pageUrl={`${SEO_CONFIG.baseUrl}/`}
+        pageTitle="gekuendigt-abfindung.de — Fachanwalt für Arbeitsrecht"
+        pageDescription="Kündigung erhalten? Fachanwalt für Arbeitsrecht prüft Ihren Fall kostenlos. Abfindung maximieren, Aufhebungsvertrag verhandeln, Kündigungsschutzklage einreichen."
+        pageType="WebPage"
+        includeOrganization={false}
+        includeRating={false}
+        dateModified={PAGE_DATES.home}
+        datePublished="2025-01-15"
+        breadcrumbs={[{ name: 'Start', url: `${SEO_CONFIG.baseUrl}/` }]}
+      />
+
       {/* Schema.org - LegalService + Attorney/Person Graph
           Der #author-Anchor ist Grundlage für Article-Schema auf allen
           Unterseiten (article-schema.ts referenziert ihn via @id).

@@ -52,6 +52,10 @@ export default function SchwellenwertRechnerPage() {
           { name: 'Schwellenwert-Rechner', url: `${SEO_CONFIG.baseUrl}/schwellenwert-rechner/` },
         ]}
         speakableSelectors={['.ergebnis-box']}
+        isBasedOn={[
+          { name: '§ 23 KSchG — Geltungsbereich (Schwellenwert 10 Arbeitnehmer)', url: 'https://www.gesetze-im-internet.de/kschg/__23.html' },
+          { name: '§ 1 KSchG — Sozial ungerechtfertigte Kündigung', url: 'https://www.gesetze-im-internet.de/kschg/__1.html' },
+        ]}
         includeOrganization={false}
         includeRating={false}
       />

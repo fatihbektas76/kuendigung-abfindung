@@ -2,6 +2,7 @@ import Link from 'next/link';
 import StandAnzeige from '@/components/StandAnzeige';
 import FaqAccordion from '@/components/FaqAccordion';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import AuthorByline from '@/components/AuthorByline';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
@@ -247,6 +248,9 @@ export default function ToolsPage() {
           <h1 className="font-serif text-[clamp(1.8rem,4vw,2.4rem)] font-bold leading-[1.2] max-w-[700px]">
             Arbeitsrecht Tools &amp; Rechner
           </h1>
+          <div className="max-w-[820px]">
+            <AuthorByline />
+          </div>
           <div id="direktantwort" className="max-w-[720px] text-[1.05rem] text-ink-light leading-relaxed mt-3">
             <p className="m-0">
               Auf dieser Seite finden Sie <strong>10 kostenlose Online-Tools</strong> rund um das deutsche
