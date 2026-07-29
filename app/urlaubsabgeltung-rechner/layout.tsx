@@ -4,9 +4,9 @@ import StandAnzeige from '@/components/StandAnzeige';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `Urlaubsabgeltung berechnen ${new Date().getFullYear()} — Resturlaub in Euro [Kostenloser Rechner]`,
+  title: `Urlaubsabgeltung Rechner ${new Date().getFullYear()}: Wie viel Euro für Resturlaub?`,
   description:
-    `Urlaubsabgeltung ${new Date().getFullYear()} berechnen: Resturlaub nach §7 BUrlG in Euro umrechnen. Sofortergebnis — Fachanwalt prüft Ihren Anspruch kostenlos.`,
+    `Wie viel Geld bekommen Sie für nicht genommenen Urlaub bei Kündigung? Kostenloser Rechner ${new Date().getFullYear()} zeigt Ihren Anspruch nach § 7 BUrlG in Euro — Fachanwalt prüft kostenlos.`,
   path: '/urlaubsabgeltung-rechner',
 });
 

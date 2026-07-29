@@ -22,12 +22,24 @@ export function generateStaticParams() {
   return entries.map((e) => ({ slug: e.slug }));
 }
 
+function fristKurz(year: number): string {
+  if (year < 2) return '4 Wochen';
+  if (year < 5) return '1 Monat';
+  if (year < 8) return '2 Monate';
+  if (year < 10) return '3 Monate';
+  if (year < 12) return '4 Monate';
+  if (year < 15) return '5 Monate';
+  if (year < 20) return '6 Monate';
+  return '7 Monate';
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getEntry(params.slug);
   if (!entry) return {};
   const yl = yearLabel(entry.year);
-  const title = `Gekündigt nach ${yl} — Ihre Rechte, Fristen & Abfindung (${new Date().getFullYear()})`;
-  const description = `Kündigung nach ${yl} erhalten? 3-Wochen-Frist läuft! Sofortmaßnahmen, Kündigungsschutz & Abfindungschancen. Fachanwalt prüft kostenlos.`;
+  const frist = fristKurz(entry.year);
+  const title = `Gekündigt nach ${yl}: ${frist} Kündigungsfrist — was jetzt tun? (${new Date().getFullYear()})`;
+  const description = `Kündigung nach ${yl} bekommen? Ihre Kündigungsfrist beträgt ${frist} (§ 622 BGB). Die 3-Wochen-Klagefrist läuft — Rechte prüfen, Abfindung sichern. Fachanwalt hilft kostenlos.`;
   const url = `${SEO_CONFIG.baseUrl}/gekuendigt-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,

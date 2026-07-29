@@ -8,9 +8,9 @@ import { SEO_CONFIG, buildMetadata } from '@/lib/seo-config';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: 'Kündigungsschutzklage Statistik 2003\u20132024 | Daten & Fakten',
+  title: `Kündigungsschutzklage: 4 von 5 enden mit Abfindung (Statistik ${new Date().getFullYear()})`,
   description:
-    'Kündigungsschutzklagen in Deutschland: Erledigungsarten, Erfolgsquoten & Bundesländer-Vergleich. 20 Jahre Daten auf einen Blick.',
+    `4 von 5 Kündigungsschutzklagen in Deutschland enden mit einer Einigung und Abfindung, nur 7 % mit Urteil. Erfolgsquoten, Bundesländer & 20-Jahres-Trend \u2014 Statistik ${new Date().getFullYear()}.`,
   path: '/ratgeber/kuendigungsstatistik-arbeitsgerichte-deutschland',
 });
 

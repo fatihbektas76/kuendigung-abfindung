@@ -4,9 +4,9 @@ import StandAnzeige from '@/components/StandAnzeige';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `RVG Rechner ${new Date().getFullYear()} — Anwaltskosten & Gerichtskosten berechnen [Kostenlos]`,
+  title: `RVG Rechner ${new Date().getFullYear()}: Was kostet mich ein Anwalt? (kostenlos)`,
   description:
-    `Anwaltskosten berechnen nach RVG ${new Date().getFullYear()}: Gebühren, Gerichtskosten & Prozesskostenrisiko. Für Arbeitsrecht, Zivilrecht & alle Instanzen. Mit PDF-Export.`,
+    `Was kostet mich ein Anwalt wirklich? Der RVG Rechner ${new Date().getFullYear()} zeigt Anwalts- und Gerichtskosten nach Streitwert — für Arbeitsrecht & Zivilrecht. Kostenlos, mit PDF-Export.`,
   path: '/rvg-rechner',
 });
 
