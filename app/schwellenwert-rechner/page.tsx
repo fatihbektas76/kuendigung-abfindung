@@ -16,26 +16,20 @@ const faqs = [
     q: 'Was passiert, wenn der Schwellenwert nicht erreicht wird?',
     a: 'Wird der Schwellenwert von 10 FTE nicht überschritten, gilt das KSchG nicht \u2014 Ihr Arbeitgeber braucht keinen Kündigungsgrund. Aber: Auch in Kleinbetrieben gibt es Mindestschutz, z.\u00A0B. Kündigungsfristen nach §622 BGB, Schutz vor sittenwidriger oder diskriminierender Kündigung und Mutterschutz.',
   },
-  {
-    q: 'Werden Minijobber beim Schwellenwert mitgezählt?',
-    a: 'Ja, Minijobber werden mit Faktor 0,5 mitgezählt, wenn sie regelmäßig nicht mehr als 20 Stunden pro Woche arbeiten. Bei mehr als 20 bis 30 Stunden liegt der Faktor bei 0,75. Entscheidend ist die regelmäßige wöchentliche Arbeitszeit, nicht der Verdienst.',
-  },
 ];
 
 export default function SchwellenwertRechnerPage() {
   const [vollzeit, setVollzeit] = useState('');
   const [teilzeit30, setTeilzeit30] = useState('');
   const [teilzeit20, setTeilzeit20] = useState('');
-  const [minijob, setMinijob] = useState('');
   const [result, setResult] = useState<{ fte: number; gilt: boolean } | null>(null);
 
   function calculate() {
     const vz = parseInt(vollzeit, 10) || 0;
     const tz30 = parseInt(teilzeit30, 10) || 0;
     const tz20 = parseInt(teilzeit20, 10) || 0;
-    const mj = parseInt(minijob, 10) || 0;
 
-    const fte = vz * 1.0 + tz30 * 0.75 + tz20 * 0.5 + mj * 0.5;
+    const fte = vz * 1.0 + tz30 * 0.75 + tz20 * 0.5;
     setResult({ fte: Math.round(fte * 100) / 100, gilt: fte > 10 });
   }
 
@@ -102,14 +96,8 @@ export default function SchwellenwertRechnerPage() {
               {
                 '@type': 'HowToStep',
                 position: 3,
-                name: 'Minijobber angeben',
-                text: 'Geben Sie die Anzahl der Minijobber ein. Diese werden mit Faktor 0,5 gezählt. Auszubildende zählen nicht mit.',
-              },
-              {
-                '@type': 'HowToStep',
-                position: 4,
                 name: 'Ergebnis prüfen',
-                text: 'Der Rechner addiert alle Vollzeitäquivalente (FTE). Liegt die Summe über 10, gilt das KSchG — Ihr Arbeitgeber braucht einen Kündigungsgrund.',
+                text: 'Der Rechner addiert alle Vollzeitäquivalente (FTE). Liegt die Summe über 10, gilt das KSchG — Ihr Arbeitgeber braucht einen Kündigungsgrund. Auszubildende zählen nicht mit.',
               },
             ],
           }),
@@ -198,22 +186,6 @@ export default function SchwellenwertRechnerPage() {
                     className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] placeholder:text-ink-muted"
                   />
                   <p className="text-[0.78rem] text-ink-muted mt-1">Faktor: 0,5 pro Person</p>
-                </div>
-                <div>
-                  <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-                    Minijobber
-                  </label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={minijob}
-                    onChange={(e) => setMinijob(e.target.value)}
-                    placeholder="z. B. 1"
-                    className="w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)] placeholder:text-ink-muted"
-                  />
-                  <p className="text-[0.78rem] text-ink-muted mt-1">
-                    Faktor: 0,5 pro Person (bei &le;20 Std.) bzw. 0,75 (bei &gt;20 Std.). Hier vereinfacht als 0,5.
-                  </p>
                 </div>
                 <button
                   onClick={calculate}
