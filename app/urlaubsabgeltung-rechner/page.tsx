@@ -55,10 +55,8 @@ function euro(val: number): string {
   });
 }
 
-function anteilUrlaub(eintritt: Date, beendigung: Date, jahresUrlaub: number): number {
-  const monate = Math.floor((beendigung.getTime() - eintritt.getTime()) / (1000 * 60 * 60 * 24 * 30.44));
-  if (monate >= 6) return jahresUrlaub;
-  return Math.round((jahresUrlaub / 12) * Math.max(monate, 0));
+function tageFormat(n: number): string {
+  return n.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
 
 const inputClass =
@@ -70,32 +68,21 @@ export default function UrlaubsabgeltungRechnerPage() {
   const [gehalt, setGehalt] = useState('');
   const [arbeitstage, setArbeitstage] = useState(5);
   const [urlaubstage, setUrlaubstage] = useState('');
-  const [anteilOffen, setAnteilOffen] = useState(false);
-  const [jahresUrlaub, setJahresUrlaub] = useState(20);
-  const [eintrittDatum, setEintrittDatum] = useState('');
-  const [beendigungsDatum, setBeendigungsDatum] = useState('');
   const [hinweisOffen, setHinweisOffen] = useState(true);
 
   const [result, setResult] = useState<{
+    monatsgehalt: number;
+    wochengehalt: number;
     tagesgehalt: number;
     abgeltungBrutto: number;
     abgeltungNetto: number;
     offeneTage: number;
+    arbeitstage: number;
   } | null>(null);
-
-  const [anteilResult, setAnteilResult] = useState<{
-    anspruch: number;
-  } | null>(null);
-
-  function berechneAnteil() {
-    if (!eintrittDatum || !beendigungsDatum) return;
-    const anspruch = anteilUrlaub(new Date(eintrittDatum), new Date(beendigungsDatum), jahresUrlaub);
-    setAnteilResult({ anspruch });
-  }
 
   function berechnen() {
     const g = parseFloat(gehalt.replace(/\./g, '').replace(',', '.'));
-    const u = parseInt(urlaubstage, 10);
+    const u = parseFloat(urlaubstage.replace(',', '.'));
     if (!g || g <= 0 || !u || u <= 0) return;
 
     const wochengehalt = (g * 3) / 13;
@@ -103,7 +90,7 @@ export default function UrlaubsabgeltungRechnerPage() {
     const abgeltungBrutto = tagesgehalt * u;
     const abgeltungNetto = abgeltungBrutto * 0.65;
 
-    setResult({ tagesgehalt, abgeltungBrutto, abgeltungNetto, offeneTage: u });
+    setResult({ monatsgehalt: g, wochengehalt, tagesgehalt, abgeltungBrutto, abgeltungNetto, offeneTage: u, arbeitstage });
   }
 
   return (
@@ -316,68 +303,18 @@ export default function UrlaubsabgeltungRechnerPage() {
                     type="number"
                     min={0}
                     max={366}
+                    step="0.5"
                     value={urlaubstage}
                     onChange={(e) => setUrlaubstage(e.target.value)}
-                    placeholder="z. B. 12"
+                    placeholder="z. B. 12,5"
                     className={inputClass}
                   />
-                </div>
-
-                {/* Anteiliger Urlaub Accordion */}
-                <div className="mb-6 border border-border rounded-sm overflow-hidden">
-                  <button
-                    onClick={() => setAnteilOffen(!anteilOffen)}
-                    className="w-full flex items-center justify-between py-3 px-4 bg-cream text-[0.84rem] font-semibold text-ink cursor-pointer border-none text-left"
-                  >
-                    Anteiligen Urlaubsanspruch berechnen
-                    <svg
-                      className={`transition-transform ${anteilOffen ? 'rotate-180' : ''}`}
-                      width="16"
-                      height="16"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </button>
-                  {anteilOffen && (
-                    <div className="p-4 space-y-4">
-                      <div>
-                        <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
-                          Jahresurlaub (Tage) <span className="text-gold-dark">*</span>
-                        </label>
-                        <input
-                          type="number"
-                          min={20}
-                          max={50}
-                          value={jahresUrlaub}
-                          onChange={(e) => setJahresUrlaub(Number(e.target.value))}
-                          className={inputClass}
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">Eintrittsdatum</label>
-                        <input type="date" value={eintrittDatum} onChange={(e) => setEintrittDatum(e.target.value)} className={inputClass} />
-                      </div>
-                      <div>
-                        <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">Beendigungsdatum</label>
-                        <input type="date" value={beendigungsDatum} onChange={(e) => setBeendigungsDatum(e.target.value)} className={inputClass} />
-                      </div>
-                      <button
-                        onClick={berechneAnteil}
-                        className="w-full py-2.5 bg-cream border border-gold/30 rounded-sm font-sans text-[0.88rem] font-semibold text-ink cursor-pointer transition-all hover:bg-gold-bg"
-                      >
-                        Anteil berechnen
-                      </button>
-                      {anteilResult && (
-                        <div className="py-3 px-4 bg-gold-bg border border-gold/20 rounded-sm text-[0.88rem] text-ink">
-                          Ihr anteiliger Urlaubsanspruch: <strong>{anteilResult.anspruch} Tage</strong>
-                        </div>
-                      )}
-                    </div>
-                  )}
+                  <p className="text-[0.78rem] text-ink-muted mt-1">
+                    Halbe Tage (z. B. 12,5) sind erlaubt. Wissen Sie nicht, wieviel Ihnen zusteht?{' '}
+                    <Link href="/anteiliger-urlaubsanspruch-rechner" className="text-gold no-underline hover:underline">
+                      Anteiligen Anspruch nach § 5 BUrlG berechnen &rarr;
+                    </Link>
+                  </p>
                 </div>
 
                 {/* Berechnen */}
@@ -468,7 +405,7 @@ export default function UrlaubsabgeltungRechnerPage() {
                     </div>
                     <div className="text-center">
                       <div className="font-serif text-[1.3rem] font-bold text-ink">
-                        {result.offeneTage}
+                        {tageFormat(result.offeneTage)}
                       </div>
                       <div className="text-[0.72rem] text-ink-muted mt-0.5">Urlaubstage offen</div>
                     </div>
@@ -483,6 +420,38 @@ export default function UrlaubsabgeltungRechnerPage() {
                   <p className="text-[0.75rem] text-ink-muted italic mb-5">
                     *Schätzwert. Abhängig von Steuerklasse und Sozialabgaben. Keine Steuerberatung.
                   </p>
+
+                  {/* Berechnungsweg */}
+                  <div className="mb-6">
+                    <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-3">
+                      So wurde gerechnet (§ 11 BUrlG)
+                    </div>
+                    <div className="bg-white border border-border rounded-sm p-4 space-y-2.5 text-[0.86rem]">
+                      <div className="flex justify-between gap-4 pb-2 border-b border-border">
+                        <span className="text-ink-muted">Ø Bruttomonatsgehalt (13 Wochen)</span>
+                        <span className="font-semibold text-ink tabular-nums">{euro(result.monatsgehalt)}</span>
+                      </div>
+                      <div className="flex justify-between gap-4 pb-2 border-b border-border">
+                        <span className="text-ink-muted">× 3 Monate ÷ 13 Wochen = Wochengehalt</span>
+                        <span className="font-semibold text-ink tabular-nums">{euro(result.wochengehalt)}</span>
+                      </div>
+                      <div className="flex justify-between gap-4 pb-2 border-b border-border">
+                        <span className="text-ink-muted">÷ {result.arbeitstage} Arbeitstage/Woche = Tagesgehalt</span>
+                        <span className="font-semibold text-ink tabular-nums">{euro(result.tagesgehalt)}</span>
+                      </div>
+                      <div className="flex justify-between gap-4 pb-2 border-b border-border">
+                        <span className="text-ink-muted">× {tageFormat(result.offeneTage)} offene Urlaubstage</span>
+                        <span className="font-semibold text-ink tabular-nums">{euro(result.abgeltungBrutto)}</span>
+                      </div>
+                      <div className="flex justify-between gap-4 pt-1">
+                        <span className="text-ink font-semibold">= Urlaubsabgeltung brutto</span>
+                        <span className="font-bold text-gold-dark tabular-nums">{euro(result.abgeltungBrutto)}</span>
+                      </div>
+                    </div>
+                    <p className="text-[0.75rem] text-ink-muted italic mt-2 m-0">
+                      Formel: (Ø Monatsgehalt × 3 ÷ 13 ÷ Arbeitstage/Woche) × offene Urlaubstage. Überstundenzuschläge bleiben unberücksichtigt (§ 11 Abs. 1 Satz 2 BUrlG).
+                    </p>
+                  </div>
 
                   {/* Warnung */}
                   <div className="py-4 px-5 bg-white rounded-sm border-l-[3px] border-gold mb-6">

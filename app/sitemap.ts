@@ -51,6 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ueberstundenrechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/kuendigungsfrist-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/urlaubsabgeltung-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE_URL}/anteiliger-urlaubsanspruch-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.75 },
     { url: `${BASE_URL}/urlaub-teilzeit-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/resturlaub-bei-kuendigung-rechner/`, lastModified: monthly, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${BASE_URL}/urlaubsanspruch-bei-kuendigung/`, lastModified: monthly, changeFrequency: 'monthly', priority: 0.8 },
