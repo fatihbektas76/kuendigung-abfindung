@@ -59,6 +59,11 @@ function tageFormat(n: number): string {
   return n.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
 
+function aufrundenBUrlG(tage: number): number {
+  const nachkomma = tage - Math.floor(tage);
+  return nachkomma >= 0.5 ? Math.ceil(tage) : Math.floor(tage);
+}
+
 const inputClass =
   'w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]';
 const selectClass =
@@ -76,7 +81,9 @@ export default function UrlaubsabgeltungRechnerPage() {
     tagesgehalt: number;
     abgeltungBrutto: number;
     abgeltungNetto: number;
-    offeneTage: number;
+    offeneTageEingabe: number;
+    offeneTageAbrechnung: number;
+    aufgerundet: boolean;
     arbeitstage: number;
   } | null>(null);
 
@@ -85,12 +92,24 @@ export default function UrlaubsabgeltungRechnerPage() {
     const u = parseFloat(urlaubstage.replace(',', '.'));
     if (!g || g <= 0 || !u || u <= 0) return;
 
+    const uAufgerundet = aufrundenBUrlG(u);
+    const aufgerundet = uAufgerundet !== u;
     const wochengehalt = (g * 3) / 13;
     const tagesgehalt = wochengehalt / arbeitstage;
-    const abgeltungBrutto = tagesgehalt * u;
+    const abgeltungBrutto = tagesgehalt * uAufgerundet;
     const abgeltungNetto = abgeltungBrutto * 0.65;
 
-    setResult({ monatsgehalt: g, wochengehalt, tagesgehalt, abgeltungBrutto, abgeltungNetto, offeneTage: u, arbeitstage });
+    setResult({
+      monatsgehalt: g,
+      wochengehalt,
+      tagesgehalt,
+      abgeltungBrutto,
+      abgeltungNetto,
+      offeneTageEingabe: u,
+      offeneTageAbrechnung: uAufgerundet,
+      aufgerundet,
+      arbeitstage,
+    });
   }
 
   return (
@@ -405,9 +424,11 @@ export default function UrlaubsabgeltungRechnerPage() {
                     </div>
                     <div className="text-center">
                       <div className="font-serif text-[1.3rem] font-bold text-ink">
-                        {tageFormat(result.offeneTage)}
+                        {tageFormat(result.offeneTageAbrechnung)}
                       </div>
-                      <div className="text-[0.72rem] text-ink-muted mt-0.5">Urlaubstage offen</div>
+                      <div className="text-[0.72rem] text-ink-muted mt-0.5">
+                        Urlaubstage {result.aufgerundet ? '(aufgerundet)' : 'offen'}
+                      </div>
                     </div>
                     <div className="text-center">
                       <div className="font-serif text-[1.3rem] font-bold text-ink">
@@ -440,7 +461,19 @@ export default function UrlaubsabgeltungRechnerPage() {
                         <span className="font-semibold text-ink tabular-nums">{euro(result.tagesgehalt)}</span>
                       </div>
                       <div className="flex justify-between gap-4 pb-2 border-b border-border">
-                        <span className="text-ink-muted">× {tageFormat(result.offeneTage)} offene Urlaubstage</span>
+                        <span className="text-ink-muted">Offene Urlaubstage (Eingabe)</span>
+                        <span className="font-semibold text-ink tabular-nums">{tageFormat(result.offeneTageEingabe)} Tage</span>
+                      </div>
+                      {result.aufgerundet && (
+                        <div className="flex justify-between gap-4 pb-2 border-b border-border">
+                          <span className="text-ink-muted">Aufgerundet nach § 5 Abs. 2 BUrlG</span>
+                          <span className="font-semibold text-ink tabular-nums">
+                            {tageFormat(result.offeneTageEingabe)} &rarr; {result.offeneTageAbrechnung} Tage
+                          </span>
+                        </div>
+                      )}
+                      <div className="flex justify-between gap-4 pb-2 border-b border-border">
+                        <span className="text-ink-muted">× {result.offeneTageAbrechnung} {result.aufgerundet ? 'aufgerundete' : 'offene'} Urlaubstage</span>
                         <span className="font-semibold text-ink tabular-nums">{euro(result.abgeltungBrutto)}</span>
                       </div>
                       <div className="flex justify-between gap-4 pt-1">
@@ -452,6 +485,14 @@ export default function UrlaubsabgeltungRechnerPage() {
                       Formel: (Ø Monatsgehalt × 3 ÷ 13 ÷ Arbeitstage/Woche) × offene Urlaubstage. Überstundenzuschläge bleiben unberücksichtigt (§ 11 Abs. 1 Satz 2 BUrlG).
                     </p>
                   </div>
+
+                  {result.aufgerundet && (
+                    <div className="mb-6 py-3 px-4 bg-green-50 rounded-sm border border-green-300">
+                      <p className="text-[0.82rem] text-green-900 leading-relaxed m-0">
+                        <strong>Aufrundung nach § 5 Abs. 2 BUrlG angewendet:</strong> Bruchteile ab 0,5 Urlaubstagen werden auf volle Tage aufgerundet — {tageFormat(result.offeneTageEingabe)} Tage → {result.offeneTageAbrechnung} Tage. Rechtlich für Sie günstiger. Bei bereits genommenen halben Tagen (nicht Zwölftelung) bitte den ursprünglichen Wert manuell nutzen.
+                      </p>
+                    </div>
+                  )}
 
                   {/* Warnung */}
                   <div className="py-4 px-5 bg-white rounded-sm border-l-[3px] border-gold mb-6">
