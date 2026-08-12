@@ -205,6 +205,24 @@ export default function KuendigungPage() {
               definition="Die Kündigungsschutzklage nach §4 KSchG ist die Klage des Arbeitnehmers vor dem Arbeitsgericht mit dem Ziel, die Unwirksamkeit einer Kündigung feststellen zu lassen. Sie muss innerhalb von drei Wochen nach Zugang der Kündigung erhoben werden — andernfalls gilt die Kündigung als von Anfang an wirksam."
             />
 
+            {/* Freistellung-Callout (BAG 5 AZR 108/25) */}
+            <div className="py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold mb-8">
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-1.5">
+                Aktuell: BAG 25.03.2026 — 5 AZR 108/25
+              </div>
+              <p className="text-[0.95rem] text-ink m-0 leading-relaxed">
+                Werden Sie nach der Kündigung freigestellt und der <strong>Dienstwagen</strong> zurückgefordert?
+                Das Bundesarbeitsgericht hat formularmäßige Freistellungsklauseln für unwirksam erklärt &mdash;
+                das kann Ihre Nachforderungs- und Verhandlungsposition erheblich verbessern.{' '}
+                <Link
+                  href="/freistellung-nach-kuendigung/"
+                  className="text-gold-dark font-semibold no-underline hover:underline"
+                >
+                  Freistellung nach Kündigung: Was Ihnen zusteht &rarr;
+                </Link>
+              </p>
+            </div>
+
 
             {/* CTA 1 */}
             <a

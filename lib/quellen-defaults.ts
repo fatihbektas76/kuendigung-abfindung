@@ -212,6 +212,45 @@ export const QUELLEN_KSCHG_ANWENDUNG: Quelle[] = [
   },
 ];
 
+// ── Freistellung nach Kündigung ────────────────────────────
+export const QUELLEN_FREISTELLUNG: Quelle[] = [
+  {
+    text: '§ 307 Abs. 1 S. 1 BGB — Inhaltskontrolle Allgemeiner Geschäftsbedingungen',
+    url: 'https://dejure.org/gesetze/BGB/307.html',
+    art: 'gesetz',
+  },
+  {
+    text: '§ 615 BGB — Vergütung bei Annahmeverzug',
+    url: 'https://dejure.org/gesetze/BGB/615.html',
+    art: 'gesetz',
+  },
+  {
+    text: '§ 305 Abs. 1 S. 3 BGB — Abgrenzung Individualvereinbarung / AGB',
+    url: 'https://dejure.org/gesetze/BGB/305.html',
+    art: 'gesetz',
+  },
+  {
+    text: 'BAG, Urteil vom 25.03.2026 – 5 AZR 108/25 (Volltext)',
+    url: 'https://www.bundesarbeitsgericht.de/entscheidung/5-azr-108-25/',
+    art: 'urteil',
+  },
+  {
+    text: 'BAG, Pressemitteilung Nr. 14/26 vom 25.03.2026 — Freistellungsklausel & Dienstwagenwiderruf',
+    url: 'https://www.bundesarbeitsgericht.de/presse/wirksamkeit-einer-freistellungsklausel-widerruf-der-dienstwagennutzung/',
+    art: 'amtlich',
+  },
+  {
+    text: 'LAG Niedersachsen, Urteil vom 22.05.2025 – 5 SLa 249/25 (Vorinstanz)',
+    url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=LAG+Niedersachsen&Datum=22.05.2025&Aktenzeichen=5+SLa+249%2F25',
+    art: 'urteil',
+  },
+  {
+    text: 'BAG, Beschluss vom 27.02.1985 – GS 1/84 (Beschäftigungsanspruch)',
+    url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Datum=27.02.1985&Aktenzeichen=GS+1%2F84',
+    art: 'urteil',
+  },
+];
+
 // ── Abmahnung ──────────────────────────────────────────────
 export const QUELLEN_ABMAHNUNG: Quelle[] = [
   {

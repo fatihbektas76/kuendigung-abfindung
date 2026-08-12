@@ -803,7 +803,8 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/aufhebungsvertrag": [
     { href: "/urteile/bag-6-azr-333-21-aufhebungsvertrag-faires-verhandeln", label: "Aufhebungsvertrag — Gebot fairen Verhandelns" },
-    { href: "/aufhebungsvertrag-pruefen", label: "Aufhebungsvertrag prüfen — Ist Ihr Vertrag fair?" }
+    { href: "/aufhebungsvertrag-pruefen", label: "Aufhebungsvertrag prüfen — Ist Ihr Vertrag fair?" },
+    { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — BAG kippt Standardklauseln (5 AZR 108/25)" }
   ],
   "/aufhebungsvertrag-pruefen": [
     { href: "/urteile/bag-6-azr-333-21-aufhebungsvertrag-faires-verhandeln", label: "Aufhebungsvertrag — Gebot fairen Verhandelns" },
@@ -1183,7 +1184,14 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/kuendigung-nach-zwei-abmahnungen", label: "Kündigung nach zwei Abmahnungen — wirksam oder nicht?" },
     { href: "/kuendigung-nach-vier-abmahnungen", label: "Kündigung nach vier Abmahnungen — wirksam oder nicht?" },
     { href: "/kuendigung-nach-fuenf-abmahnungen", label: "Kündigung nach fünf Abmahnungen — wirksam oder nicht?" },
-    { href: "/kuendigung-nach-drei-abmahnungen", label: "Kündigung nach drei Abmahnungen — wirksam oder nicht?" }
+    { href: "/kuendigung-nach-drei-abmahnungen", label: "Kündigung nach drei Abmahnungen — wirksam oder nicht?" },
+    { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — BAG kippt Standardklauseln (5 AZR 108/25)" }
+  ],
+  "/kuendigungsschutzklage": [
+    { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — Standardklauseln unwirksam (BAG 5 AZR 108/25)" },
+    { href: "/abfindung", label: "Abfindung nach Kündigung — Anspruch, Höhe & Verhandlung" },
+    { href: "/kuendigungsfristen", label: "Kündigungsfristen nach § 622 BGB" },
+    { href: "/rvg-rechner", label: "Anwaltskosten & Prozesskosten berechnen" }
   ],
   "/kuendigung-nach-drei-abmahnungen": [
     { href: "/kuendigung/kuendigung-krankschreibung", label: "Kündigung während Krankschreibung — was tun?" },
@@ -1312,6 +1320,15 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/kuendigung", label: "Kündigung erhalten — Resturlaub & Abgeltung" },
     { href: "/ueberstundenrechner", label: "Überstundenrechner — Ansprüche berechnen" },
     { href: "/urlaub-teilzeit-rechner", label: "Urlaub bei Teilzeit berechnen" },
+    { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — wird Urlaub dadurch erfüllt?" },
+  ],
+  "/freistellung-nach-kuendigung": [
+    { href: "/kuendigung", label: "Kündigung erhalten — Ihre Rechte & 3-Wochen-Frist" },
+    { href: "/aufhebungsvertrag", label: "Aufhebungsvertrag — Freistellung sauber regeln" },
+    { href: "/kuendigungsschutzklage", label: "Kündigungsschutzklage — Ablauf, Kosten & Frist" },
+    { href: "/urlaubsabgeltung-rechner", label: "Urlaubsabgeltung berechnen" },
+    { href: "/kuendigungsfrist-rechner", label: "Kündigungsfrist berechnen" },
+    { href: "/glossar", label: "Glossar Arbeitsrecht — Begriffe erklärt" },
   ],
   "/urlaub-teilzeit-rechner": [
     { href: "/kuendigung/kuendigung-teilzeit", label: "Kündigung in Teilzeit — Sonderkündigungsschutz?" },

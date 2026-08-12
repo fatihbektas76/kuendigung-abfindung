@@ -45,6 +45,7 @@ export const PAGE_DATES = {
   ratgeberArbeitsrecht: '2026-07-14',
   urlaubsanspruchBeiKuendigung: '2026-07-14',
   kuendigungsfristBerechnenArbeitnehmer: '2026-07-17',
+  freistellungNachKuendigung: '2026-08-12',
 } as const;
 
 export type PageDateKey = keyof typeof PAGE_DATES;

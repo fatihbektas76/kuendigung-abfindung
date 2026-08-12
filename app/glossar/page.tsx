@@ -106,6 +106,15 @@ const glossar = [
     linkText: 'Kündigung bei Betriebsübergang',
   },
   {
+    id: 'freistellung',
+    begriff: 'Freistellung (nach Kündigung)',
+    definition:
+      'Die vorübergehende Befreiung des Arbeitnehmers von der Arbeitspflicht bei Fortzahlung der Vergütung, meist zwischen Ausspruch der Kündigung und Ablauf der Kündigungsfrist. Nach BAG, Urteil vom 25.03.2026 (Az. 5 AZR 108/25), sind formularmäßige Standardklauseln, die dem Arbeitgeber pauschal ein Freistellungsrecht einräumen, wegen unangemessener Benachteiligung nach § 307 Abs. 1 S. 1 BGB unwirksam. Einseitige Freistellung bleibt zulässig, wenn überwiegende schutzwerte Arbeitgeberinteressen im Einzelfall entgegenstehen oder eine ausgehandelte Individualvereinbarung vorliegt.',
+    gesetz: '§ 307 BGB, § 615 BGB, BAG 5 AZR 108/25',
+    link: '/freistellung-nach-kuendigung/',
+    linkText: 'Alles zur Freistellung nach Kündigung',
+  },
+  {
     id: 'fristlose-kuendigung',
     begriff: 'Fristlose Kündigung (außerordentliche Kündigung)',
     definition:

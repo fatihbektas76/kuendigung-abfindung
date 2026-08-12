@@ -231,6 +231,25 @@ export default function AufhebungsvertragPage() {
               definition="Ein Aufhebungsvertrag ist eine einvernehmliche Vereinbarung zwischen Arbeitgeber und Arbeitnehmer zur Beendigung des Arbeitsverhältnisses. Anders als bei einer Kündigung bedarf er der Zustimmung beider Seiten und unterliegt nicht den Beschränkungen des Kündigungsschutzgesetzes."
             />
 
+            {/* Freistellung-Callout (BAG 5 AZR 108/25) */}
+            <div className="py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold mb-8">
+              <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-1.5">
+                Freistellungsklausel prüfen — BAG 25.03.2026, 5 AZR 108/25
+              </div>
+              <p className="text-[0.95rem] text-ink m-0 leading-relaxed">
+                Aufhebungsverträge regeln in der Regel eine Freistellung bis zum Beendigungstermin. Formularmäßige
+                Freistellungsklauseln, die dem Arbeitgeber pauschal ein Freistellungsrecht einräumen, sind nach dem
+                aktuellen BAG-Urteil unwirksam &mdash; mit direkten Folgen für Dienstwagen, Urlaubsanrechnung und
+                Verhandlungshöhe.{' '}
+                <Link
+                  href="/freistellung-nach-kuendigung/"
+                  className="text-gold-dark font-semibold no-underline hover:underline"
+                >
+                  Was das für Ihren Vertrag bedeutet &rarr;
+                </Link>
+              </p>
+            </div>
+
 
             {/* CTA 1 */}
             <a

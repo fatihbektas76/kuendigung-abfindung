@@ -69,6 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/kuendigungsfristen/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
     { url: `${BASE_URL}/abfindungstabelle/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
     { url: `${BASE_URL}/kuendigungsschutzgesetz-anwendung/`, lastModified: weekly, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/freistellung-nach-kuendigung/`, lastModified: weekly, changeFrequency: 'weekly', priority: 0.85 },
   ];
 
   const clusterAPages: MetadataRoute.Sitemap = entries.map((e) => ({
