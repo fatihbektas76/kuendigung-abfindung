@@ -13,21 +13,26 @@ const BASE_URL = SEO_CONFIG.baseUrl;
 export const metadata: Metadata = {
   title: `Fatih Bektas — Fachanwalt für Arbeitsrecht | ${new Date().getFullYear()}`,
   description:
-    'Fatih Bektas ist Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Über 20 Jahre Erfahrung, 2.000+ erfolgreiche Verfahren. Spezialist für Kündigung, Abfindung & Aufhebungsvertrag.',
+    'Fatih Bektas ist Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Vertretung von Arbeitnehmern, Führungskräften, Vorständen und Geschäftsführern. Über 20 Jahre Erfahrung, 2.000+ Verfahren.',
   alternates: {
     canonical: `${BASE_URL}/autor/fatih-bektas/`,
+    languages: {
+      'de-DE': `${BASE_URL}/autor/fatih-bektas/`,
+      'en': `${BASE_URL}/en/author/fatih-bektas/`,
+      'x-default': `${BASE_URL}/autor/fatih-bektas/`,
+    },
   },
   openGraph: {
     title: 'Fatih Bektas — Fachanwalt für Arbeitsrecht',
     description:
-      'Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Über 20 Jahre Erfahrung, 2.000+ erfolgreiche Verfahren.',
+      'Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Vertretung von Arbeitnehmern, Führungskräften, Vorständen und Geschäftsführern.',
     url: `${BASE_URL}/autor/fatih-bektas/`,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fatih Bektas — Fachanwalt für Arbeitsrecht',
     description:
-      'Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Über 20 Jahre Erfahrung, 2.000+ erfolgreiche Verfahren.',
+      'Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Vertretung von Arbeitnehmern, Führungskräften, Vorständen und Geschäftsführern.',
   },
 };
 
@@ -40,7 +45,7 @@ const personSchema = {
   familyName: 'Bektas',
   jobTitle: 'Fachanwalt für Arbeitsrecht',
   description:
-    'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
+    'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Vertretung von Arbeitnehmern, Führungskräften, Vorständen und Geschäftsführern in arbeits- und dienstvertragsrechtlichen Konflikten. Über 2.000 erfolgreiche Verfahren.',
   image: `${BASE_URL}/Fatih.webp`,
   url: `${BASE_URL}/autor/fatih-bektas/`,
   email: 'bektas@apos.legal',
@@ -91,6 +96,13 @@ const personSchema = {
     'Sozialauswahl',
     'Betriebsratsanhörung §102 BetrVG',
     'Abmahnung Arbeitsrecht',
+    'Führungskräfte-Vertretung im Arbeitsrecht',
+    'Geschäftsführer-Dienstvertrag (§ 35 GmbHG)',
+    'Vorstands-Anstellungsvertrag (§ 84 AktG)',
+    'Abberufung Geschäftsführer und Vorstand',
+    'Executive Exit und C-Level-Trennung',
+    'D&O-Versicherung bei Trennung',
+    'Nachvertragliches Wettbewerbsverbot',
   ],
   alumniOf: {
     '@type': 'Organization',
@@ -122,6 +134,14 @@ const expertise = [
   {
     area: 'Fristlose Kündigung',
     desc: 'Anfechtung von fristlosen Kündigungen nach §626 BGB. Umwandlung in ordentliche Kündigung mit Abfindung.',
+  },
+  {
+    area: 'Führungskräfte & leitende Angestellte',
+    desc: 'Beratung leitender Angestellter (§ 5 Abs. 3 BetrVG) bei Kündigung, Freistellung, Bonus-Ansprüchen und nachvertraglichen Wettbewerbsverboten.',
+  },
+  {
+    area: 'Vorstände & Geschäftsführer',
+    desc: 'Verhandlung und Auflösung von Vorstands-Anstellungs- (§ 84 AktG) und GmbH-Geschäftsführerverträgen (§ 35 GmbHG), Abberufungen, Exit-Pakete und D&O-Fragen.',
   },
 ];
 
@@ -196,6 +216,13 @@ export default function AutorFatihBektasPage() {
                   in der Wirtschaft t&auml;tig &mdash; unter anderem bei Unzer und der iCOM Group.
                   Diese Erfahrung in F&uuml;hrungspositionen gibt ihm ein besonderes Verst&auml;ndnis
                   f&uuml;r die wirtschaftlichen Zusammenh&auml;nge hinter arbeitsrechtlichen Konflikten.
+                </p>
+                <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
+                  Ein Schwerpunkt der Kanzlei ist die Vertretung von <strong>F&uuml;hrungskr&auml;ften,
+                  Vorst&auml;nden und Gesch&auml;ftsf&uuml;hrern</strong> &mdash; von der
+                  Verhandlung des Anstellungsvertrags &uuml;ber Abberufungen bis hin zu
+                  Exit-Paketen, Bonus-Anspr&uuml;chen und nachvertraglichen Wettbewerbsverboten.
+                  Als ehemaliger C-Level-Manager spricht Fatih Bektas die Sprache beider Seiten.
                 </p>
                 <div className="flex items-center gap-4 flex-wrap max-md:justify-center">
                   <a
