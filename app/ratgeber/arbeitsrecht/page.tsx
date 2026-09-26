@@ -71,6 +71,19 @@ const articles: Article[] = [
     dateKey: 'betriebsbedingteKuendigung',
   },
   {
+    href: '/abfindung-betriebsbedingte-kuendigung-hoehe/',
+    eyebrow: 'Abfindung',
+    title: 'Abfindung bei betriebsbedingter Kündigung: Wie hoch ist sie wirklich?',
+    description:
+      'Kein automatischer Anspruch, Faustformel 0,5 Monatsgehälter × Jahre, § 1a KSchG im Detail, Steuern und Fünftelregelung 2025, 3-Wochen-Frist — mit Rechenbeispielen.',
+    facts: [
+      '§ 1a KSchG: 0,5 Monatsverdienste pro Jahr als gesetzliche Höhe',
+      'BAG 2 AZR 807/06, 971/06, 45/06 und 536/15 zur § 1a-Abfindung',
+      'Fünftelregelung (§ 34 EStG) seit 2025 nur noch über die Steuererklärung',
+    ],
+    dateKey: 'abfindungBetriebsbedingteHoehe',
+  },
+  {
     href: '/kuendigungsfristen/',
     eyebrow: 'Fristen',
     title: 'Kündigungsfristen nach § 622 BGB — Komplette Tabelle',
