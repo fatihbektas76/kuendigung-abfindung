@@ -70,7 +70,7 @@ export default function AuthorByline({
         href="https://www.anwalt.de/fatihbektas"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1.5 py-1 px-2 border border-gold/40 rounded-sm bg-white text-[0.78rem] hover:border-gold hover:bg-gold-bg no-underline transition-all"
+        className="basis-full sm:basis-auto flex items-center justify-center sm:justify-start gap-1.5 py-1.5 px-2.5 border border-gold/40 rounded-sm bg-white text-[0.78rem] hover:border-gold hover:bg-gold-bg no-underline transition-all"
         aria-label="Bewertungen von Fatih Bektas auf anwalt.de ansehen"
       >
         <span className="text-gold-dark" aria-hidden="true">

@@ -6,11 +6,20 @@
  */
 export const internalLinks: Record<string, Array<{ href: string; label: string }>> = {
   "/abfindung": [
+    { href: "/abfindung-betriebsbedingte-kuendigung-hoehe", label: "Abfindung bei betriebsbedingter Kündigung — wie hoch?" },
     { href: "/kuendigung/kuendigung-krankschreibung", label: "Kündigung während Krankschreibung — was tun?" },
     { href: "/kuendigung/kuendigung-betriebsuebergang", label: "Kündigung nach Betriebsübergang — Ihre Rechte" },
     { href: "/kuendigung-nach-einer-abmahnung", label: "Kündigung nach einer Abmahnung — wirksam oder nicht?" },
     { href: "/kuendigung/kuendigung-teilzeit", label: "Kündigung in Teilzeit — was tun?" },
     { href: "/kuendigung/kuendigung-ausbildung", label: "Kündigung in der Ausbildung — was gilt?" }
+  ],
+  "/abfindung-betriebsbedingte-kuendigung-hoehe": [
+    { href: "/abfindung", label: "Abfindung — Ratgeber, Höhe und Anspruch im Überblick" },
+    { href: "/abfindungsrechner", label: "Abfindung berechnen — kostenloser Rechner" },
+    { href: "/abfindungstabelle", label: "Abfindungstabelle nach Gehalt und Betriebszugehörigkeit" },
+    { href: "/betriebsbedingte-kuendigung", label: "Betriebsbedingte Kündigung — Sozialauswahl & Voraussetzungen" },
+    { href: "/kuendigungsschutzklage", label: "Kündigungsschutzklage — Ablauf, Kosten & 3-Wochen-Frist" },
+    { href: "/aufhebungsvertrag", label: "Aufhebungsvertrag statt Kündigung — Chancen & Risiken" }
   ],
   "/abfindung-nach-1-jahr-betriebszugehoerigkeit": [
     { href: "/abfindung-nach-26-jahren-betriebszugehoerigkeit", label: "Abfindung nach 26 Jahren Betriebszugehörigkeit — wie viel steht mir zu?" },
@@ -804,7 +813,8 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   "/aufhebungsvertrag": [
     { href: "/urteile/bag-6-azr-333-21-aufhebungsvertrag-faires-verhandeln", label: "Aufhebungsvertrag — Gebot fairen Verhandelns" },
     { href: "/aufhebungsvertrag-pruefen", label: "Aufhebungsvertrag prüfen — Ist Ihr Vertrag fair?" },
-    { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — BAG kippt Standardklauseln (5 AZR 108/25)" }
+    { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — BAG kippt Standardklauseln (5 AZR 108/25)" },
+    { href: "/abfindung-betriebsbedingte-kuendigung-hoehe", label: "Abfindung bei betriebsbedingter Kündigung — wie hoch?" }
   ],
   "/aufhebungsvertrag-pruefen": [
     { href: "/urteile/bag-6-azr-333-21-aufhebungsvertrag-faires-verhandeln", label: "Aufhebungsvertrag — Gebot fairen Verhandelns" },
@@ -1190,6 +1200,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   "/kuendigungsschutzklage": [
     { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — Standardklauseln unwirksam (BAG 5 AZR 108/25)" },
     { href: "/abfindung", label: "Abfindung nach Kündigung — Anspruch, Höhe & Verhandlung" },
+    { href: "/abfindung-betriebsbedingte-kuendigung-hoehe", label: "Abfindung bei betriebsbedingter Kündigung — wie hoch?" },
     { href: "/kuendigungsfristen", label: "Kündigungsfristen nach § 622 BGB" },
     { href: "/rvg-rechner", label: "Anwaltskosten & Prozesskosten berechnen" }
   ],
