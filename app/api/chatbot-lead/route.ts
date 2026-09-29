@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createContact, sendNotificationEmail } from '@/lib/brevo';
+import { forwardLeadToAdmin } from '@/lib/admin-ingest';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -53,6 +54,16 @@ export async function POST(request: NextRequest) {
     if (emailResult.status === 'rejected') {
       console.error('Chatbot lead email sending failed:', emailResult.reason);
     }
+
+    forwardLeadToAdmin({
+      name,
+      email,
+      phone,
+      rechtsgebiet: `chatbot:${topicCategory}`,
+      message: chatSummary,
+      pageUrl,
+      raw: body,
+    }).catch(() => undefined);
 
     return NextResponse.json({ success: true });
   } catch (error) {
