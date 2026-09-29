@@ -91,10 +91,11 @@ export default function PrivacyPolicyEn() {
         <section className="mb-10">
           <h2 className="font-serif text-[1.4rem] font-bold mb-3">Recipients</h2>
           <p className="text-[0.98rem] text-ink-light leading-relaxed">
-            Our hosting provider Vercel Inc. (USA) processes site traffic under standard
-            contractual clauses. Email sending is handled by Brevo (sendinblue.com,
-            France/EU). Google Analytics is operated by Google Ireland Ltd. (Ireland) on the
-            basis of your explicit consent.
+            Our hosting provider Hetzner Online GmbH (Gunzenhausen, Germany) processes site
+            traffic on servers located exclusively in Germany, so no third-country transfer
+            occurs. Email sending is handled by Brevo (sendinblue.com, France/EU). Google
+            Analytics is operated by Google Ireland Ltd. (Ireland) on the basis of your explicit
+            consent.
           </p>
         </section>
 
