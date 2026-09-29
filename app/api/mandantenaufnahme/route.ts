@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEchtlyWebhook } from '@/lib/echtly';
+import { forwardLeadToAdmin } from '@/lib/admin-ingest';
 import { getGraphConfig, sendMailViaGraph } from '@/lib/graph-mailer';
 
 export const runtime = 'nodejs';
@@ -388,6 +389,21 @@ export async function POST(request: NextRequest) {
     } catch (err) {
       console.error('[Webhook] error (non-fatal):', err);
     }
+
+    // APOS Admin ingest — parallel, fire-and-forget, non-blocking
+    const wd = webhookData as Record<string, unknown>;
+    forwardLeadToAdmin({
+      name: (wd.name as string) ?? null,
+      email: (wd.email as string) ?? email,
+      phone: (wd.telefon as string) ?? (wd.mobil as string) ?? null,
+      rechtsgebiet:
+        formType === 'kuendigung'
+          ? 'kuendigung'
+          : ((wd.rechtsgebiet as string) ?? null),
+      message: (wd.nachricht as string) ?? (wd.freitext as string) ?? null,
+      pageUrl: request.headers.get('referer'),
+      raw: webhookData,
+    }).catch(() => undefined);
 
     return NextResponse.json({ success: true });
   } catch (error) {
