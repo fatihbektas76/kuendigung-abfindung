@@ -1,0 +1,64 @@
+name: Deploy to Hetzner
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: hetzner-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Setup SSH
+        env:
+          KEY: ${{ secrets.HETZNER_SSH_KEY }}
+          HOST: ${{ secrets.HETZNER_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy
+        env:
+          HOST: ${{ secrets.HETZNER_HOST }}
+          USER: ${{ secrets.HETZNER_USER }}
+          SHA: ${{ github.sha }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes "$USER@$HOST" bash -s <<REMOTE
+          set -euo pipefail
+          cd /var/www/gekuendigt-abfindung
+
+          echo "== Fetch =="
+          git fetch --all --prune
+          git reset --hard "$SHA"
+
+          echo "== Deps =="
+          NODE_ENV=development npm ci --no-audit --no-fund
+
+          echo "== Build =="
+          npm run build
+
+          echo "== Reload =="
+          pm2 reload gekuendigt-abfindung --update-env
+          pm2 save
+
+          echo "== Deployed commit =="
+          git log -1 --oneline
+          REMOTE
+
+      - name: Smoke test
+        run: |
+          for i in 1 2 3 4 5 6; do
+            code=$(curl -sS -o /dev/null -w "%{http_code}" -L https://www.gekuendigt-abfindung.de/)
+            echo "attempt $i -> HTTP $code"
+            if [ "$code" = "200" ]; then exit 0; fi
+            sleep 5
+          done
+          echo "Smoke test failed: site did not return 200"
+          exit 1
