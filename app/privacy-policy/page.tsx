@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const sections = [
   { id: 'verantwortlicher', label: 'Verantwortlicher' },
   { id: 'uebersicht', label: 'Übersicht der Datenverarbeitung' },
-  { id: 'hosting', label: 'Hosting (Vercel)' },
+  { id: 'hosting', label: 'Hosting (Hetzner)' },
   { id: 'server-logs', label: 'Server-Log-Daten' },
   { id: 'rechte', label: 'Ihre Rechte' },
   { id: 'kontakt', label: 'Kontaktformular' },
@@ -185,23 +185,18 @@ export default function PrivacyPolicyPage() {
         <Divider />
 
         <section>
-          <SectionHeader number="03" title="Hosting (Vercel)" id="hosting" />
+          <SectionHeader number="03" title="Hosting (Hetzner)" id="hosting" />
           <P>
-            Diese Website wird über die <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut,
-            CA 91789, USA, betrieben (Hosting in EU-Regionen, u.&nbsp;a. Frankfurt-Edge). Beim
-            Aufruf der Website verarbeitet Vercel die Server-Log-Daten, die Ihr Browser automatisch
-            übermittelt (siehe Ziff. 4).
+            Diese Website wird auf Servern der <strong>Hetzner Online GmbH</strong>,
+            Industriestr.&nbsp;25, 91710 Gunzenhausen, Deutschland, betrieben. Das Hosting findet
+            ausschließlich in Rechenzentren innerhalb der Bundesrepublik Deutschland statt. Beim
+            Aufruf der Website verarbeitet Hetzner die Server-Log-Daten, die Ihr Browser
+            automatisch übermittelt (siehe Ziff. 4).
           </P>
           <P>
-            Bei Vercel handelt es sich um ein US-amerikanisches Unternehmen; eine Verarbeitung
-            Ihrer Daten kann daher auch in den USA erfolgen. Rechtsgrundlage des Datentransfers in
-            die USA ist der Angemessenheitsbeschluss der Europäischen Kommission vom 10. Juli 2023
-            zum <strong>EU-U.S. Data Privacy Framework (DPF)</strong> gemäß Art. 45 DSGVO; Vercel
-            ist unter dem DPF zertifiziert. Ergänzend hat Vercel die EU-Standardvertragsklauseln
-            (Art. 46 Abs. 2 DSGVO) in Form eines Data Processing Addendum vereinbart, die
-            insbesondere für nicht vom Angemessenheitsbeschluss erfasste Konstellationen greifen.
-            Mit Vercel besteht ein Auftragsverarbeitungsvertrag (Data Processing Addendum) gemäß
-            Art. 28 DSGVO.
+            Da die Verarbeitung ausschließlich innerhalb Deutschlands und damit im Geltungsbereich
+            der DSGVO erfolgt, findet <strong>keine Datenübermittlung in Drittstaaten</strong>
+            statt. Mit Hetzner besteht ein Auftragsverarbeitungsvertrag gemäß Art.&nbsp;28 DSGVO.
           </P>
           <div className="rounded-xl border border-border bg-cream/40 p-5 my-5">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-ink-muted mb-2">
@@ -209,12 +204,14 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-none m-0 p-0 space-y-1.5 text-[0.92rem]">
               <li>
-                <A href="https://vercel.com/legal/privacy-policy">
-                  vercel.com/legal/privacy-policy
+                <A href="https://www.hetzner.com/de/rechtliches/datenschutz">
+                  hetzner.com/de/rechtliches/datenschutz
                 </A>
               </li>
               <li>
-                <A href="https://vercel.com/legal/dpa">vercel.com/legal/dpa</A>
+                <A href="https://www.hetzner.com/de/rechtliches/auftragsverarbeitung/">
+                  hetzner.com/de/rechtliches/auftragsverarbeitung
+                </A>
               </li>
             </ul>
           </div>
