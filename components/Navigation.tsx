@@ -63,38 +63,39 @@ export default function Navigation() {
           }`}
         >
           <li>
-            <a href="/#leistungen" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <a href="/#leistungen" data-track="nav_leistungen" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Leistungen
             </a>
           </li>
           <li>
-            <a href="/#ablauf" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <a href="/#ablauf" data-track="nav_ablauf" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Ablauf
             </a>
           </li>
           <li>
-            <a href="/#faq" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <a href="/#faq" data-track="nav_faq" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               FAQ
             </a>
           </li>
           <li>
-            <Link href="/team" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <Link href="/team" data-track="nav_team" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Unser Team
             </Link>
           </li>
           <li>
-            <Link href="/ratgeber" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <Link href="/ratgeber" data-track="nav_ratgeber" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               Ratgeber
             </Link>
           </li>
           <li>
-            <Link href="/rvg-rechner" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
+            <Link href="/rvg-rechner" data-track="nav_rvg" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               RVG Rechner
             </Link>
           </li>
           <li>
             <Link
               href="/kuendigung-pruefen"
+              data-track="cta_nav_pruefen"
               onClick={closeMenu}
               className="bg-gold-dark text-white px-6 py-2.5 rounded-sm font-semibold text-[0.85rem] no-underline hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(166,139,75,0.2)] transition-all whitespace-nowrap"
             >

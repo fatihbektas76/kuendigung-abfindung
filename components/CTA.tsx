@@ -14,6 +14,7 @@ export default function CTA() {
         </p>
         <a
           href="#kontakt"
+          data-track="cta_bottom_kontakt_button"
           className="inline-flex items-center gap-2 px-9 py-4 rounded-sm text-base font-semibold no-underline transition-all bg-gold-dark text-white hover:bg-[#635428] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(166,139,75,0.25)]"
         >
           Jetzt kostenlos prüfen lassen &rarr;
@@ -21,6 +22,7 @@ export default function CTA() {
         <div className="flex gap-8 justify-center mt-9 flex-wrap max-md:flex-col max-md:items-center">
           <a
             href="mailto:bektas@apos.legal"
+            data-track="cta_bottom_mail"
             className="text-[0.88rem] text-white/60 no-underline flex items-center gap-2 hover:text-gold-light transition-colors"
           >
             <svg width="16" height="16" fill="none" stroke="#A68B4B" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
@@ -28,6 +30,7 @@ export default function CTA() {
           </a>
           <a
             href="tel:+49622295992400"
+            data-track="cta_bottom_phone"
             className="text-[0.88rem] text-white/60 no-underline flex items-center gap-2 hover:text-gold-light transition-colors"
           >
             <svg width="16" height="16" fill="none" stroke="#A68B4B" strokeWidth="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -35,6 +38,7 @@ export default function CTA() {
           </a>
           <a
             href="https://apos.legal"
+            data-track="cta_bottom_apos_legal"
             className="text-[0.88rem] text-white/60 no-underline flex items-center gap-2 hover:text-gold-light transition-colors"
             target="_blank"
             rel="noopener noreferrer"

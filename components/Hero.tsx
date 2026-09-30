@@ -37,7 +37,7 @@ export default function Hero() {
         </div>
         <div className="flex gap-3.5 justify-center flex-wrap max-md:flex-col max-md:items-center">
           <a
-            href="#kontakt"
+            href="#kontakt" data-track="cta_hero_kontakt"
             className="inline-flex items-center gap-2 px-[30px] py-3.5 rounded-sm text-[0.95rem] font-semibold no-underline transition-all bg-gold-dark text-white hover:bg-[#735F32] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(166,139,75,0.25)] max-md:w-full max-md:justify-center"
           >
             Abfindung kostenlos prüfen &rarr;
