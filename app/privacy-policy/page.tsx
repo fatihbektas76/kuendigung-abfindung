@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import TrackingOptOut from './tracking-opt-out';
 
 export const metadata: Metadata = {
   title: 'Datenschutzerklärung',
@@ -14,6 +15,8 @@ const sections = [
   { id: 'rechte', label: 'Ihre Rechte' },
   { id: 'kontakt', label: 'Kontaktformular' },
   { id: 'analytics', label: 'Google Analytics' },
+  { id: 'plausible', label: 'Reichweitenmessung (Plausible)' },
+  { id: 'apos-tracker', label: 'Funnel-Analyse (eigenes Tracking)' },
   { id: 'fonts', label: 'Schriften (selbst gehostet)' },
   { id: 'brevo', label: 'Brevo (Sendinblue)' },
   { id: 'cookies', label: 'Cookies' },
@@ -382,6 +385,71 @@ export default function PrivacyPolicyPage() {
         <Divider />
 
         <section>
+          <SectionHeader number="08" title="Reichweitenmessung (Plausible)" id="plausible" />
+          <P>
+            Wir setzen zur statistischen Auswertung unserer Website die Open-Source-Software{' '}
+            <strong>Plausible Analytics</strong> ein. Plausible wird{' '}
+            <strong>ausschließlich auf unserem eigenen Server</strong> der Hetzner Online GmbH in
+            Deutschland betrieben (self-hosted). Es findet <strong>keine Datenübermittlung an
+            Dritte oder in Drittstaaten</strong> statt.
+          </P>
+          <P>
+            Erfasst werden ausschließlich technisch aggregierte Zugriffsdaten:
+            aufgerufene Seite, Verweis-URL (Referrer), Browser- und Gerätetyp, Betriebssystem und
+            eine grobe Herkunftsregion, die aus der IP-Adresse abgeleitet wird. Die IP-Adresse
+            selbst wird <strong>nicht gespeichert</strong>; sie wird ausschließlich am Tag des
+            Besuchs zur Wiedererkennung wiederkehrender Aufrufe zu einem täglich rotierenden
+            Hash-Wert verarbeitet und danach verworfen. Es werden <strong>keine Cookies gesetzt</strong>,
+            keine geräteübergreifende Wiedererkennung durchgeführt und keine personenbezogenen
+            Daten (Name, E-Mail, Telefon o.&nbsp;Ä.) verarbeitet.
+          </P>
+          <Legal>
+            Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Reichweitenmessung zur
+            Verbesserung des Angebots). Aufgrund der Anonymisierung und des Verzichts auf
+            Cookies ist keine Einwilligung nach § 25 TDDDG (ehem. TTDSG) erforderlich.
+          </Legal>
+        </section>
+
+        <Divider />
+
+        <section>
+          <SectionHeader number="09" title="Funnel-Analyse (eigenes Tracking)" id="apos-tracker" />
+          <P>
+            Für die interne Optimierung unserer Kontakt- und Mandantenaufnahme-Formulare setzen
+            wir ein <strong>eigenes, minimales Analyse-Tool</strong> ein, das ausschließlich auf
+            unserer eigenen Infrastruktur (admin.gekuendigt-abfindung.de, betrieben durch die
+            Hetzner Online GmbH in Deutschland) läuft.
+          </P>
+          <P>
+            Erfasst werden: aufgerufene Seite, Verweis-URL, User-Agent (Browser-Kennung), eine
+            zufällige, <strong>nur im Browser-Tab</strong> gespeicherte Session-Kennung
+            (sessionStorage &mdash; keine dauerhaften Cookies), sowie Formular-Ereignisse (Start,
+            Feldfokus, Abschicken, Abbruch). <strong>Die Feldinhalte selbst werden nicht
+            übertragen</strong> &mdash; wir erfassen lediglich <em>welches</em> Feld benutzt
+            wurde, nicht <em>was</em> darin steht.
+          </P>
+          <P>
+            Wenn Ihr Browser den <strong>Do-Not-Track-Header (DNT)</strong> aktiviert hat, findet
+            keine Erfassung statt. Sie können der Erfassung zudem jederzeit widersprechen &mdash;
+            der Widerspruch wird lokal in Ihrem Browser gespeichert und gilt für zukünftige Besuche
+            (bis zum Löschen der Browser-Daten).
+          </P>
+          <div className="rounded-xl border border-border bg-cream/40 p-5 my-5">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-ink-muted mb-2">
+              Widerspruch
+            </p>
+            <TrackingOptOut />
+          </div>
+          <Legal>
+            Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer nutzerfreundlichen
+            Gestaltung der Kontaktformulare durch Drop-off-Analyse). Es werden keine Daten an
+            Dritte übermittelt.
+          </Legal>
+        </section>
+
+        <Divider />
+
+        <section>
           <SectionHeader number="08" title="Schriften (selbst gehostet)" id="fonts" />
           <P>
             Diese Website verwendet selbst gehostete Schriften, die auf unserem eigenen Server
@@ -399,7 +467,7 @@ export default function PrivacyPolicyPage() {
         <Divider />
 
         <section>
-          <SectionHeader number="09" title="Brevo (Sendinblue)" id="brevo" />
+          <SectionHeader number="10" title="Brevo (Sendinblue)" id="brevo" />
           <P>
             Wir verwenden Brevo (ehemals Sendinblue), bereitgestellt von Brevo SAS, 106 boulevard
             Haussmann, 75008 Paris, Frankreich, für folgende Zwecke:
@@ -436,7 +504,7 @@ export default function PrivacyPolicyPage() {
         <Divider />
 
         <section>
-          <SectionHeader number="10" title="Cookies" id="cookies" />
+          <SectionHeader number="11" title="Cookies" id="cookies" />
           <P>
             Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Gerät
             gespeichert werden und die Analyse der Websitenutzung ermöglichen.
@@ -519,7 +587,7 @@ export default function PrivacyPolicyPage() {
         <Divider />
 
         <section>
-          <SectionHeader number="11" title="SSL-/TLS-Verschlüsselung" id="ssl" />
+          <SectionHeader number="12" title="SSL-/TLS-Verschlüsselung" id="ssl" />
           <P>
             Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher
             Inhalte eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an
@@ -530,7 +598,7 @@ export default function PrivacyPolicyPage() {
         <Divider />
 
         <section>
-          <SectionHeader number="12" title="Änderungen dieser Datenschutzerklärung" id="aenderungen" />
+          <SectionHeader number="13" title="Änderungen dieser Datenschutzerklärung" id="aenderungen" />
           <P>
             Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, um Änderungen
             unserer Datenverarbeitungspraktiken oder rechtlicher Anforderungen widerzuspiegeln. Die
