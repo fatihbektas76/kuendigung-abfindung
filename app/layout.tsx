@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import localFont from 'next/font/local';
 import { headers } from 'next/headers';
 import './globals.css';
@@ -170,6 +171,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ) : (
           <LayoutClient>{children}</LayoutClient>
         )}
+        <Script
+          id="apos-track-cfg"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.__APOS_TRACK__={site:'gekuendigt-abfindung',endpoint:'https://admin.gekuendigt-abfindung.de/api/events/ingest'};`,
+          }}
+        />
+        <Script
+          src="https://admin.gekuendigt-abfindung.de/apos-track.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
