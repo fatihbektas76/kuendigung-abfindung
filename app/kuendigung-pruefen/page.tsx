@@ -857,7 +857,7 @@ export default function KuendigungPruefenPage() {
               </p>
             </div>
 
-            <button
+            <button data-track="rechner_kuendigung-pruefen_handleSubmit"
               onClick={handleSubmit}
               disabled={!answers.email || !answers.datenschutz || !answers.vorname || !answers.nachname || loading}
               className="w-full mt-4 py-4 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
