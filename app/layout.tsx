@@ -185,8 +185,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           defer
           data-domain="gekuendigt-abfindung.de"
-          src="https://stats.gekuendigt-abfindung.de/js/script.js"
+          src="https://stats.gekuendigt-abfindung.de/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js"
           strategy="afterInteractive"
+        />
+        <Script
+          id="plausible-bootstrap"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) };`,
+          }}
         />
       </body>
     </html>
