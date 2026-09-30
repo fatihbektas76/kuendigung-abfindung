@@ -202,7 +202,7 @@ export default function AbfindungsrechnerPage() {
                     Je schwächer die Kündigung, desto höher Ihre Verhandlungsposition.
                   </p>
                 </div>
-                <button
+                <button data-track="rechner_abfindungsrechner_calculate"
                   onClick={calculate}
                   className="w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all mt-2 hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
                 >

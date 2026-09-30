@@ -187,7 +187,7 @@ export default function SchwellenwertRechnerPage() {
                   />
                   <p className="text-[0.78rem] text-ink-muted mt-1">Faktor: 0,5 pro Person</p>
                 </div>
-                <button
+                <button data-track="rechner_schwellenwert_calculate"
                   onClick={calculate}
                   className="w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all mt-2 hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
                 >
