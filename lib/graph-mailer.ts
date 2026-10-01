@@ -24,12 +24,26 @@ export interface GraphConfig {
   senderEmail: string;
 }
 
+function isReal(v: string | undefined): v is string {
+  if (!v) return false;
+  const s = v.trim();
+  if (s.length === 0) return false;
+  // Treat placeholder values as "not configured". Server env sometimes carries
+  // explicit placeholders (placeholder_ms_tenant_id etc.) so credentials
+  // aren't accidentally used. Those must not pass validation.
+  if (/^placeholder[_-]/i.test(s)) return false;
+  if (/^(todo|xxx|changeme|undefined|null)$/i.test(s)) return false;
+  return true;
+}
+
 export function getGraphConfig(): GraphConfig | null {
   const tenantId = process.env.MS_GRAPH_TENANT_ID;
   const clientId = process.env.MS_GRAPH_CLIENT_ID;
   const clientSecret = process.env.MS_GRAPH_CLIENT_SECRET;
   const senderEmail = process.env.MS_GRAPH_SENDER_EMAIL;
-  if (!tenantId || !clientId || !clientSecret || !senderEmail) return null;
+  if (!isReal(tenantId) || !isReal(clientId) || !isReal(clientSecret) || !isReal(senderEmail)) {
+    return null;
+  }
   return { tenantId, clientId, clientSecret, senderEmail };
 }
 

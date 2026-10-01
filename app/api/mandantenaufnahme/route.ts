@@ -9,12 +9,14 @@ export const maxDuration = 30;
 const BREVO_API_URL = 'https://api.brevo.com/v3';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function getApiKey(): string {
+function isBrevoConfigured(): boolean {
   const key = process.env.BREVO_API_KEY;
-  if (!key || key === 'your_key_here') {
-    throw new Error('BREVO_API_KEY is not configured');
-  }
-  return key;
+  if (!key) return false;
+  const s = key.trim();
+  if (s.length < 20) return false;
+  if (s === 'your_key_here') return false;
+  if (/^placeholder[_-]/i.test(s)) return false;
+  return true;
 }
 
 function escapeHtml(str: string): string {
@@ -332,45 +334,51 @@ export async function POST(request: NextRequest) {
     }
 
     // Versand: MS Graph, falls konfiguriert; sonst Brevo als Fallback.
-    // So kann die Umstellung ohne Downtime geflippt werden, indem einfach
-    // die vier MS_GRAPH_*-Env-Variablen in Vercel gesetzt werden.
+    // Beide Wege sind best-effort — bei Fehler landet der Lead trotzdem via
+    // forwardLeadToAdmin() im APOS-Admin, der Admin bekommt einen Telegram-Alert
+    // und kann den Lead im Dashboard verfolgen. Das Formular darf hier nicht crashen.
     const graphCfg = getGraphConfig();
-    if (graphCfg) {
-      console.log('[Mail] Sende via MS Graph als', graphCfg.senderEmail);
-      await sendMailViaGraph(graphCfg, {
-        subject,
-        htmlBody: htmlContent,
-        toRecipients: ['bektas@apos.legal'],
-        attachments: attachments.map((a) => ({
-          name: a.name,
-          contentType: 'application/octet-stream',
-          contentBytes: a.content,
-        })),
-      });
-    } else {
-      console.log('[Mail] Sende via Brevo (kein MS-Graph-Config gefunden)');
-      const emailPayload: Record<string, unknown> = {
-        sender: { name: 'Mandantenaufnahme', email: 'fb@fb-re.de' },
-        to: [{ email: 'bektas@apos.legal', name: 'Fatih Bektas' }],
-        subject,
-        htmlContent,
-      };
-      if (attachments.length > 0) {
-        emailPayload.attachment = attachments;
+    try {
+      if (graphCfg) {
+        console.log('[Mail] Sende via MS Graph als', graphCfg.senderEmail);
+        await sendMailViaGraph(graphCfg, {
+          subject,
+          htmlBody: htmlContent,
+          toRecipients: ['bektas@apos.legal'],
+          attachments: attachments.map((a) => ({
+            name: a.name,
+            contentType: 'application/octet-stream',
+            contentBytes: a.content,
+          })),
+        });
+      } else if (isBrevoConfigured()) {
+        console.log('[Mail] Sende via Brevo (kein MS-Graph-Config gefunden)');
+        const emailPayload: Record<string, unknown> = {
+          sender: { name: 'Mandantenaufnahme', email: 'fb@fb-re.de' },
+          to: [{ email: 'bektas@apos.legal', name: 'Fatih Bektas' }],
+          subject,
+          htmlContent,
+        };
+        if (attachments.length > 0) {
+          emailPayload.attachment = attachments;
+        }
+        const emailRes = await fetch(`${BREVO_API_URL}/smtp/email`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'api-key': process.env.BREVO_API_KEY as string,
+          },
+          body: JSON.stringify(emailPayload),
+        });
+        if (!emailRes.ok) {
+          const text = await emailRes.text();
+          console.error('[Mail] Brevo failed:', emailRes.status, text.slice(0, 400));
+        }
+      } else {
+        console.warn('[Mail] Weder MS Graph noch Brevo konfiguriert — Lead geht ausschließlich via Admin-Ingest.');
       }
-      const emailRes = await fetch(`${BREVO_API_URL}/smtp/email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'api-key': getApiKey(),
-        },
-        body: JSON.stringify(emailPayload),
-      });
-      if (!emailRes.ok) {
-        const text = await emailRes.text();
-        console.error('Brevo email failed:', emailRes.status, text);
-        throw new Error(`Brevo email failed: ${emailRes.status}`);
-      }
+    } catch (mailErr) {
+      console.error('[Mail] Versand fehlgeschlagen (non-fatal):', mailErr);
     }
 
     // Echtly webhook (fire-and-forget, no files)
