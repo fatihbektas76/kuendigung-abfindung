@@ -1,8 +1,18 @@
+function isRealUrl(v: string | undefined): v is string {
+  if (!v) return false
+  const s = v.trim()
+  if (s.length === 0) return false
+  if (/^placeholder[_-]/i.test(s)) return false
+  if (/^(todo|xxx|changeme)/i.test(s)) return false
+  if (!/^https?:\/\//i.test(s)) return false
+  return true
+}
+
 export async function sendEchtlyWebhook(data: Record<string, unknown>, webhookUrl?: string): Promise<void> {
   const url = webhookUrl || process.env.ECHTLY_WEBHOOK_URL;
 
-  if (!url) {
-    console.warn('ECHTLY_WEBHOOK_URL is not configured — skipping webhook');
+  if (!isRealUrl(url)) {
+    console.warn('[Echtly] Webhook-URL nicht konfiguriert oder Placeholder — skip');
     return;
   }
 
@@ -14,7 +24,7 @@ export async function sendEchtlyWebhook(data: Record<string, unknown>, webhookUr
 
   if (!res.ok) {
     const text = await res.text();
-    console.error('Echtly webhook failed:', res.status, text);
+    console.error('[Echtly] webhook failed:', res.status, text.slice(0, 400));
     throw new Error(`Echtly webhook failed: ${res.status}`);
   }
 }
