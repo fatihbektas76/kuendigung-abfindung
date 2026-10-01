@@ -56,15 +56,19 @@ function row(label: string, value: string): string {
   return `<tr><td style="${TD_LABEL}">${escapeHtml(label)}</td><td style="${TD}">${escapeHtml(value)}</td></tr>`;
 }
 
-function buildAttachments(body: Record<string, unknown>): Array<{ name: string; content: string }> {
-  const attachments: Array<{ name: string; content: string }> = [];
+function buildAttachments(body: Record<string, unknown>): Array<{ name: string; content: string; contentType: string }> {
+  const attachments: Array<{ name: string; content: string; contentType: string }> = [];
   if (Array.isArray(body.files)) {
     for (const f of body.files) {
       if (f.name && f.content) {
-        const base64 = String(f.content).replace(/^data:[^;]+;base64,/, '');
+        const raw = String(f.content);
+        const match = raw.match(/^data:([^;]+);base64,(.*)$/);
+        const base64 = match ? match[2] : raw.replace(/^data:[^;]+;base64,/, '');
+        const inferredType = match ? match[1] : (typeof f.contentType === 'string' ? f.contentType : 'application/octet-stream');
         attachments.push({
           name: String(f.name).slice(0, 200),
           content: base64,
+          contentType: inferredType.slice(0, 200),
         });
       }
     }
@@ -347,7 +351,7 @@ export async function POST(request: NextRequest) {
           toRecipients: ['bektas@apos.legal'],
           attachments: attachments.map((a) => ({
             name: a.name,
-            contentType: 'application/octet-stream',
+            contentType: a.contentType,
             contentBytes: a.content,
           })),
         });
@@ -411,6 +415,11 @@ export async function POST(request: NextRequest) {
       message: (wd.nachricht as string) ?? (wd.freitext as string) ?? null,
       pageUrl: request.headers.get('referer'),
       raw: webhookData,
+      attachments: attachments.map((a) => ({
+        name: a.name,
+        contentType: a.contentType,
+        contentBytes: a.content,
+      })),
     }).catch(() => undefined);
 
     return NextResponse.json({ success: true });
