@@ -403,7 +403,7 @@ export async function POST(request: NextRequest) {
     forwardLeadToAdmin({
       name: (wd.name as string) ?? null,
       email: (wd.email as string) ?? email,
-      phone: (wd.telefon as string) ?? (wd.mobil as string) ?? null,
+      phone: (wd.handynummer as string) ?? (wd.telefon as string) ?? (wd.mobil as string) ?? null,
       rechtsgebiet:
         formType === 'kuendigung'
           ? 'kuendigung'
