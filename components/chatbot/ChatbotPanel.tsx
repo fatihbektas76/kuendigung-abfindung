@@ -234,7 +234,7 @@ export default function ChatbotPanel({ onClose }: Props) {
       )}
 
       {/* Input */}
-      <form onSubmit={handleSubmit} className="px-3 py-3 border-t border-border shrink-0 flex gap-2">
+      <form data-form-id="chatbot-input" onSubmit={handleSubmit} className="px-3 py-3 border-t border-border shrink-0 flex gap-2">
         <input
           ref={inputRef}
           type="text"

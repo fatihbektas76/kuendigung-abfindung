@@ -27,7 +27,7 @@ export default function ChatbotLeadForm({ onSubmit, loading }: Props) {
         <p className="text-[0.82rem] font-semibold text-ink mb-3">
           Hinterlassen Sie Ihre Kontaktdaten fuer eine kostenlose Ersteinschaetzung:
         </p>
-        <form onSubmit={handleSubmit} className="space-y-2.5">
+        <form data-form-id="chatbot-lead" onSubmit={handleSubmit} className="space-y-2.5">
           {/* Honeypot */}
           <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
 
