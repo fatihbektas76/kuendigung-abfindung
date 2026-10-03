@@ -34,6 +34,13 @@ function RadioOption({ label, selected, onClick }: { label: string; selected: bo
 }
 
 export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
+  const _today = new Date()
+  const _pad = (n: number) => String(n).padStart(2, '0')
+  const _iso = (d: Date) => `${d.getFullYear()}-${_pad(d.getMonth() + 1)}-${_pad(d.getDate())}`
+  const maxTodayDate = _iso(_today)
+  const minZugangDate = _iso(new Date(_today.getFullYear() - 3, _today.getMonth(), _today.getDate()))
+  const maxFutureDate = _iso(new Date(_today.getFullYear() + 2, _today.getMonth(), _today.getDate()))
+
   const { t } = useLanguage();
   const anzahl = data.kuendigungsAnzahl === '3+' ? 3 : data.kuendigungsAnzahl === '2' ? 2 : data.kuendigungsAnzahl === '1' ? 1 : 0;
 
@@ -133,6 +140,8 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
                     id={`kuendigungsDatum-${i}`}
                     type="date"
                     value={data.kuendigungen[i]?.kuendigungsDatum || ''}
+                    min={minZugangDate}
+                    max={maxFutureDate}
                     onChange={(e) => updateKuendigung(i, 'kuendigungsDatum', e.target.value)}
                     className={`${INPUT_CLASS} ${errors[`kuendigungsDatum_${i}`] ? 'border-red-400' : ''}`}
                   />
@@ -151,6 +160,8 @@ export default function Step4Kuendigung({ data, onChange, errors }: StepProps) {
                     id={`zugangsDatum-${i}`}
                     type="date"
                     value={data.kuendigungen[i]?.zugangsDatum || ''}
+                    min={minZugangDate}
+                    max={maxTodayDate}
                     onChange={(e) => updateKuendigung(i, 'zugangsDatum', e.target.value)}
                     className={`${INPUT_CLASS} ${errors[`zugangsDatum_${i}`] ? 'border-red-400' : ''}`}
                   />
