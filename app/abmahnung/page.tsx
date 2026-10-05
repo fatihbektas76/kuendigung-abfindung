@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { abmahnungEntries } from '@/lib/abmahnung-content';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -62,6 +63,17 @@ const faqs = [
     q: 'Kann ich gegen eine Abmahnung klagen?',
     a: 'Ja, Sie können vor dem Arbeitsgericht auf Entfernung der Abmahnung aus der Personalakte klagen. Dies empfiehlt sich insbesondere, wenn die Abmahnung inhaltlich falsch ist oder erhebliche Formfehler aufweist. Alternativ können Sie eine Gegendarstellung zur Personalakte einreichen. Lassen Sie die Erfolgsaussichten von einem Fachanwalt prüfen.',
   },
+];
+
+const TOC_ENTRIES = [
+  { id: "was-ist-eine-abmahnung", label: "Was ist eine Abmahnung?" },
+  { id: "wann-ist-eine-abmahnung-unwirksam", label: "Wann ist eine Abmahnung unwirksam?" },
+  { id: "ist-ihre-abmahnung-wirksam", label: "Ist Ihre Abmahnung wirksam?" },
+  { id: "was-tun-nach-einer-abmahnung", label: "Was tun nach einer Abmahnung?" },
+  { id: "abmahnung-und-kundigung-der-zusammenhang", label: "Abmahnung und Kündigung – der Zusammenhang" },
+  { id: "kundigung-nach-abmahnungen-ihre-situation", label: "Kündigung nach Abmahnungen – Ihre Situation" },
+  { id: "fragen-zur-abmahnung", label: "Fragen zur Abmahnung" },
+  { id: "abmahnung-erhalten-lassen-sie-sie-prufen", label: "Abmahnung erhalten? Lassen Sie sie prüfen." },
 ];
 
 export default function AbmahnungPage() {
@@ -205,7 +217,9 @@ export default function AbmahnungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Grundlagen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="was-ist-eine-abmahnung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Was ist eine Abmahnung?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -265,7 +279,7 @@ export default function AbmahnungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Wirksamkeit prüfen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wann-ist-eine-abmahnung-unwirksam" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wann ist eine Abmahnung unwirksam?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
@@ -318,9 +332,9 @@ export default function AbmahnungPage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-cream">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Ist Ihre Abmahnung wirksam?
-          </h2>
+          <h2 id="ist-ihre-abmahnung-wirksam" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Ist Ihre Abmahnung wirksam?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Unser kostenloser Abmahnchecker prüft in 3 Minuten, ob Ihre Abmahnung formell und inhaltlich
             Bestand hat &mdash; mit konkreten BAG-Fundstellen und PDF-Auswertung.
@@ -349,7 +363,7 @@ export default function AbmahnungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Richtig reagieren
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="was-tun-nach-einer-abmahnung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Was tun nach einer Abmahnung?
             </h2>
             <div className="space-y-5">
@@ -397,7 +411,7 @@ export default function AbmahnungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Zusammenhang
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="abmahnung-und-kundigung-der-zusammenhang" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Abmahnung und Kündigung &ndash; der Zusammenhang
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -438,9 +452,9 @@ export default function AbmahnungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Ihre Situation
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Kündigung nach Abmahnungen &ndash; Ihre Situation
-          </h2>
+          <h2 id="kundigung-nach-abmahnungen-ihre-situation" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+              Kündigung nach Abmahnungen &ndash; Ihre Situation
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Sie wurden nach Abmahnungen gekündigt? Wählen Sie Ihre Situation und erfahren Sie,
             ob Ihre Kündigung wirksam ist und welche Abfindung möglich ist.
@@ -475,9 +489,9 @@ export default function AbmahnungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur Abmahnung
-          </h2>
+          <h2 id="fragen-zur-abmahnung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zur Abmahnung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -535,9 +549,9 @@ export default function AbmahnungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Abmahnung erhalten? Lassen Sie sie prüfen.
-          </h2>
+          <h2 id="abmahnung-erhalten-lassen-sie-sie-prufen" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Abmahnung erhalten? Lassen Sie sie prüfen.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Eine fehlerhafte Abmahnung kann eine spätere Kündigung zu Fall bringen. Prüfen Sie
             Ihre Abmahnung kostenlos in 3 Minuten &mdash; oder lassen Sie sich direkt beraten.

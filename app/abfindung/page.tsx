@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -66,6 +67,15 @@ const faqs = [
 
 const years = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const gehalt = 3000;
+
+const TOC_ENTRIES = [
+  { id: "abfindung-bei-nbspeuro-bruttogehalt", label: "Abfindung bei &nbsp;&euro; Bruttogehalt" },
+  { id: "wie-hoch-ist-ihre-abfindung", label: "Wie hoch ist Ihre Abfindung?" },
+  { id: "abfindung-nach-jahren-im-betrieb", label: "Abfindung nach Jahren im Betrieb" },
+  { id: "abfindung-nach-ihren-jahren-berechnen", label: "Abfindung nach Ihren Jahren berechnen" },
+  { id: "fragen-zur-abfindung", label: "Fragen zur Abfindung" },
+  { id: "kundigung-erhalten-abfindung-sichern", label: "Kündigung erhalten? Abfindung sichern." },
+];
 
 export default function AbfindungPage() {
   return (
@@ -205,9 +215,11 @@ export default function AbfindungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Abfindungstabelle
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Abfindung bei {gehalt.toLocaleString('de-DE')}&nbsp;&euro; Bruttogehalt
-          </h2>
+          <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="abfindung-bei-nbspeuro-bruttogehalt" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Abfindung bei {gehalt.toLocaleString('de-DE')}&nbsp;&euro; Bruttogehalt
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Die folgende Tabelle zeigt die Abfindung nach der Regelformel (Faktor 0,5) sowie
             realistische Bandbreiten bei erfolgreicher Verhandlung.
@@ -250,9 +262,9 @@ export default function AbfindungPage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Wie hoch ist Ihre Abfindung?
-          </h2>
+          <h2 id="wie-hoch-ist-ihre-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Wie hoch ist Ihre Abfindung?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Wir prüfen Ihren Fall kostenlos und schätzen Ihre realistische Abfindungshöhe ein &mdash;
             innerhalb von 48 Stunden.
@@ -272,9 +284,9 @@ export default function AbfindungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Nach Betriebszugehörigkeit
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Abfindung nach Jahren im Betrieb
-          </h2>
+          <h2 id="abfindung-nach-jahren-im-betrieb" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Abfindung nach Jahren im Betrieb
+            </h2>
           <div className="flex flex-wrap gap-3">
             {entries.map((e) => (
               <Link
@@ -326,9 +338,9 @@ export default function AbfindungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Nach Betriebszugehörigkeit
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Abfindung nach Ihren Jahren berechnen
-          </h2>
+          <h2 id="abfindung-nach-ihren-jahren-berechnen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+              Abfindung nach Ihren Jahren berechnen
+            </h2>
           <p className="text-[0.98rem] text-ink-light max-w-[720px] leading-relaxed mb-6">
             Die Faustformel liefert einen Startpunkt — die konkrete Abfindungshöhe
             hängt aber stark von Ihrer Betriebszugehörigkeit ab. Für jedes Beschäftigungsjahr
@@ -372,9 +384,9 @@ export default function AbfindungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur Abfindung
-          </h2>
+          <h2 id="fragen-zur-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zur Abfindung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -418,9 +430,9 @@ export default function AbfindungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Kündigung erhalten? Abfindung sichern.
-          </h2>
+          <h2 id="kundigung-erhalten-abfindung-sichern" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Kündigung erhalten? Abfindung sichern.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Die 3-Wochen-Klagefrist läuft. Kontaktieren Sie uns jetzt für eine kostenlose
             Ersteinschätzung Ihrer Abfindungschancen.

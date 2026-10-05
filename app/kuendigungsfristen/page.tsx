@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -75,6 +76,18 @@ const fristenTabelle = [
   { dauer: '12 Jahre', frist: '5 Monate', termin: 'Zum Monatsende', paragraph: '§622 Abs. 2 Nr. 5' },
   { dauer: '15 Jahre', frist: '6 Monate', termin: 'Zum Monatsende', paragraph: '§622 Abs. 2 Nr. 6' },
   { dauer: '20 Jahre', frist: '7 Monate', termin: 'Zum Monatsende', paragraph: '§622 Abs. 2 Nr. 7' },
+];
+
+const TOC_ENTRIES = [
+  { id: "kundigungsfristen-tabelle-nach-sect622-bgb", label: "Kündigungsfristen-Tabelle nach &sect;622 BGB" },
+  { id: "wurde-ihre-kundigungsfrist-eingehalten", label: "Wurde Ihre Kündigungsfrist eingehalten?" },
+  { id: "besondere-kundigungsfristen", label: "Besondere Kündigungsfristen" },
+  { id: "berechnung-der-kundigungsfrist-schritt-fur-schritt", label: "Berechnung der Kündigungsfrist – Schritt für Schritt" },
+  { id: "kundigungsfrist-im-arbeitsvertrag-vs-gesetz", label: "Kündigungsfrist im Arbeitsvertrag vs. Gesetz" },
+  { id: "kundigungsfrist-nicht-eingehalten-was-tun", label: "Kündigungsfrist nicht eingehalten – was tun?" },
+  { id: "kundigungstermine-richtig-berechnen", label: "Kündigungstermine richtig berechnen" },
+  { id: "fragen-zu-kundigungsfristen", label: "Fragen zu Kündigungsfristen" },
+  { id: "wurde-ihre-kundigungsfrist-korrekt-berechnet", label: "Wurde Ihre Kündigungsfrist korrekt berechnet?" },
 ];
 
 export default function KuendigungsfristenPage() {
@@ -204,9 +217,11 @@ export default function KuendigungsfristenPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Übersicht
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Kündigungsfristen-Tabelle nach &sect;622 BGB
-          </h2>
+          <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="kundigungsfristen-tabelle-nach-sect622-bgb" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Kündigungsfristen-Tabelle nach &sect;622 BGB
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Alle gesetzlichen Kündigungsfristen für Arbeitgeber nach Betriebszugehörigkeit.
           </p>
@@ -245,9 +260,9 @@ export default function KuendigungsfristenPage() {
       {/* CTA */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Wurde Ihre Kündigungsfrist eingehalten?
-          </h2>
+          <h2 id="wurde-ihre-kundigungsfrist-eingehalten" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Wurde Ihre Kündigungsfrist eingehalten?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Viele Kündigungen scheitern an der falschen Frist. Wir prüfen kostenlos,
             ob Ihre Kündigung fristgerecht ist.
@@ -276,7 +291,7 @@ export default function KuendigungsfristenPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Sonderfälle
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="besondere-kundigungsfristen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Besondere Kündigungsfristen
             </h2>
             <div className="space-y-4">
@@ -321,7 +336,7 @@ export default function KuendigungsfristenPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Anleitung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="berechnung-der-kundigungsfrist-schritt-fur-schritt" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Berechnung der Kündigungsfrist &ndash; Schritt für Schritt
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
@@ -373,7 +388,7 @@ export default function KuendigungsfristenPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Vertragliche Regelung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="kundigungsfrist-im-arbeitsvertrag-vs-gesetz" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Kündigungsfrist im Arbeitsvertrag vs. Gesetz
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -429,7 +444,7 @@ export default function KuendigungsfristenPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Falsche Frist
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="kundigungsfrist-nicht-eingehalten-was-tun" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Kündigungsfrist nicht eingehalten &ndash; was tun?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -480,7 +495,7 @@ export default function KuendigungsfristenPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Praxis
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="kundigungstermine-richtig-berechnen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Kündigungstermine richtig berechnen
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -576,9 +591,9 @@ export default function KuendigungsfristenPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zu Kündigungsfristen
-          </h2>
+          <h2 id="fragen-zu-kundigungsfristen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zu Kündigungsfristen
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -609,9 +624,9 @@ export default function KuendigungsfristenPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Wurde Ihre Kündigungsfrist korrekt berechnet?
-          </h2>
+          <h2 id="wurde-ihre-kundigungsfrist-korrekt-berechnet" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Wurde Ihre Kündigungsfrist korrekt berechnet?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Fehlerhafte Fristen machen Kündigungen angreifbar. Wir prüfen Ihre
             Kündigung kostenlos und schätzen Ihre Chancen ein.

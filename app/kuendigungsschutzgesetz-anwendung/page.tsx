@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -108,6 +109,19 @@ const statusBadge = {
   nicht: { label: 'Zählt nicht', bg: 'bg-red-50', text: 'text-red-800', border: 'border-red-200' },
   bedingt: { label: 'Bedingt', bg: 'bg-amber-50', text: 'text-amber-800', border: 'border-amber-200' },
 } as const;
+
+const TOC_ENTRIES = [
+  { id: "die-zwei-hurden-des-kundigungsschutzgesetzes", label: "Die zwei Hürden des Kündigungsschutzgesetzes" },
+  { id: "wer-zahlt-beim-schwellenwert-mit", label: "Wer zählt beim Schwellenwert mit?" },
+  { id: "wie-werden-teilzeitbeschaftigte-gezahlt", label: "Wie werden Teilzeitbeschäftigte gezählt?" },
+  { id: "arbeitsverhaltnisse-vor-dem-112004-abgesenkter-schwellenwert", label: "Arbeitsverhältnisse vor dem 1.1.2004 — abgesenkter Schwellenwert" },
+  { id: "sonderfall-gemeinschaftsbetrieb-mehrerer-unternehmen", label: "Sonderfall: Gemeinschaftsbetrieb mehrerer Unternehmen" },
+  { id: "wer-tragt-die-beweislast-fur-den-schwellenwert", label: "Wer trägt die Beweislast für den Schwellenwert?" },
+  { id: "was-bedeutet-die-nicht-anwendbarkeit-konkret", label: "Was bedeutet die (Nicht-)Anwendbarkeit konkret?" },
+  { id: "unsicher-ob-das-kschg-bei-ihnen-greift", label: "Unsicher, ob das KSchG bei Ihnen greift?" },
+  { id: "anwendung-des-kundigungsschutzgesetzes", label: "Anwendung des Kündigungsschutzgesetzes" },
+  { id: "wartezeit-und-schwellenwert-wir-klaren-beides", label: "Wartezeit und Schwellenwert — wir klären beides." },
+];
 
 export default function KSchGAnwendungPage() {
   return (
@@ -264,7 +278,9 @@ export default function KSchGAnwendungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Voraussetzungen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="die-zwei-hurden-des-kundigungsschutzgesetzes" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Die zwei Hürden des Kündigungsschutzgesetzes
             </h2>
             <div className="overflow-x-auto mb-6">
@@ -317,7 +333,7 @@ export default function KSchGAnwendungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Zählweise
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wer-zahlt-beim-schwellenwert-mit" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wer zählt beim Schwellenwert mit?
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-3">
@@ -490,7 +506,7 @@ export default function KSchGAnwendungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Teilzeit
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wie-werden-teilzeitbeschaftigte-gezahlt" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wie werden Teilzeitbeschäftigte gezählt?
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-6">
@@ -580,7 +596,7 @@ export default function KSchGAnwendungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Sonderfall
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="arbeitsverhaltnisse-vor-dem-112004-abgesenkter-schwellenwert" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Arbeitsverhältnisse vor dem 1.1.2004 — abgesenkter Schwellenwert
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
@@ -646,7 +662,7 @@ export default function KSchGAnwendungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Gemeinschaftsbetrieb
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="sonderfall-gemeinschaftsbetrieb-mehrerer-unternehmen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Sonderfall: Gemeinschaftsbetrieb mehrerer Unternehmen
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
@@ -713,7 +729,7 @@ export default function KSchGAnwendungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Beweislast
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wer-tragt-die-beweislast-fur-den-schwellenwert" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wer trägt die Beweislast für den Schwellenwert?
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
@@ -774,7 +790,7 @@ export default function KSchGAnwendungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechtsfolgen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="was-bedeutet-die-nicht-anwendbarkeit-konkret" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Was bedeutet die (Nicht-)Anwendbarkeit konkret?
             </h2>
             <div className="overflow-x-auto mb-6">
@@ -830,9 +846,9 @@ export default function KSchGAnwendungPage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Unsicher, ob das KSchG bei Ihnen greift?
-          </h2>
+          <h2 id="unsicher-ob-das-kschg-bei-ihnen-greift" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Unsicher, ob das KSchG bei Ihnen greift?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[560px] mx-auto mb-6">
             Wir prüfen Wartezeit und Schwellenwert in Ihrem konkreten Fall — inklusive
             Leiharbeit, Gemeinschaftsbetrieb und Teilzeitkräften — innerhalb von 24 Stunden.
@@ -888,9 +904,9 @@ export default function KSchGAnwendungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Anwendung des Kündigungsschutzgesetzes
-          </h2>
+          <h2 id="anwendung-des-kundigungsschutzgesetzes" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Anwendung des Kündigungsschutzgesetzes
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -924,9 +940,9 @@ export default function KSchGAnwendungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt prüfen lassen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Wartezeit und Schwellenwert — wir klären beides.
-          </h2>
+          <h2 id="wartezeit-und-schwellenwert-wir-klaren-beides" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Wartezeit und Schwellenwert — wir klären beides.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Fachanwalt für Arbeitsrecht prüft Ihre konkrete Situation und sagt Ihnen, ob das
             KSchG greift — und welche Abfindung realistisch ist.

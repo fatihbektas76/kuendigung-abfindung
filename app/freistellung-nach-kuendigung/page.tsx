@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -80,6 +81,17 @@ const faqs = [
     q: 'Verbessert eine unwirksame Freistellungsklausel meine Abfindungschancen?',
     a: 'Sie kann Ihre Verhandlungsposition sachlich stärken. Wenn der Arbeitgeber Sie auf Grundlage einer unwirksamen Klausel freistellt und dabei Sachbezüge wie den Dienstwagen entzieht, laufen Nachforderungsansprüche auf — je Monat und je entzogener Leistung. Diese Ansprüche werden in Abfindungsvergleichen häufig „mitverhandelt". Ein konkretes Erfolgsversprechen lässt sich daraus nicht ableiten; die Höhe hängt vom Einzelfall, von der Fehlerdichte der Kündigung und der Gesamtlage ab.',
   },
+];
+
+const TOC_ENTRIES = [
+  { id: "was-hat-das-bag-entschieden", label: "Was hat das BAG entschieden?" },
+  { id: "warum-ist-die-klausel-unwirksam", label: "Warum ist die Klausel unwirksam?" },
+  { id: "wann-darf-der-arbeitgeber-trotzdem-freistellen", label: "Wann darf der Arbeitgeber trotzdem freistellen?" },
+  { id: "dienstwagen-weg-trotz-freistellung-was-ihnen-zusteht", label: "Dienstwagen weg trotz Freistellung — was Ihnen zusteht" },
+  { id: "was-sie-jetzt-tun-sollten", label: "Was Sie jetzt tun sollten" },
+  { id: "freistellungsklausel-und-dienstwagenruckgabe-prufen-lassen", label: "Freistellungsklausel und Dienstwagenrückgabe prüfen lassen" },
+  { id: "fragen-zur-freistellung-nach-kundigung", label: "Fragen zur Freistellung nach Kündigung" },
+  { id: "freistellung-erhalten-ausschlussfristen-laufen-bereits", label: "Freistellung erhalten? Ausschlussfristen laufen bereits." },
 ];
 
 export default function FreistellungNachKuendigungPage() {
@@ -241,7 +253,9 @@ export default function FreistellungNachKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Sachverhalt
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="was-hat-das-bag-entschieden" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Was hat das BAG entschieden?
             </h2>
             <p className="text-[0.98rem] text-ink-light leading-relaxed mb-4">
@@ -302,7 +316,7 @@ export default function FreistellungNachKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Begründung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="warum-ist-die-klausel-unwirksam" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Warum ist die Klausel unwirksam?
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -333,7 +347,7 @@ export default function FreistellungNachKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Abgrenzungen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wann-darf-der-arbeitgeber-trotzdem-freistellen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wann darf der Arbeitgeber trotzdem freistellen?
             </h2>
             <p className="text-[0.98rem] text-ink-light leading-relaxed mb-6">
@@ -389,7 +403,7 @@ export default function FreistellungNachKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Praktische Folgen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="dienstwagen-weg-trotz-freistellung-was-ihnen-zusteht" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Dienstwagen weg trotz Freistellung &mdash; was Ihnen zusteht
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-5">
@@ -449,7 +463,7 @@ export default function FreistellungNachKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Handlungsleitfaden
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="was-sie-jetzt-tun-sollten" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Was Sie jetzt tun sollten
             </h2>
             <div className="space-y-4">
@@ -507,9 +521,9 @@ export default function FreistellungNachKuendigungPage() {
       {/* CTA 1 */}
       <section className="py-[60px] px-8 bg-cream">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Freistellungsklausel und Dienstwagenrückgabe prüfen lassen
-          </h2>
+          <h2 id="freistellungsklausel-und-dienstwagenruckgabe-prufen-lassen" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Freistellungsklausel und Dienstwagenrückgabe prüfen lassen
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[560px] mx-auto mb-6">
             Fachanwalt Fatih Bektas prüft Ihre Klausel, den Freistellungszeitraum und Ihre offenen
             Vergütungsansprüche &mdash; kostenlose Ersteinschätzung in 24 Stunden.
@@ -601,9 +615,9 @@ export default function FreistellungNachKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur Freistellung nach Kündigung
-          </h2>
+          <h2 id="fragen-zur-freistellung-nach-kundigung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zur Freistellung nach Kündigung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -612,7 +626,10 @@ export default function FreistellungNachKuendigungPage() {
       <section className="py-8 px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
-            <AuthorBox />
+                            <p className="text-ink leading-relaxed mt-6 text-[0.95rem]">
+                  <strong>Siehe auch:</strong> <Link href="/kuendigung-waehrend-krankheit/" className="text-gold-dark no-underline hover:underline">Kündigung während Krankheit — Mythos und Wahrheit</Link>. Krankschreibung schützt nicht vor Kündigung, Entgeltfortzahlung läuft aber bis zu 6 Wochen weiter (§ 8 EFZG).
+                </p>
+              <AuthorBox />
             <ShareButtons url="/freistellung-nach-kuendigung/" title={PAGE_TITLE} />
           </div>
         </div>
@@ -634,9 +651,9 @@ export default function FreistellungNachKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Freistellung erhalten? Ausschlussfristen laufen bereits.
-          </h2>
+          <h2 id="freistellung-erhalten-ausschlussfristen-laufen-bereits" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Freistellung erhalten? Ausschlussfristen laufen bereits.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Nachforderungen für Dienstwagen und offene Vergütungsbestandteile verfallen häufig
             binnen weniger Monate &mdash; wir prüfen Ihre Ansprüche kostenlos.

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import AuthorByline from '@/components/AuthorByline';
 import AuthorBox from '@/components/AuthorBox';
@@ -134,6 +135,14 @@ function berechneResturlaub(input: {
 }
 
 /* ─── UI ─── */
+
+const TOC_ENTRIES = [
+  { id: "jetzt-resturlaub-berechnen", label: "Jetzt Resturlaub berechnen" },
+  { id: "so-funktioniert-die-resturlaubs-berechnung-nach-sectnbsp5-bu", label: "So funktioniert die Resturlaubs-Berechnung nach &sect;&nbsp;5 BUrlG" },
+  { id: "nachste-schritte-bei-kundigung", label: "Nächste Schritte bei Kündigung" },
+  { id: "fragen-zum-resturlaub-bei-kundigung", label: "Fragen zum Resturlaub bei Kündigung" },
+  { id: "streit-um-resturlaub-oder-urlaubsabgeltung", label: "Streit um Resturlaub oder Urlaubsabgeltung?" },
+];
 
 export default function ResturlaubRechner() {
   const [jahresurlaub, setJahresurlaub] = useState('30');
@@ -299,7 +308,11 @@ export default function ResturlaubRechner() {
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[720px] p-6 md:p-8 bg-cream border border-border rounded-sm">
-            <h2 className="font-serif text-[1.35rem] font-bold text-ink mb-4">Jetzt Resturlaub berechnen</h2>
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="jetzt-resturlaub-berechnen" className="font-serif text-[1.35rem] font-bold text-ink mb-4">
+              Jetzt Resturlaub berechnen
+            </h2>
 
             <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
               <div>
@@ -468,7 +481,7 @@ export default function ResturlaubRechner() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechtsgrundlage
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="so-funktioniert-die-resturlaubs-berechnung-nach-sectnbsp5-bu" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               So funktioniert die Resturlaubs-Berechnung nach &sect;&nbsp;5 BUrlG
             </h2>
             <p className="text-[0.98rem] text-ink-light leading-relaxed mb-5">
@@ -532,7 +545,7 @@ export default function ResturlaubRechner() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Verwandte Rechner
             </div>
-            <h2 className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold mb-4">
+            <h2 id="nachste-schritte-bei-kundigung" className="font-serif text-[clamp(1.3rem,3vw,1.7rem)] font-bold mb-4">
               Nächste Schritte bei Kündigung
             </h2>
             <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
@@ -592,7 +605,7 @@ export default function ResturlaubRechner() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Häufige Fragen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="fragen-zum-resturlaub-bei-kundigung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Fragen zum Resturlaub bei Kündigung
             </h2>
             <FaqAccordion items={faqs} />
@@ -621,9 +634,9 @@ export default function ResturlaubRechner() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Individuelle Prüfung
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Streit um Resturlaub oder Urlaubsabgeltung?
-          </h2>
+          <h2 id="streit-um-resturlaub-oder-urlaubsabgeltung" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Streit um Resturlaub oder Urlaubsabgeltung?
+            </h2>
           <p className="text-[1rem] text-ink-light max-w-[620px] mx-auto leading-relaxed mb-6">
             Der Rechner liefert eine Orientierung nach &sect;&nbsp;5 BUrlG. Für die konkrete
             Auseinandersetzung mit dem Arbeitgeber &mdash; besonders bei komplizierter Klausel-Lage,

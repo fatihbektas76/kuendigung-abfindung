@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import TeilzeitRechnerClient from '@/components/TeilzeitRechnerClient';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
@@ -51,6 +52,16 @@ const tabelle6Tage = [
   { tage: 4, u24: 16, u28: 19, u30: 20 },
   { tage: 5, u24: 20, u28: 23, u30: 25 },
   { tage: 6, u24: 24, u28: 28, u30: 30 },
+];
+
+const TOC_ENTRIES = [
+  { id: "wie-wird-urlaub-bei-teilzeit-berechnet", label: "Wie wird Urlaub bei Teilzeit berechnet?" },
+  { id: "urlaubsanspruch-teilzeit-tabelle-fur-alle-konstellationen", label: "Urlaubsanspruch Teilzeit — Tabelle für alle Konstellationen" },
+  { id: "was-gilt-bei-wechsel-von-vollzeit-auf-teilzeit", label: "Was gilt bei Wechsel von Vollzeit auf Teilzeit?" },
+  { id: "urlaub-bei-teilzeit-das-mussen-sie-wissen", label: "Urlaub bei Teilzeit — Das müssen Sie wissen" },
+  { id: "urlaubsanspruch-nicht-gewahrt", label: "Urlaubsanspruch nicht gewährt?" },
+  { id: "haufige-fragen-zum-urlaubsanspruch-in-teilzeit", label: "Häufige Fragen zum Urlaubsanspruch in Teilzeit" },
+  { id: "ergebnis-berechnet-weitere-anspruche-prufen", label: "Ergebnis berechnet — weitere Ansprüche prüfen?" },
 ];
 
 export default function UrlaubTeilzeitRechnerPage() {
@@ -208,7 +219,9 @@ export default function UrlaubTeilzeitRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Berechnungsformel
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="wie-wird-urlaub-bei-teilzeit-berechnet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wie wird Urlaub bei Teilzeit berechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -251,9 +264,9 @@ export default function UrlaubTeilzeitRechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Übersicht
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-8">
-            Urlaubsanspruch Teilzeit &mdash; Tabelle für alle Konstellationen
-          </h2>
+          <h2 id="urlaubsanspruch-teilzeit-tabelle-fur-alle-konstellationen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-8">
+              Urlaubsanspruch Teilzeit &mdash; Tabelle für alle Konstellationen
+            </h2>
 
           <div className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
             {/* Tabelle 1: 5-Tage-Betrieb */}
@@ -325,7 +338,7 @@ export default function UrlaubTeilzeitRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Sonderfall
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="was-gilt-bei-wechsel-von-vollzeit-auf-teilzeit" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Was gilt bei Wechsel von Vollzeit auf Teilzeit?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
@@ -349,7 +362,7 @@ export default function UrlaubTeilzeitRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Praxishinweis
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="urlaub-bei-teilzeit-das-mussen-sie-wissen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Urlaub bei Teilzeit &mdash; Das müssen Sie wissen
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -382,9 +395,9 @@ export default function UrlaubTeilzeitRechnerPage() {
       {/* CTA #3 — Dark Banner */}
       <section className="py-[70px] px-8 bg-[#2A1F0E]">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold text-gold mb-3">
-            Urlaubsanspruch nicht gewährt?
-          </h2>
+          <h2 id="urlaubsanspruch-nicht-gewahrt" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold text-gold mb-3">
+              Urlaubsanspruch nicht gewährt?
+            </h2>
           <p className="text-[1rem] text-white/70 max-w-[520px] mx-auto mb-6">
             Verweigert Ihr Arbeitgeber Ihren Teilzeiturlaubsanspruch oder berechnet ihn falsch?
             Fachanwalt Fatih Bektas prüft Ihre Ansprüche &mdash; kostenlos und innerhalb von 24 Stunden.
@@ -468,9 +481,9 @@ export default function UrlaubTeilzeitRechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Häufige Fragen zum Urlaubsanspruch in Teilzeit
-          </h2>
+          <h2 id="haufige-fragen-zum-urlaubsanspruch-in-teilzeit" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Häufige Fragen zum Urlaubsanspruch in Teilzeit
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -486,7 +499,7 @@ export default function UrlaubTeilzeitRechnerPage() {
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="border-2 border-gold/20 rounded-sm p-8 bg-cream text-center max-w-[640px] mx-auto">
-            <h2 className="font-serif text-[1.3rem] font-bold mb-3">
+            <h2 id="ergebnis-berechnet-weitere-anspruche-prufen" className="font-serif text-[1.3rem] font-bold mb-3">
               Ergebnis berechnet &mdash; weitere Ansprüche prüfen?
             </h2>
             <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-6">

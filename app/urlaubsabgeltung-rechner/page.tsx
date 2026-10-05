@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
@@ -68,6 +69,17 @@ const inputClass =
   'w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]';
 const selectClass =
   'form-select w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]';
+
+const TOC_ENTRIES = [
+  { id: "urlaubsabgeltungsrechner", label: "Urlaubsabgeltungsrechner" },
+  { id: "was-bedeutet-urlaubsabgeltung", label: "Was bedeutet Urlaubsabgeltung?" },
+  { id: "wie-wird-die-urlaubsabgeltung-berechnet-sect11-burlg", label: "Wie wird die Urlaubsabgeltung berechnet? (&sect;11 BUrlG)" },
+  { id: "gesetzlicher-mindesturlaub-nach-burlg-ubersicht", label: "Gesetzlicher Mindesturlaub nach BUrlG — Übersicht" },
+  { id: "urlaubsabgeltung-berechnen-das-mussen-sie-wissen", label: "Urlaubsabgeltung berechnen — Das müssen Sie wissen" },
+  { id: "resturlaub-nicht-ausgezahlt", label: "Resturlaub nicht ausgezahlt?" },
+  { id: "haufige-fragen-zur-urlaubsabgeltung", label: "Häufige Fragen zur Urlaubsabgeltung" },
+  { id: "ergebnis-berechnet-was-jetzt", label: "Ergebnis berechnet — was jetzt?" },
+];
 
 export default function UrlaubsabgeltungRechnerPage() {
   const [gehalt, setGehalt] = useState('');
@@ -248,7 +260,11 @@ export default function UrlaubsabgeltungRechnerPage() {
             <div className="bg-white border border-border-light rounded overflow-hidden">
               <div className="h-2 bg-gold-dark" />
               <div className="p-8">
-                <h2 className="font-serif text-[1.3rem] font-bold mb-6">Urlaubsabgeltungsrechner</h2>
+                <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="urlaubsabgeltungsrechner" className="font-serif text-[1.3rem] font-bold mb-6">
+              Urlaubsabgeltungsrechner
+            </h2>
 
                 {/* Bruttomonatsgehalt */}
                 <div className="mb-5">
@@ -539,7 +555,7 @@ export default function UrlaubsabgeltungRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="was-bedeutet-urlaubsabgeltung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Was bedeutet Urlaubsabgeltung?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -566,7 +582,7 @@ export default function UrlaubsabgeltungRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Berechnungsformel
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wie-wird-die-urlaubsabgeltung-berechnet-sect11-burlg" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wie wird die Urlaubsabgeltung berechnet? (&sect;11 BUrlG)
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -624,7 +640,7 @@ export default function UrlaubsabgeltungRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Gesetzliche Grundlage
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="gesetzlicher-mindesturlaub-nach-burlg-ubersicht" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Gesetzlicher Mindesturlaub nach BUrlG &mdash; Übersicht
             </h2>
             <div className="overflow-x-auto mb-5">
@@ -662,7 +678,7 @@ export default function UrlaubsabgeltungRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Praxishinweis
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="urlaubsabgeltung-berechnen-das-mussen-sie-wissen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Urlaubsabgeltung berechnen &mdash; Das müssen Sie wissen
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -696,9 +712,9 @@ export default function UrlaubsabgeltungRechnerPage() {
       {/* CTA #2 — Dark Banner */}
       <section className="py-[70px] px-8 bg-[#2A1F0E]">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold text-white mb-3">
-            Resturlaub nicht ausgezahlt?
-          </h2>
+          <h2 id="resturlaub-nicht-ausgezahlt" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold text-white mb-3">
+              Resturlaub nicht ausgezahlt?
+            </h2>
           <p className="text-[1rem] text-white/70 max-w-[520px] mx-auto mb-6">
             Neben der Urlaubsabgeltung können nach einer Kündigung weitere Ansprüche bestehen: Abfindung,
             Überstundenvergütung, Zeugnis. Fachanwalt Fatih Bektas prüft alles &mdash; kostenlos und innerhalb von 24 Stunden.
@@ -756,9 +772,9 @@ export default function UrlaubsabgeltungRechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Häufige Fragen zur Urlaubsabgeltung
-          </h2>
+          <h2 id="haufige-fragen-zur-urlaubsabgeltung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Häufige Fragen zur Urlaubsabgeltung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -774,7 +790,7 @@ export default function UrlaubsabgeltungRechnerPage() {
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="border-2 border-gold/20 rounded-sm p-8 bg-cream text-center max-w-[640px] mx-auto">
-            <h2 className="font-serif text-[1.3rem] font-bold mb-3">
+            <h2 id="ergebnis-berechnet-was-jetzt" className="font-serif text-[1.3rem] font-bold mb-3">
               Ergebnis berechnet &mdash; was jetzt?
             </h2>
             <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-6">

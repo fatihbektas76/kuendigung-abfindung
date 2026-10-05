@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import StandAnzeige from '@/components/StandAnzeige';
+import TableOfContents from '@/components/TableOfContents';
 import FaqAccordion from '@/components/FaqAccordion';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import AuthorByline from '@/components/AuthorByline';
@@ -157,6 +158,13 @@ const faqs = [
   },
 ];
 
+const TOC_ENTRIES = [
+  { id: "warum-diese-tools", label: "Warum diese Tools?" },
+  { id: "so-funktionieren-unsere-tools", label: "So funktionieren unsere Tools" },
+  { id: "fragen-zu-unseren-tools", label: "Fragen zu unseren Tools" },
+  { id: "noch-unsicher-wir-helfen-personlich", label: "Noch unsicher? Wir helfen persönlich." },
+];
+
 export default function ToolsPage() {
   return (
     <main>
@@ -310,9 +318,11 @@ export default function ToolsPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Ihre Vorteile
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-8">
-            Warum diese Tools?
-          </h2>
+          <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="warum-diese-tools" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-8">
+              Warum diese Tools?
+            </h2>
           <div className="grid grid-cols-3 gap-8 max-md:grid-cols-1">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 min-w-[44px] rounded-[10px] bg-gold-bg border border-gold/[0.12] flex items-center justify-center text-gold">
@@ -367,7 +377,7 @@ export default function ToolsPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="so-funktionieren-unsere-tools" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               So funktionieren unsere Tools
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -410,9 +420,9 @@ export default function ToolsPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zu unseren Tools
-          </h2>
+          <h2 id="fragen-zu-unseren-tools" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zu unseren Tools
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -430,9 +440,9 @@ export default function ToolsPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Noch unsicher? Wir helfen persönlich.
-          </h2>
+          <h2 id="noch-unsicher-wir-helfen-personlich" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Noch unsicher? Wir helfen persönlich.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Fachanwalt Fatih Bektas beantwortet Ihre Frage persönlich &mdash;
             kostenlos und innerhalb von 24 Stunden.

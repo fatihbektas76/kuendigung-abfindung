@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
@@ -21,6 +22,16 @@ const faqs = [
     q: 'Wann bekomme ich mehr als den Regelsatz?',
     a: 'Faktoren über 0,5 sind realistisch bei: Formfehlern in der Kündigung, fehlerhafter Sozialauswahl, fehlender Betriebsratsanhörung, besonderem Kündigungsschutz (Schwangerschaft, Schwerbehinderung), langer Betriebszugehörigkeit oder hohem Alter. In diesen Fällen kann der Faktor 1,0 oder höher erreichen.',
   },
+];
+
+const TOC_ENTRIES = [
+  { id: "ihre-geschatzte-abfindung", label: "Ihre geschätzte Abfindung" },
+  { id: "ein-rechner-ersetzt-keinen-anwalt", label: "Ein Rechner ersetzt keinen Anwalt" },
+  { id: "wie-wird-die-abfindung-berechnet", label: "Wie wird die Abfindung berechnet?" },
+  { id: "wann-habe-ich-anspruch-auf-eine-hohere-abfindung", label: "Wann habe ich Anspruch auf eine höhere Abfindung?" },
+  { id: "wann-lohnt-sich-ein-anwalt-bei-der-abfindung", label: "Wann lohnt sich ein Anwalt bei der Abfindung?" },
+  { id: "haufige-fragen-zur-abfindung", label: "Häufige Fragen zur Abfindung" },
+  { id: "kundigung-erhalten-abfindung-maximieren", label: "Kündigung erhalten? Abfindung maximieren." },
 ];
 
 export default function AbfindungsrechnerPage() {
@@ -217,7 +228,11 @@ export default function AbfindungsrechnerPage() {
             {/* Results */}
             {result && (
               <div className="mt-8 ergebnis-box">
-                <h2 className="font-serif text-[1.4rem] font-bold mb-5">Ihre geschätzte Abfindung</h2>
+                <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="ihre-geschatzte-abfindung" className="font-serif text-[1.4rem] font-bold mb-5">
+              Ihre geschätzte Abfindung
+            </h2>
                 <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
                   <div className="rounded-sm border border-border p-5 text-center bg-white">
                     <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-2">
@@ -270,9 +285,9 @@ export default function AbfindungsrechnerPage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-cream">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Ein Rechner ersetzt keinen Anwalt
-          </h2>
+          <h2 id="ein-rechner-ersetzt-keinen-anwalt" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Ein Rechner ersetzt keinen Anwalt
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Die Berechnung gibt Ihnen eine erste Orientierung. Für eine belastbare Einschätzung
             prüfen wir Ihren individuellen Fall &mdash; kostenlos.
@@ -293,7 +308,7 @@ export default function AbfindungsrechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wie-wird-die-abfindung-berechnet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wie wird die Abfindung berechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -324,7 +339,7 @@ export default function AbfindungsrechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Verhandlungsspielraum
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wann-habe-ich-anspruch-auf-eine-hohere-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wann habe ich Anspruch auf eine höhere Abfindung?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -355,7 +370,7 @@ export default function AbfindungsrechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Praxishinweis
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wann-lohnt-sich-ein-anwalt-bei-der-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wann lohnt sich ein Anwalt bei der Abfindung?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -413,9 +428,9 @@ export default function AbfindungsrechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Häufige Fragen zur Abfindung
-          </h2>
+          <h2 id="haufige-fragen-zur-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Häufige Fragen zur Abfindung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -433,9 +448,9 @@ export default function AbfindungsrechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Kündigung erhalten? Abfindung maximieren.
-          </h2>
+          <h2 id="kundigung-erhalten-abfindung-maximieren" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Kündigung erhalten? Abfindung maximieren.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Die 3-Wochen-Klagefrist nach &sect;4 KSchG läuft. Sichern Sie sich jetzt eine
             kostenlose Ersteinschätzung Ihrer Abfindungschancen.

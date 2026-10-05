@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
@@ -38,6 +39,16 @@ function euro(val: number): string {
     maximumFractionDigits: 2,
   });
 }
+
+const TOC_ENTRIES = [
+  { id: "uberstundenrechner", label: "Überstundenrechner" },
+  { id: "wie-wird-die-uberstundenvergutung-berechnet", label: "Wie wird die Überstundenvergütung berechnet?" },
+  { id: "wann-habe-ich-anspruch-auf-uberstundenvergutung", label: "Wann habe ich Anspruch auf Überstundenvergütung?" },
+  { id: "was-ist-eine-pauschalabgeltungsklausel-und-wann-ist-sie-unwi", label: "Was ist eine Pauschalabgeltungsklausel — und wann ist sie unwirksam?" },
+  { id: "uberstunden-nicht-ausgezahlt", label: "Überstunden nicht ausgezahlt?" },
+  { id: "haufige-fragen-zu-uberstunden", label: "Häufige Fragen zu Überstunden" },
+  { id: "ihr-ergebnis-liegt-vor-was-jetzt", label: "Ihr Ergebnis liegt vor — was jetzt?" },
+];
 
 export default function UeberstundenrechnerPage() {
   const [gehalt, setGehalt] = useState(3200);
@@ -201,7 +212,11 @@ export default function UeberstundenrechnerPage() {
           <div className="grid grid-cols-2 gap-8 items-start max-lg:grid-cols-1">
             {/* Linke Karte — Eingaben */}
             <div className="bg-white border border-border-light rounded p-8">
-              <h2 className="font-serif text-[1.3rem] font-bold mb-6">Überstundenrechner</h2>
+              <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="uberstundenrechner" className="font-serif text-[1.3rem] font-bold mb-6">
+              Überstundenrechner
+            </h2>
 
               {/* Bruttomonatsgehalt */}
               <div className="mb-6">
@@ -428,7 +443,7 @@ export default function UeberstundenrechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wie-wird-die-uberstundenvergutung-berechnet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wie wird die Überstundenvergütung berechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -465,7 +480,7 @@ export default function UeberstundenrechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Praxishinweis
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wann-habe-ich-anspruch-auf-uberstundenvergutung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wann habe ich Anspruch auf Überstundenvergütung?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -497,7 +512,7 @@ export default function UeberstundenrechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechtlicher Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="was-ist-eine-pauschalabgeltungsklausel-und-wann-ist-sie-unwi" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Was ist eine Pauschalabgeltungsklausel &mdash; und wann ist sie unwirksam?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -526,9 +541,9 @@ export default function UeberstundenrechnerPage() {
       {/* CTA #2 — Dark Banner */}
       <section className="py-[70px] px-8 bg-[#2A1F0E]">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold text-white mb-3">
-            Überstunden nicht ausgezahlt?
-          </h2>
+          <h2 id="uberstunden-nicht-ausgezahlt" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold text-white mb-3">
+              Überstunden nicht ausgezahlt?
+            </h2>
           <p className="text-[1rem] text-white/70 max-w-[520px] mx-auto mb-6">
             Fachanwalt Fatih Bektas prüft Ihre Ansprüche — kostenlos und innerhalb von 24 Stunden.
           </p>
@@ -580,9 +595,9 @@ export default function UeberstundenrechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Häufige Fragen zu Überstunden
-          </h2>
+          <h2 id="haufige-fragen-zu-uberstunden" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Häufige Fragen zu Überstunden
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -598,7 +613,7 @@ export default function UeberstundenrechnerPage() {
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="border-2 border-gold/20 rounded-sm p-8 bg-white text-center max-w-[640px] mx-auto">
-            <h2 className="font-serif text-[1.3rem] font-bold mb-3">
+            <h2 id="ihr-ergebnis-liegt-vor-was-jetzt" className="font-serif text-[1.3rem] font-bold mb-3">
               Ihr Ergebnis liegt vor — was jetzt?
             </h2>
             <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-6">

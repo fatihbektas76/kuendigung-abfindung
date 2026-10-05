@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
 import AuthorByline from '@/components/AuthorByline';
@@ -109,6 +110,22 @@ const NORMS = {
 const BAG_755_13 = 'https://www.bundesarbeitsgericht.de/entscheidung/2-azr-755-13/';
 const BAG_137_23 = 'https://www.bundesarbeitsgericht.de/entscheidung/5-azr-137-23/';
 
+const TOC_ENTRIES = [
+  { id: "woher-kommt-der-mythos-wer-krank-ist-kann-nicht-gekundigt-we", label: "Woher kommt der Mythos „Wer krank ist, kann nicht gekündigt werden“?" },
+  { id: "darf-der-arbeitgeber-wahrend-einer-krankschreibung-kundigen", label: "Darf der Arbeitgeber während einer Krankschreibung kündigen?" },
+  { id: "wann-gilt-das-kundigungsschutzgesetz-fur-mich", label: "Wann gilt das Kündigungsschutzgesetz für mich?" },
+  { id: "was-ist-eine-krankheitsbedingte-kundigung", label: "Was ist eine krankheitsbedingte Kündigung?" },
+  { id: "welche-voraussetzungen-muss-der-arbeitgeber-erfullen", label: "Welche Voraussetzungen muss der Arbeitgeber erfüllen?" },
+  { id: "welche-rolle-spielt-das-betriebliche-eingliederungsmanagemen", label: "Welche Rolle spielt das betriebliche Eingliederungsmanagement (BEM)?" },
+  { id: "bekomme-ich-nach-der-kundigung-weiter-lohn-wenn-ich-krank-bi", label: "Bekomme ich nach der Kündigung weiter Lohn, wenn ich krank bin?" },
+  { id: "was-gilt-wenn-ich-mich-nach-der-kundigung-krankschreiben-las", label: "Was gilt, wenn ich mich nach der Kündigung krankschreiben lasse?" },
+  { id: "was-muss-ich-tun-wenn-ich-wahrend-der-krankheit-gekundigt-we", label: "Was muss ich tun, wenn ich während der Krankheit gekündigt werde?" },
+  { id: "wer-ist-bei-krankheit-besonders-geschutzt", label: "Wer ist bei Krankheit besonders geschützt?" },
+  { id: "typische-fehler-aus-der-anwaltlichen-praxis", label: "Typische Fehler aus der anwaltlichen Praxis" },
+  { id: "fazit-krankheit-schutzt-nicht-fristen-schon", label: "Fazit: Krankheit schützt nicht, Fristen schon" },
+  { id: "haufige-fragen-zur-kundigung-wahrend-krankheit", label: "Häufige Fragen zur Kündigung während Krankheit" },
+];
+
 export default function KuendigungWaehrendKrankheitPage() {
   return (
     <>
@@ -208,7 +225,9 @@ export default function KuendigungWaehrendKrankheitPage() {
         <article className="py-10 px-8 bg-white">
           <div className="max-w-[740px] mx-auto">
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="woher-kommt-der-mythos-wer-krank-ist-kann-nicht-gekundigt-we" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Woher kommt der Mythos „Wer krank ist, kann nicht gekündigt werden“?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -262,7 +281,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               </table>
             </div>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="darf-der-arbeitgeber-wahrend-einer-krankschreibung-kundigen" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Darf der Arbeitgeber während einer Krankschreibung kündigen?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -279,7 +298,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               personenbedingter Grund sein, aber nur unter strengen Voraussetzungen.
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="wann-gilt-das-kundigungsschutzgesetz-fur-mich" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Wann gilt das Kündigungsschutzgesetz für mich?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -298,7 +317,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               (<NormLink href={NORMS.betrvg102}>§ 102 BetrVG</NormLink>) eingehalten sein.
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="was-ist-eine-krankheitsbedingte-kundigung" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Was ist eine krankheitsbedingte Kündigung?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -321,7 +340,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               (BAG, Urteil vom 12.04.2002 – 2 AZR 148/01).
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="welche-voraussetzungen-muss-der-arbeitgeber-erfullen" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Welche Voraussetzungen muss der Arbeitgeber erfüllen?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -377,7 +396,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               Operation ausgeheilt sind.
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="welche-rolle-spielt-das-betriebliche-eingliederungsmanagemen" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Welche Rolle spielt das betriebliche Eingliederungsmanagement (BEM)?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -396,7 +415,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               (BAG, Urteil vom 18.11.2021 – 2 AZR 138/21).
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="bekomme-ich-nach-der-kundigung-weiter-lohn-wenn-ich-krank-bi" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Bekomme ich nach der Kündigung weiter Lohn, wenn ich krank bin?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -414,7 +433,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               (<NormLink href={NORMS.sgb3_38}>§ 38 Abs. 1 SGB III</NormLink>).
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="was-gilt-wenn-ich-mich-nach-der-kundigung-krankschreiben-las" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Was gilt, wenn ich mich nach der Kündigung krankschreiben lasse?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -433,7 +452,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               Wer wirklich krank ist, sollte deshalb regelmäßig zum Arzt gehen und die Behandlung dokumentieren.
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="was-muss-ich-tun-wenn-ich-wahrend-der-krankheit-gekundigt-we" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Was muss ich tun, wenn ich während der Krankheit gekündigt werde?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -465,7 +484,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               hoch, und eine normale Krankschreibung reicht in der Regel nicht.
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="wer-ist-bei-krankheit-besonders-geschutzt" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Wer ist bei Krankheit besonders geschützt?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -511,7 +530,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               dieser Fehler muss aber innerhalb der Drei-Wochen-Frist geltend gemacht werden.
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="typische-fehler-aus-der-anwaltlichen-praxis" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Typische Fehler aus der anwaltlichen Praxis
             </h2>
             <p className="text-ink leading-relaxed">
@@ -533,7 +552,7 @@ export default function KuendigungWaehrendKrankheitPage() {
               können Sie eine erste Größenordnung einschätzen.
             </p>
 
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="fazit-krankheit-schutzt-nicht-fristen-schon" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
               Fazit: Krankheit schützt nicht, Fristen schon
             </h2>
             <p className="text-ink leading-relaxed">
@@ -561,7 +580,7 @@ export default function KuendigungWaehrendKrankheitPage() {
 
         <section className="py-10 px-8 bg-cream">
           <div className="max-w-content mx-auto">
-            <h2 className="font-serif text-[1.6rem] font-bold text-ink mb-6">
+            <h2 id="haufige-fragen-zur-kundigung-wahrend-krankheit" className="font-serif text-[1.6rem] font-bold text-ink mb-6">
               Häufige Fragen zur Kündigung während Krankheit
             </h2>
             <FaqAccordion items={faqs} />
