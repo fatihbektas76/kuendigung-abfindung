@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { entries } from '@/lib/betriebszugehoerigkeit';
 import { lebenssituationData } from '@/lib/lebenssituation-data';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -75,6 +76,16 @@ const fristen = [
   { jahre: '12 Jahre', frist: '5 Monate zum Monatsende', basis: '§622 Abs. 2 Nr. 5' },
   { jahre: '15 Jahre', frist: '6 Monate zum Monatsende', basis: '§622 Abs. 2 Nr. 6' },
   { jahre: '20 Jahre', frist: '7 Monate zum Monatsende', basis: '§622 Abs. 2 Nr. 7' },
+];
+
+const TOC_ENTRIES = [
+  { id: "gesetzliche-kundigungsfristen-nach-sect622-bgb", label: "Gesetzliche Kündigungsfristen nach &sect;622 BGB" },
+  { id: "ist-ihre-kundigung-wirksam", label: "Ist Ihre Kündigung wirksam?" },
+  { id: "gekundigt-nach-jahren-im-betrieb", label: "Gekündigt nach Jahren im Betrieb" },
+  { id: "fristlose-kundigung-nach-jahren-im-betrieb", label: "Fristlose Kündigung nach Jahren im Betrieb" },
+  { id: "kundigung-nach-ihrer-lebenssituation", label: "Kündigung nach Ihrer Lebenssituation" },
+  { id: "fragen-zur-kundigung", label: "Fragen zur Kündigung" },
+  { id: "3-wochen-danach-ist-es-zu-spat", label: "3 Wochen. Danach ist es zu spät." },
 ];
 
 export default function KuendigungPage() {
@@ -175,14 +186,17 @@ export default function KuendigungPage() {
             <div className="py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold mb-8">
               <p className="text-[0.95rem] font-semibold text-ink m-0">
                 Wichtig: Die Klagefrist beträgt nur 3 Wochen ab Zugang der Kündigung (
-                <NormLink href={NORM.kschg4}>&sect;&nbsp;4 KSchG</NormLink>). Handeln Sie sofort.
+                <NormLink href={NORM.kschg4}>&sect;&nbsp;4 KSchG</NormLink>). Danach ist die
+                Kündigung in der Regel unangreifbar &mdash; eine nachträgliche Zulassung nach{' '}
+                <NormLink href={NORM.kschg5}>&sect;&nbsp;5 KSchG</NormLink> ist nur in engen
+                Ausnahmefällen möglich. Handeln Sie sofort.
               </p>
             </div>
 
             {/* Direktantwort (GEO) */}
             <div id="direktantwort">
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-                Eine Kündigung zu erhalten ist ein Schock &mdash; aber kein Grund zur Panik, wenn Sie richtig reagieren. Ihr wichtigstes Werkzeug: die <strong>Kündigungsschutzklage</strong>. Innerhalb von nur drei Wochen nach Zugang der Kündigung müssen Sie Klage beim Arbeitsgericht einreichen. Verpassen Sie diese Frist, verlieren Sie alle Ansprüche &mdash; egal wie rechtswidrig die Kündigung war.
+                Eine Kündigung zu erhalten ist ein Schock &mdash; aber kein Grund zur Panik, wenn Sie richtig reagieren. Ihr wichtigstes Werkzeug: die <strong>Kündigungsschutzklage</strong>. Innerhalb von nur drei Wochen nach Zugang der Kündigung müssen Sie Klage beim Arbeitsgericht einreichen. Verpassen Sie diese Frist, gilt die Kündigung in der Regel als wirksam &mdash; egal wie rechtswidrig sie war. Eine nachträgliche Zulassung der Klage nach &sect;&nbsp;5 KSchG kommt nur in eng begrenzten Ausnahmefällen (z.&nbsp;B. unverschuldete Verhinderung) in Betracht. Auch eine <Link href="/kuendigung-waehrend-krankheit/" className="text-gold-dark no-underline hover:underline">Kündigung während einer Krankschreibung</Link> wirkt — die 3-Wochen-Frist läuft trotzdem.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
                 Die gute Nachricht: Viele Kündigungen sind angreifbar. Fehler in der <strong>Sozialauswahl</strong>, eine fehlende <strong>Betriebsratsanhörung</strong>, Formfehler oder die Missachtung besonderer Schutzrechte machen die Kündigung unwirksam. Selbst wenn die Kündigung rechtmäßig ist, führt die Klage in der Praxis fast immer zu einer <Link href="/abfindung/" className="text-gold-dark font-semibold no-underline hover:underline">Abfindung</Link> im Vergleich.
@@ -241,9 +255,11 @@ export default function KuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Kündigungsfristen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Gesetzliche Kündigungsfristen nach &sect;622 BGB
-          </h2>
+          <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="gesetzliche-kundigungsfristen-nach-sect622-bgb" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Gesetzliche Kündigungsfristen nach &sect;622 BGB
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Diese Fristen gelten für Kündigungen durch den Arbeitgeber. Arbeits- oder Tarifverträge
             können abweichende &mdash; aber nicht kürzere &mdash; Fristen vorsehen.
@@ -278,9 +294,9 @@ export default function KuendigungPage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Ist Ihre Kündigung wirksam?
-          </h2>
+          <h2 id="ist-ihre-kundigung-wirksam" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Ist Ihre Kündigung wirksam?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Viele Kündigungen sind angreifbar. Wir prüfen Ihren Fall kostenlos und schätzen Ihre
             Chancen ein &mdash; innerhalb von 48 Stunden.
@@ -300,9 +316,9 @@ export default function KuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Nach Betriebszugehörigkeit
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Gekündigt nach Jahren im Betrieb
-          </h2>
+          <h2 id="gekundigt-nach-jahren-im-betrieb" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+              Gekündigt nach Jahren im Betrieb
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
             Wählen Sie Ihre Betriebszugehörigkeit &mdash; wir zeigen Ihnen Ihre Rechte,
             Kündigungsfristen und Abfindungschancen.
@@ -327,9 +343,9 @@ export default function KuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Nach Betriebszugehörigkeit
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Fristlose Kündigung nach Jahren im Betrieb
-          </h2>
+          <h2 id="fristlose-kundigung-nach-jahren-im-betrieb" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+              Fristlose Kündigung nach Jahren im Betrieb
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
             Fristlose Kündigung erhalten? Wir prüfen Wirksamkeit, Abmahnung und die
             2-Wochen-Ausschlussfrist &mdash; für jede Betriebszugehörigkeit.
@@ -377,9 +393,9 @@ export default function KuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Nach Ihrer Situation
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Kündigung nach Ihrer Lebenssituation
-          </h2>
+          <h2 id="kundigung-nach-ihrer-lebenssituation" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+              Kündigung nach Ihrer Lebenssituation
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
             Besonderer Kündigungsschutz gilt in vielen Lebenssituationen. Finden Sie Ihre Situation
             und erfahren Sie, welche Rechte Sie haben.
@@ -451,9 +467,9 @@ export default function KuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur Kündigung
-          </h2>
+          <h2 id="fragen-zur-kundigung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zur Kündigung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -497,9 +513,9 @@ export default function KuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            3 Wochen. Danach ist es zu spät.
-          </h2>
+          <h2 id="3-wochen-danach-ist-es-zu-spat" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              3 Wochen. Danach ist es zu spät.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Die Klagefrist nach &sect;4 KSchG läuft ab dem Tag, an dem Sie die Kündigung erhalten.
             Nutzen Sie unsere kostenlose Ersteinschätzung.

@@ -322,7 +322,10 @@ export default function AufhebungsvertragPage() {
       <section className="py-8 px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
-            <AuthorBox />
+                            <p className="text-ink leading-relaxed mt-6 text-[0.95rem]">
+                  <strong>Verwandt:</strong> <Link href="/kuendigung-waehrend-krankheit/" className="text-gold-dark no-underline hover:underline">Kündigung während Krankheit</Link> — darf der Arbeitgeber während der Krankschreibung kündigen?
+                </p>
+              <AuthorBox />
             <ShareButtons url="/aufhebungsvertrag/" title="Aufhebungsvertrag – Abfindung, Sperrzeit & Prüfung" />
           </div>
         </div>

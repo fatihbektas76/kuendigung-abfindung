@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorByline from '@/components/AuthorByline';
 import AuthorBox from '@/components/AuthorBox';
@@ -75,6 +76,17 @@ const wegeZurAbfindung = [
   { weg: 'Tarifvertrag / Arbeitsvertrag', wann: 'Wenn dort eine Abfindung geregelt ist', hoehe: 'nach Regelung' },
   { weg: 'Vergleich oder Aufhebungsvertrag', wann: 'Verhandlung, meist während einer Kündigungsschutzklage', hoehe: 'Verhandlungssache' },
   { weg: 'Gerichtliche Auflösung (§§ 9, 10 KSchG)', wann: 'Kündigung unwirksam, Fortsetzung aber unzumutbar', hoehe: 'bis zu 12, 15 oder 18 Monatsverdienste' },
+];
+
+const TOC_ENTRIES = [
+  { id: "habe-ich-bei-einer-betriebsbedingten-kundigung-anspruch-auf-", label: "Habe ich bei einer betriebsbedingten Kündigung Anspruch auf eine Abfindung?" },
+  { id: "wie-wird-die-abfindung-berechnet", label: "Wie wird die Abfindung berechnet?" },
+  { id: "was-gilt-bei-der-abfindung-nach-sectnbsp1a-kschg", label: "Was gilt bei der Abfindung nach &sect;&nbsp;1a KSchG?" },
+  { id: "wovon-hangt-die-hohe-der-abfindung-in-der-verhandlung-ab", label: "Wovon hängt die Höhe der Abfindung in der Verhandlung ab?" },
+  { id: "welche-frist-muss-ich-einhalten", label: "Welche Frist muss ich einhalten?" },
+  { id: "muss-ich-auf-die-abfindung-steuern-und-sozialabgaben-zahlen", label: "Muss ich auf die Abfindung Steuern und Sozialabgaben zahlen?" },
+  { id: "was-sollte-ich-nach-einer-betriebsbedingten-kundigung-jetzt-", label: "Was sollte ich nach einer betriebsbedingten Kündigung jetzt tun?" },
+  { id: "haufige-fragen-zur-abfindung-bei-betriebsbedingter-kundigung", label: "Häufige Fragen zur Abfindung bei betriebsbedingter Kündigung" },
 ];
 
 export default function AbfindungBetriebsbedingteHoehePage() {
@@ -204,7 +216,9 @@ export default function AbfindungBetriebsbedingteHoehePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechtsgrundlagen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="habe-ich-bei-einer-betriebsbedingten-kundigung-anspruch-auf-" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Habe ich bei einer betriebsbedingten Kündigung Anspruch auf eine Abfindung?
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -250,7 +264,7 @@ export default function AbfindungBetriebsbedingteHoehePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Berechnung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="wie-wird-die-abfindung-berechnet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Wie wird die Abfindung berechnet?
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -326,7 +340,7 @@ export default function AbfindungBetriebsbedingteHoehePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               &sect;&nbsp;1a KSchG im Detail
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="was-gilt-bei-der-abfindung-nach-sectnbsp1a-kschg" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Was gilt bei der Abfindung nach &sect;&nbsp;1a KSchG?
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-5">
@@ -449,7 +463,7 @@ export default function AbfindungBetriebsbedingteHoehePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Verhandlungsspielraum
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="wovon-hangt-die-hohe-der-abfindung-in-der-verhandlung-ab" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Wovon hängt die Höhe der Abfindung in der Verhandlung ab?
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -511,7 +525,7 @@ export default function AbfindungBetriebsbedingteHoehePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               3-Wochen-Frist
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="welche-frist-muss-ich-einhalten" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Welche Frist muss ich einhalten?
             </h2>
             <div className="py-5 px-6 bg-white rounded-sm border-l-[3px] border-gold">
@@ -540,7 +554,7 @@ export default function AbfindungBetriebsbedingteHoehePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Steuern &amp; Sozialabgaben
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="muss-ich-auf-die-abfindung-steuern-und-sozialabgaben-zahlen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Muss ich auf die Abfindung Steuern und Sozialabgaben zahlen?
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -579,7 +593,7 @@ export default function AbfindungBetriebsbedingteHoehePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Handlungsplan
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="was-sollte-ich-nach-einer-betriebsbedingten-kundigung-jetzt-" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Was sollte ich nach einer betriebsbedingten Kündigung jetzt tun?
             </h2>
             <ol className="text-[0.98rem] text-ink-light leading-relaxed space-y-3 pl-6 list-decimal">
@@ -620,7 +634,7 @@ export default function AbfindungBetriebsbedingteHoehePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Häufige Fragen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="haufige-fragen-zur-abfindung-bei-betriebsbedingter-kundigung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Häufige Fragen zur Abfindung bei betriebsbedingter Kündigung
             </h2>
             <FaqAccordion items={faqs} />

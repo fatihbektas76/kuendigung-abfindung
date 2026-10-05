@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -63,6 +64,19 @@ const faqs = [
     q: 'Wie lange habe ich Zeit, gegen eine betriebsbedingte Kündigung zu klagen?',
     a: 'Sie haben nach § 4 KSchG genau 3 Wochen ab Zugang der Kündigung Zeit, Kündigungsschutzklage beim Arbeitsgericht einzureichen. Nach Ablauf dieser Frist gilt die Kündigung in der Regel als wirksam — auch wenn sie es eigentlich nicht wäre. Eine nachträgliche Zulassung der Klage nach § 5 KSchG kommt nur in eng begrenzten Ausnahmefällen in Betracht. Handeln Sie sofort und lassen Sie sich dringend von einem Fachanwalt für Arbeitsrecht beraten.',
   },
+];
+
+const TOC_ENTRIES = [
+  { id: "sozialauswahl-die-4-kriterien-nach-sect1-abs-3-kschg", label: "Sozialauswahl – die 4 Kriterien nach &sect;1 Abs. 3 KSchG" },
+  { id: "abfindung-bei-betriebsbedingter-kundigung-hohe-berechnung", label: "Abfindung bei betriebsbedingter Kündigung – Höhe & Berechnung" },
+  { id: "betriebsbedingt-gekundigt", label: "Betriebsbedingt gekündigt?" },
+  { id: "wann-ist-eine-betriebsbedingte-kundigung-wirksam", label: "Wann ist eine betriebsbedingte Kündigung wirksam?" },
+  { id: "haufige-fehler-bei-betriebsbedingten-kundigungen", label: "Häufige Fehler bei betriebsbedingten Kündigungen" },
+  { id: "massenentlassung-und-sozialplan", label: "Massenentlassung und Sozialplan" },
+  { id: "so-wehren-sie-sich-schritt-fur-schritt", label: "So wehren Sie sich – Schritt für Schritt" },
+  { id: "betriebsbedingte-kundigung-in-der-probezeit-und-bei-kleinbet", label: "Betriebsbedingte Kündigung in der Probezeit und bei Kleinbetrieben" },
+  { id: "fragen-zur-betriebsbedingten-kundigung", label: "Fragen zur betriebsbedingten Kündigung" },
+  { id: "viele-betriebsbedingte-kundigungen-sind-unwirksam", label: "Viele betriebsbedingte Kündigungen sind unwirksam." },
 ];
 
 export default function BetriebsbedingteKuendigungPage() {
@@ -212,9 +226,11 @@ export default function BetriebsbedingteKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Kernpunkt
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Sozialauswahl &ndash; die 4 Kriterien nach &sect;1 Abs. 3 KSchG
-          </h2>
+          <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="sozialauswahl-die-4-kriterien-nach-sect1-abs-3-kschg" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Sozialauswahl &ndash; die 4 Kriterien nach &sect;1 Abs. 3 KSchG
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Fehler bei der Sozialauswahl sind der häufigste Grund, warum betriebsbedingte
             Kündigungen vor Gericht scheitern.
@@ -254,7 +270,7 @@ export default function BetriebsbedingteKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Abfindung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="abfindung-bei-betriebsbedingter-kundigung-hohe-berechnung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Abfindung bei betriebsbedingter Kündigung &ndash; Höhe &amp; Berechnung
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -309,9 +325,9 @@ export default function BetriebsbedingteKuendigungPage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-cream">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Betriebsbedingt gekündigt?
-          </h2>
+          <h2 id="betriebsbedingt-gekundigt" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Betriebsbedingt gekündigt?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Wir prüfen Ihre betriebsbedingte Kündigung kostenlos &mdash; Sozialauswahl,
             Abfindungshöhe und Klagechancen. Innerhalb von 24 Stunden.
@@ -340,7 +356,7 @@ export default function BetriebsbedingteKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Voraussetzungen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wann-ist-eine-betriebsbedingte-kundigung-wirksam" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wann ist eine betriebsbedingte Kündigung wirksam?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -384,7 +400,7 @@ export default function BetriebsbedingteKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Unwirksamkeitsgründe
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="haufige-fehler-bei-betriebsbedingten-kundigungen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Häufige Fehler bei betriebsbedingten Kündigungen
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
@@ -441,7 +457,7 @@ export default function BetriebsbedingteKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Sonderfall
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="massenentlassung-und-sozialplan" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Massenentlassung und Sozialplan
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -496,7 +512,7 @@ export default function BetriebsbedingteKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Handlungsanleitung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="so-wehren-sie-sich-schritt-fur-schritt" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               So wehren Sie sich &ndash; Schritt für Schritt
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
@@ -521,7 +537,7 @@ export default function BetriebsbedingteKuendigungPage() {
                 {
                   step: '3',
                   title: 'Kündigungsschutzklage einreichen',
-                  desc: 'Innerhalb von 3 Wochen ab Zugang muss die Klage beim Arbeitsgericht eingereicht werden. Ihr Anwalt formuliert die Klageschrift und begründet, warum die Kündigung unwirksam ist. Die Klage kostet im ersten Rechtszug nur die eigenen Anwaltskosten (§12a ArbGG).',
+                  desc: 'Innerhalb von 3 Wochen ab Zugang muss die Klage beim Arbeitsgericht eingereicht werden — sonst gilt die Kündigung in der Regel als wirksam (eine nachträgliche Zulassung nach § 5 KSchG kommt nur in engen Ausnahmefällen in Betracht). Ihr Anwalt formuliert die Klageschrift und begründet, warum die Kündigung unwirksam ist. Die Klage kostet im ersten Rechtszug nur die eigenen Anwaltskosten (§12a ArbGG).',
                 },
                 {
                   step: '4',
@@ -551,7 +567,7 @@ export default function BetriebsbedingteKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Sonderfälle
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="betriebsbedingte-kundigung-in-der-probezeit-und-bei-kleinbet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Betriebsbedingte Kündigung in der Probezeit und bei Kleinbetrieben
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -635,9 +651,9 @@ export default function BetriebsbedingteKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur betriebsbedingten Kündigung
-          </h2>
+          <h2 id="fragen-zur-betriebsbedingten-kundigung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zur betriebsbedingten Kündigung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -668,9 +684,9 @@ export default function BetriebsbedingteKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Viele betriebsbedingte Kündigungen sind unwirksam.
-          </h2>
+          <h2 id="viele-betriebsbedingte-kundigungen-sind-unwirksam" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Viele betriebsbedingte Kündigungen sind unwirksam.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Lassen Sie Ihre Kündigung prüfen. Fehlerhafte Sozialauswahl, fehlende
             Weiterbeschäftigungsmöglichkeiten oder formelle Mängel &mdash; wir finden die

@@ -8,17 +8,25 @@ export interface KeywordEntry {
 // Je mehr Keywords aus der Nutzereingabe matchen, desto besser der Treffer.
 
 export const KEYWORD_RESPONSES: KeywordEntry[] = [
+  // ── Kuendigung & Krankheit ──
+  {
+    keywords: ['krank', 'krankgeschrieben', 'arbeitsunfaehig', 'arbeitsunfähig', 'krankschreibung', 'krankmeldung', 'au-bescheinigung', 'au bescheinigung', 'krankheit', 'erkrankung', 'bem', 'eingliederungsmanagement'],
+    response:
+      'Eine Krankschreibung schuetzt NICHT vor einer Kuendigung — der Arbeitgeber darf auch waehrend der Arbeitsunfaehigkeit kuendigen. Entscheidend ist, ob ein Kuendigungsgrund vorliegt und die Form stimmt. Fuer die krankheitsbedingte Kuendigung gilt eine strenge 3-Stufen-Pruefung (Prognose, Belastung, Interessenabwaegung). Oft fehlt zusaetzlich ein BEM-Verfahren (§ 167 Abs. 2 SGB IX) — das verbessert Ihre Verteidigungs-Position erheblich.\n\nWichtig: Die 3-Wochen-Klagefrist (§ 4 KSchG) laeuft auch im Krankenbett. Entgeltfortzahlung laeuft bis zu 6 Wochen weiter (§ 8 EFZG).',
+    toolLink: { label: 'Mehr erfahren: Kündigung während Krankheit', href: '/kuendigung-waehrend-krankheit' },
+  },
+
   // ── Kuendigung erhalten ──
   {
     keywords: ['gekuendigt', 'kuendigung', 'kuendigung erhalten', 'entlassen', 'gefeuert', 'rausgeworfen', 'arbeitgeber kuendigt', 'gekündigt', 'kündigung'],
     response:
-      'Unterschreiben Sie nichts und bewahren Sie die Kuendigung auf. Notieren Sie das Datum, an dem Sie die Kuendigung erhalten haben. Sie haben nur 3 Wochen ab Zugang, um eine Kuendigungsschutzklage einzureichen (§ 4 KSchG). Lassen Sie die Kuendigung sofort von einem Fachanwalt pruefen.\n\nDie kostenlose Ersteinschaetzung bei APOS Legal hilft Ihnen, Ihre Optionen schnell zu klaeren.',
+      'Unterschreiben Sie nichts und bewahren Sie die Kuendigung auf. Notieren Sie das Datum, an dem Sie die Kuendigung erhalten haben. Sie haben nur 3 Wochen ab Zugang, um eine Kuendigungsschutzklage einzureichen (§ 4 KSchG). Wird diese Frist versaeumt, gilt die Kuendigung in der Regel als wirksam — eine nachtraegliche Zulassung nach § 5 KSchG kommt nur in engen Ausnahmefaellen in Betracht. Lassen Sie die Kuendigung sofort von einem Fachanwalt pruefen.\n\nDie kostenlose Ersteinschaetzung bei APOS Legal hilft Ihnen, Ihre Optionen schnell zu klaeren.',
     toolLink: { label: 'Kuendigung jetzt pruefen', href: '/kuendigung-pruefen' },
   },
   {
     keywords: ['frist', 'zeit', 'reagieren', 'wie lange', '3 wochen', 'drei wochen', 'klagefrist', 'verspaetet', 'zu spaet', 'verspätet', 'zu spät'],
     response:
-      'Die Klagefrist betraegt nur 3 Wochen ab Zugang der Kuendigung (§ 4 KSchG). Diese Frist ist streng — wird sie versaeumt, gilt die Kuendigung als wirksam, selbst wenn sie rechtswidrig war. Melden Sie sich daher sofort bei einem Fachanwalt.\n\nWichtig: Sie muessen sich zusaetzlich spaetestens 3 Tage nach Erhalt der Kuendigung bei der Agentur fuer Arbeit arbeitssuchend melden.',
+      'Die Klagefrist betraegt nur 3 Wochen ab Zugang der Kuendigung (§ 4 KSchG). Diese Frist ist streng — wird sie versaeumt, gilt die Kuendigung in der Regel als wirksam, selbst wenn sie rechtswidrig war. Eine nachtraegliche Zulassung nach § 5 KSchG ist nur in engen Ausnahmefaellen moeglich (z.B. unverschuldete Verhinderung). Melden Sie sich daher sofort bei einem Fachanwalt.\n\nWichtig: Sie muessen sich zusaetzlich spaetestens 3 Tage nach Erhalt der Kuendigung bei der Agentur fuer Arbeit arbeitssuchend melden.',
   },
   {
     keywords: ['kuendigungsfrist', 'kündigungsfrist', 'welche frist', 'frist arbeitgeber', '622', 'bgb', 'gesetzlich'],

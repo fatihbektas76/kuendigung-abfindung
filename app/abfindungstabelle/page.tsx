@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -67,6 +68,19 @@ const faqs = [
 
 const gehaelter = [3000, 4000, 5000, 6000, 8000];
 const jahre = [1, 2, 3, 5, 8, 10, 15, 20, 25, 30];
+
+const TOC_ENTRIES = [
+  { id: "abfindungstabelle-faktor-05-sect1a-kschg", label: "Abfindungstabelle – Faktor 0,5 (&sect;1a KSchG)" },
+  { id: "abfindungstabelle-faktor-10-vergleich-vor-gericht", label: "Abfindungstabelle – Faktor 1,0 (Vergleich vor Gericht)" },
+  { id: "abfindungstabelle-faktor-15-starke-verhandlungsposition", label: "Abfindungstabelle – Faktor 1,5 (starke Verhandlungsposition)" },
+  { id: "wann-gilt-welcher-faktor", label: "Wann gilt welcher Faktor?" },
+  { id: "abfindung-bei-aufhebungsvertrag-vs-kundigung", label: "Abfindung bei Aufhebungsvertrag vs. Kündigung" },
+  { id: "steuerliche-behandlung-der-abfindung", label: "Steuerliche Behandlung der Abfindung" },
+  { id: "abfindung-und-arbeitslosengeld-wird-angerechnet", label: "Abfindung und Arbeitslosengeld – wird angerechnet?" },
+  { id: "wie-hoch-ist-ihre-abfindung", label: "Wie hoch ist Ihre Abfindung?" },
+  { id: "fragen-zur-abfindung", label: "Fragen zur Abfindung" },
+  { id: "verschenken-sie-keine-abfindung", label: "Verschenken Sie keine Abfindung." },
+];
 
 export default function AbfindungstabellePage() {
   return (
@@ -192,9 +206,11 @@ export default function AbfindungstabellePage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Regelabfindung
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Abfindungstabelle &ndash; Faktor 0,5 (&sect;1a KSchG)
-          </h2>
+          <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="abfindungstabelle-faktor-05-sect1a-kschg" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Abfindungstabelle &ndash; Faktor 0,5 (&sect;1a KSchG)
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
             Gesetzliche Regelabfindung bei betriebsbedingter Kündigung mit Klageverzicht.
           </p>
@@ -233,9 +249,9 @@ export default function AbfindungstabellePage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Praxis-Standard
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Abfindungstabelle &ndash; Faktor 1,0 (Vergleich vor Gericht)
-          </h2>
+          <h2 id="abfindungstabelle-faktor-10-vergleich-vor-gericht" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Abfindungstabelle &ndash; Faktor 1,0 (Vergleich vor Gericht)
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
             Typische Abfindungshöhe bei einem Vergleich vor dem Arbeitsgericht.
           </p>
@@ -274,9 +290,9 @@ export default function AbfindungstabellePage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Oberer Bereich
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Abfindungstabelle &ndash; Faktor 1,5 (starke Verhandlungsposition)
-          </h2>
+          <h2 id="abfindungstabelle-faktor-15-starke-verhandlungsposition" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Abfindungstabelle &ndash; Faktor 1,5 (starke Verhandlungsposition)
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
             Erreichbar bei langer Betriebszugehörigkeit, höherem Alter oder offensichtlich
             unwirksamer Kündigung.
@@ -323,7 +339,7 @@ export default function AbfindungstabellePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Faktor verstehen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wann-gilt-welcher-faktor" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wann gilt welcher Faktor?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -376,7 +392,7 @@ export default function AbfindungstabellePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Vergleich
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="abfindung-bei-aufhebungsvertrag-vs-kundigung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Abfindung bei Aufhebungsvertrag vs. Kündigung
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
@@ -429,7 +445,7 @@ export default function AbfindungstabellePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Steuern
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="steuerliche-behandlung-der-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Steuerliche Behandlung der Abfindung
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -492,7 +508,7 @@ export default function AbfindungstabellePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Arbeitslosengeld
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="abfindung-und-arbeitslosengeld-wird-angerechnet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Abfindung und Arbeitslosengeld &ndash; wird angerechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -537,9 +553,9 @@ export default function AbfindungstabellePage() {
       {/* CTA */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Wie hoch ist Ihre Abfindung?
-          </h2>
+          <h2 id="wie-hoch-ist-ihre-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Wie hoch ist Ihre Abfindung?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Die Tabelle zeigt Richtwerte. Ihr konkreter Anspruch hängt vom Einzelfall ab.
             Wir prüfen Ihre Kündigung kostenlos und schätzen die realistische Abfindung ein.
@@ -603,9 +619,9 @@ export default function AbfindungstabellePage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur Abfindung
-          </h2>
+          <h2 id="fragen-zur-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zur Abfindung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -636,9 +652,9 @@ export default function AbfindungstabellePage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Verschenken Sie keine Abfindung.
-          </h2>
+          <h2 id="verschenken-sie-keine-abfindung" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Verschenken Sie keine Abfindung.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Die meisten Arbeitnehmer erhalten weniger Abfindung als ihnen zusteht.
             Wir verhandeln für Sie das Maximum.

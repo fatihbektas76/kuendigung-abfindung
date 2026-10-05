@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
@@ -106,6 +107,17 @@ const inputClass =
   'w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]';
 const selectClass =
   'form-select w-full py-3 px-4 border border-border rounded-sm font-sans text-[0.92rem] text-ink bg-white transition-all outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(166,139,75,0.1)]';
+
+const TOC_ENTRIES = [
+  { id: "kundigungsfrist-rechner", label: "Kündigungsfrist-Rechner" },
+  { id: "gesetzliche-kundigungsfristen-nach-sect622-bgb", label: "Gesetzliche Kündigungsfristen nach &sect;622 BGB" },
+  { id: "wie-wird-die-kundigungsfrist-berechnet", label: "Wie wird die Kündigungsfrist berechnet?" },
+  { id: "wann-gelten-langere-kundigungsfristen", label: "Wann gelten längere Kündigungsfristen?" },
+  { id: "kundigung-erhalten-die-ersten-3-schritte", label: "Kündigung erhalten — die ersten 3 Schritte" },
+  { id: "frist-bekannt-und-jetzt", label: "Frist bekannt — und jetzt?" },
+  { id: "haufige-fragen-zur-kundigungsfrist-berechnen", label: "Häufige Fragen zur Kündigungsfrist berechnen" },
+  { id: "kundigung-erhalten-was-jetzt-konkret-tun", label: "Kündigung erhalten — was jetzt konkret tun?" },
+];
 
 export default function KuendigungsfristRechnerPage() {
   const [kuendigungsDatum, setKuendigungsDatum] = useState('');
@@ -279,7 +291,11 @@ export default function KuendigungsfristRechnerPage() {
             <div className="bg-white border border-border-light rounded overflow-hidden">
               <div className="h-2 bg-gold-dark" />
               <div className="p-8">
-                <h2 className="font-serif text-[1.3rem] font-bold mb-6">Kündigungsfrist-Rechner</h2>
+                <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="kundigungsfrist-rechner" className="font-serif text-[1.3rem] font-bold mb-6">
+              Kündigungsfrist-Rechner
+            </h2>
 
                 {/* Kündigungsdatum */}
                 <div className="mb-5">
@@ -487,7 +503,7 @@ export default function KuendigungsfristRechnerPage() {
                           3-Wochen-Frist für Kündigungsschutzklage
                         </div>
                         <p className="text-[0.82rem] text-ink-muted leading-relaxed m-0">
-                          Wenn Sie die Kündigung anfechten wollen, müssen Sie innerhalb von 3 Wochen ab Zugang der Kündigung Klage einreichen.
+                          Wenn Sie die Kündigung anfechten wollen, müssen Sie innerhalb von 3 Wochen ab Zugang der Kündigung Klage einreichen. Danach ist die Kündigung in der Regel unangreifbar — eine nachträgliche Zulassung nach § 5 KSchG ist nur in engen Ausnahmefällen möglich.
                         </p>
                       </div>
                     </div>
@@ -522,7 +538,7 @@ export default function KuendigungsfristRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Gesetzliche Grundlage
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="gesetzliche-kundigungsfristen-nach-sect622-bgb" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Gesetzliche Kündigungsfristen nach &sect;622 BGB
             </h2>
             <div className="overflow-x-auto mb-5">
@@ -560,7 +576,7 @@ export default function KuendigungsfristRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wie-wird-die-kundigungsfrist-berechnet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wie wird die Kündigungsfrist berechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -600,7 +616,7 @@ export default function KuendigungsfristRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechtlicher Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wann-gelten-langere-kundigungsfristen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wann gelten längere Kündigungsfristen?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -631,7 +647,7 @@ export default function KuendigungsfristRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Praxishinweis
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="kundigung-erhalten-die-ersten-3-schritte" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Kündigung erhalten &mdash; die ersten 3 Schritte
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -652,7 +668,7 @@ export default function KuendigungsfristRechnerPage() {
               hilft Ihnen, die Situation einzuordnen: Ist die Kündigung wirksam? Lohnt sich eine Klage?
               Besteht Aussicht auf eine{' '}
               <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindung</Link>?
-              Handeln Sie schnell — die 3-Wochen-Frist ist nicht verlängerbar.
+              Handeln Sie schnell — nach Ablauf der 3-Wochen-Frist ist die Kündigung in der Regel unangreifbar (eine nachträgliche Zulassung nach § 5 KSchG kommt nur in engen Ausnahmefällen in Betracht).
             </p>
           </div>
         </div>
@@ -661,9 +677,9 @@ export default function KuendigungsfristRechnerPage() {
       {/* CTA #2 — Dark Banner */}
       <section className="py-[70px] px-8 bg-[#2A1F0E]">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold text-white mb-3">
-            Frist bekannt — und jetzt?
-          </h2>
+          <h2 id="frist-bekannt-und-jetzt" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold text-white mb-3">
+              Frist bekannt — und jetzt?
+            </h2>
           <p className="text-[1rem] text-white/70 max-w-[520px] mx-auto mb-6">
             Nutzen Sie die verbleibende Zeit. Fachanwalt Fatih Bektas prüft Ihre Kündigung kostenlos und zeigt
             Ihnen, ob eine Abfindung möglich ist.
@@ -715,9 +731,9 @@ export default function KuendigungsfristRechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Häufige Fragen zur Kündigungsfrist berechnen
-          </h2>
+          <h2 id="haufige-fragen-zur-kundigungsfrist-berechnen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Häufige Fragen zur Kündigungsfrist berechnen
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -733,7 +749,7 @@ export default function KuendigungsfristRechnerPage() {
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="border-2 border-gold/20 rounded-sm p-8 bg-white text-center max-w-[640px] mx-auto">
-            <h2 className="font-serif text-[1.3rem] font-bold mb-3">
+            <h2 id="kundigung-erhalten-was-jetzt-konkret-tun" className="font-serif text-[1.3rem] font-bold mb-3">
               Kündigung erhalten — was jetzt konkret tun?
             </h2>
             <p className="text-[0.95rem] text-ink-muted leading-relaxed mb-6">

@@ -159,6 +159,36 @@ export default function RatgeberPage() {
         </div>
       </div>
 
+
+      {/* Aktuelle Artikel - prominently featured */}
+      <section className="py-[50px] px-8 bg-cream">
+        <div className="max-w-content mx-auto">
+          <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
+            Aktuelle Artikel
+          </div>
+          <h2 className="font-serif text-[1.75rem] font-bold text-ink mb-6">
+            Neu im Ratgeber
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link href="/kuendigung-waehrend-krankheit/" className="block border border-border rounded-sm p-5 bg-white no-underline hover:border-gold hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(166,139,75,0.1)] transition-all">
+              <div className="text-[0.68rem] font-bold tracking-widest uppercase text-gold-dark mb-1.5">Mythos & Wahrheit</div>
+              <h3 className="font-serif text-[1.1rem] font-bold text-ink leading-tight mb-2">Kündigung während Krankheit</h3>
+              <p className="text-[0.88rem] text-ink-light leading-relaxed m-0">Darf der Arbeitgeber während der Krankschreibung kündigen? Was wirklich schützt und wann die Kündigung angreifbar ist.</p>
+            </Link>
+            <Link href="/freistellung-nach-kuendigung/" className="block border border-border rounded-sm p-5 bg-white no-underline hover:border-gold hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(166,139,75,0.1)] transition-all">
+              <div className="text-[0.68rem] font-bold tracking-widest uppercase text-gold-dark mb-1.5">BAG-Urteil 2026</div>
+              <h3 className="font-serif text-[1.1rem] font-bold text-ink leading-tight mb-2">Freistellung nach Kündigung</h3>
+              <p className="text-[0.88rem] text-ink-light leading-relaxed m-0">BAG 5 AZR 108/25: Standardklauseln sind unwirksam. Folgen für Dienstwagen, Urlaub und Abfindung.</p>
+            </Link>
+            <Link href="/urlaubsabgeltung-rechner/" className="block border border-border rounded-sm p-5 bg-white no-underline hover:border-gold hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(166,139,75,0.1)] transition-all">
+              <div className="text-[0.68rem] font-bold tracking-widest uppercase text-gold-dark mb-1.5">Rechner</div>
+              <h3 className="font-serif text-[1.1rem] font-bold text-ink leading-tight mb-2">Urlaubsabgeltung berechnen</h3>
+              <p className="text-[0.88rem] text-ink-light leading-relaxed m-0">Nicht genommener Urlaub bei Kündigung: § 7 Abs. 4 BUrlG mit korrekter Bruchteil-Rundung.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Category Cards */}
       <section className="py-[70px] px-8 bg-white">
         <div className="max-w-content mx-auto">

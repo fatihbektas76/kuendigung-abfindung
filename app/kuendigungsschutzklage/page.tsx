@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -63,6 +64,18 @@ const faqs = [
     q: 'Kann ich die Kündigungsschutzklage auch ohne Anwalt einreichen?',
     a: 'Ja, vor dem Arbeitsgericht besteht kein Anwaltszwang. Sie können die Klage selbst bei der Rechtsantragsstelle des Arbeitsgerichts einreichen. Allerdings ist anwaltliche Vertretung dringend empfohlen: Die Verhandlungsposition bei Abfindungsgesprächen ist mit Anwalt deutlich besser, und formale Fehler können die Klage gefährden.',
   },
+];
+
+const TOC_ENTRIES = [
+  { id: "ablauf-der-kundigungsschutzklage", label: "Ablauf der Kündigungsschutzklage" },
+  { id: "was-kostet-eine-kundigungsschutzklage", label: "Was kostet eine Kündigungsschutzklage?" },
+  { id: "wann-lohnt-sich-eine-kundigungsschutzklage", label: "Wann lohnt sich eine Kündigungsschutzklage?" },
+  { id: "gutetermin-was-sie-erwartet", label: "Gütetermin – was Sie erwartet" },
+  { id: "vergleich-vs-urteil-vor-und-nachteile", label: "Vergleich vs. Urteil – Vor- und Nachteile" },
+  { id: "kundigungsschutzklage-und-arbeitslosengeld", label: "Kündigungsschutzklage und Arbeitslosengeld" },
+  { id: "kundigung-erhalten-die-3-wochen-frist-lauft", label: "Kündigung erhalten? Die 3-Wochen-Frist läuft." },
+  { id: "fragen-zur-kundigungsschutzklage", label: "Fragen zur Kündigungsschutzklage" },
+  { id: "jede-woche-zahlt-die-3-wochen-frist-lauft", label: "Jede Woche zählt. Die 3-Wochen-Frist läuft." },
 ];
 
 export default function KuendigungsschutzKlagePage() {
@@ -134,7 +147,7 @@ export default function KuendigungsschutzKlagePage() {
                 '@type': 'HowToStep',
                 position: 1,
                 name: 'Klagefrist prüfen (§ 4 KSchG)',
-                text: 'Innerhalb von 3 Wochen ab Zugang der Kündigung muss die Kündigungsschutzklage beim Arbeitsgericht eingehen. Fristsäumnis führt zur Wirksamkeitsfiktion der Kündigung.',
+                text: 'Innerhalb von 3 Wochen ab Zugang der Kündigung muss die Kündigungsschutzklage beim Arbeitsgericht eingehen. Wird die Frist versäumt, gilt die Kündigung in der Regel als wirksam — eine nachträgliche Zulassung nach § 5 KSchG kommt nur in engen Ausnahmefällen in Betracht.',
               },
               {
                 '@type': 'HowToStep',
@@ -241,7 +254,7 @@ export default function KuendigungsschutzKlagePage() {
 
             <DefinitionBox
               term="Kündigungsschutzklage (§4 KSchG)"
-              definition="Die Kündigungsschutzklage ist eine Klage vor dem Arbeitsgericht, mit der der Arbeitnehmer feststellen lässt, dass eine Kündigung sozial ungerechtfertigt und damit unwirksam ist. Sie muss innerhalb von 3 Wochen ab Zugang der Kündigung erhoben werden."
+              definition="Die Kündigungsschutzklage ist eine Klage vor dem Arbeitsgericht, mit der der Arbeitnehmer feststellen lässt, dass eine Kündigung sozial ungerechtfertigt und damit unwirksam ist. Sie muss innerhalb von 3 Wochen ab Zugang der Kündigung erhoben werden; danach ist die Kündigung in der Regel unangreifbar — eine nachträgliche Zulassung nach § 5 KSchG ist nur in engen Ausnahmefällen möglich."
             />
 
             <a
@@ -260,9 +273,11 @@ export default function KuendigungsschutzKlagePage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Verfahren
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Ablauf der Kündigungsschutzklage
-          </h2>
+          <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="ablauf-der-kundigungsschutzklage" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Ablauf der Kündigungsschutzklage
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Von der Klageeinreichung bis zum Vergleich oder Urteil &mdash; so läuft das
             Verfahren vor dem Arbeitsgericht ab.
@@ -311,7 +326,7 @@ export default function KuendigungsschutzKlagePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Kosten
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="was-kostet-eine-kundigungsschutzklage" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Was kostet eine Kündigungsschutzklage?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -368,7 +383,7 @@ export default function KuendigungsschutzKlagePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Erfolgsaussichten
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wann-lohnt-sich-eine-kundigungsschutzklage" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wann lohnt sich eine Kündigungsschutzklage?
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
@@ -433,7 +448,7 @@ export default function KuendigungsschutzKlagePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Verhandlung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="gutetermin-was-sie-erwartet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Gütetermin &ndash; was Sie erwartet
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
@@ -506,7 +521,7 @@ export default function KuendigungsschutzKlagePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Entscheidung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="vergleich-vs-urteil-vor-und-nachteile" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Vergleich vs. Urteil &ndash; Vor- und Nachteile
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-6">
@@ -566,7 +581,7 @@ export default function KuendigungsschutzKlagePage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Arbeitslosengeld
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="kundigungsschutzklage-und-arbeitslosengeld" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Kündigungsschutzklage und Arbeitslosengeld
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
@@ -634,9 +649,9 @@ export default function KuendigungsschutzKlagePage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-cream">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Kündigung erhalten? Die 3-Wochen-Frist läuft.
-          </h2>
+          <h2 id="kundigung-erhalten-die-3-wochen-frist-lauft" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Kündigung erhalten? Die 3-Wochen-Frist läuft.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Wir prüfen Ihre Klagechancen kostenlos und schätzen die mögliche
             Abfindung ein &mdash; innerhalb von 24 Stunden.
@@ -692,9 +707,9 @@ export default function KuendigungsschutzKlagePage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur Kündigungsschutzklage
-          </h2>
+          <h2 id="fragen-zur-kundigungsschutzklage" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zur Kündigungsschutzklage
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -703,7 +718,10 @@ export default function KuendigungsschutzKlagePage() {
       <section className="py-8 px-8 bg-white">
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
-            <AuthorBox />
+                            <p className="text-ink leading-relaxed mt-6 text-[0.95rem]">
+                  <strong>Verwandt:</strong> <Link href="/kuendigung-waehrend-krankheit/" className="text-gold-dark no-underline hover:underline">Kündigung während Krankheit</Link> — darf der Arbeitgeber während der Krankschreibung kündigen?
+                </p>
+              <AuthorBox />
             <ShareButtons url="/kuendigungsschutzklage/" title="Kündigungsschutzklage – Ablauf, Kosten & Frist" />
           </div>
         </div>
@@ -725,9 +743,9 @@ export default function KuendigungsschutzKlagePage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Jede Woche zählt. Die 3-Wochen-Frist läuft.
-          </h2>
+          <h2 id="jede-woche-zahlt-die-3-wochen-frist-lauft" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Jede Woche zählt. Die 3-Wochen-Frist läuft.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             80% der Kündigungsschutzklagen enden mit einem Vergleich. Lassen Sie
             sich Ihre Abfindung nicht entgehen.

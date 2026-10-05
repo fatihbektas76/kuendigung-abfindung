@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorByline from '@/components/AuthorByline';
@@ -85,6 +86,16 @@ const QUELLEN_KUENDIGUNGSFRIST = [
 const RECHNER_LINK = '/kuendigungsfrist-rechner/';
 const TABELLE_LINK = '/kuendigungsfristen/';
 const AUFHEBUNG_LINK = '/aufhebungsvertrag/';
+
+const TOC_ENTRIES = [
+  { id: "ihre-kundigungsfrist-in-unter-30-sekunden-taggenau", label: "Ihre Kündigungsfrist in unter 30 Sekunden — taggenau" },
+  { id: "so-lauft-ihre-kundigungsfrist-als-arbeitnehmer", label: "So läuft Ihre Kündigungsfrist als Arbeitnehmer" },
+  { id: "probezeit-tarifvertrag-langere-vertragliche-fristen", label: "Probezeit, Tarifvertrag, längere vertragliche Fristen" },
+  { id: "schriftform-zugang-und-der-teuerste-fehler", label: "Schriftform, Zugang und der teuerste Fehler" },
+  { id: "konkrete-zahl-oder-komplette-ubersicht-sie-entscheiden", label: "Konkrete Zahl oder komplette Übersicht — Sie entscheiden" },
+  { id: "fragen-zur-kundigungsfrist-als-arbeitnehmer", label: "Fragen zur Kündigungsfrist als Arbeitnehmer" },
+  { id: "unsicher-welche-frist-fur-sie-gilt", label: "Unsicher, welche Frist für Sie gilt?" },
+];
 
 export default function KuendigungsfristBerechnenArbeitnehmerPage() {
   return (
@@ -213,7 +224,9 @@ export default function KuendigungsfristBerechnenArbeitnehmerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
               Rechner
             </div>
-            <h2 className="font-serif text-[1.35rem] md:text-[1.55rem] font-bold text-ink mb-2 leading-tight">
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="ihre-kundigungsfrist-in-unter-30-sekunden-taggenau" className="font-serif text-[1.35rem] md:text-[1.55rem] font-bold text-ink mb-2 leading-tight">
               Ihre Kündigungsfrist in unter 30 Sekunden &mdash; taggenau
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -250,7 +263,7 @@ export default function KuendigungsfristBerechnenArbeitnehmerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Grundfrist &amp; Beispiele
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="so-lauft-ihre-kundigungsfrist-als-arbeitnehmer" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               So läuft Ihre Kündigungsfrist als Arbeitnehmer
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-5">
@@ -312,7 +325,7 @@ export default function KuendigungsfristBerechnenArbeitnehmerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Sonderfälle
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="probezeit-tarifvertrag-langere-vertragliche-fristen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Probezeit, Tarifvertrag, längere vertragliche Fristen
             </h2>
 
@@ -415,7 +428,7 @@ export default function KuendigungsfristBerechnenArbeitnehmerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Formalien
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="schriftform-zugang-und-der-teuerste-fehler" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Schriftform, Zugang und der teuerste Fehler
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -467,7 +480,7 @@ export default function KuendigungsfristBerechnenArbeitnehmerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Zwei Tools &mdash; Rechner &amp; Tabelle
             </div>
-            <h2 className="font-serif text-[clamp(1.35rem,3vw,1.8rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="konkrete-zahl-oder-komplette-ubersicht-sie-entscheiden" className="font-serif text-[clamp(1.35rem,3vw,1.8rem)] font-bold leading-[1.25] mb-4">
               Konkrete Zahl oder komplette Übersicht &mdash; Sie entscheiden
             </h2>
             <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
@@ -517,7 +530,7 @@ export default function KuendigungsfristBerechnenArbeitnehmerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Häufige Fragen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="fragen-zur-kundigungsfrist-als-arbeitnehmer" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Fragen zur Kündigungsfrist als Arbeitnehmer
             </h2>
             <FaqAccordion items={faqs} />
@@ -560,9 +573,9 @@ export default function KuendigungsfristBerechnenArbeitnehmerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Individuelle Prüfung
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Unsicher, welche Frist für Sie gilt?
-          </h2>
+          <h2 id="unsicher-welche-frist-fur-sie-gilt" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Unsicher, welche Frist für Sie gilt?
+            </h2>
           <p className="text-[1rem] text-ink-light max-w-[620px] mx-auto leading-relaxed mb-6">
             Der Rechner liefert die Standardfälle nach &sect;&nbsp;622 BGB. Bei Tarifbindung, langer
             Betriebszugehörigkeit, umstrittener Klausel oder gleichzeitigem Abfindungswunsch prüfen wir

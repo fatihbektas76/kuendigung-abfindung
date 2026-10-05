@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { entries } from '@/lib/betriebszugehoerigkeit';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorBox from '@/components/AuthorBox';
@@ -61,6 +62,14 @@ const faqs = [
     q: 'Bekomme ich nach einer fristlosen Kündigung Arbeitslosengeld?',
     a: 'Bei einer fristlosen Kündigung verhängt die Agentur für Arbeit in der Regel eine Sperrzeit von 12 Wochen, da sie von einem "versicherungswidrigen Verhalten" ausgeht. Allerdings: Wenn die fristlose Kündigung vor dem Arbeitsgericht als unwirksam festgestellt wird oder im Vergleich in eine ordentliche Kündigung umgewandelt wird, entfällt die Sperrzeit nachträglich. Ein weiterer Grund, sofort Klage einzureichen.',
   },
+];
+
+const TOC_ENTRIES = [
+  { id: "voraussetzungen-nach-sectnbsp626-bgb", label: "Voraussetzungen nach &sect;&nbsp;626 BGB" },
+  { id: "fristlos-gekundigt", label: "Fristlos gekündigt?" },
+  { id: "fristlose-kundigung-nach-jahren-im-betrieb", label: "Fristlose Kündigung nach Jahren im Betrieb" },
+  { id: "fragen-zur-fristlosen-kundigung", label: "Fragen zur fristlosen Kündigung" },
+  { id: "die-meisten-fristlosen-kundigungen-sind-unwirksam", label: "Die meisten fristlosen Kündigungen sind unwirksam." },
 ];
 
 export default function FristloseKuendigungPage() {
@@ -225,9 +234,11 @@ export default function FristloseKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Rechtliche Grundlagen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-            Voraussetzungen nach <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink>
-          </h2>
+          <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="voraussetzungen-nach-sectnbsp626-bgb" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
+              Voraussetzungen nach <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink>
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
             Eine fristlose Kündigung ist nur unter strengen Voraussetzungen wirksam.
             Fehlt auch nur eine, ist die Kündigung angreifbar.
@@ -271,9 +282,9 @@ export default function FristloseKuendigungPage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Fristlos gekündigt?
-          </h2>
+          <h2 id="fristlos-gekundigt" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Fristlos gekündigt?
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Wir prüfen Ihre fristlose Kündigung kostenlos und schätzen Ihre Chancen ein &mdash;
             innerhalb von 24 Stunden.
@@ -293,9 +304,9 @@ export default function FristloseKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Nach Betriebszugehörigkeit
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
-            Fristlose Kündigung nach Jahren im Betrieb
-          </h2>
+          <h2 id="fristlose-kundigung-nach-jahren-im-betrieb" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3">
+              Fristlose Kündigung nach Jahren im Betrieb
+            </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
             Wählen Sie Ihre Betriebszugehörigkeit &mdash; wir zeigen Ihnen, ob Ihre fristlose
             Kündigung wirksam ist und welche Abfindung möglich ist.
@@ -356,9 +367,9 @@ export default function FristloseKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Fragen zur fristlosen Kündigung
-          </h2>
+          <h2 id="fragen-zur-fristlosen-kundigung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Fragen zur fristlosen Kündigung
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -392,9 +403,9 @@ export default function FristloseKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Die meisten fristlosen Kündigungen sind unwirksam.
-          </h2>
+          <h2 id="die-meisten-fristlosen-kundigungen-sind-unwirksam" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Die meisten fristlosen Kündigungen sind unwirksam.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Lassen Sie Ihre fristlose Kündigung prüfen. In vielen Fällen erreichen wir
             die Umwandlung in eine ordentliche Kündigung &mdash; mit Abfindung.

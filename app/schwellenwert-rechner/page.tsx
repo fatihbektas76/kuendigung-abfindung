@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
@@ -16,6 +17,17 @@ const faqs = [
     q: 'Was passiert, wenn der Schwellenwert nicht erreicht wird?',
     a: 'Wird der Schwellenwert von 10 FTE nicht überschritten, gilt das KSchG nicht \u2014 Ihr Arbeitgeber braucht keinen Kündigungsgrund. Aber: Auch in Kleinbetrieben gibt es Mindestschutz, z.\u00A0B. Kündigungsfristen nach §622 BGB, Schutz vor sittenwidriger oder diskriminierender Kündigung und Mutterschutz.',
   },
+];
+
+const TOC_ENTRIES = [
+  { id: "mitarbeiter-im-betrieb", label: "Mitarbeiter im Betrieb" },
+  { id: "ergebnis", label: "Ergebnis" },
+  { id: "wie-wird-der-schwellenwert-berechnet", label: "Wie wird der Schwellenwert berechnet?" },
+  { id: "kschg-gilt-nicht-sie-haben-trotzdem-rechte", label: "KSchG gilt nicht? Sie haben trotzdem Rechte." },
+  { id: "wann-habe-ich-auch-ohne-kschg-kundigungsschutz", label: "Wann habe ich auch ohne KSchG Kündigungsschutz?" },
+  { id: "leiharbeitnehmer-und-schwellenwert-was-zahlt-wirklich", label: "Leiharbeitnehmer und Schwellenwert — was zählt wirklich?" },
+  { id: "haufige-fragen-zum-schwellenwert-sect23-kschg", label: "Häufige Fragen zum Schwellenwert &sect;23 KSchG" },
+  { id: "gekundigt-wir-prufen-ihren-schutz", label: "Gekündigt? Wir prüfen Ihren Schutz." },
 ];
 
 export default function SchwellenwertRechnerPage() {
@@ -143,7 +155,11 @@ export default function SchwellenwertRechnerPage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[600px]">
             <div className="bg-cream border border-border-light rounded p-8">
-              <h2 className="font-serif text-[1.2rem] font-bold mb-5">Mitarbeiter im Betrieb</h2>
+              <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="mitarbeiter-im-betrieb" className="font-serif text-[1.2rem] font-bold mb-5">
+              Mitarbeiter im Betrieb
+            </h2>
               <div className="space-y-5">
                 <div>
                   <label className="block text-[0.84rem] font-semibold text-ink mb-1.5">
@@ -202,7 +218,9 @@ export default function SchwellenwertRechnerPage() {
             {/* Result */}
             {result && (
               <div className="mt-8 ergebnis-box">
-                <h2 className="font-serif text-[1.4rem] font-bold mb-5">Ergebnis</h2>
+                <h2 id="ergebnis" className="font-serif text-[1.4rem] font-bold mb-5">
+              Ergebnis
+            </h2>
                 <div
                   className={`rounded-sm border-2 p-6 text-center ${
                     result.gilt
@@ -280,7 +298,7 @@ export default function SchwellenwertRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
+            <h2 id="wie-wird-der-schwellenwert-berechnet" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-5">
               Wie wird der Schwellenwert berechnet?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-4">
@@ -323,9 +341,9 @@ export default function SchwellenwertRechnerPage() {
       {/* CTA 2 */}
       <section className="py-[60px] px-8 bg-white">
         <div className="max-w-content mx-auto text-center">
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            KSchG gilt nicht? Sie haben trotzdem Rechte.
-          </h2>
+          <h2 id="kschg-gilt-nicht-sie-haben-trotzdem-rechte" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              KSchG gilt nicht? Sie haben trotzdem Rechte.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Auch in Kleinbetrieben gelten Kündigungsfristen, Diskriminierungsschutz und
             besonderer Kündigungsschutz. Wir beraten Sie.
@@ -346,7 +364,7 @@ export default function SchwellenwertRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechtlicher Hintergrund
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="wann-habe-ich-auch-ohne-kschg-kundigungsschutz" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Wann habe ich auch ohne KSchG Kündigungsschutz?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -377,7 +395,7 @@ export default function SchwellenwertRechnerPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechtsprechung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="leiharbeitnehmer-und-schwellenwert-was-zahlt-wirklich" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Leiharbeitnehmer und Schwellenwert &mdash; was zählt wirklich?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -461,9 +479,9 @@ export default function SchwellenwertRechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Häufige Fragen
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
-            Häufige Fragen zum Schwellenwert &sect;23 KSchG
-          </h2>
+          <h2 id="haufige-fragen-zum-schwellenwert-sect23-kschg" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+              Häufige Fragen zum Schwellenwert &sect;23 KSchG
+            </h2>
           <FaqAccordion items={faqs} />
         </div>
       </section>
@@ -481,9 +499,9 @@ export default function SchwellenwertRechnerPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Jetzt handeln
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Gekündigt? Wir prüfen Ihren Schutz.
-          </h2>
+          <h2 id="gekundigt-wir-prufen-ihren-schutz" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Gekündigt? Wir prüfen Ihren Schutz.
+            </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Ob Kleinbetrieb oder Konzern &mdash; wir prüfen Ihre Kündigung auf alle Schwachstellen
             und beraten Sie zu Ihren Optionen.

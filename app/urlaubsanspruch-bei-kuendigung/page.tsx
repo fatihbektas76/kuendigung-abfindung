@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
+import TableOfContents from '@/components/TableOfContents';
 import StandAnzeige from '@/components/StandAnzeige';
 import AktuelleRechtslage from '@/components/AktuelleRechtslage';
 import AuthorByline from '@/components/AuthorByline';
@@ -85,6 +86,18 @@ const QUELLEN_URLAUB = [
 
 const RECHNER_LINK = '/resturlaub-bei-kuendigung-rechner/';
 const ABGELTUNG_LINK = '/urlaubsabgeltung-rechner/';
+
+const TOC_ENTRIES = [
+  { id: "konkrete-zahl-statt-faustregel-ihren-resturlaub-berechnen", label: "Konkrete Zahl statt Faustregel: Ihren Resturlaub berechnen" },
+  { id: "so-berechnet-sich-der-urlaubsanspruch-nach-sectnbsp5-burlg", label: "So berechnet sich der Urlaubsanspruch nach &sect;&nbsp;5 BUrlG" },
+  { id: "elternzeit-krankheit-teilzeit-probezeit", label: "Elternzeit, Krankheit, Teilzeit & Probezeit" },
+  { id: "wann-ihr-urlaub-verfallt-und-wann-nicht", label: "Wann Ihr Urlaub verfällt — und wann nicht" },
+  { id: "wenn-sie-den-resturlaub-nicht-mehr-nehmen-konnen", label: "Wenn Sie den Resturlaub nicht mehr nehmen können" },
+  { id: "ausschlussfristen-die-stille-anspruchsvernichter", label: "Ausschlussfristen — die stille Anspruchsvernichter" },
+  { id: "zwei-rechner-ein-urlaubsanspruch-von-anfang-bis-ende", label: "Zwei Rechner — ein Urlaubsanspruch von Anfang bis Ende" },
+  { id: "fragen-zum-urlaubsanspruch-bei-kundigung", label: "Fragen zum Urlaubsanspruch bei Kündigung" },
+  { id: "streit-uber-urlaub-oder-abgeltung", label: "Streit über Urlaub oder Abgeltung?" },
+];
 
 export default function UrlaubsanspruchBeiKuendigungPage() {
   return (
@@ -215,7 +228,9 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2">
               Rechner
             </div>
-            <h2 className="font-serif text-[1.35rem] md:text-[1.55rem] font-bold text-ink mb-2 leading-tight">
+            <TableOfContents entries={TOC_ENTRIES} />
+
+            <h2 id="konkrete-zahl-statt-faustregel-ihren-resturlaub-berechnen" className="font-serif text-[1.35rem] md:text-[1.55rem] font-bold text-ink mb-2 leading-tight">
               Konkrete Zahl statt Faustregel: Ihren Resturlaub berechnen
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -252,7 +267,7 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechtsgrundlage &amp; Formel
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="so-berechnet-sich-der-urlaubsanspruch-nach-sectnbsp5-burlg" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               So berechnet sich der Urlaubsanspruch nach &sect;&nbsp;5 BUrlG
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-5">
@@ -308,7 +323,7 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Sonderfälle
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="elternzeit-krankheit-teilzeit-probezeit" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Elternzeit, Krankheit, Teilzeit &amp; Probezeit
             </h2>
 
@@ -392,7 +407,7 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Verfall &amp; Übertragung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="wann-ihr-urlaub-verfallt-und-wann-nicht" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Wann Ihr Urlaub verfällt &mdash; und wann nicht
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -424,7 +439,7 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Urlaubsabgeltung
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="wenn-sie-den-resturlaub-nicht-mehr-nehmen-konnen" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Wenn Sie den Resturlaub nicht mehr nehmen können
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -466,7 +481,7 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Fristen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="ausschlussfristen-die-stille-anspruchsvernichter" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-4">
               Ausschlussfristen &mdash; die stille Anspruchsvernichter
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
@@ -507,7 +522,7 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Rechner nutzen
             </div>
-            <h2 className="font-serif text-[clamp(1.35rem,3vw,1.8rem)] font-bold leading-[1.25] mb-4">
+            <h2 id="zwei-rechner-ein-urlaubsanspruch-von-anfang-bis-ende" className="font-serif text-[clamp(1.35rem,3vw,1.8rem)] font-bold leading-[1.25] mb-4">
               Zwei Rechner &mdash; ein Urlaubsanspruch von Anfang bis Ende
             </h2>
             <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
@@ -557,7 +572,7 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               Häufige Fragen
             </div>
-            <h2 className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
+            <h2 id="fragen-zum-urlaubsanspruch-bei-kundigung" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-6">
               Fragen zum Urlaubsanspruch bei Kündigung
             </h2>
             <FaqAccordion items={faqs} />
@@ -600,9 +615,9 @@ export default function UrlaubsanspruchBeiKuendigungPage() {
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
             Individuelle Prüfung
           </div>
-          <h2 className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-            Streit über Urlaub oder Abgeltung?
-          </h2>
+          <h2 id="streit-uber-urlaub-oder-abgeltung" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
+              Streit über Urlaub oder Abgeltung?
+            </h2>
           <p className="text-[1rem] text-ink-light max-w-[620px] mx-auto leading-relaxed mb-6">
             Rechner liefern eine Orientierung nach &sect;&nbsp;5 BUrlG. Für die konkrete Auseinandersetzung
             mit dem Arbeitgeber &mdash; komplexe Klausel-Lage, versäumte Hinweispflichten oder gleichzeitige
