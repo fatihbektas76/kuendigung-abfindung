@@ -115,7 +115,7 @@ export default function ContactForm() {
           <FadeUp delay={1}>
             <div className="bg-cream border border-border-light rounded p-9 px-8">
               {!submitted ? (
-                <form onSubmit={handleSubmit}>
+                <form data-form-id="kontakt" onSubmit={handleSubmit}>
                   {/* Honeypot */}
                   <div className="absolute -left-[9999px]" aria-hidden="true">
                     <input type="text" name="website" tabIndex={-1} autoComplete="off" />
