@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t2 d2" font-family="Raleway, Helvetica, Arial, sans-serif">
+  <title id="t2">Drei-Stufen-Prüfung der krankheitsbedingten Kündigung</title>
+  <desc id="d2">Eine krankheitsbedingte Kündigung ist nur wirksam, wenn drei Stufen erfüllt sind. Stufe 1: negative Gesundheitsprognose, also weitere Ausfälle im bisherigen Umfang sind zu erwarten. Stufe 2: erhebliche Beeinträchtigung betrieblicher Interessen, etwa Störungen im Ablauf oder Entgeltfortzahlung für mehr als sechs Wochen im Jahr. Stufe 3: Interessenabwägung, der Arbeitgeber muss die Belastung nicht mehr hinnehmen. Fehlt eine Stufe, ist die Kündigung unwirksam.</desc>
+  <rect width="1200" height="675" fill="#F0EAD9"/>
+  <text x="48" y="80" font-size="42" font-weight="700" fill="#2A1F0E">Krankheitsbedingte Kündigung: 3 Stufen</text>
+  <rect x="48" y="100" width="90" height="4" fill="#7A6528"/>
+  <rect x="48" y="150" width="336" height="330" rx="12" fill="#FFFFFF" fill-opacity="0.55" stroke="#7A6528" stroke-width="3"/>
+  <circle cx="102" cy="208" r="30" fill="#7A6528"/>
+  <text x="102" y="219" font-size="30" font-weight="700" fill="#F0EAD9" text-anchor="middle">1</text>
+  <text x="76" y="284" font-size="30" font-weight="700" fill="#2A1F0E">Negative</text>
+  <text x="76" y="320" font-size="30" font-weight="700" fill="#2A1F0E">Prognose</text>
+  <text x="76" y="374" font-size="26" fill="#2A1F0E">Weitere Ausfälle</text>
+  <text x="76" y="408" font-size="26" fill="#2A1F0E">im bisherigen</text>
+  <text x="76" y="442" font-size="26" fill="#2A1F0E">Umfang zu erwarten</text>
+  <path d="M402 300 L418 315 L402 330" stroke="#7A6528" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="432" y="150" width="336" height="330" rx="12" fill="#FFFFFF" fill-opacity="0.55" stroke="#7A6528" stroke-width="3"/>
+  <circle cx="486" cy="208" r="30" fill="#7A6528"/>
+  <text x="486" y="219" font-size="30" font-weight="700" fill="#F0EAD9" text-anchor="middle">2</text>
+  <text x="460" y="284" font-size="30" font-weight="700" fill="#2A1F0E">Erhebliche</text>
+  <text x="460" y="320" font-size="30" font-weight="700" fill="#2A1F0E">Belastung</text>
+  <text x="460" y="374" font-size="26" fill="#2A1F0E">Störung im Ablauf</text>
+  <text x="460" y="408" font-size="26" fill="#2A1F0E">oder Lohnfortzahlung</text>
+  <text x="460" y="442" font-size="26" fill="#2A1F0E">über 6 Wochen/Jahr</text>
+  <path d="M786 300 L802 315 L786 330" stroke="#7A6528" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="816" y="150" width="336" height="330" rx="12" fill="#FFFFFF" fill-opacity="0.55" stroke="#7A6528" stroke-width="3"/>
+  <circle cx="870" cy="208" r="30" fill="#7A6528"/>
+  <text x="870" y="219" font-size="30" font-weight="700" fill="#F0EAD9" text-anchor="middle">3</text>
+  <text x="844" y="284" font-size="30" font-weight="700" fill="#2A1F0E">Interessen-</text>
+  <text x="844" y="320" font-size="30" font-weight="700" fill="#2A1F0E">abwägung</text>
+  <text x="844" y="374" font-size="26" fill="#2A1F0E">Arbeitgeber muss</text>
+  <text x="844" y="408" font-size="26" fill="#2A1F0E">die Belastung nicht</text>
+  <text x="844" y="442" font-size="26" fill="#2A1F0E">mehr hinnehmen</text>
+  <rect x="48" y="508" width="1104" height="64" rx="10" fill="#7A6528"/>
+  <text x="600" y="550" font-size="28" font-weight="600" fill="#F0EAD9" text-anchor="middle">Fehlt eine Stufe, ist die Kündigung unwirksam</text>
+  <text x="48" y="627" font-size="28" font-weight="700" fill="#2A1F0E">APOS</text>
+  <rect x="138" y="616" width="28" height="3" fill="#7A6528"/>
+  <text x="176" y="627" font-size="22" font-weight="500" fill="#2A1F0E" letter-spacing="5">LEGAL</text>
+  <text x="1152" y="627" font-size="18" fill="#2A1F0E" fill-opacity="0.75" text-anchor="end">§ 1 Abs. 2 KSchG · BAG 2 AZR 755/13 · Stand: Oktober 2026</text>
+</svg>

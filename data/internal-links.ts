@@ -5,7 +5,17 @@
  * Value = Array der Ziel-Links mit href und Anchor-Text
  */
 export const internalLinks: Record<string, Array<{ href: string; label: string }>> = {
+  "/kuendigung-waehrend-krankheit": [
+    { href: "/kuendigungsschutzklage", label: "Kündigungsschutzklage — Ablauf, Kosten & 3-Wochen-Frist" },
+    { href: "/abfindung", label: "Abfindung — Ratgeber, Höhe und Anspruch im Überblick" },
+    { href: "/abfindungsrechner", label: "Abfindung berechnen — kostenloser Rechner" },
+    { href: "/aufhebungsvertrag", label: "Aufhebungsvertrag statt Kündigung — Chancen & Risiken" },
+    { href: "/kuendigung/kuendigung-probezeit", label: "Kündigung in der Probezeit — was gilt?" },
+    { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — wann sie unwirksam ist" }
+  ],
+
   "/abfindung": [
+    { href: "/kuendigung-waehrend-krankheit", label: "Kündigung während Krankheit — darf der Arbeitgeber?" },
     { href: "/abfindung-betriebsbedingte-kuendigung-hoehe", label: "Abfindung bei betriebsbedingter Kündigung — wie hoch?" },
     { href: "/kuendigung/kuendigung-krankschreibung", label: "Kündigung während Krankschreibung — was tun?" },
     { href: "/kuendigung/kuendigung-betriebsuebergang", label: "Kündigung nach Betriebsübergang — Ihre Rechte" },
@@ -1198,6 +1208,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — BAG kippt Standardklauseln (5 AZR 108/25)" }
   ],
   "/kuendigungsschutzklage": [
+    { href: "/kuendigung-waehrend-krankheit", label: "Kündigung während Krankheit — darf der Arbeitgeber?" },
     { href: "/freistellung-nach-kuendigung", label: "Freistellung nach Kündigung — Standardklauseln unwirksam (BAG 5 AZR 108/25)" },
     { href: "/abfindung", label: "Abfindung nach Kündigung — Anspruch, Höhe & Verhandlung" },
     { href: "/abfindung-betriebsbedingte-kuendigung-hoehe", label: "Abfindung bei betriebsbedingter Kündigung — wie hoch?" },

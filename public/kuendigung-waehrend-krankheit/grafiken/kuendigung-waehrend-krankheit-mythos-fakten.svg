@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t1 d1" font-family="Raleway, Helvetica, Arial, sans-serif">
+  <title id="t1">Kündigung bei Krankheit: Mythos und Rechtslage</title>
+  <desc id="d1">Drei verbreitete Annahmen und die tatsächliche Rechtslage. Erstens: Krankgeschriebene sind nicht unkündbar, eine Kündigung ist auch während der Arbeitsunfähigkeit erlaubt. Zweitens: Auch im Krankenhaus geht eine Kündigung zu, sobald sie in den Briefkasten eingeworfen ist. Drittens: Mit der Kündigung endet der Lohn nicht sofort, bei Kündigung aus Anlass der Krankheit läuft die Entgeltfortzahlung bis zu sechs Wochen weiter (§ 8 EFZG).</desc>
+  <rect width="1200" height="675" fill="#F0EAD9"/>
+  <text x="48" y="80" font-size="42" font-weight="700" fill="#2A1F0E">Kündigung bei Krankheit: Mythos und Rechtslage</text>
+  <rect x="48" y="100" width="90" height="4" fill="#7A6528"/>
+  <text x="48" y="160" font-size="26" font-weight="700" fill="#7A6528" letter-spacing="3">MYTHOS</text>
+  <text x="640" y="160" font-size="26" font-weight="700" fill="#7A6528" letter-spacing="3">RECHTSLAGE</text>
+  <rect x="48" y="180" width="540" height="110" rx="10" fill="#FFFFFF" fill-opacity="0.55" stroke="#2A1F0E" stroke-opacity="0.25"/>
+  <text x="76" y="246" font-size="28" font-weight="500" fill="#2A1F0E">„Krankgeschrieben = unkündbar&#8220;</text>
+  <path d="M598 235 H620 M610 226 L622 235 L610 244" stroke="#7A6528" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="640" y="180" width="512" height="110" rx="10" fill="#7A6528"/>
+  <text x="668" y="228" font-size="27" font-weight="600" fill="#F0EAD9">Kündigung ist auch während</text>
+  <text x="668" y="264" font-size="27" font-weight="600" fill="#F0EAD9">der Krankschreibung erlaubt</text>
+  <rect x="48" y="310" width="540" height="110" rx="10" fill="#FFFFFF" fill-opacity="0.55" stroke="#2A1F0E" stroke-opacity="0.25"/>
+  <text x="76" y="358" font-size="28" font-weight="500" fill="#2A1F0E">„Im Krankenhaus geht mir</text>
+  <text x="76" y="394" font-size="28" font-weight="500" fill="#2A1F0E">keine Kündigung zu&#8220;</text>
+  <path d="M598 365 H620 M610 356 L622 365 L610 374" stroke="#7A6528" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="640" y="310" width="512" height="110" rx="10" fill="#7A6528"/>
+  <text x="668" y="358" font-size="27" font-weight="600" fill="#F0EAD9">Zugang mit Einwurf in</text>
+  <text x="668" y="394" font-size="27" font-weight="600" fill="#F0EAD9">den Briefkasten</text>
+  <rect x="48" y="440" width="540" height="110" rx="10" fill="#FFFFFF" fill-opacity="0.55" stroke="#2A1F0E" stroke-opacity="0.25"/>
+  <text x="76" y="488" font-size="28" font-weight="500" fill="#2A1F0E">„Mit der Kündigung endet</text>
+  <text x="76" y="524" font-size="28" font-weight="500" fill="#2A1F0E">sofort der Lohn&#8220;</text>
+  <path d="M598 495 H620 M610 486 L622 495 L610 504" stroke="#7A6528" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="640" y="440" width="512" height="110" rx="10" fill="#7A6528"/>
+  <text x="668" y="488" font-size="27" font-weight="600" fill="#F0EAD9">Entgeltfortzahlung bis zu</text>
+  <text x="668" y="524" font-size="27" font-weight="600" fill="#F0EAD9">6 Wochen (§ 8 EFZG)</text>
+  <text x="48" y="627" font-size="28" font-weight="700" fill="#2A1F0E">APOS</text>
+  <rect x="138" y="616" width="28" height="3" fill="#7A6528"/>
+  <text x="176" y="627" font-size="22" font-weight="500" fill="#2A1F0E" letter-spacing="5">LEGAL</text>
+  <text x="1152" y="627" font-size="18" fill="#2A1F0E" fill-opacity="0.75" text-anchor="end">§ 1 KSchG · § 8 EFZG · Stand: Oktober 2026</text>
+</svg>
