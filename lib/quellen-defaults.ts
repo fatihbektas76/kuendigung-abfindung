@@ -201,8 +201,8 @@ export const QUELLEN_KSCHG_ANWENDUNG: Quelle[] = [
     art: 'urteil',
   },
   {
-    text: 'BAG – 2 AZR 560/20 — Gemeinschaftsbetrieb mehrerer Unternehmen (einheitlicher Leitungsapparat)',
-    url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Aktenzeichen=2%20AZR%20560%2F20',
+    text: 'BAG – 2 AZR 540/20 — Organmitglieder (§ 14 KSchG)',
+    url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Aktenzeichen=2%20AZR%20540%2F20',
     art: 'urteil',
   },
   {
