@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     q: 'Wer wird beim Schwellenwert nicht mitgezählt?',
-    a: 'Nicht mitgezählt werden: Organmitglieder (GmbH-Geschäftsführer, Vorstandsmitglieder) sowie echte freie Mitarbeiter und Selbstständige. Ebenfalls ausgenommen sind Auszubildende (§ 23 Abs. 1 Satz 4 KSchG) sowie Leiharbeitnehmer, die nur außergewöhnlichen Personalbedarf abdecken. Scheinselbstständige sind hingegen mitzuzählen.',
+    a: 'Nicht mitgezählt werden: Organmitglieder (GmbH-Geschäftsführer, Vorstandsmitglieder) sowie echte freie Mitarbeiter und Selbstständige. Ebenfalls ausgenommen sind Auszubildende (§ 23 Abs. 1 Satz 2 und 3 KSchG — "ausschließlich der zu ihrer Berufsbildung Beschäftigten") sowie Leiharbeitnehmer, die nur außergewöhnlichen Personalbedarf abdecken. Scheinselbstständige sind hingegen mitzuzählen.',
   },
   {
     q: 'Wie werden Teilzeitbeschäftigte gezählt?',
@@ -90,7 +90,7 @@ interface Person {
 }
 
 const zaehlMatrix: Person[] = [
-  { gruppe: 'GmbH-Geschäftsführer / Organe', status: 'nicht', hinweis: 'Nehmen Arbeitgeberfunktion wahr — § 14 Abs. 1 KSchG' },
+  { gruppe: 'GmbH-Geschäftsführer / Organe', status: 'nicht', hinweis: 'Nehmen Arbeitgeberfunktion wahr — § 14 Abs. 1 KSchG · BAG 2 AZR 540/20' },
   { gruppe: 'Freie Mitarbeiter (echte)', status: 'nicht', hinweis: 'Kein Arbeitsverhältnis — sofern tatsächlich selbstständig' },
   { gruppe: 'Scheinselbstständige', status: 'mit', hinweis: 'Maßgeblich ist die tatsächliche Eingliederung' },
   { gruppe: 'Leiharbeitnehmer (Dauerbedarf)', status: 'mit', hinweis: 'BAG 24.01.2013 – 2 AZR 140/12' },
@@ -100,7 +100,7 @@ const zaehlMatrix: Person[] = [
   { gruppe: 'Mutterschutz', status: 'mit', hinweis: 'Bleiben Teil der Belegschaft' },
   { gruppe: 'Elternzeit', status: 'mit', hinweis: 'Keine Doppelzählung mit Vertretung' },
   { gruppe: 'Aushilfsarbeitnehmer', status: 'bedingt', hinweis: 'Nur bei regelmäßig besetzten Aushilfsstellen' },
-  { gruppe: 'Auszubildende', status: 'nicht', hinweis: '§ 23 Abs. 1 Satz 4 KSchG' },
+  { gruppe: 'Auszubildende', status: 'nicht', hinweis: '§ 23 Abs. 1 Satz 2 und 3 KSchG' },
   { gruppe: 'Gekündigter Arbeitnehmer', status: 'mit', hinweis: 'Auch wenn Stelle nicht wiederbesetzt wird' },
 ];
 
@@ -146,8 +146,8 @@ export default function KSchGAnwendungPage() {
           { name: '§ 23 KSchG — Geltungsbereich', url: 'https://dejure.org/gesetze/KSchG/23.html' },
           { name: 'BAG 24.02.2005 – 2 AZR 373/03 — Regelmäßige Beschäftigtenzahl', url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Datum=24.02.2005&Aktenzeichen=2%20AZR%20373%2F03' },
           { name: 'BAG 24.01.2013 – 2 AZR 140/12 (NZA 2013, 726) — Leiharbeitnehmer', url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Datum=24.01.2013&Aktenzeichen=2%20AZR%20140%2F12' },
+          { name: 'BAG – 2 AZR 540/20 — Organmitglieder (§ 14 KSchG)', url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Aktenzeichen=2%20AZR%20540%2F20' },
           { name: 'BAG 21.09.2006 – 2 AZR 840/05 (NZA 2007, 438) — Altarbeitnehmer', url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Datum=21.09.2006&Aktenzeichen=2%20AZR%20840%2F05' },
-          { name: 'BAG – 2 AZR 560/20 — Gemeinschaftsbetrieb', url: 'https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BAG&Aktenzeichen=2%20AZR%20560%2F20' },
         ]}
       />
 
@@ -398,9 +398,14 @@ export default function KSchGAnwendungPage() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Ein GmbH-Geschäftsführer nimmt Arbeitgeberfunktionen wahr und gilt nicht als
               Arbeitnehmer im Sinne von <NormLink href={NORM.kschg23}>&sect;&nbsp;23 KSchG</NormLink>
-              {' '}— er wird nicht mitgezählt (vgl.{' '}
-              <NormLink href={NORM.kschg14}>&sect;&nbsp;14 Abs.&nbsp;1 KSchG</NormLink>). Auch
-              echte freie Mitarbeiter und Selbstständige bleiben außer Betracht. Anders bei
+              {' '}— er wird nicht mitgezählt (<NormLink href={NORM.kschg14}>&sect;&nbsp;14
+              Abs.&nbsp;1 KSchG</NormLink>; dazu auch{' '}
+              <a
+                href={bagDejureUrl(null, '2 AZR 540/20')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold-dark no-underline hover:underline"
+              >BAG – 2 AZR 540/20</a>). Auch echte freie Mitarbeiter und Selbstständige bleiben außer Betracht. Anders bei
               <strong> Scheinselbstständigen</strong>: Wer tatsächlich weisungsgebunden,
               persönlich abhängig und in den Betrieb eingegliedert tätig ist, wird mitgezählt —
               unabhängig davon, was im Vertrag steht.
@@ -488,7 +493,7 @@ export default function KSchGAnwendungPage() {
               </li>
               <li>
                 <strong>Auszubildende</strong> werden nicht mitgezählt (
-                <NormLink href={NORM.kschg23}>&sect;&nbsp;23 Abs.&nbsp;1 Satz&nbsp;4 KSchG</NormLink>).
+                <NormLink href={NORM.kschg23}>&sect;&nbsp;23 Abs.&nbsp;1 Satz&nbsp;2 und 3 KSchG</NormLink> — &bdquo;ausschließlich der zu ihrer Berufsbildung Beschäftigten&ldquo;).
               </li>
               <li>
                 <strong>Der gekündigte Arbeitnehmer selbst</strong> zählt mit — auch dann, wenn
@@ -672,31 +677,14 @@ export default function KSchGAnwendungPage() {
               Buchhaltung, identische Geschäftsführung. In diesem Fall werden die Arbeitnehmer
               aller beteiligten Unternehmen für den Schwellenwert <strong>zusammengezählt</strong>.
             </p>
-            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-3">
-              Das Bundesarbeitsgericht hat die Voraussetzungen eines gemeinsamen Betriebs
-              mehrerer Unternehmen für die Anwendung des KSchG zuletzt im Urteil zum
-              Aktenzeichen <strong>2 AZR 560/20</strong> bestätigt:
-            </p>
-
-            <BagQuote az="2 AZR 560/20">
-              &bdquo;Ein gemeinsamer Betrieb mehrerer Unternehmen im Sinne von &sect;&nbsp;23 Abs.&nbsp;1
-              KSchG liegt vor, wenn die in einer Betriebsstätte vorhandenen materiellen und
-              immateriellen Betriebsmittel von mehreren Arbeitgebern gemeinsam für einen
-              einheitlichen arbeitstechnischen Zweck eingesetzt werden und die Verwendung der
-              Arbeitnehmer durch einen <strong>einheitlichen Leitungsapparat</strong>
-              institutionell geregelt ist.&ldquo;
-            </BagQuote>
-
-            <p className="text-[0.85rem] text-ink-muted mb-5">
-              Quelle:{' '}
-              <a
-                href={bagDejureUrl(null, '2 AZR 560/20')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gold-dark no-underline hover:underline"
-              >
-                BAG – 2 AZR 560/20 auf dejure.org &rarr;
-              </a>
+            <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
+              Nach ständiger Rechtsprechung des Bundesarbeitsgerichts liegt ein gemeinsamer
+              Betrieb mehrerer Unternehmen im Sinne von <NormLink href={NORM.kschg23}>&sect;&nbsp;23
+              Abs.&nbsp;1 KSchG</NormLink> vor, wenn die in einer Betriebsstätte vorhandenen
+              materiellen und immateriellen Betriebsmittel von mehreren Arbeitgebern
+              gemeinsam für einen einheitlichen arbeitstechnischen Zweck eingesetzt werden und
+              die Verwendung der Arbeitnehmer durch einen <strong>einheitlichen Leitungsapparat</strong>
+              institutionell geregelt ist.
             </p>
 
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
