@@ -181,7 +181,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
       {/* ═══ 2b. Definitionsbox Kündigungsschutzklage ═══ */}
       <section className="py-3 px-4 sm:px-8 mb-3">
         <div className="max-w-content mx-auto">
-          <DefinitionBox term="Kündigungsschutzklage" definition="Die Klage vor dem Arbeitsgericht auf Feststellung, dass eine Kündigung unwirksam ist. Die Klagefrist beträgt 3 Wochen ab Zugang der Kündigung (§ 4 KSchG). In ca. 80 % der Fälle endet das Verfahren mit einem Vergleich — in der Regel einer Abfindung." />
+          <DefinitionBox term="Kündigungsschutzklage" definition="Die Klage vor dem Arbeitsgericht auf Feststellung, dass eine Kündigung unwirksam ist. Die Klagefrist beträgt 3 Wochen ab Zugang der Kündigung (§ 4 KSchG); wird sie versäumt, gilt die Kündigung in der Regel als wirksam — eine nachträgliche Zulassung nach § 5 KSchG ist nur in engen Ausnahmefällen möglich. In ca. 80 % der Fälle endet das Verfahren mit einem Vergleich — in der Regel einer Abfindung." />
         </div>
       </section>
 
@@ -697,7 +697,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
               </p>
               <p className="text-sm text-gray-500">
                 <span className="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{' '}
-                5,0 &middot; 68 Bewertungen auf anwalt.de
+                5,0 &middot; 69 Bewertungen auf anwalt.de
               </p>
             </div>
           </div>

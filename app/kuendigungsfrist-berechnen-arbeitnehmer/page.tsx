@@ -94,7 +94,6 @@ const TOC_ENTRIES = [
   { id: "schriftform-zugang-und-der-teuerste-fehler", label: "Schriftform, Zugang und der teuerste Fehler" },
   { id: "konkrete-zahl-oder-komplette-ubersicht-sie-entscheiden", label: "Konkrete Zahl oder komplette Übersicht — Sie entscheiden" },
   { id: "fragen-zur-kundigungsfrist-als-arbeitnehmer", label: "Fragen zur Kündigungsfrist als Arbeitnehmer" },
-  { id: "unsicher-welche-frist-fur-sie-gilt", label: "Unsicher, welche Frist für Sie gilt?" },
 ];
 
 export default function KuendigungsfristBerechnenArbeitnehmerPage() {

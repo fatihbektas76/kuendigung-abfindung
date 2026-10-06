@@ -19,8 +19,10 @@ export default function Situations() {
               <h3 className="font-serif text-[1.2rem] font-bold mb-2.5">Sie wurden gekündigt</h3>
               <p className="text-[0.94rem] text-ink-light leading-relaxed">
                 Sie haben eine Kündigung erhalten? Die Frist für eine Kündigungsschutzklage beträgt nur
-                3 Wochen ab Zugang (§4 KSchG). Wir prüfen, ob Ihre Kündigung wirksam ist — und setzen
-                die bestmögliche Abfindung für Sie durch.
+                3 Wochen ab Zugang (§ 4 KSchG). Danach ist die Kündigung in der Regel unangreifbar —
+                nur in engen Ausnahmefällen ist eine nachträgliche Zulassung nach § 5 KSchG möglich.
+                Wir prüfen, ob Ihre Kündigung wirksam ist — und setzen die bestmögliche Abfindung
+                für Sie durch.
               </p>
               <div className="mt-3.5 text-[0.86rem] text-ink-muted leading-relaxed">
                 <strong className="text-ink-light font-semibold">Typische Fälle:</strong> Betriebsbedingte

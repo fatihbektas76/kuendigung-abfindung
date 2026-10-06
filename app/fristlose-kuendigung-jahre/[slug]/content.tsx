@@ -91,7 +91,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
             <TldrBox items={[
               'Über 80 % aller fristlosen Kündigungen sind unwirksam — Ihre Chancen stehen gut.',
               <>Ausschlussfrist für den Arbeitgeber: 2 Wochen ab Kenntnis des Grundes (<NormLink href={NORM.bgb626}>§&nbsp;626 Abs.&nbsp;2 BGB</NormLink>).</>,
-              <>Ihre Klagefrist: 3 Wochen ab Zugang (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>) — danach wird die Kündigung in der Regel wirksam.</>,
+              <>Ihre Klagefrist: 3 Wochen ab Zugang (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>). Danach ist die Kündigung in der Regel unangreifbar — eine nachträgliche Zulassung nach <NormLink href={NORM.kschg5}>§&nbsp;5 KSchG</NormLink> ist nur in engen Ausnahmefällen möglich.</>,
               `Abfindungschance bei ${yl}: Faustformel 0,5 × Gehalt × ${ylKurz}, bei unwirksamer fristloser Kündigung oft höher.`,
               <>Wichtiger Grund (<NormLink href={NORM.bgb626}>§&nbsp;626 Abs.&nbsp;1 BGB</NormLink>) wird von Gerichten sehr streng geprüft — viele Kündigungen scheitern daran.</>,
             ]} />
@@ -633,7 +633,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
               </p>
               <p className="text-sm text-gray-500">
                 <span className="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{' '}
-                5,0 &middot; 68 Bewertungen auf anwalt.de
+                5,0 &middot; 69 Bewertungen auf anwalt.de
               </p>
             </div>
           </div>

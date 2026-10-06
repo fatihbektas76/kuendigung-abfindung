@@ -118,9 +118,7 @@ const TOC_ENTRIES = [
   { id: "sonderfall-gemeinschaftsbetrieb-mehrerer-unternehmen", label: "Sonderfall: Gemeinschaftsbetrieb mehrerer Unternehmen" },
   { id: "wer-tragt-die-beweislast-fur-den-schwellenwert", label: "Wer trägt die Beweislast für den Schwellenwert?" },
   { id: "was-bedeutet-die-nicht-anwendbarkeit-konkret", label: "Was bedeutet die (Nicht-)Anwendbarkeit konkret?" },
-  { id: "unsicher-ob-das-kschg-bei-ihnen-greift", label: "Unsicher, ob das KSchG bei Ihnen greift?" },
   { id: "anwendung-des-kundigungsschutzgesetzes", label: "Anwendung des Kündigungsschutzgesetzes" },
-  { id: "wartezeit-und-schwellenwert-wir-klaren-beides", label: "Wartezeit und Schwellenwert — wir klären beides." },
 ];
 
 export default function KSchGAnwendungPage() {

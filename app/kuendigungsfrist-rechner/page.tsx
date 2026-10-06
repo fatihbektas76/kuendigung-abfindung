@@ -114,9 +114,6 @@ const TOC_ENTRIES = [
   { id: "wie-wird-die-kundigungsfrist-berechnet", label: "Wie wird die Kündigungsfrist berechnet?" },
   { id: "wann-gelten-langere-kundigungsfristen", label: "Wann gelten längere Kündigungsfristen?" },
   { id: "kundigung-erhalten-die-ersten-3-schritte", label: "Kündigung erhalten — die ersten 3 Schritte" },
-  { id: "frist-bekannt-und-jetzt", label: "Frist bekannt — und jetzt?" },
-  { id: "haufige-fragen-zur-kundigungsfrist-berechnen", label: "Häufige Fragen zur Kündigungsfrist berechnen" },
-  { id: "kundigung-erhalten-was-jetzt-konkret-tun", label: "Kündigung erhalten — was jetzt konkret tun?" },
 ];
 
 export default function KuendigungsfristRechnerPage() {
@@ -692,7 +689,7 @@ export default function KuendigungsfristRechnerPage() {
           </Link>
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Antwort in 24h</span>
-            <span>&#10003; Über 68 Fünf-Sterne-Bewertungen</span>
+            <span>&#10003; Über 69 Fünf-Sterne-Bewertungen</span>
           </div>
         </div>
       </section>

@@ -88,7 +88,6 @@ const TOC_ENTRIES = [
   { id: "warum-ist-die-klausel-unwirksam", label: "Warum ist die Klausel unwirksam?" },
   { id: "wann-darf-der-arbeitgeber-trotzdem-freistellen", label: "Wann darf der Arbeitgeber trotzdem freistellen?" },
   { id: "dienstwagen-weg-trotz-freistellung-was-ihnen-zusteht", label: "Dienstwagen weg trotz Freistellung — was Ihnen zusteht" },
-  { id: "was-sie-jetzt-tun-sollten", label: "Was Sie jetzt tun sollten" },
   { id: "freistellungsklausel-und-dienstwagenruckgabe-prufen-lassen", label: "Freistellungsklausel und Dienstwagenrückgabe prüfen lassen" },
   { id: "fragen-zur-freistellung-nach-kundigung", label: "Fragen zur Freistellung nach Kündigung" },
   { id: "freistellung-erhalten-ausschlussfristen-laufen-bereits", label: "Freistellung erhalten? Ausschlussfristen laufen bereits." },

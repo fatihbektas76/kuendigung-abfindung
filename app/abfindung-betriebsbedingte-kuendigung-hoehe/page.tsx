@@ -85,8 +85,6 @@ const TOC_ENTRIES = [
   { id: "wovon-hangt-die-hohe-der-abfindung-in-der-verhandlung-ab", label: "Wovon hängt die Höhe der Abfindung in der Verhandlung ab?" },
   { id: "welche-frist-muss-ich-einhalten", label: "Welche Frist muss ich einhalten?" },
   { id: "muss-ich-auf-die-abfindung-steuern-und-sozialabgaben-zahlen", label: "Muss ich auf die Abfindung Steuern und Sozialabgaben zahlen?" },
-  { id: "was-sollte-ich-nach-einer-betriebsbedingten-kundigung-jetzt-", label: "Was sollte ich nach einer betriebsbedingten Kündigung jetzt tun?" },
-  { id: "haufige-fragen-zur-abfindung-bei-betriebsbedingter-kundigung", label: "Häufige Fragen zur Abfindung bei betriebsbedingter Kündigung" },
 ];
 
 export default function AbfindungBetriebsbedingteHoehePage() {

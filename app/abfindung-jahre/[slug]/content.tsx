@@ -136,7 +136,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               `Faustformel: 0,5 × Bruttomonatsgehalt × ${ylKurz} = ${y * 0.5} Monatsgehälter als Abfindung.`,
               <>Kündigungsfrist bei {yl}: {entry.kuendigungsfrist} (<NormLink href={NORM.bgb622}>§&nbsp;622 BGB</NormLink>).</>,
               'Kein gesetzlicher Anspruch auf Abfindung — über 80 % werden per Klage oder Vergleich verhandelt.',
-              <>Klagefrist: 3 Wochen ab Zugang der Kündigung (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>) — keine Verlängerung möglich.</>,
+              <>Klagefrist: 3 Wochen ab Zugang der Kündigung (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>). Danach ist die Kündigung in der Regel unangreifbar — eine nachträgliche Zulassung nach <NormLink href={NORM.kschg5}>§&nbsp;5 KSchG</NormLink> ist nur in engen Ausnahmefällen möglich.</>,
               <>Steuervorteil: Abfindung kann per Fünftelregelung (<NormLink href={NORM.estg34}>§&nbsp;34 EStG</NormLink>) begünstigt versteuert werden.</>,
             ]} />
           </div>
@@ -784,7 +784,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               </p>
               <p className="text-sm text-gray-500">
                 <span className="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{' '}
-                5,0 &middot; 68 Bewertungen auf anwalt.de
+                5,0 &middot; 69 Bewertungen auf anwalt.de
               </p>
             </div>
           </div>

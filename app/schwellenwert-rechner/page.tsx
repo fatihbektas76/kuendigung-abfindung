@@ -23,11 +23,8 @@ const TOC_ENTRIES = [
   { id: "mitarbeiter-im-betrieb", label: "Mitarbeiter im Betrieb" },
   { id: "ergebnis", label: "Ergebnis" },
   { id: "wie-wird-der-schwellenwert-berechnet", label: "Wie wird der Schwellenwert berechnet?" },
-  { id: "kschg-gilt-nicht-sie-haben-trotzdem-rechte", label: "KSchG gilt nicht? Sie haben trotzdem Rechte." },
   { id: "wann-habe-ich-auch-ohne-kschg-kundigungsschutz", label: "Wann habe ich auch ohne KSchG Kündigungsschutz?" },
   { id: "leiharbeitnehmer-und-schwellenwert-was-zahlt-wirklich", label: "Leiharbeitnehmer und Schwellenwert — was zählt wirklich?" },
-  { id: "haufige-fragen-zum-schwellenwert-sect23-kschg", label: "Häufige Fragen zum Schwellenwert &sect;23 KSchG" },
-  { id: "gekundigt-wir-prufen-ihren-schutz", label: "Gekündigt? Wir prüfen Ihren Schutz." },
 ];
 
 export default function SchwellenwertRechnerPage() {
