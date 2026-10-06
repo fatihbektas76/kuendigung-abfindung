@@ -338,7 +338,7 @@ export default function KuendigungPruefenPage() {
           {'★★★★★'}
         </div>
         <div className="text-[0.82rem] text-ink-muted mt-1">
-          5,0 &middot; 68 Bewertungen
+          5,0 &middot; 69 Bewertungen
         </div>
       </div>
     </aside>

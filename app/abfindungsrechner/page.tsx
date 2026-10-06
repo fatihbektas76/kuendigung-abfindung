@@ -30,7 +30,6 @@ const TOC_ENTRIES = [
   { id: "wie-wird-die-abfindung-berechnet", label: "Wie wird die Abfindung berechnet?" },
   { id: "wann-habe-ich-anspruch-auf-eine-hohere-abfindung", label: "Wann habe ich Anspruch auf eine höhere Abfindung?" },
   { id: "wann-lohnt-sich-ein-anwalt-bei-der-abfindung", label: "Wann lohnt sich ein Anwalt bei der Abfindung?" },
-  { id: "haufige-fragen-zur-abfindung", label: "Häufige Fragen zur Abfindung" },
   { id: "kundigung-erhalten-abfindung-maximieren", label: "Kündigung erhalten? Abfindung maximieren." },
 ];
 

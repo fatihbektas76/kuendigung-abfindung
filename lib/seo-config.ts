@@ -62,7 +62,7 @@ export const SEO_CONFIG = {
 
   rating: {
     ratingValue: '5.0',
-    reviewCount: '68',
+    reviewCount: '69',
     bestRating: '5',
     worstRating: '1',
   },

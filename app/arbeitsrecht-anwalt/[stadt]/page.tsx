@@ -442,7 +442,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             </div>
             <div className="flex items-center gap-2 pt-3 border-t border-gray-100">
               <span className="text-[#BA7517] tracking-wide">★★★★★</span>
-              <span className="text-xs text-gray-600"><strong>5,0 / 5,0</strong> – 68 Bewertungen auf anwalt.de</span>
+              <span className="text-xs text-gray-600"><strong>5,0 / 5,0</strong> – 69 Bewertungen auf anwalt.de</span>
             </div>
           </div>
         </div>

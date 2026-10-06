@@ -162,7 +162,6 @@ const TOC_ENTRIES = [
   { id: "warum-diese-tools", label: "Warum diese Tools?" },
   { id: "so-funktionieren-unsere-tools", label: "So funktionieren unsere Tools" },
   { id: "fragen-zu-unseren-tools", label: "Fragen zu unseren Tools" },
-  { id: "noch-unsicher-wir-helfen-personlich", label: "Noch unsicher? Wir helfen persönlich." },
 ];
 
 export default function ToolsPage() {

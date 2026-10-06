@@ -46,8 +46,6 @@ const TOC_ENTRIES = [
   { id: "wann-habe-ich-anspruch-auf-uberstundenvergutung", label: "Wann habe ich Anspruch auf Überstundenvergütung?" },
   { id: "was-ist-eine-pauschalabgeltungsklausel-und-wann-ist-sie-unwi", label: "Was ist eine Pauschalabgeltungsklausel — und wann ist sie unwirksam?" },
   { id: "uberstunden-nicht-ausgezahlt", label: "Überstunden nicht ausgezahlt?" },
-  { id: "haufige-fragen-zu-uberstunden", label: "Häufige Fragen zu Überstunden" },
-  { id: "ihr-ergebnis-liegt-vor-was-jetzt", label: "Ihr Ergebnis liegt vor — was jetzt?" },
 ];
 
 export default function UeberstundenrechnerPage() {
@@ -556,7 +554,7 @@ export default function UeberstundenrechnerPage() {
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Kein Kostenrisiko</span>
             <span>&#10003; Antwort in 24h</span>
-            <span>&#10003; Über 68 Fünf-Sterne-Bewertungen</span>
+            <span>&#10003; Über 69 Fünf-Sterne-Bewertungen</span>
           </div>
         </div>
       </section>

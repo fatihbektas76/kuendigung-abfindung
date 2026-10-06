@@ -238,7 +238,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
                 Kündigung jetzt kostenlos prüfen &rarr;
               </a>
               <p className="text-[0.78rem] text-ink-muted text-center mt-3">
-                ★★★★★ 68 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
+                ★★★★★ 69 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
               </p>
             </div>
           </div>
@@ -468,7 +468,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
             Jetzt kostenlose Erstberatung sichern
           </h2>
           <p className="text-white/60 text-[0.92rem] mb-6">
-            ★★★★★ &middot; 5,0 &middot; 68 Bewertungen auf anwalt.de
+            ★★★★★ &middot; 5,0 &middot; 69 Bewertungen auf anwalt.de
           </p>
           <div className="flex justify-center gap-6 mb-8 text-[0.88rem] text-white/80 flex-wrap">
             <span className="flex items-center gap-2">

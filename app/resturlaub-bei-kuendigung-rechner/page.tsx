@@ -137,7 +137,6 @@ function berechneResturlaub(input: {
 /* ─── UI ─── */
 
 const TOC_ENTRIES = [
-  { id: "jetzt-resturlaub-berechnen", label: "Jetzt Resturlaub berechnen" },
   { id: "so-funktioniert-die-resturlaubs-berechnung-nach-sectnbsp5-bu", label: "So funktioniert die Resturlaubs-Berechnung nach &sect;&nbsp;5 BUrlG" },
   { id: "nachste-schritte-bei-kundigung", label: "Nächste Schritte bei Kündigung" },
   { id: "fragen-zum-resturlaub-bei-kundigung", label: "Fragen zum Resturlaub bei Kündigung" },

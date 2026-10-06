@@ -123,7 +123,6 @@ const TOC_ENTRIES = [
   { id: "wer-ist-bei-krankheit-besonders-geschutzt", label: "Wer ist bei Krankheit besonders geschützt?" },
   { id: "typische-fehler-aus-der-anwaltlichen-praxis", label: "Typische Fehler aus der anwaltlichen Praxis" },
   { id: "fazit-krankheit-schutzt-nicht-fristen-schon", label: "Fazit: Krankheit schützt nicht, Fristen schon" },
-  { id: "haufige-fragen-zur-kundigung-wahrend-krankheit", label: "Häufige Fragen zur Kündigung während Krankheit" },
 ];
 
 export default function KuendigungWaehrendKrankheitPage() {

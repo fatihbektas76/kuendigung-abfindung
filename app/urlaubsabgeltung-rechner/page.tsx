@@ -77,8 +77,6 @@ const TOC_ENTRIES = [
   { id: "gesetzlicher-mindesturlaub-nach-burlg-ubersicht", label: "Gesetzlicher Mindesturlaub nach BUrlG — Übersicht" },
   { id: "urlaubsabgeltung-berechnen-das-mussen-sie-wissen", label: "Urlaubsabgeltung berechnen — Das müssen Sie wissen" },
   { id: "resturlaub-nicht-ausgezahlt", label: "Resturlaub nicht ausgezahlt?" },
-  { id: "haufige-fragen-zur-urlaubsabgeltung", label: "Häufige Fragen zur Urlaubsabgeltung" },
-  { id: "ergebnis-berechnet-was-jetzt", label: "Ergebnis berechnet — was jetzt?" },
 ];
 
 export default function UrlaubsabgeltungRechnerPage() {
@@ -728,7 +726,7 @@ export default function UrlaubsabgeltungRechnerPage() {
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Antwort in 24h</span>
             <span>&#10003; Kein Kostenrisiko</span>
-            <span>&#10003; 68 Fünf-Sterne-Bewertungen auf anwalt.de</span>
+            <span>&#10003; 69 Fünf-Sterne-Bewertungen auf anwalt.de</span>
           </div>
         </div>
       </section>

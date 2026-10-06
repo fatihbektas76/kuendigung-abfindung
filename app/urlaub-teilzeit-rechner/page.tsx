@@ -60,7 +60,6 @@ const TOC_ENTRIES = [
   { id: "was-gilt-bei-wechsel-von-vollzeit-auf-teilzeit", label: "Was gilt bei Wechsel von Vollzeit auf Teilzeit?" },
   { id: "urlaub-bei-teilzeit-das-mussen-sie-wissen", label: "Urlaub bei Teilzeit — Das müssen Sie wissen" },
   { id: "urlaubsanspruch-nicht-gewahrt", label: "Urlaubsanspruch nicht gewährt?" },
-  { id: "haufige-fragen-zum-urlaubsanspruch-in-teilzeit", label: "Häufige Fragen zum Urlaubsanspruch in Teilzeit" },
   { id: "ergebnis-berechnet-weitere-anspruche-prufen", label: "Ergebnis berechnet — weitere Ansprüche prüfen?" },
 ];
 
@@ -411,7 +410,7 @@ export default function UrlaubTeilzeitRechnerPage() {
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Antwort in 24h</span>
             <span>&#10003; Kein Kostenrisiko</span>
-            <span>&#10003; 68 Fünf-Sterne-Bewertungen auf anwalt.de</span>
+            <span>&#10003; 69 Fünf-Sterne-Bewertungen auf anwalt.de</span>
           </div>
         </div>
       </section>
