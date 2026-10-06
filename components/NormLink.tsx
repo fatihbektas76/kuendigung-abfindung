@@ -34,10 +34,12 @@ export const NORM = {
   kschg1a: 'https://dejure.org/gesetze/KSchG/1a.html',
   kschg4: 'https://dejure.org/gesetze/KSchG/4.html',
   kschg5: 'https://dejure.org/gesetze/KSchG/5.html',
+  kschg7: 'https://dejure.org/gesetze/KSchG/7.html',
   kschg9: 'https://dejure.org/gesetze/KSchG/9.html',
   kschg10: 'https://dejure.org/gesetze/KSchG/10.html',
   kschg14: 'https://dejure.org/gesetze/KSchG/14.html',
   kschg15: 'https://dejure.org/gesetze/KSchG/15.html',
+  kschg17: 'https://dejure.org/gesetze/KSchG/17.html',
   kschg23: 'https://dejure.org/gesetze/KSchG/23.html',
   // BGB
   bgb242: 'https://dejure.org/gesetze/BGB/242.html',
