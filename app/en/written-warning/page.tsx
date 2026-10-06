@@ -3,6 +3,8 @@ import Link from 'next/link';
 import TopicHero from '@/components/en/TopicHero';
 import ContactForm from '@/components/en/ContactForm';
 import CTA from '@/components/en/CTA';
+import NormLink, { NORM, bagDejureUrl } from '@/components/NormLink';
+import BagQuote from '@/components/BagQuote';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 const PAGE_URL = `${SEO_CONFIG.baseUrl}/en/written-warning/`;
@@ -48,7 +50,19 @@ const FAQS = [
   },
   {
     q: 'When does a warning lose its effect?',
-    a: 'There is no formal expiry, but case law accepts that warnings lose their warning-function over time. After roughly 2–3 years a stale Abmahnung normally cannot be used as the basis for a conduct dismissal. The employer would need a fresh warning.',
+    a: 'There is no formal expiry, but case law accepts that warnings lose their warning-function over time. After roughly 2–3 years a stale Abmahnung normally cannot be used as the basis for a conduct dismissal. The employer would need a fresh warning. BAG 10 October 2002 — 2 AZR 418/01 — confirms this timeline for standard breaches.',
+  },
+  {
+    q: 'What is the difference between Ermahnung and Abmahnung?',
+    a: 'An Ermahnung is a lighter rebuke without a warning of dismissal — it merely reminds you that a specific behaviour is undesired. An Abmahnung, by contrast, must contain the explicit threat that repetition will trigger consequences for the employment relationship, including dismissal. Only the Abmahnung carries the full warning function required before a conduct-based dismissal.',
+  },
+  {
+    q: 'Can a warning be issued verbally?',
+    a: 'Yes, in principle. German law does not require a written form (§ 125 BGB does not apply). But a verbal Abmahnung is almost impossible for the employer to prove in court — which is why serious cases are always issued in writing. If you are warned verbally, note down the exact wording, time, place and witnesses immediately.',
+  },
+  {
+    q: 'Does the works council have a say?',
+    a: 'The works council has no veto over the issuance of an Abmahnung (unlike dismissals under § 102 BetrVG). You do, however, have a statutory right under § 83 BetrVG to view your personnel file in the presence of a works-council member, and to request that a counter-statement be added.',
   },
 ];
 
@@ -104,9 +118,15 @@ export default function WrittenWarningEn() {
               and detail, (2) demand specific corrective behaviour, and (3) expressly threaten
               dismissal on repetition. Vague accusations, collective warnings or warnings without
               a clear behavioural demand are normally invalid and can be removed from your
-              personnel file. Removal is grounded in <strong>§§ 242, 1004 BGB analog</strong>.
-              Where the Abmahnung is groundless, fight it now — before it can feed a conduct-based
-              dismissal.
+              personnel file. Removal is grounded in{' '}
+              <strong>
+                <NormLink href={NORM.bgb242}>§&nbsp;242</NormLink>,{' '}
+                <a href="https://dejure.org/gesetze/BGB/1004.html" target="_blank" rel="noopener noreferrer" className="text-gold-dark no-underline hover:underline">
+                  §&nbsp;1004 BGB
+                </a>
+              </strong>{' '}
+              analog. Where the Abmahnung is groundless, fight it now — before it can feed a
+              conduct-based dismissal.
             </p>
             <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
               <strong>Written and reviewed by</strong> Fatih Bektas, German employment-law specialist
@@ -115,8 +135,42 @@ export default function WrittenWarningEn() {
           </div>
         </section>
 
-        {/* When is it invalid */}
+        {/* The three functions */}
         <section className="py-16 px-8 bg-cream">
+          <div className="max-w-content mx-auto max-w-[860px]">
+            <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-5">
+              The three functions a valid Abmahnung must fulfil
+            </h2>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-6">
+              German labour courts review every warning against three functions. The warning must
+              satisfy <strong>all three</strong>. A warning that misses any one of them is
+              invalid — and can be removed from your personnel file.
+            </p>
+            <ol className="list-decimal pl-6 space-y-5 text-[1rem] text-ink-light leading-relaxed">
+              <li>
+                <strong className="text-ink">Documentation (Dokumentationsfunktion).</strong>{' '}
+                The warning must describe <em>one</em> specific breach with date, time, place and
+                concrete factual detail. Collective warnings or vague references to
+                &ldquo;repeated misconduct&rdquo; fail this requirement.
+              </li>
+              <li>
+                <strong className="text-ink">Instruction (Rügefunktion).</strong>{' '}
+                The warning must label the described behaviour as a breach of contractual duty and
+                demand corrective behaviour for the future. Simple information or a neutral
+                enquiry is not enough.
+              </li>
+              <li>
+                <strong className="text-ink">Warning (Warnfunktion).</strong>{' '}
+                The warning must expressly state that repetition will trigger consequences for the
+                employment relationship, including dismissal. Without this explicit threat, the
+                warning cannot ground a later conduct-based dismissal.
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        {/* When is it invalid */}
+        <section className="py-16 px-8 bg-white">
           <div className="max-w-content mx-auto">
             <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-6">
               When is a written warning invalid?
@@ -148,12 +202,49 @@ export default function WrittenWarningEn() {
                   d: 'Issued by a person without HR authority — challengeable under § 174 BGB if rejected without delay.',
                 },
               ].map((item) => (
-                <div key={item.t} className="p-6 bg-white border border-border-light rounded">
+                <div key={item.t} className="p-6 bg-cream border border-border-light rounded">
                   <h3 className="font-serif text-[1.05rem] font-bold mb-2">{item.t}</h3>
                   <p className="text-[0.92rem] text-ink-light leading-relaxed m-0">{item.d}</p>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* BAG case law */}
+        <section className="py-16 px-8 bg-cream">
+          <div className="max-w-content mx-auto max-w-[860px]">
+            <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
+              Leading case
+            </div>
+            <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-5">
+              BAG 10 October 2002 — warnings lose their effect over time
+            </h2>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-6">
+              The Federal Labour Court has clarified that a warning has no fixed expiry date but
+              loses its warning-function as time passes without repeated misconduct. The exact
+              timeline depends on the severity of the breach — for standard breaches, roughly two
+              to three years is the accepted outer limit. The practical consequence: a conduct
+              dismissal based on an old warning rarely survives in court.
+            </p>
+            <BagQuote az="2 AZR 418/01" datum="10.10.2002">
+              Eine Abmahnung verliert ihre Warnfunktion, wenn der Arbeitnehmer über längere Zeit
+              beanstandungsfrei gearbeitet hat. Die Dauer bemisst sich nach Schwere und Häufigkeit
+              der Pflichtverletzung.
+            </BagQuote>
+            <p className="text-[0.95rem] text-ink-light leading-relaxed italic mt-5 mb-0">
+              <strong>English rendering:</strong> A written warning loses its warning-function once
+              the employee has performed without complaint over an extended period. The duration
+              is measured by the severity and frequency of the breach.{' '}
+              <a
+                href={bagDejureUrl('10.10.2002', '2 AZR 418/01')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold-dark no-underline hover:underline"
+              >
+                Read the judgment on dejure.org →
+              </a>
+            </p>
           </div>
         </section>
 
@@ -182,8 +273,36 @@ export default function WrittenWarningEn() {
           </div>
         </section>
 
-        {/* Cross-links */}
+        {/* Personnel-file viewing rights */}
         <section className="py-16 px-8 bg-cream">
+          <div className="max-w-content mx-auto max-w-[860px]">
+            <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-5">
+              Your statutory right to view the personnel file
+            </h2>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-5">
+              Independent of any dispute, you have a statutory right under{' '}
+              <NormLink href={NORM.betrvg83}>§&nbsp;83 BetrVG</NormLink> to view your personnel
+              file. The employer must grant access on request and may not delay without good
+              cause. You may also:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-[1rem] text-ink-light leading-relaxed">
+              <li>Bring a works-council member to the viewing session.</li>
+              <li>Request copies of any documents, including every Abmahnung on file.</li>
+              <li>
+                Have a written counter-statement (<em>Gegendarstellung</em>) added to the file,
+                which the employer must preserve alongside the original document.
+              </li>
+              <li>
+                Request removal of entries that are factually wrong, no longer relevant or
+                otherwise unlawful — the removal demand is the first step before any court
+                action.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Cross-links */}
+        <section className="py-16 px-8 bg-white">
           <div className="max-w-content mx-auto">
             <h2 className="font-serif text-[1.4rem] font-bold mb-5">Related topics</h2>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
@@ -198,7 +317,7 @@ export default function WrittenWarningEn() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block p-5 border border-border-light rounded bg-white text-[0.95rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
+                  className="block p-5 border border-border-light rounded bg-cream text-[0.95rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
                 >
                   {link.label} &rarr;
                 </Link>
@@ -208,7 +327,7 @@ export default function WrittenWarningEn() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 px-8 bg-white" id="faq">
+        <section className="py-16 px-8 bg-cream" id="faq">
           <div className="max-w-content mx-auto max-w-[860px]">
             <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
               FAQ
