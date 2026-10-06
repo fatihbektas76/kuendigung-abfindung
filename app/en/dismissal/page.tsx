@@ -3,6 +3,7 @@ import Link from 'next/link';
 import TopicHero from '@/components/en/TopicHero';
 import ContactForm from '@/components/en/ContactForm';
 import CTA from '@/components/en/CTA';
+import NormLink, { NORM } from '@/components/NormLink';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 const PAGE_URL = `${SEO_CONFIG.baseUrl}/en/dismissal/`;
@@ -121,12 +122,14 @@ export default function DismissalEn() {
         <section className="py-12 px-8 bg-white">
           <div className="max-w-content mx-auto max-w-[820px]">
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
-              In Germany, a dismissal must be in writing with a handwritten signature (§&nbsp;623 BGB)
-              and — where the Dismissal Protection Act (KSchG) applies — must be socially justified
-              on conduct, person or operational grounds (§ 1 KSchG). The KSchG kicks in once you have
-              been employed for more than 6 months at an employer with more than 10 staff. From
-              receipt of the dismissal letter you have <strong>3 weeks</strong> to file an
-              unfair-dismissal claim at the competent Arbeitsgericht (§&nbsp;4 KSchG). Missed
+              In Germany, a dismissal must be in writing with a handwritten signature
+              (<NormLink href={NORM.bgb623}>§&nbsp;623 BGB</NormLink>) and — where the Dismissal
+              Protection Act (KSchG) applies — must be socially justified on conduct, person or
+              operational grounds (<NormLink href={NORM.kschg1}>§&nbsp;1 KSchG</NormLink>). The
+              KSchG kicks in once you have been employed for more than 6 months at an employer
+              with more than 10 staff. From receipt of the dismissal letter you have{' '}
+              <strong>3 weeks</strong> to file an unfair-dismissal claim at the competent
+              Arbeitsgericht (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>). Missed
               deadlines are almost always fatal.
             </p>
             <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
@@ -166,8 +169,54 @@ export default function DismissalEn() {
           </div>
         </section>
 
-        {/* What to do */}
+        {/* Form & procedure requirements */}
         <section className="py-16 px-8 bg-white">
+          <div className="max-w-content mx-auto max-w-[860px]">
+            <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-5">
+              Formal requirements — where many dismissals already fail
+            </h2>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-6">
+              A substantial share of German dismissals is invalid for formal reasons alone, before
+              any substantive dismissal-protection analysis is reached. Check these three points
+              on your dismissal letter first:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="p-6 bg-cream border-l-4 border-gold rounded">
+                <h3 className="font-serif text-[1.1rem] font-bold mb-2">Written form</h3>
+                <p className="text-[0.92rem] text-ink-light leading-relaxed m-0">
+                  Original handwritten signature required
+                  (<NormLink href={NORM.bgb623}>§&nbsp;623 BGB</NormLink>). Email, PDF, SMS,
+                  WhatsApp, fax or copy are invalid. The dismissal does not take effect at all —
+                  the deadline does not even start to run.
+                </p>
+              </div>
+              <div className="p-6 bg-cream border-l-4 border-gold rounded">
+                <h3 className="font-serif text-[1.1rem] font-bold mb-2">Signatory authority</h3>
+                <p className="text-[0.92rem] text-ink-light leading-relaxed m-0">
+                  The signatory must have power to dismiss (managing director, procurist, HR with
+                  written power of attorney). If not, reject the dismissal{' '}
+                  <strong>without delay</strong> under{' '}
+                  <a href="https://dejure.org/gesetze/BGB/174.html" target="_blank" rel="noopener noreferrer" className="text-gold-dark no-underline hover:underline">
+                    §&nbsp;174 BGB
+                  </a>{' '}
+                  (within days, not weeks).
+                </p>
+              </div>
+              <div className="p-6 bg-cream border-l-4 border-gold rounded">
+                <h3 className="font-serif text-[1.1rem] font-bold mb-2">Works-council consultation</h3>
+                <p className="text-[0.92rem] text-ink-light leading-relaxed m-0">
+                  If a works council exists, the employer must consult it before dismissing
+                  (<NormLink href={NORM.betrvg102}>§&nbsp;102 BetrVG</NormLink>). A missing or
+                  defective consultation makes the dismissal invalid — a very frequent winning
+                  argument.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What to do */}
+        <section className="py-16 px-8 bg-cream">
           <div className="max-w-content mx-auto max-w-[860px]">
             <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-6">
               What to do in the first 24 hours
@@ -194,6 +243,60 @@ export default function DismissalEn() {
                 is in place when we file.
               </li>
             </ol>
+          </div>
+        </section>
+
+        {/* Special protection groups */}
+        <section className="py-16 px-8 bg-white">
+          <div className="max-w-content mx-auto max-w-[860px]">
+            <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-5">
+              Special dismissal protection — groups with extra safeguards
+            </h2>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-6">
+              Independent of the KSchG, certain groups enjoy{' '}
+              <strong>special dismissal protection</strong>. For these groups a dismissal is either
+              generally prohibited or requires prior authority approval. If you belong to one of
+              these groups, inform the employer in writing within days of receiving the dismissal.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-[0.92rem]">
+                <thead>
+                  <tr className="border-b-2 border-gold-dark">
+                    <th className="text-left py-2 pr-4 font-semibold text-ink">Group</th>
+                    <th className="text-left py-2 px-4 font-semibold text-ink">Protection</th>
+                    <th className="text-left py-2 pl-4 font-semibold text-ink">Statute</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border-light">
+                    <td className="py-3 pr-4 text-ink">Pregnant employees &amp; mothers up to 4 months after birth</td>
+                    <td className="py-3 px-4 text-ink-light">Dismissal in principle forbidden; narrow exceptions only with authority approval</td>
+                    <td className="py-3 pl-4 text-ink"><NormLink href={NORM.muschg17}>§&nbsp;17 MuSchG</NormLink></td>
+                  </tr>
+                  <tr className="border-b border-border-light">
+                    <td className="py-3 pr-4 text-ink">Severely disabled &amp; equivalent</td>
+                    <td className="py-3 px-4 text-ink-light">Prior approval of the Integration Office required</td>
+                    <td className="py-3 pl-4 text-ink"><NormLink href={NORM.sgb9168}>§&nbsp;168 SGB IX</NormLink></td>
+                  </tr>
+                  <tr className="border-b border-border-light">
+                    <td className="py-3 pr-4 text-ink">Employees on parental leave</td>
+                    <td className="py-3 px-4 text-ink-light">Dismissal in principle forbidden</td>
+                    <td className="py-3 pl-4 text-ink"><NormLink href={NORM.beeg18}>§&nbsp;18 BEEG</NormLink></td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 text-ink">Works-council members</td>
+                    <td className="py-3 px-4 text-ink-light">Ordinary dismissal generally excluded</td>
+                    <td className="py-3 pl-4 text-ink"><NormLink href={NORM.kschg15}>§&nbsp;15 KSchG</NormLink></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[0.9rem] text-ink-muted leading-relaxed mt-5">
+              Important: the 3-week filing deadline under{' '}
+              <NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink> applies <strong>also</strong>{' '}
+              to special-protection cases. A missing Integration-Office approval must still be
+              raised in a timely unfair-dismissal claim.
+            </p>
           </div>
         </section>
 
