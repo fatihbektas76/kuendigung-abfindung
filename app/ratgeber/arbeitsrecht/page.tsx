@@ -40,7 +40,7 @@ const articles: Article[] = [
     facts: [
       '§ 1 Abs. 1 KSchG: 6 Monate Wartezeit',
       '§ 23 Abs. 1 Satz 3 KSchG: > 10 Arbeitnehmer',
-      'BAG 2 AZR 140/12 (Leiharbeit) & 2 AZR 560/20 (Gemeinschaftsbetrieb)',
+      'BAG 2 AZR 140/12 (Leiharbeit) & 2 AZR 540/20 (Organmitglieder)',
     ],
     dateKey: 'kuendigungsschutzgesetzAnwendung',
   },
