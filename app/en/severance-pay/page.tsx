@@ -3,6 +3,7 @@ import Link from 'next/link';
 import TopicHero from '@/components/en/TopicHero';
 import ContactForm from '@/components/en/ContactForm';
 import CTA from '@/components/en/CTA';
+import NormLink, { NORM } from '@/components/NormLink';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 const PAGE_URL = `${SEO_CONFIG.baseUrl}/en/severance-pay/`;
@@ -48,7 +49,15 @@ const FAQS = [
   },
   {
     q: 'Do I still get severance after a summary (without-notice) dismissal?',
-    a: 'Yes — counterintuitively, severance prospects are often particularly high after a summary dismissal under §626 BGB, because the legal hurdles for a valid summary dismissal are strict. Many summary dismissals are unlawful, which leads to favourable settlement outcomes.',
+    a: 'Yes — counterintuitively, severance prospects are often particularly high after a summary dismissal under § 626 BGB, because the legal hurdles for a valid summary dismissal are strict. Many summary dismissals are unlawful, which leads to favourable settlement outcomes.',
+  },
+  {
+    q: 'Does severance count against unemployment benefit (Arbeitslosengeld)?',
+    a: 'A straight severance payment does NOT reduce your Arbeitslosengeld I entitlement — it is not treated as wages. However, if you accept a termination agreement with a notice period shorter than the statutory one, the employment agency can impose a 12-week suspension period (Sperrzeit, § 159 SGB III) during which no benefit is paid. Always check the notice-period compatibility of any offer before signing.',
+  },
+  {
+    q: 'When should I file an unfair-dismissal claim to secure severance?',
+    a: 'Within 3 weeks of receiving the dismissal letter (§ 4 KSchG). Missing this deadline makes the dismissal legally watertight — and strips away the leverage that typically produces severance. A free initial review with a specialist within the first days is strongly recommended.',
   },
 ];
 
@@ -117,7 +126,10 @@ export default function SeverancePayEn() {
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
               In Germany, there is <strong>no general statutory right</strong> to severance pay
               after a dismissal. The standard rule-of-thumb negotiated in court settlements is{' '}
-              <strong>0.5 gross monthly salaries per year of service</strong> (§ 1a KSchG, §§ 9, 10 KSchG).
+              <strong>0.5 gross monthly salaries per year of service</strong>{' '}
+              (<NormLink href={NORM.kschg1a}>§&nbsp;1a KSchG</NormLink>,{' '}
+              <NormLink href={NORM.kschg9}>§§&nbsp;9</NormLink>,{' '}
+              <NormLink href={NORM.kschg10}>10 KSchG</NormLink>).
               In practice, more than 80% of unfair-dismissal proceedings end in a settlement that
               includes severance, frequently between 0.5 and 1.5 monthly salaries per year — depending
               on tenure, age, social context and the legal flaws in the dismissal.
@@ -198,12 +210,12 @@ export default function SeverancePayEn() {
                 {
                   title: 'Special dismissal protection',
                   body:
-                    'Pregnancy (§ 17 MuSchG), severe disability (§ 168 SGB IX), works-council membership or parental leave shift the leverage sharply in your favour.',
+                    'Pregnancy (§ 17 MuSchG), severe disability (§ 168 SGB IX), works-council membership (§ 15 KSchG) or parental leave (§ 18 BEEG) shift the leverage sharply in your favour.',
                 },
                 {
                   title: 'Flawed social selection',
                   body:
-                    'In redundancy dismissals the employer must select on tenure, age, dependants and disability (§ 1 III KSchG). Errors in this selection are a common winning argument.',
+                    'In redundancy dismissals the employer must select on tenure, age, dependants and disability (§ 1 III KSchG). Errors in the social selection are among the most common winning arguments in court settlements.',
                 },
                 {
                   title: 'Long tenure & high salary',
@@ -225,18 +237,64 @@ export default function SeverancePayEn() {
           </div>
         </section>
 
-        {/* Tax */}
+        {/* Statutory severance under § 1a KSchG */}
         <section className="py-16 px-8 bg-cream">
+          <div className="max-w-content mx-auto max-w-[820px]">
+            <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-4">
+              Statutory severance under § 1a KSchG — the exception
+            </h2>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
+              The only direct statutory severance entitlement outside collective agreements and
+              social plans sits in{' '}
+              <NormLink href={NORM.kschg1a}>§&nbsp;1a KSchG</NormLink>. If the employer dismisses
+              you for operational reasons (redundancy) <strong>and</strong> expressly offers
+              severance in exchange for you <strong>not</strong> filing an unfair-dismissal claim,
+              the statutory amount is <strong>0.5 gross monthly salaries per year of service</strong>.
+              Years of six months or more count as a full year.
+            </p>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
+              In practice this clause is only triggered when the employer actively signals it in
+              the dismissal letter. If you file a claim within the 3-week deadline
+              (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>), you forfeit the statutory
+              offer — but almost always obtain a <em>higher</em> settlement in the court
+              proceedings. The §&nbsp;1a offer is therefore more of a floor than a ceiling.
+            </p>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-0">
+              Related statutory severance paths: court dissolution under{' '}
+              <NormLink href={NORM.kschg9}>§§&nbsp;9</NormLink>,{' '}
+              <NormLink href={NORM.kschg10}>10 KSchG</NormLink> (where continued employment is
+              unreasonable), social plans (<em>Sozialplan</em>) under the Works Constitution Act,
+              and sector-specific collective agreements.
+            </p>
+          </div>
+        </section>
+
+        {/* Tax */}
+        <section className="py-16 px-8 bg-white">
           <div className="max-w-content mx-auto max-w-[820px]">
             <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-4">
               Tax on severance pay (Fünftelregelung)
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
               Severance pay is fully taxable as ordinary income, but the German Tax Code mitigates
-              the progression effect through the “one-fifth rule” of <strong>§&nbsp;34 EStG</strong>.
+              the progression effect through the &bdquo;one-fifth rule&ldquo; of{' '}
+              <strong><NormLink href="https://dejure.org/gesetze/EStG/34.html">§&nbsp;34 EStG</NormLink></strong>.
               Mathematically, the lump sum is treated as if it were paid in equal parts over five
               years, which softens the spike in marginal tax.
             </p>
+            <div className="p-5 bg-cream border-l-[3px] border-gold rounded my-4">
+              <p className="text-[0.95rem] font-semibold text-ink mb-2">
+                Rough example — Fünftelregelung effect
+              </p>
+              <p className="text-[0.9rem] text-ink-light m-0">
+                Base annual income €55,000 + severance €30,000. Without the one-fifth rule the
+                full €30,000 would be taxed at the top marginal rate. With the rule, the Tax
+                Office calculates the tax burden as if €6,000 (one fifth) were added to each of
+                five years — then multiplies the resulting incremental tax by five. For many
+                mid-income earners this reduces the effective tax on severance by{' '}
+                <strong>~15–25%</strong>. Exact savings depend on your individual tax bracket.
+              </p>
+            </div>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-0">
               No employer or employee social-security contributions are usually levied on severance
               paid in connection with the termination of employment.

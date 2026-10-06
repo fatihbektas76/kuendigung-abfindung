@@ -3,6 +3,8 @@ import Link from 'next/link';
 import TopicHero from '@/components/en/TopicHero';
 import ContactForm from '@/components/en/ContactForm';
 import CTA from '@/components/en/CTA';
+import NormLink, { NORM, bagDejureUrl } from '@/components/NormLink';
+import BagQuote from '@/components/BagQuote';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 const PAGE_URL = `${SEO_CONFIG.baseUrl}/en/termination-agreement/`;
@@ -36,7 +38,7 @@ const FAQS = [
   },
   {
     q: 'Does signing trigger a Sperrzeit (unemployment-benefit blocking period)?',
-    a: 'Often yes. Signing a termination agreement is treated as voluntarily ending the employment, which usually leads to a 12-week blocking period of unemployment benefit (§ 159 SGB III) unless you can show an important cause — for instance, an imminent operational dismissal that would have ended the employment anyway. The exact wording of the agreement is decisive.',
+    a: 'Often yes. Signing a termination agreement is treated as voluntarily ending the employment, which usually leads to a 12-week blocking period of unemployment benefit (§ 159 SGB III) unless you can show an important cause — for instance, an imminent operational dismissal that would have ended the employment anyway. The exact wording of the agreement (including a recital of the alternative dismissal and observance of the statutory notice period) is decisive. Have this reviewed before signing.',
   },
   {
     q: 'Should I always demand severance?',
@@ -105,10 +107,21 @@ export default function TerminationAgreementEn() {
               usually faster than the statutory notice period and almost always with severance.
               The catch: it is treated by the unemployment office as a voluntary termination,
               which typically triggers a <strong>12-week blocking period</strong> for unemployment
-              benefit under <strong>§&nbsp;159 SGB III</strong>. The Federal Labour Court ruling{' '}
-              <strong>BAG 6 AZR 333/21 (“faires Verhandeln”)</strong> additionally requires fair
-              negotiation conditions — pressure tactics by the employer can invalidate the
-              agreement.
+              benefit under{' '}
+              <strong>
+                <a href="https://dejure.org/gesetze/SGB_III/159.html" target="_blank" rel="noopener noreferrer" className="text-gold-dark no-underline hover:underline">
+                  §&nbsp;159 SGB III
+                </a>
+              </strong>
+              . The Federal Labour Court ruling{' '}
+              <strong>
+                <a href={bagDejureUrl(null, '6 AZR 333/21')} target="_blank" rel="noopener noreferrer" className="text-gold-dark no-underline hover:underline">
+                  BAG 6 AZR 333/21
+                </a>{' '}
+                (&bdquo;faires Verhandeln&ldquo;)
+              </strong>{' '}
+              additionally requires fair negotiation conditions — pressure tactics by the employer
+              can invalidate the agreement.
             </p>
             <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
               <strong>Written and reviewed by</strong> Fatih Bektas, German employment-law specialist
@@ -197,8 +210,60 @@ export default function TerminationAgreementEn() {
           </div>
         </section>
 
-        {/* Cross-links */}
+        {/* Fair-negotiation doctrine */}
         <section className="py-16 px-8 bg-cream">
+          <div className="max-w-content mx-auto max-w-[860px]">
+            <h2 className="font-serif text-[clamp(1.5rem,2.5vw,1.9rem)] font-bold mb-4">
+              The &bdquo;fair negotiation&ldquo; doctrine (BAG 6 AZR 333/21)
+            </h2>
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-4">
+              In its 2022 ruling, the Federal Labour Court made clear: an employer who negotiates
+              a termination agreement must respect the employee&rsquo;s free decision-making. If
+              the employer deliberately exploits a position of weakness — for instance by
+              presenting the agreement as a &bdquo;sign now or face dismissal within the hour&ldquo;
+              choice, or by refusing time for legal review — the resulting agreement is{' '}
+              <strong>contestable on grounds of unfair negotiation</strong>.
+            </p>
+
+            <BagQuote az="6 AZR 333/21" datum="24.02.2022">
+              &bdquo;Das Gebot fairen Verhandelns ist eine arbeitsvertragliche Nebenpflicht. Ihre
+              Verletzung durch den Arbeitgeber kann einen Schadensersatzanspruch auf Rückgängigmachung
+              des Aufhebungsvertrags begründen, wenn die rechtsgeschäftliche Entscheidungsfreiheit des
+              Vertragspartners in zu missbilligender Weise beeinträchtigt worden ist.&ldquo;
+              <br />
+              <span className="text-[0.82rem] text-ink-muted italic">
+                English translation: &bdquo;The duty to negotiate fairly is a secondary duty of the
+                employment contract. Its breach by the employer can justify a damages claim for
+                rescission of the termination agreement if the counterparty&apos;s freedom of
+                decision has been impaired in a reprehensible manner.&ldquo; — BAG, judgment of
+                24 February 2022 – 6 AZR 333/21
+              </span>
+            </BagQuote>
+
+            <p className="text-[0.85rem] text-ink-muted mt-2 mb-5">
+              Source:{' '}
+              <a
+                href={bagDejureUrl('24.02.2022', '6 AZR 333/21')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold-dark no-underline hover:underline"
+              >
+                BAG 24.02.2022 – 6 AZR 333/21 on dejure.org &rarr;
+              </a>
+            </p>
+
+            <p className="text-[1rem] text-ink-light leading-relaxed mb-0">
+              Typical red flags under this doctrine: no realistic time for reflection or external
+              review; the agreement sprung on the employee in a surprise meeting; implicit or
+              explicit threats of a particularly damaging form of dismissal if the agreement is
+              not signed. If any of these were present when you signed, the agreement may still
+              be set aside — but the window for action is short.
+            </p>
+          </div>
+        </section>
+
+        {/* Cross-links */}
+        <section className="py-16 px-8 bg-white">
           <div className="max-w-content mx-auto">
             <h2 className="font-serif text-[1.4rem] font-bold mb-5">Related topics</h2>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
