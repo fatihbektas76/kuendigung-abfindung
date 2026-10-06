@@ -3,7 +3,7 @@ import Link from 'next/link';
 import TopicHero from '@/components/en/TopicHero';
 import ContactForm from '@/components/en/ContactForm';
 import CTA from '@/components/en/CTA';
-import NormLink, { NORM, bagDejureUrl } from '@/components/NormLink';
+import { bagDejureUrl } from '@/components/NormLink';
 import BagQuote from '@/components/BagQuote';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
