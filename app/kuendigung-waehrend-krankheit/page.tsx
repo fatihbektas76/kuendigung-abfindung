@@ -10,10 +10,20 @@ import ShareButtons from '@/components/ShareButtons';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import TldrBox from '@/components/TldrBox';
 import NormLink from '@/components/NormLink';
+import VideoEmbed from '@/components/VideoEmbed';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import { generateArticleSchema } from '@/lib/article-schema';
+import { videoObjectSchema } from '@/lib/video-schema';
+
+const VIDEO = {
+  youtubeId: '3DnWViKtbyQ',
+  title: 'Kündigung während Krankheit: Geht das? Der große Irrtum',
+  teaser: 'Krankgeschrieben heißt unkündbar? Falsch.',
+  uploadDate: '2026-10-05',
+  duration: 'PT1M26S',
+};
 
 export const revalidate = 86400;
 
@@ -185,6 +195,25 @@ export default function KuendigungWaehrendKrankheitPage() {
         }}
       />
 
+      {/* VideoObject JSON-LD — vertical YouTube clip embedded under the TL;DR */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            ...videoObjectSchema({
+              youtubeId: VIDEO.youtubeId,
+              name: VIDEO.title,
+              description: VIDEO.teaser,
+              uploadDate: VIDEO.uploadDate,
+              duration: VIDEO.duration,
+              pageUrl: PAGE_URL,
+              inLanguage: 'de',
+            }),
+          }),
+        }}
+      />
+
       <main>
         <nav aria-label="Breadcrumb" className="max-w-content mx-auto px-8 pt-6">
           <ol className="flex flex-wrap items-center gap-1.5 text-[0.78rem] text-ink-muted list-none m-0 p-0">
@@ -208,15 +237,28 @@ export default function KuendigungWaehrendKrankheitPage() {
 
         <section className="py-6 px-8 bg-white">
           <div className="max-w-content mx-auto">
-            <div id="direktantwort">
-              <TldrBox
-                items={[
-                  <>Eine Krankschreibung schützt <strong>nicht</strong> vor einer Kündigung — der Arbeitgeber darf auch während der Arbeitsunfähigkeit kündigen.</>,
-                  <>Wirksam ist sie nur, wenn ein <strong>Kündigungsgrund</strong> vorliegt und die <strong>Form stimmt</strong> (Schriftform, Frist, ggf. Betriebsrat).</>,
-                  <>Wer sich wehren will, muss innerhalb von <strong>drei Wochen</strong> nach Zugang Kündigungsschutzklage erheben (<NormLink href={NORMS.kschg4}>§ 4 Satz 1 KSchG</NormLink>).</>,
-                  <>Bei Kündigung aus Anlass der Krankheit läuft die Entgeltfortzahlung bis zu <strong>sechs Wochen</strong> weiter (<NormLink href={NORMS.efzg8}>§ 8 EFZG</NormLink>).</>,
-                ]}
-              />
+            <div className="grid grid-cols-[1fr_auto] gap-10 items-start max-md:grid-cols-1 max-md:gap-6">
+              <div id="direktantwort">
+                <TldrBox
+                  items={[
+                    <>Eine Krankschreibung schützt <strong>nicht</strong> vor einer Kündigung — der Arbeitgeber darf auch während der Arbeitsunfähigkeit kündigen.</>,
+                    <>Wirksam ist sie nur, wenn ein <strong>Kündigungsgrund</strong> vorliegt und die <strong>Form stimmt</strong> (Schriftform, Frist, ggf. Betriebsrat).</>,
+                    <>Wer sich wehren will, muss innerhalb von <strong>drei Wochen</strong> nach Zugang Kündigungsschutzklage erheben (<NormLink href={NORMS.kschg4}>§ 4 Satz 1 KSchG</NormLink>).</>,
+                    <>Bei Kündigung aus Anlass der Krankheit läuft die Entgeltfortzahlung bis zu <strong>sechs Wochen</strong> weiter (<NormLink href={NORMS.efzg8}>§ 8 EFZG</NormLink>).</>,
+                  ]}
+                />
+              </div>
+              <aside className="max-md:mx-auto">
+                <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2 text-center">
+                  Lieber ansehen?
+                </div>
+                <VideoEmbed
+                  youtubeId={VIDEO.youtubeId}
+                  title={VIDEO.title}
+                  teaser={VIDEO.teaser}
+                  aspect="portrait"
+                />
+              </aside>
             </div>
           </div>
         </section>
