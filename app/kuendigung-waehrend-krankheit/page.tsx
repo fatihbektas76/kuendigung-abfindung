@@ -263,12 +263,12 @@ export default function KuendigungWaehrendKrankheitPage() {
           </div>
         </section>
 
-        <article className="py-10 px-8 bg-white">
-          <div className="max-w-[740px] mx-auto">
-
+        <article className="pt-4 pb-10 px-8 bg-white">
+          <div className="max-w-content mx-auto grid grid-cols-[260px_minmax(0,740px)] gap-10 justify-center items-start max-lg:grid-cols-1 max-lg:gap-6">
             <TableOfContents entries={TOC_ENTRIES} />
+            <div className="max-w-[740px] max-lg:mx-auto">
 
-            <h2 id="woher-kommt-der-mythos-wer-krank-ist-kann-nicht-gekundigt-we" className="font-serif text-[1.6rem] font-bold text-ink mt-10 mb-4">
+            <h2 id="woher-kommt-der-mythos-wer-krank-ist-kann-nicht-gekundigt-we" className="font-serif text-[1.6rem] font-bold text-ink mt-0 mb-4">
               Woher kommt der Mythos „Wer krank ist, kann nicht gekündigt werden“?
             </h2>
             <p className="text-ink leading-relaxed">
@@ -615,6 +615,7 @@ export default function KuendigungWaehrendKrankheitPage() {
 
             <div className="mt-10">
               <ShareButtons title={PAGE_TITLE} url={PAGE_URL} />
+            </div>
             </div>
           </div>
         </article>
