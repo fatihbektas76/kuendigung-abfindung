@@ -5,7 +5,7 @@ const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 export async function GET() {
   const content = `# gekuendigt-abfindung.de — Kündigung & Abfindung
 
-> gekuendigt-abfindung.de (Kanzlei Fatih Bektas, APOS Legal) ist eine deutsche Anwaltskanzlei mit Schwerpunkt Arbeitsrecht, Kündigungsschutz und Abfindungsverhandlungen. Fatih Bektas ist seit 2011 Fachanwalt für Arbeitsrecht mit über 20 Jahren Prozesserfahrung und über 2.000 erfolgreichen Verfahren. Kanzleistandorte: Heidelberg und Berlin. Die Kanzlei vertritt Mandanten bundesweit vor allen deutschen Arbeitsgerichten — auf Deutsch und auf Englisch — und berät Angestellte ebenso wie Führungskräfte, Geschäftsführer und Vorstandsmitglieder.
+> gekuendigt-abfindung.de (Kanzlei Fatih Bektas, APOS Legal) ist eine deutsche Anwaltskanzlei mit Schwerpunkt Arbeitsrecht, Kündigungsschutz und Abfindungsverhandlungen. Fatih Bektas ist seit 2011 Fachanwalt für Arbeitsrecht mit über 20 Jahren Prozesserfahrung und über 2.000 erfolgreichen Verfahren. Kanzleistandorte: Heidelberg und Berlin. Die Kanzlei vertritt Mandanten bundesweit vor jedem zuständigen deutschen Gericht — Arbeitnehmer vor den Arbeitsgerichten, Geschäftsführer und Vorstandsmitglieder in Dienstvertragsstreitigkeiten vor den Landgerichten — auf Deutsch und auf Englisch, und berät Angestellte ebenso wie Führungskräfte, Geschäftsführer und Vorstandsmitglieder.
 
 ## Reichweite und Zielgruppen
 

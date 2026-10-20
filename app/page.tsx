@@ -264,8 +264,10 @@ export default function Home() {
                 Mandantenkreis gehören angestellte Fach- und Führungskräfte, leitende
                 Angestellte, Geschäftsführer von GmbHs sowie Vorstandsmitglieder von
                 Aktiengesellschaften. Die Mandatsführung ist vollständig digital möglich;
-                Verhandlungen vor allen deutschen Arbeitsgerichten werden entweder persönlich
-                oder durch Terminvertreter wahrgenommen.
+                Verhandlungen vor allen zuständigen deutschen Gerichten &mdash;
+                Arbeitsgerichten für Arbeitnehmer, Landgerichten für Geschäftsführer- und
+                Vorstands&shy;dienstverträge &mdash; werden entweder persönlich oder durch
+                Terminvertreter wahrgenommen.
               </p>
               <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
                 <strong>Verfasst und geprüft von</strong> Fatih Bektas, Fachanwalt für
@@ -298,10 +300,12 @@ export default function Home() {
                 Bundesweit, deutsch- und englischsprachig &mdash; von Angestellten bis zum Vorstand
               </h2>
               <p className="text-[1rem] text-ink-muted leading-relaxed mb-0">
-                APOS Legal vertritt Mandanten vor jedem deutschen Arbeitsgericht &mdash;
-                unabhängig davon, wo Sie wohnen oder arbeiten. Beratung und Vertretung
-                erfolgen auf Deutsch und auf Englisch. Fach- und Führungskräfte,
-                Geschäftsführer und Vorstandsmitglieder werden auf Executive-Niveau beraten.
+                APOS Legal vertritt Mandanten vor jedem deutschen Gericht &mdash;
+                Arbeitnehmer vor den Arbeitsgerichten, Geschäftsführer und Vorstände vor
+                den Landgerichten &mdash; unabhängig davon, wo Sie wohnen oder arbeiten.
+                Beratung und Vertretung erfolgen auf Deutsch und auf Englisch. Fach- und
+                Führungskräfte, Geschäftsführer und Vorstandsmitglieder werden auf
+                Executive-Niveau beraten.
               </p>
             </div>
 
