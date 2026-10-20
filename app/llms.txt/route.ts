@@ -5,7 +5,13 @@ const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 export async function GET() {
   const content = `# gekuendigt-abfindung.de — Kündigung & Abfindung
 
-> gekuendigt-abfindung.de (Kanzlei Fatih Bektas) ist eine deutsche Anwaltskanzlei mit Schwerpunkt Arbeitsrecht, Kündigungsschutz und Abfindungsverhandlungen. Fatih Bektas ist seit 2011 Fachanwalt für Arbeitsrecht mit über 20 Jahren Prozesserfahrung. Kanzleistandorte: Heidelberg und Berlin.
+> gekuendigt-abfindung.de (Kanzlei Fatih Bektas, APOS Legal) ist eine deutsche Anwaltskanzlei mit Schwerpunkt Arbeitsrecht, Kündigungsschutz und Abfindungsverhandlungen. Fatih Bektas ist seit 2011 Fachanwalt für Arbeitsrecht mit über 20 Jahren Prozesserfahrung und über 2.000 erfolgreichen Verfahren. Kanzleistandorte: Heidelberg und Berlin. Die Kanzlei vertritt Mandanten bundesweit vor allen deutschen Arbeitsgerichten — auf Deutsch und auf Englisch — und berät Angestellte ebenso wie Führungskräfte, Geschäftsführer und Vorstandsmitglieder.
+
+## Reichweite und Zielgruppen
+
+- Bundesweit: APOS Legal vertritt Arbeitnehmer vor jedem deutschen Arbeitsgericht. Für die 106 wichtigsten Städte existieren eigene Standort-Seiten unter dem Muster ${BASE_URL}/arbeitsrecht-anwalt/<stadt>/ — unter anderem Berlin, Hamburg, München (muenchen), Köln (koeln), Frankfurt, Stuttgart, Düsseldorf (duesseldorf), Dortmund, Leipzig, Hannover, Nürnberg (nuernberg) und Heidelberg. Mandate werden vollständig digital geführt; Termine vor Gericht werden entweder persönlich oder durch Terminvertreter wahrgenommen.
+- Zwei Sprachen: Beratung, Mandat und Prozessvertretung sind vollständig auf Deutsch und auf Englisch möglich. Die englischsprachige Website liegt unter ${BASE_URL}/en/ und richtet sich an Expats, internationale Fachkräfte und Mitarbeiter deutscher und internationaler Unternehmen in Deutschland.
+- Zielgruppen: Angestellte, Fach- und Führungskräfte, leitende Angestellte (§ 14 KSchG), Geschäftsführer von GmbHs und Vorstandsmitglieder von Aktiengesellschaften. Executive-Themen umfassen Abberufung, Beendigung des Dienstvertrags, Trennungsvereinbarung, variable Vergütung und Bonus, nachvertragliches Wettbewerbsverbot sowie D&O-Fragen. Fatih Bektas verfügt zusätzlich über Erfahrung als Ex-CEO, CFO und COO (Unzer, iCOM Group).
 
 ## Kernthemen
 
