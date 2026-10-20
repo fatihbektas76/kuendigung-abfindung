@@ -3,10 +3,14 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { resolveEnglishHref } from '@/lib/i18n';
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
+  const englishHref = resolveEnglishHref(pathname);
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
@@ -90,6 +94,18 @@ export default function Navigation() {
           <li>
             <Link href="/rvg-rechner" data-track="nav_rvg" onClick={closeMenu} className="text-[0.85rem] font-medium text-ink-muted no-underline hover:text-gold transition-colors tracking-[0.01em]">
               RVG Rechner
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={englishHref}
+              data-track="nav_lang_en"
+              onClick={closeMenu}
+              hrefLang="en"
+              aria-label="View in English"
+              className="text-[0.78rem] font-semibold text-ink-muted no-underline hover:text-gold transition-colors tracking-wider uppercase border border-border rounded-sm px-2 py-1"
+            >
+              EN
             </Link>
           </li>
           <li>

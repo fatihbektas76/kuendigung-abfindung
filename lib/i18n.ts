@@ -105,6 +105,16 @@ export function canonicalUrl(path: string): string {
 }
 
 /**
+ * Resolve the English public path for a given DE pathname.
+ * Falls back to the English homepage when no mapping exists.
+ */
+export function resolveEnglishHref(pathname: string | null | undefined): string {
+  if (!pathname) return '/en/';
+  const cleaned = pathname.replace(/\/$/, '') || '/';
+  return STATIC_SLUG_MAP[cleaned] ?? '/en/';
+}
+
+/**
  * Resolve the alternate-language URL pair for a given DE path.
  * Returns null for the alternate when no English equivalent exists yet.
  */

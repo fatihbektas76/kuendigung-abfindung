@@ -1,11 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { resolveEnglishHref } from '@/lib/i18n';
 
 const linkClass = 'text-white/70 no-underline hover:text-gold-light transition-colors';
 const headingClass = 'text-white/90 font-semibold text-[0.75rem] uppercase tracking-[0.12em] mb-3';
 
 export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings: () => void }) {
+  const pathname = usePathname();
+  const englishHref = resolveEnglishHref(pathname);
+
   return (
     <footer className="pt-14 pb-8 px-8 bg-[#0f0f0f] text-[0.82rem] leading-relaxed max-md:px-6">
       <div className="max-w-content mx-auto">
@@ -40,6 +45,16 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
             <span className="text-white/50">|</span>
             <Link href="/ratgeber" className="text-white/70 no-underline hover:text-gold-light transition-colors text-[0.8rem]">
               Ratgeber
+            </Link>
+            <span className="text-white/50">|</span>
+            <Link
+              href={englishHref}
+              hrefLang="en"
+              aria-label="View in English"
+              data-track="footer_lang_en"
+              className="text-white/70 no-underline hover:text-gold-light transition-colors text-[0.8rem]"
+            >
+              English
             </Link>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { resolveEnglishHref } from '@/lib/i18n';
 
 /** Pages where the sticky CTA would conflict with the page's own flow */
 const HIDDEN_PATHS = ['/kuendigung-pruefen', '/aufhebungsvertrag-pruefen'];
@@ -9,6 +10,7 @@ const HIDDEN_PATHS = ['/kuendigung-pruefen', '/aufhebungsvertrag-pruefen'];
 export default function MobileCTA() {
   const [visible, setVisible] = useState(false);
   const pathname = usePathname();
+  const englishHref = resolveEnglishHref(pathname);
 
   useEffect(() => {
     // Hide on tool pages that have their own CTA flow
@@ -45,6 +47,15 @@ export default function MobileCTA() {
             Kostenlose Ersteinschätzung
           </p>
         </div>
+        <a
+          href={englishHref}
+          hrefLang="en"
+          aria-label="View in English"
+          data-track="cta_mobile_sticky_lang_en"
+          className="shrink-0 text-[0.72rem] font-semibold text-ink-muted no-underline hover:text-gold transition-colors tracking-wider uppercase border border-border rounded-sm px-2 py-1"
+        >
+          EN
+        </a>
         <a
           href="/kuendigung-pruefen"
           data-track="cta_mobile_sticky_pruefen"
