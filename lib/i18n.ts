@@ -115,6 +115,16 @@ export function resolveEnglishHref(pathname: string | null | undefined): string 
 }
 
 /**
+ * Resolve the German public path for a given EN pathname.
+ * Falls back to the German homepage when no mapping exists.
+ */
+export function resolveGermanHref(pathname: string | null | undefined): string {
+  if (!pathname) return '/';
+  const cleaned = pathname.replace(/\/$/, '') || '/en';
+  return REVERSE_SLUG_MAP[cleaned] ?? '/';
+}
+
+/**
  * Resolve the alternate-language URL pair for a given DE path.
  * Returns null for the alternate when no English equivalent exists yet.
  */

@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { resolveGermanHref } from '@/lib/i18n';
 
 const HIDDEN_PATHS = ['/en/check-dismissal', '/en/check-termination-agreement'];
 
 export default function MobileCTA() {
   const [visible, setVisible] = useState(false);
   const pathname = usePathname();
+  const germanHref = resolveGermanHref(pathname);
 
   useEffect(() => {
     if (HIDDEN_PATHS.some((p) => pathname.startsWith(p))) {
@@ -40,6 +42,15 @@ export default function MobileCTA() {
           </p>
           <p className="text-[0.68rem] text-ink-muted leading-tight">Free case review</p>
         </div>
+        <a
+          href={germanHref}
+          hrefLang="de"
+          aria-label="Auf Deutsch ansehen"
+          data-track="cta_mobile_sticky_lang_de"
+          className="shrink-0 text-[0.72rem] font-semibold text-ink-muted no-underline hover:text-gold transition-colors tracking-wider uppercase border border-border rounded-sm px-2 py-1"
+        >
+          DE
+        </a>
         <a
           href="/en/check-dismissal"
           className="shrink-0 bg-gold-dark text-white text-[0.82rem] font-semibold px-5 py-2.5 rounded-sm no-underline transition-colors hover:bg-[#635428]"

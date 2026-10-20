@@ -1,11 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { resolveGermanHref } from '@/lib/i18n';
 
 const linkClass = 'text-white/70 no-underline hover:text-gold-light transition-colors';
 const headingClass = 'text-white/90 font-semibold text-[0.75rem] uppercase tracking-[0.12em] mb-3';
 
 export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings: () => void }) {
+  const pathname = usePathname();
+  const germanHref = resolveGermanHref(pathname);
+
   return (
     <footer className="pt-14 pb-8 px-8 bg-[#0f0f0f] text-[0.82rem] leading-relaxed max-md:px-6">
       <div className="max-w-content mx-auto">
@@ -49,7 +54,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
             </a>
             <span className="text-white/50">|</span>
             <Link
-              href="/"
+              href={germanHref}
+              hrefLang="de"
+              aria-label="Auf Deutsch ansehen"
+              data-track="footer_lang_de"
               className="text-white/70 no-underline hover:text-gold-light transition-colors text-[0.8rem]"
             >
               Deutsch

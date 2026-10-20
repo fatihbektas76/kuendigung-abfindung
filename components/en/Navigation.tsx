@@ -3,10 +3,14 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { resolveGermanHref } from '@/lib/i18n';
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
+  const germanHref = resolveGermanHref(pathname);
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
@@ -116,9 +120,11 @@ export default function Navigation() {
           </li>
           <li>
             <Link
-              href="/"
+              href={germanHref}
               onClick={closeMenu}
+              hrefLang="de"
               aria-label="Auf Deutsch ansehen"
+              data-track="nav_lang_de"
               className="text-[0.78rem] font-semibold text-ink-muted no-underline hover:text-gold transition-colors tracking-wider uppercase border border-border rounded-sm px-2 py-1"
             >
               DE
