@@ -263,8 +263,22 @@ export default function AbfindungsrechnerPage() {
                   </p>
                 </div>
 
+                {/* Netto-Rechner-Hinweis */}
+                <div className="mt-8 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold-light">
+                  <p className="text-[0.95rem] text-ink mb-3">
+                    <strong>Was bleibt davon netto übrig?</strong> &mdash;
+                    Mit Fünftelregelung (§&nbsp;34 EStG), Soli und Kirchensteuer rechnen:
+                  </p>
+                  <Link
+                    href="/abfindung-netto-rechner"
+                    className="inline-block py-3 px-6 bg-white text-ink border border-border rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:border-gold hover:text-gold-dark"
+                  >
+                    Zum Netto-Rechner &rarr;
+                  </Link>
+                </div>
+
                 {/* CTA 1 */}
-                <div className="mt-8 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold">
+                <div className="mt-5 py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold">
                   <p className="text-[0.95rem] text-ink mb-3">
                     <strong>Möchten Sie wissen, welches Szenario für Sie realistisch ist?</strong>
                   </p>

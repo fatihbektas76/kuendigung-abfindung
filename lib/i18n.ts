@@ -20,6 +20,7 @@ export const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 export const STATIC_SLUG_MAP: Readonly<Record<string, string>> = {
   '/': '/en/',
   '/abfindung': '/en/severance-pay',
+  '/abfindung-netto-rechner': '/en/severance-net-calculator',
   '/abfindungsrechner': '/en/severance-calculator',
   '/abfindungstabelle': '/en/severance-table',
   '/abmahnung': '/en/written-warning',
