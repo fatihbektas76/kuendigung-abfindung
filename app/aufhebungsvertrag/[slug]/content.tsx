@@ -37,7 +37,7 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/aufhebungsvertrag" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>
+            <Link href="/aufhebungsvertrag/" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>
             <span className="mx-2">/</span>
             <span>{entry.h1.replace(/ — .*$/, '')}</span>
           </nav>

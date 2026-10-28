@@ -185,7 +185,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-8">
           <a href="/">Startseite</a> {" / "}
-          <a href="/arbeitsrecht-anwalt">Arbeitsrecht Anwalt</a> {" / "}
+          <a href="/arbeitsrecht-anwalt/">Arbeitsrecht Anwalt</a> {" / "}
           <span className="text-[#8B7A3A]">{ort.name}</span>
         </nav>
 
@@ -283,7 +283,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             Beispiel: 8 Jahre, 5.000 € brutto → 0,5 × 5.000 € × 8 = <strong>20.000 € Abfindung</strong>
           </div>
           <p className="text-xs text-gray-500">Kein gesetzlicher Anspruch. Mit anwaltlicher Unterstützung ist häufig ein höherer Faktor erzielbar.</p>
-          <a href="/kuendigung-pruefen" className="inline-block mt-4 text-sm font-medium text-[#6B6626] hover:underline">
+          <a href="/kuendigung-pruefen/" className="inline-block mt-4 text-sm font-medium text-[#6B6626] hover:underline">
             Jetzt Abfindung berechnen lassen →
           </a>
         </div>
@@ -332,7 +332,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             <p className="font-semibold text-[#6B6626] text-sm">Kündigung erhalten?</p>
             <p className="text-sm text-gray-600">Lassen Sie Ihre Kündigung jetzt kostenlos prüfen – die 3-Wochen-Frist läuft.</p>
           </div>
-          <a href="/kuendigung-pruefen" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
+          <a href="/kuendigung-pruefen/" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
             Kündigung prüfen →
           </a>
         </div>
@@ -493,7 +493,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             Für Arbeitnehmer aus {ort.name} und ganz {ort.bundesland}.<br />
             Vollständig digital – keine Anreise erforderlich.
           </p>
-          <a href="/kuendigung-pruefen" className="inline-block bg-white text-[#6B6626] px-7 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity">
+          <a href="/kuendigung-pruefen/" className="inline-block bg-white text-[#6B6626] px-7 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity">
             Ersteinschätzung anfordern →
           </a>
         </div>

@@ -138,7 +138,7 @@ export default function SummaryYearsEn({ params }: Props) {
                 </Link>
               )}
               <Link
-                href="/en/summary-dismissal"
+                href="/en/summary-dismissal/"
                 className="block p-5 border border-border-light rounded bg-white text-[0.95rem] text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
               >
                 <span className="text-[0.78rem] uppercase tracking-wider text-ink-muted">

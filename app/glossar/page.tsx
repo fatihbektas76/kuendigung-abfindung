@@ -420,7 +420,7 @@ export default function GlossarPage() {
               Start
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/ratgeber" className="text-gold no-underline hover:underline">
+            <Link href="/ratgeber/" className="text-gold no-underline hover:underline">
               Ratgeber
             </Link>
             <span className="mx-2">/</span>

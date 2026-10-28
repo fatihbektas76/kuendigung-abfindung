@@ -71,7 +71,7 @@ export default function Hero() {
             Review my severance for free &rarr;
           </a>
           <a
-            href="/en/severance-calculator"
+            href="/en/severance-calculator/"
             className="inline-flex items-center gap-2 px-[30px] py-3.5 rounded-sm text-[0.95rem] font-semibold no-underline transition-all bg-transparent text-ink border-[1.5px] border-border hover:border-gold hover:text-gold max-md:w-full max-md:justify-center"
           >
             Calculate severance

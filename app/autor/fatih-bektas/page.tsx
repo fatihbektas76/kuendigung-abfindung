@@ -172,7 +172,7 @@ export default function AutorFatihBektasPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/team" className="text-gold no-underline hover:underline">Team</Link>
+            <Link href="/team/" className="text-gold no-underline hover:underline">Team</Link>
             <span className="mx-2">/</span>
             <span>Fatih Bektas</span>
           </nav>

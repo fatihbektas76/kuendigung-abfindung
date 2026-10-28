@@ -57,7 +57,7 @@ export default function MobileCTA() {
           EN
         </a>
         <a
-          href="/kuendigung-pruefen"
+          href="/kuendigung-pruefen/"
           data-track="cta_mobile_sticky_pruefen"
           className="shrink-0 bg-gold-dark text-white text-[0.82rem] font-semibold px-5 py-2.5 rounded-sm no-underline transition-colors hover:bg-[#635428]"
         >

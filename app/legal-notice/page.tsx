@@ -294,7 +294,7 @@ export default function LegalNoticePage() {
           <SectionHeader number="08" title="Datenschutz" id="datenschutz" />
           <p className="text-ink-light text-[0.95rem] leading-relaxed">
             Unsere Datenschutzerklärung finden Sie{' '}
-            <Link href="/privacy-policy" className="text-gold no-underline hover:underline">
+            <Link href="/privacy-policy/" className="text-gold no-underline hover:underline">
               hier
             </Link>
             .

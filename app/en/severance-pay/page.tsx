@@ -186,7 +186,7 @@ export default function SeverancePayEn() {
             <p className="text-[0.85rem] text-ink-muted leading-relaxed mt-5 max-w-[720px]">
               These figures are illustrative only — your actual settlement value depends on the
               flaws in the dismissal, social factors and your negotiation strategy. Use the{' '}
-              <Link href="/en/severance-calculator" className="text-gold-dark underline">
+              <Link href="/en/severance-calculator/" className="text-gold-dark underline">
                 severance calculator
               </Link>{' '}
               for a tailored estimate, or send us your dismissal letter for a free review.

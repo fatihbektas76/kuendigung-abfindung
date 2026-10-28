@@ -269,7 +269,7 @@ export default function ResturlaubRechner() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/tools" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
+            <Link href="/tools/" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
             <span className="mx-2">/</span>
             <span>Resturlaub bei Kündigung berechnen</span>
           </nav>

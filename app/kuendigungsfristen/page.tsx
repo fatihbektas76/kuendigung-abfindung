@@ -148,7 +148,7 @@ export default function KuendigungsfristenPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigung</Link>
+            <Link href="/kuendigung/" className="text-gold no-underline hover:underline">Kündigung</Link>
             <span className="mx-2">/</span>
             <span>Kündigungsfristen</span>
           </nav>

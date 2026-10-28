@@ -270,7 +270,7 @@ export default function AbfindungsrechnerPage() {
                     Mit Fünftelregelung (§&nbsp;34 EStG), Soli und Kirchensteuer rechnen:
                   </p>
                   <Link
-                    href="/abfindung-netto-rechner"
+                    href="/abfindung-netto-rechner/"
                     className="inline-block py-3 px-6 bg-white text-ink border border-border rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:border-gold hover:text-gold-dark"
                   >
                     Zum Netto-Rechner &rarr;
@@ -362,7 +362,7 @@ export default function AbfindungsrechnerPage() {
               Sozialauswahl (&sect;1 Abs. 3 KSchG) machen die Kündigung angreifbar und erhöhen den Abfindungsfaktor erheblich.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
-              Besonderer <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> — etwa bei Schwangerschaft,
+              Besonderer <Link href="/kuendigung/" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> — etwa bei Schwangerschaft,
               Schwerbehinderung, Elternzeit oder als Betriebsratsmitglied — stärkt Ihre Position zusätzlich.
               In diesen Fällen ist die Kündigung oft von vornherein unwirksam, was den Arbeitgeber zu deutlich höheren
               Abfindungen bewegt.
@@ -400,7 +400,7 @@ export default function AbfindungsrechnerPage() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               Haben Sie eine Rechtsschutzversicherung mit Arbeitsrechtsschutz? Dann übernimmt diese in der Regel
               die Anwalts- und Gerichtskosten vollständig. Aber auch ohne Versicherung lohnt sich zumindest eine{' '}
-              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">kostenlose Ersteinschätzung</Link>,
+              <Link href="/kuendigung-pruefen/" className="text-gold no-underline hover:underline">kostenlose Ersteinschätzung</Link>,
               um Ihre Chancen realistisch bewerten zu können.
             </p>
           </div>

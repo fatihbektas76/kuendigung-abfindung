@@ -60,7 +60,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
           <nav className="text-sm text-gray-500 mb-6">
             <Link href="/" className="text-[#8B7A3A] no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/kuendigung" className="text-[#8B7A3A] no-underline hover:underline">Kündigung</Link>
+            <Link href="/kuendigung/" className="text-[#8B7A3A] no-underline hover:underline">Kündigung</Link>
             <span className="mx-2">/</span>
             <span>Fristlose Kündigung nach {yl}</span>
           </nav>
@@ -530,7 +530,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
         <div className="max-w-content mx-auto">
           <div className="mb-3">
             <Link
-              href="/fristlose-kuendigung"
+              href="/fristlose-kuendigung/"
               className="inline-flex items-center gap-1.5 text-sm text-[#6B6626] font-medium no-underline hover:underline"
             >
               &larr; Zurück zur Übersicht: Fristlose Kündigung

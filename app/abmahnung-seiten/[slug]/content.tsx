@@ -32,7 +32,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/abmahnung" className="text-gold no-underline hover:underline">Abmahnung</Link>
+            <Link href="/abmahnung/" className="text-gold no-underline hover:underline">Abmahnung</Link>
             <span className="mx-2">/</span>
             <span>Nach {label}</span>
           </nav>
@@ -442,10 +442,10 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
                 {e.count} {e.count === 1 ? 'Abmahnung' : 'Abmahnungen'}
               </Link>
             ))}
-            <Link href="/abmahnung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+            <Link href="/abmahnung/" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
               Abmahnung Übersicht
             </Link>
-            <Link href="/kuendigung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+            <Link href="/kuendigung/" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
               Kündigung Übersicht
             </Link>
           </div>

@@ -325,7 +325,7 @@ export default function Home() {
                   Heidelberg und Leipzig.
                 </p>
                 <Link
-                  href="/arbeitsrecht-anwalt"
+                  href="/arbeitsrecht-anwalt/"
                   className="inline-flex items-center gap-1.5 text-[0.88rem] font-semibold text-gold-dark no-underline hover:underline"
                 >
                   Alle 106 Standorte &rarr;

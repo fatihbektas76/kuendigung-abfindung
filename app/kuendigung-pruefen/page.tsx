@@ -843,7 +843,7 @@ export default function KuendigungPruefenPage() {
                 />
                 <span className="text-[0.82rem] text-ink-muted leading-relaxed">
                   Ich habe die{' '}
-                  <Link href="/privacy-policy" className="text-gold no-underline hover:underline" target="_blank">
+                  <Link href="/privacy-policy/" className="text-gold no-underline hover:underline" target="_blank">
                     Datenschutzerklärung
                   </Link>{' '}
                   gelesen und stimme der Verarbeitung meiner Daten zu. <span className="text-gold-dark">*</span>

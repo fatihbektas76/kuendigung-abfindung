@@ -134,7 +134,7 @@ export default function UeberstundenrechnerPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/tools" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
+            <Link href="/tools/" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
             <span className="mx-2">/</span>
             <span>Überstundenrechner</span>
           </nav>
@@ -462,9 +462,9 @@ export default function UeberstundenrechnerPage() {
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               Wurden Sie gekündigt? Berechnen Sie auch Ihre mögliche Abfindung mit unserem{' '}
-              <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>.
+              <Link href="/abfindungsrechner/" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>.
               Oder nutzen Sie unsere{' '}
-              <Link href="/tools" className="text-gold no-underline hover:underline">weiteren kostenlosen Tools</Link>{' '}
+              <Link href="/tools/" className="text-gold no-underline hover:underline">weiteren kostenlosen Tools</Link>{' '}
               für eine umfassende Einschätzung Ihrer arbeitsrechtlichen Situation.
             </p>
           </div>
@@ -484,12 +484,12 @@ export default function UeberstundenrechnerPage() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Werden Sie gekündigt, stellt sich die Frage: Was passiert mit angesammelten Überstunden?
               Grundsätzlich hat der Arbeitgeber das Recht, Ihnen die Überstunden während der{' '}
-              <Link href="/kuendigungsfrist-rechner" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>{' '}
+              <Link href="/kuendigungsfrist-rechner/" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>{' '}
               als Freizeitausgleich zu gewähren. Ist das aufgrund der Restarbeitszeit nicht mehr möglich,
               entsteht ein <strong>Auszahlungsanspruch</strong>.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
-              Bei einem <Link href="/aufhebungsvertrag" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>{' '}
+              Bei einem <Link href="/aufhebungsvertrag/" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>{' '}
               sollten offene Überstunden unbedingt in die Verhandlung einbezogen werden. In der Praxis werden
               Überstundenansprüche häufig in die Abfindungssumme eingerechnet — achten Sie darauf, dass dies
               im Aufhebungsvertrag klar geregelt ist, damit keine Ansprüche untergehen.

@@ -493,7 +493,7 @@ export default function KuendigungPage() {
         <div className="max-w-content mx-auto text-center">
           <p className="text-[0.92rem] text-ink-muted">
             Wir vertreten Arbeitnehmer bundesweit &mdash; vollständig digital.{' '}
-            <a href="/arbeitsrecht-anwalt" className="text-gold-dark font-semibold no-underline hover:underline">
+            <a href="/arbeitsrecht-anwalt/" className="text-gold-dark font-semibold no-underline hover:underline">
               Fachanwalt für Arbeitsrecht in Ihrer Stadt finden &rarr;
             </a>
           </p>
