@@ -209,7 +209,7 @@ export default function KuendigungsfristRechnerPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/tools" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
+            <Link href="/tools/" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
             <span className="mx-2">/</span>
             <span>Kündigungsfrist berechnen</span>
           </nav>
@@ -271,7 +271,7 @@ export default function KuendigungsfristRechnerPage() {
               Kündigung erhalten und Frist unklar? Wir prüfen Ihre Kündigung kostenlos — inkl. Abfindungschancen.
             </p>
             <Link
-              href="/kuendigung-pruefen"
+              href="/kuendigung-pruefen/"
               className="inline-block py-2.5 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] whitespace-nowrap"
             >
               Jetzt kostenlos prüfen &rarr;
@@ -395,7 +395,7 @@ export default function KuendigungsfristRechnerPage() {
 
                 <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
                   <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
-                  <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
+                  <Link href="/kuendigung-pruefen/" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
                 </p>
 
                 {/* Aufklappbarer Hinweis */}
@@ -516,7 +516,7 @@ export default function KuendigungsfristRechnerPage() {
 
                   {/* CTA */}
                   <Link
-                    href="/kuendigung-pruefen"
+                    href="/kuendigung-pruefen/"
                     className="block w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
                   >
                     Kündigung kostenlos prüfen &rarr;
@@ -595,11 +595,11 @@ export default function KuendigungsfristRechnerPage() {
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               Berechnen Sie auch Ihre mögliche Abfindung mit unserem{' '}
-              <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>{' '}
+              <Link href="/abfindungsrechner/" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>{' '}
               oder prüfen Sie ausstehende Vergütung mit dem{' '}
-              <Link href="/ueberstundenrechner" className="text-gold no-underline hover:underline">Überstundenrechner</Link>.
+              <Link href="/ueberstundenrechner/" className="text-gold no-underline hover:underline">Überstundenrechner</Link>.
               Alle unsere{' '}
-              <Link href="/tools" className="text-gold no-underline hover:underline">kostenlosen Tools</Link>{' '}
+              <Link href="/tools/" className="text-gold no-underline hover:underline">kostenlosen Tools</Link>{' '}
               finden Sie auf der Übersichtsseite.
             </p>
           </div>
@@ -618,7 +618,7 @@ export default function KuendigungsfristRechnerPage() {
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Neben den gesetzlichen Fristen nach &sect;622 BGB gibt es Personengruppen, die einen besonderen{' '}
-              <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> genießen.
+              <Link href="/kuendigung/" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> genießen.
               Bei diesen Arbeitnehmern ist eine ordentliche Kündigung entweder ganz ausgeschlossen oder an
               zusätzliche Voraussetzungen geknüpft — unabhängig von der berechneten Frist.
             </p>
@@ -661,10 +661,10 @@ export default function KuendigungsfristRechnerPage() {
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               <strong>3. Fachanwalt kontaktieren:</strong> Eine{' '}
-              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">kostenlose Ersteinschätzung</Link>{' '}
+              <Link href="/kuendigung-pruefen/" className="text-gold no-underline hover:underline">kostenlose Ersteinschätzung</Link>{' '}
               hilft Ihnen, die Situation einzuordnen: Ist die Kündigung wirksam? Lohnt sich eine Klage?
               Besteht Aussicht auf eine{' '}
-              <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindung</Link>?
+              <Link href="/abfindungsrechner/" className="text-gold no-underline hover:underline">Abfindung</Link>?
               Handeln Sie schnell — nach Ablauf der 3-Wochen-Frist ist die Kündigung in der Regel unangreifbar (eine nachträgliche Zulassung nach § 5 KSchG kommt nur in engen Ausnahmefällen in Betracht).
             </p>
           </div>
@@ -682,7 +682,7 @@ export default function KuendigungsfristRechnerPage() {
             Ihnen, ob eine Abfindung möglich ist.
           </p>
           <Link
-            href="/kuendigung-pruefen"
+            href="/kuendigung-pruefen/"
             className="inline-block py-3.5 px-8 bg-gold text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.35)]"
           >
             Jetzt kostenlos anfragen &rarr;
@@ -754,7 +754,7 @@ export default function KuendigungsfristRechnerPage() {
               Abfindung? Wir prüfen beides — kostenlos.
             </p>
             <Link
-              href="/kuendigung-pruefen"
+              href="/kuendigung-pruefen/"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
               Kostenlose Ersteinschätzung &rarr;

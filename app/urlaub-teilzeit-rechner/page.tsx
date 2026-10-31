@@ -143,7 +143,7 @@ export default function UrlaubTeilzeitRechnerPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/tools" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
+            <Link href="/tools/" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
             <span className="mx-2">/</span>
             <span>Urlaub Teilzeit berechnen</span>
           </nav>
@@ -347,7 +347,7 @@ export default function UrlaubTeilzeitRechnerPage() {
               Das <strong>Bundesarbeitsgericht</strong> hat mit Urteil vom 10.02.2015 (9 AZR 53/14) klargestellt,
               dass ein übertragener Vollzeiturlaubsanspruch auch nach dem Wechsel in Teilzeit in voller Höhe erhalten
               bleibt. Prüfen Sie auch Ihre{' '}
-              <Link href="/kuendigungsfrist-rechner" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>
+              <Link href="/kuendigungsfrist-rechner/" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>
               , falls ein Wechsel im Zusammenhang mit einer Kündigung steht.
             </p>
           </div>
@@ -382,9 +382,9 @@ export default function UrlaubTeilzeitRechnerPage() {
               angerechnet (<strong>&sect;9 BUrlG</strong>) &mdash; genau wie bei Vollzeitbeschäftigten. Der Urlaub gilt
               als nicht genommen und kann nachgeholt werden. Wurde Ihr Resturlaub bei Beendigung des Arbeitsverhältnisses
               nicht gewährt? Berechnen Sie Ihre{' '}
-              <Link href="/urlaubsabgeltung-rechner" className="text-gold no-underline hover:underline">Urlaubsabgeltung</Link>.
+              <Link href="/urlaubsabgeltung-rechner/" className="text-gold no-underline hover:underline">Urlaubsabgeltung</Link>.
               Prüfen Sie außerdem, ob Ihnen{' '}
-              <Link href="/ueberstundenrechner" className="text-gold no-underline hover:underline">Überstundenvergütung</Link>{' '}
+              <Link href="/ueberstundenrechner/" className="text-gold no-underline hover:underline">Überstundenvergütung</Link>{' '}
               zusteht.
             </p>
           </div>

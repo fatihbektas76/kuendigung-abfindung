@@ -253,7 +253,7 @@ export default function ContactForm() {
                   </button>
                   <p className="text-[0.76rem] text-ink-muted mt-3 text-center leading-relaxed">
                     By submitting you agree to our{' '}
-                    <a href="/en/privacy-policy" className="text-gold-dark underline">
+                    <a href="/en/privacy-policy/" className="text-gold-dark underline">
                       privacy policy
                     </a>
                     . Your data is used exclusively to handle your enquiry.

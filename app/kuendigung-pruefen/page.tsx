@@ -106,7 +106,7 @@ const pruefenFaqs = [
   },
   {
     q: 'Ist die Prüfung wirklich kostenlos?',
-    a: 'Ja, die Ersteinschätzung ist 100% kostenlos und unverbindlich. Es entstehen keine versteckten Kosten. Erst wenn Sie sich für eine anwaltliche Vertretung entscheiden, fallen Gebühren an — die bei Rechtsschutzversicherung oft vollständig übernommen werden.',
+    a: 'Ja, die Ersteinschätzung ist 100% kostenlos und unverbindlich. Es entstehen keine versteckten Kosten. Erst wenn Sie sich für eine anwaltliche Vertretung entscheiden, fallen Gebühren an — die bei Rechtsschutzversicherung oft übernommen werden (vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung).',
   },
   {
     q: 'Welche 3-Wochen-Frist muss ich beachten?',
@@ -843,7 +843,7 @@ export default function KuendigungPruefenPage() {
                 />
                 <span className="text-[0.82rem] text-ink-muted leading-relaxed">
                   Ich habe die{' '}
-                  <Link href="/privacy-policy" className="text-gold no-underline hover:underline" target="_blank">
+                  <Link href="/privacy-policy/" className="text-gold no-underline hover:underline" target="_blank">
                     Datenschutzerklärung
                   </Link>{' '}
                   gelesen und stimme der Verarbeitung meiner Daten zu. <span className="text-gold-dark">*</span>

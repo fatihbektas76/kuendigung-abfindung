@@ -134,7 +134,7 @@ const tools = [
 const faqs = [
   {
     q: 'Sind die Tools wirklich kostenlos?',
-    a: 'Ja, vollständig. Alle Tools auf dieser Seite können ohne Registrierung und ohne Kosten genutzt werden. Auch die anwaltliche Ersteinschätzung im Anschluss ist kostenlos und unverbindlich. Erst wenn Sie sich für eine Mandatierung entscheiden, fallen Kosten an — die bei bestehender Rechtsschutzversicherung häufig vollständig übernommen werden.',
+    a: 'Ja, vollständig. Alle Tools auf dieser Seite können ohne Registrierung und ohne Kosten genutzt werden. Auch die anwaltliche Ersteinschätzung im Anschluss ist kostenlos und unverbindlich. Erst wenn Sie sich für eine Mandatierung entscheiden, fallen Kosten an — die bei bestehender Rechtsschutzversicherung häufig übernommen werden (vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung).',
   },
   {
     q: 'Wie genau ist der Abfindungsrechner?',
@@ -154,7 +154,7 @@ const faqs = [
   },
   {
     q: 'Was ist der Unterschied zwischen Abfindung und Kündigungsschutzklage?',
-    a: 'Die Kündigungsschutzklage ist das stärkere Mittel: Sie können damit die Unwirksamkeit der Kündigung gerichtlich feststellen lassen — mit dem Ziel der Weiterbeschäftigung oder einer höheren Abfindung als Vergleich. Die Abfindung nach § 1a KSchG ist dagegen eine einvernehmliche Lösung ohne Klage. Welcher Weg besser ist, hängt von Ihrer konkreten Situation ab.',
+    a: 'Die Kündigungsschutzklage ist das stärkere Mittel: Sie können damit die Unwirksamkeit der Kündigung gerichtlich feststellen lassen — mit dem Ziel der Weiterbeschäftigung oder einer höheren Abfindung als Vergleich. Die Abfindung nach § 1a KSchG ist dagegen ein Abfindungsangebot des Arbeitgebers direkt im Kündigungsschreiben — in gesetzlicher Höhe von 0,5 Bruttomonatsgehältern pro Beschäftigungsjahr, gegen Verzicht auf die Klage. Welcher Weg besser ist, hängt von Ihrer konkreten Situation ab.',
   },
 ];
 
@@ -382,14 +382,14 @@ export default function ToolsPage() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Unsere Tools sind keine einfachen Rechner &mdash; sie bilden die tatsächliche rechtliche Prüflogik ab,
               die ein Fachanwalt im Erstgespräch anwendet. Der{' '}
-              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">Kündigungscheck</Link>{' '}
+              <Link href="/kuendigung-pruefen/" className="text-gold no-underline hover:underline">Kündigungscheck</Link>{' '}
               fragt zum Beispiel gezielt nach Betriebsgröße, Beschäftigungsdauer und besonderen
               Schutztatbeständen wie Schwerbehinderung oder Elternzeit &mdash; denn genau diese Faktoren bestimmen,
               ob das Kündigungsschutzgesetz greift.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Der{' '}
-              <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>{' '}
+              <Link href="/abfindungsrechner/" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>{' '}
               basiert auf der in der Praxis anerkannten Faustformel: 0,5 Bruttomonatsgehälter pro
               Beschäftigungsjahr als Ausgangspunkt. Je nach Verhandlungsgeschick, Kündigungsschutzlage und
               wirtschaftlicher Situation des Arbeitgebers sind Abweichungen nach oben oder unten möglich &mdash; das
@@ -397,7 +397,7 @@ export default function ToolsPage() {
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Der{' '}
-              <Link href="/schwellenwert-rechner" className="text-gold no-underline hover:underline">Schwellenwert-Rechner</Link>{' '}
+              <Link href="/schwellenwert-rechner/" className="text-gold no-underline hover:underline">Schwellenwert-Rechner</Link>{' '}
               beantwortet eine der häufigsten Fragen im Arbeitsrecht: Gilt das Kündigungsschutzgesetz überhaupt für
               meinen Betrieb? Er berechnet die Vollzeitäquivalente (FTE) nach &sect;23 KSchG und zeigt Ihnen sofort,
               ob der Schwellenwert von 10 überschritten wird.
@@ -406,7 +406,7 @@ export default function ToolsPage() {
               Wichtig: Kein Online-Tool ersetzt eine individuelle anwaltliche Beratung. Die Tools geben Ihnen eine
               fundierte Orientierung &mdash; damit Sie informiert in ein Erstgespräch gehen oder einschätzen können,
               ob sich weiteres Handeln lohnt. Die persönliche Ersteinschätzung durch{' '}
-              <Link href="/arbeitsrecht-anwalt" className="text-gold no-underline hover:underline">Fachanwalt Fatih Bektas</Link>{' '}
+              <Link href="/arbeitsrecht-anwalt/" className="text-gold no-underline hover:underline">Fachanwalt Fatih Bektas</Link>{' '}
               ist in jedem Fall kostenlos und unverbindlich.
             </p>
           </div>
@@ -447,7 +447,7 @@ export default function ToolsPage() {
             kostenlos und innerhalb von 24 Stunden.
           </p>
           <Link
-            href="/kuendigung-pruefen"
+            href="/kuendigung-pruefen/"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
             Jetzt kostenlos anfragen &rarr;

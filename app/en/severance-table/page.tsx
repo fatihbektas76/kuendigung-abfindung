@@ -225,7 +225,7 @@ export default function SeveranceTableEn() {
             Severance in a termination agreement vs. settlement after dismissal
           </h2>
           <p className="text-[0.98rem] text-ink-light leading-relaxed mb-4">
-            A <Link href="/en/termination-agreement" className="text-gold-dark no-underline hover:underline">termination agreement (Aufhebungsvertrag)</Link>{' '}
+            A <Link href="/en/termination-agreement/" className="text-gold-dark no-underline hover:underline">termination agreement (Aufhebungsvertrag)</Link>{' '}
             avoids the three-week filing window and lets both sides agree a predictable
             end-date and severance payment. Trade-off: without the right wording the Federal
             Employment Agency can impose a 12-week dormancy on unemployment benefit (§ 158
@@ -236,7 +236,7 @@ export default function SeveranceTableEn() {
             but requires a formal filing within three weeks of receiving the letter{' '}
             (§ 4 KSchG). Negotiating leverage almost always arises only through filing the
             claim — see our{' '}
-            <Link href="/en/unfair-dismissal-claim" className="text-gold-dark no-underline hover:underline">
+            <Link href="/en/unfair-dismissal-claim/" className="text-gold-dark no-underline hover:underline">
               unfair-dismissal claim overview
             </Link>.
           </p>

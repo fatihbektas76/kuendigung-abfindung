@@ -112,7 +112,7 @@ export default function AbfindungsrechnerPage() {
                 '@type': 'HowToStep',
                 position: 2,
                 name: 'Betriebszugehörigkeit angeben',
-                text: 'Geben Sie die Anzahl der vollen Beschäftigungsjahre ein. Ab 6 Monaten wird aufgerundet.',
+                text: 'Geben Sie die Anzahl der vollen Beschäftigungsjahre ein. Bei mehr als 6 Monaten im angebrochenen Jahr wird auf ein volles Jahr aufgerundet (§ 1a Abs. 2 KSchG).',
               },
               {
                 '@type': 'HowToStep',
@@ -270,7 +270,7 @@ export default function AbfindungsrechnerPage() {
                     Mit Fünftelregelung (§&nbsp;34 EStG), Soli und Kirchensteuer rechnen:
                   </p>
                   <Link
-                    href="/abfindung-netto-rechner"
+                    href="/abfindung-netto-rechner/"
                     className="inline-block py-3 px-6 bg-white text-ink border border-border rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:border-gold hover:text-gold-dark"
                   >
                     Zum Netto-Rechner &rarr;
@@ -336,7 +336,7 @@ export default function AbfindungsrechnerPage() {
               hängt maßgeblich davon ab, wie stark die Kündigung angreifbar ist.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
-              Bei angebrochenen Beschäftigungsjahren wird nach ständiger Rechtsprechung des Bundesarbeitsgerichts ab sechs Monaten aufgerundet.
+              Bei angebrochenen Beschäftigungsjahren wird ein Zeitraum von mehr als sechs Monaten auf ein volles Jahr aufgerundet (§ 1a Abs. 2 KSchG).
               Wer also 4 Jahre und 7 Monate beschäftigt war, rechnet mit 5 Jahren.
               Sonderzahlungen wie Weihnachts- oder Urlaubsgeld fließen anteilig in das Bruttomonatsgehalt ein,
               wenn sie regelmäßig gezahlt werden.
@@ -362,7 +362,7 @@ export default function AbfindungsrechnerPage() {
               Sozialauswahl (&sect;1 Abs. 3 KSchG) machen die Kündigung angreifbar und erhöhen den Abfindungsfaktor erheblich.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
-              Besonderer <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> — etwa bei Schwangerschaft,
+              Besonderer <Link href="/kuendigung/" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> — etwa bei Schwangerschaft,
               Schwerbehinderung, Elternzeit oder als Betriebsratsmitglied — stärkt Ihre Position zusätzlich.
               In diesen Fällen ist die Kündigung oft von vornherein unwirksam, was den Arbeitgeber zu deutlich höheren
               Abfindungen bewegt.
@@ -399,8 +399,8 @@ export default function AbfindungsrechnerPage() {
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               Haben Sie eine Rechtsschutzversicherung mit Arbeitsrechtsschutz? Dann übernimmt diese in der Regel
-              die Anwalts- und Gerichtskosten vollständig. Aber auch ohne Versicherung lohnt sich zumindest eine{' '}
-              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">kostenlose Ersteinschätzung</Link>,
+              die Anwalts- und Gerichtskosten vollständig — vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung. Aber auch ohne Versicherung lohnt sich zumindest eine{' '}
+              <Link href="/kuendigung-pruefen/" className="text-gold no-underline hover:underline">kostenlose Ersteinschätzung</Link>,
               um Ihre Chancen realistisch bewerten zu können.
             </p>
           </div>

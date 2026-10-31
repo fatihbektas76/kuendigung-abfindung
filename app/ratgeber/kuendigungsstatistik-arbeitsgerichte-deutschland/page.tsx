@@ -140,7 +140,7 @@ export default function KuendigungsstatistikPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/ratgeber" className="text-gold no-underline hover:underline">Ratgeber</Link>
+            <Link href="/ratgeber/" className="text-gold no-underline hover:underline">Ratgeber</Link>
             <span className="mx-2">/</span>
             <span>Kündigungsstatistik</span>
           </nav>

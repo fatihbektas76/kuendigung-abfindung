@@ -112,7 +112,7 @@ export default function UrteilDetailPage({ params }: Props) {
               Start
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/ratgeber/urteile" className="text-gold no-underline hover:underline">
+            <Link href="/ratgeber/urteile/" className="text-gold no-underline hover:underline">
               Rechtsprechung
             </Link>
             <span className="mx-2">/</span>
@@ -371,7 +371,7 @@ export default function UrteilDetailPage({ params }: Props) {
             kostenlos und innerhalb von 24 Stunden.
           </p>
           <Link
-            href="/kuendigung-pruefen"
+            href="/kuendigung-pruefen/"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
             Kostenlos prüfen lassen &rarr;

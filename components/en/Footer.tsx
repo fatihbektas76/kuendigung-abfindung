@@ -72,15 +72,15 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Guides</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/en/severance-pay" className={linkClass}>Severance pay</Link></li>
-              <li><Link href="/en/dismissal" className={linkClass}>Dismissal</Link></li>
-              <li><Link href="/en/termination-agreement" className={linkClass}>Termination agreement</Link></li>
-              <li><Link href="/en/written-warning" className={linkClass}>Written warning</Link></li>
-              <li><Link href="/en/summary-dismissal" className={linkClass}>Summary dismissal</Link></li>
-              <li><Link href="/en/guides/employment-law" className={linkClass}>Employment-law guide</Link></li>
-              <li><Link href="/en/guides/templates" className={linkClass}>Templates</Link></li>
-              <li><Link href="/en/guides/court-rulings" className={linkClass}>Court rulings</Link></li>
-              <li><Link href="/en/glossary" className={linkClass}>Glossary</Link></li>
+              <li><Link href="/en/severance-pay/" className={linkClass}>Severance pay</Link></li>
+              <li><Link href="/en/dismissal/" className={linkClass}>Dismissal</Link></li>
+              <li><Link href="/en/termination-agreement/" className={linkClass}>Termination agreement</Link></li>
+              <li><Link href="/en/written-warning/" className={linkClass}>Written warning</Link></li>
+              <li><Link href="/en/summary-dismissal/" className={linkClass}>Summary dismissal</Link></li>
+              <li><Link href="/en/guides/employment-law/" className={linkClass}>Employment-law guide</Link></li>
+              <li><Link href="/en/guides/templates/" className={linkClass}>Templates</Link></li>
+              <li><Link href="/en/guides/court-rulings/" className={linkClass}>Court rulings</Link></li>
+              <li><Link href="/en/glossary/" className={linkClass}>Glossary</Link></li>
             </ul>
           </div>
 
@@ -92,7 +92,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/en/severance-after-5-jahren-years-of-employment/" className={linkClass}>After 5 years</Link></li>
               <li><Link href="/en/severance-after-10-jahren-years-of-employment/" className={linkClass}>After 10 years</Link></li>
               <li><Link href="/en/severance-after-20-jahren-years-of-employment/" className={linkClass}>After 20 years</Link></li>
-              <li><Link href="/en/severance-pay" className={linkClass}>See all &rarr;</Link></li>
+              <li><Link href="/en/severance-pay/" className={linkClass}>See all &rarr;</Link></li>
             </ul>
           </div>
 
@@ -104,7 +104,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/en/dismissed-after-5-jahren-years-of-employment/" className={linkClass}>After 5 years</Link></li>
               <li><Link href="/en/dismissed-after-10-jahren-years-of-employment/" className={linkClass}>After 10 years</Link></li>
               <li><Link href="/en/dismissed-after-20-jahren-years-of-employment/" className={linkClass}>After 20 years</Link></li>
-              <li><Link href="/en/dismissal" className={linkClass}>See all &rarr;</Link></li>
+              <li><Link href="/en/dismissal/" className={linkClass}>See all &rarr;</Link></li>
             </ul>
           </div>
 
@@ -116,7 +116,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/en/summary-dismissal-after-5-jahren-years-of-employment/" className={linkClass}>After 5 years</Link></li>
               <li><Link href="/en/summary-dismissal-after-10-jahren-years-of-employment/" className={linkClass}>After 10 years</Link></li>
               <li><Link href="/en/summary-dismissal-after-20-jahren-years-of-employment/" className={linkClass}>After 20 years</Link></li>
-              <li><Link href="/en/summary-dismissal" className={linkClass}>See all &rarr;</Link></li>
+              <li><Link href="/en/summary-dismissal/" className={linkClass}>See all &rarr;</Link></li>
             </ul>
           </div>
 
@@ -124,15 +124,15 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Tools &amp; calculators</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/en/severance-calculator" className={linkClass}>Severance calculator</Link></li>
-              <li><Link href="/en/small-business-threshold-calculator" className={linkClass}>Small-business threshold</Link></li>
-              <li><Link href="/en/check-dismissal" className={linkClass}>Check your dismissal</Link></li>
-              <li><Link href="/en/check-written-warning" className={linkClass}>Check written warning</Link></li>
-              <li><Link href="/en/overtime-calculator" className={linkClass}>Overtime calculator</Link></li>
-              <li><Link href="/en/notice-period-calculator" className={linkClass}>Notice-period calculator</Link></li>
-              <li><Link href="/en/unused-holiday-pay-calculator" className={linkClass}>Unused-holiday pay</Link></li>
-              <li><Link href="/en/part-time-holiday-calculator" className={linkClass}>Part-time holiday</Link></li>
-              <li><Link href="/en/tools" className={linkClass}>All tools &rarr;</Link></li>
+              <li><Link href="/en/severance-calculator/" className={linkClass}>Severance calculator</Link></li>
+              <li><Link href="/en/small-business-threshold-calculator/" className={linkClass}>Small-business threshold</Link></li>
+              <li><Link href="/en/check-dismissal/" className={linkClass}>Check your dismissal</Link></li>
+              <li><Link href="/en/check-written-warning/" className={linkClass}>Check written warning</Link></li>
+              <li><Link href="/en/overtime-calculator/" className={linkClass}>Overtime calculator</Link></li>
+              <li><Link href="/en/notice-period-calculator/" className={linkClass}>Notice-period calculator</Link></li>
+              <li><Link href="/en/unused-holiday-pay-calculator/" className={linkClass}>Unused-holiday pay</Link></li>
+              <li><Link href="/en/part-time-holiday-calculator/" className={linkClass}>Part-time holiday</Link></li>
+              <li><Link href="/en/tools/" className={linkClass}>All tools &rarr;</Link></li>
             </ul>
           </div>
 
@@ -140,10 +140,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>About</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/en/team" className={linkClass}>Team</Link></li>
-              <li><Link href="/en/author/fatih-bektas" className={linkClass}>About Fatih Bektas</Link></li>
-              <li><Link href="/en/employment-lawyer" className={linkClass}>Employment lawyer</Link></li>
-              <li><Link href="/en/unfair-dismissal-claim" className={linkClass}>Unfair-dismissal claim</Link></li>
+              <li><Link href="/en/team/" className={linkClass}>Team</Link></li>
+              <li><Link href="/en/author/fatih-bektas/" className={linkClass}>About Fatih Bektas</Link></li>
+              <li><Link href="/en/employment-lawyer/" className={linkClass}>Employment lawyer</Link></li>
+              <li><Link href="/en/unfair-dismissal-claim/" className={linkClass}>Unfair-dismissal claim</Link></li>
             </ul>
           </div>
 
@@ -151,10 +151,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Topics</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/en/notice-periods" className={linkClass}>Notice periods</Link></li>
-              <li><Link href="/en/severance-table" className={linkClass}>Severance table</Link></li>
-              <li><Link href="/en/redundancy-dismissal" className={linkClass}>Redundancy</Link></li>
-              <li><Link href="/en/dismissal-protection-act" className={linkClass}>Dismissal Protection Act</Link></li>
+              <li><Link href="/en/notice-periods/" className={linkClass}>Notice periods</Link></li>
+              <li><Link href="/en/severance-table/" className={linkClass}>Severance table</Link></li>
+              <li><Link href="/en/redundancy-dismissal/" className={linkClass}>Redundancy</Link></li>
+              <li><Link href="/en/dismissal-protection-act/" className={linkClass}>Dismissal Protection Act</Link></li>
             </ul>
           </div>
 
@@ -162,11 +162,11 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Locations</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/en/employment-lawyer/berlin" className={linkClass}>Berlin</Link></li>
-              <li><Link href="/en/employment-lawyer/hamburg" className={linkClass}>Hamburg</Link></li>
-              <li><Link href="/en/employment-lawyer/muenchen" className={linkClass}>Munich</Link></li>
-              <li><Link href="/en/employment-lawyer/heidelberg" className={linkClass}>Heidelberg</Link></li>
-              <li><Link href="/en/employment-lawyer" className={linkClass}>All cities &rarr;</Link></li>
+              <li><Link href="/en/employment-lawyer/berlin/" className={linkClass}>Berlin</Link></li>
+              <li><Link href="/en/employment-lawyer/hamburg/" className={linkClass}>Hamburg</Link></li>
+              <li><Link href="/en/employment-lawyer/muenchen/" className={linkClass}>Munich</Link></li>
+              <li><Link href="/en/employment-lawyer/heidelberg/" className={linkClass}>Heidelberg</Link></li>
+              <li><Link href="/en/employment-lawyer/" className={linkClass}>All cities &rarr;</Link></li>
             </ul>
           </div>
         </div>
@@ -175,12 +175,12 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
         <div className="flex justify-between items-center flex-wrap gap-4 text-[0.78rem] text-white/65">
           <ul className="list-none flex flex-wrap gap-x-5 gap-y-2">
             <li>
-              <Link href="/en/privacy-policy" className="text-white/65 no-underline hover:text-white/90 transition-colors">
+              <Link href="/en/privacy-policy/" className="text-white/65 no-underline hover:text-white/90 transition-colors">
                 Privacy
               </Link>
             </li>
             <li>
-              <Link href="/en/legal-notice" className="text-white/65 no-underline hover:text-white/90 transition-colors">
+              <Link href="/en/legal-notice/" className="text-white/65 no-underline hover:text-white/90 transition-colors">
                 Legal notice
               </Link>
             </li>

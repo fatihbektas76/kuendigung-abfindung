@@ -154,7 +154,7 @@ export default function DismissedYearsEn({ params }: Props) {
                 </Link>
               )}
               <Link
-                href="/en/dismissal"
+                href="/en/dismissal/"
                 className="block p-5 border border-border-light rounded bg-cream text-[0.95rem] text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
               >
                 <span className="text-[0.78rem] uppercase tracking-wider text-ink-muted">

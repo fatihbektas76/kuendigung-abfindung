@@ -43,7 +43,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               LinkedIn
             </a>
             <span className="text-white/50">|</span>
-            <Link href="/ratgeber" className="text-white/70 no-underline hover:text-gold-light transition-colors text-[0.8rem]">
+            <Link href="/ratgeber/" className="text-white/70 no-underline hover:text-gold-light transition-colors text-[0.8rem]">
               Ratgeber
             </Link>
             <span className="text-white/50">|</span>
@@ -66,15 +66,15 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Ratgeber</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/abfindung" className={linkClass}>Abfindung</Link></li>
-              <li><Link href="/kuendigung" className={linkClass}>Kündigung</Link></li>
-              <li><Link href="/aufhebungsvertrag" className={linkClass}>Aufhebungsvertrag</Link></li>
-              <li><Link href="/abmahnung" className={linkClass}>Abmahnung</Link></li>
-              <li><Link href="/fristlose-kuendigung" className={linkClass}>Fristlose Kündigung</Link></li>
-              <li><Link href="/ratgeber/arbeitsrecht" className={linkClass}>Arbeitsrecht-Ratgeber</Link></li>
-              <li><Link href="/ratgeber/muster" className={linkClass}>Muster &amp; Vorlagen</Link></li>
-              <li><Link href="/ratgeber/urteile" className={linkClass}>Urteile</Link></li>
-              <li><Link href="/glossar" className={linkClass}>Glossar</Link></li>
+              <li><Link href="/abfindung/" className={linkClass}>Abfindung</Link></li>
+              <li><Link href="/kuendigung/" className={linkClass}>Kündigung</Link></li>
+              <li><Link href="/aufhebungsvertrag/" className={linkClass}>Aufhebungsvertrag</Link></li>
+              <li><Link href="/abmahnung/" className={linkClass}>Abmahnung</Link></li>
+              <li><Link href="/fristlose-kuendigung/" className={linkClass}>Fristlose Kündigung</Link></li>
+              <li><Link href="/ratgeber/arbeitsrecht/" className={linkClass}>Arbeitsrecht-Ratgeber</Link></li>
+              <li><Link href="/ratgeber/muster/" className={linkClass}>Muster &amp; Vorlagen</Link></li>
+              <li><Link href="/ratgeber/urteile/" className={linkClass}>Urteile</Link></li>
+              <li><Link href="/glossar/" className={linkClass}>Glossar</Link></li>
             </ul>
           </div>
 
@@ -86,7 +86,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/abfindung-nach-5-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
               <li><Link href="/abfindung-nach-10-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
               <li><Link href="/abfindung-nach-20-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
-              <li><Link href="/abfindung" className={linkClass}>Alle anzeigen &rarr;</Link></li>
+              <li><Link href="/abfindung/" className={linkClass}>Alle anzeigen &rarr;</Link></li>
             </ul>
           </div>
 
@@ -98,7 +98,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/gekuendigt-nach-5-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
               <li><Link href="/gekuendigt-nach-10-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
               <li><Link href="/gekuendigt-nach-20-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
-              <li><Link href="/kuendigung" className={linkClass}>Alle anzeigen &rarr;</Link></li>
+              <li><Link href="/kuendigung/" className={linkClass}>Alle anzeigen &rarr;</Link></li>
             </ul>
           </div>
 
@@ -110,7 +110,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/fristlose-kuendigung-nach-5-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 5 Jahren</Link></li>
               <li><Link href="/fristlose-kuendigung-nach-10-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 10 Jahren</Link></li>
               <li><Link href="/fristlose-kuendigung-nach-20-jahren-betriebszugehoerigkeit/" className={linkClass}>Nach 20 Jahren</Link></li>
-              <li><Link href="/fristlose-kuendigung" className={linkClass}>Alle anzeigen &rarr;</Link></li>
+              <li><Link href="/fristlose-kuendigung/" className={linkClass}>Alle anzeigen &rarr;</Link></li>
             </ul>
           </div>
 
@@ -122,7 +122,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/kuendigung/kuendigung-probezeit/" className={linkClass}>Probezeit</Link></li>
               <li><Link href="/kuendigung/kuendigung-wegen-krankheit/" className={linkClass}>Wegen Krankheit</Link></li>
               <li><Link href="/kuendigung/kuendigung-schwerbehinderung/" className={linkClass}>Schwerbehinderung</Link></li>
-              <li><Link href="/kuendigung" className={linkClass}>Alle anzeigen &rarr;</Link></li>
+              <li><Link href="/kuendigung/" className={linkClass}>Alle anzeigen &rarr;</Link></li>
             </ul>
           </div>
 
@@ -134,7 +134,7 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
               <li><Link href="/aufhebungsvertrag/aufhebungsvertrag-sperrzeit/" className={linkClass}>Sperrzeit</Link></li>
               <li><Link href="/aufhebungsvertrag/aufhebungsvertrag-ablehnen/" className={linkClass}>Ablehnen</Link></li>
               <li><Link href="/aufhebungsvertrag/aufhebungsvertrag-widerruf/" className={linkClass}>Widerruf</Link></li>
-              <li><Link href="/aufhebungsvertrag" className={linkClass}>Alle anzeigen &rarr;</Link></li>
+              <li><Link href="/aufhebungsvertrag/" className={linkClass}>Alle anzeigen &rarr;</Link></li>
             </ul>
           </div>
 
@@ -142,15 +142,15 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Tools &amp; Rechner</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/abfindungsrechner" className={linkClass}>Abfindungsrechner</Link></li>
-              <li><Link href="/schwellenwert-rechner" className={linkClass}>Schwellenwert-Rechner</Link></li>
-              <li><Link href="/kuendigung-pruefen" className={linkClass}>Kündigung prüfen</Link></li>
-              <li><Link href="/abmahnung-pruefen" className={linkClass}>Abmahnung prüfen</Link></li>
-              <li><Link href="/ueberstundenrechner" className={linkClass}>Überstundenrechner</Link></li>
-              <li><Link href="/kuendigungsfrist-rechner" className={linkClass}>Kündigungsfrist-Rechner</Link></li>
-              <li><Link href="/urlaubsabgeltung-rechner" className={linkClass}>Urlaubsabgeltungsrechner</Link></li>
-              <li><Link href="/urlaub-teilzeit-rechner" className={linkClass}>Urlaubsrechner Teilzeit</Link></li>
-              <li><Link href="/tools" className={linkClass}>Alle Tools &rarr;</Link></li>
+              <li><Link href="/abfindungsrechner/" className={linkClass}>Abfindungsrechner</Link></li>
+              <li><Link href="/schwellenwert-rechner/" className={linkClass}>Schwellenwert-Rechner</Link></li>
+              <li><Link href="/kuendigung-pruefen/" className={linkClass}>Kündigung prüfen</Link></li>
+              <li><Link href="/abmahnung-pruefen/" className={linkClass}>Abmahnung prüfen</Link></li>
+              <li><Link href="/ueberstundenrechner/" className={linkClass}>Überstundenrechner</Link></li>
+              <li><Link href="/kuendigungsfrist-rechner/" className={linkClass}>Kündigungsfrist-Rechner</Link></li>
+              <li><Link href="/urlaubsabgeltung-rechner/" className={linkClass}>Urlaubsabgeltungsrechner</Link></li>
+              <li><Link href="/urlaub-teilzeit-rechner/" className={linkClass}>Urlaubsrechner Teilzeit</Link></li>
+              <li><Link href="/tools/" className={linkClass}>Alle Tools &rarr;</Link></li>
             </ul>
           </div>
 
@@ -158,11 +158,11 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Orte</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/arbeitsrecht-anwalt/berlin" className={linkClass}>Berlin</Link></li>
-              <li><Link href="/arbeitsrecht-anwalt/hamburg" className={linkClass}>Hamburg</Link></li>
-              <li><Link href="/arbeitsrecht-anwalt/muenchen" className={linkClass}>München</Link></li>
-              <li><Link href="/arbeitsrecht-anwalt/heidelberg" className={linkClass}>Heidelberg</Link></li>
-              <li><Link href="/arbeitsrecht-anwalt" className={linkClass}>Alle 106 Orte &rarr;</Link></li>
+              <li><Link href="/arbeitsrecht-anwalt/berlin/" className={linkClass}>Berlin</Link></li>
+              <li><Link href="/arbeitsrecht-anwalt/hamburg/" className={linkClass}>Hamburg</Link></li>
+              <li><Link href="/arbeitsrecht-anwalt/muenchen/" className={linkClass}>München</Link></li>
+              <li><Link href="/arbeitsrecht-anwalt/heidelberg/" className={linkClass}>Heidelberg</Link></li>
+              <li><Link href="/arbeitsrecht-anwalt/" className={linkClass}>Alle 106 Orte &rarr;</Link></li>
             </ul>
           </div>
         </div>
@@ -171,12 +171,12 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
         <div className="flex justify-between items-center flex-wrap gap-4 text-[0.78rem] text-white/65">
           <ul className="list-none flex flex-wrap gap-x-5 gap-y-2">
             <li>
-              <Link href="/privacy-policy" className="text-white/65 no-underline hover:text-white/90 transition-colors">
+              <Link href="/privacy-policy/" className="text-white/65 no-underline hover:text-white/90 transition-colors">
                 Datenschutz
               </Link>
             </li>
             <li>
-              <Link href="/legal-notice" className="text-white/65 no-underline hover:text-white/90 transition-colors">
+              <Link href="/legal-notice/" className="text-white/65 no-underline hover:text-white/90 transition-colors">
                 Impressum
               </Link>
             </li>

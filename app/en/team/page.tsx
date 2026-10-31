@@ -96,7 +96,7 @@ export default function TeamEn() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               gekuendigt-abfindung.de is the employment-law information portal of APOS Legal. It
               is run by{' '}
-              <Link href="/en/author/fatih-bektas" className="text-gold-dark underline">
+              <Link href="/en/author/fatih-bektas/" className="text-gold-dark underline">
                 Fatih Bektas
               </Link>
               , German employment-law specialist (Fachanwalt für Arbeitsrecht). The English

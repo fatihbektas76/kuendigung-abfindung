@@ -189,7 +189,7 @@ export default function GardenLeaveEn() {
             Executives (managing directors, board members) are not covered by § 307 BGB in
             the same way, but comparable control under service-contract case law applies.
             For executive separations see our{' '}
-            <Link href="/en/termination-agreement" className="text-gold-dark no-underline hover:underline">
+            <Link href="/en/termination-agreement/" className="text-gold-dark no-underline hover:underline">
               termination-agreement overview
             </Link>.
           </p>

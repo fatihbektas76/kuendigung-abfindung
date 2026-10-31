@@ -309,7 +309,7 @@ export default function SeveranceCalculatorEn() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               If you hold a legal-expenses insurance with employment-law cover, the policy
               typically pays all attorney and court costs. Even without insurance, a{' '}
-              <Link href="/en/check-dismissal" className="text-gold no-underline hover:underline">
+              <Link href="/en/check-dismissal/" className="text-gold no-underline hover:underline">
                 free initial case review
               </Link>{' '}
               lets you assess your chances realistically before committing to anything.

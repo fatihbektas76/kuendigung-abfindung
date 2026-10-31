@@ -376,7 +376,7 @@ export default function SchwellenwertRechnerPage() {
               Willkürliche oder treuwidrige Kündigungen sind auch ohne KSchG rechtswidrig.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
-              Besonderer <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> gilt
+              Besonderer <Link href="/kuendigung/" className="text-gold no-underline hover:underline">Kündigungsschutz</Link> gilt
               betriebsgrößenunabhängig: Schwangere sind nach &sect;17 MuSchG geschützt, Schwerbehinderte nach &sect;168 SGB IX,
               Eltern in Elternzeit nach &sect;18 BEEG und Betriebsratsmitglieder nach &sect;15 KSchG. Diese Schutzvorschriften
               gelten auch in Betrieben mit nur einem Mitarbeiter.

@@ -62,9 +62,9 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/ratgeber" className="text-gold no-underline hover:underline">Ratgeber</Link>
+            <Link href="/ratgeber/" className="text-gold no-underline hover:underline">Ratgeber</Link>
             <span className="mx-2">/</span>
-            <Link href="/ratgeber/muster" className="text-gold no-underline hover:underline">Muster</Link>
+            <Link href="/ratgeber/muster/" className="text-gold no-underline hover:underline">Muster</Link>
             <span className="mx-2">/</span>
             <span>{entry.h1}</span>
           </nav>
@@ -397,7 +397,7 @@ export default function MusterPageContent({ entry, original, generated, faqs }: 
           <h2 className="font-serif text-[1.2rem] font-bold mb-4">Weitere Muster &amp; Vorlagen</h2>
           <div className="flex flex-wrap gap-2.5">
             <Link
-              href="/ratgeber/muster"
+              href="/ratgeber/muster/"
               className="inline-block py-2 px-4 rounded-full border border-gold bg-gold-bg text-[0.82rem] font-semibold text-gold-dark no-underline hover:bg-gold hover:text-white transition-all"
             >
               Alle Muster &amp; Vorlagen

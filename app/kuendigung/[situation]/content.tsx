@@ -43,7 +43,7 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigung</Link>
+            <Link href="/kuendigung/" className="text-gold no-underline hover:underline">Kündigung</Link>
             <span className="mx-2">/</span>
             <span>Ihre Situation</span>
           </nav>
@@ -392,7 +392,7 @@ export default function LebenssituationContent({ entry, related, faqs, uniqueInt
       <section className="py-[50px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="flex flex-wrap gap-3">
-            <Link href="/kuendigung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white">
+            <Link href="/kuendigung/" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all bg-white">
               Kündigung Übersicht
             </Link>
             {related.map((e) => (

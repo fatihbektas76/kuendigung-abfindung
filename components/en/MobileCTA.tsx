@@ -52,7 +52,7 @@ export default function MobileCTA() {
           DE
         </a>
         <a
-          href="/en/check-dismissal"
+          href="/en/check-dismissal/"
           className="shrink-0 bg-gold-dark text-white text-[0.82rem] font-semibold px-5 py-2.5 rounded-sm no-underline transition-colors hover:bg-[#635428]"
         >
           Review now

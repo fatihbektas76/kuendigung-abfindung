@@ -104,7 +104,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
           <nav className="text-sm text-gray-500 mb-6">
             <Link href="/" className="text-[#8B7A3A] no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/abfindung" className="text-[#8B7A3A] no-underline hover:underline">Abfindung</Link>
+            <Link href="/abfindung/" className="text-[#8B7A3A] no-underline hover:underline">Abfindung</Link>
             <span className="mx-2">/</span>
             <span>Abfindung nach {yl}</span>
           </nav>
@@ -681,7 +681,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
         <div className="max-w-content mx-auto">
           <div className="mb-3">
             <Link
-              href="/abfindung"
+              href="/abfindung/"
               className="inline-flex items-center gap-1.5 text-sm text-[#6B6626] font-medium no-underline hover:underline"
             >
               &larr; Zurück zur Übersicht: Abfindung nach Kündigung

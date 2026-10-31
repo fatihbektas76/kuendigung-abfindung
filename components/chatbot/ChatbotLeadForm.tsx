@@ -63,7 +63,7 @@ export default function ChatbotLeadForm({ onSubmit, loading }: Props) {
           </button>
           <p className="text-[0.72rem] text-ink-muted leading-tight">
             Mit dem Absenden stimmen Sie unserer{' '}
-            <a href="/privacy-policy" className="text-gold hover:underline" target="_blank" rel="noopener noreferrer">
+            <a href="/privacy-policy/" className="text-gold hover:underline" target="_blank" rel="noopener noreferrer">
               Datenschutzerklärung
             </a>{' '}
             zu.

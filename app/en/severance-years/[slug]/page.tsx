@@ -203,7 +203,7 @@ export default function SeveranceYearsEn({ params }: Props) {
                 </Link>
               )}
               <Link
-                href="/en/severance-pay"
+                href="/en/severance-pay/"
                 className="block p-5 border border-border-light rounded bg-white text-[0.95rem] text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
               >
                 <span className="text-[0.78rem] uppercase tracking-wider text-ink-muted">
