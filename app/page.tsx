@@ -200,7 +200,7 @@ export default function Home() {
                 name: 'Gilt der Kündigungsschutz auch für mich?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Das Kündigungsschutzgesetz (KSchG) gilt, wenn Sie länger als 6 Monate im Betrieb beschäftigt sind und der Betrieb mehr als 10 Mitarbeiter hat (§23 KSchG, sog. Schwellenwert). Ausgenommen sind u.a. Geschäftsführer und leitende Angestellte mit besonderem Status.',
+                  text: 'Das Kündigungsschutzgesetz (KSchG) gilt, wenn Sie länger als 6 Monate im Betrieb beschäftigt sind und der Betrieb mehr als 10 Mitarbeiter hat (§ 23 KSchG, sog. Schwellenwert). Für Arbeitsverhältnisse, die vor dem 1. Januar 2004 begonnen haben, gilt der abgesenkte Schwellenwert von mehr als 5 Arbeitnehmern. Ausgenommen sind u.a. Geschäftsführer und leitende Angestellte mit besonderem Status.',
                 },
               },
               {
@@ -216,7 +216,7 @@ export default function Home() {
                 name: 'Was kostet eine Kündigungsschutzklage?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Im ersten arbeitsgerichtlichen Verfahren trägt jede Seite ihre eigenen Anwaltskosten, unabhängig vom Ausgang (§12a ArbGG). Gerichtskosten fallen in der ersten Instanz nicht an. Die Anwaltskosten richten sich nach dem Streitwert (1 Bruttomonatsgehalt). Viele Arbeitnehmer haben eine Rechtsschutzversicherung, die die Kosten übernimmt.',
+                  text: 'Im ersten arbeitsgerichtlichen Verfahren trägt jede Seite ihre eigenen Anwaltskosten, unabhängig vom Ausgang (§12a ArbGG). Gerichtskosten fallen in der ersten Instanz nicht an. Die Anwaltskosten richten sich nach dem Streitwert (1 Bruttomonatsgehalt). Viele Arbeitnehmer haben eine Rechtsschutzversicherung, die die Kosten in der Regel übernimmt — vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung.',
                 },
               },
               {

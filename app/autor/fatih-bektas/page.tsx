@@ -125,7 +125,7 @@ const expertise = [
   },
   {
     area: 'Abfindungsverhandlung',
-    desc: 'Maximierung der Abfindung durch strategische Verhandlungsführung. Durchschnittlich 40 % über der Regelformel.',
+    desc: 'Maximierung der Abfindung durch strategische Verhandlungsführung.',
   },
   {
     area: 'Aufhebungsvertrag',

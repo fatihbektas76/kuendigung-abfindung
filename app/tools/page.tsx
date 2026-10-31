@@ -134,7 +134,7 @@ const tools = [
 const faqs = [
   {
     q: 'Sind die Tools wirklich kostenlos?',
-    a: 'Ja, vollständig. Alle Tools auf dieser Seite können ohne Registrierung und ohne Kosten genutzt werden. Auch die anwaltliche Ersteinschätzung im Anschluss ist kostenlos und unverbindlich. Erst wenn Sie sich für eine Mandatierung entscheiden, fallen Kosten an — die bei bestehender Rechtsschutzversicherung häufig vollständig übernommen werden.',
+    a: 'Ja, vollständig. Alle Tools auf dieser Seite können ohne Registrierung und ohne Kosten genutzt werden. Auch die anwaltliche Ersteinschätzung im Anschluss ist kostenlos und unverbindlich. Erst wenn Sie sich für eine Mandatierung entscheiden, fallen Kosten an — die bei bestehender Rechtsschutzversicherung häufig übernommen werden (vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung).',
   },
   {
     q: 'Wie genau ist der Abfindungsrechner?',
@@ -154,7 +154,7 @@ const faqs = [
   },
   {
     q: 'Was ist der Unterschied zwischen Abfindung und Kündigungsschutzklage?',
-    a: 'Die Kündigungsschutzklage ist das stärkere Mittel: Sie können damit die Unwirksamkeit der Kündigung gerichtlich feststellen lassen — mit dem Ziel der Weiterbeschäftigung oder einer höheren Abfindung als Vergleich. Die Abfindung nach § 1a KSchG ist dagegen eine einvernehmliche Lösung ohne Klage. Welcher Weg besser ist, hängt von Ihrer konkreten Situation ab.',
+    a: 'Die Kündigungsschutzklage ist das stärkere Mittel: Sie können damit die Unwirksamkeit der Kündigung gerichtlich feststellen lassen — mit dem Ziel der Weiterbeschäftigung oder einer höheren Abfindung als Vergleich. Die Abfindung nach § 1a KSchG ist dagegen ein Abfindungsangebot des Arbeitgebers direkt im Kündigungsschreiben — in gesetzlicher Höhe von 0,5 Bruttomonatsgehältern pro Beschäftigungsjahr, gegen Verzicht auf die Klage. Welcher Weg besser ist, hängt von Ihrer konkreten Situation ab.',
   },
 ];
 

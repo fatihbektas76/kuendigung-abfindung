@@ -131,7 +131,7 @@ const articles: Article[] = [
     facts: [
       '§ 622 Abs. 1 BGB: 4 Wochen zum 15. oder Monatsende',
       '§ 622 Abs. 3 BGB: 2 Wochen in der Probezeit',
-      '§ 622 Abs. 6 BGB: kürzere AN-Fristen unwirksam',
+      '§ 622 Abs. 6 BGB: längere AN-Fristen unzulässig',
     ],
     dateKey: 'kuendigungsfristBerechnenArbeitnehmer',
   },

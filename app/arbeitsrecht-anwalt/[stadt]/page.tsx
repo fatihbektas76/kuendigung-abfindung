@@ -257,7 +257,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
           {[
             { label: "Klagefrist", value: "3 Wochen", sub: "ab Zugang der Kündigung" },
             { label: "Abfindungsformel", value: "0,5 × Gehalt × Jahre", sub: "Faustformel, kein Rechtsanspruch" },
-            { label: "Kündigungsschutz", value: "Ab 6 Monate", sub: "Betriebszugehörigkeit + >10 MA" },
+            { label: "Kündigungsschutz", value: "Ab 6 Monate", sub: "> 6 Monate + > 10 MA (Altverträge vor 2004: > 5 MA)" },
             { label: "Berufungsfrist", value: "1 Monat", sub: `ab Urteilszustellung, ${ort.lagName}` },
           ].map((f) => (
             <div key={f.label} className="bg-white border border-gray-200 rounded-xl p-4 relative overflow-hidden">

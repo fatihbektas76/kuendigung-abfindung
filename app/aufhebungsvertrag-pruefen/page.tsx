@@ -930,7 +930,7 @@ export default function AufhebungsvertragPruefenPage() {
             </div>
             {answers.druckAusgeubt === 'kuendigung' && (
               <InfoBox>
-                Eine Drohung mit Kündigung ist nicht automatisch unzulässig — nur wenn der Arbeitgeber keine realistische Grundlage für eine Kündigung hatte. Lassen Sie dies prüfen. Haben Sie eine Rechtsschutzversicherung, übernimmt diese übrigens nur die Anwaltskosten, sofern eine Kündigung angedroht wurde, wenn der Aufhebungsvertrag nicht unterzeichnet wird.
+                Eine Drohung mit Kündigung ist nicht automatisch unzulässig — nur wenn der Arbeitgeber keine realistische Grundlage für eine Kündigung hatte. Lassen Sie dies prüfen. Haben Sie eine Rechtsschutzversicherung, übernimmt diese übrigens nur die Anwaltskosten, sofern eine Kündigung angedroht wurde — und auch nur vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung.
               </InfoBox>
             )}
             {answers.druckAusgeubt === 'andere' && (

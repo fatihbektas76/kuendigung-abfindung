@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: 'Wie lange dauert eine Kündigungsschutzklage?',
-    a: 'Der Gütetermin findet in der Regel 2–6 Wochen nach Klageeinreichung statt. Ca. 80% der Fälle enden hier mit einem Vergleich (Abfindung). Kommt kein Vergleich zustande, folgt der Kammertermin nach weiteren 2–4 Monaten. Insgesamt dauert ein Verfahren im ersten Rechtszug typischerweise 2–6 Monate.',
+    a: 'Der Gütetermin findet in der Regel 2–4 Wochen nach Klageeinreichung statt. Ca. 80 % der Fälle enden hier mit einem Vergleich (Abfindung). Kommt kein Vergleich zustande, folgt der Kammertermin — bis zu einer gerichtlichen Entscheidung dauert das Verfahren insgesamt meist 9–12 Monate. Kürzere und längere Verlaufsdauern sind möglich, je nach Einzelfall (etwa bei notwendiger Beweisaufnahme) und zuständigem Gericht — das Arbeitsgericht Berlin dauert beispielsweise oft länger wegen hoher Fallzahlen.',
   },
   {
     q: 'Wie hoch ist die Abfindung bei einer Kündigungsschutzklage?',
@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'Muss ich eine Kündigungsschutzklage einreichen?',
-    a: 'Wenn Sie die 3-Wochen-Frist nach § 4 KSchG versäumen, gilt die Kündigung in der Regel als wirksam — auch wenn sie eigentlich unwirksam wäre. Eine nachträgliche Zulassung der Klage nach § 5 KSchG ist zwar theoretisch möglich (z. B. bei unverschuldeter Verhinderung), kommt in der Praxis aber nur in eng begrenzten Ausnahmefällen in Betracht. Eine Kündigungsschutzklage ist der einzige Weg, sich gegen eine Kündigung zu wehren und eine Abfindung zu verhandeln — ohne Klage gibt es in der Regel keine Abfindung. Lassen Sie sich daher dringend anwaltlich beraten.',
+    a: 'Wenn Sie die 3-Wochen-Frist nach § 4 KSchG versäumen, gilt die Kündigung in der Regel als wirksam — auch wenn sie eigentlich unwirksam wäre. Eine nachträgliche Zulassung der Klage nach § 5 KSchG ist zwar theoretisch möglich (z. B. bei unverschuldeter Verhinderung), kommt in der Praxis aber nur in eng begrenzten Ausnahmefällen in Betracht. Eine Kündigungsschutzklage ist in den meisten Fällen der einzige Weg, sich gegen eine Kündigung zu wehren und eine Abfindung zu verhandeln — ohne Klage gibt es in der Regel keine Abfindung. Lassen Sie sich daher dringend anwaltlich beraten.',
   },
   {
     q: 'Kann ich die Kündigungsschutzklage auch ohne Anwalt einreichen?',
@@ -171,7 +171,7 @@ export default function KuendigungsschutzKlagePage() {
                 '@type': 'HowToStep',
                 position: 5,
                 name: 'Kammertermin oder Vergleich',
-                text: 'Bleibt der Gütetermin ergebnislos, folgt der Kammertermin nach weiteren 2–4 Monaten mit ehrenamtlichen Richtern. Alternativer Ausgang: außergerichtlicher Vergleich mit Abfindung.',
+                text: 'Bleibt der Gütetermin ergebnislos, folgt der Kammertermin mit ehrenamtlichen Richtern — bis zu einer Entscheidung vergehen in der Regel insgesamt 9–12 Monate (abhängig von Fall und Gericht). Alternativer Ausgang: außergerichtlicher Vergleich mit Abfindung.',
               },
             ],
           }),
@@ -297,7 +297,7 @@ export default function KuendigungsschutzKlagePage() {
               {
                 step: '3',
                 title: 'Kammertermin (falls kein Vergleich)',
-                desc: 'Kommt im Gütetermin kein Vergleich zustande, folgt der Kammertermin mit Beweisaufnahme und Verhandlung. Termin: 2–4 Monate nach Gütetermin.',
+                desc: 'Kommt im Gütetermin kein Vergleich zustande, folgt der Kammertermin mit Beweisaufnahme und Verhandlung. Gesamtdauer bis zur Entscheidung: in der Regel 9–12 Monate ab Klageeinreichung — kürzer oder länger je nach Fall und Gericht.',
               },
               {
                 step: '4',
@@ -540,7 +540,7 @@ export default function KuendigungsschutzKlagePage() {
                 </thead>
                 <tbody>
                   {[
-                    { k: 'Dauer', v: '2–6 Wochen (Gütetermin)', u: '3–8 Monate (Kammertermin)' },
+                    { k: 'Dauer', v: '2–4 Wochen (Gütetermin)', u: '9–12 Monate (bis Entscheidung)' },
                     { k: 'Gerichtskosten', v: 'Entfallen vollständig', u: 'Fallen an (ca. 300–600 €)' },
                     { k: 'Ergebnis', v: 'Sicher — beide Seiten einigen sich', u: 'Unsicher — Richter entscheidet' },
                     { k: 'Abfindung', v: 'Frei verhandelbar', u: 'Nur bei Auflösung nach §9 KSchG' },
