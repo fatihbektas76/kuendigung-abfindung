@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { resolveGermanHref } from '@/lib/i18n';
+import { tenureUrlSegment } from '@/lib/en-tenure';
 
 const linkClass = 'text-white/70 no-underline hover:text-gold-light transition-colors';
 const headingClass = 'text-white/90 font-semibold text-[0.75rem] uppercase tracking-[0.12em] mb-3';
@@ -88,10 +89,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Severance by tenure</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/en/severance-after-1-jahr-years-of-employment/" className={linkClass}>After 1 year</Link></li>
-              <li><Link href="/en/severance-after-5-jahren-years-of-employment/" className={linkClass}>After 5 years</Link></li>
-              <li><Link href="/en/severance-after-10-jahren-years-of-employment/" className={linkClass}>After 10 years</Link></li>
-              <li><Link href="/en/severance-after-20-jahren-years-of-employment/" className={linkClass}>After 20 years</Link></li>
+              <li><Link href={`/en/severance-after-${tenureUrlSegment(1)}/`} className={linkClass}>After 1 year</Link></li>
+              <li><Link href={`/en/severance-after-${tenureUrlSegment(5)}/`} className={linkClass}>After 5 years</Link></li>
+              <li><Link href={`/en/severance-after-${tenureUrlSegment(10)}/`} className={linkClass}>After 10 years</Link></li>
+              <li><Link href={`/en/severance-after-${tenureUrlSegment(20)}/`} className={linkClass}>After 20 years</Link></li>
               <li><Link href="/en/severance-pay/" className={linkClass}>See all &rarr;</Link></li>
             </ul>
           </div>
@@ -100,10 +101,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Dismissed by tenure</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/en/dismissed-after-1-jahr-years-of-employment/" className={linkClass}>After 1 year</Link></li>
-              <li><Link href="/en/dismissed-after-5-jahren-years-of-employment/" className={linkClass}>After 5 years</Link></li>
-              <li><Link href="/en/dismissed-after-10-jahren-years-of-employment/" className={linkClass}>After 10 years</Link></li>
-              <li><Link href="/en/dismissed-after-20-jahren-years-of-employment/" className={linkClass}>After 20 years</Link></li>
+              <li><Link href={`/en/dismissed-after-${tenureUrlSegment(1)}/`} className={linkClass}>After 1 year</Link></li>
+              <li><Link href={`/en/dismissed-after-${tenureUrlSegment(5)}/`} className={linkClass}>After 5 years</Link></li>
+              <li><Link href={`/en/dismissed-after-${tenureUrlSegment(10)}/`} className={linkClass}>After 10 years</Link></li>
+              <li><Link href={`/en/dismissed-after-${tenureUrlSegment(20)}/`} className={linkClass}>After 20 years</Link></li>
               <li><Link href="/en/dismissal/" className={linkClass}>See all &rarr;</Link></li>
             </ul>
           </div>
@@ -112,10 +113,10 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
           <div>
             <div className={headingClass}>Summary dismissal</div>
             <ul className="list-none flex flex-col gap-2">
-              <li><Link href="/en/summary-dismissal-after-1-jahr-years-of-employment/" className={linkClass}>After 1 year</Link></li>
-              <li><Link href="/en/summary-dismissal-after-5-jahren-years-of-employment/" className={linkClass}>After 5 years</Link></li>
-              <li><Link href="/en/summary-dismissal-after-10-jahren-years-of-employment/" className={linkClass}>After 10 years</Link></li>
-              <li><Link href="/en/summary-dismissal-after-20-jahren-years-of-employment/" className={linkClass}>After 20 years</Link></li>
+              <li><Link href={`/en/summary-dismissal-after-${tenureUrlSegment(1)}/`} className={linkClass}>After 1 year</Link></li>
+              <li><Link href={`/en/summary-dismissal-after-${tenureUrlSegment(5)}/`} className={linkClass}>After 5 years</Link></li>
+              <li><Link href={`/en/summary-dismissal-after-${tenureUrlSegment(10)}/`} className={linkClass}>After 10 years</Link></li>
+              <li><Link href={`/en/summary-dismissal-after-${tenureUrlSegment(20)}/`} className={linkClass}>After 20 years</Link></li>
               <li><Link href="/en/summary-dismissal/" className={linkClass}>See all &rarr;</Link></li>
             </ul>
           </div>

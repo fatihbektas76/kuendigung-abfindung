@@ -1,15 +1,17 @@
 /**
  * Tenure data for the English programmatic pages.
  *
- * Public URLs read like:
- *   /en/severance-after-5-years-of-employment/
+ * Canonical public URLs:
+ *   /en/severance-after-1-year-of-employment/          (singular)
+ *   /en/severance-after-5-years-of-employment/         (plural)
  *   /en/dismissed-after-10-years-of-employment/
  *   /en/summary-dismissal-after-20-years-of-employment/
  *
  * They rewrite internally to /en/severance-years/[slug]/, etc.
  *
- * The slug is intentionally the year number ("1-year" or "N-years") rather
- * than a German number-word slug, so the URLs read natively English.
+ * The slug is the bare year number ("1", "7", "20"). The URL segment
+ * ("1-year-of-employment" vs "N-years-of-employment") is constructed
+ * via tenureUrlSegment() so the grammar is correct for 1 year.
  */
 
 export interface EnTenureEntry {
@@ -34,13 +36,22 @@ const YEARS: readonly number[] = Array.from({ length: 40 }, (_, i) => i + 1);
 
 export const EN_TENURE_ENTRIES: readonly EnTenureEntry[] = YEARS.map((y) => ({
   year: y,
-  slug: y === 1 ? '1-year' : `${y}-years`,
+  slug: String(y),
   label: y === 1 ? '1 year' : `${y} years`,
   notice: noticePeriod(y),
 }));
 
 export function getEnTenure(slug: string): EnTenureEntry | undefined {
   return EN_TENURE_ENTRIES.find((e) => e.slug === slug);
+}
+
+/**
+ * Produces the correct URL segment for a given tenure year.
+ * - Year 1  → "1-year-of-employment"   (singular)
+ * - Year N  → "N-years-of-employment"  (plural)
+ */
+export function tenureUrlSegment(year: number): string {
+  return year === 1 ? '1-year-of-employment' : `${year}-years-of-employment`;
 }
 
 export function severanceRange(year: number, monthlySalary: number) {

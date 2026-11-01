@@ -8,7 +8,7 @@ import { staedte } from '@/data/staedte';
 import { gemeinden } from '@/data/gemeinden';
 import { berlinBezirke } from '@/data/bezirke';
 import { urteile } from '@/lib/urteile';
-import { EN_TENURE_ENTRIES } from '@/lib/en-tenure';
+import { EN_TENURE_ENTRIES, tenureUrlSegment } from '@/lib/en-tenure';
 
 export const revalidate = 3600;
 
@@ -211,21 +211,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // English programmatic pages — severance / dismissed / summary by tenure
   const enSeverancePages: MetadataRoute.Sitemap = EN_TENURE_ENTRIES.map((e) => ({
-    url: `${BASE_URL}/en/severance-after-${e.slug}-years-of-employment/`,
+    url: `${BASE_URL}/en/severance-after-${tenureUrlSegment(e.year)}/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.75,
   }));
 
   const enDismissedPages: MetadataRoute.Sitemap = EN_TENURE_ENTRIES.map((e) => ({
-    url: `${BASE_URL}/en/dismissed-after-${e.slug}-years-of-employment/`,
+    url: `${BASE_URL}/en/dismissed-after-${tenureUrlSegment(e.year)}/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.75,
   }));
 
   const enSummaryPages: MetadataRoute.Sitemap = EN_TENURE_ENTRIES.map((e) => ({
-    url: `${BASE_URL}/en/summary-dismissal-after-${e.slug}-years-of-employment/`,
+    url: `${BASE_URL}/en/summary-dismissal-after-${tenureUrlSegment(e.year)}/`,
     lastModified: monthly,
     changeFrequency: 'weekly',
     priority: 0.7,

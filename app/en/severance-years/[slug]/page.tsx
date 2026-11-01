@@ -7,6 +7,7 @@ import CTA from '@/components/en/CTA';
 import {
   EN_TENURE_ENTRIES,
   getEnTenure,
+  tenureUrlSegment,
   severanceRange,
 } from '@/lib/en-tenure';
 import { SEO_CONFIG } from '@/lib/seo-config';
@@ -19,8 +20,8 @@ export function generateStaticParams() {
   return EN_TENURE_ENTRIES.map((e) => ({ slug: e.slug }));
 }
 
-const publicUrl = (slug: string) =>
-  `${SEO_CONFIG.baseUrl}/en/severance-after-${slug}-years-of-employment/`;
+const publicUrl = (year: number) =>
+  `${SEO_CONFIG.baseUrl}/en/severance-after-${tenureUrlSegment(year)}/`;
 
 const germanCounterpart = (slug: string, year: number) => {
   const germanSlug = year === 1 ? '1-jahr' : `${year}-jahren`;
@@ -36,14 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: publicUrl(entry.slug),
+      canonical: publicUrl(entry.year),
       languages: {
         'de-DE': germanCounterpart(entry.slug, entry.year),
-        'en': publicUrl(entry.slug),
+        'en': publicUrl(entry.year),
         'x-default': germanCounterpart(entry.slug, entry.year),
       },
     },
-    openGraph: { title, description, url: publicUrl(entry.slug) },
+    openGraph: { title, description, url: publicUrl(entry.year) },
   };
 }
 
@@ -57,7 +58,7 @@ export default function SeveranceYearsEn({ params }: Props) {
   const next = EN_TENURE_ENTRIES.find((e) => e.year === entry.year + 1);
   const lowFactor = (0.5 * entry.year).toFixed(1);
   const highFactor = (1.5 * entry.year).toFixed(1);
-  const url = publicUrl(entry.slug);
+  const url = publicUrl(entry.year);
 
   return (
     <>
@@ -84,7 +85,7 @@ export default function SeveranceYearsEn({ params }: Props) {
           breadcrumbs={[
             { href: '/en/', label: 'Home' },
             { href: '/en/severance-pay', label: 'Severance pay' },
-            { href: `/en/severance-after-${entry.slug}-years-of-employment`, label: entry.label },
+            { href: `/en/severance-after-${tenureUrlSegment(entry.year)}`, label: entry.label },
           ]}
           primaryCta={{ href: '#contact', label: 'Get my exact number' }}
           secondaryCta={{ href: '/en/severance-calculator', label: 'Use the calculator' }}
@@ -193,7 +194,7 @@ export default function SeveranceYearsEn({ params }: Props) {
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {prev && (
                 <Link
-                  href={`/en/severance-after-${prev.slug}-years-of-employment`}
+                  href={`/en/severance-after-${tenureUrlSegment(prev.year)}`}
                   className="block p-5 border border-border-light rounded bg-white text-[0.95rem] text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
                 >
                   <span className="text-[0.78rem] uppercase tracking-wider text-ink-muted">
@@ -213,7 +214,7 @@ export default function SeveranceYearsEn({ params }: Props) {
               </Link>
               {next && (
                 <Link
-                  href={`/en/severance-after-${next.slug}-years-of-employment`}
+                  href={`/en/severance-after-${tenureUrlSegment(next.year)}`}
                   className="block p-5 border border-border-light rounded bg-white text-[0.95rem] text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
                 >
                   <span className="text-[0.78rem] uppercase tracking-wider text-ink-muted">
