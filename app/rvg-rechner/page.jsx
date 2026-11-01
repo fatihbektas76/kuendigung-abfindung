@@ -41,7 +41,10 @@ const T21=[[500,48.6],[1000,87.5],[1500,127],[2000,166],[3000,222],[4000,278.5],
 const G25=[[500,40.5],[1000,61.5],[1500,82.5],[2000,104],[3000,126],[4000,148.5],[5000,171],[6000,193],[7000,215],[8000,237.5],[9000,260],[10000,282],[13000,332],[16000,382],[19000,431.5],[22000,481],[25000,531.5],[30000,606.5],[35000,681.5],[40000,757],[45000,832],[50000,907.5],[65000,1038],[80000,1168],[95000,1299.5],[110000,1429.5],[125000,1559.5],[140000,1690],[155000,1820],[170000,1951],[185000,2081],[200000,2211],[230000,2413.5],[260000,2616.5],[290000,2819.5],[320000,3022.5],[350000,3225.5],[380000,3428],[410000,3631],[440000,3834],[470000,4037],[500000,4240]];
 const G21=[[500,38],[1000,58],[1500,78],[2000,98],[3000,119],[4000,140],[5000,161],[6000,182],[7000,203],[8000,224],[9000,245],[10000,266],[13000,313],[16000,360],[19000,407],[22000,454],[25000,501],[30000,572],[35000,643],[40000,714],[45000,785],[50000,856],[65000,979],[80000,1102],[95000,1225],[110000,1348],[125000,1471],[140000,1594],[155000,1717],[170000,1840],[185000,1963],[200000,2086],[230000,2277],[260000,2468],[290000,2659],[320000,2850],[350000,3041],[380000,3232],[410000,3423],[440000,3614],[470000,3805],[500000,3996]];
 
-function lkp(v,t){if(v<=0)return 0;for(const[l,f]of t)if(v<=l)return f;const[l1,f1]=t[t.length-1],[l2,f2]=t[t.length-2];return f1+((f1-f2)/(l1-l2))*(v-l1);}
+// § 22 Abs. 2 RVG und § 39 Abs. 2 GKG: Gegenstandswert / Streitwert sind für
+// die Gebührenberechnung auf 30 Mio € begrenzt.
+const WERT_CAP = 30_000_000;
+function lkp(v,t){if(v<=0)return 0;const vc=Math.min(v,WERT_CAP);for(const[l,f]of t)if(vc<=l)return f;const[l1,f1]=t[t.length-1],[l2,f2]=t[t.length-2];return f1+((f1-f2)/(l1-l2))*(vc-l1);}
 const eur=n=>new Intl.NumberFormat("de-DE",{style:"currency",currency:"EUR"}).format(n||0);
 const pSW=s=>{const n=parseFloat(s.replace(/\./g,"").replace(",","."));return isNaN(n)?0:n;};
 
@@ -378,6 +381,7 @@ export default function App(){
                   <span style={{position:"absolute",right:12,top:"50%",transform:"translateY(-50%)",color:D.muted,fontWeight:700}}>€</span>
                 </div>
                 {R&&<div style={{fontSize:11,color:D.gold,marginTop:4,fontWeight:600}}>1,0-Gebühr ({yr}): {eur(R.g1)}</div>}
+                {sw>WERT_CAP&&<div style={{fontSize:11,color:D.muted,marginTop:4,lineHeight:1.5}}>Hinweis: Für die Gebührenberechnung wird der Streitwert nach <strong style={{color:D.text}}>§ 22 Abs. 2 RVG</strong> und <strong style={{color:D.text}}>§ 39 Abs. 2 GKG</strong> auf <strong style={{color:D.text}}>30.000.000 €</strong> begrenzt.</div>}
               </div>
               <div>
                 <label style={lbl}>Verfahrensart / Instanz</label>
