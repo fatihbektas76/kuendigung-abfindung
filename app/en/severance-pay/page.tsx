@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: 'Is there a statutory right to severance pay in Germany?',
-    a: 'No, German law does not grant an automatic right to severance pay. A statutory claim exists only in narrow cases: §1a KSchG (where the employer offers severance with a redundancy dismissal), social plans (Sozialplan) or collective agreements (Tarifvertrag). In practice, severance is negotiated in more than 80% of unfair-dismissal proceedings as part of a court settlement.',
+    a: 'No, German law does not grant a general statutory right to severance. Narrow exceptions: § 1a KSchG (employer offer in a redundancy dismissal letter, 0.5 months/year against waiver of the claim), judicial dissolution under §§ 9, 10 KSchG, social plans (Sozialplan) or collective agreements (Tarifvertrag). In practice, around 80 % of proceedings before the German labour courts end without a contested judgment (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — frequently through a settlement with severance. Outcome and amount depend on the individual case.',
   },
   {
     q: 'How is severance pay calculated?',
@@ -41,7 +41,7 @@ const FAQS = [
   },
   {
     q: 'Do I have to pay tax on severance pay?',
-    a: 'Yes — severance is taxable. However, the “one-fifth rule” (Fünftelregelung, §34 EStG) reduces the tax burden significantly by spreading the lump sum mathematically over five years. Social-security contributions usually do not apply to severance paid in connection with the end of the employment relationship.',
+    a: 'Yes — severance is taxable. The “one-fifth rule” (Fünftelregelung, § 34 EStG) spreads the lump sum mathematically over five years and can meaningfully reduce the tax burden in individual cases; the concrete saving depends on marginal tax rate and other income. Since 1 January 2025 the rule must be claimed in the annual income-tax return (not applied by the employer in the monthly payroll). Social-security contributions usually do not apply to severance paid in connection with the end of the employment relationship.',
   },
   {
     q: 'Can I negotiate a higher severance?',
@@ -53,11 +53,11 @@ const FAQS = [
   },
   {
     q: 'Does severance count against unemployment benefit (Arbeitslosengeld)?',
-    a: 'A straight severance payment does NOT reduce your Arbeitslosengeld I entitlement — it is not treated as wages. However, if you accept a termination agreement with a notice period shorter than the statutory one, the employment agency can impose a 12-week suspension period (Sperrzeit, § 159 SGB III) during which no benefit is paid. Always check the notice-period compatibility of any offer before signing.',
+    a: 'Two different legal consequences apply. (1) Ruhen (suspension) under § 158 SGB III — the ALG entitlement is deferred only if the ordinary notice period is shortened; the severance is deemed to replace wages for that shortened period. (2) Sperrzeit (12-week blocking period) under § 159 SGB III — triggered by participating in ending the employment without an important cause, with no benefit for 12 weeks. If the statutory notice period is observed and an important cause exists, neither applies. Always have any offer reviewed before signing.',
   },
   {
     q: 'When should I file an unfair-dismissal claim to secure severance?',
-    a: 'Within 3 weeks of receiving the dismissal letter (§ 4 KSchG). Missing this deadline makes the dismissal legally watertight — and strips away the leverage that typically produces severance. A free initial review with a specialist within the first days is strongly recommended.',
+    a: 'Within 3 weeks of receiving the dismissal letter (§ 4 KSchG). Missing this deadline makes the dismissal legally watertight — and strips away the leverage that typically produces severance. A free first check with a specialist within the first days is strongly recommended.',
   },
 ];
 
@@ -111,7 +111,7 @@ export default function SeverancePayEn() {
         <TopicHero
           eyebrow="Severance pay (Abfindung)"
           title="Severance pay in Germany — entitlement, formula & how to negotiate it"
-          lede="A statutory right to severance does not exist in Germany — but in practice, severance is paid in over 80% of dismissal cases through court settlements. We show the formula, the leverage points and the realistic numbers."
+          lede="A general statutory right to severance does not exist in Germany — but around 80 % of proceedings before the German labour courts end without a contested judgment (Destatis FS 10 R 2.8), frequently through a settlement with severance. We show the formula, the leverage points and the realistic numbers."
           breadcrumbs={[
             { href: '/en/', label: 'Home' },
             { href: '/en/severance-pay', label: 'Severance pay' },
@@ -130,9 +130,11 @@ export default function SeverancePayEn() {
               (<NormLink href={NORM.kschg1a}>§&nbsp;1a KSchG</NormLink>,{' '}
               <NormLink href={NORM.kschg9}>§§&nbsp;9</NormLink>,{' '}
               <NormLink href={NORM.kschg10}>10 KSchG</NormLink>).
-              In practice, more than 80% of unfair-dismissal proceedings end in a settlement that
-              includes severance, frequently between 0.5 and 1.5 monthly salaries per year — depending
-              on tenure, age, social context and the legal flaws in the dismissal.
+              Around 80 % of proceedings before the German labour courts end without a contested
+              judgment (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — frequently through a
+              settlement with severance between 0.5 and 1.5 monthly salaries per year, depending
+              on tenure, age, social context and the legal flaws in the dismissal. Outcome and
+              amount depend on the individual case.
             </p>
             <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
               <strong>Written and reviewed by</strong> Fatih Bektas, German employment-law specialist
@@ -189,7 +191,7 @@ export default function SeverancePayEn() {
               <Link href="/en/severance-calculator/" className="text-gold-dark underline">
                 severance calculator
               </Link>{' '}
-              for a tailored estimate, or send us your dismissal letter for a free review.
+              for a tailored estimate, or send us your dismissal letter for a free first check.
             </p>
           </div>
         </section>
@@ -256,8 +258,9 @@ export default function SeverancePayEn() {
               In practice this clause is only triggered when the employer actively signals it in
               the dismissal letter. If you file a claim within the 3-week deadline
               (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>), you forfeit the statutory
-              offer — but almost always obtain a <em>higher</em> settlement in the court
-              proceedings. The §&nbsp;1a offer is therefore more of a floor than a ceiling.
+              offer — but frequently obtain a <em>higher</em> settlement in the court
+              proceedings. The §&nbsp;1a figure is therefore an anchor rather than a cap;
+              outcome and amount depend on the individual case.
             </p>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-0">
               Related statutory severance paths: court dissolution under{' '}

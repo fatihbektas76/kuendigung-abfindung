@@ -605,7 +605,7 @@ export default function KuendigungWaehrendKrankheitPage() {
             <p className="text-ink leading-relaxed mt-6 p-5 bg-cream border-l-4 border-gold rounded">
               <strong>Sie haben während Ihrer Krankheit eine Kündigung erhalten?</strong>{' '}
               <Link href="/mandantenaufnahme-kuendigung/" className="text-gold-dark no-underline hover:underline">
-                Lassen Sie sie kostenlos in einer Erstberatung prüfen
+                Lassen Sie sie kostenlos in einer Ersteinschätzung einschätzen
               </Link>, bevor die Drei-Wochen-Frist abläuft.
             </p>
             <p className="text-[0.85rem] text-ink-muted italic mt-6">

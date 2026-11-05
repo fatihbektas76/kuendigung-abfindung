@@ -8,6 +8,7 @@ import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
+import { BOOKING } from '@/lib/booking';
 
 /* ───── Types ───── */
 interface Answers {
@@ -106,7 +107,7 @@ const pruefenFaqs = [
   },
   {
     q: 'Ist die Prüfung wirklich kostenlos?',
-    a: 'Ja, die Ersteinschätzung ist 100% kostenlos und unverbindlich. Es entstehen keine versteckten Kosten. Erst wenn Sie sich für eine anwaltliche Vertretung entscheiden, fallen Gebühren an — die bei Rechtsschutzversicherung oft übernommen werden (vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung).',
+    a: 'Ja. Die Ersteinschätzung ist kostenlos und unverbindlich. Für alles Weitere erhalten Sie vorab ein Kostenangebot oder wir klären die Kostenübernahme mit Ihrer Rechtsschutzversicherung (vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung). Kosten entstehen erst mit Ihrem Auftrag.',
   },
   {
     q: 'Welche 3-Wochen-Frist muss ich beachten?',
@@ -286,7 +287,7 @@ export default function KuendigungPruefenPage() {
             </svg>
             <div>
               <div className="text-[0.88rem] font-semibold text-ink">Kostenfrei &amp; unverbindlich</div>
-              <div className="text-[0.78rem] text-ink-muted">Keine versteckten Kosten</div>
+              <div className="text-[0.78rem] text-ink-muted">Kosten klar, bevor Sie beauftragen</div>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -338,7 +339,7 @@ export default function KuendigungPruefenPage() {
           {'★★★★★'}
         </div>
         <div className="text-[0.82rem] text-ink-muted mt-1">
-          5,0 &middot; 69 Bewertungen
+          {SEO_CONFIG.rating.ratingValue} &middot; {SEO_CONFIG.rating.reviewCount} Bewertungen
         </div>
       </div>
     </aside>
@@ -381,7 +382,7 @@ export default function KuendigungPruefenPage() {
               </p>
             </div>
             <a
-              href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
+              href={BOOKING.firstCheck}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px"
@@ -949,7 +950,7 @@ export default function KuendigungPruefenPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'HowTo',
-            name: 'Kündigung kostenlos prüfen lassen — in 2 Minuten',
+            name: 'Kostenlose Ersteinschätzung — in 2 Minuten',
             description:
               'Prüfen Sie in 9 Schritten kostenlos Ihre Abfindungschancen nach einer Kündigung. Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
             totalTime: 'PT2M',
@@ -993,7 +994,7 @@ export default function KuendigungPruefenPage() {
         {/* Progress bar */}
         <div className="bg-white border-b border-border">
           <div className="max-w-[640px] mx-auto px-6 py-4">
-            <h1 className="sr-only">Kündigung kostenlos prüfen lassen — Ersteinschätzung in 2 Minuten</h1>
+            <h1 className="sr-only">Kostenlose Ersteinschätzung — Ersteinschätzung in 2 Minuten</h1>
             <div className="flex items-center justify-between mb-2">
               <span className="text-[0.78rem] font-semibold text-gold-dark">
                 {cat}

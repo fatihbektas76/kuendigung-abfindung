@@ -360,7 +360,7 @@ export default function UrlaubsabgeltungRechnerPage() {
 
                 <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
                   <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung.
-                  Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                  Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                   <Link href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
                 </p>
 
@@ -527,7 +527,7 @@ export default function UrlaubsabgeltungRechnerPage() {
                   {/* Disclaimer */}
                   <div className="py-3 px-4 bg-amber-50 rounded-sm border border-amber-300 mb-4">
                     <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
-                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Urlaubsabgeltung hängt von Ihrem Arbeitsvertrag und den konkreten Umständen ab. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Urlaubsabgeltung hängt von Ihrem Arbeitsvertrag und den konkreten Umständen ab. Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                       <Link href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</Link>.
                     </p>
                   </div>
@@ -726,7 +726,7 @@ export default function UrlaubsabgeltungRechnerPage() {
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Antwort in 24h</span>
             <span>&#10003; Kein Kostenrisiko</span>
-            <span>&#10003; 69 Fünf-Sterne-Bewertungen auf anwalt.de</span>
+            <span>&#10003; {SEO_CONFIG.rating.reviewCount} Fünf-Sterne-Bewertungen auf anwalt.de</span>
           </div>
         </div>
       </section>

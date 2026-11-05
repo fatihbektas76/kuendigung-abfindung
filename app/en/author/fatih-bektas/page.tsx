@@ -8,7 +8,7 @@ const PAGE_URL = `${SEO_CONFIG.baseUrl}/en/author/fatih-bektas/`;
 export const metadata: Metadata = {
   title: 'About Fatih Bektas — German Employment-Law Specialist',
   description:
-    'Fatih Bektas — German employment-law specialist at APOS Legal Heidelberg. Representation of employees, senior executives, board members (Vorstand) and managing directors (Geschäftsführer). 20+ years, 2,000+ proceedings.',
+    'Fatih Bektas — German employment-law specialist (Fachanwalt für Arbeitsrecht) at APOS Legal Heidelberg. Representation of employees, senior executives, board members (Vorstand) and managing directors (Geschäftsführer). 20+ years of employment-law experience, Fachanwalt title since 2011.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -31,7 +31,7 @@ export default function AuthorEn() {
       <TopicHero
         eyebrow="About the author"
         title="Fatih Bektas — German employment-law specialist"
-        lede="Fachanwalt für Arbeitsrecht. 20+ years and 2,000+ proceedings before German labour courts. We represent employees, senior executives, board members (Vorstand) and managing directors (Geschäftsführer). Former CEO / CFO / COO at Unzer and iCOM Group."
+        lede="Fachanwalt für Arbeitsrecht. 20+ years of employment-law experience, Fachanwalt title since 2011. We represent employees, senior executives, board members (Vorstand) and managing directors (Geschäftsführer) before German labour and civil courts. Former CEO / CFO / COO at Unzer and iCOM Group."
         breadcrumbs={[
           { href: '/en/', label: 'Home' },
           { href: '/en/team', label: 'Team' },
@@ -53,7 +53,7 @@ export default function AuthorEn() {
             familyName: 'Bektas',
             jobTitle: 'Fachanwalt für Arbeitsrecht (German employment-law specialist)',
             description:
-              'German employment-law specialist with 20+ years of experience. Certified mediator. Representation of employees, senior executives, board members (Vorstand) and managing directors (Geschäftsführer) in employment and service-contract disputes. 2,000+ proceedings.',
+              'German employment-law specialist with 20+ years of experience; Fachanwalt title since 2011. Certified mediator. Representation of employees, senior executives, board members (Vorstand) and managing directors (Geschäftsführer) in employment and service-contract disputes.',
             image: `${SEO_CONFIG.baseUrl}/Fatih.webp`,
             url: PAGE_URL,
             email: SEO_CONFIG.author.email,
@@ -147,7 +147,7 @@ export default function AuthorEn() {
             <li>Fachanwalt für Arbeitsrecht (specialist title since 2011)</li>
             <li>Certified mediator</li>
             <li>Member of Deutscher Anwaltverein and BVAU</li>
-            <li>5.0 ★ across 68 reviews on anwalt.de</li>
+            <li>{SEO_CONFIG.rating.ratingValue} ★ across {SEO_CONFIG.rating.reviewCount} reviews on anwalt.de</li>
           </ul>
 
           <h2 className="font-serif text-[1.4rem] font-bold mb-4">Background</h2>

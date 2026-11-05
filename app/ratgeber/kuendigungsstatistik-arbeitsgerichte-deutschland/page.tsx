@@ -271,11 +271,12 @@ export default function KuendigungsstatistikPage() {
               Einordnung
             </div>
             <p className="text-[0.92rem] text-ink leading-relaxed m-0">
-              Als Arbeitnehmer können Sie statistisch damit rechnen, dass Ihre Klage zu rund 80 %
-              in einer Einigung endet. Nur in etwa 7 % der Fälle ergeht ein streitiges Urteil.
-              Die Klagerücknahme (12 %) erfolgt häufig, weil sich die Parteien außergerichtlich
-              geeinigt haben. Ein gerichtliches Verfahren ist damit kein Risiko, sondern ein
-              bewährtes Instrument, um eine faire Abfindung zu verhandeln.
+              Rund 80 % der Verfahren vor den Arbeitsgerichten enden ohne streitiges Urteil
+              (Statistisches Bundesamt, Fachserie 10 Reihe 2.8). Nur in etwa 7 % der Fälle ergeht
+              ein streitiges Urteil, die übrigen Verfahren enden per Vergleich (~81 %) oder durch
+              Klagerücknahme (~12 %, häufig nach außergerichtlicher Einigung). Diese Zahlen gelten
+              für alle arbeitsgerichtlichen Verfahren; die konkrete Erfolgsaussicht Ihres Einzelfalls
+              hängt von Beweislage, Kündigungsschutzlage und Verhandlungsposition ab.
             </p>
           </div>
 

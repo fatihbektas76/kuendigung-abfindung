@@ -146,11 +146,11 @@ const faqs = [
   },
   {
     q: 'Gilt der Kündigungsschutz für mich?',
-    a: 'Das Kündigungsschutzgesetz gilt grundsätzlich für Arbeitnehmer, die länger als 6 Monate in einem Betrieb mit mehr als 10 Vollzeit-Mitarbeitern beschäftigt sind. Daneben gibt es besondere Schutztatbestände — etwa bei Schwangerschaft, Elternzeit, Schwerbehinderung oder als Betriebsratsmitglied. Unser Kündigungscheck prüft alle relevanten Faktoren automatisch.',
+    a: 'Das Kündigungsschutzgesetz gilt grundsätzlich für Arbeitnehmer, die länger als 6 Monate in einem Betrieb mit mehr als 10 Vollzeitäquivalenten beschäftigt sind (§ 23 Abs. 1 KSchG; Teilzeit anteilig nach § 23 Abs. 1 S. 4 KSchG). Für Arbeitsverhältnisse vor dem 01.01.2004 gilt der abgesenkte Schwellenwert von mehr als 5 Arbeitnehmern. Daneben gibt es besondere Schutztatbestände — etwa bei Schwangerschaft, Elternzeit, Schwerbehinderung oder als Betriebsratsmitglied. Unser Kündigungscheck prüft alle relevanten Faktoren automatisch.',
   },
   {
     q: 'Wofür brauche ich den Schwellenwert-Rechner?',
-    a: 'Das Kündigungsschutzgesetz gilt nur in Betrieben mit mehr als 10 Vollzeitäquivalenten (FTE). Der Schwellenwert-Rechner prüft, ob Ihr Betrieb diesen Wert überschreitet — denn davon hängt ab, ob Ihr Arbeitgeber überhaupt einen Kündigungsgrund braucht. Teilzeitkräfte und Minijobber werden anteilig gezählt.',
+    a: 'Das Kündigungsschutzgesetz gilt nur in Betrieben mit mehr als 10 Vollzeitäquivalenten (§ 23 Abs. 1 KSchG). Der Schwellenwert-Rechner prüft, ob Ihr Betrieb diesen Wert überschreitet. Teilzeitkräfte werden nach § 23 Abs. 1 S. 4 KSchG anteilig gezählt (bis 20 h/Woche: 0,5; bis 30 h/Woche: 0,75; mehr: 1,0); Auszubildende zählen nicht mit. Für Arbeitsverhältnisse vor dem 01.01.2004 gilt der abgesenkte Schwellenwert von mehr als 5 Arbeitnehmern.',
   },
   {
     q: 'Was ist der Unterschied zwischen Abfindung und Kündigungsschutzklage?',
@@ -191,7 +191,7 @@ export default function ToolsPage() {
             '@type': 'CollectionPage',
             name: 'Arbeitsrecht Tools & Rechner',
             description:
-              'Kostenlose Arbeitsrechts-Tools: Abfindungsrechner, Kündigungscheck & mehr. Sofortige Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich.',
+              'Kostenlose Arbeitsrechts-Tools: Abfindungsrechner, Kündigungscheck & mehr. Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht. Die anschließende Mandatsannahme erfolgt zu den gesetzlichen RVG-Gebühren oder nach individueller Vergütungsvereinbarung (§ 3a RVG).',
             url: `${SEO_CONFIG.baseUrl}/tools/`,
             provider: { '@id': `${SEO_CONFIG.baseUrl}/#organization` },
             inLanguage: 'de',
@@ -345,9 +345,9 @@ export default function ToolsPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-[0.95rem] font-semibold text-ink mb-1">100% kostenlos</h3>
+                <h3 className="text-[0.95rem] font-semibold text-ink mb-1">Kostenlose Nutzung</h3>
                 <p className="text-[0.88rem] text-ink-muted leading-relaxed m-0">
-                  Kein Abo, keine versteckten Kosten. Die Ersteinschätzung ist und bleibt gratis.
+                  Rechner und Ersteinschätzung sind kostenfrei. Die anschließende Mandatsannahme erfolgt zu den gesetzlichen RVG-Gebühren oder nach individueller Vergütungsvereinbarung (§ 3a RVG).
                 </p>
               </div>
             </div>

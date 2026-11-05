@@ -652,7 +652,7 @@ export default function AbfindungBetriebsbedingteHoehePage() {
                 href="/mandantenaufnahme-kuendigung/"
                 className="text-gold-dark font-semibold no-underline hover:underline"
               >
-                Erstberatung
+                Ersteinschätzung
               </Link>
               {' '}klären wir, ob sich eine Klage lohnt und welche Abfindung realistisch ist. Weitere
               Informationen:{' '}

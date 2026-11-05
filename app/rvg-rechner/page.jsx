@@ -993,7 +993,7 @@ export default function App(){
             <div style={{fontSize:14,color:"#A89B80",marginTop:6}}>Wir prüfen Ihre Chancen kostenlos und unverbindlich.</div>
           </div>
           <a href="/kuendigung-pruefen" className="bg" style={{display:"inline-flex",alignItems:"center",gap:8,background:D.gold,color:D.white,border:"none",borderRadius:6,padding:"13px 28px",fontSize:15,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>
-            Jetzt kostenlos prüfen <span style={{fontSize:18}}>&rarr;</span>
+            Kostenlose Ersteinschätzung <span style={{fontSize:18}}>&rarr;</span>
           </a>
         </div>
       </div>

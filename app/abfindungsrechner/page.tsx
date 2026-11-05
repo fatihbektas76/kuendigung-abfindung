@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'Ist die Abfindung brutto oder netto?',
-    a: 'Die berechnete Abfindung ist ein Bruttobetrag. Abfindungen sind einkommensteuerpflichtig, aber sozialversicherungsfrei. Durch die Fünftelregelung (§34 EStG) kann die Steuerlast deutlich gesenkt werden.',
+    a: 'Die berechnete Abfindung ist ein Bruttobetrag. Abfindungen sind einkommensteuerpflichtig, aber sozialversicherungsfrei. Die Fünftelregelung (§ 34 EStG) kann die Steuerlast im Einzelfall erheblich senken; die konkrete Ersparnis hängt vom individuellen Steuersatz und übrigen Einkommen ab. Seit 01.01.2025 wendet der Arbeitgeber die Fünftelregelung nicht mehr im Lohnsteuerabzug an — sie muss in der Einkommensteuererklärung geltend gemacht werden.',
   },
   {
     q: 'Wann bekomme ich mehr als den Regelsatz?',
@@ -118,7 +118,7 @@ export default function AbfindungsrechnerPage() {
                 '@type': 'HowToStep',
                 position: 3,
                 name: 'Ergebnis ablesen',
-                text: 'Der Rechner zeigt drei Szenarien: Minimum (Faktor 0,5), Regelsatz (Faktor 0,5) und Maximum (Faktor 1,5). Die tatsächliche Abfindung hängt von individuellen Faktoren wie Formfehlern oder besonderem Kündigungsschutz ab.',
+                text: 'Der Rechner zeigt drei Erfahrungswerte: Faktor 0,5 (Höhe eines freiwilligen Angebots nach § 1a KSchG), Faktor 1,0 (häufig in gerichtlichen Vergleichen) und Faktor 1,5 (bei starker Verhandlungsposition). Es handelt sich um Richtgrößen aus der Verhandlungspraxis — einen gesetzlichen Mindestanspruch gibt es nicht. Die tatsächliche Abfindung hängt vom Einzelfall ab (Formfehler, besonderer Kündigungsschutz, Verhandlungsposition).',
               },
             ],
           }),
@@ -220,7 +220,7 @@ export default function AbfindungsrechnerPage() {
                 </button>
               </div>
               <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
-                <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine verbindliche Einschätzung Ihres Falls wenden Sie sich bitte an einen <a href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</a>.
+                <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine ausführliche Prüfung Ihres Falls wenden Sie sich bitte an einen <a href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</a>.
               </p>
             </div>
 
@@ -258,7 +258,7 @@ export default function AbfindungsrechnerPage() {
                 </p>
                 <div className="mt-4 py-3 px-4 bg-amber-50 rounded-sm border border-amber-300">
                   <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
-                    <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Abfindungshöhe hängt von vielen individuellen Faktoren ab. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                    <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Abfindungshöhe hängt von vielen individuellen Faktoren ab. Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                     <a href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</a>.
                   </p>
                 </div>
@@ -309,7 +309,7 @@ export default function AbfindungsrechnerPage() {
             href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Jetzt kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>

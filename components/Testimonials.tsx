@@ -1,4 +1,5 @@
 import FadeUp from './FadeUp';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 const Star = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -34,8 +35,8 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: '2.000+', label: 'Erfolgreiche Verfahren' },
-  { value: '5.0 \u2605', label: 'Mandantenbewertung' },
+  { value: 'Fachanwalt', label: 'für Arbeitsrecht' },
+  { value: `${SEO_CONFIG.rating.ratingValue} \u2605`, label: 'Mandantenbewertung' },
   { value: '20+', label: 'Jahre Erfahrung' },
   { value: '48h', label: 'Ersteinschätzung' },
 ];
@@ -51,8 +52,7 @@ export default function Testimonials() {
           Was unsere Mandanten sagen
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed mb-10">
-          Über 2.000 Arbeitnehmer haben uns bereits vertraut — bei Kündigung, Abfindung und
-          Aufhebungsvertrag.
+          Verifizierte Mandantenbewertungen zu Kündigung, Abfindung und Aufhebungsvertrag.
         </p>
         <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">
           {testimonials.map((t, i) => (

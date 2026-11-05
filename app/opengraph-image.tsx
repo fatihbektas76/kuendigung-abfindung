@@ -56,7 +56,7 @@ export default function Image() {
             lineHeight: 1.5,
           }}
         >
-          Kostenlose Ersteinschätzung. 20+ Jahre Erfahrung. 2.000+ Verfahren.
+          Kostenlose Ersteinschätzung. Über 20 Jahre Erfahrung. Fachanwaltstitel seit 2011.
         </div>
         <div
           style={{

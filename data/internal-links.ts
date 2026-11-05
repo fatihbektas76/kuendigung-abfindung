@@ -234,7 +234,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/arbeitsrecht-anwalt/viernheim", label: "Arbeitsrecht-Anwalt in Viernheim" }
   ],
   "/arbeitsrecht-anwalt/bammental": [
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/dudenhofen", label: "Arbeitsrecht-Anwalt in Dudenhofen" }
   ],
@@ -315,7 +315,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/arbeitsrecht-anwalt/bochum": [
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/ketsch", label: "Arbeitsrecht-Anwalt in Ketsch" }
@@ -423,7 +423,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/arbeitsrecht-anwalt/essen": [
     { href: "/arbeitsrecht-anwalt/ketsch", label: "Arbeitsrecht-Anwalt in Ketsch" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" }
@@ -510,7 +510,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/arbeitsrecht-anwalt/ladenburg", label: "Arbeitsrecht-Anwalt in Ladenburg" }
   ],
   "/arbeitsrecht-anwalt/ketsch": [
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
@@ -542,7 +542,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/arbeitsrecht-anwalt/philippsburg", label: "Arbeitsrecht-Anwalt in Philippsburg" }
   ],
   "/arbeitsrecht-anwalt/leimen": [
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/dudenhofen", label: "Arbeitsrecht-Anwalt in Dudenhofen" },
@@ -620,7 +620,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/arbeitsrecht-anwalt/schwetzingen", label: "Arbeitsrecht-Anwalt in Schwetzingen" },
     { href: "/arbeitsrecht-anwalt/reilingen", label: "Arbeitsrecht-Anwalt in Reilingen" },
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" }
   ],
   "/arbeitsrecht-anwalt/mutterstadt": [
@@ -629,7 +629,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   "/arbeitsrecht-anwalt/neckargemuend": [
     { href: "/arbeitsrecht-anwalt/malsch-rhein-neckar", label: "Arbeitsrecht-Anwalt in Malsch (Rhein-Neckar)" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/dudenhofen", label: "Arbeitsrecht-Anwalt in Dudenhofen" }
   ],
   "/arbeitsrecht-anwalt/neulussheim": [
@@ -652,7 +652,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/arbeitsrecht-anwalt/nussloch": [
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" }
   ],
   "/arbeitsrecht-anwalt/oberhausen": [
@@ -691,14 +691,14 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/arbeitsrecht-anwalt/plankstadt": [
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/mutterstadt", label: "Arbeitsrecht-Anwalt in Mutterstadt" },
     { href: "/arbeitsrecht-anwalt/meckesheim", label: "Arbeitsrecht-Anwalt in Meckesheim" },
     { href: "/arbeitsrecht-anwalt/schifferstadt", label: "Arbeitsrecht-Anwalt in Schifferstadt" }
   ],
   "/arbeitsrecht-anwalt/reilingen": [
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
     { href: "/arbeitsrecht-anwalt/schifferstadt", label: "Arbeitsrecht-Anwalt in Schifferstadt" }
@@ -708,7 +708,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/arbeitsrecht-anwalt/rostock": [
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
     { href: "/arbeitsrecht-anwalt/ketsch", label: "Arbeitsrecht-Anwalt in Ketsch" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
@@ -732,7 +732,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/reilingen", label: "Arbeitsrecht-Anwalt in Reilingen" },
     { href: "/arbeitsrecht-anwalt/dudenhofen", label: "Arbeitsrecht-Anwalt in Dudenhofen" },
     { href: "/arbeitsrecht-anwalt/mutterstadt", label: "Arbeitsrecht-Anwalt in Mutterstadt" },
@@ -753,7 +753,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/arbeitsrecht-anwalt/st-leon-rot": [
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/mutterstadt", label: "Arbeitsrecht-Anwalt in Mutterstadt" },
     { href: "/arbeitsrecht-anwalt/dudenhofen", label: "Arbeitsrecht-Anwalt in Dudenhofen" }
   ],
@@ -770,7 +770,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
     { href: "/arbeitsrecht-anwalt/bensheim", label: "Arbeitsrecht-Anwalt in Bensheim" },
     { href: "/arbeitsrecht-anwalt/lampertheim", label: "Arbeitsrecht-Anwalt in Lampertheim" }
   ],
-  "/arbeitsrecht-anwalt/waghaeuseldorf": [
+  "/arbeitsrecht-anwalt/waghaeusel": [
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
     { href: "/arbeitsrecht-anwalt/dudenhofen", label: "Arbeitsrecht-Anwalt in Dudenhofen" },
@@ -811,12 +811,12 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   "/arbeitsrecht-anwalt/wiesloch": [
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" }
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" }
   ],
   "/arbeitsrecht-anwalt/wuppertal": [
     { href: "/arbeitsrecht-anwalt/braunschweig", label: "Arbeitsrecht-Anwalt in Braunschweig" },
     { href: "/arbeitsrecht-anwalt/schwetzingen", label: "Arbeitsrecht-Anwalt in Schwetzingen" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/hassloch", label: "Arbeitsrecht-Anwalt in Haßloch" },
     { href: "/arbeitsrecht-anwalt/mutterstadt", label: "Arbeitsrecht-Anwalt in Mutterstadt" }
   ],
@@ -1192,7 +1192,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/glossar": [
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/ketsch", label: "Arbeitsrecht-Anwalt in Ketsch" },
     { href: "/arbeitsrecht-anwalt/schwetzingen", label: "Arbeitsrecht-Anwalt in Schwetzingen" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },
@@ -1287,7 +1287,7 @@ export const internalLinks: Record<string, Array<{ href: string; label: string }
   ],
   "/ratgeber": [
     { href: "/arbeitsrecht-anwalt/leimen", label: "Arbeitsrecht-Anwalt in Leimen" },
-    { href: "/arbeitsrecht-anwalt/waghaeuseldorf", label: "Arbeitsrecht-Anwalt in Waghäusel" },
+    { href: "/arbeitsrecht-anwalt/waghaeusel", label: "Arbeitsrecht-Anwalt in Waghäusel" },
     { href: "/arbeitsrecht-anwalt/schwetzingen", label: "Arbeitsrecht-Anwalt in Schwetzingen" },
     { href: "/arbeitsrecht-anwalt/ketsch", label: "Arbeitsrecht-Anwalt in Ketsch" },
     { href: "/arbeitsrecht-anwalt/lorsch", label: "Arbeitsrecht-Anwalt in Lorsch" },

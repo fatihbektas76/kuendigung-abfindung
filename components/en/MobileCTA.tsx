@@ -40,7 +40,7 @@ export default function MobileCTA() {
           <p className="text-[0.78rem] font-semibold text-ink leading-tight truncate">
             Don&apos;t miss the 3-week deadline
           </p>
-          <p className="text-[0.68rem] text-ink-muted leading-tight">Free case review</p>
+          <p className="text-[0.68rem] text-ink-muted leading-tight">Free first check</p>
         </div>
         <a
           href={germanHref}

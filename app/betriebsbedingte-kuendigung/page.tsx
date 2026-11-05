@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'Muss der Arbeitgeber eine Abfindung bei betriebsbedingter Kündigung zahlen?',
-    a: 'Einen automatischen Anspruch auf Abfindung gibt es nicht. Aber: Nach §1a KSchG kann der Arbeitgeber im Kündigungsschreiben eine Abfindung von 0,5 Gehältern pro Jahr anbieten, wenn der Arbeitnehmer auf die Klage verzichtet. In der Praxis wird eine Abfindung fast immer gezahlt — entweder im Rahmen eines Vergleichs vor dem Arbeitsgericht oder in Verhandlungen. Die Klage lohnt sich fast immer.',
+    a: 'Einen automatischen Anspruch auf Abfindung gibt es nicht. Nach § 1a KSchG kann der Arbeitgeber im Kündigungsschreiben eine Abfindung von 0,5 Gehältern pro Jahr anbieten, wenn der Arbeitnehmer auf die Klage verzichtet. In der Praxis wird eine Abfindung häufig im Rahmen eines Vergleichs vor dem Arbeitsgericht oder in Verhandlungen gezahlt. Erfolg und Höhe hängen von Beweislage, Kündigungsschutzlage und Verhandlungsposition ab und können nicht garantiert werden.',
   },
   {
     q: 'Wie lange habe ich Zeit, gegen eine betriebsbedingte Kündigung zu klagen?',
@@ -163,7 +163,7 @@ export default function BetriebsbedingteKuendigungPage() {
               'Betriebsbedingte Kündigung = häufigste Kündigungsart. Abfindung nach §1a KSchG: 0,5 Gehälter pro Beschäftigungsjahr.',
               'Die Sozialauswahl muss korrekt sein — Fehler machen die Kündigung unwirksam.',
               '3-Wochen-Klagefrist ab Zugang der Kündigung — handeln Sie sofort.',
-              'In der Praxis werden Abfindungen von 0,5 bis 1,5 Gehältern pro Jahr verhandelt — Klage lohnt sich fast immer.',
+              'In der Praxis werden Abfindungen von 0,5 bis 1,5 Gehältern pro Jahr verhandelt. Erfolg und Höhe hängen vom Einzelfall ab.',
             ]} />
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function BetriebsbedingteKuendigungPage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Betriebsbedingte Kündigung kostenlos prüfen lassen &rarr;
+              Betriebsbedingte Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>
@@ -337,7 +337,7 @@ export default function BetriebsbedingteKuendigungPage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Jetzt kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
             <Link
               href="/abfindungsrechner/"

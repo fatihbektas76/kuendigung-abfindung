@@ -79,7 +79,7 @@ export default function SummaryYearsEn({ params }: Props) {
             { href: `/en/summary-dismissal-after-${tenureUrlSegment(entry.year)}`, label: entry.label },
           ]}
           primaryCta={{ href: '/en/check-dismissal', label: 'Check my dismissal' }}
-          secondaryCta={{ href: '#contact', label: 'Free case review' }}
+          secondaryCta={{ href: '#contact', label: 'Free first check' }}
         />
 
         <section className="py-6 px-8 bg-[#1f2937] text-white">
@@ -114,10 +114,13 @@ export default function SummaryYearsEn({ params }: Props) {
               breach to outweigh long, untroubled tenure.
             </p>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-0">
-              The employer must also act within <strong>2 weeks</strong> of learning the
-              cause (§&nbsp;626 II BGB) — missed deadlines are routine winning arguments.
-              Settlement value in defeated summary dismissals is typically materially above
-              the half-month rule.
+              The employer must act within <strong>2 weeks</strong> of learning the cause
+              (§&nbsp;626 (2) sentence 1 BGB) — missed deadlines are routine winning
+              arguments. On your written request, the employer must additionally state the
+              reasons in writing promptly (§ 626 (2) sentence 3 BGB); request this
+              immediately — missing or delayed reasons can create evidentiary disadvantages
+              for the employer in court. Outcome and settlement value depend on the
+              individual case.
             </p>
           </div>
         </section>

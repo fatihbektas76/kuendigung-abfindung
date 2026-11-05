@@ -38,7 +38,7 @@ const FAQS = [
   },
   {
     q: 'What is the 2-week rule?',
-    a: 'Under § 626 II BGB the employer must declare the summary dismissal within 2 weeks of obtaining full knowledge of the cause. If the deadline is missed the summary dismissal is invalid — a frequent winning argument in court.',
+    a: 'Under § 626 (2) sentence 1 BGB the employer must declare the summary dismissal within 2 weeks of obtaining full knowledge of the cause. If the deadline is missed the summary dismissal is invalid. Additionally, § 626 (2) sentence 3 BGB obliges the employer to state the reasons in writing on your written request — promptly. Missing or delayed reasons can create evidentiary disadvantages for the employer in court.',
   },
   {
     q: 'Do I get severance after a summary dismissal?',
@@ -96,14 +96,14 @@ export default function SummaryDismissalEn() {
       <main>
         <TopicHero
           eyebrow="Summary dismissal (fristlose Kündigung)"
-          title="Summary dismissal under § 626 BGB — almost always defensible."
-          lede="A summary dismissal ends your employment immediately and triggers a 12-week unemployment-benefit blocking period. Most summary dismissals fail the strict § 626 BGB test — and settle with substantial severance."
+          title="Summary dismissal under § 626 BGB — strict legal test, highly defensible."
+          lede="A summary dismissal ends your employment immediately and may trigger a 12-week unemployment-benefit blocking period. The § 626 BGB test is strict, and many summary dismissals are successfully challenged — outcome depends on the individual case."
           breadcrumbs={[
             { href: '/en/', label: 'Home' },
             { href: '/en/summary-dismissal', label: 'Summary dismissal' },
           ]}
           primaryCta={{ href: '/en/check-dismissal', label: 'Check my dismissal' }}
-          secondaryCta={{ href: '#contact', label: 'Free case review' }}
+          secondaryCta={{ href: '#contact', label: 'Free first check' }}
         />
 
         {/* Urgency banner */}
@@ -136,10 +136,11 @@ export default function SummaryDismissalEn() {
               <em>wichtiger Grund</em> — a cause so serious that continuing the employment even
               for the notice period is unreasonable. The bar is extremely high. The employer must
               additionally act within <strong>2 weeks</strong> of obtaining knowledge of the cause
-              (<NormLink href={NORM.bgb626}>§&nbsp;626 II BGB</NormLink>), usually issue an
-              Abmahnung first, and prove the cause in court if challenged. In practice the great
-              majority of summary dismissals fail and settle with severance materially above the
-              standard 0.5×-per-year formula.
+              (<NormLink href={NORM.bgb626}>§&nbsp;626 (2) sentence 1 BGB</NormLink>), usually issue an
+              Abmahnung first, and prove the cause in court if challenged. On your written
+              request, the employer must also state the reasons in writing promptly
+              (§ 626 (2) sentence 3 BGB). Outcome depends strongly on the individual case —
+              settlement is frequent, often with severance above the 0.5×-per-year rule of thumb.
             </p>
             <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
               <strong>Written and reviewed by</strong> Fatih Bektas, German employment-law specialist

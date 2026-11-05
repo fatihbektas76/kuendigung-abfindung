@@ -26,7 +26,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Abmahnung – Ihre Rechte & Sofortmaßnahmen (${new Date().getFullYear()})`,
   description:
-    'Abmahnung erhalten? Wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung & Ihre Rechte. Jetzt kostenlos prüfen.',
+    'Abmahnung erhalten? Wann ist sie unwirksam, was tun? Widerspruch, Gegendarstellung & Ihre Rechte. Kostenlose Ersteinschätzung.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/abmahnung/`,
   },
@@ -204,7 +204,7 @@ export default function AbmahnungPage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Abmahnung kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>
@@ -344,7 +344,7 @@ export default function AbmahnungPage() {
               href="/abmahnung-pruefen/"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Jetzt kostenlos prüfen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
             <a
               href="/#kontakt"
@@ -561,7 +561,7 @@ export default function AbmahnungPage() {
               href="/abmahnung-pruefen/"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Jetzt kostenlos prüfen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
             <a
               href="/#kontakt"

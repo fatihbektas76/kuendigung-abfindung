@@ -5,6 +5,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 import SeoGeoBase from '@/components/SeoGeoBase';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
+import { BOOKING } from '@/lib/booking';
 
 export const revalidate = 86400;
 
@@ -13,7 +14,7 @@ const BASE_URL = SEO_CONFIG.baseUrl;
 export const metadata: Metadata = {
   title: `Fatih Bektas — Fachanwalt für Arbeitsrecht | ${new Date().getFullYear()}`,
   description:
-    'Fatih Bektas ist Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Vertretung von Arbeitnehmern, Führungskräften, Vorständen und Geschäftsführern. Über 20 Jahre Erfahrung, 2.000+ Verfahren.',
+    'Fatih Bektas ist Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Vertretung von Arbeitnehmern, Führungskräften, Vorständen und Geschäftsführern. Über 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011.',
   alternates: {
     canonical: `${BASE_URL}/autor/fatih-bektas/`,
     languages: {
@@ -45,7 +46,7 @@ const personSchema = {
   familyName: 'Bektas',
   jobTitle: 'Fachanwalt für Arbeitsrecht',
   description:
-    'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Vertretung von Arbeitnehmern, Führungskräften, Vorständen und Geschäftsführern in arbeits- und dienstvertragsrechtlichen Konflikten. Über 2.000 erfolgreiche Verfahren.',
+    'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Vertretung von Arbeitnehmern, Führungskräften, Vorständen und Geschäftsführern in arbeits- und dienstvertragsrechtlichen Konflikten. Fachanwaltstitel seit 2011.',
   image: `${BASE_URL}/Fatih.webp`,
   url: `${BASE_URL}/autor/fatih-bektas/`,
   email: 'bektas@apos.legal',
@@ -151,7 +152,7 @@ export default function AutorFatihBektasPage() {
       <SeoGeoBase
         pageUrl={`${BASE_URL}/autor/fatih-bektas/`}
         pageTitle="Fatih Bektas — Fachanwalt für Arbeitsrecht"
-        pageDescription="Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Über 20 Jahre Erfahrung, 2.000+ erfolgreiche Verfahren."
+        pageDescription="Fachanwalt für Arbeitsrecht bei APOS Legal Heidelberg. Über 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011."
         pageType="WebPage"
         breadcrumbs={[
           { name: 'Start', url: `${BASE_URL}/` },
@@ -207,9 +208,9 @@ export default function AutorFatihBektasPage() {
                 </div>
                 <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
                   Fatih Bektas ist Fachanwalt f&uuml;r Arbeitsrecht bei der APOS Legal
-                  Rechtsanwaltsgesellschaft mbH &amp; Co. KG in Heidelberg. Mit &uuml;ber
-                  20 Jahren Erfahrung und mehr als 2.000 erfolgreichen Verfahren ist er
-                  einer der f&uuml;hrenden Arbeitsrechtler in der Metropolregion Rhein-Neckar.
+                  Rechtsanwaltsgesellschaft mbH &amp; Co. KG in Heidelberg &mdash; mit &uuml;ber
+                  20 Jahren Arbeitsrecht-Erfahrung und Fachanwaltstitel seit 2011. Beratung und
+                  Prozessvertretung erfolgen deutschlandweit, auf Deutsch und auf Englisch.
                 </p>
                 <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
                   Vor seiner T&auml;tigkeit als Anwalt war Fatih Bektas als CEO, CFO und COO
@@ -248,7 +249,7 @@ export default function AutorFatihBektasPage() {
                     anwalt.de
                   </a>
                   <a
-                    href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
+                    href={BOOKING.firstCheck}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-gold hover:text-gold-dark no-underline transition-colors"
@@ -272,11 +273,11 @@ export default function AutorFatihBektasPage() {
                 <div className="text-[0.82rem] text-ink-muted mt-1">Jahre Erfahrung</div>
               </div>
               <div className="py-5 px-5 bg-cream border border-border-light rounded-sm text-center">
-                <div className="text-[1.5rem] font-bold text-gold-dark">2.000+</div>
-                <div className="text-[0.82rem] text-ink-muted mt-1">Erfolgreiche Verfahren</div>
+                <div className="text-[1.5rem] font-bold text-gold-dark">seit 2011</div>
+                <div className="text-[0.82rem] text-ink-muted mt-1">Fachanwaltstitel</div>
               </div>
               <div className="py-5 px-5 bg-cream border border-border-light rounded-sm text-center">
-                <div className="text-[1.5rem] font-bold text-gold-dark">68</div>
+                <div className="text-[1.5rem] font-bold text-gold-dark">{SEO_CONFIG.rating.reviewCount}</div>
                 <div className="text-[0.82rem] text-ink-muted mt-1">Bewertungen anwalt.de</div>
               </div>
             </div>

@@ -7,21 +7,21 @@ import { SEO_CONFIG } from '@/lib/seo-config';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
+  title: 'Unser Team | APOS Legal – Arbeitsrechtsteam',
   description:
-    'Spezialisierte Fachanwälte für Arbeitsrecht. Jahrzehntelange Erfahrung & über 2.000 erfolgreiche Verfahren.',
+    'Arbeitsrechtsteam unter Leitung von Fachanwalt Fatih Bektas. Über 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011.',
   alternates: {
     canonical: 'https://www.gekuendigt-abfindung.de/team/',
   },
   openGraph: {
-    title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
-    description: 'Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten.',
+    title: 'Unser Team | APOS Legal – Arbeitsrechtsteam',
+    description: 'Arbeitsrechtsteam unter Leitung von Fachanwalt Fatih Bektas — Rechtsanwälte mit Schwerpunkt Arbeitsrecht.',
     url: 'https://www.gekuendigt-abfindung.de/team/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Unser Team | APOS Legal – Fachanwälte Arbeitsrecht',
-    description: 'Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten.',
+    title: 'Unser Team | APOS Legal – Arbeitsrechtsteam',
+    description: 'Arbeitsrechtsteam unter Leitung von Fachanwalt Fatih Bektas — Rechtsanwälte mit Schwerpunkt Arbeitsrecht.',
   },
 };
 
@@ -45,7 +45,7 @@ const personSchemas = [
     familyName: 'Bektas',
     jobTitle: 'Rechtsanwalt & Fachanwalt für Arbeitsrecht',
     description:
-      'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Über 2.000 erfolgreiche Verfahren.',
+      'Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Zertifizierter Mediator. Spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag. Fachanwaltstitel seit 2011.',
     image: `${BASE_URL}/Fatih.webp`,
     url: `${BASE_URL}/autor/fatih-bektas/`,
     email: 'bektas@apos.legal',
@@ -155,7 +155,7 @@ export default function TeamPage() {
       <SeoGeoBase
         pageUrl={`${SEO_CONFIG.baseUrl}/team/`}
         pageTitle="Unser Team — APOS Legal"
-        pageDescription="Spezialisierte Fachanwälte für Arbeitsrecht mit jahrzehntelanger Erfahrung vor deutschen Arbeitsgerichten."
+        pageDescription="Arbeitsrechtsteam unter Leitung von Fachanwalt Fatih Bektas — Rechtsanwälte mit Schwerpunkt Arbeitsrecht."
         pageType="WebPage"
         breadcrumbs={[
           { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
@@ -171,7 +171,7 @@ export default function TeamPage() {
             '@context': 'https://schema.org',
             '@type': 'ItemList',
             name: 'Team gekuendigt-abfindung.de',
-            description: 'Fachanwälte für Arbeitsrecht — spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag.',
+            description: 'Arbeitsrechtsteam unter Leitung von Fachanwalt Fatih Bektas — Rechtsanwälte spezialisiert auf Kündigung, Abfindung und Aufhebungsvertrag.',
             url: `${BASE_URL}/team/`,
             numberOfItems: personSchemas.length,
             itemListElement: personSchemas.map((person, index) => ({

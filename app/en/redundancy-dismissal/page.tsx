@@ -110,7 +110,7 @@ export default function RedundancyEn() {
             { href: '/en/redundancy-dismissal', label: 'Redundancy dismissal' },
           ]}
           primaryCta={{ href: '/en/check-dismissal', label: 'Check my dismissal' }}
-          secondaryCta={{ href: '#contact', label: 'Free case review' }}
+          secondaryCta={{ href: '#contact', label: 'Free first check' }}
         />
 
         {/* Urgency banner */}
@@ -303,9 +303,10 @@ export default function RedundancyEn() {
               </p>
             </div>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mt-5 mb-0">
-              Decision point: filing the claim <em>almost always</em> improves the result. In
-              practice the negotiated severance in contested proceedings regularly reaches 1.0 to
-              1.5 monthly salaries per year — twice to three times the § 1a anchor. The § 1a offer
+              Decision point: in practice, filing the claim frequently improves the result.
+              Negotiated severance in contested proceedings regularly reaches 1.0 to
+              1.5 monthly salaries per year — two to three times the § 1a anchor. Outcome and
+              amount depend on the individual case. The § 1a offer
               is the floor, not the ceiling.
             </p>
           </div>

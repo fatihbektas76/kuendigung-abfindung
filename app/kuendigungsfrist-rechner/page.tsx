@@ -274,7 +274,7 @@ export default function KuendigungsfristRechnerPage() {
               href="/kuendigung-pruefen/"
               className="inline-block py-2.5 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] whitespace-nowrap"
             >
-              Jetzt kostenlos prüfen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </Link>
           </div>
         </div>
@@ -394,7 +394,7 @@ export default function KuendigungsfristRechnerPage() {
                 </button>
 
                 <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
-                  <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                  <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                   <Link href="/kuendigung-pruefen/" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
                 </p>
 
@@ -509,7 +509,7 @@ export default function KuendigungsfristRechnerPage() {
                   {/* Disclaimer */}
                   <div className="py-3 px-4 bg-amber-50 rounded-sm border border-amber-300 mb-4">
                     <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
-                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Kündigungsfrist kann durch Arbeitsvertrag oder Tarifvertrag abweichen. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Kündigungsfrist kann durch Arbeitsvertrag oder Tarifvertrag abweichen. Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                       <Link href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</Link>.
                     </p>
                   </div>
@@ -689,7 +689,7 @@ export default function KuendigungsfristRechnerPage() {
           </Link>
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Antwort in 24h</span>
-            <span>&#10003; Über 69 Fünf-Sterne-Bewertungen</span>
+            <span>&#10003; Über {SEO_CONFIG.rating.reviewCount} Fünf-Sterne-Bewertungen</span>
           </div>
         </div>
       </section>

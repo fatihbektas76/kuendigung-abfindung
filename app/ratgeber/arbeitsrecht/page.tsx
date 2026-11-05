@@ -53,7 +53,7 @@ const articles: Article[] = [
     facts: [
       '§ 4 KSchG: 3 Wochen Klagefrist',
       '§ 12a ArbGG: keine Erstattung Gegneranwalt im 1. Rechtszug',
-      'Ca. 80 % der Klagen enden mit Vergleich + Abfindung',
+      'Rund 80 % der Verfahren enden ohne streitiges Urteil (Destatis FS 10 R 2.8)',
     ],
     dateKey: 'kuendigungsschutzklage',
   },
@@ -66,7 +66,7 @@ const articles: Article[] = [
     facts: [
       'Dringende betriebliche Erfordernisse erforderlich',
       'Sozialauswahl: Alter, Dauer, Unterhalt, Schwerbehinderung',
-      '§ 1a KSchG: 0,5 Monatsgehälter / Jahr als Regelabfindung',
+      '§ 1a KSchG: 0,5 Monatsgehälter / Jahr als freiwilliges Angebot bei betriebsbedingter Kündigung',
     ],
     dateKey: 'betriebsbedingteKuendigung',
   },

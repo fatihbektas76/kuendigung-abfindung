@@ -31,7 +31,7 @@ const TEAM: readonly Member[] = [
     name: 'Fatih Bektas',
     role: 'German employment-law specialist · Founder',
     focus:
-      'Dismissal, severance, summary dismissal, termination agreements. 20+ years, 2,000+ cases. Former CEO / CFO / COO (Unzer, iCOM Group).',
+      'Dismissal, severance, summary dismissal, termination agreements. 20+ years of employment-law experience, Fachanwalt title since 2011. Former CEO / CFO / COO (Unzer, iCOM Group).',
   },
   {
     name: 'Georg Willem Büchler',

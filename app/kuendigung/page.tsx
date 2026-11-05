@@ -169,8 +169,8 @@ export default function KuendigungPage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <TldrBox items={[
-              '3-Wochen-Klagefrist ab Zugang der Kündigung (§4 KSchG) — verpassen Sie diese Frist, verlieren Sie alle Ansprüche.',
-              'Kündigungsschutzklage ist Ihr stärkstes Werkzeug: Selbst bei wirksamer Kündigung führt die Klage in der Praxis fast immer zu einer Abfindung.',
+              '3-Wochen-Klagefrist ab Zugang der Kündigung (§ 4 KSchG): Nach Fristablauf gilt die Kündigung in der Regel als wirksam (§ 7 KSchG); eine nachträgliche Klagezulassung nach § 5 KSchG ist nur in engen Ausnahmefällen möglich. Andere Ansprüche (Lohn, Urlaub, Zeugnis) bleiben unberührt.',
+              'Kündigungsschutzklage ist Ihr wichtigstes Werkzeug: In vielen Fällen führt sie zu einem Vergleich mit Abfindung. Erfolg und Höhe hängen von Beweislage, Kündigungsschutzlage und Verhandlungsposition ab und können nicht garantiert werden.',
               'Häufige Unwirksamkeitsgründe: Fehlerhafte Sozialauswahl, fehlende Betriebsratsanhörung (§102 BetrVG), Formfehler, besonderer Kündigungsschutz.',
               'Kündigungsfristen nach §622 BGB steigen mit der Betriebszugehörigkeit von 4 Wochen auf bis zu 7 Monate.',
             ]} />
@@ -243,7 +243,7 @@ export default function KuendigungPage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Kündigung kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>
@@ -305,7 +305,7 @@ export default function KuendigungPage() {
             href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Jetzt kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>

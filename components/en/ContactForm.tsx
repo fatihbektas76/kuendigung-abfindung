@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import FadeUp from '../FadeUp';
+import { BOOKING } from '@/lib/booking';
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -100,7 +101,7 @@ export default function ContactForm() {
               </div>
               <div className="flex justify-center mt-5 mb-3.5">
                 <a
-                  href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
+                  href={BOOKING.firstCheck}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 py-3.5 px-8 border-2 border-gold bg-gold-bg text-gold-dark font-semibold text-[0.95rem] rounded-sm no-underline transition-all hover:bg-gold hover:text-white hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
@@ -109,7 +110,7 @@ export default function ContactForm() {
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
                   </svg>
-                  Book a phone consultation
+                  Book a phone slot for your first check
                 </a>
               </div>
               <div className="mt-6 py-4 px-5 bg-cream rounded-sm border-l-[3px] border-gold">

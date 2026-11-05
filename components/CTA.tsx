@@ -17,7 +17,7 @@ export default function CTA() {
           data-track="cta_bottom_kontakt_button"
           className="inline-flex items-center gap-2 px-9 py-4 rounded-sm text-base font-semibold no-underline transition-all bg-gold-dark text-white hover:bg-[#635428] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(166,139,75,0.25)]"
         >
-          Jetzt kostenlos prüfen lassen &rarr;
+          Kostenlose Ersteinschätzung &rarr;
         </a>
         <div className="flex gap-8 justify-center mt-9 flex-wrap max-md:flex-col max-md:items-center">
           <a

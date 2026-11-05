@@ -19,11 +19,11 @@ const BASE = 'https://www.gekuendigt-abfindung.de';
 const faqs = [
   {
     q: 'How accurate is the severance calculator?',
-    a: 'The calculator applies the standard German half-month rule (0.5 gross monthly salary × years of service) that courts and employers use as a starting point. The actual settlement depends on individual factors — formal defects in the dismissal letter, flawed social selection (§ 1 (3) KSchG), special protection (pregnancy, severe disability) and bargaining posture. For a binding assessment, consult a specialist attorney for German employment law.',
+    a: 'The calculator applies the standard German half-month rule (0.5 gross monthly salary × years of service) that courts and employers use as a starting point. The actual settlement depends on individual factors — formal defects in the dismissal letter, flawed social selection (§ 1 (3) KSchG), special protection (pregnancy, severe disability) and bargaining posture. For a detailed review, consult a specialist attorney for German employment law.',
   },
   {
     q: 'Is the severance figure gross or net?',
-    a: 'The calculated figure is gross. German severance payments are subject to income tax but exempt from social-security contributions. The Fünftelregelung (one-fifth rule under § 34 EStG) spreads the tax burden over five years and can substantially reduce the effective tax rate — a competent payroll setup is important to realise that benefit.',
+    a: 'The calculated figure is gross. German severance payments are subject to income tax but exempt from social-security contributions. The Fünftelregelung (one-fifth rule under § 34 EStG) spreads the tax burden over five years and can meaningfully reduce the effective tax rate in individual cases; the concrete saving depends on marginal tax rate and other income. Since 1 January 2025 the rule must be claimed in the annual income-tax return (not applied by the employer in the monthly payroll).',
   },
   {
     q: 'When do I get more than the standard factor of 0.5?',
@@ -107,7 +107,7 @@ export default function SeveranceCalculatorEn() {
       <TopicHero
         eyebrow="Severance calculator"
         title="Estimate your German severance"
-        lede="Free online estimator based on the German half-month rule (§ 1a KSchG). For a binding assessment, send us your dismissal letter — we provide a tailored review free of charge."
+        lede="Free online estimator based on the German half-month rule (§ 1a KSchG). For a detailed review, send us your dismissal letter — we provide a tailored review free of charge."
         breadcrumbs={[
           { href: '/en/', label: 'Home' },
           { href: '/en/tools', label: 'Tools' },
@@ -295,10 +295,10 @@ export default function SeveranceCalculatorEn() {
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               You have exactly <strong>three weeks</strong> from receipt of the dismissal to
-              file an unfair-dismissal claim at the competent labour court (§ 4 KSchG). Miss
-              that deadline and the dismissal is treated as valid — regardless of how flawed
-              it was. Negotiating room for severance almost always arises only through filing
-              that claim.
+              file an unfair-dismissal claim at the competent labour court (§ 4 KSchG). After
+              that deadline the dismissal is generally treated as valid (§ 7 KSchG); subsequent
+              admission under § 5 KSchG is only possible in narrow exceptional cases. Negotiating
+              room for severance frequently arises only after filing the claim.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               A specialist attorney for employment law (Fachanwalt für Arbeitsrecht) knows the

@@ -122,8 +122,9 @@ export default function LegalFeesCalculatorEn() {
               Case settles at first hearing (Vergleich)
             </label>
             <p className="text-[0.8rem] text-ink-muted mt-2 leading-relaxed">
-              ~80% of unfair-dismissal claims settle. The settlement fee (1.5×) covers the
-              court-supervised severance agreement.
+              ~80 % of proceedings before the German labour courts end without a contested
+              judgment (Destatis FS 10 R 2.8) — typically through a settlement. The settlement
+              fee (1.5×) covers the court-supervised severance agreement.
             </p>
           </div>
 
@@ -156,7 +157,7 @@ export default function LegalFeesCalculatorEn() {
               href="#contact"
               className="mt-3 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm text-[0.92rem] font-semibold no-underline transition-all bg-gold-dark text-white hover:bg-[#735F32]"
             >
-              Free initial review &rarr;
+              Free first check &rarr;
             </Link>
           </div>
         </div>

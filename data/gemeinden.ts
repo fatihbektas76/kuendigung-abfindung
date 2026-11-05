@@ -232,7 +232,7 @@ export const gemeinden: Stadt[] = [
     region: "Süd",
   },
   {
-    slug: "waghaeuseldorf",
+    slug: "waghaeusel",
     name: "Waghäusel",
     bundesland: "Baden-Württemberg",
     arbeitsgericht: "Arbeitsgericht Karlsruhe",

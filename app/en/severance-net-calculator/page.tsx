@@ -12,7 +12,7 @@ const PAGE_URL = `${BASE}/en/severance-net-calculator/`;
 const faqs = [
   {
     q: 'What stays net from a German severance payment?',
-    a: 'German severance is subject to income tax but exempt from social-security contributions. Typically 55–70 % of the gross amount remains as net, depending on annual income, severance size, filing status (married-joint or single) and church tax. The one-fifth rule (§ 34 EStG) significantly reduces progression — in mid-income cases it saves several thousand euro.',
+    a: 'German severance is subject to income tax but exempt from social-security contributions. Typically 55–70 % of the gross amount remains as net, depending on annual income, severance size, filing status (married-joint or single) and church tax. The one-fifth rule (§ 34 EStG) can meaningfully reduce progression in individual cases — the concrete saving depends on marginal tax rate and other income. Since 1 January 2025 it must be claimed in the annual income-tax return (not applied by the employer in the monthly payroll).',
   },
   {
     q: 'How does the German one-fifth rule (Fünftelregelung) work?',

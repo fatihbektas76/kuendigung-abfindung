@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Written Warning (Abmahnung) in Germany ${new Date().getFullYear()} — Rights & Removal`,
   description:
-    'Received a written warning (Abmahnung) in Germany? When it is valid, when to object, and how to get it removed from your personnel file. Free review by a specialist.',
+    'Received a written warning (Abmahnung) in Germany? When it is valid, when to object, and how to get it removed from your personnel file. Free first check by a specialist.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -93,7 +93,7 @@ export default function WrittenWarningEn() {
             { href: '/en/written-warning', label: 'Written warning' },
           ]}
           primaryCta={{ href: '/en/check-written-warning', label: 'Check my warning' }}
-          secondaryCta={{ href: '#contact', label: 'Free case review' }}
+          secondaryCta={{ href: '#contact', label: 'Free first check' }}
         />
 
         {/* Direct answer */}

@@ -7,6 +7,7 @@ import { gemeinden, getGemeindeBySlug } from "@/data/gemeinden";
 import { berlinBezirke, getBezirkBySlug } from "@/data/bezirke";
 import { StadtContent, GemeindeContent } from "@/types/content";
 import { arbeitsgerichteUrls } from "@/data/arbeitsgerichte-urls";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import Image from "next/image";
 import WeitereLinkvorschlaege from "@/components/WeitereLinkvorschlaege";
 import stadtContentsRaw from "@/data/generated/stadt-contents.json";
@@ -257,7 +258,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
           {[
             { label: "Klagefrist", value: "3 Wochen", sub: "ab Zugang der Kündigung" },
             { label: "Abfindungsformel", value: "0,5 × Gehalt × Jahre", sub: "Faustformel, kein Rechtsanspruch" },
-            { label: "Kündigungsschutz", value: "Ab 6 Monate", sub: "> 6 Monate + > 10 MA (Altverträge vor 2004: > 5 MA)" },
+            { label: "Kündigungsschutz", value: "> 6 Monate", sub: "§ 23 Abs. 1 KSchG: > 10 Vollzeitäquivalente, Teilzeit anteilig (Altverträge vor 2004: > 5 AN)" },
             { label: "Berufungsfrist", value: "1 Monat", sub: `ab Urteilszustellung, ${ort.lagName}` },
           ].map((f) => (
             <div key={f.label} className="bg-white border border-gray-200 rounded-xl p-4 relative overflow-hidden">
@@ -330,7 +331,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         <div className="bg-[#f9f6ec] border border-[#d4c98a] rounded-xl p-5 mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div>
             <p className="font-semibold text-[#6B6626] text-sm">Kündigung erhalten?</p>
-            <p className="text-sm text-gray-600">Lassen Sie Ihre Kündigung jetzt kostenlos prüfen – die 3-Wochen-Frist läuft.</p>
+            <p className="text-sm text-gray-600">Lassen Sie Ihre Kostenlose Ersteinschätzung – die 3-Wochen-Frist läuft.</p>
           </div>
           <a href="/kuendigung-pruefen/" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
             Kündigung prüfen →
@@ -442,7 +443,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             </div>
             <div className="flex items-center gap-2 pt-3 border-t border-gray-100">
               <span className="text-[#BA7517] tracking-wide">★★★★★</span>
-              <span className="text-xs text-gray-600"><strong>5,0 / 5,0</strong> – 69 Bewertungen auf anwalt.de</span>
+              <span className="text-xs text-gray-600"><strong>{SEO_CONFIG.rating.ratingValue} / 5,0</strong> – {SEO_CONFIG.rating.reviewCount} Bewertungen auf anwalt.de</span>
             </div>
           </div>
         </div>

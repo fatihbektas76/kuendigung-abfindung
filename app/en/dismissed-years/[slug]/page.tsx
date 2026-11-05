@@ -79,7 +79,7 @@ export default function DismissedYearsEn({ params }: Props) {
             { href: `/en/dismissed-after-${tenureUrlSegment(entry.year)}`, label: entry.label },
           ]}
           primaryCta={{ href: '/en/check-dismissal', label: 'Check my dismissal' }}
-          secondaryCta={{ href: '#contact', label: 'Free case review' }}
+          secondaryCta={{ href: '#contact', label: 'Free first check' }}
         />
 
         <section className="py-6 px-8 bg-[#1f2937] text-white">
@@ -106,9 +106,12 @@ export default function DismissedYearsEn({ params }: Props) {
           <div className="max-w-[820px] mx-auto">
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
               After {entry.label} of service, you fall fully under the German Dismissal
-              Protection Act (KSchG) — assuming your employer has more than 10 staff. Every
-              ordinary dismissal must be socially justified on conduct, person or operational
-              grounds (§&nbsp;1 KSchG). Your employer must observe a notice period of{' '}
+              Protection Act (KSchG) — assuming your employer has more than 10 weighted
+              employees (§ 23 (1) KSchG; part-time proportional per sentence 4; for
+              employment relationships started before 1 January 2004: more than 5
+              employees). Every ordinary dismissal must be socially justified on conduct,
+              person or operational grounds (§&nbsp;1 KSchG). Your employer must observe a
+              notice period of{' '}
               <strong>{entry.notice}</strong>. Settlement leverage is{' '}
               {entry.year >= 10
                 ? 'strong — long tenure consistently produces severance factors above the half-month baseline.'
@@ -131,7 +134,7 @@ export default function DismissedYearsEn({ params }: Props) {
             <ol className="list-decimal pl-6 space-y-3 text-[1rem] text-ink-light leading-relaxed">
               <li>Note the exact date of receipt — the 3-week clock starts that day.</li>
               <li>Do not sign anything. No exit document, no severance waiver.</li>
-              <li>Send us the letter for a free review within 48 hours.</li>
+              <li>Send us the letter for a free first check within 48 hours.</li>
               <li>Register as job-seeker (arbeitsuchend) within 3 days to protect benefit entitlement.</li>
               <li>Notify your legal-expenses insurer, if any.</li>
             </ol>

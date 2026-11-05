@@ -54,15 +54,15 @@ const faqs = [
   },
   {
     q: 'Welcher Faktor (0,5 oder 1,0 oder 1,5) gilt für mich?',
-    a: 'Der Faktor hängt von Ihrer Verhandlungsposition ab: 0,5 ist die gesetzliche Mindestabfindung nach §1a KSchG. 1,0 ist der Standard bei Vergleichen vor dem Arbeitsgericht. 1,5 und mehr werden erzielt bei langer Betriebszugehörigkeit, hohem Alter, offensichtlich unwirksamer Kündigung oder wenn der Arbeitgeber das Verfahren schnell beenden will.',
+    a: 'Der Faktor hängt von Ihrer Verhandlungsposition ab und ist stets Verhandlungs- oder Vergleichssache — einen gesetzlichen Mindestanspruch gibt es nicht. Faktor 0,5 entspricht der Höhe des freiwilligen Abfindungsangebots nach § 1a KSchG. Faktor 1,0 ist in Vergleichen vor dem Arbeitsgericht häufig anzutreffen. Faktor 1,5 und höher werden erfahrungsgemäß erzielt bei langer Betriebszugehörigkeit, hohem Alter, offensichtlich unwirksamer Kündigung oder wenn der Arbeitgeber das Verfahren schnell beenden will.',
   },
   {
     q: 'Wird die Abfindung auf das Arbeitslosengeld angerechnet?',
-    a: 'Grundsätzlich nein — die Abfindung wird nicht auf das Arbeitslosengeld angerechnet, wenn die ordentliche Kündigungsfrist eingehalten wurde. Bei Aufhebungsverträgen oder verkürzter Kündigungsfrist kann es zu einer Ruhenszeit kommen (§158 SGB III). Lassen Sie sich vor Unterzeichnung beraten.',
+    a: 'Zu unterscheiden sind zwei verschiedene Rechtsfolgen: (1) Ruhen des ALG-Anspruchs nach § 158 SGB III — tritt nur ein, wenn das Arbeitsverhältnis unter Verkürzung der ordentlichen Kündigungsfrist beendet wird; die Abfindung „ersetzt" das Entgelt für die verkürzte Zeit, der ALG-Anspruch schiebt sich entsprechend nach hinten. (2) Sperrzeit nach § 159 SGB III — droht bei Mitwirkung an der Beendigung ohne wichtigen Grund; Rechtsfolge ist der 12-wöchige Leistungsausschluss. Wird die ordentliche Kündigungsfrist eingehalten und liegt ein wichtiger Grund vor, tritt keine der beiden Rechtsfolgen ein. Vor Unterschrift anwaltlich beraten lassen.',
   },
   {
     q: 'Muss ich Steuern auf die Abfindung zahlen?',
-    a: 'Ja, Abfindungen sind steuerpflichtig. Allerdings kann die Fünftelregelung (§34 EStG) die Steuerlast erheblich senken: Die Abfindung wird steuerlich so behandelt, als wäre sie auf 5 Jahre verteilt worden. Wichtig seit 2025: Durch das Wachstumschancengesetz wird die Fünftelregelung nicht mehr automatisch über die Lohnabrechnung angewendet — Sie müssen sie in Ihrer Einkommensteuererklärung selbst beantragen. Bei einer Abfindung von 40.000 € können Sie so mehrere tausend Euro Steuern sparen.',
+    a: 'Ja, Abfindungen sind steuerpflichtig. Die Fünftelregelung (§ 34 EStG) kann die Steuerlast im Einzelfall erheblich senken: Rechnerisch wird 1/5 der Abfindung zum Jahreseinkommen addiert, die Mehrsteuer bestimmt und mit 5 multipliziert — die Progression wird so gedämpft. Die konkrete Ersparnis hängt vom individuellen Steuersatz und übrigen Einkommen ab. Wichtig seit 01.01.2025: Durch das Wachstumschancengesetz wendet der Arbeitgeber die Fünftelregelung nicht mehr im Lohnsteuerabzug an — sie muss in der Einkommensteuererklärung geltend gemacht werden (Anlage N).',
   },
 ];
 
@@ -163,7 +163,7 @@ export default function AbfindungstabellePage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <TldrBox items={[
-              'Faustformel: 0,5 Bruttomonatsgehälter × Beschäftigungsjahre = Regelabfindung (§1a KSchG).',
+              'Faustformel: 0,5 Bruttomonatsgehälter × Beschäftigungsjahre — Erfahrungswert aus der Verhandlungspraxis, kein gesetzlicher Anspruch. § 1a KSchG regelt lediglich das freiwillige Abfindungsangebot des Arbeitgebers im Kündigungsschreiben.',
               'In der Praxis: 0,5–1,5 Gehälter pro Jahr — Faktor hängt von der Verhandlungsposition ab.',
               'Steuervorteil durch Fünftelregelung (§34 EStG) — seit 2025 nur noch über die Steuererklärung beantragbar.',
               'Keine automatische Anrechnung auf Arbeitslosengeld bei eingehaltener Kündigungsfrist.',
@@ -178,10 +178,11 @@ export default function AbfindungstabellePage() {
           <div className="max-w-[740px]">
             <div id="direktantwort">
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-                Die <strong>Abfindung bei Kündigung</strong> wird nach der Faustformel berechnet:
+                Die <strong>Abfindung bei Kündigung</strong> wird in der Praxis anhand der Faustformel orientiert:
                 <strong> 0,5 Bruttomonatsgehälter &times; Beschäftigungsjahre</strong>. Bei 10 Jahren
-                Betriebszugehörigkeit und 4.000&nbsp;&euro; Bruttogehalt ergibt das eine Regelabfindung
-                von 20.000&nbsp;&euro; nach &sect;1a KSchG.
+                Betriebszugehörigkeit und 4.000&nbsp;&euro; Bruttogehalt liegt der Faustformel-Richtwert
+                bei 20.000&nbsp;&euro;. Dies ist ein Erfahrungswert aus der Verhandlungspraxis — ein
+                gesetzlicher Mindestanspruch besteht nicht.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
                 In der Praxis werden durch eine{' '}
@@ -204,15 +205,15 @@ export default function AbfindungstabellePage() {
       <section className="py-[70px] px-8 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-            Regelabfindung
+            Faustformel-Werte
           </div>
           <TableOfContents entries={TOC_ENTRIES} />
 
             <h2 id="abfindungstabelle-faktor-05-sect1a-kschg" className="font-serif text-[clamp(1.4rem,3vw,1.9rem)] font-bold leading-[1.25] mb-3.5">
-              Abfindungstabelle &ndash; Faktor 0,5 (&sect;1a KSchG)
+              Abfindungstabelle &ndash; Faktor 0,5 (Faustformel / § 1a KSchG)
             </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-6">
-            Gesetzliche Regelabfindung bei betriebsbedingter Kündigung mit Klageverzicht.
+            Faustformel-Richtwert; identisch mit der Höhe, die der Arbeitgeber nach § 1a KSchG bei betriebsbedingter Kündigung gegen Klageverzicht freiwillig anbieten kann.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-[0.85rem] border-collapse bg-white rounded-sm">
@@ -343,9 +344,10 @@ export default function AbfindungstabellePage() {
               Wann gilt welcher Faktor?
             </h2>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
-              Der <strong>Faktor 0,5</strong> ist die gesetzliche Regelabfindung nach &sect;1a KSchG. Sie greift,
-              wenn der Arbeitgeber im Kündigungsschreiben ausdrücklich eine Abfindung anbietet und Sie im
-              Gegenzug auf eine Kündigungsschutzklage verzichten. In der Praxis ist dieses Angebot selten
+              Der <strong>Faktor 0,5</strong> entspricht der Höhe des freiwilligen Abfindungsangebots nach § 1a KSchG.
+              Der Anspruch nach § 1a KSchG entsteht nur, wenn der Arbeitgeber im Kündigungsschreiben bei
+              betriebsbedingter Kündigung ausdrücklich dieses Angebot unterbreitet und der Arbeitnehmer
+              die 3-Wochen-Klagefrist verstreichen lässt. In der Praxis ist dieses Angebot selten
               großzügig &mdash; der Arbeitgeber hofft, dass Sie die Klage nicht einreichen.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
@@ -451,7 +453,7 @@ export default function AbfindungstabellePage() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Abfindungen sind <strong>steuerpflichtig</strong>, aber <strong>sozialversicherungsfrei</strong>.
               Es werden keine Beiträge zur Kranken-, Pflege-, Renten- oder Arbeitslosenversicherung fällig.
-              Die Steuerlast kann jedoch erheblich sein &mdash; hier hilft die Fünftelregelung.
+              Die Steuerlast kann jedoch erheblich sein &mdash; die Fünftelregelung mildert diese im Einzelfall.
             </p>
             <h3 className="font-serif text-[1.05rem] font-bold mb-3">
               Fünftelregelung nach &sect;34 EStG
@@ -459,8 +461,8 @@ export default function AbfindungstabellePage() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Die Fünftelregelung ermäßigt den Steuersatz für außerordentliche Einkünfte wie Abfindungen.
               Das Finanzamt berechnet die Steuer so, als wäre die Abfindung auf fünf Jahre verteilt worden.
-              Dadurch wird die Progression geglättet und die Steuerlast sinkt &mdash; oft um mehrere
-              tausend Euro.
+              Dadurch wird die Progression geglättet und die Steuerlast sinkt &mdash; die konkrete
+              Ersparnis hängt vom individuellen Steuersatz und übrigen Einkommen ab.
             </p>
             <div className="py-5 px-6 bg-cream rounded-sm border-l-[3px] border-gold mb-6">
               <p className="text-[0.95rem] font-semibold text-ink m-0">
@@ -532,11 +534,15 @@ export default function AbfindungstabellePage() {
               Sperrzeit nach &sect;159 SGB III
             </h3>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
-              Eine <strong>Sperrzeit von 12 Wochen</strong> droht, wenn Sie Ihr Arbeitsverhältnis
-              selbst aufgeben &mdash; etwa durch einen Aufhebungsvertrag ohne wichtigen Grund.
-              Bei einer Kündigung durch den Arbeitgeber mit anschließender Kündigungsschutzklage
-              und Vergleich entfällt die Sperrzeit in der Regel. Dies ist ein wesentlicher Vorteil
-              der Klage gegenüber dem Aufhebungsvertrag.
+              Eine <strong>Sperrzeit von 12 Wochen</strong> nach § 159 SGB III droht, wenn Sie Ihr
+              Arbeitsverhältnis selbst aufgeben (z. B. Aufhebungsvertrag) und ein <em>wichtiger Grund</em>
+              fehlt. Nach den Fachlichen Weisungen BA wird ein wichtiger Grund unter anderem vermutet,
+              wenn eine betriebsbedingte Kündigung ohnehin gedroht hätte, die ordentliche Kündigungsfrist
+              eingehalten wird und die Abfindung zwischen 0,25 und 0,5 Bruttomonatsgehältern pro
+              Beschäftigungsjahr liegt. Rechtsfolge der Sperrzeit ist der 12-wöchige
+              Leistungsausschluss — zusätzlich mindert sich die Gesamtanspruchsdauer (§ 148 Abs. 1 Nr. 4
+              SGB III). Bei Kündigung durch den Arbeitgeber mit anschließender Kündigungsschutzklage
+              und gerichtlichem Vergleich entfällt die Sperrzeit in der Regel.
             </p>
             <div className="py-5 px-6 bg-white rounded-sm border-l-[3px] border-gold">
               <p className="text-[0.95rem] text-ink leading-relaxed m-0">
@@ -565,7 +571,7 @@ export default function AbfindungstabellePage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Abfindung kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
             <Link
               href="/abfindungsrechner/"

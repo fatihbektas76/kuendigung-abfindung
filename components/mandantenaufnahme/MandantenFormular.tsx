@@ -18,6 +18,7 @@ import Step5Dokumente from './steps/Step5Dokumente';
 
 import StandAnzeige from '@/components/StandAnzeige';
 import { PAGE_DATES } from '@/lib/page-dates';
+import { BOOKING } from '@/lib/booking';
 
 /* ───── Language Toggle ───── */
 
@@ -371,7 +372,7 @@ function MandantenFormularInner() {
               </p>
             </div>
             <a
-              href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
+              href={BOOKING.firstCheck}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white rounded-sm font-sans text-[0.92rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px"

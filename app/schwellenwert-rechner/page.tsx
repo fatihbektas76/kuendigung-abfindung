@@ -11,7 +11,7 @@ import WeitereLinkvorschlaege from '@/components/WeitereLinkvorschlaege';
 const faqs = [
   {
     q: 'Was ist der Schwellenwert nach §23 KSchG?',
-    a: 'Das Kündigungsschutzgesetz (KSchG) gilt nur in Betrieben mit mehr als 10 Arbeitnehmern in Vollzeitäquivalenten (FTE). Teilzeitkräfte werden anteilig gezählt: bis 20 Stunden/Woche mit Faktor 0,5, bis 30 Stunden/Woche mit Faktor 0,75. Auszubildende zählen nicht mit.',
+    a: 'Das Kündigungsschutzgesetz (KSchG) gilt nur in Betrieben mit mehr als 10 Arbeitnehmern in Vollzeitäquivalenten. Teilzeitkräfte werden nach § 23 Abs. 1 S. 4 KSchG anteilig gezählt: bis 20 Stunden/Woche mit Faktor 0,5, bis 30 Stunden/Woche mit Faktor 0,75, mehr als 30 Stunden mit Faktor 1,0. Auszubildende zählen nicht mit. Für Arbeitsverhältnisse, die vor dem 01.01.2004 begonnen haben, gilt der abgesenkte Schwellenwert von mehr als 5 Arbeitnehmern (§ 23 Abs. 1 S. 2 KSchG — Altfall).',
   },
   {
     q: 'Was passiert, wenn der Schwellenwert nicht erreicht wird?',
@@ -208,7 +208,7 @@ export default function SchwellenwertRechnerPage() {
                 </button>
               </div>
               <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
-                <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine verbindliche Einschätzung Ihres Falls wenden Sie sich bitte an einen <a href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</a>.
+                <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine ausführliche Prüfung Ihres Falls wenden Sie sich bitte an einen <a href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</a>.
               </p>
             </div>
 
@@ -265,7 +265,7 @@ export default function SchwellenwertRechnerPage() {
                 {/* Disclaimer */}
                 <div className="mt-6 py-3 px-4 bg-amber-50 rounded-sm border border-amber-300">
                   <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
-                    <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die Berechnung des Schwellenwerts hängt von weiteren Faktoren ab (z.&nbsp;B. Leiharbeitnehmer, Heimarbeiter). Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                    <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die Berechnung des Schwellenwerts hängt von weiteren Faktoren ab (z.&nbsp;B. Leiharbeitnehmer, Heimarbeiter). Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                     <a href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</a>.
                   </p>
                 </div>
@@ -349,7 +349,7 @@ export default function SchwellenwertRechnerPage() {
             href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Jetzt kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>

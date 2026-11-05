@@ -31,7 +31,7 @@ export const EN_FAQS: readonly EnFaqItem[] = [
   {
     question: 'When is a summary (without-notice) dismissal valid?',
     answer:
-      'A summary dismissal under § 626 BGB requires a serious cause that makes it unreasonable for the employer to wait out the notice period. The hurdle is very high — most summary dismissals fail in court. The employer must also act within two weeks of learning the cause.',
+      'A summary dismissal under § 626 BGB requires a serious cause that makes it unreasonable for the employer to wait out the notice period. The hurdle is very high — outcome depends strongly on the individual case, particularly the balancing of interests and the strict two-week deadline (§ 626 (2) sentence 1 BGB). On written request, the employer must state the reasons promptly in writing (§ 626 (2) sentence 3 BGB).',
   },
   {
     question: 'Does the Dismissal Protection Act (KSchG) apply to me?',
@@ -46,7 +46,17 @@ export const EN_FAQS: readonly EnFaqItem[] = [
   {
     question: 'What does an unfair-dismissal claim cost?',
     answer:
-      'In the first instance at the labour court each side bears its own legal costs regardless of outcome (§ 12a ArbGG). No court fees are incurred at first instance. Legal fees depend on the amount in dispute (typically one gross monthly salary). Many employees in Germany hold legal-expenses insurance (Rechtsschutzversicherung) that covers the costs.',
+      'In the first instance at the labour court each side bears its own legal costs regardless of outcome (§ 12a ArbGG). Court fees are waived entirely if the case settles. Legal fees depend on the value in dispute, which for an unfair-dismissal claim is capped at a quarterly salary — typically three gross monthly salaries (§ 42 (2) GKG). Many employees in Germany hold legal-expenses insurance (Rechtsschutzversicherung) that covers the costs, subject to waiting period, cover confirmation and any deductible.',
+  },
+  {
+    question: 'What does the free first check include?',
+    answer:
+      'A short reply by email or phone (up to about 15 minutes): whether action is worthwhile, which deadlines apply and what our help would cost. It does not include a review of contracts or other documents or detailed legal advice.',
+  },
+  {
+    question: 'What does a termination agreement review cost?',
+    answer:
+      'After the free first check you receive a cost quote for the detailed review and, if you wish, for negotiation with your employer. Costs arise only once you instruct us. Legal-expenses insurance does not always cover the review of a termination agreement; we clarify this for you.',
   },
   {
     question: 'Can my employer dismiss me during pregnancy?',

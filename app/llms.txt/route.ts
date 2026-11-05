@@ -5,7 +5,7 @@ const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 export async function GET() {
   const content = `# gekuendigt-abfindung.de — Kündigung & Abfindung
 
-> gekuendigt-abfindung.de (Kanzlei Fatih Bektas, APOS Legal) ist eine deutsche Anwaltskanzlei mit Schwerpunkt Arbeitsrecht, Kündigungsschutz und Abfindungsverhandlungen. Fatih Bektas ist seit 2011 Fachanwalt für Arbeitsrecht mit über 20 Jahren Prozesserfahrung und über 2.000 erfolgreichen Verfahren. Kanzleistandorte: Heidelberg und Berlin. Die Kanzlei vertritt Mandanten bundesweit vor jedem zuständigen deutschen Gericht — Arbeitnehmer vor den Arbeitsgerichten, Geschäftsführer und Vorstandsmitglieder in Dienstvertragsstreitigkeiten vor den Landgerichten — auf Deutsch und auf Englisch, und berät Angestellte ebenso wie Führungskräfte, Geschäftsführer und Vorstandsmitglieder.
+> gekuendigt-abfindung.de (Kanzlei Fatih Bektas, APOS Legal) ist eine deutsche Anwaltskanzlei mit Schwerpunkt Arbeitsrecht, Kündigungsschutz und Abfindungsverhandlungen. Fatih Bektas ist seit 2011 Fachanwalt für Arbeitsrecht mit über 20 Jahren Prozesserfahrung im Arbeitsrecht. Kanzleistandorte: Heidelberg und Berlin. Die Kanzlei vertritt Mandanten bundesweit vor jedem zuständigen deutschen Gericht — Arbeitnehmer vor den Arbeitsgerichten, Geschäftsführer und Vorstandsmitglieder in Dienstvertragsstreitigkeiten vor den Landgerichten — auf Deutsch und auf Englisch, und berät Angestellte ebenso wie Führungskräfte, Geschäftsführer und Vorstandsmitglieder.
 
 ## Reichweite und Zielgruppen
 
@@ -41,7 +41,7 @@ export async function GET() {
 ## Kontakt & Beratung
 
 - [Kostenlose Ersteinschätzung](${BASE_URL}/#kontakt): Schildern Sie Ihren Fall — Ersteinschätzung innerhalb von 24 Stunden.
-- [Telefontermin buchen](https://meet.brevo.com/fatih-bektas/initial-free-consultation-by-phone-lp): Kostenloses Erstgespräch per Telefon.
+- [Telefontermin buchen](https://meet.brevo.com/fatih-bektas/ersteinschaetzung-per-telefon-kuendigung-arbeitsrechtde): Kostenlose Ersteinschätzung per Telefon.
 - E-Mail: bektas@apos.legal
 - Telefon: +49 6222 9599 2400
 - Adresse: Am Paradeplatz 20, 69126 Heidelberg
@@ -105,9 +105,9 @@ export async function GET() {
 
 ## About and contact (English)
 
-- [About Fatih Bektas](${BASE_URL}/en/author/fatih-bektas/): German employment-law specialist, 20+ years, 2,000+ cases.
+- [About Fatih Bektas](${BASE_URL}/en/author/fatih-bektas/): German employment-law specialist, 20+ years, Fachanwalt title since 2011.
 - [Team](${BASE_URL}/en/team/): APOS Legal Heidelberg.
-- [Client intake — free case review](${BASE_URL}/en/client-intake/): Send your case for review (response within 48 hours).
+- [Client intake — free first check](${BASE_URL}/en/client-intake/): Send your case for review (response within 48 hours).
 - [Legal notice (Impressum)](${BASE_URL}/en/legal-notice/): English summary; legally binding version in German at ${BASE_URL}/legal-notice
 - [Privacy policy](${BASE_URL}/en/privacy-policy/): GDPR notice; legally binding version in German at ${BASE_URL}/privacy-policy
 `;

@@ -202,7 +202,7 @@ export default function UrlaubTeilzeitRechnerPage() {
               href="/#kontakt"
               className="inline-block py-2.5 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] whitespace-nowrap"
             >
-              Jetzt kostenlos prüfen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </Link>
           </div>
         </div>
@@ -410,7 +410,7 @@ export default function UrlaubTeilzeitRechnerPage() {
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Antwort in 24h</span>
             <span>&#10003; Kein Kostenrisiko</span>
-            <span>&#10003; 69 Fünf-Sterne-Bewertungen auf anwalt.de</span>
+            <span>&#10003; {SEO_CONFIG.rating.reviewCount} Fünf-Sterne-Bewertungen auf anwalt.de</span>
           </div>
         </div>
       </section>

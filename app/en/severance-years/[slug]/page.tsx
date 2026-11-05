@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getEnTenure(params.slug);
   if (!entry) return {};
   const title = `Severance after ${entry.label} of service in Germany — 0.5×–1.5× monthly salaries`;
-  const description = `Severance after ${entry.label} of employment in Germany: ${(0.5 * entry.year).toFixed(1)}–${(1.5 * entry.year).toFixed(1)} gross monthly salaries. Calculator, table, free case review.`;
+  const description = `Severance after ${entry.label} of employment in Germany: ${(0.5 * entry.year).toFixed(1)}–${(1.5 * entry.year).toFixed(1)} gross monthly salaries. Calculator, table, free first check.`;
   return {
     title,
     description,

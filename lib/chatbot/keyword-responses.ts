@@ -72,7 +72,7 @@ export const KEYWORD_RESPONSES: KeywordEntry[] = [
   {
     keywords: ['abfindung verhandeln', 'hoehere abfindung', 'höhere abfindung', 'mehr abfindung', 'abfindung erhoehen', 'abfindung erhöhen'],
     response:
-      'Ja, die Hoehe der Abfindung ist fast immer Verhandlungssache. Faktoren, die Ihre Position staerken: unwirksame Kuendigung, lange Betriebszugehoerigkeit, Sonderkuendigungsschutz, gute Leistungen. Ein erfahrener Fachanwalt kann deutlich mehr herausholen als die Faustformel.\n\nFachanwalt Fatih Bektas hat in ueber 2.000 Verfahren Abfindungen verhandelt.',
+      'Ja, die Hoehe der Abfindung ist fast immer Verhandlungssache. Faktoren, die Ihre Position staerken: unwirksame Kuendigung, lange Betriebszugehoerigkeit, Sonderkuendigungsschutz, gute Leistungen. Ein erfahrener Fachanwalt kann deutlich mehr herausholen als die Faustformel.\n\nFachanwalt Fatih Bektas verhandelt seit ueber 20 Jahren Abfindungen; Fachanwaltstitel seit 2011.',
   },
 
   // ── Aufhebungsvertrag ──
@@ -102,7 +102,7 @@ export const KEYWORD_RESPONSES: KeywordEntry[] = [
   {
     keywords: ['klage', 'klagen', 'kuendigungsschutzklage', 'kündigungsschutzklage', 'gericht', 'arbeitsgericht', 'vor gericht'],
     response:
-      'Eine Kuendigungsschutzklage muss innerhalb von 3 Wochen nach Zugang der Kuendigung eingereicht werden. Im Arbeitsrecht traegt in der ersten Instanz jede Partei ihre eigenen Anwaltskosten. Viele Verfahren enden bereits im Guetetermin mit einem Vergleich und einer Abfindung.\n\nFachanwalt Fatih Bektas hat ueber 2.000 Verfahren vor Arbeitsgerichten gefuehrt.',
+      'Eine Kuendigungsschutzklage muss innerhalb von 3 Wochen nach Zugang der Kuendigung eingereicht werden. Im Arbeitsrecht traegt in der ersten Instanz jede Partei ihre eigenen Anwaltskosten. Viele Verfahren enden bereits im Guetetermin mit einem Vergleich und einer Abfindung.\n\nFachanwalt Fatih Bektas: ueber 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011.',
   },
   {
     keywords: ['klage kosten', 'klage preis', 'anwalt kosten klage', 'verfahrenskosten', 'gerichtskosten'],

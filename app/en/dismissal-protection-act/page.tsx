@@ -80,6 +80,10 @@ const faqs = [
     q: 'What protection do I have if the KSchG does not apply?',
     a: 'Even outside the KSchG, formal rules still apply: written form with an original signature (§ 623 BGB), the statutory notice periods (§ 622 BGB), and special dismissal protection (pregnancy, parental leave, severe disability, works-council membership). Dismissals that violate good faith (§ 242 BGB) or anti-discrimination rules (AGG) are also invalid. And the 3-week filing deadline under § 4 KSchG still applies — miss it and you lose the right to challenge.',
   },
+  {
+    q: 'What is special about senior employees (leitende Angestellte, § 14 (2) KSchG)?',
+    a: 'For senior employees within the meaning of § 14 (2) KSchG (typically those with hiring and firing authority), the KSchG applies but with one critical twist in the unfair-dismissal proceedings: the employer can file a dissolution application (Auflösungsantrag) WITHOUT any justification — the employment relationship is then dissolved by the court against a severance payment under §§ 9, 10 KSchG. A senior employee can win on the merits (the dismissal is unlawful) and still lose the job. Strategically this changes everything — do not negotiate without specialist advice.',
+  },
 ];
 
 export default function DismissalProtectionActPage() {

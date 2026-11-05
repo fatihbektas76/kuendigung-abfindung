@@ -7,9 +7,9 @@ import { SEO_CONFIG } from '@/lib/seo-config';
 const PAGE_URL = `${SEO_CONFIG.baseUrl}/en/employment-lawyer/`;
 
 export const metadata: Metadata = {
-  title: `English-Speaking German Employment Lawyer — Free Case Review`,
+  title: `English-Speaking German Employment Lawyer — Free First Check`,
   description:
-    'German employment-law specialist (Fachanwalt für Arbeitsrecht) handling dismissal, severance and termination-agreement cases in English. Free initial review.',
+    'German employment-law specialist (Fachanwalt für Arbeitsrecht) handling dismissal, severance and termination-agreement cases in English. Free first check.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -49,7 +49,7 @@ export default function EmploymentLawyerHubEn() {
           { href: '/en/', label: 'Home' },
           { href: '/en/employment-lawyer', label: 'Employment lawyer' },
         ]}
-        primaryCta={{ href: '#contact', label: 'Free case review' }}
+        primaryCta={{ href: '#contact', label: 'Free first check' }}
       />
 
       <section className="py-12 px-8 bg-white">

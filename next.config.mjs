@@ -68,6 +68,9 @@ const nextConfig = {
       { source: '/gekuendigt-jahre/:slug/', destination: '/gekuendigt-nach-:slug-betriebszugehoerigkeit/', permanent: true },
       { source: '/abmahnung-seiten/:slug/', destination: '/kuendigung-nach-:slug/', permanent: true },
       { source: '/fristlose-kuendigung-jahre/:slug/', destination: '/fristlose-kuendigung-nach-:slug-betriebszugehoerigkeit/', permanent: true },
+      // Slug-Korrektur Waghäusel (vorher: waghaeuseldorf) — 301 für Indexierungs-Erhalt
+      { source: '/arbeitsrecht-anwalt/waghaeuseldorf/', destination: '/arbeitsrecht-anwalt/waghaeusel/', permanent: true },
+      { source: '/arbeitsrecht-anwalt/waghaeuseldorf', destination: '/arbeitsrecht-anwalt/waghaeusel/', permanent: true },
       // Old word-based slugs → new number-based slugs (120 redirects)
       ...slugRedirects,
     ];

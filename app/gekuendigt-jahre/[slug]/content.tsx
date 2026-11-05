@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
+import { SEO_CONFIG } from '@/lib/seo-config';
 import TldrBox from '@/components/TldrBox';
 import BagQuote from '@/components/BagQuote';
 import NormLink, { NORM } from '@/components/NormLink';
@@ -99,7 +100,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
               `Abfindungschance: Faustformel 0,5 × Bruttomonatsgehalt × ${ylKurz} — erfahrungsgemäß auch viel höhere Abfindungen möglich.`,
               yearData.kschgGilt
                 ? <>Das Kündigungsschutzgesetz gilt für Sie (<NormLink href={NORM.kschg1}>§&nbsp;1 KSchG</NormLink>) — Ihr Arbeitgeber braucht einen anerkannten Kündigungsgrund.</>
-                : <>Das KSchG gilt erst ab 6 Monaten Betriebszugehörigkeit und mehr als 10 Mitarbeitern (<NormLink href={NORM.kschg23}>§&nbsp;23 KSchG</NormLink>).</>,
+                : <>Das KSchG gilt erst nach <strong>mehr als 6 Monaten</strong> Betriebszugehörigkeit (<NormLink href={NORM.kschg1}>§&nbsp;1 Abs. 1 KSchG</NormLink>) und bei mehr als 10 Vollzeitäquivalenten (<NormLink href={NORM.kschg23}>§&nbsp;23 Abs. 1 KSchG</NormLink>, Teilzeit anteilig nach S. 4). Für Arbeitsverhältnisse vor dem 01.01.2004: &gt; 5 Arbeitnehmer.</>,
               <>Kostenrisiko: Im Arbeitsrecht 1. Instanz trägt jede Partei ihre eigenen Anwaltskosten (<NormLink href={NORM.arbgg12a}>§&nbsp;12a ArbGG</NormLink>).</>,
             ]} />
           </div>
@@ -181,7 +182,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
       {/* ═══ 2b. Definitionsbox Kündigungsschutzklage ═══ */}
       <section className="py-3 px-4 sm:px-8 mb-3">
         <div className="max-w-content mx-auto">
-          <DefinitionBox term="Kündigungsschutzklage" definition="Die Klage vor dem Arbeitsgericht auf Feststellung, dass eine Kündigung unwirksam ist. Die Klagefrist beträgt 3 Wochen ab Zugang der Kündigung (§ 4 KSchG); wird sie versäumt, gilt die Kündigung in der Regel als wirksam — eine nachträgliche Zulassung nach § 5 KSchG ist nur in engen Ausnahmefällen möglich. In ca. 80 % der Fälle endet das Verfahren mit einem Vergleich — in der Regel einer Abfindung." />
+          <DefinitionBox term="Kündigungsschutzklage" definition="Die Klage vor dem Arbeitsgericht auf Feststellung, dass eine Kündigung unwirksam ist. Die Klagefrist beträgt 3 Wochen ab Zugang der Kündigung (§ 4 KSchG); wird sie versäumt, gilt die Kündigung in der Regel als wirksam — eine nachträgliche Zulassung nach § 5 KSchG ist nur in engen Ausnahmefällen möglich. Rund 80 % der Verfahren vor den Arbeitsgerichten enden ohne streitiges Urteil (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — häufig per Vergleich mit Abfindung." />
         </div>
       </section>
 
@@ -417,7 +418,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
 
             <div className="grid grid-cols-3 gap-3 max-sm:grid-cols-1">
               <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Regelabfindung</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Faustformel 0,5×</p>
                 <p className="text-xl font-bold text-gray-900">{fmt(gehalt * 0.5 * y)}</p>
                 <p className="text-xs text-gray-400 mt-1">Faktor 0,5&times;</p>
               </div>
@@ -445,7 +446,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
         <div className="max-w-content mx-auto">
           <div className="border-l-4 border-[#8B7A3A] bg-white border-y border-r border-gray-200 rounded-r-lg p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <p className="font-semibold text-gray-900">Abfindung kostenlos prüfen lassen</p>
+              <p className="font-semibold text-gray-900">Kostenlose Ersteinschätzung</p>
               <p className="text-sm text-gray-500">Wir prüfen Ihre Kündigung und berechnen Ihre individuelle Abfindungschance.</p>
             </div>
             <a
@@ -483,7 +484,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
                 href="/#kontakt"
                 className="inline-block bg-[#6B6626] text-white px-8 py-3 rounded font-semibold text-sm no-underline hover:bg-[#5a5520] transition-colors"
               >
-                Kündigung kostenlos prüfen lassen &rarr;
+                Kostenlose Ersteinschätzung &rarr;
               </a>
             </div>
           </div>
@@ -499,8 +500,8 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
               {[
-                { title: 'Nachweisliche Erfolgsbilanz', desc: 'Über 2.000 erfolgreiche Verfahren, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.' },
-                { title: 'Einfach & Transparent', desc: 'Klare Kommunikation, keine versteckten Kosten. Sie wissen jederzeit, was passiert und was es kostet.' },
+                { title: 'Erfahrung im Arbeitsrecht', desc: 'Über 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.' },
+                { title: 'Einfach & Transparent', desc: 'Kostenlose Ersteinschätzung — danach erhalten Sie ein Kostenangebot oder wir klären die Kostenübernahme mit Ihrer Rechtsschutzversicherung. Kosten entstehen erst mit Ihrem Auftrag.' },
                 { title: 'Schneller Sofort-Check', desc: 'Formular ausfüllen, Kündigung hochladen, Ersteinschätzung in 24 Stunden erhalten. Alles digital.' },
               ].map((card) => (
                 <div key={card.title} className="bg-gray-50 rounded-lg p-4">
@@ -512,10 +513,10 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { value: '2.000+', label: 'Beratungen' },
-                { value: '2.000+', label: 'Verfahren' },
+                { value: 'Fachanwalt', label: 'f\u00fcr Arbeitsrecht' },
+                { value: 'seit 2011', label: 'Fachanwaltstitel' },
                 { value: '20+', label: 'Jahre Erfahrung' },
-                { value: '5,0 \u2605', label: 'Bewertung' },
+                { value: `${SEO_CONFIG.rating.ratingValue} \u2605`, label: 'Bewertung' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-gray-50 rounded-lg p-4 text-center">
                   <p className="text-xl font-bold text-[#6B6626]">{stat.value}</p>
@@ -576,7 +577,7 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
         <div className="max-w-content mx-auto">
           <div className="bg-[#6B6626] rounded-lg p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <p className="text-white font-semibold text-lg mb-1">Kündigung kostenlos prüfen lassen</p>
+              <p className="text-white font-semibold text-lg mb-1">Kostenlose Ersteinschätzung</p>
               <p className="text-white/70 text-sm">Ersteinschätzung in 24h &mdash; bundesweit und digital.</p>
             </div>
             <a
@@ -693,11 +694,11 @@ export default function GekuendigtContent({ entry, prev, next, yearData }: Props
               <p className="text-sm text-gray-600 leading-relaxed mb-3">
                 Zugelassen seit 2005, Fachanwalt für Arbeitsrecht seit 2011 (RAK Karlsruhe).
                 Spezialisiert auf Kündigungsschutz, Abfindungsverhandlung und Aufhebungsverträge.
-                Über 2.000 erfolgreich abgeschlossene Verfahren.
+                Über 20 Jahre Arbeitsrecht-Erfahrung.
               </p>
               <p className="text-sm text-gray-500">
                 <span className="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{' '}
-                5,0 &middot; 69 Bewertungen auf anwalt.de
+                {SEO_CONFIG.rating.ratingValue} &middot; {SEO_CONFIG.rating.reviewCount} Bewertungen auf anwalt.de
               </p>
             </div>
           </div>

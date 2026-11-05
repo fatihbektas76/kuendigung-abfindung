@@ -46,11 +46,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'Was kostet eine Kündigungsschutzklage?',
-    a: 'Im ersten Rechtszug vor dem Arbeitsgericht trägt jede Partei ihre eigenen Anwaltskosten — unabhängig vom Ausgang (§12a ArbGG). Es gibt also kein Prozesskostenrisiko für gegnerische Anwaltskosten. Die Gerichtskosten entfallen bei einem Vergleich (ca. 80% der Fälle). Bei einem Streitwert von 12.000 € (3 Monatsgehälter) betragen die eigenen Anwaltskosten ca. 1.500–2.500 €. Mit Rechtsschutzversicherung oder Prozesskostenhilfe können diese Kosten entfallen.',
+    a: 'Im ersten Rechtszug vor dem Arbeitsgericht trägt jede Partei ihre eigenen Anwaltskosten — unabhängig vom Ausgang (§12a ArbGG). Es gibt also kein Prozesskostenrisiko für gegnerische Anwaltskosten. Die Gerichtskosten entfallen bei einem Vergleich; rund 80 % der Verfahren vor den Arbeitsgerichten enden ohne streitiges Urteil (Statistisches Bundesamt, Fachserie 10 Reihe 2.8). Bei einem Streitwert von 12.000 € (3 Monatsgehälter) betragen die eigenen Anwaltskosten ca. 1.500–2.500 €. Mit Rechtsschutzversicherung oder Prozesskostenhilfe können diese Kosten entfallen.',
   },
   {
     q: 'Wie lange dauert eine Kündigungsschutzklage?',
-    a: 'Der Gütetermin findet in der Regel 2–4 Wochen nach Klageeinreichung statt. Ca. 80 % der Fälle enden hier mit einem Vergleich (Abfindung). Kommt kein Vergleich zustande, folgt der Kammertermin — bis zu einer gerichtlichen Entscheidung dauert das Verfahren insgesamt meist 9–12 Monate. Kürzere und längere Verlaufsdauern sind möglich, je nach Einzelfall (etwa bei notwendiger Beweisaufnahme) und zuständigem Gericht — das Arbeitsgericht Berlin dauert beispielsweise oft länger wegen hoher Fallzahlen.',
+    a: 'Der Gütetermin findet in der Regel 2–4 Wochen nach Klageeinreichung statt. Rund 80 % der Verfahren vor den Arbeitsgerichten enden ohne streitiges Urteil (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — häufig bereits im Gütetermin per Vergleich mit Abfindung. Kommt kein Vergleich zustande, folgt der Kammertermin; bis zu einer gerichtlichen Entscheidung dauert das Verfahren insgesamt meist 9–12 Monate. Kürzere und längere Verlaufsdauern sind möglich, je nach Einzelfall (etwa bei notwendiger Beweisaufnahme) und zuständigem Gericht — das Arbeitsgericht Berlin dauert beispielsweise oft länger wegen hoher Fallzahlen.',
   },
   {
     q: 'Wie hoch ist die Abfindung bei einer Kündigungsschutzklage?',
@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'Muss ich eine Kündigungsschutzklage einreichen?',
-    a: 'Wenn Sie die 3-Wochen-Frist nach § 4 KSchG versäumen, gilt die Kündigung in der Regel als wirksam — auch wenn sie eigentlich unwirksam wäre. Eine nachträgliche Zulassung der Klage nach § 5 KSchG ist zwar theoretisch möglich (z. B. bei unverschuldeter Verhinderung), kommt in der Praxis aber nur in eng begrenzten Ausnahmefällen in Betracht. Eine Kündigungsschutzklage ist in den meisten Fällen der einzige Weg, sich gegen eine Kündigung zu wehren und eine Abfindung zu verhandeln — ohne Klage gibt es in der Regel keine Abfindung. Lassen Sie sich daher dringend anwaltlich beraten.',
+    a: 'Wenn Sie die 3-Wochen-Frist nach § 4 KSchG versäumen, gilt die Kündigung in der Regel als wirksam (§ 7 KSchG). Eine nachträgliche Klagezulassung nach § 5 KSchG ist nur in eng begrenzten Ausnahmefällen möglich (z. B. unverschuldete Verhinderung). Andere Ansprüche aus dem Arbeitsverhältnis (Lohn, Urlaub, Zeugnis) bleiben unberührt. Die Kündigungsschutzklage ist in vielen Fällen der zentrale Weg, die Unwirksamkeit der Kündigung geltend zu machen und eine Abfindung zu verhandeln. Erfolg und Höhe hängen vom Einzelfall ab — eine Garantie gibt es nicht. Lassen Sie sich daher dringend anwaltlich beraten.',
   },
   {
     q: 'Kann ich die Kündigungsschutzklage auch ohne Anwalt einreichen?',
@@ -153,7 +153,7 @@ export default function KuendigungsschutzKlagePage() {
                 '@type': 'HowToStep',
                 position: 2,
                 name: 'Anwaltliche Ersteinschätzung einholen',
-                text: 'Fachanwalt prüft Kündigungsgrund, Sozialauswahl, Formfehler und Erfolgsaussichten. Streitwert wird typischerweise mit einem Bruttomonatsgehalt angesetzt.',
+                text: 'Fachanwalt prüft Kündigungsgrund, Sozialauswahl, Formfehler und Erfolgsaussichten. Der Streitwert einer Kündigungsschutzklage beträgt nach § 42 Abs. 2 GKG das Vierteljahresentgelt (in der Regel drei Bruttomonatsgehälter).',
               },
               {
                 '@type': 'HowToStep',
@@ -165,7 +165,7 @@ export default function KuendigungsschutzKlagePage() {
                 '@type': 'HowToStep',
                 position: 4,
                 name: 'Gütetermin wahrnehmen',
-                text: '2 bis 6 Wochen nach Klageeinreichung findet der Gütetermin statt. In rund 80 % der Fälle endet er mit einem Vergleich (Abfindung 0,5–1,5 Bruttomonatsgehälter pro Beschäftigungsjahr).',
+                text: '2 bis 6 Wochen nach Klageeinreichung findet der Gütetermin statt. Rund 80 % der Verfahren vor den Arbeitsgerichten enden ohne streitiges Urteil (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — häufig im Gütetermin per Vergleich (Abfindung 0,5–1,5 Bruttomonatsgehälter pro Beschäftigungsjahr).',
               },
               {
                 '@type': 'HowToStep',
@@ -245,10 +245,9 @@ export default function KuendigungsschutzKlagePage() {
                 bezahlen. Das Kostenrisiko ist damit deutlich geringer als in anderen Rechtsgebieten.
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-8">
-                In der Praxis enden <strong>ca. 80% aller Kündigungsschutzklagen</strong> mit
-                einem Vergleich beim Gütetermin &mdash; der Arbeitgeber zahlt eine Abfindung,
-                das Arbeitsverhältnis endet einvernehmlich. Ohne Klage gibt es in der Regel
-                keine Abfindung.
+                In der Praxis enden <strong>rund 80 % der Verfahren vor den Arbeitsgerichten</strong> ohne
+                streitiges Urteil (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) &mdash; häufig per
+                Vergleich mit Abfindung bereits im Gütetermin.
               </p>
             </div>
 
@@ -261,7 +260,7 @@ export default function KuendigungsschutzKlagePage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Klage-Chancen kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>
@@ -346,7 +345,7 @@ export default function KuendigungsschutzKlagePage() {
                   {[
                     { pos: 'Eigene Anwaltskosten', kosten: 'ca. 1.500–2.500 €', hinweis: 'Bei Streitwert 12.000 € (3 Monatsgehälter)' },
                     { pos: 'Gegnerische Anwaltskosten', kosten: '0 €', hinweis: '§12a ArbGG — keine Erstattung im 1. Rechtszug' },
-                    { pos: 'Gerichtskosten (Vergleich)', kosten: '0 €', hinweis: 'Entfallen bei Vergleich (ca. 80% der Fälle)' },
+                    { pos: 'Gerichtskosten (Vergleich)', kosten: '0 €', hinweis: 'Entfallen bei Vergleich (rund 80 % der Verfahren enden ohne Urteil — Destatis FS 10 R 2.8)' },
                     { pos: 'Gerichtskosten (Urteil)', kosten: 'ca. 300–600 €', hinweis: 'Nur bei Urteil, nicht bei Vergleich' },
                   ].map((row) => (
                     <tr key={row.pos} className="border-b border-border">
@@ -387,10 +386,10 @@ export default function KuendigungsschutzKlagePage() {
               Wann lohnt sich eine Kündigungsschutzklage?
             </h2>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-              Die kurze Antwort: <strong>in den meisten Fällen</strong>. Rund 80&nbsp;% aller
-              Kündigungsschutzklagen enden mit einem Vergleich, bei dem der Arbeitgeber eine
-              Abfindung zahlt. Ohne Klage gibt es in der Regel keine Abfindung &mdash; der
-              Arbeitgeber hat schlicht keinen Anlass, freiwillig zu zahlen.
+              In vielen Fällen ja. Rund 80 % der Verfahren vor den Arbeitsgerichten enden ohne
+              streitiges Urteil (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) &mdash; häufig
+              per Vergleich mit Abfindung. Erfolg und Höhe hängen von Beweislage, Kündigungs&shy;schutz&shy;lage
+              und Verhandlungsposition ab und können nicht garantiert werden.
             </p>
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
               <strong>Besonders lohnend</strong> ist eine Klage in folgenden Situationen:
@@ -660,7 +659,7 @@ export default function KuendigungsschutzKlagePage() {
             href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Jetzt kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>
