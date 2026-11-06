@@ -7,6 +7,7 @@ import { gemeinden, getGemeindeBySlug } from "@/data/gemeinden";
 import { berlinBezirke, getBezirkBySlug } from "@/data/bezirke";
 import { StadtContent, GemeindeContent } from "@/types/content";
 import { arbeitsgerichteUrls } from "@/data/arbeitsgerichte-urls";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import Image from "next/image";
 import WeitereLinkvorschlaege from "@/components/WeitereLinkvorschlaege";
 import stadtContentsRaw from "@/data/generated/stadt-contents.json";
@@ -185,7 +186,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-8">
           <a href="/">Startseite</a> {" / "}
-          <a href="/arbeitsrecht-anwalt">Arbeitsrecht Anwalt</a> {" / "}
+          <a href="/arbeitsrecht-anwalt/">Arbeitsrecht Anwalt</a> {" / "}
           <span className="text-[#8B7A3A]">{ort.name}</span>
         </nav>
 
@@ -257,7 +258,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
           {[
             { label: "Klagefrist", value: "3 Wochen", sub: "ab Zugang der Kündigung" },
             { label: "Abfindungsformel", value: "0,5 × Gehalt × Jahre", sub: "Faustformel, kein Rechtsanspruch" },
-            { label: "Kündigungsschutz", value: "Ab 6 Monate", sub: "Betriebszugehörigkeit + >10 MA" },
+            { label: "Kündigungsschutz", value: "> 6 Monate", sub: "§ 23 Abs. 1 KSchG: > 10 Vollzeitäquivalente, Teilzeit anteilig (Altverträge vor 2004: > 5 AN)" },
             { label: "Berufungsfrist", value: "1 Monat", sub: `ab Urteilszustellung, ${ort.lagName}` },
           ].map((f) => (
             <div key={f.label} className="bg-white border border-gray-200 rounded-xl p-4 relative overflow-hidden">
@@ -283,7 +284,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             Beispiel: 8 Jahre, 5.000 € brutto → 0,5 × 5.000 € × 8 = <strong>20.000 € Abfindung</strong>
           </div>
           <p className="text-xs text-gray-500">Kein gesetzlicher Anspruch. Mit anwaltlicher Unterstützung ist häufig ein höherer Faktor erzielbar.</p>
-          <a href="/kuendigung-pruefen" className="inline-block mt-4 text-sm font-medium text-[#6B6626] hover:underline">
+          <a href="/kuendigung-pruefen/" className="inline-block mt-4 text-sm font-medium text-[#6B6626] hover:underline">
             Jetzt Abfindung berechnen lassen →
           </a>
         </div>
@@ -330,9 +331,9 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         <div className="bg-[#f9f6ec] border border-[#d4c98a] rounded-xl p-5 mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div>
             <p className="font-semibold text-[#6B6626] text-sm">Kündigung erhalten?</p>
-            <p className="text-sm text-gray-600">Lassen Sie Ihre Kündigung jetzt kostenlos prüfen – die 3-Wochen-Frist läuft.</p>
+            <p className="text-sm text-gray-600">Lassen Sie Ihre Kostenlose Ersteinschätzung – die 3-Wochen-Frist läuft.</p>
           </div>
-          <a href="/kuendigung-pruefen" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
+          <a href="/kuendigung-pruefen/" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
             Kündigung prüfen →
           </a>
         </div>
@@ -442,7 +443,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             </div>
             <div className="flex items-center gap-2 pt-3 border-t border-gray-100">
               <span className="text-[#BA7517] tracking-wide">★★★★★</span>
-              <span className="text-xs text-gray-600"><strong>5,0 / 5,0</strong> – 69 Bewertungen auf anwalt.de</span>
+              <span className="text-xs text-gray-600"><strong>{SEO_CONFIG.rating.ratingValue} / 5,0</strong> – {SEO_CONFIG.rating.reviewCount} Bewertungen auf anwalt.de</span>
             </div>
           </div>
         </div>
@@ -493,7 +494,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             Für Arbeitnehmer aus {ort.name} und ganz {ort.bundesland}.<br />
             Vollständig digital – keine Anreise erforderlich.
           </p>
-          <a href="/kuendigung-pruefen" className="inline-block bg-white text-[#6B6626] px-7 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity">
+          <a href="/kuendigung-pruefen/" className="inline-block bg-white text-[#6B6626] px-7 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity">
             Ersteinschätzung anfordern →
           </a>
         </div>

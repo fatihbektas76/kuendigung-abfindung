@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { BOOKING } from '@/lib/booking';
 
 export default function AuthorBox() {
   return (
@@ -22,8 +23,7 @@ export default function AuthorBox() {
         </div>
         <p className="text-[0.9rem] text-ink-light leading-relaxed mb-4">
           Fatih Bektas ist Fachanwalt für Arbeitsrecht mit über 20 Jahren Erfahrung. Er vertritt
-          Arbeitnehmer bei Kündigung, Abfindung und Aufhebungsvertrag — mit über 2.000 erfolgreichen
-          Verfahren.
+          Arbeitnehmer bei Kündigung, Abfindung und Aufhebungsvertrag — Fachanwaltstitel seit 2011.
         </p>
         <div className="flex items-center gap-4 max-md:justify-center flex-wrap">
           <a
@@ -57,7 +57,7 @@ export default function AuthorBox() {
             Profil ansehen
           </a>
           <a
-            href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
+            href={BOOKING.firstCheck}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-gold hover:text-gold-dark no-underline transition-colors"

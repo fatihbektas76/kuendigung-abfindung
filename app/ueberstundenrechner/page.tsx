@@ -134,7 +134,7 @@ export default function UeberstundenrechnerPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/tools" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
+            <Link href="/tools/" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
             <span className="mx-2">/</span>
             <span>Überstundenrechner</span>
           </nav>
@@ -198,7 +198,7 @@ export default function UeberstundenrechnerPage() {
               href="/#kontakt"
               className="inline-block py-2.5 px-6 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline transition-all hover:bg-[#635428] whitespace-nowrap"
             >
-              Jetzt kostenlos prüfen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </Link>
           </div>
         </div>
@@ -334,7 +334,7 @@ export default function UeberstundenrechnerPage() {
                 BERECHNEN
               </button>
               <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
-                <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine verbindliche Einschätzung Ihres Falls wenden Sie sich bitte an einen{' '}
+                <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung. Für eine ausführliche Prüfung Ihres Falls wenden Sie sich bitte an einen{' '}
                 <Link href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
               </p>
             </div>
@@ -410,7 +410,7 @@ export default function UeberstundenrechnerPage() {
                   {/* Disclaimer */}
                   <div className="mt-6 py-3 px-4 bg-amber-50 rounded-sm border border-amber-300">
                     <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
-                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Ob und in welcher Höhe ein Anspruch auf Überstundenvergütung besteht, hängt von Ihrem Arbeitsvertrag und den konkreten Umständen ab. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Ob und in welcher Höhe ein Anspruch auf Überstundenvergütung besteht, hängt von Ihrem Arbeitsvertrag und den konkreten Umständen ab. Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                       <Link href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</Link>.
                     </p>
                   </div>
@@ -462,9 +462,9 @@ export default function UeberstundenrechnerPage() {
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               Wurden Sie gekündigt? Berechnen Sie auch Ihre mögliche Abfindung mit unserem{' '}
-              <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>.
+              <Link href="/abfindungsrechner/" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>.
               Oder nutzen Sie unsere{' '}
-              <Link href="/tools" className="text-gold no-underline hover:underline">weiteren kostenlosen Tools</Link>{' '}
+              <Link href="/tools/" className="text-gold no-underline hover:underline">weiteren kostenlosen Tools</Link>{' '}
               für eine umfassende Einschätzung Ihrer arbeitsrechtlichen Situation.
             </p>
           </div>
@@ -484,12 +484,12 @@ export default function UeberstundenrechnerPage() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Werden Sie gekündigt, stellt sich die Frage: Was passiert mit angesammelten Überstunden?
               Grundsätzlich hat der Arbeitgeber das Recht, Ihnen die Überstunden während der{' '}
-              <Link href="/kuendigungsfrist-rechner" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>{' '}
+              <Link href="/kuendigungsfrist-rechner/" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>{' '}
               als Freizeitausgleich zu gewähren. Ist das aufgrund der Restarbeitszeit nicht mehr möglich,
               entsteht ein <strong>Auszahlungsanspruch</strong>.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
-              Bei einem <Link href="/aufhebungsvertrag" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>{' '}
+              Bei einem <Link href="/aufhebungsvertrag/" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>{' '}
               sollten offene Überstunden unbedingt in die Verhandlung einbezogen werden. In der Praxis werden
               Überstundenansprüche häufig in die Abfindungssumme eingerechnet — achten Sie darauf, dass dies
               im Aufhebungsvertrag klar geregelt ist, damit keine Ansprüche untergehen.
@@ -554,7 +554,7 @@ export default function UeberstundenrechnerPage() {
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Kein Kostenrisiko</span>
             <span>&#10003; Antwort in 24h</span>
-            <span>&#10003; Über 69 Fünf-Sterne-Bewertungen</span>
+            <span>&#10003; Über {SEO_CONFIG.rating.reviewCount} Fünf-Sterne-Bewertungen</span>
           </div>
         </div>
       </section>

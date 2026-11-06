@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!entry) return {};
   const yl = yearLabel(entry.year);
   const title = `Fristlose Kündigung nach ${yl} — wirksam? (${new Date().getFullYear()})`;
-  const description = `Fristlose Kündigung nach ${yl}? Die meisten sind unwirksam. §626 BGB, Ihre Rechte & Abfindung. Jetzt prüfen.`;
+  const description = `Fristlose Kündigung nach ${yl}? § 626 BGB stellt sehr hohe Anforderungen — Prüfung lohnt sich. Ihre Rechte & Abfindung. Jetzt prüfen.`;
   const url = `${SEO_CONFIG.baseUrl}/fristlose-kuendigung-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,

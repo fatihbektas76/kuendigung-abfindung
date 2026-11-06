@@ -106,7 +106,7 @@ export default function Home() {
                 '@id': `${SEO_CONFIG.baseUrl}/#author`,
                 name: SEO_CONFIG.author.name,
                 jobTitle: SEO_CONFIG.author.jobTitle,
-                description: `${SEO_CONFIG.author.credential}, Zulassung ${SEO_CONFIG.author.organization}. Über 2.000 Verfahren im Arbeitsrecht.`,
+                description: `${SEO_CONFIG.author.credential}, Zulassung ${SEO_CONFIG.author.organization}. Über 20 Jahre Arbeitsrecht-Erfahrung.`,
                 image: `${SEO_CONFIG.baseUrl}/Fatih.webp`,
                 url: `${SEO_CONFIG.baseUrl}/autor/fatih-bektas/`,
                 telephone: SEO_CONFIG.author.telephone,
@@ -192,7 +192,7 @@ export default function Home() {
                 name: 'Wann ist eine fristlose Kündigung wirksam?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Eine fristlose Kündigung nach §626 BGB setzt einen wichtigen Grund voraus, der es dem Arbeitgeber unzumutbar macht, die Kündigungsfrist abzuwarten. Die Anforderungen sind sehr hoch – die meisten fristlosen Kündigungen scheitern vor dem Arbeitsgericht. Der Arbeitgeber muss zudem innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes handeln.',
+                  text: 'Eine fristlose Kündigung nach §626 BGB setzt einen wichtigen Grund voraus, der es dem Arbeitgeber unzumutbar macht, die Kündigungsfrist abzuwarten. Die Anforderungen sind sehr hoch — der Erfolg vor Gericht hängt stark vom Einzelfall ab, insbesondere der Interessenabwägung und der 2-Wochen-Frist. Der Arbeitgeber muss innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes handeln (§ 626 Abs. 2 S. 1 BGB) und Ihnen auf schriftliches Verlangen den Kündigungsgrund unverzüglich schriftlich mitteilen (§ 626 Abs. 2 S. 3 BGB) — dieses Verlangen sollte sofort gestellt werden.',
                 },
               },
               {
@@ -200,7 +200,7 @@ export default function Home() {
                 name: 'Gilt der Kündigungsschutz auch für mich?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Das Kündigungsschutzgesetz (KSchG) gilt, wenn Sie länger als 6 Monate im Betrieb beschäftigt sind und der Betrieb mehr als 10 Mitarbeiter hat (§23 KSchG, sog. Schwellenwert). Ausgenommen sind u.a. Geschäftsführer und leitende Angestellte mit besonderem Status.',
+                  text: 'Das Kündigungsschutzgesetz (KSchG) gilt, wenn Sie länger als 6 Monate im Betrieb beschäftigt sind und der Betrieb mehr als 10 Vollzeitäquivalente hat (§ 23 Abs. 1 KSchG, sog. Schwellenwert; Teilzeit anteilig nach S. 4). Für Arbeitsverhältnisse, die vor dem 1. Januar 2004 begonnen haben, gilt der abgesenkte Schwellenwert von mehr als 5 Arbeitnehmern. Für leitende Angestellte (§ 14 Abs. 2 KSchG) gilt zudem die Besonderheit, dass der Arbeitgeber im Kündigungsschutzprozess einen Auflösungsantrag ohne Begründung stellen kann — mit der Folge einer Abfindung nach §§ 9, 10 KSchG. Geschäftsführer sind arbeitsrechtlich grundsätzlich keine Arbeitnehmer; für sie gilt der KSchG-Schutz nicht.',
                 },
               },
               {
@@ -216,7 +216,23 @@ export default function Home() {
                 name: 'Was kostet eine Kündigungsschutzklage?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Im ersten arbeitsgerichtlichen Verfahren trägt jede Seite ihre eigenen Anwaltskosten, unabhängig vom Ausgang (§12a ArbGG). Gerichtskosten fallen in der ersten Instanz nicht an. Die Anwaltskosten richten sich nach dem Streitwert (1 Bruttomonatsgehalt). Viele Arbeitnehmer haben eine Rechtsschutzversicherung, die die Kosten übernimmt.',
+                  text: 'Im ersten arbeitsgerichtlichen Verfahren trägt jede Seite ihre eigenen Anwaltskosten, unabhängig vom Ausgang (§ 12a ArbGG). Gerichtskosten entfallen bei einem Vergleich. Die Anwaltskosten richten sich nach dem Streitwert; bei einer Kündigungsschutzklage ist das nach § 42 Abs. 2 GKG das Vierteljahresentgelt (in der Regel drei Bruttomonatsgehälter). Viele Arbeitnehmer haben eine Rechtsschutzversicherung, die die Kosten in der Regel übernimmt — vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Was umfasst die kostenlose Ersteinschätzung?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Eine kurze Rückmeldung per E-Mail oder Telefon (bis ca. 15 Minuten): ob sich ein Vorgehen lohnt, welche Fristen laufen und was unsere Hilfe kostet. Eine Prüfung von Verträgen oder anderen Unterlagen und eine Rechtsberatung im Einzelnen sind darin nicht enthalten.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Was kostet die Prüfung eines Aufhebungsvertrags?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Nach der kostenlosen Ersteinschätzung erhalten Sie ein Kostenangebot für die ausführliche Prüfung und, wenn gewünscht, für die Verhandlung mit Ihrem Arbeitgeber. Kosten entstehen erst mit Ihrem Auftrag. Eine Rechtsschutzversicherung übernimmt die Prüfung eines Aufhebungsvertrags nicht immer; wir klären das für Sie.',
                 },
               },
               {
@@ -271,8 +287,8 @@ export default function Home() {
               </p>
               <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
                 <strong>Verfasst und geprüft von</strong> Fatih Bektas, Fachanwalt für
-                Arbeitsrecht (APOS Legal Heidelberg). Über 2.000 erfolgreiche Verfahren vor
-                deutschen Arbeitsgerichten.
+                Arbeitsrecht (APOS Legal Heidelberg). Über 20 Jahre Erfahrung im Arbeitsrecht,
+                Fachanwaltstitel seit 2011.
               </p>
             </div>
           </div>
@@ -325,7 +341,7 @@ export default function Home() {
                   Heidelberg und Leipzig.
                 </p>
                 <Link
-                  href="/arbeitsrecht-anwalt"
+                  href="/arbeitsrecht-anwalt/"
                   className="inline-flex items-center gap-1.5 text-[0.88rem] font-semibold text-gold-dark no-underline hover:underline"
                 >
                   Alle 106 Standorte &rarr;
@@ -390,8 +406,8 @@ export default function Home() {
               items={[
                 '3-Wochen-Frist: Nach Zugang der Kündigung haben Sie nur 3 Wochen für eine Klage (§ 4 KSchG).',
                 'Abfindungsformel: 0,5 Bruttomonatsgehälter × Beschäftigungsjahre — oft ist deutlich mehr möglich.',
-                'Kostenloser Kündigungscheck: Fachanwalt prüft Ihren Fall — kostenlos und unverbindlich.',
-                'Über 2.000 erfolgreiche Verfahren vor deutschen Arbeitsgerichten seit 2005.',
+                'Kostenlose Ersteinschätzung: Ein Fachanwalt sagt Ihnen, ob sich ein Vorgehen lohnt und was es kostet – unverbindlich.',
+                'Über 20 Jahre Erfahrung im Arbeitsrecht, Fachanwaltstitel seit 2011.',
               ]}
             />
           </div>

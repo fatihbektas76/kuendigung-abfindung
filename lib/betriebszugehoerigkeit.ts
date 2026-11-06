@@ -113,7 +113,7 @@ export function generateFaqs(entry: BetriebsEntry) {
     },
     {
       q: 'Muss ich die Abfindung versteuern?',
-      a: 'Ja, Abfindungen sind einkommensteuerpflichtig. Allerdings können Sie die sogenannte Fünftelregelung (§34 EStG) nutzen, die die Steuerlast deutlich senken kann. Sozialversicherungsbeiträge fallen auf Abfindungen in der Regel nicht an, sofern sie im Zusammenhang mit der Beendigung des Arbeitsverhältnisses stehen.',
+      a: 'Ja, Abfindungen sind einkommensteuerpflichtig. Die Fünftelregelung (§ 34 EStG) kann die Steuerlast im Einzelfall erheblich senken; die konkrete Ersparnis hängt vom individuellen Steuersatz und übrigen Einkommen ab. Seit 01.01.2025 wendet der Arbeitgeber die Fünftelregelung nicht mehr im Lohnsteuerabzug an — sie muss in der Einkommensteuererklärung geltend gemacht werden. Sozialversicherungsbeiträge fallen auf Abfindungen in der Regel nicht an, sofern sie im Zusammenhang mit der Beendigung des Arbeitsverhältnisses stehen.',
     },
   ];
 }

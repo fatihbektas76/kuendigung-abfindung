@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'Was passiert, wenn ich die 3-Wochen-Frist verpasse?',
-    a: 'Verpassen Sie die Klagefrist nach §4 KSchG, gilt die Kündigung als von Anfang an wirksam \u2014 selbst wenn sie rechtswidrig war. Eine nachträgliche Zulassung der Klage (§5 KSchG) ist nur in Ausnahmefällen möglich, z.\u00A0B. bei Krankheit oder wenn die Kündigung nicht ordnungsgemäß zugestellt wurde.',
+    a: 'Verpassen Sie die Klagefrist nach § 4 KSchG, gilt die Kündigung in der Regel als von Anfang an wirksam — auch wenn sie rechtlich angreifbar war. Eine nachträgliche Zulassung der Klage nach § 5 KSchG kommt nur in ganz seltenen Ausnahmefällen in Betracht, etwa bei unverschuldeter Verhinderung durch schwere Erkrankung.',
   },
   {
     q: 'Muss ich während der Kündigungsfrist weiterarbeiten?',
@@ -169,8 +169,8 @@ export default function KuendigungPage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <TldrBox items={[
-              '3-Wochen-Klagefrist ab Zugang der Kündigung (§4 KSchG) — verpassen Sie diese Frist, verlieren Sie alle Ansprüche.',
-              'Kündigungsschutzklage ist Ihr stärkstes Werkzeug: Selbst bei wirksamer Kündigung führt die Klage in der Praxis fast immer zu einer Abfindung.',
+              '3-Wochen-Klagefrist ab Zugang der Kündigung (§ 4 KSchG): Nach Fristablauf gilt die Kündigung in der Regel als wirksam (§ 7 KSchG); eine nachträgliche Klagezulassung nach § 5 KSchG ist nur in engen Ausnahmefällen möglich. Andere Ansprüche (Lohn, Urlaub, Zeugnis) bleiben unberührt.',
+              'Kündigungsschutzklage ist Ihr wichtigstes Werkzeug: In vielen Fällen führt sie zu einem Vergleich mit Abfindung. Erfolg und Höhe hängen von Beweislage, Kündigungsschutzlage und Verhandlungsposition ab und können nicht garantiert werden.',
               'Häufige Unwirksamkeitsgründe: Fehlerhafte Sozialauswahl, fehlende Betriebsratsanhörung (§102 BetrVG), Formfehler, besonderer Kündigungsschutz.',
               'Kündigungsfristen nach §622 BGB steigen mit der Betriebszugehörigkeit von 4 Wochen auf bis zu 7 Monate.',
             ]} />
@@ -206,7 +206,7 @@ export default function KuendigungPage() {
                 berechnet Ihre Abfindungschancen und vertritt Sie vor dem Arbeitsgericht. In der
                 ersten Instanz tragen Sie nur Ihre eigenen Anwaltskosten (
                 <NormLink href={NORM.arbgg12a}>&sect;&nbsp;12a ArbGG</NormLink>) &mdash; und wenn
-                Sie eine Rechtsschutzversicherung haben, übernimmt diese die Kosten. Die
+                Sie eine Rechtsschutzversicherung haben, übernimmt diese die Kosten in der Regel &mdash; vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung. Die
                 gesetzlichen Kündigungsfristen ergeben sich aus{' '}
                 <NormLink href={NORM.bgb622}>&sect;&nbsp;622 BGB</NormLink>; die soziale
                 Rechtfertigung jeder ordentlichen Kündigung wird an{' '}
@@ -243,7 +243,7 @@ export default function KuendigungPage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Kündigung kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>
@@ -305,7 +305,7 @@ export default function KuendigungPage() {
             href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Jetzt kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>
@@ -493,7 +493,7 @@ export default function KuendigungPage() {
         <div className="max-w-content mx-auto text-center">
           <p className="text-[0.92rem] text-ink-muted">
             Wir vertreten Arbeitnehmer bundesweit &mdash; vollständig digital.{' '}
-            <a href="/arbeitsrecht-anwalt" className="text-gold-dark font-semibold no-underline hover:underline">
+            <a href="/arbeitsrecht-anwalt/" className="text-gold-dark font-semibold no-underline hover:underline">
               Fachanwalt für Arbeitsrecht in Ihrer Stadt finden &rarr;
             </a>
           </p>

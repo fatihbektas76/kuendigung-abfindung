@@ -31,7 +31,7 @@ const TEAM: readonly Member[] = [
     name: 'Fatih Bektas',
     role: 'German employment-law specialist · Founder',
     focus:
-      'Dismissal, severance, summary dismissal, termination agreements. 20+ years, 2,000+ cases. Former CEO / CFO / COO (Unzer, iCOM Group).',
+      'Dismissal, severance, summary dismissal, termination agreements. 20+ years of employment-law experience, Fachanwalt title since 2011. Former CEO / CFO / COO (Unzer, iCOM Group).',
   },
   {
     name: 'Georg Willem Büchler',
@@ -96,7 +96,7 @@ export default function TeamEn() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               gekuendigt-abfindung.de is the employment-law information portal of APOS Legal. It
               is run by{' '}
-              <Link href="/en/author/fatih-bektas" className="text-gold-dark underline">
+              <Link href="/en/author/fatih-bektas/" className="text-gold-dark underline">
                 Fatih Bektas
               </Link>
               , German employment-law specialist (Fachanwalt für Arbeitsrecht). The English

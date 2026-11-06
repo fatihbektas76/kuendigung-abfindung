@@ -40,8 +40,8 @@ export default function DismissalStatsEn() {
             <h2 className="font-serif text-[1.35rem] font-bold mb-3">Outcomes at first instance</h2>
             <ul className="list-disc pl-6 space-y-2 text-[1rem] text-ink-light leading-relaxed">
               <li>
-                <strong>~75–80% settle</strong> at the conciliation or chamber hearing — typically
-                with a court-supervised severance.
+                <strong>~75–80 % end without a contested judgment</strong> (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — typically
+                through a court-supervised settlement with severance.
               </li>
               <li>
                 <strong>~10–15% are withdrawn</strong> after settlement out of court.
@@ -89,18 +89,18 @@ export default function DismissalStatsEn() {
               Figures are aggregated from Federal Office of Statistics labour-court statistics and
               practitioner data. Individual outcomes depend strongly on the specifics of your case.
               The data is illustrative and does not constitute legal advice. For a tailored
-              estimate, send your dismissal letter for a free review.
+              estimate, send your dismissal letter for a free first check.
             </p>
           </div>
 
           <div className="bg-cream border-l-4 border-gold rounded p-6">
             <p className="text-[0.95rem] text-ink-light leading-relaxed m-0">
               Use the{' '}
-              <Link href="/en/severance-calculator" className="text-gold-dark underline">
+              <Link href="/en/severance-calculator/" className="text-gold-dark underline">
                 severance calculator
               </Link>{' '}
               and{' '}
-              <Link href="/en/legal-fees-calculator" className="text-gold-dark underline">
+              <Link href="/en/legal-fees-calculator/" className="text-gold-dark underline">
                 legal-fees calculator
               </Link>{' '}
               for the numerical side of your case.

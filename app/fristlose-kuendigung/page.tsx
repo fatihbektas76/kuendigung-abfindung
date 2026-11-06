@@ -25,26 +25,26 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
   description:
-    'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Ihre Rechte & Abfindung. Jetzt kostenlos prüfen.',
+    'Fristlose Kündigung erhalten? § 626 BGB stellt sehr hohe Anforderungen — Prüfung lohnt sich. Voraussetzungen, Ihre Rechte & Abfindung. Kostenlose Ersteinschätzung.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`,
   },
   openGraph: {
     title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
-    description: 'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
+    description: 'Fristlose Kündigung erhalten? § 626 BGB stellt sehr hohe Anforderungen — Prüfung lohnt sich. Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
     url: `${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`,
   },
   twitter: {
     card: 'summary_large_image',
     title: `Fristlose Kündigung — Ihre Rechte nach §626 BGB (${new Date().getFullYear()})`,
-    description: 'Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
+    description: 'Fristlose Kündigung erhalten? § 626 BGB stellt sehr hohe Anforderungen — Prüfung lohnt sich. Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht.',
   },
 };
 
 const faqs = [
   {
     q: 'Wann ist eine fristlose Kündigung wirksam?',
-    a: 'Eine fristlose Kündigung nach §626 BGB ist nur wirksam, wenn ein "wichtiger Grund" vorliegt, der so schwerwiegend ist, dass dem Arbeitgeber die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Kündigungsfrist nicht zumutbar ist. Zudem muss die Kündigung innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes ausgesprochen werden. In der Praxis scheitern die meisten fristlosen Kündigungen an diesen hohen Anforderungen.',
+    a: 'Eine fristlose Kündigung nach §626 BGB ist nur wirksam, wenn ein "wichtiger Grund" vorliegt, der so schwerwiegend ist, dass dem Arbeitgeber die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Kündigungsfrist nicht zumutbar ist. Zudem muss die Kündigung innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes ausgesprochen werden (§ 626 Abs. 2 S. 1 BGB). Der Arbeitgeber muss Ihnen auf schriftliches Verlangen den Kündigungsgrund unverzüglich schriftlich mitteilen (§ 626 Abs. 2 S. 3 BGB) — dieses Verlangen sollte sofort gestellt werden, weil fehlende oder verzögerte Mitteilung im Kündigungsschutzprozess zu Beweislast-Nachteilen des Arbeitgebers führen kann. Der Erfolg vor Gericht hängt stark vom Einzelfall ab.',
   },
   {
     q: 'Was sind typische Gründe für eine fristlose Kündigung?',
@@ -78,7 +78,7 @@ export default function FristloseKuendigungPage() {
       <SeoGeoBase
         pageUrl={`${SEO_CONFIG.baseUrl}/fristlose-kuendigung/`}
         pageTitle="Fristlose Kündigung – Ihre Rechte"
-        pageDescription="Fristlose Kündigung erhalten? Die meisten sind unwirksam. §626 BGB Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht."
+        pageDescription="Fristlose Kündigung erhalten? § 626 BGB stellt sehr hohe Anforderungen — Prüfung lohnt sich. Voraussetzungen, Abfindungschancen, Klagefrist. Fachanwalt für Arbeitsrecht."
         pageType="WebPage"
         includeOrganization={false}
         includeRating={false}
@@ -134,7 +134,7 @@ export default function FristloseKuendigungPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigung</Link>
+            <Link href="/kuendigung/" className="text-gold no-underline hover:underline">Kündigung</Link>
             <span className="mx-2">/</span>
             <span>Fristlose Kündigung</span>
           </nav>
@@ -153,7 +153,7 @@ export default function FristloseKuendigungPage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <TldrBox items={[
-              'Die meisten fristlosen Kündigungen sind unwirksam — §626 BGB stellt sehr hohe Anforderungen an den „wichtigen Grund".',
+              '§ 626 BGB stellt sehr hohe Anforderungen an den „wichtigen Grund" — der Erfolg vor Gericht hängt stark vom Einzelfall ab, insbesondere der Interessenabwägung.',
               '3-Wochen-Klagefrist ab Zugang der Kündigung — handeln Sie sofort.',
               'Der Arbeitgeber muss die 2-Wochen-Ausschlussfrist (§626 Abs. 2 BGB) ab Kenntnis des Kündigungsgrundes einhalten.',
               'Abfindungschancen sind bei fristlosen Kündigungen oft besonders hoch, weil die Wirksamkeitsanforderungen streng sind.',
@@ -180,8 +180,8 @@ export default function FristloseKuendigungPage() {
                 Eine <strong>fristlose Kündigung</strong> nach{' '}
                 <NormLink href={NORM.bgb626}>&sect;&nbsp;626 BGB</NormLink> beendet Ihr
                 Arbeitsverhältnis von heute auf morgen &mdash; ohne Kündigungsfrist, ohne
-                Übergabe, ohne Vorbereitung. Der Schock sitzt tief. Aber die gute Nachricht:
-                <strong> Die meisten fristlosen Kündigungen sind unwirksam.</strong>
+                Übergabe, ohne Vorbereitung. Der Schock sitzt tief. Aber:
+                <strong> § 626 BGB stellt sehr hohe Anforderungen — der Erfolg vor Gericht hängt stark vom Einzelfall ab.</strong>
               </p>
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
                 Der Arbeitgeber muss nach{' '}
@@ -222,7 +222,7 @@ export default function FristloseKuendigungPage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Fristlose Kündigung kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>
@@ -251,7 +251,11 @@ export default function FristloseKuendigungPage() {
               },
               {
                 title: '2-Wochen-Frist',
-                desc: 'Die Kündigung muss innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes ausgesprochen werden (§626 Abs. 2 BGB). Verspätung = unwirksam.',
+                desc: 'Die Kündigung muss innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes ausgesprochen werden (§ 626 Abs. 2 S. 1 BGB). Verspätung = unwirksam.',
+              },
+              {
+                title: 'Begründung auf Verlangen',
+                desc: 'Der Arbeitgeber muss Ihnen auf schriftliches Verlangen den Kündigungsgrund unverzüglich schriftlich mitteilen (§ 626 Abs. 2 S. 3 BGB). Dieses Verlangen sollte sofort gestellt werden — fehlende oder verzögerte Mitteilung kann zu Beweislast-Nachteilen des Arbeitgebers im Prozess führen.',
               },
               {
                 title: 'Verhältnismäßigkeit',
@@ -267,7 +271,7 @@ export default function FristloseKuendigungPage() {
               },
               {
                 title: 'Schriftform',
-                desc: 'Die Kündigung muss schriftlich erfolgen und eigenhändig unterschrieben sein (§623 BGB). Eine mündliche oder per E-Mail ausgesprochene Kündigung ist nichtig.',
+                desc: 'Die Kündigung muss schriftlich erfolgen und eigenhändig unterschrieben sein (§ 623 BGB). Eine Kündigung per E-Mail, PDF, Fax oder Scan wahrt die Schriftform nicht; eine mündliche erst recht nicht. Ausnahme möglich bei Arbeitgebern im Ausland: Wird die Kündigung dort erklärt, kann nach der Rechtsprechung des BAG die dortige Ortsform genügen.',
               },
             ].map((item) => (
               <div key={item.title} className="py-5 px-5 bg-white border border-border rounded-sm">
@@ -293,7 +297,7 @@ export default function FristloseKuendigungPage() {
             href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Jetzt kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>
@@ -404,7 +408,7 @@ export default function FristloseKuendigungPage() {
             Jetzt handeln
           </div>
           <h2 id="die-meisten-fristlosen-kundigungen-sind-unwirksam" className="font-serif text-[clamp(1.4rem,3vw,1.8rem)] font-bold mb-3">
-              Die meisten fristlosen Kündigungen sind unwirksam.
+              Hohe Hürden nach § 626 BGB — Prüfung lohnt sich.
             </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
             Lassen Sie Ihre fristlose Kündigung prüfen. In vielen Fällen erreichen wir

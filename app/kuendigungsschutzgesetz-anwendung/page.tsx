@@ -263,7 +263,7 @@ export default function KSchGAnwendungPage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Anwendbarkeit kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>

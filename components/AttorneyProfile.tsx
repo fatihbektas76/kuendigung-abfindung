@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import FadeUp from './FadeUp';
+import { SEO_CONFIG } from '@/lib/seo-config';
 
 function downloadVCard() {
   const vcard = `BEGIN:VCARD
@@ -55,7 +56,7 @@ export default function AttorneyProfile() {
               </div>
               <div className="text-gold-dark text-base mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
               <div className="text-[0.82rem] text-ink-muted mb-6">
-                5.0 Bewertung &middot; 2.000+ vertretene Mandanten
+                {SEO_CONFIG.rating.ratingValue} Bewertung &middot; Fachanwaltstitel seit 2011
               </div>
               <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
                 Fatih Bektas hat über 20 Jahre Erfahrung vor deutschen Arbeitsgerichten — und 10 Jahre

@@ -140,7 +140,7 @@ export default function AbfindungNettoRechnerPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/abfindung" className="text-gold no-underline hover:underline">Abfindung</Link>
+            <Link href="/abfindung/" className="text-gold no-underline hover:underline">Abfindung</Link>
             <span className="mx-2">/</span>
             <span>Netto-Rechner</span>
           </nav>

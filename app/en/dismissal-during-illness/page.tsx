@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: 'Do I get severance if I am dismissed due to illness?',
-    a: 'There is no automatic statutory right. Because illness-based dismissals are hard to justify, however, many cases end in a settlement with severance — typically 0.5× to 1.5× monthly gross × years of service. The precondition is almost always a timely filing within the three-week window (§ 4 KSchG).',
+    a: 'There is no general statutory right. Because illness-based dismissals are hard for the employer to justify, many cases end in a settlement with severance — typically 0.5× to 1.5× monthly gross × years of service. A core precondition is timely filing within the three-week window (§ 4 KSchG). Outcome and amount depend on the individual case.',
   },
   {
     q: 'What happens to my holiday if I am ill for a long time?',

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const yl = yearLabel(entry.year);
   const eurFaustformel = (4000 * 0.5 * entry.year).toLocaleString('de-DE');
   const title = `Abfindung nach ${yl}: ca. ${eurFaustformel} € bei 4.000 € Gehalt (${new Date().getFullYear()})`;
-  const description = `Nach ${yl} Betriebszugehörigkeit bekommen Sie ca. ${eurFaustformel} € Abfindung (Faustformel bei 4.000 € Gehalt). Bei guter Verhandlung deutlich mehr — Rechner + Fachanwalt prüft kostenlos.`;
+  const description = `Nach ${yl} Betriebszugehörigkeit liegt der Faustformel-Richtwert bei ca. ${eurFaustformel} € (bei 4.000 € Gehalt). Die tatsächliche Abfindung hängt vom Einzelfall ab — Rechner + Fachanwalt prüft kostenlos.`;
   const url = `${SEO_CONFIG.baseUrl}/abfindung-nach-${entry.slug}-betriebszugehoerigkeit/`;
   return {
     title,

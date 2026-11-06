@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: 'Is there a statutory right to severance in Germany?',
-    a: 'There is no general right to severance under German law. Narrow exceptions: (1) § 1a KSchG — severance offer in the dismissal letter after operational dismissal in exchange for waiving an unfair-dismissal claim (0.5 months per year), (2) social plan at the works-council level, (3) court settlement or judicial dissolution under § 9 KSchG. In practice severance is almost always negotiated during an unfair-dismissal case.',
+    a: 'There is no general right to severance under German law. Narrow exceptions: (1) § 1a KSchG — severance offer in the dismissal letter after operational dismissal in exchange for waiving an unfair-dismissal claim (0.5 months per year), (2) social plan at the works-council level, (3) court settlement or judicial dissolution under §§ 9, 10 KSchG. Around 80 % of proceedings before the German labour courts end without a contested judgment (Destatis FS 10 R 2.8), frequently through a settlement. Outcome and amount depend on the individual case.',
   },
   {
     q: 'Which factor (0.5× / 1.0× / 1.5×) applies to my case?',
@@ -128,7 +128,7 @@ export default function SeveranceTableEn() {
           { href: '/en/severance-table', label: 'Severance table' },
         ]}
         primaryCta={{ href: '/en/severance-calculator', label: 'Use the calculator' }}
-        secondaryCta={{ href: '#contact', label: 'Free case review' }}
+        secondaryCta={{ href: '#contact', label: 'Free first check' }}
       />
 
       {/* Direct-answer block (GEO) */}
@@ -225,18 +225,18 @@ export default function SeveranceTableEn() {
             Severance in a termination agreement vs. settlement after dismissal
           </h2>
           <p className="text-[0.98rem] text-ink-light leading-relaxed mb-4">
-            A <Link href="/en/termination-agreement" className="text-gold-dark no-underline hover:underline">termination agreement (Aufhebungsvertrag)</Link>{' '}
+            A <Link href="/en/termination-agreement/" className="text-gold-dark no-underline hover:underline">termination agreement (Aufhebungsvertrag)</Link>{' '}
             avoids the three-week filing window and lets both sides agree a predictable
-            end-date and severance payment. Trade-off: without the right wording the Federal
-            Employment Agency can impose a 12-week dormancy on unemployment benefit (§ 158
-            SGB III).
+            end-date and severance payment. Trade-off: without an important cause (as defined
+            in the Bundesagentur guidelines) the Federal Employment Agency can impose a 12-week
+            blocking period on unemployment benefit (§ 159 SGB III).
           </p>
           <p className="text-[0.98rem] text-ink-light leading-relaxed">
             Settlement after an unfair-dismissal claim typically produces higher severance
             but requires a formal filing within three weeks of receiving the letter{' '}
-            (§ 4 KSchG). Negotiating leverage almost always arises only through filing the
-            claim — see our{' '}
-            <Link href="/en/unfair-dismissal-claim" className="text-gold-dark no-underline hover:underline">
+            (§ 4 KSchG). In practice, negotiating leverage frequently arises only after filing
+            the claim — see our{' '}
+            <Link href="/en/unfair-dismissal-claim/" className="text-gold-dark no-underline hover:underline">
               unfair-dismissal claim overview
             </Link>.
           </p>
@@ -255,8 +255,10 @@ export default function SeveranceTableEn() {
           <p className="text-[0.98rem] text-ink-light leading-relaxed mb-4">
             Severance is subject to German income tax but exempt from social-security
             contributions. The <strong>Fünftelregelung</strong> under § 34 EStG spreads the
-            taxable event over five years and significantly reduces the effective tax rate on
-            lump-sum severance.
+            taxable event over five years and can meaningfully reduce the effective tax rate
+            in individual cases; the concrete saving depends on marginal tax rate and other
+            income. Since 1 January 2025 the rule must be claimed in the annual income-tax
+            return (not applied by the employer in the monthly payroll).
           </p>
           <p className="text-[0.98rem] text-ink-light leading-relaxed">
             Example: on a €40,000 severance payment, the one-fifth rule typically saves

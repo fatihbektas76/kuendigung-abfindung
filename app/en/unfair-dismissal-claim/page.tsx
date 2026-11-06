@@ -42,15 +42,15 @@ const FAQS = [
   },
   {
     q: 'What happens at the Güteverhandlung?',
-    a: 'The Güteverhandlung is the mandatory first conciliation hearing — usually scheduled 4–6 weeks after filing. The chairing judge probes the strengths and weaknesses of both sides and actively suggests settlement. Roughly 70–80 % of cases are resolved at this stage, almost always with a severance payment.',
+    a: 'The Güteverhandlung is the mandatory first conciliation hearing — usually scheduled 2–4 weeks after filing. The chairing judge probes the strengths and weaknesses of both sides and actively suggests settlement. Around 80 % of proceedings before the German labour courts end without a contested judgment (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — frequently already at the Güteverhandlung, typically with a severance. Outcome and amount depend on the individual case.',
   },
   {
     q: 'How much does an unfair-dismissal claim cost?',
-    a: 'Under § 12a ArbGG each side bears its own legal costs at first instance, regardless of outcome. Court fees are waived entirely if the case settles. Lawyers’ fees follow the statutory RVG schedule and are calculated from the value in dispute, which is normally capped at three gross monthly salaries (§ 42 (3) GKG). Most employees have Rechtsschutzversicherung (legal-expenses insurance) covering employment matters after a 3-month waiting period.',
+    a: 'Under § 12a ArbGG each side bears its own legal costs at first instance, regardless of outcome. Court fees are waived entirely if the case settles. Lawyers’ fees follow the statutory RVG schedule and are calculated from the value in dispute, which for an unfair-dismissal claim is capped at a quarterly salary — typically three gross monthly salaries (§ 42 (2) GKG). Many employees in Germany hold Rechtsschutzversicherung (legal-expenses insurance) covering employment matters — subject to waiting period, cover confirmation and any deductible.',
   },
   {
     q: 'Do I automatically get severance?',
-    a: 'No. There is no statutory right to severance just because a dismissal exists. Severance is almost always the result of a settlement — because the employer wants to buy certainty, and because an invalid dismissal would mean reinstatement plus months of back pay. The rule-of-thumb anchor is 0.5 gross monthly salaries per year of service; the actually negotiated amount regularly reaches 1.0 to 1.5 monthly salaries per year, depending on the strength of the claim.',
+    a: 'No. German law provides no general statutory right to severance — narrow exceptions aside (§ 1a KSchG offer, judicial dissolution under § 9 KSchG, social plan, collective agreement). Severance is frequently the result of a settlement, because the employer wants to buy certainty and because an invalid dismissal would mean reinstatement plus months of back pay. The rule-of-thumb anchor is 0.5 gross monthly salaries per year of service; negotiated outcomes often reach 1.0 to 1.5 monthly salaries per year, depending on the strength of the claim. Outcome and amount depend on the individual case and cannot be guaranteed.',
   },
   {
     q: 'What if I accept a termination agreement instead of filing?',
@@ -75,7 +75,7 @@ const PROCESS_STEPS = [
   {
     n: '02',
     t: 'Güteverhandlung',
-    d: 'Usually within 4–6 weeks of filing. The judge probes both sides — around 70–80 % of all cases settle here, almost always with a severance payment.',
+    d: 'Usually within 2–4 weeks of filing. The judge probes both sides — around 80 % of proceedings end without a contested judgment (Destatis FS 10 R 2.8), frequently through a settlement here. Outcome and amount depend on the individual case.',
   },
   {
     n: '03',
@@ -322,9 +322,11 @@ export default function UnfairDismissalClaimEn() {
               Realistic severance expectations
             </h2>
             <p className="text-[1rem] text-ink-light leading-relaxed mb-5">
-              German law does not grant an automatic right to severance just because a dismissal
-              exists. Severance is almost always the result of a court-supervised settlement at the
-              Güteverhandlung. The rule-of-thumb anchor is{' '}
+              German law does not grant a general right to severance just because a dismissal
+              exists. Narrow exceptions aside (§ 1a KSchG offer, judicial dissolution under
+              §§ 9, 10 KSchG, social plan, collective agreement), severance is frequently the
+              result of a court-supervised settlement at the Güteverhandlung. Outcome and amount
+              depend on the individual case. The rule-of-thumb anchor is{' '}
               <strong>0.5 gross monthly salaries per year of service</strong>
               {' '}(<NormLink href={NORM.kschg1a}>§&nbsp;1a KSchG</NormLink>) — the actually
               negotiated amount, however, regularly reaches 1.0 to 1.5 monthly salaries per year.

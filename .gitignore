@@ -37,4 +37,5 @@ next-env.d.ts
 
 # claude-flow / lokale tool state — nicht ins Repo
 .claude-flow/
+.claude/
 redirects/

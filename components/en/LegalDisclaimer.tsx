@@ -36,7 +36,7 @@ export default function LegalDisclaimer() {
             href="/en/#contact"
             className="inline-block whitespace-nowrap py-3.5 px-7 bg-gold-dark text-white border-none rounded-sm font-sans text-[0.95rem] font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)] max-md:w-full max-md:text-center"
           >
-            Free case review &rarr;
+            Free first check &rarr;
           </Link>
         </div>
       </div>

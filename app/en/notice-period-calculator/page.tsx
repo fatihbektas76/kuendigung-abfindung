@@ -185,7 +185,7 @@ export default function NoticePeriodCalculatorEn() {
                 collective agreement may extend it but cannot shorten it.
               </p>
               <Link
-                href="/en/check-dismissal"
+                href="/en/check-dismissal/"
                 className="mt-2 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm text-[0.92rem] font-semibold no-underline transition-all bg-gold-dark text-white hover:bg-[#735F32] hover:-translate-y-0.5"
               >
                 Check my dismissal &rarr;

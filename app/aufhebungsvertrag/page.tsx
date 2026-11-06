@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: 'Droht mir eine Sperrzeit beim Arbeitslosengeld?',
-    a: 'Ja, bei einem Aufhebungsvertrag verhängt die Agentur für Arbeit in der Regel eine Sperrzeit von 12 Wochen (§159 SGB III), weil Sie an der Beendigung des Arbeitsverhältnisses mitgewirkt haben. Ausnahmen gelten, wenn der Arbeitgeber ohnehin betriebsbedingt gekündigt hätte und die Abfindung die Regelformel nicht übersteigt. Ein Fachanwalt kann die Formulierung so gestalten, dass das Sperrzeit-Risiko minimiert wird.',
+    a: 'Nicht automatisch. Eine 12-wöchige Sperrzeit nach § 159 SGB III droht nur, wenn ein wichtiger Grund fehlt. Nach den Fachlichen Weisungen der Bundesagentur zu § 159 SGB III wird ein wichtiger Grund unter anderem vermutet, wenn (1) eine betriebsbedingte Kündigung ohnehin gedroht hätte, (2) die ordentliche Kündigungsfrist eingehalten wird und (3) die Abfindung zwischen 0,25 und 0,5 Bruttomonatsgehältern pro Beschäftigungsjahr liegt. Außerhalb dieser Vermutung ist der wichtige Grund konkret darzulegen — anwaltliche Prüfung vor Unterschrift ist essenziell.',
   },
   {
     q: 'Wie hoch sollte die Abfindung im Aufhebungsvertrag sein?',
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: 'Kann ich einen unterschriebenen Aufhebungsvertrag widerrufen?',
-    a: 'Ein Widerrufsrecht besteht grundsätzlich nicht. Eine Anfechtung ist nur möglich bei widerrechtlicher Drohung (z.\u00A0B. Androhung einer Strafanzeige), arglistiger Täuschung oder wenn der Arbeitgeber das Gebot fairen Verhandelns verletzt hat (BAG-Urteil vom 07.02.2019 \u2014 6 AZR 75/18). Deshalb ist es so wichtig, vor der Unterschrift anwaltlichen Rat einzuholen.',
+    a: 'Ein Widerrufsrecht besteht grundsätzlich nicht. Eine Anfechtung ist nur möglich bei widerrechtlicher Drohung (z.\u00A0B. Androhung einer Strafanzeige), arglistiger Täuschung oder wenn der Arbeitgeber das Gebot fairen Verhandelns verletzt hat (BAG v. 07.02.2019 \u2013 6 AZR 75/18, best\u00e4tigt durch BAG v. 24.02.2022 \u2013 6 AZR 333/21). Deshalb ist es so wichtig, vor der Unterschrift anwaltlichen Rat einzuholen.',
   },
   {
     q: 'Was sollte ein guter Aufhebungsvertrag regeln?',
@@ -256,7 +256,7 @@ export default function AufhebungsvertragPage() {
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Aufhebungsvertrag kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>
@@ -276,7 +276,7 @@ export default function AufhebungsvertragPage() {
             href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Jetzt kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>

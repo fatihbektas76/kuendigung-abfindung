@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
+import { SEO_CONFIG } from '@/lib/seo-config';
 import TldrBox from '@/components/TldrBox';
 import BagQuote from '@/components/BagQuote';
 import DefinitionBox from '@/components/DefinitionBox';
@@ -104,7 +105,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
           <nav className="text-sm text-gray-500 mb-6">
             <Link href="/" className="text-[#8B7A3A] no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/abfindung" className="text-[#8B7A3A] no-underline hover:underline">Abfindung</Link>
+            <Link href="/abfindung/" className="text-[#8B7A3A] no-underline hover:underline">Abfindung</Link>
             <span className="mx-2">/</span>
             <span>Abfindung nach {yl}</span>
           </nav>
@@ -135,7 +136,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             <TldrBox items={[
               `Faustformel: 0,5 × Bruttomonatsgehalt × ${ylKurz} = ${y * 0.5} Monatsgehälter als Abfindung.`,
               <>Kündigungsfrist bei {yl}: {entry.kuendigungsfrist} (<NormLink href={NORM.bgb622}>§&nbsp;622 BGB</NormLink>).</>,
-              'Kein gesetzlicher Anspruch auf Abfindung — über 80 % werden per Klage oder Vergleich verhandelt.',
+              'Kein genereller gesetzlicher Anspruch auf Abfindung — rund 80 % der Verfahren vor den Arbeitsgerichten enden jedoch ohne streitiges Urteil, häufig per Vergleich mit Abfindung (Destatis FS 10 R 2.8).',
               <>Klagefrist: 3 Wochen ab Zugang der Kündigung (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>). Danach ist die Kündigung in der Regel unangreifbar — eine nachträgliche Zulassung nach <NormLink href={NORM.kschg5}>§&nbsp;5 KSchG</NormLink> ist nur in engen Ausnahmefällen möglich.</>,
               <>Steuervorteil: Abfindung kann per Fünftelregelung (<NormLink href={NORM.estg34}>§&nbsp;34 EStG</NormLink>) begünstigt versteuert werden.</>,
             ]} />
@@ -205,7 +206,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { title: 'Fehler in der Kündigung', desc: 'Formfehler, falsche Fristen oder fehlerhafte Sozialauswahl geben Ihnen Verhandlungsmacht für eine Abfindung.' },
-                { title: 'Kündigungsschutzklage', desc: 'Das wichtigste Instrument: Über 80 % aller Klagen enden mit einem Vergleich — und damit einer Abfindung.' },
+                { title: 'Kündigungsschutzklage', desc: 'Ein zentrales Instrument: Rund 80 % der Verfahren vor den Arbeitsgerichten enden ohne streitiges Urteil, häufig per Vergleich (Destatis FS 10 R 2.8).' },
                 { title: 'Einvernehmliche Einigung', desc: 'Aufhebungsvertrag oder gerichtlicher Vergleich — hier wird die Abfindungshöhe direkt verhandelt.' },
                 { title: 'Sonderkündigungsschutz', desc: 'Schwangerschaft, Schwerbehinderung, Betriebsrat — besonderer Schutz stärkt Ihre Verhandlungsposition erheblich.' },
               ].map((item) => (
@@ -221,7 +222,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
 
       <section className="py-3 px-4 sm:px-8 mb-3">
         <div className="max-w-content mx-auto">
-          <DefinitionBox term="Abfindung" definition={`Eine einmalige Geldzahlung des Arbeitgebers an den Arbeitnehmer bei Beendigung des Arbeitsverhältnisses. Ein gesetzlicher Anspruch besteht nur ausnahmsweise (§ 1a KSchG, Sozialplan, Tarifvertrag). Nach ${yl} Betriebszugehörigkeit beträgt die Regelabfindung nach der Faustformel ${y * 0.5} Bruttomonatsgehälter.`} />
+          <DefinitionBox term="Abfindung" definition={`Eine einmalige Geldzahlung des Arbeitgebers an den Arbeitnehmer bei Beendigung des Arbeitsverhältnisses. Ein gesetzlicher Anspruch besteht nur ausnahmsweise (§ 1a KSchG, §§ 9, 10 KSchG, Sozialplan, Tarifvertrag). Nach ${yl} Betriebszugehörigkeit liegt der Faustformel-Richtwert bei ${y * 0.5} Bruttomonatsgehältern — Erfahrungswert aus der Verhandlungspraxis, kein gesetzlicher Anspruch.`} />
         </div>
       </section>
 
@@ -258,7 +259,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
 
             <div className="grid grid-cols-3 gap-3 max-sm:grid-cols-1">
               <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Regelabfindung</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Faustformel 0,5×</p>
                 <p className="text-xl font-bold text-gray-900">{fmt(gehalt * 0.5 * y)}</p>
                 <p className="text-xs text-gray-400 mt-1">Faktor 0,5&times;</p>
               </div>
@@ -344,7 +345,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             </h2>
             <div className="space-y-4">
               {[
-                { title: 'Kündigungsschutzklage einreichen', desc: 'Die Klage ist das wichtigste Druckmittel. Ohne Klage hat der Arbeitgeber keinen Anlass, eine Abfindung zu zahlen. Über 80 % der Verfahren enden mit einem Vergleich.' },
+                { title: 'Kündigungsschutzklage einreichen', desc: 'Die Klage ist ein zentrales Druckmittel. Rund 80 % der Verfahren vor den Arbeitsgerichten enden ohne streitiges Urteil, häufig per Vergleich (Destatis FS 10 R 2.8).' },
                 { title: 'Formfehler identifizieren', desc: 'Fehlende Betriebsratsanhörung, falsche Kündigungsfrist, mangelhafte Sozialauswahl — jeder Fehler erhöht Ihre Verhandlungsposition und damit die Abfindungshöhe.' },
                 { title: 'Nicht zu früh einigen', desc: 'Der erste Abfindungsvorschlag des Arbeitgebers liegt fast immer unter dem, was tatsächlich erreichbar ist. Lassen Sie sich anwaltlich beraten, bevor Sie unterschreiben.' },
                 { title: 'Zeugnis mitverhandeln', desc: 'Neben der Abfindung sollten Sie ein qualifiziertes Arbeitszeugnis (Note „gut" oder „sehr gut"), Freistellung und Resturlaubsabgeltung mitverhandeln.' },
@@ -387,7 +388,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
               {[
                 { title: 'Ohne Fünftelregelung', desc: 'Die Abfindung wird zum Jahreseinkommen addiert — durch die Steuerprogression fällt ein überproportional hoher Steuersatz an.' },
-                { title: 'Mit Fünftelregelung', desc: 'Die Abfindung wird rechnerisch auf 5 Jahre verteilt (§ 34 EStG). Dadurch fällt die Steuerlast deutlich geringer aus.' },
+                { title: 'Mit Fünftelregelung', desc: 'Die Abfindung wird rechnerisch auf 5 Jahre verteilt (§ 34 EStG). Die Progression wird gedämpft; die konkrete Ersparnis hängt vom individuellen Steuersatz und übrigen Einkommen ab.' },
                 { title: 'Sozialversicherung', desc: 'Abfindungen sind sozialversicherungsfrei — keine Abzüge für Rente, Krankenkasse, Pflege oder Arbeitslosenversicherung.' },
                 { title: 'Auszahlungszeitpunkt', desc: 'Wird die Abfindung in ein Jahr mit geringerem Einkommen verschoben (z.B. nach Beschäftigungsende), sinkt die Steuerbelastung.' },
               ].map((item) => (
@@ -663,7 +664,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
         <div className="max-w-content mx-auto">
           <div className="bg-[#6B6626] rounded-lg p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <p className="text-white font-semibold text-lg mb-1">Abfindung kostenlos prüfen lassen</p>
+              <p className="text-white font-semibold text-lg mb-1">Kostenlose Ersteinschätzung</p>
               <p className="text-white/70 text-sm">Ersteinschätzung in 24h &mdash; bundesweit und digital.</p>
             </div>
             <a
@@ -681,7 +682,7 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
         <div className="max-w-content mx-auto">
           <div className="mb-3">
             <Link
-              href="/abfindung"
+              href="/abfindung/"
               className="inline-flex items-center gap-1.5 text-sm text-[#6B6626] font-medium no-underline hover:underline"
             >
               &larr; Zurück zur Übersicht: Abfindung nach Kündigung
@@ -780,11 +781,11 @@ export default function AbfindungJahreContent({ entry, prev, next, yearData }: P
               <p className="text-sm text-gray-600 leading-relaxed mb-3">
                 Zugelassen seit 2005, Fachanwalt für Arbeitsrecht seit 2011 (RAK Karlsruhe).
                 Spezialisiert auf Kündigungsschutz, Abfindungsverhandlung und Aufhebungsverträge.
-                Über 2.000 erfolgreich abgeschlossene Verfahren.
+                Über 20 Jahre Arbeitsrecht-Erfahrung.
               </p>
               <p className="text-sm text-gray-500">
                 <span className="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{' '}
-                5,0 &middot; 69 Bewertungen auf anwalt.de
+                {SEO_CONFIG.rating.ratingValue} &middot; {SEO_CONFIG.rating.reviewCount} Bewertungen auf anwalt.de
               </p>
             </div>
           </div>

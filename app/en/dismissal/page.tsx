@@ -13,7 +13,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Dismissal in Germany ${new Date().getFullYear()} — Rights, Deadlines & What to Do`,
   description:
-    'Dismissed in Germany? You have only 3 weeks to file. Statutory rights, notice periods, how to challenge a dismissal. Free case review by a German employment-law specialist.',
+    'Dismissed in Germany? You have only 3 weeks to file. Statutory rights, notice periods, how to challenge a dismissal. Free first check by a German employment-law specialist.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -49,7 +49,7 @@ const FAQS = [
   },
   {
     q: 'Can I claim severance pay if I challenge the dismissal?',
-    a: 'There is no general statutory severance entitlement, but in practice severance is negotiated in over 80% of dismissal-protection proceedings as part of a court settlement. Typical range: 0.5–1.5 gross monthly salaries per year of service.',
+    a: 'There is no general statutory severance entitlement. Around 80 % of proceedings before the German labour courts end without a contested judgment (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — frequently through a settlement with severance. Typical range: 0.5–1.5 gross monthly salaries per year of service. Outcome and amount depend on the individual case and cannot be guaranteed.',
   },
 ];
 
@@ -94,7 +94,7 @@ export default function DismissalEn() {
             { href: '/en/dismissal', label: 'Dismissal' },
           ]}
           primaryCta={{ href: '/en/check-dismissal', label: 'Check my dismissal' }}
-          secondaryCta={{ href: '#contact', label: 'Free case review' }}
+          secondaryCta={{ href: '#contact', label: 'Free first check' }}
         />
 
         {/* Urgency banner */}
@@ -129,8 +129,10 @@ export default function DismissalEn() {
               KSchG kicks in once you have been employed for more than 6 months at an employer
               with more than 10 staff. From receipt of the dismissal letter you have{' '}
               <strong>3 weeks</strong> to file an unfair-dismissal claim at the competent
-              Arbeitsgericht (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>). Missed
-              deadlines are almost always fatal.
+              Arbeitsgericht (<NormLink href={NORM.kschg4}>§&nbsp;4 KSchG</NormLink>). After the
+              deadline the dismissal is generally treated as valid (§ 7 KSchG); subsequent
+              admission under § 5 KSchG is only possible in narrow exceptional cases. Other
+              claims arising from the employment (wages, holiday, reference) remain unaffected.
             </p>
             <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
               <strong>Written and reviewed by</strong> Fatih Bektas, German employment-law

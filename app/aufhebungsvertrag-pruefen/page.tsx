@@ -137,15 +137,15 @@ const faqs = [
   },
   {
     q: 'Kann ich einen Aufhebungsvertrag rückgängig machen?',
-    a: 'Nur unter engen Voraussetzungen: bei widerrechtlicher Drohung (§123 BGB, Frist: 1 Jahr) oder bei Verstoß gegen das Gebot fairen Verhandelns (BAG 6 AZR 75/18). Ein gesetzliches Widerrufsrecht wie bei Verbraucherverträgen gibt es nicht — es sei denn, es ist vertraglich vereinbart.',
+    a: 'Nur unter engen Voraussetzungen: bei widerrechtlicher Drohung (§ 123 BGB, Frist: 1 Jahr) oder bei Verstoß gegen das Gebot fairen Verhandelns (BAG v. 07.02.2019 – 6 AZR 75/18, bestätigt durch BAG v. 24.02.2022 – 6 AZR 333/21). Ein gesetzliches Widerrufsrecht wie bei Verbraucherverträgen gibt es nicht — es sei denn, es ist vertraglich vereinbart.',
   },
   {
     q: 'Droht immer eine Sperrzeit beim Arbeitslosengeld?',
-    a: 'Grundsätzlich ja. Bei Aufhebungsverträgen verhängt die Agentur für Arbeit regelmäßig eine 12-wöchige Sperrzeit (§159 SGB III), weil der Arbeitnehmer das Arbeitsverhältnis „selbst aufgelöst" hat. Es gibt zwar Ausnahmen, diese sollten Sie mit einem spezialisierten Anwalt besprechen.',
+    a: 'Nicht automatisch — die Sperrzeit nach § 159 SGB III droht nur, wenn ein wichtiger Grund fehlt. Nach den Fachlichen Weisungen der Bundesagentur zu § 159 SGB III wird ein wichtiger Grund unter anderem vermutet, wenn (1) eine betriebsbedingte Kündigung ohnehin gedroht hätte, (2) die ordentliche Kündigungsfrist eingehalten wird und (3) die Abfindung zwischen 0,25 und 0,5 Bruttomonatsgehältern pro Beschäftigungsjahr liegt. Außerhalb dieser Vermutung muss der wichtige Grund konkret dargelegt werden — hier ist anwaltliche Prüfung essenziell.',
   },
   {
     q: 'Was ist das Gebot fairen Verhandelns?',
-    a: 'Das BAG hat entschieden, dass Arbeitgeber beim Abschluss von Aufhebungsverträgen fair verhandeln müssen. Eine psychische Drucksituation — etwa ein unangekündigter Besuch beim erkrankten Arbeitnehmer oder unmittelbarer Unterschriftsdruck ohne jede Bedenkzeit — kann zur Unwirksamkeit des Vertrags führen (BAG 6 AZR 75/18, BAG 6 AZR 333/21).',
+    a: 'Das BAG hat entschieden, dass Arbeitgeber beim Abschluss von Aufhebungsverträgen fair verhandeln müssen. Eine psychische Drucksituation — etwa ein unangekündigter Besuch beim erkrankten Arbeitnehmer oder unmittelbarer Unterschriftsdruck ohne jede Bedenkzeit — kann zur Unwirksamkeit des Vertrags führen (BAG v. 07.02.2019 – 6 AZR 75/18, bestätigt durch BAG v. 24.02.2022 – 6 AZR 333/21).',
   },
   {
     q: 'Wie hoch sollte die Abfindung sein?',
@@ -321,7 +321,7 @@ export default function AufhebungsvertragPruefenPage() {
           {'★★★★★'}
         </div>
         <div className="text-[0.82rem] text-ink-muted mt-1">
-          5,0 &middot; 69 Bewertungen
+          {SEO_CONFIG.rating.ratingValue} &middot; {SEO_CONFIG.rating.reviewCount} Bewertungen
         </div>
       </div>
     </aside>
@@ -377,9 +377,9 @@ export default function AufhebungsvertragPruefenPage() {
       red: 'Bitte nicht ohne Beratung unterschreiben.',
     };
     const ctaTexts = {
-      green: 'Auch bei einem fairen Vertrag lohnt sich eine kurze anwaltliche Durchsicht. Nutzen Sie die kostenlose Erstberatung durch Fachanwalt Fatih Bektas.',
-      yellow: 'Mehrere Punkte bieten Verbesserungspotenzial. Fachanwalt Fatih Bektas zeigt Ihnen in einer kostenlosen Erstberatung, was Sie nachverhandeln können — Antwort in 24 Stunden.',
-      red: 'Ihr Vertrag enthält kritische Punkte. Bevor Sie unterschreiben, nutzen Sie die kostenlose Erstberatung durch Fachanwalt Fatih Bektas — Antwort innerhalb von 24 Stunden.',
+      green: 'Auch bei einem fairen Vertrag lohnt sich eine kurze anwaltliche Durchsicht. Nutzen Sie die kostenlose Ersteinschätzung durch Fachanwalt Fatih Bektas.',
+      yellow: 'Mehrere Punkte bieten Verbesserungspotenzial. Fachanwalt Fatih Bektas zeigt Ihnen in einer kostenlosen Ersteinschätzung, was Sie nachverhandeln können — Antwort in 24 Stunden.',
+      red: 'Ihr Vertrag enthält kritische Punkte. Bevor Sie unterschreiben, nutzen Sie die kostenlose Ersteinschätzung durch Fachanwalt Fatih Bektas — Antwort innerhalb von 24 Stunden.',
     };
 
     return (
@@ -446,12 +446,12 @@ export default function AufhebungsvertragPruefenPage() {
                   href="/#kontakt"
                   className="block w-full py-4 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#1a1409] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(42,31,14,0.25)]"
                 >
-                  Kostenlose Erstberatung anfragen &rarr;
+                  Kostenlose Ersteinschätzung anfragen &rarr;
                 </Link>
                 <div className="flex flex-wrap items-center justify-center gap-4 mt-4 text-[0.78rem] text-ink-muted">
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
-                    Kostenlose Erstberatung
+                    Kostenlose Ersteinschätzung
                   </span>
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
@@ -459,7 +459,7 @@ export default function AufhebungsvertragPruefenPage() {
                   </span>
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
-                    69 Fünf-Sterne-Bewertungen auf anwalt.de
+                    {SEO_CONFIG.rating.reviewCount} Fünf-Sterne-Bewertungen auf anwalt.de
                   </span>
                 </div>
               </div>
@@ -545,7 +545,7 @@ export default function AufhebungsvertragPruefenPage() {
             </div>
             {answers.abfindungHoehe === 'ueber' && (
               <InfoBox>
-                Bei einer Abfindung über 0,5 Monatsgehälter pro Beschäftigungsjahr droht eine Sperre bzgl. des Arbeitslosengeldes von der Arbeitsagentur.
+                Außerhalb des Rahmens von 0,25–0,5 Bruttomonatsgehältern pro Beschäftigungsjahr greift die Vermutung eines wichtigen Grundes nach den Fachlichen Weisungen BA zu § 159 SGB III nicht mehr automatisch. Eine Sperrzeit kann abgewendet werden, wenn der wichtige Grund (z. B. drohende betriebsbedingte Kündigung) konkret dargelegt wird — anwaltliche Prüfung dringend empfohlen.
               </InfoBox>
             )}
           </div>
@@ -710,7 +710,7 @@ export default function AufhebungsvertragPruefenPage() {
             </div>
             {(answers.beendigungsgrund === 'andere' || answers.beendigungsgrund === 'keine') && (
               <InfoBox>
-                Es droht eine Sperre durch die Arbeitsagentur bzgl. des Arbeitslosengeldes. Ohne betriebsbedingte Begründung verhängt die Agentur für Arbeit regelmäßig eine 12-wöchige Sperrzeit beim ALG I (&sect;159 SGB III).
+                Ohne (drohende) betriebsbedingte Kündigung greift die Vermutung eines wichtigen Grundes nach den Fachlichen Weisungen BA zu § 159 SGB III nicht; dann kann eine 12-wöchige Sperrzeit beim ALG I drohen (§ 159 SGB III). Der wichtige Grund muss im Einzelfall konkret dargelegt werden.
               </InfoBox>
             )}
           </div>
@@ -741,7 +741,7 @@ export default function AufhebungsvertragPruefenPage() {
             </div>
             {(answers.sperrzeitHinweis === 'nein' || answers.sperrzeitHinweis === 'ja' || answers.sperrzeitHinweis === 'unsicher') && (
               <InfoBox>
-                Achtung: Bei Aufhebungsverträgen droht regelmäßig eine 12-wöchige Sperrzeit beim ALG I (&sect;159 SGB III). Daher ist es bei jedem Aufhebungsvertrag zwingend, einen Fachanwalt für Arbeitsrecht zu konsultieren.
+                Achtung: Eine 12-wöchige Sperrzeit beim ALG I (§ 159 SGB III) kann drohen, wenn kein wichtiger Grund im Sinne der Fachlichen Weisungen BA vorliegt. Vor Unterschrift sollte jeder Aufhebungsvertrag anwaltlich geprüft werden.
               </InfoBox>
             )}
           </div>
@@ -899,7 +899,7 @@ export default function AufhebungsvertragPruefenPage() {
             </div>
             {answers.bedenkzeit === 'sofort' && (
               <InfoBox>
-                Das BAG hat in BAG 6 AZR 333/21 klargestellt: Sofortiger Unterschriftsdruck allein ist noch kein Verstoß gegen das Gebot fairen Verhandelns — aber in Kombination mit anderen Druckmitteln kann der Vertrag anfechtbar sein.
+                Das BAG hat in BAG v. 24.02.2022 – 6 AZR 333/21 (Fortführung zu BAG v. 07.02.2019 – 6 AZR 75/18) klargestellt: Sofortiger Unterschriftsdruck allein ist noch kein Verstoß gegen das Gebot fairen Verhandelns — aber in Kombination mit anderen Druckmitteln kann der Vertrag anfechtbar sein.
               </InfoBox>
             )}
           </div>
@@ -930,7 +930,7 @@ export default function AufhebungsvertragPruefenPage() {
             </div>
             {answers.druckAusgeubt === 'kuendigung' && (
               <InfoBox>
-                Eine Drohung mit Kündigung ist nicht automatisch unzulässig — nur wenn der Arbeitgeber keine realistische Grundlage für eine Kündigung hatte. Lassen Sie dies prüfen. Haben Sie eine Rechtsschutzversicherung, übernimmt diese übrigens nur die Anwaltskosten, sofern eine Kündigung angedroht wurde, wenn der Aufhebungsvertrag nicht unterzeichnet wird.
+                Eine Drohung mit Kündigung ist nicht automatisch unzulässig — nur wenn der Arbeitgeber keine realistische Grundlage für eine Kündigung hatte. Lassen Sie dies prüfen. Haben Sie eine Rechtsschutzversicherung, übernimmt diese übrigens nur die Anwaltskosten, sofern eine Kündigung angedroht wurde — und auch nur vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung.
               </InfoBox>
             )}
             {answers.druckAusgeubt === 'andere' && (
@@ -1016,7 +1016,7 @@ export default function AufhebungsvertragPruefenPage() {
         <meta itemProp="author" content="Fatih Bektas, Fachanwalt für Arbeitsrecht" />
         <meta itemProp="inLanguage" content="de" />
         <meta itemProp="applicationCategory" content="Legal Tool" />
-        <meta itemProp="isBasedOn" content="§109 GewO, §123 BGB, §159 SGB III, §7 BUrlG, BAG 6 AZR 75/18" />
+        <meta itemProp="isBasedOn" content="§ 109 GewO, § 123 BGB, § 159 SGB III, § 7 BUrlG, BAG 6 AZR 75/18, BAG 6 AZR 333/21" />
       </div>
 
       {sidebar}
@@ -1062,7 +1062,7 @@ export default function AufhebungsvertragPruefenPage() {
                 <nav className="text-[0.84rem] text-ink-muted mb-6">
                   <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
                   <span className="mx-2">/</span>
-                  <Link href="/tools" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
+                  <Link href="/tools/" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
                   <span className="mx-2">/</span>
                   <span>Aufhebungsvertrag prüfen</span>
                 </nav>
@@ -1082,7 +1082,7 @@ export default function AufhebungsvertragPruefenPage() {
                 <div className="flex flex-wrap items-center gap-4 text-[0.84rem] text-ink-muted mb-6">
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
-                    Kostenlose Erstberatung
+                    Kostenlose Ersteinschätzung
                   </span>
                   <span className="flex items-center gap-1.5">
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-5" /></svg>
@@ -1101,13 +1101,13 @@ export default function AufhebungsvertragPruefenPage() {
                 {/* CTA #1 */}
                 <div className="mb-8 py-5 px-6 bg-gold-bg rounded-sm border-2 border-gold">
                   <p className="text-[0.95rem] font-semibold text-ink mb-3 m-0">
-                    Aufhebungsvertrag erhalten und unsicher? Wir prüfen Ihren Vertrag — kostenlose Erstberatung.
+                    Aufhebungsvertrag erhalten und unsicher? Wir prüfen Ihren Vertrag — kostenlose Ersteinschätzung.
                   </p>
                   <Link
                     href="/#kontakt"
                     className="inline-block py-3 px-6 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-[0.88rem] font-semibold no-underline text-center transition-all hover:bg-[#1a1409]"
                   >
-                    Jetzt kostenlos prüfen lassen &rarr;
+                    Kostenlose Ersteinschätzung &rarr;
                   </Link>
                 </div>
               </>

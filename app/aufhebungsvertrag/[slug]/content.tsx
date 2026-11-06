@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { AufhebungsvertragEntry } from '@/lib/aufhebungsvertrag-data';
 import { aufhebungsvertragData } from '@/lib/aufhebungsvertrag-data';
+import { SEO_CONFIG } from '@/lib/seo-config';
 import DejureText from '@/components/DejureText';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
@@ -37,7 +38,7 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/aufhebungsvertrag" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>
+            <Link href="/aufhebungsvertrag/" className="text-gold no-underline hover:underline">Aufhebungsvertrag</Link>
             <span className="mx-2">/</span>
             <span>{entry.h1.replace(/ — .*$/, '')}</span>
           </nav>
@@ -162,7 +163,7 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
                 Aufhebungsvertrag jetzt prüfen &rarr;
               </a>
               <p className="text-[0.78rem] text-ink-muted text-center mt-3">
-                ★★★★★ 69 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
+                ★★★★★ {SEO_CONFIG.rating.reviewCount} Bewertungen &middot; Über 20 Jahre Arbeitsrecht-Erfahrung &middot; Bundesweit
               </p>
             </div>
           </div>
@@ -262,19 +263,19 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
             Warum Sie unsere Kanzlei beauftragen sollten!
           </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
-            Wir sind auf Kündigungsschutz und Abfindung spezialisiert &mdash; mit über 20 Jahren Erfahrung
-            und mehr als 2.000 erfolgreichen Verfahren.
+            Wir sind auf Kündigungsschutz und Abfindung spezialisiert &mdash; mit über 20 Jahren Arbeitsrecht-Erfahrung
+            und Fachanwaltstitel seit 2011.
           </p>
           <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">
             {[
               {
-                title: 'Nachweisliche Erfolgsbilanz',
-                desc: 'Über 2.000 erfolgreiche Verfahren, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Verhandlung.',
+                title: 'Erfahrung im Arbeitsrecht',
+                desc: 'Über 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Verhandlung.',
                 icon: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>,
               },
               {
                 title: 'Einfach & Transparent',
-                desc: 'Klare Kommunikation, keine versteckten Kosten. Sie wissen jederzeit, was passiert und was es kostet.',
+                desc: 'Kostenlose Ersteinschätzung — danach erhalten Sie ein Kostenangebot oder wir klären die Kostenübernahme mit Ihrer Rechtsschutzversicherung. Kosten entstehen erst mit Ihrem Auftrag.',
                 icon: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
               },
               {
@@ -300,10 +301,10 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-4 gap-0 border border-gold rounded-sm overflow-hidden bg-cream max-md:grid-cols-2">
             {[
-              { value: '2.000+', label: 'Beratungen' },
-              { value: '2.000+', label: 'Verfahren' },
+              { value: 'Fachanwalt', label: 'f\u00fcr Arbeitsrecht' },
+              { value: 'seit 2011', label: 'Fachanwaltstitel' },
               { value: '20+', label: 'Jahre Erfahrung' },
-              { value: '5,0 \u2605', label: 'Bewertung' },
+              { value: `${SEO_CONFIG.rating.ratingValue} \u2605`, label: 'Bewertung' },
             ].map((stat, i) => (
               <div
                 key={stat.label}
@@ -420,19 +421,19 @@ export default function AufhebungsvertragSubContent({ entry, faqs, uniqueIntro, 
       <section className="py-[80px] px-8 bg-[#1C1408] text-white">
         <div className="max-w-content mx-auto text-center">
           <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold mb-4">
-            Jetzt kostenlose Erstberatung sichern
+            Kostenlose Ersteinschätzung sichern
           </h2>
           <p className="text-white/60 text-[0.92rem] mb-6">
-            ★★★★★ &middot; 5,0 &middot; 69 Bewertungen auf anwalt.de
+            ★★★★★ &middot; {SEO_CONFIG.rating.ratingValue} &middot; {SEO_CONFIG.rating.reviewCount} Bewertungen auf anwalt.de
           </p>
           <div className="flex justify-center gap-6 mb-8 text-[0.88rem] text-white/80 flex-wrap">
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-              Kostenlose Erstberatung
+              Kostenlose Ersteinschätzung
             </span>
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-              Über 2.000 erfolgreiche Verfahren
+              Über 20 Jahre Arbeitsrecht-Erfahrung
             </span>
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>

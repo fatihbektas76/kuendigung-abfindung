@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: 'Muss ich die Kündigung schriftlich einreichen?',
-    a: 'Ja, zwingend. Nach § 623 BGB muss jede Kündigung — auch die des Arbeitnehmers — schriftlich in Papierform mit eigenhändiger Unterschrift erfolgen. Fax, gescannte PDFs und E-Mails sind formunwirksam und damit nichtig. Eine formunwirksam ausgesprochene Kündigung beendet das Arbeitsverhältnis nicht — Sie müssten weiter arbeiten und würden weiter bezahlt. Sicherer Weg: eigenhändig unterschriebene Kündigung per Einwurf-Einschreiben oder persönlicher Übergabe mit Empfangsbestätigung.',
+    a: 'Ja. Nach § 623 BGB muss jede Kündigung — auch die des Arbeitnehmers — schriftlich in Papierform mit eigenhändiger Unterschrift erfolgen. Eine Kündigung per E-Mail, PDF, Fax oder Scan wahrt die Schriftform des § 623 BGB nicht. Ausnahme möglich bei Arbeitgebern im Ausland: Wird die Kündigung dort erklärt, kann nach der Rechtsprechung des BAG die dortige Ortsform genügen. Lassen Sie das prüfen. Sicherer Weg: eigenhändig unterschriebene Kündigung per Einwurf-Einschreiben oder persönlicher Übergabe mit Empfangsbestätigung.',
   },
   {
     q: 'Wie ist es, wenn im Tarifvertrag andere Fristen stehen?',
@@ -161,9 +161,9 @@ export default function KuendigungsfristBerechnenArbeitnehmerPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/ratgeber" className="text-gold no-underline hover:underline">Ratgeber</Link>
+            <Link href="/ratgeber/" className="text-gold no-underline hover:underline">Ratgeber</Link>
             <span className="mx-2">/</span>
-            <Link href="/ratgeber/arbeitsrecht" className="text-gold no-underline hover:underline">Arbeitsrecht</Link>
+            <Link href="/ratgeber/arbeitsrecht/" className="text-gold no-underline hover:underline">Arbeitsrecht</Link>
             <span className="mx-2">/</span>
             <span>Kündigungsfrist berechnen (Arbeitnehmer)</span>
           </nav>

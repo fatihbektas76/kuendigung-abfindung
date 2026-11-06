@@ -90,12 +90,17 @@ const GKG_TABLE: [number, number][] = [
   [500000, 4138],
 ];
 
+// § 22 Abs. 2 RVG und § 39 Abs. 2 GKG: Gegenstandswert / Streitwert sind für
+// die Gebührenberechnung auf 30 Mio € begrenzt.
+const WERT_CAP = 30_000_000;
+
 function lookupFee(table: [number, number][], value: number, overflowIncrement: number): number {
+  const capped = Math.min(value, WERT_CAP);
   for (const [threshold, fee] of table) {
-    if (value <= threshold) return fee;
+    if (capped <= threshold) return fee;
   }
-  // Above 500,000: increment per commenced 50,000
-  const excess = value - 500000;
+  // Above 500,000 and up to the 30 Mio cap: increment per commenced 50,000
+  const excess = capped - 500000;
   const steps = Math.ceil(excess / 50000);
   return table[table.length - 1][1] + steps * overflowIncrement;
 }

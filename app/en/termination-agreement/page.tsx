@@ -38,7 +38,7 @@ const FAQS = [
   },
   {
     q: 'Does signing trigger a Sperrzeit (unemployment-benefit blocking period)?',
-    a: 'Often yes. Signing a termination agreement is treated as voluntarily ending the employment, which usually leads to a 12-week blocking period of unemployment benefit (§ 159 SGB III) unless you can show an important cause — for instance, an imminent operational dismissal that would have ended the employment anyway. The exact wording of the agreement (including a recital of the alternative dismissal and observance of the statutory notice period) is decisive. Have this reviewed before signing.',
+    a: 'Not automatically. A 12-week blocking period under § 159 SGB III applies only if there is no important cause. Per the Bundesagentur für Arbeit guidelines on § 159 SGB III, an important cause is presumed when (1) an operational dismissal was imminent, (2) the statutory notice period is observed and (3) the severance is between 0.25 and 0.5 gross monthly salaries per year of service. Outside that presumption, the important cause must be set out concretely. The exact wording of the agreement (including a recital of the alternative dismissal and observance of the statutory notice period) is decisive — have this reviewed before signing.',
   },
   {
     q: 'Should I always demand severance?',
@@ -46,7 +46,7 @@ const FAQS = [
   },
   {
     q: 'Can I withdraw a signed termination agreement?',
-    a: 'In principle no. There is no general right to withdraw a termination agreement. Only narrow exceptions exist: rescission for fraud or threat (§ 123 BGB), gross breach of the “fair negotiation” doctrine (BAG 6 AZR 333/21), or a Widerruf clause expressly written into the agreement.',
+    a: 'In principle no. There is no general right to withdraw a termination agreement. Only narrow exceptions exist: rescission for fraud or threat (§ 123 BGB), gross breach of the “fair negotiation” doctrine (BAG 7 Feb 2019 – 6 AZR 75/18, confirmed by BAG 24 Feb 2022 – 6 AZR 333/21), or a Widerruf clause expressly written into the agreement.',
   },
   {
     q: 'What about my reference letter and remaining holiday?',
@@ -96,7 +96,7 @@ export default function TerminationAgreementEn() {
             { href: '/en/termination-agreement', label: 'Termination agreement' },
           ]}
           primaryCta={{ href: '/en/check-termination-agreement', label: 'Review my agreement' }}
-          secondaryCta={{ href: '#contact', label: 'Free case review' }}
+          secondaryCta={{ href: '#contact', label: 'Free first check' }}
         />
 
         {/* Direct answer */}
@@ -104,7 +104,7 @@ export default function TerminationAgreementEn() {
           <div className="max-w-content mx-auto max-w-[820px]">
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
               A termination agreement (Aufhebungsvertrag) ends the employment by mutual contract,
-              usually faster than the statutory notice period and almost always with severance.
+              usually faster than the statutory notice period and frequently with severance — outcome depends on the individual case.
               The catch: it is treated by the unemployment office as a voluntary termination,
               which typically triggers a <strong>12-week blocking period</strong> for unemployment
               benefit under{' '}
@@ -113,15 +113,19 @@ export default function TerminationAgreementEn() {
                   §&nbsp;159 SGB III
                 </a>
               </strong>
-              . The Federal Labour Court ruling{' '}
+              . The Federal Labour Court established the{' '}
+              <strong>
+                <a href={bagDejureUrl(null, '6 AZR 75/18')} target="_blank" rel="noopener noreferrer" className="text-gold-dark no-underline hover:underline">
+                  &bdquo;faires Verhandeln&ldquo; doctrine (BAG 7 Feb 2019 – 6 AZR 75/18)
+                </a>
+              </strong>
+              , confirmed by{' '}
               <strong>
                 <a href={bagDejureUrl(null, '6 AZR 333/21')} target="_blank" rel="noopener noreferrer" className="text-gold-dark no-underline hover:underline">
-                  BAG 6 AZR 333/21
-                </a>{' '}
-                (&bdquo;faires Verhandeln&ldquo;)
-              </strong>{' '}
-              additionally requires fair negotiation conditions — pressure tactics by the employer
-              can invalidate the agreement.
+                  BAG 24 Feb 2022 – 6 AZR 333/21
+                </a>
+              </strong>
+              : pressure tactics by the employer can invalidate the agreement.
             </p>
             <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
               <strong>Written and reviewed by</strong> Fatih Bektas, German employment-law specialist
@@ -157,7 +161,7 @@ export default function TerminationAgreementEn() {
                 </h3>
                 <ul className="list-disc pl-5 space-y-2 text-[0.95rem] text-ink-light leading-relaxed m-0">
                   <li>No severance offered, or a token figure</li>
-                  <li>You are under pressure (“sign within an hour”) — BAG 6 AZR 333/21 issue</li>
+                  <li>You are under pressure (“sign within an hour”) — BAG 6 AZR 75/18 / 6 AZR 333/21 issue</li>
                   <li>You hold strong dismissal protection (pregnancy, severe disability, works council)</li>
                   <li>The reference clause is missing or weak</li>
                   <li>No express clause protecting your unemployment benefit</li>

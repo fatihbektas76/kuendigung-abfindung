@@ -13,7 +13,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Dismissed in Germany? Severance & Unfair Dismissal — Employment Lawyer (${new Date().getFullYear()})`,
   description:
-    'German employment-law specialist for English speakers: check your dismissal, maximise severance, negotiate termination agreements. Free initial review.',
+    'German employment-law specialist for English speakers: check your dismissal, maximise severance, negotiate termination agreements. Free first check.',
   alternates: {
     canonical: EN_URL,
     languages: {
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Dismissed in Germany? Severance & Unfair Dismissal — Employment Lawyer',
     description:
-      'German employment-law specialist for English speakers. Free case review, maximise severance, navigate termination agreements.',
+      'German employment-law specialist for English speakers. Free first check, maximise severance, navigate termination agreements.',
     url: EN_URL,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dismissed in Germany? Severance & Unfair Dismissal',
     description:
-      'German employment-law specialist for English speakers. Free initial review.',
+      'German employment-law specialist for English speakers. Free first check.',
   },
 };
 
@@ -94,21 +94,24 @@ export default function HomeEn() {
                 valid — even if it was unlawful. There is no general statutory right to
                 severance pay (
                 <a className="text-gold-dark underline" href="https://www.gesetze-im-internet.de/kschg/__1a.html" target="_blank" rel="noopener noreferrer">§&nbsp;1a&nbsp;KSchG</a>
-                ); in practice, severance is negotiated in more than 80% of dismissal-protection
-                proceedings as part of a settlement. The rule-of-thumb formula is{' '}
+                ); in practice, around 80 % of proceedings before the German labour courts end
+                without a contested judgment (Statistisches Bundesamt, Fachserie 10 Reihe 2.8)
+                — often with a settlement and severance. Outcome and amount depend on the
+                individual case. The rule-of-thumb figure is{' '}
                 <strong>0.5 gross monthly salaries per year of service</strong>; with strong
                 negotiating leverage, materially more is achievable. Notice periods are set in{' '}
                 <a className="text-gold-dark underline" href="https://www.gesetze-im-internet.de/bgb/__622.html" target="_blank" rel="noopener noreferrer">§&nbsp;622&nbsp;BGB</a>
                 ; the social justification for every dismissal in{' '}
                 <a className="text-gold-dark underline" href="https://www.gesetze-im-internet.de/kschg/__1.html" target="_blank" rel="noopener noreferrer">§&nbsp;1&nbsp;KSchG</a>
-                . For tax, severance benefits from the “one-fifth rule” (
+                . For tax, the “one-fifth rule” (
                 <a className="text-gold-dark underline" href="https://www.gesetze-im-internet.de/estg/__34.html" target="_blank" rel="noopener noreferrer">§&nbsp;34&nbsp;EStG</a>
-                ).
+                ) can reduce progression in individual cases; since 1 Jan 2025 it must be claimed
+                in the annual tax return.
               </p>
               <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
                 <strong>Written and reviewed by</strong> Fatih Bektas, German employment-law
-                specialist (APOS Legal Heidelberg). 2,000+ successful proceedings at German
-                labour courts.
+                specialist (APOS Legal Heidelberg). 20+ years of employment-law experience,
+                Fachanwalt title since 2011.
               </p>
             </div>
           </div>
@@ -129,8 +132,8 @@ export default function HomeEn() {
                 {[
                   '3-week deadline: after receiving the written dismissal you have only 3 weeks to file (§ 4 KSchG).',
                   'Severance formula: 0.5 gross monthly salaries × years of service — meaningfully more is often achievable.',
-                  'Free case review: a German employment-law specialist reviews your case at no cost.',
-                  '2,000+ successful proceedings at German labour courts since 2005.',
+                  'Free first check: a specialist employment lawyer tells you whether action is worthwhile and what it would cost – no obligation.',
+                  '20+ years of employment-law experience, Fachanwalt title since 2011.',
                 ].map((item) => (
                   <li
                     key={item}
@@ -157,7 +160,7 @@ export default function HomeEn() {
               How we help English-speaking employees in Germany
             </h2>
             <p className="text-[1.05rem] text-ink-muted max-w-[640px] leading-relaxed mb-10">
-              Every assignment starts with a free initial assessment. Below are the most
+              Every assignment starts with a free first check. Below are the most
               common situations we handle.
             </p>
             <div className="grid grid-cols-3 gap-6 max-md:grid-cols-1">
@@ -180,7 +183,7 @@ export default function HomeEn() {
                 {
                   href: '/en/summary-dismissal',
                   title: 'Summary dismissal',
-                  body: 'Most summary (without-notice) dismissals fail in court — we challenge them and protect your reputation.',
+                  body: 'The § 626 BGB test is strict — we challenge summary dismissals, enforce the written-reasons duty (§ 626 (2) sentence 3 BGB) and protect your reputation.',
                 },
                 {
                   href: '/en/written-warning',
@@ -220,29 +223,32 @@ export default function HomeEn() {
               Process
             </div>
             <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-[1.25] mb-3.5 max-md:text-2xl">
-              From enquiry to settlement
+              From enquiry to outcome — in four steps
             </h2>
+            <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed">
+              Costs clear before you instruct us.
+            </p>
             <ol className="grid grid-cols-4 gap-6 mt-10 list-none p-0 max-md:grid-cols-1">
               {[
                 {
                   n: '01',
-                  t: 'Free review',
-                  d: 'Send us the dismissal letter and a short description. We respond within 48 hours.',
+                  t: 'Free first check',
+                  d: 'Tell us what happened. Usually within 48 hours we tell you whether action is worthwhile, which deadlines apply and what it would cost.',
                 },
                 {
                   n: '02',
-                  t: 'Mandate',
-                  d: 'If we proceed, you sign a mandate. Often covered by legal-expenses insurance.',
+                  t: 'Offer & mandate',
+                  d: 'You receive a cost quote, or we clarify cover with your legal-expenses insurance. Costs arise only once you instruct us.',
                 },
                 {
                   n: '03',
-                  t: 'File the claim',
-                  d: 'We file the Kündigungsschutzklage at the competent Arbeitsgericht within 3 weeks.',
+                  t: 'Review, negotiation or claim',
+                  d: 'We review your documents, negotiate with your employer or file the unfair-dismissal claim within the deadline.',
                 },
                 {
                   n: '04',
-                  t: 'Settlement',
-                  d: 'Most cases settle at the first hearing — typically with a negotiated severance.',
+                  t: 'Outcome',
+                  d: 'Severance, an improved termination agreement or continued employment. Most cases end in a settlement.',
                 },
               ].map((step) => (
                 <li key={step.n} className="p-7 bg-white border border-border-light rounded">

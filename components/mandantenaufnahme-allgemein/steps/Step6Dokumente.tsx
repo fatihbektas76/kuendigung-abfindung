@@ -62,7 +62,7 @@ export default function Step6Dokumente({
           />
           <span className="text-[0.85rem] text-ink leading-relaxed">
             {t.step6.datenschutzPre}{' '}
-            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-dark underline">
+            <a href="/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gold-dark underline">
               {t.step6.datenschutzLink}
             </a>{' '}
             {t.step6.datenschutzPost}

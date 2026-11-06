@@ -20,7 +20,7 @@ export default function SmallBusinessThresholdEn() {
       <TopicHero
         eyebrow="Small-business threshold"
         title="Does the Dismissal Protection Act apply to my employer?"
-        lede="§ 23 (1) KSchG applies only above 10 weighted employees. Part-time staff count proportionally (0.5 / 0.75 / 1.0). Apprentices and the employer themselves do not count."
+        lede="§ 23 (1) KSchG applies only above 10 weighted employees. Part-time staff count proportionally under § 23 (1) sentence 4 KSchG (0.5 / 0.75 / 1.0). Apprentices and the employer themselves do not count. For employment relationships started before 1 January 2004 a lowered threshold of more than 5 employees applies."
         breadcrumbs={[
           { href: '/en/', label: 'Home' },
           { href: '/en/tools', label: 'Tools' },

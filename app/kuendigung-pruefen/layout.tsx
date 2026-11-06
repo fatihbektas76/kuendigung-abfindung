@@ -4,7 +4,7 @@ import StandAnzeige from '@/components/StandAnzeige';
 export const revalidate = 86400;
 
 export const metadata = buildMetadata({
-  title: `Kündigung kostenlos prüfen lassen — in 2 Minuten (${new Date().getFullYear()})`,
+  title: `Kostenlose Ersteinschätzung — in 2 Minuten (${new Date().getFullYear()})`,
   description:
     'Kündigung erhalten? Prüfen Sie kostenlos Ihre Abfindungschancen in 2 Minuten. Ersteinschätzung vom Fachanwalt.',
   path: '/kuendigung-pruefen',

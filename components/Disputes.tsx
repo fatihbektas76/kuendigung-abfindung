@@ -45,7 +45,7 @@ const disputes = [
   {
     title: 'Fristlose Kündigung',
     badge: '§626 BGB',
-    desc: 'Prüfung der Rechtmäßigkeit. 2-Wochen-Frist des Arbeitgebers. Die meisten fristlosen Kündigungen scheitern vor Gericht.',
+    desc: 'Prüfung der Rechtmäßigkeit. 2-Wochen-Frist des Arbeitgebers (§ 626 Abs. 2 S. 1 BGB). Die Anforderungen sind sehr hoch — der Erfolg vor Gericht hängt stark vom Einzelfall ab.',
     href: '/kuendigung',
     icon: (
       <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">

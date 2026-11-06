@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: 'Muss ich auf die Abfindung Steuern zahlen?',
-    a: 'Ja, Abfindungen sind steuerpflichtig. Allerdings gibt es die sogenannte Fünftelregelung (§34 EStG), die die Steuerlast deutlich senken kann. Sozialversicherungsbeiträge fallen auf Abfindungen in der Regel nicht an, sofern sie im Zusammenhang mit der Beendigung des Arbeitsverhältnisses stehen.',
+    a: 'Ja, Abfindungen sind steuerpflichtig. Die Fünftelregelung (§ 34 EStG) kann die Steuerlast im Einzelfall erheblich senken; die konkrete Ersparnis hängt vom individuellen Steuersatz und übrigen Einkommen ab. Seit 01.01.2025 wendet der Arbeitgeber die Fünftelregelung nicht mehr im Lohnsteuerabzug an — sie muss in der Einkommensteuererklärung geltend gemacht werden. Sozialversicherungsbeiträge fallen auf Abfindungen in der Regel nicht an, sofern sie im Zusammenhang mit der Beendigung des Arbeitsverhältnisses stehen.',
   },
   {
     q: 'Kann ich eine höhere Abfindung verhandeln?',
@@ -158,10 +158,10 @@ export default function AbfindungPage() {
         <div className="max-w-content mx-auto">
           <div className="max-w-[740px]">
             <TldrBox items={[
-              'Kein automatischer gesetzlicher Abfindungsanspruch — aber in über 80 % der Kündigungsschutzverfahren wird eine Abfindung ausgehandelt.',
+              'Kein automatischer gesetzlicher Abfindungsanspruch — rund 80 % der Verfahren vor den Arbeitsgerichten enden jedoch ohne streitiges Urteil, häufig per Vergleich mit Abfindung (Destatis FS 10 R 2.8).',
               'Faustformel: 0,5 Bruttomonatsgehälter × Jahre der Betriebszugehörigkeit. Je nach Verhandlungsposition kann der Faktor auf 1,0 oder höher steigen.',
               'Die 3-Wochen-Klagefrist (§4 KSchG) ist entscheidend: Nur wer rechtzeitig Kündigungsschutzklage erhebt, kann eine Abfindung verhandeln.',
-              'Abfindungen sind steuerpflichtig, aber die Fünftelregelung (§34 EStG) senkt die Steuerlast. Sozialversicherungsbeiträge fallen nicht an.',
+              'Abfindungen sind steuerpflichtig; die Fünftelregelung (§ 34 EStG) kann die Steuerlast im Einzelfall mildern (seit 01.01.2025 nur noch über die Einkommensteuererklärung). Sozialversicherungsbeiträge fallen in der Regel nicht an.',
             ]} />
           </div>
         </div>
@@ -273,7 +273,7 @@ export default function AbfindungPage() {
             href="/#kontakt"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Jetzt kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>
@@ -410,7 +410,7 @@ export default function AbfindungPage() {
         <div className="max-w-content mx-auto text-center">
           <p className="text-[0.92rem] text-ink-muted">
             Wir vertreten Arbeitnehmer bundesweit &mdash; vollständig digital.{' '}
-            <a href="/arbeitsrecht-anwalt" className="text-gold-dark font-semibold no-underline hover:underline">
+            <a href="/arbeitsrecht-anwalt/" className="text-gold-dark font-semibold no-underline hover:underline">
               Fachanwalt für Arbeitsrecht in Ihrer Stadt finden &rarr;
             </a>
           </p>

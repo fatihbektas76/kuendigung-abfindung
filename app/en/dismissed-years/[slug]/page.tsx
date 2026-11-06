@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import TopicHero from '@/components/en/TopicHero';
 import ContactForm from '@/components/en/ContactForm';
 import CTA from '@/components/en/CTA';
-import { EN_TENURE_ENTRIES, getEnTenure } from '@/lib/en-tenure';
+import { EN_TENURE_ENTRIES, getEnTenure, tenureUrlSegment } from '@/lib/en-tenure';
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 type Props = { params: { slug: string } };
@@ -15,8 +15,8 @@ export function generateStaticParams() {
   return EN_TENURE_ENTRIES.map((e) => ({ slug: e.slug }));
 }
 
-const publicUrl = (slug: string) =>
-  `${SEO_CONFIG.baseUrl}/en/dismissed-after-${slug}-years-of-employment/`;
+const publicUrl = (year: number) =>
+  `${SEO_CONFIG.baseUrl}/en/dismissed-after-${tenureUrlSegment(year)}/`;
 
 const germanCounterpart = (year: number) => {
   const germanSlug = year === 1 ? '1-jahr' : `${year}-jahren`;
@@ -32,14 +32,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: publicUrl(entry.slug),
+      canonical: publicUrl(entry.year),
       languages: {
         'de-DE': germanCounterpart(entry.year),
-        'en': publicUrl(entry.slug),
+        'en': publicUrl(entry.year),
         'x-default': germanCounterpart(entry.year),
       },
     },
-    openGraph: { title, description, url: publicUrl(entry.slug) },
+    openGraph: { title, description, url: publicUrl(entry.year) },
   };
 }
 
@@ -49,7 +49,7 @@ export default function DismissedYearsEn({ params }: Props) {
 
   const prev = EN_TENURE_ENTRIES.find((e) => e.year === entry.year - 1);
   const next = EN_TENURE_ENTRIES.find((e) => e.year === entry.year + 1);
-  const url = publicUrl(entry.slug);
+  const url = publicUrl(entry.year);
 
   return (
     <>
@@ -76,10 +76,10 @@ export default function DismissedYearsEn({ params }: Props) {
           breadcrumbs={[
             { href: '/en/', label: 'Home' },
             { href: '/en/dismissal', label: 'Dismissal' },
-            { href: `/en/dismissed-after-${entry.slug}-years-of-employment`, label: entry.label },
+            { href: `/en/dismissed-after-${tenureUrlSegment(entry.year)}`, label: entry.label },
           ]}
           primaryCta={{ href: '/en/check-dismissal', label: 'Check my dismissal' }}
-          secondaryCta={{ href: '#contact', label: 'Free case review' }}
+          secondaryCta={{ href: '#contact', label: 'Free first check' }}
         />
 
         <section className="py-6 px-8 bg-[#1f2937] text-white">
@@ -106,9 +106,12 @@ export default function DismissedYearsEn({ params }: Props) {
           <div className="max-w-[820px] mx-auto">
             <p className="text-[1.05rem] text-ink-light leading-relaxed mb-4">
               After {entry.label} of service, you fall fully under the German Dismissal
-              Protection Act (KSchG) — assuming your employer has more than 10 staff. Every
-              ordinary dismissal must be socially justified on conduct, person or operational
-              grounds (§&nbsp;1 KSchG). Your employer must observe a notice period of{' '}
+              Protection Act (KSchG) — assuming your employer has more than 10 weighted
+              employees (§ 23 (1) KSchG; part-time proportional per sentence 4; for
+              employment relationships started before 1 January 2004: more than 5
+              employees). Every ordinary dismissal must be socially justified on conduct,
+              person or operational grounds (§&nbsp;1 KSchG). Your employer must observe a
+              notice period of{' '}
               <strong>{entry.notice}</strong>. Settlement leverage is{' '}
               {entry.year >= 10
                 ? 'strong — long tenure consistently produces severance factors above the half-month baseline.'
@@ -131,7 +134,7 @@ export default function DismissedYearsEn({ params }: Props) {
             <ol className="list-decimal pl-6 space-y-3 text-[1rem] text-ink-light leading-relaxed">
               <li>Note the exact date of receipt — the 3-week clock starts that day.</li>
               <li>Do not sign anything. No exit document, no severance waiver.</li>
-              <li>Send us the letter for a free review within 48 hours.</li>
+              <li>Send us the letter for a free first check within 48 hours.</li>
               <li>Register as job-seeker (arbeitsuchend) within 3 days to protect benefit entitlement.</li>
               <li>Notify your legal-expenses insurer, if any.</li>
             </ol>
@@ -144,7 +147,7 @@ export default function DismissedYearsEn({ params }: Props) {
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {prev && (
                 <Link
-                  href={`/en/dismissed-after-${prev.slug}-years-of-employment`}
+                  href={`/en/dismissed-after-${tenureUrlSegment(prev.year)}`}
                   className="block p-5 border border-border-light rounded bg-cream text-[0.95rem] text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
                 >
                   <span className="text-[0.78rem] uppercase tracking-wider text-ink-muted">
@@ -154,7 +157,7 @@ export default function DismissedYearsEn({ params }: Props) {
                 </Link>
               )}
               <Link
-                href="/en/dismissal"
+                href="/en/dismissal/"
                 className="block p-5 border border-border-light rounded bg-cream text-[0.95rem] text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
               >
                 <span className="text-[0.78rem] uppercase tracking-wider text-ink-muted">
@@ -164,7 +167,7 @@ export default function DismissedYearsEn({ params }: Props) {
               </Link>
               {next && (
                 <Link
-                  href={`/en/dismissed-after-${next.slug}-years-of-employment`}
+                  href={`/en/dismissed-after-${tenureUrlSegment(next.year)}`}
                   className="block p-5 border border-border-light rounded bg-cream text-[0.95rem] text-ink no-underline hover:border-gold hover:text-gold-dark transition-colors"
                 >
                   <span className="text-[0.78rem] uppercase tracking-wider text-ink-muted">

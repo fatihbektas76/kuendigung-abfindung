@@ -37,7 +37,7 @@ const monatsTipps = [
   },
   { // Oktober
     titel: 'Jahresendplanung: Abfindungen vor Dezember verhandeln',
-    text: 'Aufhebungsverträge zum Jahresende können steuerliche Vorteile bieten. Die Fünftelregelung kann Ihre Steuerbelastung auf die Abfindung erheblich senken.',
+    text: 'Aufhebungsverträge zum Jahresende können steuerliche Vorteile bieten. Die Fünftelregelung (§ 34 EStG) kann die Steuerbelastung im Einzelfall mildern — die konkrete Ersparnis hängt vom individuellen Steuersatz ab und muss seit 01.01.2025 selbst in der Einkommensteuererklärung beantragt werden.',
   },
   { // November
     titel: 'Weihnachtsgeld & Kündigung: Was steht Ihnen zu?',

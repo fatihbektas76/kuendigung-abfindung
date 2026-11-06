@@ -433,7 +433,7 @@ export const staedte: Stadt[] = [
     slug: "heidelberg",
     name: "Heidelberg",
     bundesland: "Baden-Württemberg",
-    arbeitsgericht: "Arbeitsgericht Mannheim (Nebenstelle Heidelberg)",
+    arbeitsgericht: "Arbeitsgericht Mannheim — Kammern Heidelberg",
     arbeitsgerichtAdresse: "Vangerowstraße 20, 69115 Heidelberg",
     lagName: "Landesarbeitsgericht Baden-Württemberg",
     region: "Süd",

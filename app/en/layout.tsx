@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: '%s | gekuendigt-abfindung.de',
   },
   description:
-    'German employment-law specialist for English speakers: check your dismissal, maximise severance, negotiate termination agreements. Free initial review. 20+ years of experience, 2,000+ cases.',
+    'German employment-law specialist: check your dismissal, maximise severance, negotiate termination agreements. Free first check.',
   keywords: [
     'dismissal Germany',
     'severance pay Germany',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Dismissed in Germany? Severance & Unfair Dismissal — Employment Lawyer',
     description:
-      'German employment-law specialist for English speakers. Free case review, maximise severance, navigate termination agreements.',
+      'German employment-law specialist for English speakers. Free first check, maximise severance, navigate termination agreements.',
     url: `${EN_BASE}/`,
     siteName: 'gekuendigt-abfindung.de',
     locale: 'en_GB',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dismissed in Germany? Severance & Unfair Dismissal',
     description:
-      'German employment-law specialist for English speakers. Free initial review.',
+      'German employment-law specialist for English speakers. Free first check.',
     images: ['https://www.gekuendigt-abfindung.de/opengraph-image'],
   },
 };

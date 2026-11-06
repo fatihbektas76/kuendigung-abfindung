@@ -21,8 +21,8 @@ export default function TeamTeaser() {
           Erfahrene Anwälte an Ihrer Seite
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed">
-          Unser Team vertritt Arbeitnehmer bei Kündigung,
-          Abfindung und Aufhebungsvertrag — mit über 2.000 erfolgreichen Verfahren.
+          Unser Arbeitsrechtsteam unter Leitung von Fachanwalt Fatih Bektas vertritt Arbeitnehmer bei Kündigung,
+          Abfindung und Aufhebungsvertrag — mit über 20 Jahren Arbeitsrecht-Erfahrung.
         </p>
         <div className="grid grid-cols-3 gap-6 mt-9 max-md:grid-cols-1">
           {teamPreview.map((member, i) => (
@@ -53,7 +53,7 @@ export default function TeamTeaser() {
         </div>
         <div className="mt-10 text-center">
           <Link
-            href="/team"
+            href="/team/"
             className="inline-flex items-center gap-2 text-[0.95rem] font-semibold text-[#8B7332] no-underline hover:text-gold-dark transition-colors"
           >
             Das gesamte Team kennenlernen &rarr;

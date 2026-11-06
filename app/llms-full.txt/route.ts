@@ -15,7 +15,7 @@ export async function GET() {
 
   lines.push('# gekuendigt-abfindung.de — Vollständige Seitenübersicht');
   lines.push('');
-  lines.push('> Fachanwalt für Arbeitsrecht Fatih Bektas (APOS Legal Heidelberg) berät Arbeitnehmer bundesweit zu Kündigung, Abfindung, Aufhebungsvertrag und Arbeitsrecht — auf Deutsch und auf Englisch. Über 2.000 erfolgreiche Verfahren. Mandanten reichen vom Angestellten bis zum Vorstandsmitglied.');
+  lines.push('> Fachanwalt für Arbeitsrecht Fatih Bektas (APOS Legal Heidelberg) berät Arbeitnehmer bundesweit zu Kündigung, Abfindung, Aufhebungsvertrag und Arbeitsrecht — auf Deutsch und auf Englisch. Über 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011. Mandanten reichen vom Angestellten bis zum Vorstandsmitglied.');
   lines.push('');
 
   // Reichweite / Zielgruppen für LLM-Snippets
@@ -250,7 +250,7 @@ export async function GET() {
   lines.push('');
   lines.push(`- [About Fatih Bektas](${BASE}/en/author/fatih-bektas/): Specialist credentials and background.`);
   lines.push(`- [Team](${BASE}/en/team/): APOS Legal Heidelberg.`);
-  lines.push(`- [Client intake — free case review](${BASE}/en/client-intake/): Send your case (response within 48 hours).`);
+  lines.push(`- [Client intake — free first check](${BASE}/en/client-intake/): Send your case (response within 48 hours).`);
   lines.push(`- [Legal notice](${BASE}/en/legal-notice/) (English summary; legally binding: ${BASE}/legal-notice/)`);
   lines.push(`- [Privacy policy](${BASE}/en/privacy-policy/) (English summary; legally binding: ${BASE}/privacy-policy/)`);
   lines.push('');

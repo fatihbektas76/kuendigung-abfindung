@@ -68,6 +68,9 @@ const nextConfig = {
       { source: '/gekuendigt-jahre/:slug/', destination: '/gekuendigt-nach-:slug-betriebszugehoerigkeit/', permanent: true },
       { source: '/abmahnung-seiten/:slug/', destination: '/kuendigung-nach-:slug/', permanent: true },
       { source: '/fristlose-kuendigung-jahre/:slug/', destination: '/fristlose-kuendigung-nach-:slug-betriebszugehoerigkeit/', permanent: true },
+      // Slug-Korrektur Waghäusel (vorher: waghaeuseldorf) — 301 für Indexierungs-Erhalt
+      { source: '/arbeitsrecht-anwalt/waghaeuseldorf/', destination: '/arbeitsrecht-anwalt/waghaeusel/', permanent: true },
+      { source: '/arbeitsrecht-anwalt/waghaeuseldorf', destination: '/arbeitsrecht-anwalt/waghaeusel/', permanent: true },
       // Old word-based slugs → new number-based slugs (120 redirects)
       ...slugRedirects,
     ];
@@ -90,14 +93,28 @@ const nextConfig = {
         source: '/fristlose-kuendigung-nach-:slug-betriebszugehoerigkeit/',
         destination: '/fristlose-kuendigung-jahre/:slug/',
       },
-      // English programmatic-page rewrites: public URLs map to internal dynamic routes
+      // English programmatic-page rewrites: public URLs map to internal dynamic routes.
+      // Year 1 uses singular grammar ("1-year-of-employment"); years 2–40 use plural
+      // ("N-years-of-employment"). Both forms route to the same /en/*-years/:slug/.
+      {
+        source: '/en/severance-after-1-year-of-employment/',
+        destination: '/en/severance-years/1/',
+      },
       {
         source: '/en/severance-after-:slug-years-of-employment/',
         destination: '/en/severance-years/:slug/',
       },
       {
+        source: '/en/dismissed-after-1-year-of-employment/',
+        destination: '/en/dismissed-years/1/',
+      },
+      {
         source: '/en/dismissed-after-:slug-years-of-employment/',
         destination: '/en/dismissed-years/:slug/',
+      },
+      {
+        source: '/en/summary-dismissal-after-1-year-of-employment/',
+        destination: '/en/summary-dismissal-years/1/',
       },
       {
         source: '/en/summary-dismissal-after-:slug-years-of-employment/',

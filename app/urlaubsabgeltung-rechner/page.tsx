@@ -185,7 +185,7 @@ export default function UrlaubsabgeltungRechnerPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/tools" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
+            <Link href="/tools/" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
             <span className="mx-2">/</span>
             <span>Urlaubsabgeltung berechnen</span>
           </nav>
@@ -344,7 +344,7 @@ export default function UrlaubsabgeltungRechnerPage() {
                   />
                   <p className="text-[0.78rem] text-ink-muted mt-1">
                     Halbe Tage (z. B. 12,5) sind erlaubt. Wissen Sie nicht, wieviel Ihnen zusteht?{' '}
-                    <Link href="/anteiliger-urlaubsanspruch-rechner" className="text-gold no-underline hover:underline">
+                    <Link href="/anteiliger-urlaubsanspruch-rechner/" className="text-gold no-underline hover:underline">
                       Anteiligen Anspruch nach § 5 BUrlG berechnen &rarr;
                     </Link>
                   </p>
@@ -360,7 +360,7 @@ export default function UrlaubsabgeltungRechnerPage() {
 
                 <p className="text-[0.75rem] text-ink-muted mt-4 leading-relaxed">
                   <strong>Hinweis:</strong> Dieses Tool dient ausschließlich der unverbindlichen Erstorientierung und ersetzt keine anwaltliche Beratung.
-                  Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                  Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                   <Link href="/#kontakt" className="text-gold no-underline hover:underline">Fachanwalt für Arbeitsrecht</Link>.
                 </p>
 
@@ -527,7 +527,7 @@ export default function UrlaubsabgeltungRechnerPage() {
                   {/* Disclaimer */}
                   <div className="py-3 px-4 bg-amber-50 rounded-sm border border-amber-300 mb-4">
                     <p className="text-[0.82rem] text-amber-900 leading-relaxed m-0">
-                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Urlaubsabgeltung hängt von Ihrem Arbeitsvertrag und den konkreten Umständen ab. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                      <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ersetzt keine anwaltliche Beratung. Die tatsächliche Urlaubsabgeltung hängt von Ihrem Arbeitsvertrag und den konkreten Umständen ab. Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                       <Link href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</Link>.
                     </p>
                   </div>
@@ -563,8 +563,8 @@ export default function UrlaubsabgeltungRechnerPage() {
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed">
               Kann dieser Resturlaub aufgrund einer{' '}
-              <Link href="/kuendigung" className="text-gold no-underline hover:underline">Kündigung</Link>,
-              eines <Link href="/aufhebungsvertrag" className="text-gold no-underline hover:underline">Aufhebungsvertrags</Link>{' '}
+              <Link href="/kuendigung/" className="text-gold no-underline hover:underline">Kündigung</Link>,
+              eines <Link href="/aufhebungsvertrag/" className="text-gold no-underline hover:underline">Aufhebungsvertrags</Link>{' '}
               oder einer sonstigen Beendigung des Arbeitsverhältnisses nicht mehr genommen werden, sieht
               <strong> &sect;7 Abs. 4 BUrlG</strong> eine finanzielle Abgeltung vor &mdash; den sogenannten Urlaubsabgeltungsanspruch.
               Dieser Anspruch entsteht kraft Gesetzes und kann nicht abbedungen werden.
@@ -697,11 +697,11 @@ export default function UrlaubsabgeltungRechnerPage() {
               hingewiesen hat, dass nicht genommener Urlaub verfällt. Fehlt dieser Hinweis, können sich Urlaubsansprüche
               über mehrere Jahre ansammeln &mdash; und müssen bei Beendigung vollständig abgegolten werden.
               Auch{' '}
-              <Link href="/ueberstundenrechner" className="text-gold no-underline hover:underline">Überstunden</Link>{' '}
+              <Link href="/ueberstundenrechner/" className="text-gold no-underline hover:underline">Überstunden</Link>{' '}
               sollten Sie in diesem Zusammenhang prüfen. Berechnen Sie außerdem Ihre mögliche{' '}
-              <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindung</Link>{' '}
+              <Link href="/abfindungsrechner/" className="text-gold no-underline hover:underline">Abfindung</Link>{' '}
               und prüfen Sie Ihre{' '}
-              <Link href="/kuendigungsfrist-rechner" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>.
+              <Link href="/kuendigungsfrist-rechner/" className="text-gold no-underline hover:underline">Kündigungsfrist</Link>.
             </p>
           </div>
         </div>
@@ -726,7 +726,7 @@ export default function UrlaubsabgeltungRechnerPage() {
           <div className="flex justify-center gap-5 mt-5 text-[0.78rem] text-white/50">
             <span>&#10003; Antwort in 24h</span>
             <span>&#10003; Kein Kostenrisiko</span>
-            <span>&#10003; 69 Fünf-Sterne-Bewertungen auf anwalt.de</span>
+            <span>&#10003; {SEO_CONFIG.rating.reviewCount} Fünf-Sterne-Bewertungen auf anwalt.de</span>
           </div>
         </div>
       </section>

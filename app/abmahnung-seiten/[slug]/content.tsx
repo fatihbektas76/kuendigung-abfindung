@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { AbmahnungEntry } from '@/lib/abmahnung-content';
 import { abmahnungEntries } from '@/lib/abmahnung-content';
+import { SEO_CONFIG } from '@/lib/seo-config';
 import DejureText from '@/components/DejureText';
 import StandAnzeige from '@/components/StandAnzeige';
 import AuthorBox from '@/components/AuthorBox';
@@ -32,7 +33,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/abmahnung" className="text-gold no-underline hover:underline">Abmahnung</Link>
+            <Link href="/abmahnung/" className="text-gold no-underline hover:underline">Abmahnung</Link>
             <span className="mx-2">/</span>
             <span>Nach {label}</span>
           </nav>
@@ -235,10 +236,10 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
                 href="/#kontakt"
                 className="block w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
               >
-                Kündigung jetzt kostenlos prüfen &rarr;
+                Kostenlose Ersteinschätzung &rarr;
               </a>
               <p className="text-[0.78rem] text-ink-muted text-center mt-3">
-                ★★★★★ 69 Bewertungen &middot; Über 2.000 erfolgreiche Verfahren &middot; Bundesweit
+                ★★★★★ {SEO_CONFIG.rating.reviewCount} Bewertungen &middot; Über 20 Jahre Arbeitsrecht-Erfahrung &middot; Bundesweit
               </p>
             </div>
           </div>
@@ -307,7 +308,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
               href="/#kontakt"
               className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Kündigung kostenlos prüfen lassen &rarr;
+              Kostenlose Ersteinschätzung &rarr;
             </a>
           </div>
         </div>
@@ -338,19 +339,19 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
             Warum Sie unsere Kanzlei beauftragen sollten!
           </h2>
           <p className="text-[0.95rem] text-ink-muted max-w-[600px] leading-relaxed mb-8">
-            Wir sind auf Kündigungsschutz und Abfindung spezialisiert &mdash; mit über 20 Jahren Erfahrung
-            und mehr als 2.000 erfolgreichen Verfahren.
+            Wir sind auf Kündigungsschutz und Abfindung spezialisiert &mdash; mit über 20 Jahren Arbeitsrecht-Erfahrung
+            und Fachanwaltstitel seit 2011.
           </p>
           <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1">
             {[
               {
-                title: 'Nachweisliche Erfolgsbilanz',
-                desc: 'Über 2.000 erfolgreiche Verfahren, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.',
+                title: 'Erfahrung im Arbeitsrecht',
+                desc: 'Über 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011, 5,0 Sterne auf anwalt.de. Unsere Erfahrung ist Ihr Vorteil bei der Abfindungsverhandlung.',
                 icon: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>,
               },
               {
                 title: 'Einfach & Transparent',
-                desc: 'Klare Kommunikation, keine versteckten Kosten. Sie wissen jederzeit, was passiert und was es kostet. Ersteinschätzung immer kostenlos.',
+                desc: 'Kostenlose Ersteinschätzung — danach erhalten Sie ein Kostenangebot oder wir klären die Kostenübernahme mit Ihrer Rechtsschutzversicherung. Kosten entstehen erst mit Ihrem Auftrag.',
                 icon: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
               },
               {
@@ -376,10 +377,10 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-4 gap-0 border border-gold rounded-sm overflow-hidden bg-cream max-md:grid-cols-2">
             {[
-              { value: '2.000+', label: 'Beratungen' },
-              { value: '2.000+', label: 'Verfahren' },
+              { value: 'Fachanwalt', label: 'f\u00fcr Arbeitsrecht' },
+              { value: 'seit 2011', label: 'Fachanwaltstitel' },
               { value: '20+', label: 'Jahre Erfahrung' },
-              { value: '5,0 \u2605', label: 'Bewertung' },
+              { value: `${SEO_CONFIG.rating.ratingValue} \u2605`, label: 'Bewertung' },
             ].map((stat, i) => (
               <div
                 key={stat.label}
@@ -442,10 +443,10 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
                 {e.count} {e.count === 1 ? 'Abmahnung' : 'Abmahnungen'}
               </Link>
             ))}
-            <Link href="/abmahnung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+            <Link href="/abmahnung/" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
               Abmahnung Übersicht
             </Link>
-            <Link href="/kuendigung" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
+            <Link href="/kuendigung/" className="py-2.5 px-5 rounded-full border border-border text-[0.85rem] font-semibold text-ink no-underline hover:border-gold hover:text-gold-dark transition-all">
               Kündigung Übersicht
             </Link>
           </div>
@@ -465,19 +466,19 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
       <section className="py-[80px] px-8 bg-[#1C1408] text-white">
         <div className="max-w-content mx-auto text-center">
           <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold mb-4">
-            Jetzt kostenlose Erstberatung sichern
+            Kostenlose Ersteinschätzung sichern
           </h2>
           <p className="text-white/60 text-[0.92rem] mb-6">
-            ★★★★★ &middot; 5,0 &middot; 69 Bewertungen auf anwalt.de
+            ★★★★★ &middot; {SEO_CONFIG.rating.ratingValue} &middot; {SEO_CONFIG.rating.reviewCount} Bewertungen auf anwalt.de
           </p>
           <div className="flex justify-center gap-6 mb-8 text-[0.88rem] text-white/80 flex-wrap">
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-              Kostenlose Erstberatung
+              Kostenlose Ersteinschätzung
             </span>
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-              Über 2.000 erfolgreiche Verfahren
+              Über 20 Jahre Arbeitsrecht-Erfahrung
             </span>
             <span className="flex items-center gap-2">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
@@ -488,7 +489,7 @@ export default function AbmahnungContent({ entry, prev, next, faqs, uniqueIntro,
             href="/#kontakt"
             className="inline-block py-4 px-10 bg-gold text-white border-none rounded-sm font-sans text-[1.05rem] font-semibold no-underline transition-all hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.35)]"
           >
-            Kündigung kostenlos prüfen lassen &rarr;
+            Kostenlose Ersteinschätzung &rarr;
           </a>
         </div>
       </section>

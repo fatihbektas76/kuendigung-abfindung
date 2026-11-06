@@ -34,7 +34,7 @@ const QS: readonly Q[] = [
     id: 'time',
     question: 'Did you get enough time to review the agreement before signing?',
     help:
-      'BAG 6 AZR 333/21 sets a "fair negotiation" standard. Pressure tactics ("sign within an hour") may invalidate the agreement.',
+      'BAG 7 Feb 2019 – 6 AZR 75/18 (confirmed by BAG 24 Feb 2022 – 6 AZR 333/21) sets a "fair negotiation" standard. Pressure tactics ("sign within an hour") may invalidate the agreement.',
   },
   {
     id: 'release',
@@ -65,7 +65,7 @@ export default function CheckTerminationAgreementEn() {
     if (answers.severance === 'no') risks.push('No concrete severance amount');
     if (answers.sperrzeit === 'no') risks.push('Sperrzeit clause missing — 12-week benefit risk');
     if (answers.reference === 'no') risks.push('No "very good" reference clause');
-    if (answers.time === 'no') risks.push('Sign-now pressure — BAG 6 AZR 333/21 issue');
+    if (answers.time === 'no') risks.push('Sign-now pressure — BAG 6 AZR 75/18 / 6 AZR 333/21 issue');
     if (answers.release === 'yes')
       risks.push('General release present — make sure all outstanding claims are settled first');
 

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: '%s | gekuendigt-abfindung.de',
   },
   description:
-    'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Kostenlose Ersteinschätzung. 20+ Jahre Erfahrung, 2.000+ Verfahren.',
+    'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Kostenlose Ersteinschätzung. Über 20 Jahre Arbeitsrecht-Erfahrung, Fachanwaltstitel seit 2011.',
   keywords: [
     'Kündigung erhalten',
     'Abfindung nach Kündigung',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
     description:
-      'Kündigung erhalten? Fachanwalt für Arbeitsrecht prüft Ihren Fall kostenlos. Abfindung maximieren, Aufhebungsvertrag verhandeln. 20+ Jahre Erfahrung.',
+      'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Kostenlose Ersteinschätzung.',
     url: 'https://www.gekuendigt-abfindung.de/',
     siteName: 'gekuendigt-abfindung.de',
     locale: 'de_DE',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gekündigt? Abfindung & Kündigungsschutz – Fachanwalt für Arbeitsrecht',
     description:
-      'Kündigung prüfen, Abfindung maximieren. Fachanwalt für Arbeitsrecht. 20+ Jahre Erfahrung.',
+      'Fachanwalt für Arbeitsrecht: Kündigung prüfen, Abfindung maximieren, Aufhebungsvertrag verhandeln. Kostenlose Ersteinschätzung.',
     images: ['https://www.gekuendigt-abfindung.de/opengraph-image'],
   },
   icons: {
@@ -159,7 +159,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           pageTitle={SEO_CONFIG.siteName}
           pageDescription={
             isEnglish
-              ? 'Employment-law tools and a free initial review by a German employment-law specialist.'
+              ? 'Employment-law tools and a free first check by a German employment-law specialist.'
               : 'Arbeitsrecht-Tools und kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht'
           }
           pageType="WebPage"

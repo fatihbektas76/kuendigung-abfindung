@@ -77,15 +77,15 @@ export default function GuideEmploymentLawEn() {
           <div className="bg-cream border-l-4 border-gold rounded p-6">
             <p className="text-[0.95rem] text-ink-light leading-relaxed m-0">
               For a specific question, jump to the topic page — see{' '}
-              <Link href="/en/dismissal" className="text-gold-dark underline">
+              <Link href="/en/dismissal/" className="text-gold-dark underline">
                 dismissal
               </Link>
               ,{' '}
-              <Link href="/en/severance-pay" className="text-gold-dark underline">
+              <Link href="/en/severance-pay/" className="text-gold-dark underline">
                 severance pay
               </Link>{' '}
               or{' '}
-              <Link href="/en/glossary" className="text-gold-dark underline">
+              <Link href="/en/glossary/" className="text-gold-dark underline">
                 the glossary
               </Link>
               .

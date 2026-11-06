@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const stadt = staedte.find((s) => s.slug === params.city);
   if (!stadt) return {};
   const name = displayName(stadt);
-  const title = `English-Speaking German Employment Lawyer ${name} — Free Case Review`;
-  const description = `German employment-law specialist serving employees in ${name}. Filing at ${stadt.arbeitsgericht}. Free initial review, response within 48 hours.`;
+  const title = `English-Speaking German Employment Lawyer ${name} — Free First Check`;
+  const description = `German employment-law specialist serving employees in ${name}. Filing at ${stadt.arbeitsgericht}. Free first check, response within 48 hours.`;
   const url = `${SEO_CONFIG.baseUrl}/en/employment-lawyer/${stadt.slug}/`;
   return {
     title,
@@ -92,7 +92,7 @@ export default function EmploymentLawyerCityEn({ params }: Props) {
             { href: '/en/employment-lawyer', label: 'Employment lawyer' },
             { href: `/en/employment-lawyer/${stadt.slug}`, label: name },
           ]}
-          primaryCta={{ href: '#contact', label: 'Free case review' }}
+          primaryCta={{ href: '#contact', label: 'Free first check' }}
           secondaryCta={{ href: '/en/check-dismissal', label: 'Check my dismissal' }}
         />
 
@@ -108,8 +108,9 @@ export default function EmploymentLawyerCityEn({ params }: Props) {
               )}
               . Appeals go to the <strong>{stadt.lagName}</strong>. We file your case, attend
               hearings on your behalf, and conduct all communications with you in English.
-              German labour-law cases settle in approximately 75–80% of cases at the
-              conciliation hearing (Güteverhandlung), typically within 4–6 weeks of filing.
+              Around 80 % of proceedings before the German labour courts end without a contested
+              judgment (Statistisches Bundesamt, Fachserie 10 Reihe 2.8) — frequently already at
+              the conciliation hearing (Güteverhandlung), typically within 2–4 weeks of filing.
             </p>
             <p className="text-[0.84rem] text-ink-muted leading-relaxed mb-0">
               <strong>Written and reviewed by</strong> Fatih Bektas, German employment-law

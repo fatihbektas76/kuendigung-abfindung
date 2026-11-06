@@ -1,40 +1,30 @@
 import FadeUp from './FadeUp';
+import { getStrings, type Locale } from '@/lib/i18n/strings';
 
-const steps = [
-  {
-    num: 1,
-    title: 'Kostenlose Ersteinschätzung',
-    desc: 'Schildern Sie Ihren Fall. Wir prüfen Ihre Kündigung oder Ihren Aufhebungsvertrag — kostenlos und in der Regel innerhalb von 48 Stunden.',
-  },
-  {
-    num: 2,
-    title: 'Strategie & Prüfung',
-    desc: 'Wir prüfen Ihre Kündigung oder Ihren Aufhebungsvertrag und zeigen Ihre Optionen auf: Kündigungsschutzklage, Abfindungsverhandlung oder Aufhebungsvertrag-Optimierung.',
-  },
-  {
-    num: 3,
-    title: 'Wir übernehmen alles',
-    desc: 'Arbeitsgericht, Gütetermin, Verhandlung oder außergerichtliche Einigung — wir kümmern uns um alles. Sie werden regelmäßig informiert.',
-  },
-  {
-    num: 4,
-    title: 'Ergebnis & Abfindung',
-    desc: 'Abfindung, Weiterbeschäftigung oder optimierter Aufhebungsvertrag — wir setzen das beste Ergebnis für Sie durch.',
-  },
-];
+/**
+ * Sprachunabhängige Prozess-Komponente.
+ * Texte kommen aus lib/i18n/strings.ts — DE und EN strukturell identisch.
+ */
+export default function Process({ locale = 'de' }: { locale?: Locale }) {
+  const t = getStrings(locale);
+  const steps = [
+    { num: 1, title: t.process.step1Title, desc: t.process.step1Desc },
+    { num: 2, title: t.process.step2Title, desc: t.process.step2Desc },
+    { num: 3, title: t.process.step3Title, desc: t.process.step3Desc },
+    { num: 4, title: t.process.step4Title, desc: t.process.step4Desc },
+  ];
 
-export default function Process() {
   return (
     <section className="py-[90px] px-8 bg-white max-md:py-[60px] max-md:px-6" id="ablauf">
       <div className="max-w-content mx-auto">
         <div className="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-gold-dark mb-2.5">
-          So funktioniert es
+          {t.process.eyebrow}
         </div>
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-[1.25] mb-3.5 max-md:text-2xl">
-          Von der ersten Anfrage bis zum Ergebnis — in vier Schritten
+          {t.process.headline}
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed">
-          Wir machen Arbeitsrecht unkompliziert. Keine versteckten Kosten, keine Überraschungen.
+          {t.process.tagline}
         </p>
         <FadeUp className="grid grid-cols-4 gap-6 mt-10 max-md:grid-cols-2 max-md:gap-8">
           {steps.map((step, i) => (

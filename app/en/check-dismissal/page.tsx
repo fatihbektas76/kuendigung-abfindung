@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: 'My dismissal letter is only on email / PDF — is that valid?',
-    a: 'No. German employment law requires the written form with original handwritten signature on paper (§ 623 BGB). A PDF, scan, email, fax or SMS does not meet the requirement. The dismissal is formally void. In practice an employer who tries to dismiss by email usually faces an immediate win for the employee once the claim is filed.',
+    a: 'A dismissal by email, PDF, fax or scan does not meet the written-form requirement of § 623 BGB — which requires the written form with original handwritten signature on paper. Exception possible for employers abroad: if the dismissal is issued there, the Federal Labour Court may accept the local form. Have this checked.',
   },
   {
     q: 'Does the Dismissal Protection Act (KSchG) apply to my dismissal?',
@@ -64,15 +64,15 @@ const faqs = [
   },
   {
     q: 'The employer wants me to sign a termination agreement — should I?',
-    a: 'Never sign without a specialist review. German case law gives you no general cooling-off period after signing (BAG 7 AZR 1052/06), but recission on grounds of unfair-negotiation (BAG 6 AZR 333/21) is possible if the employer created undue pressure (home visit, sickbed signing, immediate signature demanded). Equally important: wrong wording triggers a 12-week dormancy on unemployment benefit (§ 158 SGB III).',
+    a: 'Never sign without a specialist review. There is no statutory right to withdraw from a termination agreement, but rescission on grounds of unfair negotiation (BAG 7 Feb 2019 – 6 AZR 75/18, confirmed by BAG 24 Feb 2022 – 6 AZR 333/21) is possible if the employer created undue pressure (home visit, sickbed signing, immediate signature demanded). Equally important: without an important cause (as defined in the Bundesagentur guidelines) a 12-week blocking period on unemployment benefit can be imposed (§ 159 SGB III).',
   },
   {
     q: 'What does the "preliminary verdict" from this tool mean?',
-    a: 'It is a non-binding first read based on five inputs. It is designed to flag the obvious wins (invalid form, something already signed, KSchG applies) and the obvious risks. For the binding assessment we need the dismissal letter, the employment contract and the key dates (letter received, prior warnings, salary slips) — we review this free of charge within 48 hours.',
+    a: 'It is a non-binding first read based on five inputs. It is designed to flag the obvious wins (invalid form, something already signed, KSchG applies) and the obvious risks. For the detailed review we need the dismissal letter, the employment contract and the key dates (letter received, prior warnings, salary slips) — we review this free of charge within 48 hours.',
   },
   {
     q: 'What happens next, if the tool says my case looks strong?',
-    a: 'The next step is almost always filing an unfair-dismissal claim within the three-week window. Negotiating leverage for a settlement arises almost exclusively from that filing. Typical settlement range is 0.5× to 1.5× monthly gross × years of service, depending on how attackable the dismissal is. If you hold a legal-expenses insurance with employment-law cover, filing and representation are typically fully covered.',
+    a: 'A central next step is typically filing an unfair-dismissal claim within the three-week window. Negotiating leverage for a settlement arises almost exclusively from that filing. Typical settlement range is 0.5× to 1.5× monthly gross × years of service, depending on how attackable the dismissal is. Outcome and amount depend on the individual case and cannot be guaranteed. If you hold a legal-expenses insurance with employment-law cover, filing and representation are typically covered — subject to waiting period, cover confirmation and any deductible.',
   },
 ];
 
@@ -118,7 +118,7 @@ export default function CheckDismissalEn() {
         tone: 'amber' as const,
         title: 'Urgent: review what you signed',
         body:
-          'Anything you signed since the dismissal — termination agreement, severance waiver, settlement — must be reviewed immediately to identify rescission grounds (§ 123 BGB, BAG 6 AZR 333/21).',
+          'Anything you signed since the dismissal — termination agreement, severance waiver, settlement — must be reviewed immediately to identify rescission grounds (§ 123 BGB; BAG 7 Feb 2019 – 6 AZR 75/18, confirmed by BAG 24 Feb 2022 – 6 AZR 333/21).',
       };
     }
     if (tenure === 'yes' && staff === 'yes') {
@@ -139,7 +139,7 @@ export default function CheckDismissalEn() {
     }
     return {
       tone: 'gold' as const,
-      title: 'Send us the dismissal letter for a free review',
+      title: 'Send us the dismissal letter for a free first check',
       body:
         'Based on your answers a full review is recommended. We respond within 48 hours.',
     };
@@ -189,7 +189,7 @@ export default function CheckDismissalEn() {
       <TopicHero
         eyebrow="Check your dismissal"
         title="5-question dismissal check"
-        lede="Answer 5 quick questions and get an instant first read on your case. For the binding assessment, send us the letter — free review within 48 hours."
+        lede="Answer 5 quick questions and get an instant first read on your case. For the detailed review, send us the letter — free first check within 48 hours."
         breadcrumbs={[
           { href: '/en/', label: 'Home' },
           { href: '/en/tools', label: 'Tools' },
@@ -283,7 +283,7 @@ export default function CheckDismissalEn() {
                 </div>
                 <p className="text-[0.85rem] text-ink-muted mt-6 leading-relaxed">
                   This preliminary verdict is based on the 5 inputs above and does not
-                  constitute legal advice. For the binding assessment we need the actual
+                  constitute legal advice. For the detailed review we need the actual
                   dismissal letter and your contract.
                 </p>
               </div>
@@ -335,7 +335,7 @@ export default function CheckDismissalEn() {
             <li><strong>Not on paper:</strong> email, PDF, fax or scan is void (§ 623 BGB).</li>
             <li><strong>Signature missing or illegible:</strong> handwritten original required; printed name or copy is not enough.</li>
             <li><strong>Signatory lacks authority:</strong> the letter must be signed by someone with representation power; absent a power-of-attorney, you may reject the letter without delay (§ 174 BGB).</li>
-            <li><strong>Works-council not heard:</strong> every dismissal requires prior consultation of the works council (§ 102 BetrVG) &mdash; failure voids the dismissal.</li>
+            <li><strong>Works-council not heard:</strong> where a works council exists, every dismissal requires its prior consultation (§ 102 BetrVG) &mdash; failure voids the dismissal.</li>
             <li><strong>Special-protection notice bypassed:</strong> dismissals of pregnant employees, severely disabled persons and works-council members require prior administrative or committee consent.</li>
           </ul>
           <p className="text-[0.98rem] text-ink-light leading-relaxed">

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { questions } from '@/lib/abmahnchecker/questions';
 import { evaluate } from '@/lib/abmahnchecker/evaluator';
 import type { Answer, Question, Option, Verdict, EvaluationResult } from '@/lib/abmahnchecker/types';
+import { BOOKING } from '@/lib/booking';
 
 /* ───── Hint tone colors ───── */
 const HINT_COLORS: Record<Option['hintTone'], string> = {
@@ -250,13 +251,13 @@ export default function AbmahncheckerFlow() {
                     Nächster Schritt
                   </div>
                   <div className="font-serif text-[1.1rem] font-bold leading-tight text-[#F0EAD9] mb-2">
-                    Kostenlose Erstberatung mit Fachanwalt Bektas
+                    Kostenlose Ersteinschätzung mit Fachanwalt Bektas
                   </div>
                   <p className="text-[0.82rem] text-[#C9B97A] leading-relaxed m-0 mb-4">
                     Wir prüfen Ihre Abmahnung im Detail und setzen die Entfernung aus der Personalakte für Sie durch — häufig deckt die Rechtsschutzversicherung die Kosten.
                   </p>
                   <a
-                    href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
+                    href={BOOKING.firstCheck}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block py-3 px-6 bg-[#F0EAD9] text-[#2A1F0E] text-[0.88rem] font-semibold rounded-sm no-underline hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)] transition-all"
@@ -276,12 +277,12 @@ export default function AbmahncheckerFlow() {
                     Auch bei einer formell wirksamen Abmahnung kann eine Gegendarstellung zur Personalakte sinnvoll sein. Wir beraten Sie kostenlos zu Ihren Optionen.
                   </p>
                   <a
-                    href="https://meet.brevo.com/fatih-bektas/erstberatung-per-telefon-kuendigung-arbeitsrechtde"
+                    href={BOOKING.firstCheck}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block py-3 px-6 bg-gold-dark text-white text-[0.88rem] font-semibold rounded-sm no-underline hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(122,101,40,0.3)] transition-all"
                   >
-                    Kostenlose Erstberatung &rarr;
+                    Kostenlose Ersteinschätzung &rarr;
                   </a>
                 </div>
               )}
@@ -306,7 +307,7 @@ export default function AbmahncheckerFlow() {
               {/* Disclaimer */}
               <div className="mt-8 py-4 px-5 bg-amber-50 rounded-sm border border-amber-300">
                 <p className="text-[0.88rem] text-amber-900 leading-relaxed m-0">
-                  <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ist eine automatisierte Orientierungshilfe auf Basis Ihrer Angaben und ersetzt keine individuelle anwaltliche Beratung. Eine verbindliche rechtliche Beurteilung kann nur nach Sichtung der konkreten Abmahnung durch einen Fachanwalt erfolgen. Für eine verbindliche Einschätzung wenden Sie sich bitte an einen{' '}
+                  <strong>Wichtiger Hinweis:</strong> Dieses Ergebnis ist eine automatisierte Orientierungshilfe auf Basis Ihrer Angaben und ersetzt keine individuelle anwaltliche Beratung. Eine verbindliche rechtliche Beurteilung kann nur nach Sichtung der konkreten Abmahnung durch einen Fachanwalt erfolgen. Für eine ausführliche Prüfung wenden Sie sich bitte an einen{' '}
                   <Link href="/#kontakt" className="text-amber-900 underline hover:text-amber-700">Fachanwalt für Arbeitsrecht</Link>.
                 </p>
               </div>

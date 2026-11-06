@@ -17,11 +17,11 @@ const faqs = [
   },
   {
     q: 'Wann ist eine fristlose Kündigung wirksam?',
-    a: 'Eine fristlose Kündigung nach §626 BGB setzt einen wichtigen Grund voraus, der es dem Arbeitgeber unzumutbar macht, die Kündigungsfrist abzuwarten. Die Anforderungen sind sehr hoch — die meisten fristlosen Kündigungen scheitern vor dem Arbeitsgericht. Der Arbeitgeber muss zudem innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes handeln.',
+    a: 'Eine fristlose Kündigung nach §626 BGB setzt einen wichtigen Grund voraus, der es dem Arbeitgeber unzumutbar macht, die Kündigungsfrist abzuwarten. Die Anforderungen sind sehr hoch — der Erfolg vor Gericht hängt stark vom Einzelfall ab, insbesondere der Interessenabwägung und der 2-Wochen-Frist. Der Arbeitgeber muss innerhalb von 2 Wochen nach Kenntnis des Kündigungsgrundes handeln (§ 626 Abs. 2 S. 1 BGB) und Ihnen auf schriftliches Verlangen den Kündigungsgrund unverzüglich schriftlich mitteilen (§ 626 Abs. 2 S. 3 BGB) — dieses Verlangen sollte sofort gestellt werden.',
   },
   {
     q: 'Gilt der Kündigungsschutz auch für mich?',
-    a: 'Das Kündigungsschutzgesetz (KSchG) gilt, wenn Sie länger als 6 Monate im Betrieb beschäftigt sind und der Betrieb mehr als 10 Mitarbeiter hat (§23 KSchG). Ausgenommen sind u.\u00A0a. Geschäftsführer und leitende Angestellte mit besonderem Status.',
+    a: 'Das Kündigungsschutzgesetz (KSchG) gilt, wenn Sie länger als 6 Monate im Betrieb beschäftigt sind und der Betrieb mehr als 10 Vollzeitäquivalente hat (§ 23 Abs. 1 KSchG, Teilzeit anteilig nach S. 4; Altverträge vor 01.01.2004: > 5 Arbeitnehmer). Für leitende Angestellte (§ 14 Abs. 2 KSchG) gilt die Besonderheit, dass der Arbeitgeber im Kündigungsschutzprozess einen Auflösungsantrag ohne Begründung stellen kann — mit der Folge einer Abfindung nach §§ 9, 10 KSchG.',
   },
   {
     q: 'Wie hoch ist meine Abfindung bei X Jahren Betriebszugehörigkeit?',

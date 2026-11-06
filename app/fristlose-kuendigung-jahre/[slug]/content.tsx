@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { BetriebsEntry } from '@/lib/betriebszugehoerigkeit';
+import { SEO_CONFIG } from '@/lib/seo-config';
 import TldrBox from '@/components/TldrBox';
 import NormLink, { NORM } from '@/components/NormLink';
 import DefinitionBox from '@/components/DefinitionBox';
@@ -60,7 +61,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
           <nav className="text-sm text-gray-500 mb-6">
             <Link href="/" className="text-[#8B7A3A] no-underline hover:underline">Startseite</Link>
             <span className="mx-2">/</span>
-            <Link href="/kuendigung" className="text-[#8B7A3A] no-underline hover:underline">Kündigung</Link>
+            <Link href="/kuendigung/" className="text-[#8B7A3A] no-underline hover:underline">Kündigung</Link>
             <span className="mx-2">/</span>
             <span>Fristlose Kündigung nach {yl}</span>
           </nav>
@@ -104,7 +105,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
         <div className="max-w-content mx-auto bg-gray-50 rounded-lg p-4 fakt-box">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { label: 'Klagefrist Arbeitnehmer', value: '3 Wochen', desc: 'Ab Zugang (§ 4 KSchG) — auch bei fristloser Kündigung absolut' },
+              { label: 'Klagefrist Arbeitnehmer', value: '3 Wochen', desc: 'Ab Zugang (§ 4 KSchG) — auch bei fristloser Kündigung. Nachträgliche Zulassung nach § 5 KSchG nur in engen Ausnahmefällen.' },
               { label: 'Ausschlussfrist Arbeitgeber', value: '2 Wochen', desc: 'Ab Kenntnis des Grundes (§ 626 Abs. 2 BGB) — danach automatisch unwirksam' },
               { label: 'Unwirksame Kündigungen', value: 'Über 80 %', desc: 'Scheitern an fehlendem Grund, fehlender Abmahnung oder Formfehler' },
               { label: 'Abmahnung erforderlich', value: 'Meist ja', desc: 'Verhaltensbedingte Kündigung ohne Abmahnung fast immer unwirksam' },
@@ -133,8 +134,8 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
         <div className="max-w-content mx-auto">
           <div className="bg-[#6B6626] rounded-lg p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <p className="text-white font-semibold text-lg mb-1">Fristlose Kündigung kostenlos prüfen lassen</p>
-              <p className="text-white/70 text-sm">Ersteinschätzung in 24h &mdash; über 80 % sind unwirksam.</p>
+              <p className="text-white font-semibold text-lg mb-1">Kostenlose Ersteinschätzung</p>
+              <p className="text-white/70 text-sm">Ersteinschätzung in 24h &mdash; § 626 BGB stellt sehr hohe Anforderungen.</p>
             </div>
             <a
               href="/#kontakt"
@@ -370,7 +371,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
 
             <div className="grid grid-cols-3 gap-3 max-sm:grid-cols-1">
               <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Regelabfindung</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Faustformel 0,5×</p>
                 <p className="text-xl font-bold text-gray-900">{fmt(gehalt * 0.5 * y)}</p>
                 <p className="text-xs text-gray-400 mt-1">Faktor 0,5&times;</p>
               </div>
@@ -512,7 +513,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
         <div className="max-w-content mx-auto">
           <div className="bg-[#6B6626] rounded-lg p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <p className="text-white font-semibold text-lg mb-1">Fristlose Kündigung kostenlos prüfen lassen</p>
+              <p className="text-white font-semibold text-lg mb-1">Kostenlose Ersteinschätzung</p>
               <p className="text-white/70 text-sm">Ersteinschätzung in 24h &mdash; bundesweit und digital.</p>
             </div>
             <a
@@ -530,7 +531,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
         <div className="max-w-content mx-auto">
           <div className="mb-3">
             <Link
-              href="/fristlose-kuendigung"
+              href="/fristlose-kuendigung/"
               className="inline-flex items-center gap-1.5 text-sm text-[#6B6626] font-medium no-underline hover:underline"
             >
               &larr; Zurück zur Übersicht: Fristlose Kündigung
@@ -629,11 +630,11 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
               <p className="text-sm text-gray-600 leading-relaxed mb-3">
                 Zugelassen seit 2005, Fachanwalt für Arbeitsrecht seit 2011 (RAK Karlsruhe).
                 Spezialisiert auf Kündigungsschutz, Abfindungsverhandlung und Aufhebungsverträge.
-                Über 2.000 erfolgreich abgeschlossene Verfahren.
+                Über 20 Jahre Arbeitsrecht-Erfahrung.
               </p>
               <p className="text-sm text-gray-500">
                 <span className="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{' '}
-                5,0 &middot; 69 Bewertungen auf anwalt.de
+                {SEO_CONFIG.rating.ratingValue} &middot; {SEO_CONFIG.rating.reviewCount} Bewertungen auf anwalt.de
               </p>
             </div>
           </div>

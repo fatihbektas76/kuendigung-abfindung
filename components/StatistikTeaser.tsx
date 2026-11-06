@@ -36,7 +36,7 @@ export default function StatistikTeaser() {
         </p>
 
         <Link
-          href="/ratgeber/kuendigungsstatistik-arbeitsgerichte-deutschland"
+          href="/ratgeber/kuendigungsstatistik-arbeitsgerichte-deutschland/"
           className="self-start text-[14px] text-[#5a5850] no-underline hover:text-ink hover:underline transition-colors"
         >
           &rarr; Alle Daten &amp; Statistiken ansehen

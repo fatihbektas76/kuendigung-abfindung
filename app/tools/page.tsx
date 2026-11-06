@@ -134,7 +134,7 @@ const tools = [
 const faqs = [
   {
     q: 'Sind die Tools wirklich kostenlos?',
-    a: 'Ja, vollständig. Alle Tools auf dieser Seite können ohne Registrierung und ohne Kosten genutzt werden. Auch die anwaltliche Ersteinschätzung im Anschluss ist kostenlos und unverbindlich. Erst wenn Sie sich für eine Mandatierung entscheiden, fallen Kosten an — die bei bestehender Rechtsschutzversicherung häufig vollständig übernommen werden.',
+    a: 'Ja, vollständig. Alle Tools auf dieser Seite können ohne Registrierung und ohne Kosten genutzt werden. Auch die anwaltliche Ersteinschätzung im Anschluss ist kostenlos und unverbindlich. Erst wenn Sie sich für eine Mandatierung entscheiden, fallen Kosten an — die bei bestehender Rechtsschutzversicherung häufig übernommen werden (vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung).',
   },
   {
     q: 'Wie genau ist der Abfindungsrechner?',
@@ -146,15 +146,15 @@ const faqs = [
   },
   {
     q: 'Gilt der Kündigungsschutz für mich?',
-    a: 'Das Kündigungsschutzgesetz gilt grundsätzlich für Arbeitnehmer, die länger als 6 Monate in einem Betrieb mit mehr als 10 Vollzeit-Mitarbeitern beschäftigt sind. Daneben gibt es besondere Schutztatbestände — etwa bei Schwangerschaft, Elternzeit, Schwerbehinderung oder als Betriebsratsmitglied. Unser Kündigungscheck prüft alle relevanten Faktoren automatisch.',
+    a: 'Das Kündigungsschutzgesetz gilt grundsätzlich für Arbeitnehmer, die länger als 6 Monate in einem Betrieb mit mehr als 10 Vollzeitäquivalenten beschäftigt sind (§ 23 Abs. 1 KSchG; Teilzeit anteilig nach § 23 Abs. 1 S. 4 KSchG). Für Arbeitsverhältnisse vor dem 01.01.2004 gilt der abgesenkte Schwellenwert von mehr als 5 Arbeitnehmern. Daneben gibt es besondere Schutztatbestände — etwa bei Schwangerschaft, Elternzeit, Schwerbehinderung oder als Betriebsratsmitglied. Unser Kündigungscheck prüft alle relevanten Faktoren automatisch.',
   },
   {
     q: 'Wofür brauche ich den Schwellenwert-Rechner?',
-    a: 'Das Kündigungsschutzgesetz gilt nur in Betrieben mit mehr als 10 Vollzeitäquivalenten (FTE). Der Schwellenwert-Rechner prüft, ob Ihr Betrieb diesen Wert überschreitet — denn davon hängt ab, ob Ihr Arbeitgeber überhaupt einen Kündigungsgrund braucht. Teilzeitkräfte und Minijobber werden anteilig gezählt.',
+    a: 'Das Kündigungsschutzgesetz gilt nur in Betrieben mit mehr als 10 Vollzeitäquivalenten (§ 23 Abs. 1 KSchG). Der Schwellenwert-Rechner prüft, ob Ihr Betrieb diesen Wert überschreitet. Teilzeitkräfte werden nach § 23 Abs. 1 S. 4 KSchG anteilig gezählt (bis 20 h/Woche: 0,5; bis 30 h/Woche: 0,75; mehr: 1,0); Auszubildende zählen nicht mit. Für Arbeitsverhältnisse vor dem 01.01.2004 gilt der abgesenkte Schwellenwert von mehr als 5 Arbeitnehmern.',
   },
   {
     q: 'Was ist der Unterschied zwischen Abfindung und Kündigungsschutzklage?',
-    a: 'Die Kündigungsschutzklage ist das stärkere Mittel: Sie können damit die Unwirksamkeit der Kündigung gerichtlich feststellen lassen — mit dem Ziel der Weiterbeschäftigung oder einer höheren Abfindung als Vergleich. Die Abfindung nach § 1a KSchG ist dagegen eine einvernehmliche Lösung ohne Klage. Welcher Weg besser ist, hängt von Ihrer konkreten Situation ab.',
+    a: 'Die Kündigungsschutzklage ist das stärkere Mittel: Sie können damit die Unwirksamkeit der Kündigung gerichtlich feststellen lassen — mit dem Ziel der Weiterbeschäftigung oder einer höheren Abfindung als Vergleich. Die Abfindung nach § 1a KSchG ist dagegen ein Abfindungsangebot des Arbeitgebers direkt im Kündigungsschreiben — in gesetzlicher Höhe von 0,5 Bruttomonatsgehältern pro Beschäftigungsjahr, gegen Verzicht auf die Klage. Welcher Weg besser ist, hängt von Ihrer konkreten Situation ab.',
   },
 ];
 
@@ -191,7 +191,7 @@ export default function ToolsPage() {
             '@type': 'CollectionPage',
             name: 'Arbeitsrecht Tools & Rechner',
             description:
-              'Kostenlose Arbeitsrechts-Tools: Abfindungsrechner, Kündigungscheck & mehr. Sofortige Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich.',
+              'Kostenlose Arbeitsrechts-Tools: Abfindungsrechner, Kündigungscheck & mehr. Kostenlose Ersteinschätzung vom Fachanwalt für Arbeitsrecht. Die anschließende Mandatsannahme erfolgt zu den gesetzlichen RVG-Gebühren oder nach individueller Vergütungsvereinbarung (§ 3a RVG).',
             url: `${SEO_CONFIG.baseUrl}/tools/`,
             provider: { '@id': `${SEO_CONFIG.baseUrl}/#organization` },
             inLanguage: 'de',
@@ -345,9 +345,9 @@ export default function ToolsPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-[0.95rem] font-semibold text-ink mb-1">100% kostenlos</h3>
+                <h3 className="text-[0.95rem] font-semibold text-ink mb-1">Kostenlose Nutzung</h3>
                 <p className="text-[0.88rem] text-ink-muted leading-relaxed m-0">
-                  Kein Abo, keine versteckten Kosten. Die Ersteinschätzung ist und bleibt gratis.
+                  Rechner und Ersteinschätzung sind kostenfrei. Die anschließende Mandatsannahme erfolgt zu den gesetzlichen RVG-Gebühren oder nach individueller Vergütungsvereinbarung (§ 3a RVG).
                 </p>
               </div>
             </div>
@@ -382,14 +382,14 @@ export default function ToolsPage() {
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Unsere Tools sind keine einfachen Rechner &mdash; sie bilden die tatsächliche rechtliche Prüflogik ab,
               die ein Fachanwalt im Erstgespräch anwendet. Der{' '}
-              <Link href="/kuendigung-pruefen" className="text-gold no-underline hover:underline">Kündigungscheck</Link>{' '}
+              <Link href="/kuendigung-pruefen/" className="text-gold no-underline hover:underline">Kündigungscheck</Link>{' '}
               fragt zum Beispiel gezielt nach Betriebsgröße, Beschäftigungsdauer und besonderen
               Schutztatbeständen wie Schwerbehinderung oder Elternzeit &mdash; denn genau diese Faktoren bestimmen,
               ob das Kündigungsschutzgesetz greift.
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Der{' '}
-              <Link href="/abfindungsrechner" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>{' '}
+              <Link href="/abfindungsrechner/" className="text-gold no-underline hover:underline">Abfindungsrechner</Link>{' '}
               basiert auf der in der Praxis anerkannten Faustformel: 0,5 Bruttomonatsgehälter pro
               Beschäftigungsjahr als Ausgangspunkt. Je nach Verhandlungsgeschick, Kündigungsschutzlage und
               wirtschaftlicher Situation des Arbeitgebers sind Abweichungen nach oben oder unten möglich &mdash; das
@@ -397,7 +397,7 @@ export default function ToolsPage() {
             </p>
             <p className="text-[0.95rem] text-ink-light leading-relaxed mb-5">
               Der{' '}
-              <Link href="/schwellenwert-rechner" className="text-gold no-underline hover:underline">Schwellenwert-Rechner</Link>{' '}
+              <Link href="/schwellenwert-rechner/" className="text-gold no-underline hover:underline">Schwellenwert-Rechner</Link>{' '}
               beantwortet eine der häufigsten Fragen im Arbeitsrecht: Gilt das Kündigungsschutzgesetz überhaupt für
               meinen Betrieb? Er berechnet die Vollzeitäquivalente (FTE) nach &sect;23 KSchG und zeigt Ihnen sofort,
               ob der Schwellenwert von 10 überschritten wird.
@@ -406,7 +406,7 @@ export default function ToolsPage() {
               Wichtig: Kein Online-Tool ersetzt eine individuelle anwaltliche Beratung. Die Tools geben Ihnen eine
               fundierte Orientierung &mdash; damit Sie informiert in ein Erstgespräch gehen oder einschätzen können,
               ob sich weiteres Handeln lohnt. Die persönliche Ersteinschätzung durch{' '}
-              <Link href="/arbeitsrecht-anwalt" className="text-gold no-underline hover:underline">Fachanwalt Fatih Bektas</Link>{' '}
+              <Link href="/arbeitsrecht-anwalt/" className="text-gold no-underline hover:underline">Fachanwalt Fatih Bektas</Link>{' '}
               ist in jedem Fall kostenlos und unverbindlich.
             </p>
           </div>
@@ -447,7 +447,7 @@ export default function ToolsPage() {
             kostenlos und innerhalb von 24 Stunden.
           </p>
           <Link
-            href="/kuendigung-pruefen"
+            href="/kuendigung-pruefen/"
             className="inline-block py-3.5 px-8 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
             Jetzt kostenlos anfragen &rarr;

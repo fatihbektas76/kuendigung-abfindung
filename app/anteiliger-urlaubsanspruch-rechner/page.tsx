@@ -179,7 +179,7 @@ export default function AnteiligerUrlaubsanspruchPage() {
           <nav className="text-[0.84rem] text-ink-muted mb-6">
             <Link href="/" className="text-gold no-underline hover:underline">Start</Link>
             <span className="mx-2">/</span>
-            <Link href="/tools" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
+            <Link href="/tools/" className="text-gold no-underline hover:underline">Tools &amp; Rechner</Link>
             <span className="mx-2">/</span>
             <span>Anteiliger Urlaubsanspruch</span>
           </nav>
@@ -373,7 +373,7 @@ export default function AnteiligerUrlaubsanspruchPage() {
                     <div className="text-[0.84rem] font-semibold text-ink mb-2">Wieviel Urlaubsabgeltung bekomme ich dafür?</div>
                     <p className="text-[0.82rem] text-ink-muted leading-relaxed m-0">
                       Ziehen Sie bereits genommene Urlaubstage vom Ergebnis ab &mdash; der Rest wird in Euro abgegolten.{' '}
-                      <Link href="/urlaubsabgeltung-rechner" className="text-gold-dark font-semibold no-underline hover:underline">
+                      <Link href="/urlaubsabgeltung-rechner/" className="text-gold-dark font-semibold no-underline hover:underline">
                         Urlaubsabgeltung berechnen &rarr;
                       </Link>
                     </p>
