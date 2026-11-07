@@ -49,20 +49,20 @@ export default function ContactForm() {
           Contact
         </div>
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-[1.25] mb-3.5 max-md:text-2xl">
-          Tell us about your case
+          Tell us about your case.
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[600px] leading-relaxed mb-10">
-          Fill in the form — we will review your situation. Free of charge, typically within
-          48 hours. We handle German labour-law matters in English.
+          Fill in the form – usually within 48 hours you receive a free first check and,
+          where useful, a cost quote.
         </p>
         <div className="grid grid-cols-2 gap-14 items-start max-md:grid-cols-1 max-md:gap-8">
           <FadeUp>
             <div>
               <h3 className="font-serif text-[1.4rem] font-bold mb-4">What happens next?</h3>
               <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
-                After your enquiry we review the details and reply with an initial assessment —
-                whether the dismissal can be challenged, how high a likely severance could be
-                and which next steps make sense.
+                We reply with a first check: whether your dismissal or termination agreement
+                offers points of attack, which deadlines apply and what the next steps would
+                cost.
               </p>
               <div className="flex items-center gap-3 mb-3.5 text-[0.92rem] text-ink-light">
                 <div className="w-11 h-11 min-w-[44px] rounded-[10px] bg-gold-bg border border-gold/[0.12] flex items-center justify-center text-gold">
@@ -250,7 +250,7 @@ export default function ContactForm() {
                     disabled={loading}
                     className="w-full py-3.5 bg-gold text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all mt-2 hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)] disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
                   >
-                    {loading ? 'Sending…' : 'Send enquiry →'}
+                    {loading ? 'Sending…' : 'Request free first check →'}
                   </button>
                   <p className="text-[0.76rem] text-ink-muted mt-3 text-center leading-relaxed">
                     By submitting you agree to our{' '}

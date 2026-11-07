@@ -68,11 +68,19 @@ const faqs = [
   },
   {
     q: 'What does the "preliminary verdict" from this tool mean?',
-    a: 'It is a non-binding first read based on five inputs. It is designed to flag the obvious wins (invalid form, something already signed, KSchG applies) and the obvious risks. For the detailed review we need the dismissal letter, the employment contract and the key dates (letter received, prior warnings, salary slips) — we review this free of charge within 48 hours.',
+    a: 'It is a non-binding first orientation based on five inputs. It flags the obvious wins (invalid form, something already signed, KSchG applies) and the obvious risks. For a detailed review we need the dismissal letter, the employment contract and the key dates. After the free first check you receive a cost quote, or we clarify cover with your legal-expenses insurance.',
   },
   {
     q: 'What happens next, if the tool says my case looks strong?',
     a: 'A central next step is typically filing an unfair-dismissal claim within the three-week window. Negotiating leverage for a settlement arises almost exclusively from that filing. Typical settlement range is 0.5× to 1.5× monthly gross × years of service, depending on how attackable the dismissal is. Outcome and amount depend on the individual case and cannot be guaranteed. If you hold a legal-expenses insurance with employment-law cover, filing and representation are typically covered — subject to waiting period, cover confirmation and any deductible.',
+  },
+  {
+    q: 'What does the free first check include?',
+    a: 'A short reply by email or phone (up to about 15 minutes): whether action is worthwhile, which deadlines apply and what our help would cost. It does not include a review of contracts or other documents or detailed legal advice.',
+  },
+  {
+    q: 'What does a termination agreement review cost?',
+    a: 'After the free first check you receive a cost quote for the detailed review and, if you wish, for negotiation with your employer. Costs arise only once you instruct us. Legal-expenses insurance does not always cover the review of a termination agreement; we clarify this for you.',
   },
 ];
 
@@ -189,7 +197,7 @@ export default function CheckDismissalEn() {
       <TopicHero
         eyebrow="Check your dismissal"
         title="5-question dismissal check"
-        lede="Answer 5 quick questions and get an instant first read on your case. For the detailed review, send us the letter — free first check within 48 hours."
+        lede="Answer 5 quick questions for an instant first orientation. For a free first check by a specialist lawyer, send us the dismissal letter – reply usually within 48 hours."
         breadcrumbs={[
           { href: '/en/', label: 'Home' },
           { href: '/en/tools', label: 'Tools' },

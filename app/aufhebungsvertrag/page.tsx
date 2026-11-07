@@ -61,6 +61,14 @@ const faqs = [
     q: 'Was sollte ein guter Aufhebungsvertrag regeln?',
     a: 'Neben der Abfindungshöhe und dem Beendigungsdatum sollte der Vertrag folgende Punkte regeln: Freistellung (bezahlt, unwiderruflich), qualifiziertes Arbeitszeugnis mit Mindestnote, Urlaubsabgeltung, Rückgabe von Firmeneigentum, Wettbewerbsverbot und Vertraulichkeitsklausel. Jede fehlende Regelung kann zu Nachteilen führen.',
   },
+  {
+    q: 'Was umfasst die kostenlose Ersteinschätzung?',
+    a: 'Eine kurze Rückmeldung per E-Mail oder Telefon (bis ca. 15 Minuten): ob sich ein Vorgehen lohnt, welche Fristen laufen und was unsere Hilfe kostet. Eine Prüfung von Verträgen oder anderen Unterlagen und eine Rechtsberatung im Einzelnen sind darin nicht enthalten.',
+  },
+  {
+    q: 'Was kostet die Prüfung eines Aufhebungsvertrags?',
+    a: 'Nach der kostenlosen Ersteinschätzung erhalten Sie ein Kostenangebot für die ausführliche Prüfung und, wenn gewünscht, für die Verhandlung mit Ihrem Arbeitgeber. Kosten entstehen erst mit Ihrem Auftrag. Eine Rechtsschutzversicherung übernimmt die Prüfung eines Aufhebungsvertrags nicht immer; wir klären das für Sie.',
+  },
 ];
 
 const subpages = [
@@ -206,14 +214,14 @@ export default function AufhebungsvertragPage() {
             {/* Direktantwort (GEO) */}
             <div id="direktantwort">
               <p className="text-[1.05rem] text-ink-light leading-relaxed mb-5">
-                Ein <strong>Aufhebungsvertrag</strong> beendet Ihr Arbeitsverhältnis einvernehmlich
-                &mdash; anders als bei einer Kündigung müssen Sie hier zustimmen. Ein
-                Aufhebungsvertrag bedarf zwingend der{' '}
+                Ein <strong>Aufhebungsvertrag umgeht den Kündigungsschutz</strong>. Für Ihren
+                Arbeitgeber ist das bequem, für Sie riskant. Vor der Unterschrift sagen wir
+                Ihnen, welche Abfindung realistisch ist und ob eine Sperrzeit beim
+                Arbeitslosengeld droht. Ein Aufhebungsvertrag bedarf zwingend der{' '}
                 <strong>Schriftform</strong> (
                 <NormLink href={NORM.bgb623}>&sect;&nbsp;623 BGB</NormLink>); ein per E-Mail
-                geschlossener Vertrag ist unwirksam. Das klingt zunächst fair, birgt aber
-                erhebliche Risiken: Eine <strong>Sperrzeit beim Arbeitslosengeld</strong> von bis
-                zu 12 Wochen (
+                geschlossener Vertrag ist unwirksam. Zu den typischen Risiken zählen eine
+                <strong> Sperrzeit beim Arbeitslosengeld</strong> von bis zu 12 Wochen (
                 <NormLink href={NORM.sgb3159}>&sect;&nbsp;159 SGB&nbsp;III</NormLink>), eine zu
                 niedrige Abfindung, der Verlust von Kündigungsschutzrechten und ungünstige
                 Klauseln zu Zeugnis, Freistellung oder Wettbewerbsverbot.

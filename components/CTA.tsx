@@ -6,11 +6,12 @@ export default function CTA() {
           Jetzt handeln
         </div>
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold text-white mb-3.5">
-          Kündigung erhalten? Zeit läuft.
+          Kündigung erhalten? Die Zeit läuft.
         </h2>
         <p className="text-white/65 text-[1.05rem] max-w-[540px] mx-auto mb-8">
-          Schildern Sie uns Ihren Fall — wir prüfen kostenlos, ob Ihre Kündigung angreifbar ist und
-          wie hoch Ihre Abfindung sein kann. In der Regel innerhalb von 48 Stunden.
+          Schildern Sie uns Ihren Fall – Sie erhalten kostenlos eine Ersteinschätzung,
+          ob Ihre Kündigung angreifbar ist und was die nächsten Schritte kosten.
+          In der Regel innerhalb von 48 Stunden.
         </p>
         <a
           href="#kontakt"

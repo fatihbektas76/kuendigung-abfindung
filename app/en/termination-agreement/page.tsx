@@ -52,6 +52,14 @@ const FAQS = [
     q: 'What about my reference letter and remaining holiday?',
     a: 'Both should be settled in the agreement. Demand a “very good” qualified reference (§ 109 GewO), pay-out of remaining holiday in cash (§ 7 IV BUrlG), continued use of the company car until the end-date, plus a release from further work duties with continued pay (Freistellung).',
   },
+  {
+    q: 'What does the free first check include?',
+    a: 'A short reply by email or phone (up to about 15 minutes): whether action is worthwhile, which deadlines apply and what our help would cost. It does not include a review of contracts or other documents or detailed legal advice.',
+  },
+  {
+    q: 'What does a termination agreement review cost?',
+    a: 'After the free first check you receive a cost quote for the detailed review and, if you wish, for negotiation with your employer. Costs arise only once you instruct us. Legal-expenses insurance does not always cover the review of a termination agreement; we clarify this for you.',
+  },
 ];
 
 export default function TerminationAgreementEn() {
@@ -90,7 +98,7 @@ export default function TerminationAgreementEn() {
         <TopicHero
           eyebrow="Termination agreement (Aufhebungsvertrag)"
           title="Termination agreement: don’t sign without legal review."
-          lede="A termination agreement bypasses the German dismissal-protection rules. That is convenient for your employer — and risky for you. Before you sign, we tell you the severance you can realistically demand and whether a 12-week unemployment-benefit blocking period is on the table."
+          lede="A termination agreement bypasses dismissal protection. That is convenient for your employer and risky for you. Before you sign, we tell you what severance is realistic and whether an unemployment-benefit blocking period is likely."
           breadcrumbs={[
             { href: '/en/', label: 'Home' },
             { href: '/en/termination-agreement', label: 'Termination agreement' },
