@@ -113,6 +113,14 @@ const pruefenFaqs = [
     q: 'Welche 3-Wochen-Frist muss ich beachten?',
     a: 'Nach § 4 KSchG müssen Sie innerhalb von 3 Wochen nach Zugang der Kündigung Kündigungsschutzklage beim Arbeitsgericht erheben. Versäumen Sie diese Frist, gilt die Kündigung in der Regel als wirksam — unabhängig davon, ob sie rechtmäßig war. Eine nachträgliche Zulassung der Klage nach § 5 KSchG ist nur in eng begrenzten Ausnahmefällen möglich; lassen Sie sich dringend anwaltlich beraten.',
   },
+  {
+    q: 'Was bedeutet das vorläufige Ergebnis?',
+    a: 'Das Online-Ergebnis ist eine Erstorientierung aus 5 Fragen und ersetzt keine anwaltliche Prüfung. Für eine ausführliche Prüfung benötigen wir Kündigungsschreiben, Arbeitsvertrag und die wichtigsten Daten. Nach der kostenlosen Ersteinschätzung erhalten Sie dafür ein Kostenangebot oder wir klären die Kostenübernahme mit Ihrer Rechtsschutzversicherung.',
+  },
+  {
+    q: 'Was umfasst die kostenlose Ersteinschätzung?',
+    a: 'Eine kurze Rückmeldung per E-Mail oder Telefon (bis ca. 15 Minuten): ob sich ein Vorgehen lohnt, welche Fristen laufen und was unsere Hilfe kostet. Eine Prüfung von Verträgen oder anderen Unterlagen und eine Rechtsberatung im Einzelnen sind darin nicht enthalten.',
+  },
 ];
 
 /* ───── Step Progress Config ───── */

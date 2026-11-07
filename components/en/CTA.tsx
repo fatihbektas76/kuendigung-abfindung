@@ -9,14 +9,14 @@ export default function CTA() {
           Dismissed? The clock is ticking.
         </h2>
         <p className="text-white/65 text-[1.05rem] max-w-[560px] mx-auto mb-8">
-          Tell us about your case — we check for free whether your dismissal can be
-          challenged and how high your severance can be. Usually within 48 hours.
+          Tell us about your case – you get a free first check of whether your dismissal
+          can be challenged and what the next steps would cost. Usually within 48 hours.
         </p>
         <a
           href="#contact"
           className="inline-flex items-center gap-2 px-9 py-4 rounded-sm text-base font-semibold no-underline transition-all bg-gold-dark text-white hover:bg-[#635428] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(166,139,75,0.25)]"
         >
-          Get my free first check &rarr;
+          Free first check &rarr;
         </a>
         <div className="flex gap-8 justify-center mt-9 flex-wrap max-md:flex-col max-md:items-center">
           <a

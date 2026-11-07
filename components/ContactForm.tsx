@@ -46,20 +46,20 @@ export default function ContactForm() {
           Kontakt
         </div>
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-[1.25] mb-3.5 max-md:text-2xl">
-          Schildern Sie uns Ihren Fall
+          Schildern Sie uns Ihren Fall.
         </h2>
         <p className="text-[1.05rem] text-ink-muted max-w-[580px] leading-relaxed mb-10">
-          Füllen Sie das Formular aus — wir prüfen Ihre Situation. Kostenlos und in der Regel
-          innerhalb von 48 Stunden.
+          Füllen Sie das Formular aus – in der Regel innerhalb von 48 Stunden erhalten Sie
+          eine kostenlose Ersteinschätzung und, wenn sinnvoll, ein Kostenangebot.
         </p>
         <div className="grid grid-cols-2 gap-14 items-start max-md:grid-cols-1 max-md:gap-8">
           <FadeUp>
             <div>
               <h3 className="font-serif text-[1.4rem] font-bold mb-4">Was passiert danach?</h3>
               <p className="text-[0.95rem] text-ink-light leading-relaxed mb-6">
-                Nach Ihrer Anfrage prüfen wir die Details und melden uns mit einer Ersteinschätzung —
-                ob Ihre Kündigung angreifbar ist, wie hoch eine mögliche Abfindung wäre und welche
-                nächsten Schritte sinnvoll sind.
+                Wir melden uns mit einer Ersteinschätzung: ob Ihre Kündigung oder Ihr
+                Aufhebungsvertrag Ansatzpunkte bietet, welche Fristen laufen und was die
+                nächsten Schritte kosten.
               </p>
               <div className="flex items-center gap-3 mb-3.5 text-[0.92rem] text-ink-light">
                 <div className="w-11 h-11 min-w-[44px] rounded-[10px] bg-gold-bg border border-gold/[0.12] flex items-center justify-center text-gold">
@@ -231,7 +231,7 @@ export default function ContactForm() {
                     disabled={loading}
                     className="w-full py-3.5 bg-gold text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all mt-2 hover:bg-gold-dark hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)] disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
                   >
-                    {loading ? 'Wird gesendet...' : 'Anfrage senden \u2192'}
+                    {loading ? 'Wird gesendet...' : 'Kostenlose Ersteinsch\u00e4tzung anfordern \u2192'}
                   </button>
                   <p className="text-[0.76rem] text-ink-muted mt-3 text-center leading-relaxed">
                     Mit dem Absenden stimmen Sie unserer{' '}
