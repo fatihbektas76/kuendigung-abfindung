@@ -12,7 +12,7 @@ FN:Fatih Bektas
 TITLE:Rechtsanwalt & Fachanwalt für Arbeitsrecht
 ORG:gekuendigt-abfindung.de
 EMAIL:bektas@apos.legal
-TEL:+49 6222 9599 2400
+TEL:+49 6221 32144-70
 ADR:;;Am Paradeplatz 20;Heidelberg;;69126;Germany
 URL:https://www.gekuendigt-abfindung.de
 X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/fatih-bektas

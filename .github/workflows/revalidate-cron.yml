@@ -1,0 +1,40 @@
+name: Revalidate (weekly)
+
+# Löst wöchentlich den /api/revalidate-Endpunkt aus. Ersatz für den alten
+# vercel.json-Cron, der seit dem Umzug auf Hetzner tot war.
+#
+# Setup einmalig:
+#   GitHub Repo → Settings → Secrets and variables → Actions
+#   → New repository secret
+#     Name:  REVALIDATE_SECRET
+#     Wert:  derselbe Wert wie REVALIDATE_SECRET auf dem Hetzner-Server
+#            (siehe .env auf dem Server oder pm2 ecosystem config)
+#
+# Ohne gesetztes Secret läuft der Workflow durch, meldet aber einen
+# Warning und macht nichts – kein Deployment-Fehler.
+
+on:
+  schedule:
+    # Montags 06:00 UTC – entspricht dem alten vercel.json-Cron
+    - cron: '0 6 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  revalidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Trigger revalidate
+        env:
+          SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          if [ -z "${SECRET:-}" ]; then
+            echo "::warning::REVALIDATE_SECRET not set — skipping revalidate."
+            exit 0
+          fi
+          code=$(curl -sS -o /tmp/revalidate.json -w "%{http_code}" -L \
+            "https://www.gekuendigt-abfindung.de/api/revalidate?secret=$SECRET")
+          echo "HTTP $code"
+          cat /tmp/revalidate.json
+          echo
+          [ "$code" = "200" ]

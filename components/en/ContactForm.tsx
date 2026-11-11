@@ -92,10 +92,10 @@ export default function ContactForm() {
                   <strong>Phone</strong>
                   <br />
                   <a
-                    href="tel:+49622295992400"
+                    href="tel:+4962213214470"
                     className="text-ink-light no-underline hover:text-gold transition-colors"
                   >
-                    +49 6222 9599 2400
+                    +49 6221 32144-70
                   </a>
                 </div>
               </div>

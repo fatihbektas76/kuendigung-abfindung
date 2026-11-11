@@ -94,7 +94,7 @@ export default function SeveranceTableEn() {
                 '@type': 'Article',
                 headline: 'German Severance Table — half-month rule by tenure and salary',
                 mainEntityOfPage: PAGE_URL,
-                author: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
+                author: { '@id': SEO_CONFIG.author.id },
                 publisher: { '@id': SEO_CONFIG.organization.id },
                 inLanguage: 'en',
                 articleSection: 'German employment law',

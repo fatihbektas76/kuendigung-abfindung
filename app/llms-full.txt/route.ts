@@ -144,7 +144,7 @@ export async function GET() {
   lines.push('## Kontakt & Rechtliches');
   lines.push('');
   lines.push(`- [Kostenlose Ersteinschätzung](${BASE}/#kontakt): Schildern Sie Ihren Fall — Ersteinschätzung innerhalb von 24 Stunden.`);
-  lines.push(`- Telefon: +49 6222 9599 2400`);
+  lines.push(`- Telefon: +49 6221 32144-70`);
   lines.push(`- E-Mail: bektas@apos.legal`);
   lines.push(`- Adresse: Am Paradeplatz 20, 69126 Heidelberg`);
   lines.push(`- [Datenschutzerklärung](${BASE}/privacy-policy/)`);

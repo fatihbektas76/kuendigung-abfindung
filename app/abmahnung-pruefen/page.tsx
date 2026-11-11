@@ -80,7 +80,7 @@ export default function AbmahnungPruefenPage() {
               <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={140} height={48} className="h-9 w-auto" priority />
             </Link>
             <a
-              href="tel:+49622295992400"
+              href="tel:+4962213214470"
               className="text-[0.82rem] text-gold-dark font-semibold no-underline hover:underline hidden sm:block"
             >
               +49 6222 95992 400

@@ -39,7 +39,7 @@ const BASE_URL = 'https://www.gekuendigt-abfindung.de';
 const personSchemas = [
   {
     '@type': 'Person',
-    '@id': `${BASE_URL}/#author`,
+    '@id': SEO_CONFIG.author.id,
     name: 'Fatih Bektas',
     givenName: 'Fatih',
     familyName: 'Bektas',
@@ -49,7 +49,7 @@ const personSchemas = [
     image: `${BASE_URL}/Fatih.webp`,
     url: `${BASE_URL}/autor/fatih-bektas/`,
     email: 'bektas@apos.legal',
-    telephone: '+49622295992400',
+    telephone: '+4962213214470',
     sameAs: [
       'https://www.anwalt.de/fatihbektas',
       'https://www.linkedin.com/in/fatih-bektas',

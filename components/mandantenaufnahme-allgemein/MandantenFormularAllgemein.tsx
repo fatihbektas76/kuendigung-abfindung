@@ -326,8 +326,8 @@ function MandantenFormularAllgemeinInner() {
           {t.sidebar.helpContact}
         </div>
         <div className="space-y-2">
-          <a href="tel:+49622295992400" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
-            +49 6222 9599 2400
+          <a href="tel:+4962213214470" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
+            +49 6221 32144-70
           </a>
           <a href="mailto:bektas@apos.legal" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
             bektas@apos.legal
@@ -435,8 +435,8 @@ function MandantenFormularAllgemeinInner() {
         {/* Mobile header */}
         <div className="lg:hidden flex items-center justify-between py-4 px-6 bg-white border-b border-border">
           <LanguageToggle />
-          <a href="tel:+49622295992400" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
-            +49 6222 9599 2400
+          <a href="tel:+4962213214470" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
+            +49 6221 32144-70
           </a>
         </div>
 

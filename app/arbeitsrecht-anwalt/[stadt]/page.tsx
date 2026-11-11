@@ -19,9 +19,16 @@ const gemeindenContents = gemeindenContentsRaw as Record<string, GemeindeContent
 const bezirkeContents = bezirkeContentsRaw as Record<string, GemeindeContent>;
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
-/** Heidelberg & Berlin (inkl. Bezirke) = Kanzleistandorte */
+/** Heidelberg (Hauptsitz), Wiesloch (Niederlassung) und Berlin (inkl. Bezirke)
+ *  gelten als Kanzleistandorte – für sie wird kein „bundesweit per Video"-
+ *  Hinweis angezeigt und ein eigener LocalBusiness-Knoten im JSON-LD. */
 function isKanzleistandort(slug: string): boolean {
-  return slug === "heidelberg" || slug === "berlin" || slug.startsWith("berlin-");
+  return (
+    slug === "heidelberg" ||
+    slug === "wiesloch" ||
+    slug === "berlin" ||
+    slug.startsWith("berlin-")
+  );
 }
 
 function lookupOrt(slug: string): { ort: Stadt; content: StadtContent | GemeindeContent; isGemeinde: boolean } | null {
@@ -57,19 +64,40 @@ export async function generateMetadata({
   if (!result) return {};
   const { ort, content } = result;
   const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}/`;
+  const isHeidelbergMain = ort.slug === "heidelberg";
+  const isWieslochMain = ort.slug === "wiesloch";
+
+  // Heidelberg (Hauptsitz) und Wiesloch (Niederlassung) sind Kanzleistandorte
+  // – eigener, ortsgebundener Titel, damit ChatGPT/Perplexity/Google die
+  // Seite als lokalen Fachanwalt-Nachweis werten und nicht als eine von
+  // 106 austauschbaren Städte-Seiten.
+  const title = isHeidelbergMain
+    ? "Fachanwalt für Arbeitsrecht in Heidelberg – Fatih Bektas | APOS Legal"
+    : isWieslochMain
+      ? "Fachanwalt für Arbeitsrecht in Wiesloch – Fatih Bektas | APOS Legal"
+      : `Kündigung oder Abfindung in ${ort.name} - bundesweit`;
+  const description = isHeidelbergMain
+    ? "Fatih Bektas, Fachanwalt für Arbeitsrecht bei APOS Legal am Paradeplatz 20 in Heidelberg. Beratung persönlich, per Telefon oder Video zu Kündigung, Abfindung, Aufhebungsvertrag. Zuständig: Arbeitsgericht Mannheim – Kammern Heidelberg."
+    : isWieslochMain
+      ? "Fatih Bektas, Fachanwalt für Arbeitsrecht an der Niederlassung Wiesloch der APOS Legal, Alte Bruchsaler Str. 28. Beratung zu Kündigung, Abfindung, Aufhebungsvertrag persönlich, per Telefon oder Video. Zuständig: Arbeitsgericht Mannheim."
+      : (content?.metaDescription ??
+          `Kündigung erhalten in ${ort.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${ort.arbeitsgericht}. Kostenlose Ersteinschätzung.`);
 
   return {
-    title: `Kündigung oder Abfindung in ${ort.name} - bundesweit`,
-    description: content?.metaDescription ??
-      `Kündigung erhalten in ${ort.name}? Fachanwalt für Arbeitsrecht – Abfindung, Aufhebungsvertrag, ${ort.arbeitsgericht}. Kostenlose Ersteinschätzung.`,
+    title,
+    description,
     alternates: { canonical: url },
     other: {
       "geo.region": `DE-${ort.bundesland === "Berlin" ? "BE" : ort.bundesland === "Hamburg" ? "HH" : ort.bundesland === "Bremen" ? "HB" : ort.bundesland === "Bayern" ? "BY" : ort.bundesland === "Baden-Württemberg" ? "BW" : ort.bundesland === "Hessen" ? "HE" : ort.bundesland === "Nordrhein-Westfalen" ? "NW" : ort.bundesland === "Niedersachsen" ? "NI" : ort.bundesland === "Sachsen" ? "SN" : ort.bundesland === "Sachsen-Anhalt" ? "ST" : ort.bundesland === "Schleswig-Holstein" ? "SH" : ort.bundesland === "Rheinland-Pfalz" ? "RP" : ort.bundesland === "Thüringen" ? "TH" : ort.bundesland === "Mecklenburg-Vorpommern" ? "MV" : "DE"}`,
       "geo.placename": ort.name,
     },
     openGraph: {
-      title: `Fachanwalt Arbeitsrecht ${ort.name} – Kündigung & Abfindung`,
-      description: content?.metaDescription ?? "",
+      title: isHeidelbergMain
+        ? "Fachanwalt für Arbeitsrecht in Heidelberg – APOS Legal"
+        : isWieslochMain
+          ? "Fachanwalt für Arbeitsrecht in Wiesloch – APOS Legal"
+          : `Fachanwalt Arbeitsrecht ${ort.name} – Kündigung & Abfindung`,
+      description: description,
       url,
       type: "website",
     },
@@ -77,94 +105,177 @@ export async function generateMetadata({
 }
 
 // ─── Schema Markup ────────────────────────────────────────────────────────────
+// Der site-weite LegalService (@id = https://apos.legal/#kanzlei) wird in
+// <SeoGeoBase> gerendert. Auf der Stadt-Seite erzeugen wir KEINEN zweiten
+// LegalService-Knoten mehr – sonst konkurrieren mehrere "APOS Legal"-Entitäten
+// um die Entity-Zuordnung bei ChatGPT, Perplexity und Google. Statt dessen
+// nur eine Service-Variante, die per `provider` auf die zentrale Kanzlei-
+// Entität verweist. Für Heidelberg kommt zusätzlich eine standort-spezifische
+// LocalBusiness-Repräsentation hinzu.
 function buildSchema(slug: string) {
   const result = lookupOrt(slug);
   if (!result) return null;
   const { ort, content } = result;
 
   const url = `https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/${ort.slug}/`;
+  const isHeidelbergMain = ort.slug === "heidelberg";
+  const isWieslochMain = ort.slug === "wiesloch";
 
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": isKanzleistandort(ort.slug)
-          ? ["LegalService", "LocalBusiness"]
-          : "LegalService",
-        "@id": `${url}#legalservice`,
-        name: "APOS Legal – Kanzlei Fatih Bektas",
-        description: `Fachanwalt für Arbeitsrecht mit Beratung für Arbeitnehmer in ${ort.name}`,
-        url,
-        telephone: "+49622295992400",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Am Paradeplatz 20",
-          addressLocality: "Heidelberg",
-          postalCode: "69126",
-          addressRegion: "Baden-Württemberg",
-          addressCountry: "DE",
-        },
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: `Fachanwalt für Arbeitsrecht für Mandanten aus ${ort.name}`,
+      description: `Kündigungsschutzklage, Abfindung und Aufhebungsvertrag für Arbeitnehmer in ${ort.name} vor dem ${ort.arbeitsgericht}.`,
+      url,
+      provider: { "@id": SEO_CONFIG.firm.id },
+      areaServed: {
+        "@type": "City",
+        name: ort.name,
         ...(ort.lat && ort.lng ? { geo: { "@type": "GeoCoordinates", latitude: ort.lat, longitude: ort.lng } } : {}),
-        areaServed: {
-          "@type": "City",
-          name: ort.name,
-          ...(ort.lat && ort.lng ? { geo: { "@type": "GeoCoordinates", latitude: ort.lat, longitude: ort.lng } } : {}),
-          containedIn: { "@type": "State", name: ort.bundesland },
-        },
-        knowsAbout: [
-          "Kündigungsschutzklage",
-          "Abfindungsverhandlung",
-          "Aufhebungsvertrag",
-          "Betriebsbedingte Kündigung",
-          "Arbeitsrecht",
+        containedIn: { "@type": "State", name: ort.bundesland },
+      },
+      serviceType: [
+        "Kündigungsschutzklage",
+        "Abfindungsverhandlung",
+        "Aufhebungsvertrag prüfen",
+        "Betriebsbedingte Kündigung",
+        "Arbeitsrecht",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Arbeitsrechtliche Leistungen",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Prüfung der Kündigung" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Abfindungsverhandlung" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Aufhebungsvertrag prüfen" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kündigungsschutzklage" } },
         ],
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Arbeitsrechtliche Leistungen",
-          itemListElement: [
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Prüfung der Kündigung" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Abfindungsverhandlung" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Aufhebungsvertrag prüfen" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kündigungsschutzklage" } },
-          ],
+      },
+    },
+    // Person-Referenz: verweist auf die zentrale @id. Kein zweiter
+    // Person-Knoten – die Stadt-Seite erbt den Fachanwalt-Datensatz.
+    {
+      "@type": "Person",
+      "@id": SEO_CONFIG.author.id,
+    },
+  ];
+
+  if (isHeidelbergMain) {
+    // Echter Kanzleisitz Heidelberg: standort-spezifische LocalBusiness-
+    // Repräsentation mit Adresse, Geo und Öffnungszeiten. isPartOf verweist
+    // auf die Kanzlei-Entität (@id auf apos.legal).
+    graph.unshift({
+      "@type": ["LegalService", "LocalBusiness"],
+      "@id": `${url}#standort-heidelberg`,
+      name: "APOS Legal — Standort Heidelberg",
+      description: "Kanzleisitz der APOS Legal in Heidelberg — Beratung im Arbeitsrecht persönlich, per Telefon und per Video.",
+      url,
+      isPartOf: { "@id": SEO_CONFIG.firm.id },
+      parentOrganization: { "@id": SEO_CONFIG.firm.id },
+      telephone: SEO_CONFIG.firm.phoneE164,
+      email: SEO_CONFIG.firm.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: SEO_CONFIG.firm.address.streetAddress,
+        addressLocality: SEO_CONFIG.firm.address.addressLocality,
+        postalCode: SEO_CONFIG.firm.address.postalCode,
+        addressRegion: SEO_CONFIG.firm.address.addressRegion,
+        addressCountry: SEO_CONFIG.firm.address.addressCountry,
+      },
+      // Geo-Koordinaten des Standorts: Platzhalter — nach Freigabe auf die
+      // echten Koordinaten des Paradeplatzes einstellen.
+      ...(ort.lat && ort.lng
+        ? { geo: { "@type": "GeoCoordinates", latitude: ort.lat, longitude: ort.lng } }
+        : {}),
+      areaServed: [
+        { "@type": "City", name: "Heidelberg" },
+        { "@type": "AdministrativeArea", name: "Rhein-Neckar-Kreis" },
+        { "@type": "Country", name: "Germany" },
+      ],
+      knowsLanguage: ["de", "en"],
+      priceRange: "$$",
+    });
+  }
+
+  if (isWieslochMain) {
+    // Niederlassung Wiesloch – eigener LocalBusiness-Knoten mit eigenem
+    // Telefon und eigener Adresse. `parentOrganization` verknüpft den
+    // Standort mit der Kanzlei-Entität. sameAs = Google-Business + Bing-
+    // Places-Profil des Standorts, damit die Entity-Zuordnung in ChatGPT/
+    // Perplexity/Google Maps eindeutig ist.
+    graph.unshift({
+      "@type": ["LegalService", "LocalBusiness"],
+      "@id": SEO_CONFIG.wieslochBranch.id,
+      name: "APOS Legal — Niederlassung Wiesloch",
+      description:
+        "Niederlassung der APOS Legal in Wiesloch — Beratung im Arbeitsrecht persönlich, per Telefon und per Video.",
+      url,
+      isPartOf: { "@id": SEO_CONFIG.firm.id },
+      parentOrganization: { "@id": SEO_CONFIG.firm.id },
+      telephone: SEO_CONFIG.wieslochBranch.phoneE164,
+      email: SEO_CONFIG.wieslochBranch.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: SEO_CONFIG.wieslochBranch.address.streetAddress,
+        addressLocality: SEO_CONFIG.wieslochBranch.address.addressLocality,
+        postalCode: SEO_CONFIG.wieslochBranch.address.postalCode,
+        addressRegion: SEO_CONFIG.wieslochBranch.address.addressRegion,
+        addressCountry: SEO_CONFIG.wieslochBranch.address.addressCountry,
+      },
+      ...(ort.lat && ort.lng
+        ? { geo: { "@type": "GeoCoordinates", latitude: ort.lat, longitude: ort.lng } }
+        : {}),
+      areaServed: [
+        { "@type": "City", name: "Wiesloch" },
+        { "@type": "AdministrativeArea", name: "Rhein-Neckar-Kreis" },
+        { "@type": "Country", name: "Germany" },
+      ],
+      knowsLanguage: ["de", "en"],
+      sameAs: SEO_CONFIG.wieslochBranch.sameAs,
+      priceRange: "$$",
+    });
+  }
+
+  // FAQ-Markup: nur Fragen, die sichtbar auf der Seite stehen – sonst
+  // riskieren wir SearchConsole-Warnungen wegen "Hidden FAQPage content".
+  graph.push({
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    mainEntity: [
+      ...content.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.frage,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.antwort.replace(/<[^>]+>/g, ""),
         },
-        priceRange: "$$",
-      },
-      {
-        "@type": "Person",
-        "@id": "https://www.gekuendigt-abfindung.de/#author",
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${url}#faq`,
-        mainEntity: [
-          ...content.faqs.map((faq) => ({
-            "@type": "Question",
-            name: faq.frage,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: faq.antwort.replace(/<[^>]+>/g, ""),
-            },
-          })),
-          ...(slug !== "heidelberg" ? [{
+      })),
+      ...(slug !== "heidelberg"
+        ? [{
             "@type": "Question",
             name: `Ist es ein Nachteil, dass Ihr Kanzleisitz nicht in ${ort.name} ist?`,
             acceptedAnswer: {
               "@type": "Answer",
               text: `Nein — das ist keinerlei Nachteil für Sie. Arbeitsrechtliche Verfahren werden heute vollständig digital geführt. Schriftsätze, Klageeinreichung und Kommunikation mit dem ${ort.arbeitsgericht} erfolgen elektronisch über das beA (besonderes elektronisches Anwaltspostfach). Besprechungen mit Ihnen führen wir per Telefon oder Videocall — schnell, flexibel und ohne Anfahrtsweg für Sie. Vor dem ${ort.arbeitsgericht} vertreten wir Sie genauso effektiv wie ein ortsansässiger Anwalt. Entscheidend ist die Fachkompetenz — nicht der Kanzleisitz.`,
             },
-          }] : []),
-        ],
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Startseite", item: "https://www.gekuendigt-abfindung.de/" },
-          { "@type": "ListItem", position: 2, name: "Arbeitsrecht Anwalt", item: "https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/" },
-          { "@type": "ListItem", position: 3, name: `Anwalt ${ort.name}`, item: url },
-        ],
-      },
+          }]
+        : []),
     ],
+  });
+
+  graph.push({
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Startseite", item: "https://www.gekuendigt-abfindung.de/" },
+      { "@type": "ListItem", position: 2, name: "Arbeitsrecht Anwalt", item: "https://www.gekuendigt-abfindung.de/arbeitsrecht-anwalt/" },
+      { "@type": "ListItem", position: 3, name: `Anwalt ${ort.name}`, item: url },
+    ],
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
   };
 }
 
@@ -173,6 +284,16 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
   const result = lookupOrt(params.stadt);
   if (!result) notFound();
   const { ort, content } = result;
+  const isHeidelbergMain = params.stadt === "heidelberg";
+  const isWieslochMain = params.stadt === "wiesloch";
+
+  // Zuständiges Gericht: Heidelberg hat keinen eigenen ArbG-Sitz, sondern die
+  // Kammern Heidelberg des Arbeitsgerichts Mannheim. Für Heidelberg wird das
+  // überall sichtbar korrekt ausgeschrieben; für andere Städte bleibt der
+  // ort-spezifische Wert aus den Stammdaten.
+  const arbeitsgerichtLabel = isHeidelbergMain
+    ? "Arbeitsgericht Mannheim – Kammern Heidelberg"
+    : ort.arbeitsgericht;
 
   return (
     <>
@@ -192,22 +313,109 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
 
         {/* H1 */}
         <h1 className="text-3xl md:text-4xl font-semibold text-[#6B6626] mb-4 leading-tight">
-          Fachanwalt für Arbeitsrecht für Arbeitnehmer in {ort.name} – Kündigung & Abfindung
+          {isHeidelbergMain
+            ? "Fachanwalt für Arbeitsrecht in Heidelberg – Fatih Bektas, APOS Legal"
+            : isWieslochMain
+              ? "Fachanwalt für Arbeitsrecht in Wiesloch – Fatih Bektas, APOS Legal"
+              : `Fachanwalt für Arbeitsrecht für Arbeitnehmer in ${ort.name} – Kündigung & Abfindung`}
         </h1>
         {/* Direktantwort (GEO) */}
         <div id="direktantwort">
           <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-            Kündigung erhalten in {ort.name}? Als Fachanwalt für Arbeitsrecht vertreten wir Arbeitnehmer
-            aus {ort.name} bei Kündigung, Abfindungsverhandlung und Aufhebungsvertrag – bundesweit und vollständig digital.
+            {isHeidelbergMain
+              ? "Fatih Bektas ist Fachanwalt für Arbeitsrecht bei APOS Legal am Paradeplatz 20 in Heidelberg. Beratung zu Kündigung, Abfindung und Aufhebungsvertrag persönlich im Büro, per Telefon oder per Video. Zuständig für Klagen aus Heidelberg: Arbeitsgericht Mannheim – Kammern Heidelberg, Vangerowstraße 20, 69115 Heidelberg."
+              : isWieslochMain
+                ? "Fatih Bektas ist Fachanwalt für Arbeitsrecht an der Niederlassung Wiesloch der APOS Legal, Alte Bruchsaler Str. 28, 69168 Wiesloch. Beratung zu Kündigung, Abfindung und Aufhebungsvertrag persönlich im Büro, per Telefon oder per Video. Zuständig für Klagen aus Wiesloch: Arbeitsgericht Mannheim."
+                : `Kündigung erhalten in ${ort.name}? Als Fachanwalt für Arbeitsrecht vertreten wir Arbeitnehmer aus ${ort.name} bei Kündigung, Abfindungsverhandlung und Aufhebungsvertrag – bundesweit und vollständig digital.`}
           </p>
         </div>
 
         {/* Badges */}
         <div className="flex flex-wrap gap-2 mb-8">
-          {["Fachanwalt für Arbeitsrecht", "Zugelassen seit 2005", "Bundesweite Vertretung", "Kein Vor-Ort-Termin nötig"].map((b) => (
+          {(isHeidelbergMain
+            ? ["Fachanwalt für Arbeitsrecht", "Kanzleisitz Heidelberg", "Zugelassen seit 2005", "Fachanwalt seit 2011", "Beratung auf Deutsch & Englisch"]
+            : isWieslochMain
+              ? ["Fachanwalt für Arbeitsrecht", "Niederlassung Wiesloch", "Zugelassen seit 2005", "Fachanwalt seit 2011", "Beratung auf Deutsch & Englisch"]
+              : ["Fachanwalt für Arbeitsrecht", "Zugelassen seit 2005", "Bundesweite Vertretung", "Kein Vor-Ort-Termin nötig"]
+          ).map((b) => (
             <span key={b} className="text-xs text-[#6B6626] bg-[#f5f2e8] border border-[#d4c98a] rounded px-2 py-1">{b}</span>
           ))}
         </div>
+
+        {/* Standort-Infokarte: nur für den echten Kanzleisitz Heidelberg.
+            Anfahrt und Öffnungszeiten stehen als [BITTE ERGÄNZEN], damit
+            keine erfundenen Zeiten in Google Maps / ChatGPT landen. */}
+        {isHeidelbergMain && (
+          <div className="border border-[#d4c98a] bg-[#f9f6ec] rounded-xl p-6 mb-8">
+            <h2 className="text-lg font-semibold text-[#6B6626] mb-4">Kanzleistandort Heidelberg</h2>
+            <dl className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+              <div>
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Anschrift</dt>
+                <dd className="text-gray-800">
+                  APOS Legal<br />
+                  Am Paradeplatz 20<br />
+                  69126 Heidelberg
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Kontakt</dt>
+                <dd className="text-gray-800">
+                  <a href="tel:+4962213214470" className="text-[#6B6626] no-underline hover:underline">+49 6221 32144-70</a><br />
+                  <a href="mailto:info@apos.legal" className="text-[#6B6626] no-underline hover:underline">info@apos.legal</a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Öffnungszeiten</dt>
+                <dd className="text-gray-500 italic">[BITTE ERGÄNZEN]</dd>
+              </div>
+              <div>
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Anfahrt &amp; Parken</dt>
+                <dd className="text-gray-500 italic">[BITTE ERGÄNZEN: ÖPNV, Parkmöglichkeiten]</dd>
+              </div>
+              <div className="md:col-span-2">
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Weitere Standorte</dt>
+                <dd className="text-gray-700">APOS Legal berät Sie am Standort Heidelberg; weitere Standorte in <a href="/arbeitsrecht-anwalt/wiesloch/" className="text-[#6B6626] hover:underline">Wiesloch</a> und <a href="/arbeitsrecht-anwalt/berlin/" className="text-[#6B6626] hover:underline">Berlin</a>.</dd>
+              </div>
+            </dl>
+          </div>
+        )}
+
+        {/* Standort-Infokarte Wiesloch – analoge Treatment wie Heidelberg,
+            aber mit eigener Rufnummer der Niederlassung. */}
+        {isWieslochMain && (
+          <div className="border border-[#d4c98a] bg-[#f9f6ec] rounded-xl p-6 mb-8">
+            <h2 className="text-lg font-semibold text-[#6B6626] mb-4">Niederlassung Wiesloch</h2>
+            <dl className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+              <div>
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Anschrift</dt>
+                <dd className="text-gray-800">
+                  APOS Legal<br />
+                  Alte Bruchsaler Str. 28<br />
+                  69168 Wiesloch
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Kontakt</dt>
+                <dd className="text-gray-800">
+                  <a href="tel:+49622295992400" className="text-[#6B6626] no-underline hover:underline">+49 6222 9599 2400</a><br />
+                  <a href="mailto:info@apos.legal" className="text-[#6B6626] no-underline hover:underline">info@apos.legal</a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Öffnungszeiten</dt>
+                <dd className="text-gray-500 italic">[BITTE ERGÄNZEN]</dd>
+              </div>
+              <div>
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Anfahrt &amp; Parken</dt>
+                <dd className="text-gray-500 italic">[BITTE ERGÄNZEN: ÖPNV, Parkmöglichkeiten]</dd>
+              </div>
+              <div className="md:col-span-2">
+                <dt className="text-[#8B7A3A] text-xs uppercase tracking-wide font-medium mb-1">Hauptsitz</dt>
+                <dd className="text-gray-700">Hauptsitz der Kanzlei: <a href="/arbeitsrecht-anwalt/heidelberg/" className="text-[#6B6626] hover:underline">Heidelberg, Am Paradeplatz 20</a>. Weitere Niederlassung in Berlin.</dd>
+              </div>
+            </dl>
+          </div>
+        )}
 
         {/* Kanzleisitz-Hinweis für Nicht-Standorte */}
         {!isKanzleistandort(params.stadt) && (
@@ -353,22 +561,41 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         {/* Arbeitsgericht */}
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
           <h2 className="text-lg font-semibold text-gray-900 mb-3">
-            {arbeitsgerichteUrls[ort.arbeitsgericht] ? (
+            {isHeidelbergMain ? (
+              <>
+                {arbeitsgerichtLabel} – was Sie wissen müssen
+              </>
+            ) : arbeitsgerichteUrls[ort.arbeitsgericht] ? (
               <a href={arbeitsgerichteUrls[ort.arbeitsgericht]} target="_blank" rel="noopener noreferrer" className="hover:text-[#6B6626] transition-colors">
                 {ort.arbeitsgericht} <span className="text-xs font-normal text-gray-400">↗</span>
               </a>
-            ) : ort.arbeitsgericht} – was Sie wissen müssen
+            ) : (
+              <>{ort.arbeitsgericht} – was Sie wissen müssen</>
+            )}
           </h2>
           <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-gray-700 mb-4">
-            <span><strong>Adresse:</strong> {ort.arbeitsgerichtAdresse}</span>
-            <span><strong>Berufung:</strong> {ort.lagName}</span>
-            {arbeitsgerichteUrls[ort.arbeitsgericht] && (
-              <a href={arbeitsgerichteUrls[ort.arbeitsgericht]} target="_blank" rel="noopener noreferrer" className="text-[#6B6626] hover:underline">
-                Webseite des Gerichts ↗
-              </a>
+            {isHeidelbergMain ? (
+              <>
+                <span><strong>Adresse:</strong> Vangerowstraße 20, 69115 Heidelberg</span>
+                <span><strong>Berufung:</strong> Landesarbeitsgericht Baden-Württemberg</span>
+              </>
+            ) : (
+              <>
+                <span><strong>Adresse:</strong> {ort.arbeitsgerichtAdresse}</span>
+                <span><strong>Berufung:</strong> {ort.lagName}</span>
+                {arbeitsgerichteUrls[ort.arbeitsgericht] && (
+                  <a href={arbeitsgerichteUrls[ort.arbeitsgericht]} target="_blank" rel="noopener noreferrer" className="text-[#6B6626] hover:underline">
+                    Webseite des Gerichts ↗
+                  </a>
+                )}
+              </>
             )}
           </div>
-          {isStadtContent(content) ? (
+          {isHeidelbergMain ? (
+            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+              Für Beschäftigte mit Arbeitsort Heidelberg sind die Kammern Heidelberg des Arbeitsgerichts Mannheim zuständig – es gibt in Heidelberg kein eigenständiges Arbeitsgericht, sondern eine auswärtige Kammer. Kündigungsschutzklagen müssen binnen 3 Wochen nach Zugang der Kündigung eingereicht werden (§ 4 KSchG).
+            </p>
+          ) : isStadtContent(content) ? (
             <div className="text-sm text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: content.arbeitsgerichtSection }} />
           ) : (
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -434,7 +661,11 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
             <p className="text-sm font-medium text-[#8B7A3A] mb-2">Fachanwalt für Arbeitsrecht</p>
             <p className="text-sm text-gray-600 leading-relaxed mb-3">
               Zugelassen seit 2005, Fachanwalt für Arbeitsrecht seit 2011 (Rechtsanwaltskammer Karlsruhe).
-              Ich verteidige Arbeitnehmer bundesweit bei Kündigung, Abfindung und Aufhebungsvertrag – vollständig digital.
+              {isHeidelbergMain
+                ? " Ich berate Arbeitnehmer am Kanzleisitz Heidelberg – persönlich, per Telefon oder per Video – zu Kündigung, Abfindung und Aufhebungsvertrag."
+                : isWieslochMain
+                  ? " Ich berate Arbeitnehmer an der Niederlassung Wiesloch – persönlich, per Telefon oder per Video – zu Kündigung, Abfindung und Aufhebungsvertrag."
+                  : " Ich verteidige Arbeitnehmer bundesweit bei Kündigung, Abfindung und Aufhebungsvertrag – vollständig digital."}
             </p>
             <div className="flex flex-wrap gap-2 mb-3">
               {["Zugelassen seit 2005", "Fachanwalt für Arbeitsrecht seit 2011", "RAK Karlsruhe", "APOS Legal", "Bundesweite Vertretung"].map((t) => (
@@ -491,8 +722,20 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         <div className="bg-[#6B6626] rounded-xl p-8 text-center">
           <h2 className="text-xl font-semibold text-white mb-2">Jetzt kostenlose Ersteinschätzung anfordern</h2>
           <p className="text-sm text-white/75 mb-6">
-            Für Arbeitnehmer aus {ort.name} und ganz {ort.bundesland}.<br />
-            Vollständig digital – keine Anreise erforderlich.
+            {isHeidelbergMain ? (
+              <>
+                Beratung bei APOS Legal am Paradeplatz 20 in Heidelberg – persönlich, per Telefon oder per Video.
+              </>
+            ) : isWieslochMain ? (
+              <>
+                Beratung in der Niederlassung Wiesloch, Alte Bruchsaler Str. 28 – persönlich, per Telefon oder per Video.
+              </>
+            ) : (
+              <>
+                Für Arbeitnehmer aus {ort.name} und ganz {ort.bundesland}.<br />
+                Vollständig digital – keine Anreise erforderlich.
+              </>
+            )}
           </p>
           <a href="/kuendigung-pruefen/" className="inline-block bg-white text-[#6B6626] px-7 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity">
             Ersteinschätzung anfordern →

@@ -47,7 +47,7 @@ export default function AuthorEn() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': ['Person', 'Attorney'],
-            '@id': `${SEO_CONFIG.baseUrl}/#author`,
+            '@id': SEO_CONFIG.author.id,
             name: SEO_CONFIG.author.name,
             givenName: 'Fatih',
             familyName: 'Bektas',
@@ -59,17 +59,9 @@ export default function AuthorEn() {
             email: SEO_CONFIG.author.email,
             telephone: SEO_CONFIG.author.telephone,
             knowsLanguage: ['de', 'en'],
-            worksFor: {
-              '@type': 'LegalService',
-              '@id': `${SEO_CONFIG.baseUrl}/#organization`,
-              name: SEO_CONFIG.organization.legalName,
-              url: SEO_CONFIG.baseUrl,
-              address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'Heidelberg',
-                addressCountry: 'DE',
-              },
-            },
+            // Reference the central LegalService entity instead of spawning
+            // a second "APOS Legal" node with a conflicting @id.
+            worksFor: { '@id': SEO_CONFIG.organization.id },
             hasCredential: [
               {
                 '@type': 'EducationalOccupationalCredential',

@@ -22,7 +22,7 @@ export function generateArticleSchema({
     description,
     datePublished,
     dateModified,
-    author: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
+    author: { '@id': SEO_CONFIG.author.id },
     publisher: { '@id': SEO_CONFIG.organization.id },
     mainEntityOfPage: url,
     articleSection,

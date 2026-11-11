@@ -77,7 +77,7 @@ export default function DismissalDuringIllnessEn() {
                 '@type': 'Article',
                 headline: 'Dismissal During Illness in Germany — Myth and Reality',
                 mainEntityOfPage: PAGE_URL,
-                author: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
+                author: { '@id': SEO_CONFIG.author.id },
                 publisher: { '@id': SEO_CONFIG.organization.id },
                 inLanguage: 'en',
                 articleSection: 'German employment law',
