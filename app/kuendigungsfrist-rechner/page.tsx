@@ -519,7 +519,7 @@ export default function KuendigungsfristRechnerPage() {
                     href="/kuendigung-pruefen/"
                     className="block w-full py-3.5 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
                   >
-                    Kündigung kostenlos prüfen &rarr;
+                    Kostenlose Ersteinschätzung anfordern &rarr;
                   </Link>
                 </div>
               )}

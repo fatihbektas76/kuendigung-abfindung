@@ -264,8 +264,8 @@ export default function KuendigungsfristenPage() {
               Wurde Ihre Kündigungsfrist eingehalten?
             </h2>
           <p className="text-[1rem] text-ink-muted max-w-[520px] mx-auto mb-6">
-            Viele Kündigungen scheitern an der falschen Frist. Wir prüfen kostenlos,
-            ob Ihre Kündigung fristgerecht ist.
+            Viele Kündigungen scheitern an der falschen Frist. In einer kostenlosen
+            Ersteinschätzung klären wir, ob Ihre Kündigung fristgerecht ist.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <a

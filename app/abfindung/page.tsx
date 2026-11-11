@@ -26,19 +26,19 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: `Abfindung bei Kündigung ${new Date().getFullYear()} — Anspruch, Höhe & Berechnung [Tabelle + Rechner]`,
   description:
-    'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt Anspruch kostenlos prüfen.',
+    'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt kostenlose Ersteinschätzung anfordern.',
   alternates: {
     canonical: `${SEO_CONFIG.baseUrl}/abfindung/`,
   },
   openGraph: {
     title: `Abfindung bei Kündigung ${new Date().getFullYear()} — Anspruch, Höhe & Berechnung [Tabelle + Rechner]`,
-    description: 'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt Anspruch kostenlos prüfen.',
+    description: 'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt kostenlose Ersteinschätzung anfordern.',
     url: `${SEO_CONFIG.baseUrl}/abfindung/`,
   },
   twitter: {
     card: 'summary_large_image',
     title: `Abfindung bei Kündigung ${new Date().getFullYear()} — Anspruch, Höhe & Berechnung [Tabelle + Rechner]`,
-    description: 'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt Anspruch kostenlos prüfen.',
+    description: 'Abfindung nach Kündigung: 0,5–1,5 Gehälter pro Jahr. Formel, Tabelle & Rechner vom Fachanwalt. Jetzt kostenlose Ersteinschätzung anfordern.',
   },
 };
 

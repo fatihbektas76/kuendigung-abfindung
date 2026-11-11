@@ -301,7 +301,7 @@ export default function FristlosContent({ entry, prev, next, yearData }: Props) 
               {[
                 { title: 'Datum notieren', desc: 'Notieren Sie sofort das exakte Datum des Zugangs der Kündigung. Ab diesem Tag läuft die 3-Wochen-Frist für die Kündigungsschutzklage (§ 4 KSchG).' },
                 { title: 'Nichts unterschreiben', desc: 'Unterschreiben Sie weder die Kündigung noch einen Aufhebungsvertrag. Lassen Sie sich nicht unter Druck setzen — Sie haben Rechte.' },
-                { title: 'Sofort Anwalt kontaktieren', desc: `Kontaktieren Sie umgehend einen Fachanwalt für Arbeitsrecht. Bei fristloser Kündigung nach ${yl} prüfen wir kostenlos: wichtiger Grund, Abmahnung, 2-Wochen-Frist.` },
+                { title: 'Sofort Anwalt kontaktieren', desc: `Kontaktieren Sie umgehend einen Fachanwalt für Arbeitsrecht. Bei fristloser Kündigung nach ${yl} klären wir in einer kostenlosen Ersteinschätzung: wichtiger Grund, Abmahnung, 2-Wochen-Frist.` },
                 { title: 'Arbeitssuchend melden', desc: 'Melden Sie sich innerhalb von 3 Tagen bei der Agentur für Arbeit arbeitssuchend, um eine Sperrzeit beim Arbeitslosengeld zu vermeiden.' },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4">

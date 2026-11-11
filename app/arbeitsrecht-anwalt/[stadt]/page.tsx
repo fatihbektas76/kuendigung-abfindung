@@ -640,7 +640,7 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
         <div className="border-l-4 border-[#8B7A3A] bg-white border border-gray-200 rounded-r-lg p-5 mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div>
             <p className="font-semibold text-[#6B6626] mb-1">Aufhebungsvertrag erhalten?</p>
-            <p className="text-sm text-gray-600">Nie ohne anwaltliche Prüfung unterschreiben. Wir prüfen kostenlos.</p>
+            <p className="text-sm text-gray-600">Nie ohne anwaltliche Prüfung unterschreiben. Jetzt kostenlose Ersteinschätzung anfordern.</p>
           </div>
           <a href="/#kontakt" className="shrink-0 bg-[#6B6626] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#8B7A3A] transition-colors">
             Jetzt anfragen →
