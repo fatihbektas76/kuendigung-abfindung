@@ -217,7 +217,7 @@ export default function TeilzeitRechnerClient() {
             href="/#kontakt"
             className="block w-full py-3.5 bg-[#2A1F0E] text-white border-none rounded-sm font-sans text-base font-semibold no-underline text-center transition-all hover:bg-[#1a1408] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
           >
-            Anspruch kostenlos prüfen &rarr;
+            Kostenlose Ersteinschätzung anfordern &rarr;
           </Link>
         </div>
       </div>

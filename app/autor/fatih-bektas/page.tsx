@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': ['Person', 'Attorney'],
-  '@id': `${BASE_URL}/#author`,
+  '@id': SEO_CONFIG.author.id,
   name: 'Fatih Bektas',
   givenName: 'Fatih',
   familyName: 'Bektas',
@@ -50,23 +50,15 @@ const personSchema = {
   image: `${BASE_URL}/Fatih.webp`,
   url: `${BASE_URL}/autor/fatih-bektas/`,
   email: 'bektas@apos.legal',
-  telephone: '+49622295992400',
+  telephone: '+4962213214470',
   sameAs: [
     'https://www.anwalt.de/fatihbektas',
     'https://www.linkedin.com/in/fatih-bektas',
     `${BASE_URL}/team/`,
   ],
-  worksFor: {
-    '@type': 'LegalService',
-    '@id': `${BASE_URL}/#organization`,
-    name: 'APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG',
-    url: BASE_URL,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Heidelberg',
-      addressCountry: 'DE',
-    },
-  },
+  // Referenz auf den site-weiten LegalService statt eines eigenen Knotens –
+  // sonst entsteht ein paralleles "APOS Legal"-Objekt mit falscher @id.
+  worksFor: { '@id': SEO_CONFIG.organization.id },
   hasCredential: [
     {
       '@type': 'EducationalOccupationalCredential',

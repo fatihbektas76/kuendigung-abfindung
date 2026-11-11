@@ -97,7 +97,7 @@ export default function DismissalProtectionActPage() {
     datePublished: '2026-05-12',
     dateModified: `${year}-10-06`,
     inLanguage: 'en',
-    author: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
+    author: { '@id': SEO_CONFIG.author.id },
     publisher: { '@id': SEO_CONFIG.organization.id },
     mainEntityOfPage: PAGE_URL,
     articleSection: 'Dismissal',

@@ -136,9 +136,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 : 'https://www.gekuendigt-abfindung.de/',
               inLanguage: isEnglish ? 'en' : 'de-DE',
               publisher: {
-                '@type': 'Organization',
-                name: 'APOS Legal Rechtsanwaltsgesellschaft mbH & Co. KG',
-                url: 'https://www.gekuendigt-abfindung.de/',
+                // @id-Referenz auf den site-weiten LegalService (apos.legal/#kanzlei).
+                // So wird die Microsite als Publisher der zentralen Kanzlei-Entität
+                // zugeordnet, statt ein zweites Organization-Objekt aufzumachen.
+                '@id': SEO_CONFIG.organization.id,
               },
               potentialAction: {
                 '@type': 'SearchAction',

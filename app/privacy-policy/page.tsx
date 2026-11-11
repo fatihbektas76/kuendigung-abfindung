@@ -167,7 +167,7 @@ export default function PrivacyPolicyPage() {
               </dd>
               <dt className="text-ink-muted font-medium">Telefon</dt>
               <dd>
-                <A href="tel:+49622295992400">+49 6222 9599 2400</A>
+                <A href="tel:+4962213214470">+49 6221 32144-70</A>
               </dd>
             </dl>
           </div>

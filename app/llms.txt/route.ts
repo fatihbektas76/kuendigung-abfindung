@@ -43,7 +43,7 @@ export async function GET() {
 - [Kostenlose Ersteinschätzung](${BASE_URL}/#kontakt): Schildern Sie Ihren Fall — Ersteinschätzung innerhalb von 24 Stunden.
 - [Telefontermin buchen](https://meet.brevo.com/fatih-bektas/ersteinschaetzung-per-telefon-kuendigung-arbeitsrechtde): Kostenlose Ersteinschätzung per Telefon.
 - E-Mail: bektas@apos.legal
-- Telefon: +49 6222 9599 2400
+- Telefon: +49 6221 32144-70
 - Adresse: Am Paradeplatz 20, 69126 Heidelberg
 
 ## Rechtliches

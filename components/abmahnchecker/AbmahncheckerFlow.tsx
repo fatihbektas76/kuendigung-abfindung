@@ -170,7 +170,7 @@ export default function AbmahncheckerFlow() {
         <div className="text-[0.78rem] text-ink-muted">Fachanwalt für Arbeitsrecht</div>
         <div className="text-[0.78rem] text-ink-muted mt-1">APOS Legal, Heidelberg</div>
         <div className="mt-3">
-          <a href="tel:+49622295992400" className="text-[0.82rem] text-gold-dark font-semibold no-underline hover:underline">
+          <a href="tel:+4962213214470" className="text-[0.82rem] text-gold-dark font-semibold no-underline hover:underline">
             +49 6222 95992 400
           </a>
         </div>
@@ -190,7 +190,7 @@ export default function AbmahncheckerFlow() {
             <Link href="/" className="flex items-center gap-2 no-underline">
               <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={120} height={40} className="h-7 w-auto" />
             </Link>
-            <a href="tel:+49622295992400" className="text-[0.82rem] text-gold-dark font-semibold no-underline">
+            <a href="tel:+4962213214470" className="text-[0.82rem] text-gold-dark font-semibold no-underline">
               +49 6222 95992 400
             </a>
           </div>

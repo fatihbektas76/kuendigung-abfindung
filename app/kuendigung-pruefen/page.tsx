@@ -102,12 +102,12 @@ function RadioOption({ label, selected, onClick }: { label: string; selected: bo
 
 const pruefenFaqs = [
   {
-    q: 'Wie lange dauert die kostenlose Prüfung?',
+    q: 'Wie lange dauert die kostenlose Ersteinschätzung?',
     a: 'Die Online-Einschätzung dauert nur 2 Minuten. Innerhalb von 24 Stunden erhalten Sie eine persönliche Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
   },
   {
-    q: 'Ist die Prüfung wirklich kostenlos?',
-    a: 'Ja. Die Ersteinschätzung ist kostenlos und unverbindlich. Für alles Weitere erhalten Sie vorab ein Kostenangebot oder wir klären die Kostenübernahme mit Ihrer Rechtsschutzversicherung (vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung). Kosten entstehen erst mit Ihrem Auftrag.',
+    q: 'Ist die Ersteinschätzung wirklich kostenlos?',
+    a: 'Ja. Die Ersteinschätzung ist kostenlos und unverbindlich. Für alles Weitere — insbesondere die anwaltliche Prüfung Ihrer Unterlagen — erhalten Sie vorab ein Kostenangebot oder wir klären die Kostenübernahme mit Ihrer Rechtsschutzversicherung (vorbehaltlich Wartezeit, Deckungszusage und etwaiger Selbstbeteiligung). Kosten entstehen erst mit Ihrem Auftrag.',
   },
   {
     q: 'Welche 3-Wochen-Frist muss ich beachten?',
@@ -326,8 +326,8 @@ export default function KuendigungPruefenPage() {
           Hilfe und Kontakt
         </div>
         <div className="space-y-2">
-          <a href="tel:+49622295992400" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
-            +49 6222 9599 2400
+          <a href="tel:+4962213214470" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
+            +49 6221 32144-70
           </a>
           <a href="mailto:bektas@apos.legal" className="block text-[0.88rem] text-ink no-underline hover:text-gold transition-colors">
             bektas@apos.legal
@@ -908,7 +908,7 @@ export default function KuendigungPruefenPage() {
               onClick={() => goTo('S10')}
               className="w-full py-4 bg-gold-dark text-white border-none rounded-sm font-sans text-base font-semibold cursor-pointer transition-all hover:bg-[#635428] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(166,139,75,0.25)]"
             >
-              Trotzdem kostenlos prüfen lassen &rarr;
+              Trotzdem kostenlose Ersteinschätzung anfordern &rarr;
             </button>
           </div>
         );
@@ -924,9 +924,9 @@ export default function KuendigungPruefenPage() {
       <SeoGeoBase
         pageType="WebApplication"
         pageUrl={`${SEO_CONFIG.baseUrl}/kuendigung-pruefen/`}
-        pageTitle="Kündigungscheck — Kündigung kostenlos prüfen"
-        pageDescription="Kostenloser Kündigungscheck: Prüfen Sie in 2 Minuten Ihre Abfindungschancen. Ersteinschätzung vom Fachanwalt für Arbeitsrecht — 100% kostenlos & unverbindlich."
-        appName="Kündigungscheck — Kündigung kostenlos prüfen"
+        pageTitle="Kündigungscheck — kostenlose Ersteinschätzung vom Fachanwalt"
+        pageDescription="Kündigungscheck: Online-Ersteinschätzung in 2 Minuten zu Ihren Abfindungschancen. Rückmeldung vom Fachanwalt für Arbeitsrecht innerhalb von 24 Stunden — kostenlos & unverbindlich."
+        appName="Kündigungscheck — kostenlose Ersteinschätzung"
         breadcrumbs={[
           { name: 'Start', url: `${SEO_CONFIG.baseUrl}/` },
           { name: 'Kündigung prüfen', url: `${SEO_CONFIG.baseUrl}/kuendigung-pruefen/` },
@@ -960,7 +960,7 @@ export default function KuendigungPruefenPage() {
             '@type': 'HowTo',
             name: 'Kostenlose Ersteinschätzung — in 2 Minuten',
             description:
-              'Prüfen Sie in 9 Schritten kostenlos Ihre Abfindungschancen nach einer Kündigung. Ersteinschätzung vom Fachanwalt für Arbeitsrecht.',
+              'Erhalten Sie in 9 Schritten eine kostenlose Ersteinschätzung Ihrer Abfindungschancen nach einer Kündigung – vom Fachanwalt für Arbeitsrecht.',
             totalTime: 'PT2M',
             step: [
               {
@@ -994,8 +994,8 @@ export default function KuendigungPruefenPage() {
           <Link href="/" className="flex items-center no-underline">
             <Image src="/logo.png" alt="gekuendigt-abfindung.de" width={120} height={40} className="h-8 w-auto" priority />
           </Link>
-          <a href="tel:+49622295992400" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
-            +49 6222 9599 2400
+          <a href="tel:+4962213214470" className="text-[0.82rem] font-semibold text-gold-dark no-underline">
+            +49 6221 32144-70
           </a>
         </div>
 

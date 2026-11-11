@@ -60,8 +60,8 @@ export default function PrivacyPolicyEn() {
             </a>
             <br />
             Phone:{' '}
-            <a href="tel:+49622295992400" className="text-gold-dark underline">
-              +49 6222 9599 2400
+            <a href="tel:+4962213214470" className="text-gold-dark underline">
+              +49 6221 32144-70
             </a>
           </p>
         </section>

@@ -78,7 +78,7 @@ export default function GardenLeaveEn() {
                 '@type': 'Article',
                 headline: 'Garden Leave After Dismissal in Germany — BAG 5 AZR 108/25',
                 mainEntityOfPage: PAGE_URL,
-                author: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
+                author: { '@id': SEO_CONFIG.author.id },
                 publisher: { '@id': SEO_CONFIG.organization.id },
                 inLanguage: 'en',
                 articleSection: 'German employment law',

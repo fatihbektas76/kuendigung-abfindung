@@ -121,8 +121,8 @@ export default function LegalNoticePage() {
               <dd className="text-ink-light">Am Paradeplatz 20, 69126 Heidelberg</dd>
               <dt className="text-ink-muted font-medium">Telefon</dt>
               <dd>
-                <a href="tel:+49622295992400" className="text-gold no-underline hover:underline">
-                  +49 6222 9599 2400
+                <a href="tel:+4962213214470" className="text-gold no-underline hover:underline">
+                  +49 6221 32144-70
                 </a>
               </dd>
               <dt className="text-ink-muted font-medium">E-Mail</dt>
@@ -325,8 +325,8 @@ export default function LegalNoticePage() {
               <dd className="text-ink-light">Am Paradeplatz 20, 69126 Heidelberg</dd>
               <dt className="text-ink-muted font-medium">Telefon</dt>
               <dd>
-                <a href="tel:+49622295992400" className="text-gold no-underline hover:underline">
-                  +49 6222 9599 2400
+                <a href="tel:+4962213214470" className="text-gold no-underline hover:underline">
+                  +49 6221 32144-70
                 </a>
               </dd>
               <dt className="text-ink-muted font-medium">E-Mail</dt>

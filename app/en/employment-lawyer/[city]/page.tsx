@@ -63,21 +63,27 @@ export default function EmploymentLawyerCityEn({ params }: Props) {
 
   return (
     <>
+      {/* Service node referencing the firm's central @id — avoids spawning
+          a second APOS Legal LegalService that competes with the main
+          https://apos.legal/#kanzlei entity. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'LegalService',
+            '@type': 'Service',
+            '@id': `${url}#service`,
             inLanguage: 'en',
-            name: `APOS Legal — Employment Lawyer ${name}`,
+            name: `English-speaking employment lawyer for ${name}`,
             url,
             areaServed: { '@type': 'City', name },
-            provider: {
-              '@type': 'Attorney',
-              name: SEO_CONFIG.author.name,
-              jobTitle: 'German employment-law specialist',
-            },
+            provider: { '@id': SEO_CONFIG.organization.id },
+            serviceType: [
+              'Unfair dismissal claim',
+              'Severance negotiation',
+              'Termination agreement review',
+              'Summary dismissal defence',
+            ],
           }),
         }}
       />

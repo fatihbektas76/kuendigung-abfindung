@@ -22,7 +22,7 @@ interface SeoGeoBaseProps {
   articleSection?: string;
 }
 
-const { baseUrl, author, organization, rating, reviews } = SEO_CONFIG;
+const { author, organization, rating, reviews } = SEO_CONFIG;
 
 export default function SeoGeoBase({
   pageUrl = '',
@@ -57,7 +57,7 @@ export default function SeoGeoBase({
   schemas.push({
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': `${baseUrl}/#author`,
+    '@id': author.id,
     name: author.name,
     jobTitle: author.jobTitle,
     hasCredential: author.hasCredential,
@@ -69,12 +69,16 @@ export default function SeoGeoBase({
   });
 
   // Block 2: Organization / LegalService (optional)
+  // Site-weite Kanzlei-Repräsentation. @id = https://apos.legal/#kanzlei
+  // bündelt alle Entity-Signale (name, legalName, sameAs, rating, Reviews)
+  // auf die Kanzlei – und nicht auf die Microsite gekuendigt-abfindung.de.
   if (includeOrganization) {
     const orgSchema: Record<string, unknown> = {
       '@context': 'https://schema.org',
       '@type': 'LegalService',
       '@id': organization.id,
       name: organization.name,
+      legalName: organization.legalName,
       url: organization.url,
       description: organization.description,
       telephone: organization.telephone,
@@ -86,7 +90,8 @@ export default function SeoGeoBase({
       areaServed: organization.areaServed,
       serviceType: organization.serviceType,
       knowsLanguage: organization.knowsLanguage,
-      founder: { '@id': `${baseUrl}/#author` },
+      sameAs: organization.sameAs,
+      founder: { '@id': author.id },
     };
     if (includeRating) {
       orgSchema.aggregateRating = {
@@ -111,7 +116,7 @@ export default function SeoGeoBase({
       inLanguage: 'de',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
       provider: { '@id': organization.id },
-      author: { '@id': `${baseUrl}/#author` },
+      author: { '@id': author.id },
       datePublished,
       dateModified: effectiveDateModified,
     };
@@ -154,7 +159,7 @@ export default function SeoGeoBase({
       url: pageUrl,
       description: pageDescription,
       inLanguage: 'de',
-      author: { '@id': `${baseUrl}/#author` },
+      author: { '@id': author.id },
       publisher: { '@id': organization.id },
       datePublished,
       dateModified: effectiveDateModified,

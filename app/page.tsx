@@ -93,8 +93,8 @@ export default function Home() {
                 knowsLanguage: SEO_CONFIG.organization.knowsLanguage,
                 availableLanguage: SEO_CONFIG.organization.availableLanguage,
                 audience: SEO_CONFIG.organization.audience,
-                founder: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
-                employee: { '@id': `${SEO_CONFIG.baseUrl}/#author` },
+                founder: { '@id': SEO_CONFIG.author.id },
+                employee: { '@id': SEO_CONFIG.author.id },
                 aggregateRating: {
                   '@type': 'AggregateRating',
                   ...SEO_CONFIG.rating,
@@ -103,7 +103,7 @@ export default function Home() {
               },
               {
                 '@type': ['Person', 'Attorney'],
-                '@id': `${SEO_CONFIG.baseUrl}/#author`,
+                '@id': SEO_CONFIG.author.id,
                 name: SEO_CONFIG.author.name,
                 jobTitle: SEO_CONFIG.author.jobTitle,
                 description: `${SEO_CONFIG.author.credential}, Zulassung ${SEO_CONFIG.author.organization}. Über 20 Jahre Arbeitsrecht-Erfahrung.`,

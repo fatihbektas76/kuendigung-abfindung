@@ -85,8 +85,8 @@ export default function ContactForm() {
                 <div>
                   <strong>Telefon</strong>
                   <br />
-                  <a href="tel:+49622295992400" className="text-ink-light no-underline hover:text-gold transition-colors">
-                    +49 6222 9599 2400
+                  <a href="tel:+4962213214470" className="text-ink-light no-underline hover:text-gold transition-colors">
+                    +49 6221 32144-70
                   </a>
                 </div>
               </div>

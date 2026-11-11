@@ -53,6 +53,7 @@ jobs:
           REMOTE
 
       - name: Smoke test
+        id: smoke
         run: |
           for i in 1 2 3 4 5 6; do
             code=$(curl -sS -o /dev/null -w "%{http_code}" -L https://www.gekuendigt-abfindung.de/)
@@ -62,3 +63,27 @@ jobs:
           done
           echo "Smoke test failed: site did not return 200"
           exit 1
+
+      - name: Checkout (for IndexNow script)
+        if: success()
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node (for IndexNow script)
+        if: success()
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # IndexNow informiert Bing + Yandex (und mittelbar DuckDuckGo) direkt
+      # nach jedem Deploy über geänderte URLs. Ohne diesen Schritt kennen
+      # diese Suchmaschinen Content-Updates erst nach dem nächsten Crawl –
+      # teils Tage später. Google bleibt am normalen Crawl.
+      # Der Key wird automatisch aus public/<KEY>.txt gelesen – kein Secret
+      # nötig, weil der Key ohnehin öffentlich auf der Domain liegt.
+      - name: IndexNow ping
+        if: success()
+        env:
+          INDEXNOW_HOST: www.gekuendigt-abfindung.de
+        run: node scripts/indexnow-submit.mjs

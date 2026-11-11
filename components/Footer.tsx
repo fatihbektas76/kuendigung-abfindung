@@ -18,19 +18,37 @@ export default function Footer({ onOpenCookieSettings }: { onOpenCookieSettings:
         {/* ── Brand header ── */}
         <div className="flex justify-between items-start flex-wrap gap-6 mb-10 pb-10 border-b border-white/[0.08]">
           <div>
-            <div className="font-serif text-gold text-[1.1rem] font-semibold tracking-tight">
+            <a
+              href="https://apos.legal/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-serif text-gold text-[1.1rem] font-semibold tracking-tight no-underline hover:text-gold-light transition-colors"
+              aria-label="APOS Legal — Kanzlei-Website öffnen"
+            >
               APOS Legal
-            </div>
+            </a>
             <div className="text-white/70 mt-1.5 text-[0.8rem]">
               Am Paradeplatz 20 &middot; 69126 Heidelberg
             </div>
+            <div className="text-white/55 mt-0.5 text-[0.75rem]">
+              Weitere Standorte: Wiesloch &middot; Berlin
+            </div>
             <div className="text-white/70 mt-1 text-[0.8rem]">
-              <a href="tel:+49622295992400" className="text-white/70 no-underline hover:text-gold-light transition-colors">+49 6222 9599 2400</a>
+              <a href="tel:+4962213214470" className="text-white/70 no-underline hover:text-gold-light transition-colors">+49 6221 32144-70</a>
               <span className="mx-1.5">&middot;</span>
               <a href="mailto:info@apos.legal" className="text-white/70 no-underline hover:text-gold-light transition-colors">info@apos.legal</a>
             </div>
             <div className="text-white/70 mt-0.5 text-[0.8rem]">
-              Ein Angebot der APOS Legal Rechtsanwaltsgesellschaft mbH&nbsp;&amp;&nbsp;Co.&nbsp;KG
+              Ein Angebot von{' '}
+              <a
+                href="https://apos.legal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 underline decoration-white/30 underline-offset-2 hover:text-gold-light hover:decoration-gold-light transition-colors"
+              >
+                APOS Legal, Heidelberg
+              </a>
+              {' '}&mdash; APOS Legal Rechtsanwaltsgesellschaft mbH&nbsp;&amp;&nbsp;Co.&nbsp;KG
             </div>
           </div>
           <div className="flex items-center gap-5">
