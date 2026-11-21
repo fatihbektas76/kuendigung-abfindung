@@ -213,6 +213,12 @@ export default function LandingShortForm({
             max={new Date().toISOString().slice(0, 10)}
             className="mt-1 w-full rounded-md border border-black/15 bg-white px-3 py-2.5 text-[0.95rem] text-ink outline-none transition-colors focus:border-[#6B6626] focus:ring-2 focus:ring-[#6B6626]/20"
           />
+          <span className="mt-1 block text-[0.75rem] font-normal leading-relaxed text-ink-muted">
+            Maßgeblich ist der Zugang (§&nbsp;130 BGB) — also der Einwurf in Ihren
+            Briefkasten oder die persönliche Übergabe, <strong>nicht</strong> der Tag,
+            an dem Sie die Kündigung tatsächlich gelesen haben. Bei Briefkasten-Einwurf
+            nach üblicher Leerungszeit zählt häufig erst der nächste Werktag.
+          </span>
         </label>
 
         {fristInfo.kind !== 'idle' && (
