@@ -12,16 +12,30 @@ import MobileCTA from './MobileCTA';
 // import ChatbotWidget from './chatbot/ChatbotWidget';
 
 const NO_FOOTER_PAGES = ['/mandantenaufnahme'];
+// Werbe-Landing-Pages: Navigation, Footer, Disclaimer, MobileCTA werden
+// komplett unterdrückt. Jede Landing-Page bringt ihr eigenes Minimal-Chrome
+// mit, damit der Werbe-Klicker keinen Wegfindungs-Ausweg hat.
+const NO_CHROME_PAGES = ['/jetzt'];
 
 export default function LayoutClient({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const hideFooter = NO_FOOTER_PAGES.some((p) => pathname.startsWith(p));
+  const hideChrome = NO_CHROME_PAGES.some((p) => pathname.startsWith(p));
 
   const handleOpenCookieSettings = useCallback(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const fn = (window as any).__openCookieSettings;
     if (typeof fn === 'function') fn();
   }, []);
+
+  if (hideChrome) {
+    return (
+      <>
+        {children}
+        <CookieBanner />
+      </>
+    );
+  }
 
   return (
     <>
