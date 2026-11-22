@@ -9,6 +9,7 @@ import AuthorByline from '@/components/AuthorByline';
 import ShareButtons from '@/components/ShareButtons';
 import RelatedTopics from '@/components/RelatedTopics';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import SchemaFAQ from '@/components/schema/SchemaFAQ';
 import TldrBox from '@/components/TldrBox';
 import DefinitionBox from '@/components/DefinitionBox';
 import Quellen from '@/components/Quellen';
@@ -107,20 +108,7 @@ export default function AbfindungstabellePage() {
         ]}
       />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: { '@type': 'Answer', text: faq.a },
-            })),
-          }),
-        }}
-      />
+      <SchemaFAQ faqs={faqs.map((faq) => ({ question: faq.q, answer: faq.a }))} />
 
       <script
         type="application/ld+json"

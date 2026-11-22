@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import StandAnzeige from '@/components/StandAnzeige';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import SchemaReview from '@/components/schema/SchemaReview';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import { BOOKING } from '@/lib/booking';
@@ -158,6 +159,9 @@ export default function AutorFatihBektasPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
+
+      {/* Schema.org - AggregateRating + Reviews, per @id an Person gebunden */}
+      <SchemaReview subject="person" />
 
       {/* Header */}
       <div className="bg-cream pt-[120px] pb-[50px] px-8 border-b border-border">
