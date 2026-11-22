@@ -4,6 +4,7 @@ import { entries, getEntry, yearLabel } from '@/lib/betriebszugehoerigkeit';
 import AbfindungJahreContent from './content';
 import abfindungData from '@/data/generated/abfindung-data.json';
 import SeoGeoBase from '@/components/SeoGeoBase';
+import SchemaFAQ from '@/components/schema/SchemaFAQ';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { PAGE_DATES } from '@/lib/page-dates';
 import { generateArticleSchema } from '@/lib/article-schema';
@@ -100,19 +101,8 @@ export default function Page({ params }: Props) {
       />
 
       {/* Schema.org - FAQPage (8 Fragen) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: yearData.faqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.frage,
-              acceptedAnswer: { '@type': 'Answer', text: faq.antwort },
-            })),
-          }),
-        }}
+      <SchemaFAQ
+        faqs={yearData.faqs.map((faq) => ({ question: faq.frage, answer: faq.antwort }))}
       />
 
       <AbfindungJahreContent
